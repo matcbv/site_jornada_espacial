@@ -73,10 +73,10 @@ main{
     color: yellow;
 }
 
-/* ---------- MILKWAY SECTION ---------- */
+/* ---------- milkyWAY SECTION ---------- */
 
-.milkway-section{
-    grid-area: milkway-section;
+.milkyway-section{
+    grid-area: milkyway-section;
     width: 90%;
     margin: auto;
     display: flex;
@@ -87,21 +87,21 @@ main{
     border-bottom: 1px solid yellow;
 }
 
-.milkway-section .milkway-img{
+.milkyway-section .milkyway-img{
     width: 50%;
 }
 
-.milkway-section .milkway-img img{
+.milkyway-section .milkyway-img img{
     display: block;
     margin: auto;
-    animation: milkway-jump 2s ease-in-out 0s infinite alternate both;
+    animation: milkyway-jump 2s ease-in-out 0s infinite alternate both;
 }
 
-.milkway-section .milkway-img img:hover{
+.milkyway-section .milkyway-img img:hover{
     cursor: pointer;
 }
 
-@keyframes milkway-jump{
+@keyframes milkyway-jump{
     from{
         transform: translateY(0px);
     }
@@ -110,11 +110,11 @@ main{
     }
 }
 
-.milkway-section .milkway-text{
+.milkyway-section .milkyway-text{
     width: 50%;
 }
 
-.milkway-section .milkway-text p{
+.milkyway-section .milkyway-text p{
     width: 90%;
     text-align: justify;
     font-family: 'Arsenal SC';
@@ -122,7 +122,7 @@ main{
     line-height: 1.3em;
 }
 
-.milkway-section .milkway-text h2{
+.milkyway-section .milkyway-text h2{
     width: 90%;
     text-align: center;
     font-family: monospace;
