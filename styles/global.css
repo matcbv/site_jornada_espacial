@@ -8,7 +8,7 @@ body, html{
     width: 100vw;
     min-height: 100vh;
     overflow-x: hidden;
-    background: rgba(8, 7, 12, 1) url('../images/space_background.png') center;
+    background: rgba(8, 7, 12, 1) url('/images/space_background.png') center;
     background-size: cover;
     color: white;
 }
