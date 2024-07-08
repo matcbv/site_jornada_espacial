@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: rgba(8, 7, 12, 1) url('/images/space_background.png') center;
+    background-size: cover;
+    color: white;
+}
+
+.main-grid-div{
+    min-height: 100vh;
+    display: grid; 
+    grid-template:  'header' 0.5fr
+                    'introduction-section' 3.5fr
+                    'milkway-section' 3fr
+                    'andromeda-section' 3fr
+                    'footer' 1fr
+                    / 100vw;
+}

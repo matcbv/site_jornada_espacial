@@ -1,0 +1,47 @@
+@import url(./fonts.css);
+
+header{
+    grid-area: header;
+    color: rgb(185, 185, 2);
+    background-color: rgba(27, 22, 35);
+    font-family: monospace;
+    font-size: 1.4em;
+    border-bottom: 2px solid rgb(41, 30, 49);
+}
+
+.main-ul{
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.main-ul li{
+    padding: 7px;
+    border-radius: 5px;
+    border: 2px solid rgb(41, 30, 49);
+}
+
+#spacer{
+    max-width: 25%;
+    flex-grow: 1;
+    border: none;
+    animation: none;
+}
+
+.main-ul li:hover{
+    animation: background-gradient 0.3s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes background-gradient {
+    from{
+        background-color: rgba(27, 22, 35, 1);
+    }
+    to{
+        color: rgb(243, 250, 205);
+        text-shadow: 1px 1px 3px rgba(255, 255, 0, 0.3);
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+    }
+}

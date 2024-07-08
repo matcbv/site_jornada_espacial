@@ -1,0 +1,178 @@
+main{
+    min-height: 100vh;
+}
+
+/* ---------- INTRODUCTION SECTION ---------- */
+
+.introduction-section{
+    grid-area: introduction-section;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(27, 22, 35) 45%, rgba(27, 22, 35, 0.7), transparent);
+    font-family: monospace;
+}
+
+.introduction-text{
+    width: 50%;
+    text-align: center;
+    padding: 0 30px;
+}
+
+.introduction-text p{
+    width: 80%;
+    font-size: 1.5em;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.introduction-text .highlight{
+    font-family: 'Rubik Mono One';
+    font-size: 3em; 
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1px yellow;
+    animation: levitate 2s ease-in-out 0s infinite alternate both;
+}
+
+@keyframes levitate{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(20px);
+    }
+}
+
+.welcomes-text{
+    width: 50%;
+    text-align: center;
+    line-height: 4em;
+    padding: 0 30px;
+}
+
+.welcomes-text p{
+    font-size: 1.5em;
+    margin: auto;
+}
+
+.welcomes-text .highlight{
+    font-family: 'Xanh Mono';
+    font-size: 3.3em;
+    font-style: italic;
+    color: yellow;
+}
+
+/* ---------- MILKWAY SECTION ---------- */
+
+.milkway-section{
+    grid-area: milkway-section;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 0;
+    border-bottom: 1px solid yellow;
+}
+
+.milkway-section .milkway-img{
+    width: 50%;
+}
+
+.milkway-section .milkway-img img{
+    display: block;
+    margin: auto;
+}
+
+.milkway-section .milkway-img img:hover{
+    cursor: pointer;
+    animation: milkway-jump 2s ease-in-out 0s infinite alternate both;
+}
+
+@keyframes milkway-jump{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-20px);
+    }
+}
+
+.milkway-section .milkway-text{
+    width: 50%;
+}
+
+.milkway-section .milkway-text p{
+    width: 90%;
+    text-align: justify;
+    font-family: 'Arsenal SC';
+    font-size: 1.2em;
+    line-height: 1.3em;
+}
+
+.milkway-section .milkway-text h2{
+    width: 90%;
+    text-align: center;
+    font-family: monospace;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* ---------- ANDROMDEDA SECTION ---------- */
+
+.andromeda-section{
+    grid-area: andromeda-section;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 0;
+    border-bottom: 1px solid yellow;
+}
+
+.andromeda-section .andromeda-img{
+    width: 50%;
+}
+
+.andromeda-section .andromeda-img img{
+    display: block;
+    margin: auto;
+}
+
+.andromeda-section .andromeda-img img:hover{
+    cursor: pointer;
+    animation: andromeda-jump 2s ease-in-out 0s infinite alternate both;
+}
+
+@keyframes andromeda-jump{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(20px);
+    }
+}
+
+.andromeda-section .andromeda-text{
+    width: 50%;
+}
+
+.andromeda-section .andromeda-text p{
+    width: 90%;
+    text-align: justify;
+    font-family: 'Arsenal SC';
+    font-size: 1.2em;
+    line-height: 1.3em;
+}
+
+.andromeda-section .andromeda-text h2{
+    width: 90%;
+    text-align: center;
+    font-family: monospace;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}

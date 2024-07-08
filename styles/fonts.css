@@ -1,0 +1,41 @@
+.xanh-mono-regular {
+  font-family: "Xanh Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.xanh-mono-regular-italic {
+  font-family: "Xanh Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.rubik-mono-one-regular {
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arsenal-sc-regular {
+  font-family: "Arsenal SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arsenal-sc-bold {
+  font-family: "Arsenal SC", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.arsenal-sc-regular-italic {
+  font-family: "Arsenal SC", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.arsenal-sc-bold-italic {
+  font-family: "Arsenal SC", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
