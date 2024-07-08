@@ -16,10 +16,10 @@ body, html{
 .main-grid-div{
     min-height: 100vh;
     display: grid; 
-    grid-template:  'header' 0.5fr
-                    'introduction-section' 3.5fr
-                    'milkway-section' 3fr
-                    'andromeda-section' 3fr
+    grid-template:  'header' auto
+                    'introduction-section' 4.4fr
+                    'milkway-section' 3.2fr
+                    'andromeda-section' 3.2fr
                     'footer' 1fr
                     / 100vw;
 }

@@ -9,8 +9,18 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: appear 1.5s ease-in-out 0s 1 normal forwards;
     background-image: linear-gradient(rgba(27, 22, 35) 45%, rgba(27, 22, 35, 0.7), transparent);
     font-family: monospace;
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .introduction-text{
@@ -32,7 +42,7 @@ main{
     font-style: italic;
     color: transparent;
     -webkit-text-stroke: 1px yellow;
-    animation: levitate 2s ease-in-out 0s infinite alternate both;
+    animation: levitate 1.5s ease-in-out 0s infinite alternate both;
 }
 
 @keyframes levitate{
@@ -40,7 +50,7 @@ main{
         transform: translateY(0px);
     }
     to{
-        transform: translateY(20px);
+        transform: translateY(7px);
     }
 }
 
@@ -84,11 +94,11 @@ main{
 .milkway-section .milkway-img img{
     display: block;
     margin: auto;
+    animation: milkway-jump 2s ease-in-out 0s infinite alternate both;
 }
 
 .milkway-section .milkway-img img:hover{
     cursor: pointer;
-    animation: milkway-jump 2s ease-in-out 0s infinite alternate both;
 }
 
 @keyframes milkway-jump{
@@ -96,7 +106,7 @@ main{
         transform: translateY(0px);
     }
     to{
-        transform: translateY(-20px);
+        transform: translateY(-15px);
     }
 }
 
@@ -141,11 +151,11 @@ main{
 .andromeda-section .andromeda-img img{
     display: block;
     margin: auto;
+    animation: andromeda-jump 2s ease-in-out 0s infinite alternate both;
 }
 
 .andromeda-section .andromeda-img img:hover{
     cursor: pointer;
-    animation: andromeda-jump 2s ease-in-out 0s infinite alternate both;
 }
 
 @keyframes andromeda-jump{
@@ -153,7 +163,7 @@ main{
         transform: translateY(0px);
     }
     to{
-        transform: translateY(20px);
+        transform: translateY(15px);
     }
 }
 

@@ -2,11 +2,15 @@
 
 header{
     grid-area: header;
+    width: 100%;
     color: rgb(185, 185, 2);
     background-color: rgba(27, 22, 35);
     font-family: monospace;
     font-size: 1.4em;
-    border-bottom: 2px solid rgb(41, 30, 49);
+    border-bottom: 2px solid rgb(49, 37, 58);
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
 
 .main-ul{
@@ -16,12 +20,17 @@ header{
     justify-content: space-around;
     align-items: center;
     list-style: none;
+    padding: 20px 0;
+}
+
+.main-ul:hover{
+    box-shadow: 1px 1px 12px rgba(255, 255, 0, 0.1);
 }
 
 .main-ul li{
     padding: 7px;
     border-radius: 5px;
-    border: 2px solid rgb(41, 30, 49);
+    border: 2px solid rgb(49, 37, 58);
 }
 
 #spacer{
