@@ -3,7 +3,6 @@
 header{
     grid-area: header;
     width: 100%;
-    color: rgb(185, 185, 2);
     background-color: rgba(27, 22, 35);
     font-family: monospace;
     font-size: 1.4em;
@@ -31,6 +30,7 @@ header{
     padding: 7px;
     border-radius: 5px;
     border: 2px solid rgb(49, 37, 58);
+    color: rgb(199, 199, 0);
 }
 
 #spacer{
