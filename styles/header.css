@@ -24,7 +24,7 @@ header{
 }
 
 .main-ul:hover{
-    box-shadow: 1px 1px 12px rgba(255, 255, 0, 0.1);
+    box-shadow: 0 3px 12px rgba(49, 37, 58, 0.5);
 }
 
 .main-ul li{
@@ -41,7 +41,8 @@ header{
 }
 
 .main-ul li:hover{
-    animation: background-gradient 0.3s ease-in-out 0s 1 normal forwards;
+    cursor: pointer;
+    animation: background-gradient 0.2s ease-in-out 0s 1 normal forwards;
 }
 
 @keyframes background-gradient {
