@@ -5,9 +5,8 @@
 }
 
 body, html{
-    width: 100vw;
+    max-width: 100vw;
     min-height: 100vh;
-    overflow-x: hidden;
     background: rgba(8, 7, 12, 1) url('../images/space_background.png') center;
     background-size: cover;
     color: white;
@@ -17,9 +16,9 @@ body, html{
     min-height: 100vh;
     display: grid; 
     grid-template:  'header' auto
-                    'introduction-section' 4.4fr
-                    'milkyway-section' 3.2fr
-                    'andromeda-section' 3.2fr
+                    'introduction-section' 4.5fr
+                    'milkyway-section' 3.5fr
+                    'andromeda-section' 3.5fr
                     'footer' 1fr
-                    / 100vw;
+                    / 100%;
 }

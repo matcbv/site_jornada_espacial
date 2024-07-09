@@ -27,7 +27,7 @@ header{
 }
 
 .main-ul li{
-    padding: 7px;
+    padding: 7px 9px;
     border-radius: 5px;
     border: 2px solid rgb(49, 37, 58);
     color: rgb(199, 199, 0);

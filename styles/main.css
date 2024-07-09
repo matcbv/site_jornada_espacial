@@ -9,8 +9,8 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: appear 1.5s ease-in-out 0s 1 normal forwards;
-    background-image: linear-gradient(rgba(27, 22, 35) 45%, rgba(27, 22, 35, 0.7), transparent);
+    animation: appear 1.2s ease-in-out 0s 1 normal forwards;
+    background-image: linear-gradient(rgba(27, 22, 35) 40%, rgba(27, 22, 35, 0.7), transparent);
     font-family: monospace;
 }
 
@@ -73,7 +73,7 @@ main{
     color: yellow;
 }
 
-/* ---------- milkyWAY SECTION ---------- */
+/* ---------- MILKYWAY SECTION ---------- */
 
 .milkyway-section{
     grid-area: milkyway-section;
@@ -83,7 +83,7 @@ main{
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    padding: 90px 0;
+    padding: 120px 0;
     border-bottom: 1px solid yellow;
 }
 
@@ -120,6 +120,7 @@ main{
     font-family: 'Arsenal SC';
     font-size: 1.2em;
     line-height: 1.3em;
+    margin: auto;
 }
 
 .milkyway-section .milkyway-text h2{
@@ -127,7 +128,7 @@ main{
     text-align: center;
     font-family: monospace;
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
     color: rgb(187, 187, 0);
 }
 
@@ -141,7 +142,7 @@ main{
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    padding: 90px 0;
+    padding: 120px 0;
     border-bottom: 1px solid yellow;
 }
 
@@ -178,6 +179,7 @@ main{
     font-family: 'Arsenal SC';
     font-size: 1.2em;
     line-height: 1.3em;
+    margin: auto;
 }
 
 .andromeda-section .andromeda-text h2{
@@ -185,6 +187,6 @@ main{
     text-align: center;
     font-family: monospace;
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
     color: rgb(187, 187, 0);
 }
