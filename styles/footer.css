@@ -1,0 +1,88 @@
+footer{
+    grid-area: footer;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(27, 22, 35);
+    padding: 15px 0;
+}
+
+.footer-links-div{
+    width: 25%;
+}
+
+.footer-links-div ul{
+    line-height: 1.8em;
+    list-style: none;
+    text-align: center;
+}
+
+.footer-links-div a{
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.footer-links-div a:hover{
+    color: rgb(199, 199, 0);
+}
+
+.footer-links-div a:visited{
+    color: white;
+}
+
+.footer-msg-div{
+    width: 25%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-msg-div p{
+    font-size: 0.8em;
+    font-family: 'Calistoga';
+    margin-right: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.footer-msg-div img{
+    width: 60px;
+    padding-bottom: 12px;
+}
+
+.footer-btn-div{
+    width: 50%;
+}
+
+footer button{
+    display: block;
+    width: 33%;
+    margin: auto;
+    padding: 10px 0;
+    border: 2px solid yellow;
+    background-color: transparent;
+    border-radius: 7px;
+    color: white;
+    font-size: 1.4em;
+    font-family: fantasy;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+}
+
+footer button:hover{
+    animation: up 0.4s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes up{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transform: translateY(-5px);
+    }
+}

@@ -39,3 +39,9 @@
   font-weight: 700;
   font-style: italic;
 }
+
+.calistoga-regular {
+  font-family: "Calistoga", serif;
+  font-weight: 400;
+  font-style: normal;
+}

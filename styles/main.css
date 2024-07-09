@@ -4,9 +4,10 @@ main{
 
 /* ---------- INTRODUCTION SECTION ---------- */
 
-.introduction-section{
-    grid-area: introduction-section;
+.intro-section{
+    grid-area: intro-section;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     animation: appear 1.2s ease-in-out 0s 1 normal forwards;
@@ -23,26 +24,36 @@ main{
     }
 }
 
-.introduction-text{
+.intro-text-div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 90px;
+}
+
+.intro-text{
     width: 50%;
     text-align: center;
     padding: 0 30px;
 }
 
-.introduction-text p{
+.intro-text p{
     width: 80%;
-    font-size: 1.5em;
+    font-size: 1.6em;
     margin: auto;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.introduction-text .highlight{
+.intro-text .highlight{
     font-family: 'Rubik Mono One';
-    font-size: 3em; 
+    font-size: 3.2em; 
     font-style: italic;
     color: transparent;
     -webkit-text-stroke: 1px yellow;
     animation: levitate 1.5s ease-in-out 0s infinite alternate both;
+    text-shadow: none;
 }
 
 @keyframes levitate{
@@ -62,16 +73,52 @@ main{
 }
 
 .welcomes-text p{
-    font-size: 1.5em;
+    font-size: 1.6em;
     margin: auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .welcomes-text .highlight{
     font-family: 'Xanh Mono';
-    font-size: 3.3em;
+    font-size: 3.5em;
     font-style: italic;
     color: yellow;
 }
+
+.intro-btn-div{
+    width: 100%;
+}
+
+.intro-btn{
+    display: block;
+    width: 16%;
+    margin: auto;
+    padding: 10px 0;
+    border: 2px solid yellow;
+    background-color: transparent;
+    border-radius: 7px;
+    color: white;
+    font-size: 1.4em;
+    font-family: fantasy;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+}
+
+.intro-btn:hover{
+    animation: down 0.4s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes down{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+        transform: translateY(5px);
+    }
+}
+
 
 /* ---------- MILKYWAY SECTION ---------- */
 
@@ -84,7 +131,7 @@ main{
     justify-content: center;
     align-items: center;
     padding: 120px 0;
-    border-bottom: 1px solid yellow;
+    border-bottom: 1px solid rgba(255, 255, 0, 0.7);
 }
 
 .milkyway-section .milkyway-img{
@@ -143,7 +190,7 @@ main{
     justify-content: center;
     align-items: center;
     padding: 120px 0;
-    border-bottom: 1px solid yellow;
+    border-bottom: 1px solid rgba(255, 255, 0, 0.7);
 }
 
 .andromeda-section .andromeda-img{
