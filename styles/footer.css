@@ -4,8 +4,8 @@ footer{
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    background-image: linear-gradient(to top, rgba(27, 22, 35) 55%, rgba(27, 22, 35, 0.7), transparent);
-    padding: 50px 0 10px 0;
+    background-image: linear-gradient(to top, rgba(27, 22, 35) 60%, rgba(27, 22, 35, 0.7), transparent);
+    padding: 40px 0 10px 0;
 }
 
 .footer-links-div{
@@ -47,6 +47,7 @@ footer{
     font-family: 'Calistoga';
     margin-right: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-style: italic;
 }
 
 .footer-msg-div img{
