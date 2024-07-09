@@ -4,12 +4,13 @@ footer{
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(27, 22, 35);
-    padding: 15px 0;
+    background-image: linear-gradient(to top, rgba(27, 22, 35) 55%, rgba(27, 22, 35, 0.7), transparent);
+    padding: 50px 0 10px 0;
 }
 
 .footer-links-div{
     width: 25%;
+    margin-right: 15px;
 }
 
 .footer-links-div ul{
@@ -20,7 +21,7 @@ footer{
 
 .footer-links-div a{
     color: white;
-    font-size: 1.2em;
+    font-size: 1.3em;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -42,14 +43,14 @@ footer{
 }
 
 .footer-msg-div p{
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-family: 'Calistoga';
     margin-right: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .footer-msg-div img{
-    width: 60px;
+    width: 70px;
     padding-bottom: 12px;
 }
 
@@ -59,14 +60,14 @@ footer{
 
 footer button{
     display: block;
-    width: 33%;
+    width: auto;
     margin: auto;
-    padding: 10px 0;
+    padding: 10px 20px;
     border: 2px solid yellow;
     background-color: transparent;
     border-radius: 7px;
     color: white;
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-family: fantasy;
     font-style: italic;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -83,6 +84,6 @@ footer button:hover{
     }
     to{
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        transform: translateY(-5px);
+        transform: translateY(-7px);
     }
 }

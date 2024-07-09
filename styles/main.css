@@ -115,7 +115,7 @@ main{
     }
     to{
         box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
-        transform: translateY(5px);
+        transform: translateY(7px);
     }
 }
 
@@ -163,16 +163,16 @@ main{
 
 .milkyway-section .milkyway-text p{
     width: 90%;
-    text-align: justify;
-    font-family: 'Arsenal SC';
-    font-size: 1.2em;
+    text-align: start;
+    font-family: monospace;
+    font-size: 1.5em;
     line-height: 1.3em;
     margin: auto;
 }
 
 .milkyway-section .milkyway-text h2{
     width: 90%;
-    text-align: center;
+    text-align: start;
     font-family: monospace;
     font-size: 2.5em;
     margin: 0 auto 20px auto;
@@ -190,7 +190,6 @@ main{
     justify-content: center;
     align-items: center;
     padding: 120px 0;
-    border-bottom: 1px solid rgba(255, 255, 0, 0.7);
 }
 
 .andromeda-section .andromeda-img{
@@ -222,16 +221,16 @@ main{
 
 .andromeda-section .andromeda-text p{
     width: 90%;
-    text-align: justify;
-    font-family: 'Arsenal SC';
-    font-size: 1.2em;
+    text-align: start;
+    font-family: monospace;
+    font-size: 1.5em;
     line-height: 1.3em;
     margin: auto;
 }
 
 .andromeda-section .andromeda-text h2{
     width: 90%;
-    text-align: center;
+    text-align: start;
     font-family: monospace;
     font-size: 2.5em;
     margin: 0 auto 20px auto;
