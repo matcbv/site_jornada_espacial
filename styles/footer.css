@@ -4,8 +4,10 @@ footer{
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    background-image: linear-gradient(to top, rgba(27, 22, 35) 60%, rgba(27, 22, 35, 0.7), transparent);
-    padding: 40px 0 10px 0;
+    background-color: rgba(27, 22, 35);
+    border-top: 2px solid rgb(49, 37, 58);
+    box-shadow: 0 -7px 15px rgba(27, 22, 35);
+    padding: 12px 0;
 }
 
 .footer-links-div{
@@ -52,7 +54,7 @@ footer{
 
 .footer-msg-div img{
     width: 70px;
-    padding-bottom: 12px;
+    padding-bottom: 15px;
 }
 
 .footer-btn-div{
@@ -77,6 +79,7 @@ footer button{
 
 footer button:hover{
     animation: up 0.4s ease-in-out 0s 1 normal forwards;
+    cursor: pointer;
 }
 
 @keyframes up{
