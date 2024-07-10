@@ -7,34 +7,30 @@ const milkywayRocket = document.querySelector('#milkyway-rocket')
 const andromedaRocket = document.querySelector('#andromeda-rocket')
 const centaurusRocket = document.querySelector('#centaurus-rocket')
 
-milkywayBtn.addEventListener('mouseover', () => {
-    milkywayRocket.innerHTML = '🚀'
-    milkywayRocket.classList.add('rocket')
+document.addEventListener('mouseover', mouse => {
+    if (mouse.target.id == 'milkyway-btn'){
+        milkywayRocket.innerHTML = '🚀'
+        milkywayRocket.classList.add('rocket')
+    } else if (mouse.target.id ==  'andromeda-btn'){
+        andromedaRocket.innerHTML = '🚀'
+        andromedaRocket.classList.add('rocket')
+    } else if (mouse.target.id ==  'centaurus-btn'){
+        centaurusRocket.innerHTML = '🚀'
+        centaurusRocket.classList.add('rocket')
+    }
 })
 
-milkywayBtn.addEventListener('mouseout', () => {
-    milkywayRocket.innerHTML = ''
-    milkywayRocket.classList.remove('rocket')
-})
-
-andromedaBtn.addEventListener('mouseover', () => {
-    andromedaRocket.innerHTML = '🚀'
-    andromedaRocket.classList.add('rocket')
-})
-
-andromedaBtn.addEventListener('mouseout', () => {
-    andromedaRocket.innerHTML = ''
-    andromedaRocket.classList.remove('rocket')
-})
-
-centaurusBtn.addEventListener('mouseover', () => {
-    centaurusRocket.innerHTML = '🚀'
-    centaurusRocket.classList.add('rocket')
-})
-
-centaurusBtn.addEventListener('mouseout', () => {
-    centaurusRocket.innerHTML = ''
-    centaurusRocket.classList.remove('rocket')
+document.addEventListener('mouseout', mouse => {
+    if (mouse.target.id == 'milkyway-btn'){
+        milkywayRocket.innerHTML = ''
+        milkywayRocket.classList.remove('rocket')
+    } else if (mouse.target.id ==  'andromeda-btn'){
+        andromedaRocket.innerHTML = ''
+        andromedaRocket.classList.remove('rocket')
+    } else if (mouse.target.id ==  'centaurus-btn'){
+        centaurusRocket.innerHTML = ''
+        centaurusRocket.classList.remove('rocket')
+    }
 })
 
 // ---------- BEGINNING BUTTON ----------
@@ -52,9 +48,16 @@ const milkywaySection = document.querySelector('.milkyway-section')
 const introSection = document.querySelector('.intro-section')
 
 startingBtn.addEventListener('click', () => {
-    introSection.classList.add('intro-animation')
+    introSection.classList.add('squish-animation')
     setTimeout(() => {
-        introSection.classList.remove('intro-animation')
+        introSection.classList.remove('squish-animation')
         milkywaySection.scrollIntoView({behavior: "smooth"})
     }, 900)
 })
+
+window.onload = function () {
+    introSection.classList.add('appear-animation')
+    setTimeout(() => {
+        introSection.classList.remove('appear-animation')
+    }, 1000)
+}
