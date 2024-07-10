@@ -41,8 +41,8 @@ const introSection = document.querySelector('.intro-section')
 
 startingBtn.addEventListener('click', () => {
     introSection.classList.add('intro-animation')
-    setTimeout(1, () => {
+    setTimeout(() => {
         introSection.classList.remove('intro-animation')
         milkywaySection.scrollIntoView({behavior: "smooth"})
-    })
+    }, 900)
 })

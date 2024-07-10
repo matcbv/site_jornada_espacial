@@ -7,7 +7,7 @@ footer{
     background-color: rgba(27, 22, 35);
     border-top: 2px solid rgb(49, 37, 58);
     box-shadow: 0 -7px 15px rgba(27, 22, 35);
-    padding: 12px 0;
+    padding: 10px 0;
 }
 
 .footer-links-div{
@@ -16,14 +16,14 @@ footer{
 }
 
 .footer-links-div ul{
-    line-height: 1.8em;
+    line-height: 1.7em;
     list-style: none;
     text-align: center;
 }
 
 .footer-links-div a{
     color: white;
-    font-size: 1.3em;
+    font-size: 1.2em;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -70,7 +70,7 @@ footer button{
     background-color: transparent;
     border-radius: 7px;
     color: white;
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-family: fantasy;
     font-style: italic;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
