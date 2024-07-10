@@ -24,6 +24,22 @@ main{
     }
 }
 
+.intro-animation{
+    animation: squish 1s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes squish{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
 .intro-text-div{
     display: flex;
     flex-flow: row nowrap;
@@ -254,15 +270,17 @@ main{
 
 .galaxies-btn-div{
     display: flex;
+    flex-flow: row nowrap;
     justify-content: center;
-    align-items: center;
     margin-top: 50px;
+
 }
 
 .galaxies-btn-div button{
     display: block;
     width: auto;
-    padding: 15px;
+    margin-left: 36px;
+    padding: 15px 20px;
     background-color: transparent;
     border-radius: 7px;
     color: white;
@@ -272,24 +290,28 @@ main{
     font-weight: bold;
 }
 
-
 .galaxies-btn-div button:hover{
     cursor: pointer;
 }
 
-.rocket::after{
-    content: "🚀";
-    font-size: 1.4em;
-    animation: launch 0.3s linear 0s 1 normal forwards;
-    position: relative;
-    left: 36%;
+.galaxies-btn-div span{
+    display: inline-block;
+    font-size: 1.8em;
+    width: 36px;
+    padding: 10px 0 0 10px;
 }
 
-/* @keyframes launch {
+.rocket{
+    animation: launch 0.5s linear 0s 1 normal forwards;
+}
+
+@keyframes launch {
     from{
-        top: 0;
+        opacity: 0;
+        transform: translate(0, 0);
     }
     to{
-        top: 50%;
+        opacity: 1;
+        transform: translate(75%, -50%);
     }
-} */
+}
