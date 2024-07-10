@@ -2,8 +2,10 @@
 
 const milkywayBtn = document.querySelector('#milkyway-btn')
 const andromedaBtn = document.querySelector('#andromeda-btn')
+const centaurusBtn = document.querySelector('#centaurus-btn')
 const milkywayRocket = document.querySelector('#milkyway-rocket')
 const andromedaRocket = document.querySelector('#andromeda-rocket')
+const centaurusRocket = document.querySelector('#centaurus-rocket')
 
 milkywayBtn.addEventListener('mouseover', () => {
     milkywayRocket.innerHTML = '🚀'
@@ -23,6 +25,16 @@ andromedaBtn.addEventListener('mouseover', () => {
 andromedaBtn.addEventListener('mouseout', () => {
     andromedaRocket.innerHTML = ''
     andromedaRocket.classList.remove('rocket')
+})
+
+centaurusBtn.addEventListener('mouseover', () => {
+    centaurusRocket.innerHTML = '🚀'
+    centaurusRocket.classList.add('rocket')
+})
+
+centaurusBtn.addEventListener('mouseout', () => {
+    centaurusRocket.innerHTML = ''
+    centaurusRocket.classList.remove('rocket')
 })
 
 // ---------- BEGINNING BUTTON ----------

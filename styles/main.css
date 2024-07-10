@@ -141,18 +141,12 @@ main{
 
 .milkyway-section{
     grid-area: milkyway-section;
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 120px 0;
     border-bottom: 1px solid rgba(255, 255, 0, 0.7);
 }
 
 .milkyway-section .milkyway-img{
     width: 50%;
+    margin-top: -80px;
 }
 
 .milkyway-section .milkyway-img img{
@@ -178,26 +172,8 @@ main{
     width: 100%;
 }
 
-.milkyway-section .milkyway-text{
+.milkyway-section .galaxies-text{
     width: 50%;
-}
-
-.milkyway-section .milkyway-text p{
-    width: 90%;
-    text-align: start;
-    font-family: monospace;
-    font-size: 1.5em;
-    line-height: 1.3em;
-    margin: auto;
-}
-
-.milkyway-section .milkyway-text h2{
-    width: 90%;
-    text-align: start;
-    font-family: monospace;
-    font-size: 2.5em;
-    margin: 0 auto 20px auto;
-    color: rgb(187, 187, 0);
 }
 
 #milkyway-btn{
@@ -212,13 +188,7 @@ main{
 
 .andromeda-section{
     grid-area: andromeda-section;
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 120px 0;
+    border-bottom: 1px solid rgba(255, 255, 0, 0.7);
 }
 
 .andromeda-section .andromeda-img{
@@ -244,26 +214,8 @@ main{
     }
 }
 
-.andromeda-section .andromeda-text{
+.andromeda-section .galaxies-text{
     width: 50%;
-}
-
-.andromeda-section .andromeda-text p{
-    width: 90%;
-    text-align: start;
-    font-family: monospace;
-    font-size: 1.5em;
-    line-height: 1.3em;
-    margin: auto;
-}
-
-.andromeda-section .andromeda-text h2{
-    width: 90%;
-    text-align: start;
-    font-family: monospace;
-    font-size: 2.5em;
-    margin: 0 auto 20px auto;
-    color: rgb(187, 187, 0);
 }
 
 #andromeda-btn{
@@ -274,7 +226,77 @@ main{
     box-shadow: inset 0 0 15px rgba(66, 101, 150, 0.6);
 }
 
+/* ---------- CENTAURUS SECTION ---------- */
+
+.centaurus-section{
+    grid-area: centaurus-section;
+}
+
+.centaurus-section .centaurus-img{
+    width: 50%;
+}
+
+.centaurus-section .centaurus-img img{
+    display: block;
+    margin: auto;
+    width: 300px;
+    animation: centaurus-jump 2s ease-in-out 0s infinite alternate both;
+}
+
+.centaurus-section .centaurus-img img:hover{
+    cursor: pointer;
+}
+
+@keyframes centaurus-jump{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(15px);
+    }
+}
+
+.centaurus-section .galaxies-text{
+    width: 50%;
+}
+
+#centaurus-btn{
+    border: 3px solid rgb(163, 128, 105);
+}
+
+#centaurus-btn:hover{
+    box-shadow: inset 0 0 15px rgb(163, 128, 105, 0.6);
+}
+
 /* ---------- SHARED STYLES ---------- */
+
+.galaxies-section{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 0;
+}
+
+.galaxies-section h2{
+    width: 90%;
+    text-align: start;
+    font-family: monospace;
+    font-size: 2.5em;
+    margin: 0 auto 20px auto;
+    color: rgb(187, 187, 0);
+}
+
+.galaxies-text p{
+    width: 90%;
+    text-align: start;
+    font-family: monospace;
+    font-size: 1.5em;
+    line-height: 1.3em;
+    margin: auto;
+}
 
 .galaxies-btn-div{
     display: flex;
