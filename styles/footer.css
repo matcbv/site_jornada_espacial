@@ -28,7 +28,7 @@ footer{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.footer-links-div a:hover{
+.footer-links-div ul a:hover{
     color: rgb(199, 199, 0);
 }
 
