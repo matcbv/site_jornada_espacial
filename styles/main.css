@@ -12,10 +12,11 @@ main{
     align-items: center;
     background-image: linear-gradient(rgba(27, 22, 35) 40%, rgba(27, 22, 35, 0.7), transparent);
     font-family: monospace;
+    opacity: 0;
 }
 
 .appear-animation{
-    animation: appear 1s ease-in-out 0s 1 normal forwards;
+    animation: appear 1.2s ease-in-out 0.1s 1 normal forwards;
 }
 
 @keyframes appear{

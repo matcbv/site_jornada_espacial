@@ -48,6 +48,9 @@ const milkywaySection = document.querySelector('.milkyway-section')
 const introSection = document.querySelector('.intro-section')
 
 startingBtn.addEventListener('click', () => {
+    if (introSection.classList.contains('appear-animation')) {
+        introSection.classList.remove('appear-animation')
+    }
     introSection.classList.add('squish-animation')
     setTimeout(() => {
         introSection.classList.remove('squish-animation')
@@ -59,5 +62,6 @@ window.onload = function () {
     introSection.classList.add('appear-animation')
     setTimeout(() => {
         introSection.classList.remove('appear-animation')
+        introSection.setAttribute('style', 'opacity:1')
     }, 1000)
 }
