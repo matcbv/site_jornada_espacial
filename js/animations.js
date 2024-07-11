@@ -52,7 +52,7 @@ startingBtn.addEventListener('click', () => {
     setTimeout(() => {
         introSection.classList.remove('squish-animation')
         milkywaySection.scrollIntoView({behavior: "smooth"})
-    }, 900)
+    }, 999)
 })
 
 window.onload = function () {
