@@ -16,7 +16,7 @@ body, html{
     min-height: 100vh;
     display: grid; 
     grid-template:  'header' auto
-                    'intro-section' 4fr
+                    'intro-section' 3.7fr
                     'milkyway-section' 3.5fr
                     'andromeda-section' 3.5fr
                     'centaurus-section' 3.5fr
