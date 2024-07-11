@@ -62,6 +62,6 @@ window.onload = function () {
     introSection.classList.add('appear-animation')
     setTimeout(() => {
         introSection.classList.remove('appear-animation')
-        introSection.setAttribute('style', 'opacity:1')
+        introSection.style.opacity = '1'
     }, 1000)
 }
