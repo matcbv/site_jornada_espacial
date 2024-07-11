@@ -144,9 +144,10 @@ main{
 
 /* ---------- MILKYWAY SECTION ---------- */
 
-.milkyway-section{
+.main-grid-div .milkyway-section{
     grid-area: milkyway-section;
     border-bottom: 1px solid rgba(255, 255, 0, 0.7);
+    padding-top: 200px;
 }
 
 .milkyway-section .milkyway-img{
@@ -282,11 +283,11 @@ main{
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    padding: 120px 0;
+    padding: 140px 0;
 }
 
 .galaxies-section h2{
-    width: 90%;
+    width: 85%;
     text-align: start;
     font-family: monospace;
     font-size: 2.5em;
@@ -295,7 +296,7 @@ main{
 }
 
 .galaxies-text p{
-    width: 90%;
+    width: 85%;
     text-align: start;
     font-family: monospace;
     font-size: 1.4em;
@@ -307,7 +308,7 @@ main{
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 40px;
 
 }
 
