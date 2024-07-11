@@ -315,7 +315,7 @@ main{
     display: block;
     width: auto;
     margin-left: 36px;
-    padding: 13px;
+    padding: 13px 15px;
     background-color: transparent;
     border-radius: 7px;
     color: white;
