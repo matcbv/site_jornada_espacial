@@ -8,10 +8,11 @@ main{
     grid-area: intro-section;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     background-image: linear-gradient(rgba(27, 22, 35) 40%, rgba(27, 22, 35, 0.7), transparent);
     font-family: monospace;
+    padding-top: 125px;
 }
 
 .appear-animation{
