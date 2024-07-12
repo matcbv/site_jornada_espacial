@@ -18,31 +18,8 @@ main{
     animation: appear 1.2s ease-in-out 0.1s 1 normal forwards;
 }
 
-@keyframes appear{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
-
 .squish-animation{
     animation: squish 1s ease-in-out 0s 1 normal forwards;
-}
-
-@keyframes squish{
-    0%{
-        transform: translateY(0);
-        opacity: 1;
-    }
-    50%{
-        transform: translateY(-10%);
-    }
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 .intro-text-div{
@@ -75,15 +52,6 @@ main{
     -webkit-text-stroke: 1px yellow;
     animation: levitate 1.5s ease-in-out 0s infinite alternate both;
     text-shadow: none;
-}
-
-@keyframes levitate{
-    from{
-        transform: translateY(0px);
-    }
-    to{
-        transform: translateY(7px);
-    }
 }
 
 .welcomes-text{
@@ -131,17 +99,6 @@ main{
     cursor: pointer;
 }
 
-@keyframes down{
-    from{
-        transform: translateY(0);
-    }
-    to{
-        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
-        transform: translateY(7px);
-    }
-}
-
-
 /* ---------- MILKYWAY SECTION ---------- */
 
 .main-grid-div .milkyway-section{
@@ -163,15 +120,6 @@ main{
 
 .milkyway-section .milkyway-img img:hover{
     cursor: pointer;
-}
-
-@keyframes milkyway-jump{
-    from{
-        transform: translateY(0px);
-    }
-    to{
-        transform: translateY(-15px);
-    }
 }
 
 .milkyway-btn-div{
@@ -211,15 +159,6 @@ main{
     cursor: pointer;
 }
 
-@keyframes andromeda-jump{
-    from{
-        transform: translateY(0px);
-    }
-    to{
-        transform: translateY(15px);
-    }
-}
-
 .andromeda-section .galaxies-text{
     width: 50%;
 }
@@ -251,15 +190,6 @@ main{
 
 .centaurus-section .centaurus-img img:hover{
     cursor: pointer;
-}
-
-@keyframes centaurus-jump{
-    from{
-        transform: translateY(0px);
-    }
-    to{
-        transform: translateY(15px);
-    }
 }
 
 .centaurus-section .galaxies-text{
@@ -339,6 +269,77 @@ main{
 
 .rocket{
     animation: launch 0.5s linear 0s 1 normal forwards;
+}
+
+/* ---------- KEYFRAMES ---------- */
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes squish{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(-10%);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes levitate{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(7px);
+    }
+}
+
+@keyframes milkyway-jump{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes andromeda-jump{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(15px);
+    }
+}
+
+@keyframes down{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+        transform: translateY(7px);
+    }
+}
+
+@keyframes centaurus-jump{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(15px);
+    }
 }
 
 @keyframes launch {
