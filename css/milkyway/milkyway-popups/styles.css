@@ -35,7 +35,7 @@ body, html{
     position: relative;
     width: 80%;
     margin: auto;
-    padding: 70px 0 30px 0;
+    padding: 75px 0 30px 0;
 }
 
 
@@ -44,6 +44,7 @@ body, html{
     font-size: 2.5em;
     color: yellow;
     font-family: 'Bungee Outline';
+    margin-bottom: -7px;
 }
 
 .sun-popup-content p{
