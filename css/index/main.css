@@ -234,8 +234,8 @@ main{
 .galaxies-text p{
     width: 85%;
     text-align: start;
-    font-family: monospace;
-    font-size: 1.4em;
+    font-family: 'Inconsolata';
+    font-size: 1.3em;
     line-height: 1.3em;
     margin: auto;
 }

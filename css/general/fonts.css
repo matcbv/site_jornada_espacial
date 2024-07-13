@@ -28,3 +28,18 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.bungee-outline-regular {
+  font-family: "Bungee Outline", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inconsolata-regular {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}

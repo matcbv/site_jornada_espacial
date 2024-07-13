@@ -1,0 +1,54 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(/images/space_background.jpg);
+}
+
+/* ---------- SUN POPUP ---------- */
+
+.sun-popup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.sun-popup-box{
+    position: fixed;
+    width: 50%;
+    background-color: rgb(16 13 21);
+    border-radius: 10px;
+    border: 2px solid yellow;
+}
+
+.sun-popup-box img{
+    position: absolute;
+    transform: translate(-50%, -60%);
+    top: 0;
+    left: 50%;
+    width: 300px;
+}
+
+.sun-popup-content{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    padding: 70px 0 30px 0;
+}
+
+
+.sun-popup-content h2{
+    text-align: center;
+    font-size: 2.5em;
+    color: yellow;
+    font-family: 'Bungee Outline';
+}
+
+.sun-popup-content p{
+    text-align: justify;
+    color: white;
+    font-family: 'Inconsolata';
+    font-size: 1.2em
+}

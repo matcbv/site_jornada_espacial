@@ -1,3 +1,5 @@
+@import url(keyframes.css);
+
 main{
     grid-area: main;
 }
@@ -64,60 +66,4 @@ main{
 main img:hover{
     animation: scale-up 0.3s linear 0s 1 normal forwards;
     cursor: pointer;
-}
-
-/* ---------- KEYFRAMES ---------- */
-
-@keyframes levitate{
-    from{
-        transform: translateY(0px);
-    }
-    to{
-        transform: translateY(7px);
-    }
-}
-
-@keyframes levitate-sun{
-    from{
-        transform: translateY(0px);
-    }
-    to{
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes levitate-earth{
-    from{
-        transform: translateY(0px);
-    }
-    to{
-        transform: translateY(10px);
-    }
-}
-
-@keyframes levitate-mars{
-    from{
-        transform: translateY(0px);
-    }
-    to{
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes levitate-saturn{
-    from{
-        transform: translateY(0px);
-    }
-    to{
-        transform: translateY(10px);
-    }
-}
-
-@keyframes scale-up{
-    from{
-        transform: scale(1)
-    }
-    to{
-        transform: scale(1.2)
-    }
 }
