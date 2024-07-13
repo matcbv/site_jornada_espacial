@@ -1,11 +1,26 @@
-// ---------- ROCKET ANIMATION ----------
-
 const milkywayBtn = document.querySelector('#milkyway-btn')
 const andromedaBtn = document.querySelector('#andromeda-btn')
 const centaurusBtn = document.querySelector('#centaurus-btn')
 const milkywayRocket = document.querySelector('#milkyway-rocket')
 const andromedaRocket = document.querySelector('#andromeda-rocket')
 const centaurusRocket = document.querySelector('#centaurus-rocket')
+const beginningBtn = document.querySelector('.beginning-btn')
+
+// ---------- NAVEGATION ----------
+
+milkywayBtn.addEventListener('click', () => {
+    window.location.assign('milkyway.html')
+})
+
+andromedaBtn.addEventListener('click', () => {
+    window.location.assign('andromeda.html')
+})
+
+centaurusBtn.addEventListener('click', () => {
+    window.location.assign('centaurus.html')
+})
+
+// ---------- ROCKET ANIMATION ----------
 
 document.addEventListener('mouseover', mouse => {
     if (mouse.target.id == 'milkyway-btn'){
@@ -34,8 +49,6 @@ document.addEventListener('mouseout', mouse => {
 })
 
 // ---------- BEGINNING BUTTON ----------
-
-const beginningBtn = document.querySelector('.beginning-btn')
 
 beginningBtn.addEventListener('click', () => {
     window.scrollTo({top: 0, behavior: "smooth"})

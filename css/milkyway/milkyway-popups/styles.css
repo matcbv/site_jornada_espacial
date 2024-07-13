@@ -29,6 +29,7 @@ body, html{
     top: 0;
     left: 50%;
     width: 300px;
+    animation: levitate 1.5s ease-in-out 0s infinite alternate both;
 }
 
 .sun-popup-content{

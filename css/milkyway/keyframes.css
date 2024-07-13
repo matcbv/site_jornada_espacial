@@ -51,3 +51,12 @@
         transform: scale(1.2)
     }
 }
+
+@keyframes grow{
+    from{
+        transform: scale(0.3)
+    }
+    to{
+        transform: scale(1)
+    }
+}

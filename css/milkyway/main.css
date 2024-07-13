@@ -10,6 +10,7 @@ main{
     text-align: center;
     padding: 0 30px;
     padding: 30vh 0;
+    animation: grow 1s linear 0s 1 normal both;
 }
 
 .intro-text p{
