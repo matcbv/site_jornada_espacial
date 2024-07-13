@@ -1,0 +1,123 @@
+main{
+    grid-area: main;
+}
+
+/* ---------- INTRODUCTION SECTION - MILKYWAY ---------- */
+
+.intro-text{
+    text-align: center;
+    padding: 0 30px;
+    padding: 30vh 0;
+}
+
+.intro-text p{
+    font-family: monospace;
+    font-style: italic;
+    width: 80%;
+    font-size: 1.8em;
+    margin: auto;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.intro-text .highlight{
+    font-family: 'Rubik Mono One';
+    font-size: 3em; 
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1px yellow;
+    animation: levitate 1.5s ease-in-out 0s infinite alternate both;
+    text-shadow: none;
+    font-weight: lighter;
+}
+
+/* ---------- MAIN SECTION ---------- */
+
+.sun-div{
+    display: flex;
+    justify-content: center;
+    padding: 10vh 0;
+    animation: levitate-sun 2s ease-in-out 0s infinite alternate both;
+}
+
+.earth-div{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10vh 20vw;
+    animation: levitate-earth 1.5s ease-in-out 0s infinite alternate both;
+}
+
+.mars-div{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10vh 25vw;
+    animation: levitate-mars 1s ease-in-out 0s infinite alternate both;
+}
+
+.saturn-div{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10vh 30vw 30vh 30vw;
+    animation: levitate-saturn 1.5s ease-in-out 0s infinite alternate both;
+}
+
+main img:hover{
+    animation: scale-up 0.3s linear 0s 1 normal forwards;
+    cursor: pointer;
+}
+
+/* ---------- KEYFRAMES ---------- */
+
+@keyframes levitate{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(7px);
+    }
+}
+
+@keyframes levitate-sun{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes levitate-earth{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(10px);
+    }
+}
+
+@keyframes levitate-mars{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes levitate-saturn{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(10px);
+    }
+}
+
+@keyframes scale-up{
+    from{
+        transform: scale(1)
+    }
+    to{
+        transform: scale(1.2)
+    }
+}

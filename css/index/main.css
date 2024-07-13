@@ -1,5 +1,11 @@
 main{
-    min-height: 100vh;
+    grid-area: main;
+    display: grid;
+    grid-template:  'intro-section' 1fr
+                    'milkyway-section' 1fr
+                    'andromeda-section' 1fr
+                    'centaurus-section' 1fr
+                    / 100%;
 }
 
 /* ---------- INTRODUCTION SECTION ---------- */
@@ -10,13 +16,13 @@ main{
     flex-flow: column nowrap;
     justify-content: start;
     align-items: center;
-    background-image: linear-gradient(rgba(27, 22, 35) 40%, rgba(27, 22, 35, 0.7), transparent);
+    background-image: linear-gradient(rgba(27, 22, 35) 35%, rgba(27, 22, 35, 0.7), transparent);
     font-family: monospace;
     padding-top: 125px;
 }
 
 .appear-animation{
-    animation: appear 1.2s ease-in-out 0.1s 1 normal forwards;
+    animation: appear 1s ease-in-out 0.1s 1 normal forwards;
 }
 
 .squish-animation{
@@ -105,7 +111,7 @@ main{
 .main-grid-div .milkyway-section{
     grid-area: milkyway-section;
     border-bottom: 1px solid rgba(255, 255, 0, 0.7);
-    padding-top: 200px;
+    padding-top: 25vh;
 }
 
 .milkyway-section .milkyway-img{
@@ -185,7 +191,6 @@ main{
 .centaurus-section .centaurus-img img{
     display: block;
     margin: auto;
-    width: 300px;
     animation: centaurus-jump 2s ease-in-out 0s infinite alternate both;
 }
 
@@ -214,7 +219,7 @@ main{
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    padding: 140px 0;
+    padding: 20vh 0;
 }
 
 .galaxies-section h2{
@@ -240,7 +245,6 @@ main{
     flex-flow: row nowrap;
     justify-content: center;
     margin-top: 40px;
-
 }
 
 .galaxies-btn-div button{
@@ -339,7 +343,7 @@ main{
         transform: translateY(0px);
     }
     to{
-        transform: translateY(15px);
+        transform: translateY(-15px);
     }
 }
 

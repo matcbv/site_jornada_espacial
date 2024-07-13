@@ -7,7 +7,16 @@
 body, html{
     max-width: 100vw;
     min-height: 100vh;
-    background: rgba(8, 7, 12, 1) url('../../images/space_background_galaxies.png') center;
+    background: rgba(8, 7, 12, 1) url('../../images/space_background.jpg') center;
     background-size: cover;
     color: white;
+}
+
+.main-grid-div{
+    min-height: 100vh;
+    display: grid; 
+    grid-template:  'header' auto
+                    'main' auto
+                    'footer' auto
+                    / 100%;
 }
