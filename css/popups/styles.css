@@ -1,3 +1,5 @@
+@import url(../milkyway/keyframes.css);
+
 body, html{
     margin: 0;
     padding: 0;
@@ -7,7 +9,7 @@ body, html{
 
 /* ---------- SUN POPUP ---------- */
 
-.sun-popup{
+.popup{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,32 +17,38 @@ body, html{
     height: 100vh;
 }
 
-.sun-popup-box{
+.popup-box{
     position: fixed;
-    width: 50%;
+    width: 60%;
     background-color: rgb(16 13 21);
     border-radius: 10px;
-    border: 2px solid yellow;
+    border: 2px solid rgb(175, 175, 0);
+    margin-bottom: -10%;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
 }
 
-.sun-popup-box img{
+#popup{
     position: absolute;
-    transform: translate(-50%, -60%);
     top: 0;
     left: 50%;
-    width: 300px;
-    animation: levitate 1.5s ease-in-out 0s infinite alternate both;
+    width: 270px;
+    animation: levitate-popup 1.5s ease-in-out 0s infinite alternate both;
 }
 
-.sun-popup-content{
+#close-icon{
+    padding: 10px;
+    position: absolute;
+    right: 0;
+}
+
+.popup-content{
     position: relative;
     width: 80%;
     margin: auto;
-    padding: 75px 0 30px 0;
+    padding: 45px 0 30px 0;
 }
 
-
-.sun-popup-content h2{
+.popup-content h2{
     text-align: center;
     font-size: 2.5em;
     color: yellow;
@@ -48,9 +56,9 @@ body, html{
     margin-bottom: -7px;
 }
 
-.sun-popup-content p{
+.popup-content p{
     text-align: justify;
     color: white;
     font-family: 'Inconsolata';
-    font-size: 1.2em
+    font-size: 1.2em;
 }

@@ -60,3 +60,12 @@
         transform: scale(1)
     }
 }
+
+@keyframes levitate-popup{
+    from{
+        transform: translate(-50%, -72%);
+    }
+    to{
+        transform: translate(-50%, -75%);
+    }
+}
