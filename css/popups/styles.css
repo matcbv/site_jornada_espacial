@@ -41,6 +41,10 @@ body, html{
     right: 0;
 }
 
+#close-icon:hover{
+    cursor: pointer;
+}
+
 .popup-content{
     position: relative;
     width: 80%;
