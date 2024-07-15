@@ -1,3 +1,5 @@
+// ---------- HTML ELEMENTS ----------
+
 const milkywayBtn = document.querySelector('#milkyway-btn')
 const andromedaBtn = document.querySelector('#andromeda-btn')
 const centaurusBtn = document.querySelector('#centaurus-btn')
