@@ -21,6 +21,7 @@ main{
     background-image: linear-gradient(rgba(27, 22, 35) 35%, rgba(27, 22, 35, 0.7), transparent);
     font-family: monospace;
     padding-top: 125px;
+    opacity: 0;
 }
 
 .appear-animation{
