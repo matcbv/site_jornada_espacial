@@ -1,12 +1,12 @@
+const path = require('path')
 const images = document.querySelectorAll('img')
 const divPopup = document.querySelector('.popup')
-let closeIcon = null
 
 document.addEventListener('click', (e) => {
     const element = e.target
     for(const image of images){
         if (element.id === image.id) {
-            fetch(`/popups_html/${element.id}_popup.html`).then((res) => {
+            fetch(path.resolve(__dirname, 'popups_html', `${element.id}_popup.html`)).then((res) => {
                 if(!res.ok){
                     throw new Error('Erro durante a requisição do popup.') 
                 } else{
