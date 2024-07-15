@@ -69,3 +69,12 @@
         transform: translate(-50%, -75%);
     }
 }
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

@@ -1,7 +1,24 @@
-@import url(keyframes.css);
+@import url(./keyframes_milkyway.css);
 
 main{
     grid-area: main;
+}
+
+.popup{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 90vh;
+    z-index: 998;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+.appear-animation{
+    animation: appear 1s ease-in-out 0.1s 1 normal forwards;
 }
 
 /* ---------- INTRODUCTION SECTION - MILKYWAY ---------- */
@@ -9,17 +26,15 @@ main{
 .intro-text{
     text-align: center;
     padding: 0 30px;
-    padding: 30vh 0;
+    padding: 20vh 0;
     animation: grow 1s linear 0s 1 normal both;
 }
 
 .intro-text p{
-    font-family: monospace;
-    font-style: italic;
-    width: 80%;
-    font-size: 1.8em;
+    font-family: 'Inconsolata';
+    font-size: 1.5em;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -32,6 +47,15 @@ main{
     animation: levitate 1.5s ease-in-out 0s infinite alternate both;
     text-shadow: none;
     font-weight: lighter;
+    margin-bottom: 20vh;
+}
+
+.emphasis{
+    color: yellow;
+}
+
+.intro-text .guide-text{
+    font-size: 1.3em;
 }
 
 /* ---------- MAIN SECTION ---------- */

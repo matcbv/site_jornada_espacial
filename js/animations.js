@@ -22,27 +22,27 @@ centaurusBtn.addEventListener('click', () => {
 
 // ---------- ROCKET ANIMATION ----------
 
-document.addEventListener('mouseover', mouse => {
-    if (mouse.target.id == 'milkyway-btn'){
+document.addEventListener('mouseover', e => {
+    if (e.target.id == 'milkyway-btn'){
         milkywayRocket.innerHTML = '🚀'
         milkywayRocket.classList.add('rocket')
-    } else if (mouse.target.id ==  'andromeda-btn'){
+    } else if (e.target.id ==  'andromeda-btn'){
         andromedaRocket.innerHTML = '🚀'
         andromedaRocket.classList.add('rocket')
-    } else if (mouse.target.id ==  'centaurus-btn'){
+    } else if (e.target.id ==  'centaurus-btn'){
         centaurusRocket.innerHTML = '🚀'
         centaurusRocket.classList.add('rocket')
     }
 })
 
-document.addEventListener('mouseout', mouse => {
-    if (mouse.target.id == 'milkyway-btn'){
+document.addEventListener('mouseout', e => {
+    if (e.target.id == 'milkyway-btn'){
         milkywayRocket.innerHTML = ''
         milkywayRocket.classList.remove('rocket')
-    } else if (mouse.target.id ==  'andromeda-btn'){
+    } else if (e.target.id ==  'andromeda-btn'){
         andromedaRocket.innerHTML = ''
         andromedaRocket.classList.remove('rocket')
-    } else if (mouse.target.id ==  'centaurus-btn'){
+    } else if (e.target.id ==  'centaurus-btn'){
         centaurusRocket.innerHTML = ''
         centaurusRocket.classList.remove('rocket')
     }

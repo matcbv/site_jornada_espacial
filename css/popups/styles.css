@@ -1,21 +1,6 @@
-@import url(../milkyway/keyframes.css);
-
-body, html{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-image: url(/images/space_background.jpg);
-}
+@import url(../milkyway/keyframes_milkyway.css);
 
 /* ---------- SUN POPUP ---------- */
-
-.popup{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-}
 
 .popup-box{
     position: fixed;
@@ -27,11 +12,10 @@ body, html{
     box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
 }
 
-#popup{
+#popup-image{
     position: absolute;
     top: 0;
     left: 50%;
-    width: 270px;
     animation: levitate-popup 1.5s ease-in-out 0s infinite alternate both;
 }
 
@@ -47,9 +31,9 @@ body, html{
 
 .popup-content{
     position: relative;
-    width: 80%;
+    width: 85%;
     margin: auto;
-    padding: 45px 0 30px 0;
+    padding: 40px 0;
 }
 
 .popup-content h2{
@@ -57,7 +41,7 @@ body, html{
     font-size: 2.5em;
     color: yellow;
     font-family: 'Bungee Outline';
-    margin-bottom: -7px;
+    padding: 35px 0 20px 0;
 }
 
 .popup-content p{
