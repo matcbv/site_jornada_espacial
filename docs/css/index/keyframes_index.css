@@ -58,7 +58,7 @@
     }
 }
 
-@keyframes centaurus-jump{
+@keyframes triangle-jump{
     from{
         transform: translateY(0px);
     }

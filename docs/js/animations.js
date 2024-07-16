@@ -2,10 +2,10 @@
 
 const milkywayBtn = document.querySelector('#milkyway-btn')
 const andromedaBtn = document.querySelector('#andromeda-btn')
-const centaurusBtn = document.querySelector('#centaurus-btn')
+const triangleBtn = document.querySelector('#triangle-btn')
 const milkywayRocket = document.querySelector('#milkyway-rocket')
 const andromedaRocket = document.querySelector('#andromeda-rocket')
-const centaurusRocket = document.querySelector('#centaurus-rocket')
+const triangleRocket = document.querySelector('#triangle-rocket')
 const beginningBtn = document.querySelector('.beginning-btn')
 
 // ---------- NAVEGATION ----------
@@ -18,8 +18,8 @@ andromedaBtn.addEventListener('click', () => {
     window.location.assign('andromeda.html')
 })
 
-centaurusBtn.addEventListener('click', () => {
-    window.location.assign('centaurus.html')
+triangleBtn.addEventListener('click', () => {
+    window.location.assign('triangle.html')
 })
 
 // ---------- ROCKET ANIMATION ----------
@@ -31,9 +31,9 @@ document.addEventListener('mouseover', e => {
     } else if (e.target.id ==  'andromeda-btn'){
         andromedaRocket.innerHTML = '🚀'
         andromedaRocket.classList.add('rocket')
-    } else if (e.target.id ==  'centaurus-btn'){
-        centaurusRocket.innerHTML = '🚀'
-        centaurusRocket.classList.add('rocket')
+    } else if (e.target.id ==  'triangle-btn'){
+        triangleRocket.innerHTML = '🚀'
+        triangleRocket.classList.add('rocket')
     }
 })
 
@@ -44,9 +44,9 @@ document.addEventListener('mouseout', e => {
     } else if (e.target.id ==  'andromeda-btn'){
         andromedaRocket.innerHTML = ''
         andromedaRocket.classList.remove('rocket')
-    } else if (e.target.id ==  'centaurus-btn'){
-        centaurusRocket.innerHTML = ''
-        centaurusRocket.classList.remove('rocket')
+    } else if (e.target.id ==  'triangle-btn'){
+        triangleRocket.innerHTML = ''
+        triangleRocket.classList.remove('rocket')
     }
 })
 
