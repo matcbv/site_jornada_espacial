@@ -18,7 +18,7 @@ main{
     flex-flow: column nowrap;
     justify-content: start;
     align-items: center;
-    background-image: linear-gradient(rgba(27, 22, 35) 35%, rgba(27, 22, 35, 0.7), transparent);
+    background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7), transparent);
     font-family: monospace;
     padding-top: 125px;
     opacity: 0;
@@ -114,7 +114,7 @@ main{
 .main-grid-div .milkyway-section{
     grid-area: milkyway-section;
     border-bottom: 1px solid rgba(255, 255, 0, 0.7);
-    padding-top: 25vh;
+    padding-top: 30vh;
 }
 
 .milkyway-section .milkyway-img{
@@ -141,11 +141,11 @@ main{
 }
 
 #milkyway-btn{
-    border: 3px solid #4c4a7d;
+    border: 3px solid rgb(38, 54, 140);
 }
 
 #milkyway-btn:hover{
-    box-shadow: inset 0 0 15px rgba(76, 74, 125, 0.6);
+    box-shadow: inset 0 0 15px rgb(38, 54, 140, 0.6);
 }
 
 /* ---------- ANDROMDEDA SECTION ---------- */
@@ -175,11 +175,11 @@ main{
 }
 
 #andromeda-btn{
-    border: 3px solid #426596;
+    border: 3px solid rgb(111, 96, 139);
 }
 
 #andromeda-btn:hover{
-    box-shadow: inset 0 0 15px rgba(66, 101, 150, 0.6);
+    box-shadow: inset 0 0 15px rgb(111, 96, 139, 0.6);
 }
 
 /* ---------- TRIANGLE SECTION ---------- */
