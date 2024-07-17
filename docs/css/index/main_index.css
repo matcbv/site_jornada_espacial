@@ -119,13 +119,13 @@ main{
 
 .milkyway-section .milkyway-img{
     width: 50%;
-    margin-top: -80px;
 }
 
 .milkyway-section .milkyway-img img{
     display: block;
     margin: auto;
     animation: milkyway-jump 2s ease-in-out 0s infinite alternate both;
+    margin-bottom: 10%;
 }
 
 .milkyway-section .milkyway-img img:hover{
@@ -163,6 +163,7 @@ main{
     display: block;
     margin: auto;
     animation: andromeda-jump 2s ease-in-out 0s infinite alternate both;
+    margin-bottom: 10%;
 }
 
 .andromeda-section .andromeda-img img:hover{
@@ -195,6 +196,7 @@ main{
     display: block;
     margin: auto;
     animation: triangle-jump 2s ease-in-out 0s infinite alternate both;
+    margin-bottom: 5%;
 }
 
 .triangle-section .triangle-img img:hover{
@@ -247,7 +249,6 @@ main{
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    margin-top: 20px;
 }
 
 .galaxies-btn-div button{
