@@ -3,22 +3,24 @@ const divPopup = document.querySelector('.popup')
 
 document.addEventListener('click', (e) => {
     const element = e.target
-    for(const image of images){
-        if (element.id === image.id) {
-            fetch(`./popups_html/${element.id}_popup.html`).then((res) => {
-                if(!res.ok){
-                    throw new Error('Erro durante a requisição do popup.') 
-                } else{
-                    res.text().then((html) => {
-                        getPopup(element.id, html)
-                    })
-                }
-            })
-        } 
+    if(element.tagName.toLowerCase() === "img"){
+        for(const image of images){
+            if (element.id === image.id) {
+                fetch(`./popups_html/${element.id}_popup.html`).then((res) => {
+                    if (!res.ok){
+                        throw new Error('Erro na requisição do popup')
+                    } else{
+                        res.text().then((html) => {
+                            getPopup(html)
+                        })
+                    }
+                })
+            } 
+        }
     }
 })
 
-async function getPopup(id, html){
+async function getPopup(html){
     divPopup.style.display = 'flex'
     divPopup.classList.add('appear-animation')
     divPopup.innerHTML = html

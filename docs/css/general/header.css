@@ -1,13 +1,10 @@
 header{
     grid-area: header;
-    width: 100%;
+    max-width: 100vw;
     background-color: rgba(27, 22, 35);
     font-family: monospace;
     font-size: 1.4em;
     border-bottom: 2px solid rgb(49, 37, 58);
-    position: sticky;
-    top: 0;
-    z-index: 999;
 }
 
 .main-ul{

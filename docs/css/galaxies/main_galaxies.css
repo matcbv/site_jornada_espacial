@@ -1,4 +1,4 @@
-@import url(./keyframes_milkyway.css);
+@import url(./galaxies_keyframes.css);
 
 main{
     grid-area: main;
@@ -8,10 +8,11 @@ main{
     display: none;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
-    width: 100%;
-    height: 90%;
-    z-index: 998;
+    top: 0;
+    z-index: 999;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.8);
 }
@@ -59,35 +60,39 @@ main{
 
 /* ---------- MAIN SECTION ---------- */
 
-.sun-div{
+.first-body-div{
     display: flex;
     justify-content: center;
     padding: 10vh 0;
-    animation: levitate-sun 2s ease-in-out 0s infinite alternate both;
+    animation: slow-levitation 2s ease-in-out 0s infinite alternate both;
 }
 
-.earth-div{
+.second-body-div{
     display: flex;
     justify-content: flex-start;
     padding: 10vh 20vw;
-    animation: levitate-earth 1.5s ease-in-out 0s infinite alternate both;
+    animation: fast-levitation 1s ease-in-out 0s infinite alternate both;
 }
 
-.mars-div{
+.third-body-div{
     display: flex;
     justify-content: flex-end;
-    padding: 10vh 25vw;
-    animation: levitate-mars 1s ease-in-out 0s infinite alternate both;
+    padding: 10vh 20vw;
+    animation: fast-levitation 1s ease-in-out 0s infinite alternate both;
 }
 
-.saturn-div{
+.fourth-body-div{
     display: flex;
     justify-content: flex-start;
-    padding: 10vh 30vw 30vh 30vw;
-    animation: levitate-saturn 1.5s ease-in-out 0s infinite alternate both;
+    padding: 15vh 30vw 35vh 25vw;
+    animation: slow-levitation 2s ease-in-out 0s infinite alternate both;
+}
+
+main img{
+    transition: transform 0.3s linear 0s;
 }
 
 main img:hover{
-    animation: scale-up 0.3s linear 0s 1 normal forwards;
+    transform: scale(1.2);
     cursor: pointer;
 }

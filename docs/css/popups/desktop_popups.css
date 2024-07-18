@@ -1,4 +1,4 @@
-@import url(../milkyway/keyframes_milkyway.css);
+@import url(../galaxies/galaxies_keyframes.css);
 
 .popup-box{
     position: fixed;
@@ -30,7 +30,7 @@
     border: 2px solid rgb(175, 175, 0);
     box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
     border-radius: 10px;
-    margin-right: 5%;
+    margin-right: 10%;
     padding: 50px;
 }
 
