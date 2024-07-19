@@ -1,6 +1,6 @@
 const images = document.querySelectorAll('img')
 const divPopup = document.querySelector('.popup')
-console.log(images)
+
 document.addEventListener('click', (e) => {
     const element = e.target
     if(element.tagName.toLowerCase() === "img"){
@@ -34,3 +34,4 @@ function closeAction(closeIcon) {
         divPopup.classList.remove('appear-animation')
     })
 }
+

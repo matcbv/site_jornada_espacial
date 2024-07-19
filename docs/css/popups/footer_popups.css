@@ -1,0 +1,21 @@
+.popup-box{
+    width: 50%;
+    background-color: rgba(27, 22, 35);
+    padding: 50px;
+}
+
+.popup-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.popup-links{
+    width: 50%;
+}
+
+.popup-text{
+    width: 50%;
+    font-size: 1.2em;
+    text-align: justify;
+}

@@ -10,6 +10,23 @@ main{
                     / 100%;
 }
 
+.popup{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.appear-animation{
+    animation: appear 1s ease-in-out 0.1s 1 normal forwards;
+}
+
 /* ---------- INTRODUCTION SECTION ---------- */
 
 .intro-section{
