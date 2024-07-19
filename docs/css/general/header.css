@@ -5,6 +5,7 @@ header{
     font-family: monospace;
     font-size: 1.4em;
     border-bottom: 2px solid rgb(49, 37, 58);
+    z-index: 998;
 }
 
 .main-ul{
