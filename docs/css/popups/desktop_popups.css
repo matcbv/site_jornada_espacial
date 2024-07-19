@@ -19,7 +19,8 @@
 }
 
 #popup-image{
-    animation: none;
+    transform: scale(1);
+    transition: none;
 }
 
 .popup-content{
