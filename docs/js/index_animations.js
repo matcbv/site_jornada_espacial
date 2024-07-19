@@ -6,7 +6,6 @@ const triangleBtn = document.querySelector('#triangle-btn')
 const milkywayRocket = document.querySelector('#milkyway-rocket')
 const andromedaRocket = document.querySelector('#andromeda-rocket')
 const triangleRocket = document.querySelector('#triangle-rocket')
-const beginningBtn = document.querySelector('.beginning-btn')
 
 // ---------- NAVEGATION ----------
 
