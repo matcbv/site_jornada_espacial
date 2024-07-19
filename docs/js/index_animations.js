@@ -50,12 +50,6 @@ document.addEventListener('mouseout', e => {
     }
 })
 
-// ---------- BEGINNING BUTTON ----------
-
-beginningBtn.addEventListener('click', () => {
-    window.scrollTo({top: 0, behavior: "smooth"})
-})
-
 // ---------- INTRO BUTTON ----------
 
 const startingBtn = document.querySelector('.intro-btn')
