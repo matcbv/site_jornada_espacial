@@ -1,6 +1,6 @@
 // ---------- FOOTER POPUPS ----------
 
-const divPopup = document.querySelector('.popup')
+const divPopupFooter = document.querySelector('.popup')
 const aboutMeLink = document.getElementById('about-me')
 const referencesLink = document.getElementById('references')
 const inspirations = document.getElementById('inspirations')
@@ -18,17 +18,17 @@ aboutMeLink.addEventListener('click', () => {
 })
 
 async function getPopup(html){
-    divPopup.style.display = 'flex'
-    divPopup.classList.add('appear-animation')
-    divPopup.innerHTML = html
+    divPopupFooter.style.display = 'flex'
+    divPopupFooter.classList.add('appear-animation')
+    divPopupFooter.innerHTML = html
     closeAction(document.querySelector('#close-icon'))
 }
 
 function closeAction(closeIcon) {
     closeIcon.addEventListener('click', () => {
-        divPopup.style.display = 'none'
-        divPopup.innerHTML = ''
-        divPopup.classList.remove('appear-animation')
+        divPopupFooter.style.display = 'none'
+        divPopupFooter.innerHTML = ''
+        divPopupFooter.classList.remove('appear-animation')
     })
 }
 

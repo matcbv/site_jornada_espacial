@@ -34,4 +34,3 @@ function closeAction(closeIcon) {
         divPopup.classList.remove('appear-animation')
     })
 }
-

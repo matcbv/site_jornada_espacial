@@ -1,21 +1,66 @@
-.popup-box{
+.popup-box-footer{
     width: 50%;
     background-color: rgba(27, 22, 35);
-    padding: 50px;
+    padding: 50px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.6);
+    position: relative;
 }
 
-.popup-content{
+.popup-content-footer{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.popup-links{
+.popup-links-footer{
     width: 50%;
 }
 
-.popup-text{
-    width: 50%;
+.popup-links-footer a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-family: monospace;
+}
+
+.popup-links-footer ul{
+    margin: auto;
+    width: auto;
+}
+
+.popup-links-footer li{
+    width: auto;
+    padding: 20px 0 0 10px;
+}
+
+.popup-links-footer li::marker{
+    content: '⭐';
+    padding-bottom: 5px;
+}
+
+.popup-links-footer a:hover{
+    color: rgb(199, 199, 0);
+}
+
+.popup-links-footer p{
     font-size: 1.2em;
+    font-family: 'Inconsolata';
+    padding-right: 10px;
+    width: 80%;
+}
+
+.popup-text-footer{
+    width: 50%;
+    font-size: 1.3em;
     text-align: justify;
+    font-family: 'Inconsolata';
+}
+
+
+#close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
 }
