@@ -70,3 +70,9 @@
     right: 0;
     padding: 10px;
 }
+
+#astronaut-img{
+    transition: none;
+    transform: none;
+    cursor: default;
+}
