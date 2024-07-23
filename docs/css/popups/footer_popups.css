@@ -1,7 +1,7 @@
 .popup-box-footer{
-    width: 50%;
+    width: 60%;
     background-color: rgba(27, 22, 35);
-    padding: 50px 30px;
+    padding: 40px 50px 40px 0;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 255, 0, 0.6);
     position: relative;
@@ -9,54 +9,60 @@
 
 .popup-content-footer{
     display: flex;
+    flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
 }
 
-.popup-links-footer{
-    width: 50%;
+.popup-text-footer p:nth-child(1){
+    width: 90%;
+    text-align: justify;
+    font-family: 'Inconsolata';
+    font-size: 1.1em;
+    padding-bottom: 20px;
+    margin: auto;
 }
 
-.popup-links-footer a{
+.popup-text-footer p:nth-child(2){
+    text-align: center;
+    padding: 20px 0 10px 0;
+    color: rgb(252, 213, 63);
+    font-family: 'Xanh Mono';
+    font-size: 1.2em;
+    border-top: 2px solid rgb(199, 199, 0);
+}
+
+.popup-text-footer ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.popup-text-footer ul li{
+    margin-left: 35px;
+    padding-left: 5px;
+}
+
+.popup-text-footer ul li:first-child{
+    margin-left: 0;
+}
+
+.popup-text-footer li::marker{
+    content: '⭐';
+    padding-bottom: 5px;
+}
+
+.popup-text-footer a{
     color: white;
     text-decoration: none;
     font-size: 1.3em;
     font-family: monospace;
 }
 
-.popup-links-footer ul{
-    margin: auto;
-    width: auto;
+.popup-text-footer a:hover{
+    color: rgb(252, 213, 63);
 }
-
-.popup-links-footer li{
-    width: auto;
-    padding: 20px 0 0 10px;
-}
-
-.popup-links-footer li::marker{
-    content: '⭐';
-    padding-bottom: 5px;
-}
-
-.popup-links-footer a:hover{
-    color: rgb(199, 199, 0);
-}
-
-.popup-links-footer p{
-    font-size: 1.2em;
-    font-family: 'Inconsolata';
-    padding-right: 10px;
-    width: 80%;
-}
-
-.popup-text-footer{
-    width: 50%;
-    font-size: 1.3em;
-    text-align: justify;
-    font-family: 'Inconsolata';
-}
-
 
 #close-icon {
     position: absolute;
