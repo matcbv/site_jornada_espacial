@@ -131,7 +131,6 @@ main{
 
 .main-grid-div .milkyway-section{
     grid-area: milkyway-section;
-    border-bottom: 1px solid rgba(255, 255, 0, 0.7);
     padding-top: 30vh;
 }
 
@@ -170,7 +169,6 @@ main{
 
 .andromeda-section{
     grid-area: andromeda-section;
-    border-bottom: 1px solid rgba(255, 255, 0, 0.7);
 }
 
 .andromeda-section .andromeda-img{
@@ -243,6 +241,10 @@ main{
     justify-content: center;
     align-items: center;
     padding: 20vh 0;
+}
+
+.galaxies-section:not(.triangle-section){
+    border-bottom: 2px solid rgba(255, 255, 0, 0.7);
 }
 
 .galaxies-section h2{

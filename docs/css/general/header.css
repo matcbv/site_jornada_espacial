@@ -49,6 +49,6 @@ header{
     to{
         color: rgb(243, 250, 205);
         text-shadow: 1px 1px 3px rgba(255, 255, 0, 0.3);
-        box-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
     }
 }
