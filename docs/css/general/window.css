@@ -3,7 +3,7 @@
 }
 
 ::-webkit-scrollbar-track{
-      background: rgba(27, 22, 35)
+      background-image: linear-gradient(rgba(27, 22, 35) 30%, rgb(3, 0, 5));
 }
   
 ::-webkit-scrollbar-thumb{
