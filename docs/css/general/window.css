@@ -10,3 +10,12 @@
       background: rgb(49, 37, 58);
       border-radius: 10px;
 }
+
+.change-scrollbar::-webkit-scrollbar-track{
+      background: rgb(3, 0, 5);
+}
+
+.change-scrollbar::-webkit-scrollbar-thumb{
+      border: 1px solid yellow;
+      background: transparent;
+}

@@ -25,10 +25,10 @@
 
 .popup-text-footer p:nth-child(2){
     text-align: center;
-    padding: 20px 0 10px 0;
+    padding: 15px 0 5px 0;
     color: rgb(252, 213, 63);
     font-family: 'Xanh Mono';
-    font-size: 1.2em;
+    font-size: 1.3em;
     border-top: 2px solid rgb(199, 199, 0);
 }
 

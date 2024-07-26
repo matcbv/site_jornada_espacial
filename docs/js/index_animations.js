@@ -66,10 +66,10 @@ startingBtn.addEventListener('click', () => {
     }, 999)
 })
 
-window.onload = function () {
+window.addEventListener('load', () => {
     introSection.classList.add('appear-animation')
     setTimeout(() => {
         introSection.classList.remove('appear-animation')
         introSection.style.opacity = '1'
     }, 1000)
-}
+})

@@ -115,7 +115,8 @@ main{
     border-radius: 7px;
     color: white;
     font-size: 1.4em;
-    font-family: fantasy;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
     font-style: italic;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s linear 0s, box-shadow 0.3s linear 0s;
@@ -275,13 +276,12 @@ main{
     display: block;
     width: auto;
     margin-left: 36px;
-    padding: 13px 15px;
+    padding: 15px 20px;
     background-color: transparent;
     border-radius: 7px;
     color: white;
     font-size: 1.4em;
     font-family: monospace;
-    font-style: italic;
     font-weight: bold;
 }
 
