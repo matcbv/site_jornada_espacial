@@ -5,7 +5,7 @@ module.exports = {
     mode: 'development',
     entry: [path.resolve(__dirname, 'docs', 'frontend', 'js', 'index_animations.js'), path.resolve(__dirname, 'docs', 'frontend', 'js', 'planets_popups.js'), path.resolve(__dirname, 'docs', 'frontend', 'js', 'window_animations.js'), path.resolve(__dirname, 'docs', 'frontend', 'js', 'footer_animations.js')],
     output: {
-        path: path.resolve(__dirname, 'public', 'assets'),
+        path: path.resolve(__dirname, 'docs', 'public', 'assets'),
         filename: 'js/bundle.js'
     },
     module: {
