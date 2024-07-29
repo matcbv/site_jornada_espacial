@@ -1,0 +1,46 @@
+{
+  "name": "site_jornada_espacial",
+  "version": "1.0.0",
+  "description": "Projeto de minha autoria, sendo planejado e desenvolvido do início ao fim de forma individual. Esse projeto é o resultado da primeira etapa do Curso Carreira FullStack Python da Coderhouse, focado em HTML5 e CSS3.",
+  "main": "webpack.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "nodemon docs/src/server.js --ignore node_modules --ignore frontend",
+    "dev": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matcbv/site_jornada_espacial.git"
+  },
+  "keywords": [],
+  "author": "Matheus Cerqueira Baião Victor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matcbv/site_jornada_espacial/issues"
+  },
+  "homepage": "https://github.com/matcbv/site_jornada_espacial#readme",
+  "dependencies": {
+    "@babel/core": "^7.24.9",
+    "@babel/preset-env": "^7.25.0",
+    "babel": "^6.23.0",
+    "babel-loader": "^9.1.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^5.1.0",
+    "css-loader": "^7.1.2",
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "helmet": "^7.1.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "mongoose": "^8.5.1",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.4"
+  }
+}
