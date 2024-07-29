@@ -1,35 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="./css/general/window.css">
-        <link rel="stylesheet" href="./css/galaxies/general_galaxies.css">
-        <link rel="stylesheet" href="./css/general/header.css">
-        <link rel="stylesheet" href="./css/galaxies/main_galaxies.css">
-        <link rel="stylesheet" href="./css/general/footer.css">
-        <link rel="stylesheet" href="css/popups/desktop_popups.css">
-        <link rel="stylesheet" href="css/popups/footer_popups.css">
-        <link rel="stylesheet" href="css/general/fonts.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-        <title>Jornada Espacial</title>
-    </head>
+    <%- include(head) %>
 <body>
     <div class="main-grid-div">
         <header>
             <ul class="main-ul">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index">Home</a></li>
                 <li id="spacer"></li>
-                <li><a href="milkyway.html">Via Láctea</a></li>
-                <li><a href="andromeda.html">Andrômeda</a></li>
-                <li><a href="triangle.html">Triângulo</a></li>
+                <li><a href="milkyway">Via Láctea</a></li>
+                <li><a href="andromeda">Andrômeda</a></li>
+                <li><a href="triangle">Triângulo</a></li>
             </ul>
         </header>
         <main>
@@ -53,24 +33,8 @@
                 <img id="m33_x7" src="images/triangle_images/m33_x7_small.png" alt="Sistema Binário Estelar">
             </div>
         </main>
-        <footer>
-            <div class="footer-links-div">
-                <ul class="custom-list">
-                    <li id="about-me">Sobre mim</li>
-                    <li id="references">Referências</li>
-                    <li id="inspirations">Inspirações</li>
-                </ul>
-                <p title="Direitos Autorais">Copyright (c) 2024 matcbv</p>
-            </div>
-            <div class="footer-btn-div">
-                <button class="beginning-btn" type="button">VOLTAR AO TOPO</button>
-            </div>
-            <div class="footer-msg-div">
-                <p>SEE YOU SPACE COWBOY...</p>
-                <img src="./images/footer_images/cowboy_bebop.GIF" alt="Cowboy Bebop GIF">
-            </div>
-        </footer>
+        <%- include(footer) %>
     </div>
 </body>
-<script src="/js/bundle.js"></script>
+<script src="js/bundle.js"></script>
 </html>

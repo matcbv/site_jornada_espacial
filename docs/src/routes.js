@@ -5,6 +5,13 @@ const router = express.Router()
 // Importando os middlewares de controle de rota
 const homeController = require('./controllers/homeController')
 
+// Página inicial
 router.get('/', homeController.homePage)
+// Seção Milkyway
+router.get('/milkyway', homeController.milkyway)
+// Seção Andrômeda
+router.get('/andromeda', homeController.andromeda)
+// Seção Triângulo
+router.get('/triangle', homeController.triangle)
 
 module.exports = router

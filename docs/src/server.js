@@ -11,7 +11,7 @@ const app = express()
 app.use(express.urlencoded({extended: true}))
 
 // Definindo a rota dos arquivos estáticos
-app.use(express.static(path.resolve(__dirname, 'public', 'assets')))
+app.use(express.static(path.resolve(__dirname, '..', 'public', 'assets')))
 
 // Definindo a engine de visialização da aplicação
 app.set('view engine', 'ejs')
@@ -66,6 +66,7 @@ app.use(flash())
 // Aplicando os middlewares globais
 const {csrfMiddleware, globalMiddleware} = require('./middlewares/globalMiddlewares')
 app.use(csrfMiddleware)
+app.use(globalMiddleware)
 
 // Adicionando nosso roteador de rotas à aplicação
 const routes = require('./routes')
