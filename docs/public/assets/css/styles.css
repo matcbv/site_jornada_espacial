@@ -654,7 +654,7 @@ footer button:hover{
     color: rgb(252, 213, 63);
 }
 
-#close-icon {
+#footer-close-icon {
     position: absolute;
     top: 0;
     right: 0;
@@ -947,10 +947,16 @@ main img:hover{
     font-size: 1.2em;
 }
 
-#close-icon{
+.icons-div{
+    display: flex;
+    flex-flow: column nowrap;
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 15px;
+}
+
+#close-icon{
+    margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map*/
