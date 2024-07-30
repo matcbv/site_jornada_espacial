@@ -1,9 +1,8 @@
 const introductionSection = document.querySelector(".intro-section")
 const headerSection = document.querySelector("header")
 if (introductionSection && headerSection){
-    const introRect = introductionSection.getBoundingClientRect()
-    const headerRect = headerSection.getBoundingClientRect()
-    const headerVh = headerRect.height
+    const introVh = introductionSection.getBoundingClientRect().height
+    const headerVh = headerSection.getBoundingClientRect().height
 
     document.addEventListener("scroll", () => {
         const verticalScroll = window.scrollY
@@ -13,4 +12,10 @@ if (introductionSection && headerSection){
             document.body.classList.remove('change-scrollbar');
         }
     })
+}
+
+const galaxiesMainGridDiv = document.querySelector('.galaxies-main-grid-div')
+
+if (galaxiesMainGridDiv){
+    document.body.classList.add('change-scrollbar');
 }

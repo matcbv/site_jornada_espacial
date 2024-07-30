@@ -1,12 +1,10 @@
 // ---------- FOOTER POPUPS ----------
 
 const divPopupFooter = document.querySelector('.popup')
-const aboutMeLink = document.getElementById('about-me')
-const referencesLink = document.getElementById('references')
-const inspirations = document.getElementById('inspirations')
+const footer = document.querySelector('footer')
 
-aboutMeLink.addEventListener('click', () => {
-    fetch(`./popups_html/about_me_popup.html`).then((res) => {
+footer.addEventListener('click', (element) => {
+    fetch(`http://localhost:8080/popup/${element.target.id}`).then((res) => {
         if (!res.ok){
             throw new Error('Erro na requisição do popup')
         } else{

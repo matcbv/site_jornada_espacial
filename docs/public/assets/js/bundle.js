@@ -339,9 +339,8 @@ function closeAction(closeIcon) {
 var introductionSection = document.querySelector(".intro-section");
 var headerSection = document.querySelector("header");
 if (introductionSection && headerSection) {
-  var introRect = introductionSection.getBoundingClientRect();
-  var headerRect = headerSection.getBoundingClientRect();
-  var headerVh = headerRect.height;
+  var introVh = introductionSection.getBoundingClientRect().height;
+  var headerVh = headerSection.getBoundingClientRect().height;
   document.addEventListener("scroll", function () {
     var verticalScroll = window.scrollY;
     if (verticalScroll >= introVh - headerVh) {
@@ -350,6 +349,10 @@ if (introductionSection && headerSection) {
       document.body.classList.remove('change-scrollbar');
     }
   });
+}
+var galaxiesMainGridDiv = document.querySelector('.galaxies-main-grid-div');
+if (galaxiesMainGridDiv) {
+  document.body.classList.add('change-scrollbar');
 }
 })();
 
@@ -365,11 +368,9 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 // ---------- FOOTER POPUPS ----------
 
 var divPopupFooter = document.querySelector('.popup');
-var aboutMeLink = document.getElementById('about-me');
-var referencesLink = document.getElementById('references');
-var inspirations = document.getElementById('inspirations');
-aboutMeLink.addEventListener('click', function () {
-  fetch("./popups_html/about_me_popup.html").then(function (res) {
+var footer = document.querySelector('footer');
+footer.addEventListener('click', function (element) {
+  fetch("http://localhost:8080/popup/".concat(element.target.id)).then(function (res) {
     if (!res.ok) {
       throw new Error('Erro na requisição do popup');
     } else {
