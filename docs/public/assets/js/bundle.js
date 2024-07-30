@@ -370,15 +370,17 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 var divPopupFooter = document.querySelector('.popup');
 var footer = document.querySelector('footer');
 footer.addEventListener('click', function (element) {
-  fetch("http://localhost:8080/popup/".concat(element.target.id)).then(function (res) {
-    if (!res.ok) {
-      throw new Error('Erro na requisição do popup');
-    } else {
-      res.text().then(function (html) {
-        getPopup(html);
-      });
-    }
-  });
+  if (element.target.id) {
+    fetch("http://localhost:8080/popup/".concat(element.target.id)).then(function (res) {
+      if (!res.ok) {
+        throw new Error('Erro na requisição do popup');
+      } else {
+        res.text().then(function (html) {
+          getPopup(html);
+        });
+      }
+    });
+  }
 });
 function getPopup(_x) {
   return _getPopup.apply(this, arguments);

@@ -4,15 +4,17 @@ const divPopupFooter = document.querySelector('.popup')
 const footer = document.querySelector('footer')
 
 footer.addEventListener('click', (element) => {
-    fetch(`http://localhost:8080/popup/${element.target.id}`).then((res) => {
-        if (!res.ok){
-            throw new Error('Erro na requisição do popup')
-        } else{
-            res.text().then((html) => {
-                getPopup(html)
-            })
-        }
-    })
+    if (element.target.id){
+        fetch(`http://localhost:8080/popup/${element.target.id}`).then((res) => {
+            if (!res.ok){
+                throw new Error('Erro na requisição do popup')
+            } else{
+                res.text().then((html) => {
+                    getPopup(html)
+                })
+            }
+        })
+    }
 })
 
 async function getPopup(html){

@@ -13,7 +13,7 @@
         opacity: 1;
     }
     50%{
-        transform: translateY(-10%);
+        transform: translateY(-7%);
     }
     100%{
         transform: translateY(0);
