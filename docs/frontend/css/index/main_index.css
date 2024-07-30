@@ -1,6 +1,6 @@
 @import url(keyframes_index.css);
 
-main{
+.index-main{
     grid-area: main;
     display: grid;
     grid-template:  'intro-section' 1fr

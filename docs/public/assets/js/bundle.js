@@ -1,6 +1,32 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./docs/frontend/css/galaxies/general_galaxies.css":
+/*!*********************************************************!*\
+  !*** ./docs/frontend/css/galaxies/general_galaxies.css ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./docs/frontend/css/galaxies/main_galaxies.css":
+/*!******************************************************!*\
+  !*** ./docs/frontend/css/galaxies/main_galaxies.css ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./docs/frontend/css/general/fonts.css":
 /*!*********************************************!*\
   !*** ./docs/frontend/css/general/fonts.css ***!
@@ -79,6 +105,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./docs/frontend/css/popups/desktop_popups.css":
+/*!*****************************************************!*\
+  !*** ./docs/frontend/css/popups/desktop_popups.css ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./docs/frontend/css/popups/footer_popups.css":
 /*!****************************************************!*\
   !*** ./docs/frontend/css/popups/footer_popups.css ***!
@@ -148,15 +187,21 @@ var triangleRocket = document.querySelector('#triangle-rocket');
 
 // ---------- NAVEGATION ----------
 
-milkywayBtn.addEventListener('click', function () {
-  window.location.assign('milkyway.html');
-});
-andromedaBtn.addEventListener('click', function () {
-  window.location.assign('andromeda.html');
-});
-triangleBtn.addEventListener('click', function () {
-  window.location.assign('triangle.html');
-});
+if (milkywayBtn) {
+  milkywayBtn.addEventListener('click', function () {
+    window.location.href = 'milkyway';
+  });
+}
+if (andromedaBtn) {
+  andromedaBtn.addEventListener('click', function () {
+    window.location.href = 'andromeda';
+  });
+}
+if (triangleBtn) {
+  triangleBtn.addEventListener('click', function () {
+    window.location.href = 'triangle';
+  });
+}
 
 // ---------- ROCKET ANIMATION ----------
 
@@ -190,25 +235,29 @@ document.addEventListener('mouseout', function (e) {
 var startingBtn = document.querySelector('.intro-btn');
 var milkywaySection = document.querySelector('.milkyway-section');
 var introSection = document.querySelector('.intro-section');
-startingBtn.addEventListener('click', function () {
-  if (introSection.classList.contains('appear-animation')) {
-    introSection.classList.remove('appear-animation');
-  }
-  introSection.classList.add('squish-animation');
-  setTimeout(function () {
-    introSection.classList.remove('squish-animation');
-    milkywaySection.scrollIntoView({
-      behavior: "smooth"
-    });
-  }, 999);
-});
-window.addEventListener('load', function () {
-  introSection.classList.add('appear-animation');
-  setTimeout(function () {
-    introSection.classList.remove('appear-animation');
-    introSection.style.opacity = '1';
-  }, 1000);
-});
+if (startingBtn) {
+  startingBtn.addEventListener('click', function () {
+    if (introSection.classList.contains('appear-animation')) {
+      introSection.classList.remove('appear-animation');
+    }
+    introSection.classList.add('squish-animation');
+    setTimeout(function () {
+      introSection.classList.remove('squish-animation');
+      milkywaySection.scrollIntoView({
+        behavior: "smooth"
+      });
+    }, 999);
+  });
+}
+if (introSection) {
+  window.addEventListener('load', function () {
+    introSection.classList.add('appear-animation');
+    setTimeout(function () {
+      introSection.classList.remove('appear-animation');
+      introSection.style.opacity = '1';
+    }, 1000);
+  });
+}
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
@@ -234,11 +283,12 @@ document.addEventListener('click', function (e) {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
         var image = _step.value;
         if (element.id === image.id) {
-          fetch("./popups_html/".concat(element.id, "_popup.html")).then(function (res) {
+          fetch("http://localhost:8080/popup/".concat(element.id)).then(function (res) {
             if (!res.ok) {
               throw new Error('Erro na requisição do popup');
             } else {
               res.text().then(function (html) {
+                console.dir(res);
                 getPopup(html);
               });
             }
@@ -286,18 +336,21 @@ function closeAction(closeIcon) {
 /*!***********************************************!*\
   !*** ./docs/frontend/js/window_animations.js ***!
   \***********************************************/
-var introRect = document.querySelector(".intro-section").getBoundingClientRect();
-var introVh = introRect.height;
-var headerRect = document.querySelector("header").getBoundingClientRect();
-var headerVh = headerRect.height;
-document.addEventListener("scroll", function () {
-  var verticalScroll = window.scrollY;
-  if (verticalScroll >= introVh - headerVh) {
-    document.body.classList.add('change-scrollbar');
-  } else if (verticalScroll < introVh - headerVh) {
-    document.body.classList.remove('change-scrollbar');
-  }
-});
+var introductionSection = document.querySelector(".intro-section");
+var headerSection = document.querySelector("header");
+if (introductionSection && headerSection) {
+  var introRect = introductionSection.getBoundingClientRect();
+  var headerRect = headerSection.getBoundingClientRect();
+  var headerVh = headerRect.height;
+  document.addEventListener("scroll", function () {
+    var verticalScroll = window.scrollY;
+    if (verticalScroll >= introVh - headerVh) {
+      document.body.classList.add('change-scrollbar');
+    } else if (verticalScroll < introVh - headerVh) {
+      document.body.classList.remove('change-scrollbar');
+    }
+  });
+}
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
@@ -379,6 +432,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_general_footer_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/general/footer.css */ "./docs/frontend/css/general/footer.css");
 /* harmony import */ var _css_popups_footer_popups_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/popups/footer_popups.css */ "./docs/frontend/css/popups/footer_popups.css");
 /* harmony import */ var _css_general_fonts_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/fonts.css */ "./docs/frontend/css/general/fonts.css");
+/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./docs/frontend/css/galaxies/general_galaxies.css");
+/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./docs/frontend/css/galaxies/main_galaxies.css");
+/* harmony import */ var _css_popups_desktop_popups_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/popups/desktop_popups.css */ "./docs/frontend/css/popups/desktop_popups.css");
+
+
+
 
 
 

@@ -21,16 +21,16 @@ main{
     animation: appear 1s ease-in-out 0.1s 1 normal forwards;
 }
 
-/* ---------- INTRODUCTION SECTION - MILKYWAY ---------- */
+/* ---------- INTRODUCTION SECTION ---------- */
 
-.intro-text{
+.galaxies-intro-text{
     text-align: center;
     padding: 0 30px;
     padding: 20vh 0;
     animation: grow 1s linear 0s 1 normal both;
 }
 
-.intro-text p{
+.galaxies-intro-text p{
     font-family: 'Inconsolata';
     font-size: 1.5em;
     margin: auto;
@@ -38,7 +38,7 @@ main{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.intro-text .highlight{
+.galaxies-intro-text .highlight{
     font-family: 'Rubik Mono One';
     font-size: 3em; 
     font-style: italic;
@@ -54,7 +54,7 @@ main{
     color: yellow;
 }
 
-.intro-text .guide-text{
+.galaxies-intro-text .guide-text{
     font-size: 1.3em;
 }
 

@@ -9,17 +9,23 @@ const triangleRocket = document.querySelector('#triangle-rocket')
 
 // ---------- NAVEGATION ----------
 
-milkywayBtn.addEventListener('click', () => {
-    window.location.assign('milkyway.html')
-})
+if (milkywayBtn){
+    milkywayBtn.addEventListener('click', () => {
+        window.location.href = 'milkyway'
+    })
+}
 
-andromedaBtn.addEventListener('click', () => {
-    window.location.assign('andromeda.html')
-})
+if (andromedaBtn){
+    andromedaBtn.addEventListener('click', () => {
+        window.location.href = 'andromeda'
+    })
+}
 
-triangleBtn.addEventListener('click', () => {
-    window.location.assign('triangle.html')
-})
+if (triangleBtn){
+    triangleBtn.addEventListener('click', () => {
+        window.location.href = 'triangle'
+    })
+}
 
 // ---------- ROCKET ANIMATION ----------
 
@@ -55,21 +61,25 @@ const startingBtn = document.querySelector('.intro-btn')
 const milkywaySection = document.querySelector('.milkyway-section')
 const introSection = document.querySelector('.intro-section')
 
-startingBtn.addEventListener('click', () => {
-    if (introSection.classList.contains('appear-animation')) {
-        introSection.classList.remove('appear-animation')
-    }
-    introSection.classList.add('squish-animation')
-    setTimeout(() => {
-        introSection.classList.remove('squish-animation')
-        milkywaySection.scrollIntoView({behavior: "smooth"})
-    }, 999)
-})
+if (startingBtn){
+    startingBtn.addEventListener('click', () => {
+        if (introSection.classList.contains('appear-animation')) {
+            introSection.classList.remove('appear-animation')
+        }
+        introSection.classList.add('squish-animation')
+        setTimeout(() => {
+            introSection.classList.remove('squish-animation')
+            milkywaySection.scrollIntoView({behavior: "smooth"})
+        }, 999)
+    })
+}
 
-window.addEventListener('load', () => {
-    introSection.classList.add('appear-animation')
-    setTimeout(() => {
-        introSection.classList.remove('appear-animation')
-        introSection.style.opacity = '1'
-    }, 1000)
-})
+if (introSection){
+    window.addEventListener('load', () => {
+        introSection.classList.add('appear-animation')
+        setTimeout(() => {
+            introSection.classList.remove('appear-animation')
+            introSection.style.opacity = '1'
+        }, 1000)
+    })
+}

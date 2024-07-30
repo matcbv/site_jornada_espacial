@@ -8,7 +8,7 @@ const homeController = {
     },
 
     andromeda: (req, res) => {
-        return res.render('amdromeda.html')
+        return res.render('andromeda.html')
     },
 
     triangle: (req, res) => {

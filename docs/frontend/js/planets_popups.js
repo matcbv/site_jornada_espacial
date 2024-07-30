@@ -6,11 +6,12 @@ document.addEventListener('click', (e) => {
     if(element.tagName.toLowerCase() === "img"){
         for(const image of images){
             if (element.id === image.id) {
-                fetch(`./popups_html/${element.id}_popup.html`).then((res) => {
+                fetch(`http://localhost:8080/popup/${element.id}`).then((res) => {
                     if (!res.ok){
                         throw new Error('Erro na requisição do popup')
                     } else{
                         res.text().then((html) => {
+                            console.dir(res)
                             getPopup(html)
                         })
                     }

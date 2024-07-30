@@ -5,3 +5,6 @@ import "../css/index/main_index.css";
 import "../css/general/footer.css";
 import "../css/popups/footer_popups.css";
 import "../css/general/fonts.css";
+import "../css/galaxies/general_galaxies.css"
+import "../css/galaxies/main_galaxies.css"
+import "../css/popups/desktop_popups.css"
