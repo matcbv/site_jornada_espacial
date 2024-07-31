@@ -129,6 +129,19 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
+/***/ }),
+
+/***/ "./docs/frontend/css/popups/idea_popup.css":
+/*!*************************************************!*\
+  !*** ./docs/frontend/css/popups/idea_popup.css ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
 /***/ })
 
 /******/ 	});
@@ -273,10 +286,12 @@ function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 var images = document.querySelectorAll('img');
-var divPopup = document.querySelector('.popup');
+var galaxiesMain = document.querySelector('.galaxies-main');
+
+// Fetch para a requisição dos popups
 document.addEventListener('click', function (e) {
   var element = e.target;
-  if (element.tagName.toLowerCase() === "img") {
+  if (element.tagName.toLowerCase() === "img" && !element.classList.contains('close-icon') && !element.classList.contains('idea-icon')) {
     var _iterator = _createForOfIteratorHelper(images),
       _step;
     try {
@@ -285,10 +300,9 @@ document.addEventListener('click', function (e) {
         if (element.id === image.id) {
           fetch("http://localhost:8080/popup/".concat(element.id)).then(function (res) {
             if (!res.ok) {
-              throw new Error('Erro na requisição do popup');
+              throw new Error('Erro na requisição do popup.');
             } else {
               res.text().then(function (html) {
-                console.dir(res);
                 getPopup(html);
               });
             }
@@ -302,19 +316,44 @@ document.addEventListener('click', function (e) {
     }
   }
 });
+
+// Função para a requisição do pupup de idéias
+function openIdeaPopup(ideaIcon) {
+  ideaIcon.addEventListener('click', function () {
+    fetch("http://localhost:8080/popup/idea").then(function (res) {
+      if (!res.ok) {
+        throw new Error('Erro na requisição do popup de idéias.');
+      } else {
+        res.text().then(function (html) {
+          getPopup(html);
+        });
+      }
+    });
+  });
+}
+
+// Função para adição do conteúdo obtido na página
 function getPopup(_x) {
   return _getPopup.apply(this, arguments);
-}
+} // Função do botão de fechar o popup
 function _getPopup() {
   _getPopup = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(html) {
+    var divPopup, ideaIcon;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          divPopup.style.display = 'flex';
-          divPopup.classList.add('appear-animation');
-          divPopup.innerHTML = html;
-          closeAction(document.querySelector('#close-icon'));
-        case 4:
+          if (galaxiesMain) {
+            divPopup = document.createElement('div');
+            divPopup.style.display = 'flex';
+            divPopup.classList.add('appear-animation', 'popup');
+            divPopup.innerHTML = html;
+            galaxiesMain.appendChild(divPopup);
+            console.log('Passei aqui!');
+            closeAction(divPopup, document.querySelector('.close-icon'));
+            ideaIcon = document.querySelector('.idea-icon');
+            openIdeaPopup(ideaIcon);
+          }
+        case 1:
         case "end":
           return _context.stop();
       }
@@ -322,8 +361,9 @@ function _getPopup() {
   }));
   return _getPopup.apply(this, arguments);
 }
-function closeAction(closeIcon) {
+function closeAction(divPopup, closeIcon) {
   closeIcon.addEventListener('click', function () {
+    console.log('Ativado');
     divPopup.style.display = 'none';
     divPopup.innerHTML = '';
     divPopup.classList.remove('appear-animation');
@@ -438,6 +478,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./docs/frontend/css/galaxies/general_galaxies.css");
 /* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./docs/frontend/css/galaxies/main_galaxies.css");
 /* harmony import */ var _css_popups_desktop_popups_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/popups/desktop_popups.css */ "./docs/frontend/css/popups/desktop_popups.css");
+/* harmony import */ var _css_popups_idea_popup_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/popups/idea_popup.css */ "./docs/frontend/css/popups/idea_popup.css");
+
 
 
 

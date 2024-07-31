@@ -8,3 +8,4 @@ import "../css/general/fonts.css";
 import "../css/galaxies/general_galaxies.css"
 import "../css/galaxies/main_galaxies.css"
 import "../css/popups/desktop_popups.css"
+import "../css/popups/idea_popup.css"

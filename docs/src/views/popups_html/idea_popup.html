@@ -1,15 +1,39 @@
 <div class="popup-box">
-    <div class="popup-content">
+    <div class="idea-popup-content">
         <div class="icons-div">
-            <img id="close-icon" src="images/close_icon.png" alt="Ícone de fechamento">
+            <img class="close-icon" src="images/close_icon.png" alt="Ícone de fechamento">
+        </div>
+        <div class="idea-text-div">
+            <h2>Espaço Ideal</h2>
+            <p>Bem-vindo ao Espaço Ideal mochileiro! Pegou o trogadilho? Espaço Sideral...é... Mudando de assunto! Aqui você pode opinar sobre nossa viagem no espaço dando idéias, sugestões e apontando eventuais problemas ou informações incorretas que encontrar</p>
         </div>
         <div class="form-div">
             <form action="/idea_data" method="post">
                 <div class="radio-div">
-                    <input type="radio" name="idea" id="error">
-                    <input type="radio" name="idea" id="idea">
+                    <h3>Assunto:</h3>
+                    <div>
+                        <label for="idea">Ideia/Sugestão</label>
+                        <input checked type="radio" name="subject" id="idea">
+                        <label for="fix">Correção </label>
+                        <input type="radio" name="subject" id="fix">
+                    </div>
+                    <div>
+                        <label for="error">Mau funcionamento</label>
+                        <input type="radio" name="subject" id="error">
+                        <label for="other">Outro assunto</label>
+                        <input type="radio" name="subject" id="other">
+                    </div>
                 </div>
-                <textarea name="text" id="text"></textarea>
+                <div class="textarea-div">
+                    <label for="subject-text">Mensagem</label>
+                    <textarea name="subject-text" id="subject-text" placeholder="Deixe aqui sua mensagem..."></textarea>
+                </div>
+                <label for="email">E-mail para contato: </label>
+                <input type="email" name="email" id="email">
+                <div>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpar mensagem</button>
+                </div>
             </form>
         </div>
     </div>

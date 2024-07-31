@@ -955,8 +955,57 @@ main img:hover{
     right: 15px;
 }
 
-#close-icon{
+.close-icon{
     margin-bottom: 10px;
+}
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/popups/idea_popup.css ***!
+  \*******************************************************************************************/
+.idea-popup-content{
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    width: 70%;
+    height: auto;
+    background-color: rgb(16, 13, 21);
+    border: 2px solid rgb(175, 175, 0);
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.idea-popup-content h2{
+    text-align: left;
+    font-size: 1.5em;
+    color: yellow;
+    font-family: 'Xanh Mono';
+    padding-bottom: 25px;
+    font-style: italic;
+}
+
+.idea-popup-content p{
+    text-align: left;
+    color: white;
+    font-family: 'Inconsolata';
+    font-size: 1.2em;
+}
+
+.idea-text-div{
+    width: 50%;
+    border-right: 2px solid rgb(199, 199, 0);
+    margin-right: 30px;
+    padding-right: 20px;
+}
+
+.form-div{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50%;
+}
+
+.radio-div{
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 /*# sourceMappingURL=styles.css.map*/
