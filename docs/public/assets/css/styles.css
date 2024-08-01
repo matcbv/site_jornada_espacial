@@ -60,6 +60,11 @@ header{
     z-index: 998;
 }
 
+.logo{
+    width: 60px;
+    height: 60px;
+}
+
 .main-ul{
     height: 100%;
     display: flex;
@@ -67,19 +72,24 @@ header{
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    padding: 25px 0;
+    padding: 10px 0;
 }
 
 .main-ul:hover{
     box-shadow: 0 3px 12px rgba(49, 37, 58, 0.5);
 }
 
-.main-ul li a{
+.main-ul li > a{
     padding: 9px;
     border-radius: 5px;
     border: 2px solid rgb(49, 37, 58);
     color: rgb(199, 199, 0);
     text-decoration: none;
+}
+
+.main-ul li span a{
+    display: block;
+    height: 60px;
 }
 
 #spacer{
@@ -89,7 +99,7 @@ header{
     animation: none;
 }
 
-.main-ul li a:hover{
+.main-ul li > a:hover{
     cursor: pointer;
     animation: background-gradient 0.2s ease-in-out 0s 1 normal forwards;
 }
@@ -455,7 +465,7 @@ header{
     display: block;
     width: auto;
     margin-left: 36px;
-    padding: 15px 20px;
+    padding: 10px 15px;
     background-color: transparent;
     border-radius: 7px;
     color: white;

@@ -54,11 +54,11 @@ app.use(session({
 }))
 
 // Configurações adicionais de segurança
-const csrf = require('csurf')
-app.use(csrf())
-
 const helmet = require('helmet')
 app.use(helmet())
+
+const csrf = require('csurf')
+app.use(csrf())
 
 const flash = require('connect-flash')
 app.use(flash())

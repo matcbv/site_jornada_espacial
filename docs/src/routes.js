@@ -17,7 +17,7 @@ router.get('/andromeda', homeController.andromeda)
 router.get('/triangle', homeController.triangle)
 // Popups
 router.get('/popup/:body', popupController.getPopup)
-// Popup de idéias
+// Popup de ideias
 router.post('/popup/idea', formController.sendIdea)
 
 module.exports = router
