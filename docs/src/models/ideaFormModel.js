@@ -2,12 +2,12 @@ const { types } = require('@babel/core')
 const mongoose = require('mongoose')
 
 const ideaSchema = new mongoose.Schema({
-    subject: {type: string, require: true},
-    text: {type: string, require: true},
-    email: string
+    subject: {type: String, require: true},
+    text: {type: String, require: true},
+    email: String
 })
 
-const idealModel = new mongoose.Model(ideaSchema)
+const idealModel = new mongoose.model('IdeaForm', ideaSchema)
 
 class IdeaForm{
     constructor(data){
@@ -17,7 +17,7 @@ class IdeaForm{
     }
 
     checkData = () => {
-        return
+        console.log(this)
     }
 
     sendData = (req, res) => {

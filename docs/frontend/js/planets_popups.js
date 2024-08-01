@@ -45,8 +45,7 @@ async function getPopup(html){
         divPopup.innerHTML = html
         galaxiesMain.appendChild(divPopup)
         
-        console.log('Passei aqui!')
-        closeAction(divPopup, document.querySelector('.close-icon'))
+        closeAction(divPopup, divPopup.querySelector('.close-icon'))
         
         const ideaIcon = document.querySelector('.idea-icon')
         openIdeaPopup(ideaIcon)
@@ -56,9 +55,6 @@ async function getPopup(html){
 // Função do botão de fechar o popup
 function closeAction(divPopup, closeIcon) {
     closeIcon.addEventListener('click', () => {
-        console.log('Ativado')
-        divPopup.style.display = 'none'
-        divPopup.innerHTML = ''
-        divPopup.classList.remove('appear-animation')
+        galaxiesMain.removeChild(divPopup)
     })
 }

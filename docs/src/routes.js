@@ -18,6 +18,6 @@ router.get('/triangle', homeController.triangle)
 // Popups
 router.get('/popup/:body', popupController.getPopup)
 // Popup de idéias
-//router.post('/popup/idea', new formController.sendData)
+router.post('/popup/idea', formController.sendIdea)
 
 module.exports = router

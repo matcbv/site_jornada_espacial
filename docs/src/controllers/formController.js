@@ -1,7 +1,10 @@
 const ideaFormModel = require('../models/ideaFormModel')
 
-function sendIdea(req, res){
-    
+const formController = {
+    sendIdea: (req, res) => {
+        ideaFormModel.checkData()
+    }
 }
 
-module.exports = IdeaForm
+
+module.exports = formController

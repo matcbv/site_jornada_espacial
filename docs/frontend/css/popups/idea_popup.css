@@ -46,6 +46,12 @@
     font-size: 1.2em;
 }
 
+.idea-text-div .highlight{
+    color: yellow;
+    font-family: 'Xanh Mono';
+    font-style: italic;
+}
+
 .vertical-row{
     display: block;
     width: 2px;

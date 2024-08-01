@@ -348,8 +348,7 @@ function _getPopup() {
             divPopup.classList.add('appear-animation', 'popup');
             divPopup.innerHTML = html;
             galaxiesMain.appendChild(divPopup);
-            console.log('Passei aqui!');
-            closeAction(divPopup, document.querySelector('.close-icon'));
+            closeAction(divPopup, divPopup.querySelector('.close-icon'));
             ideaIcon = document.querySelector('.idea-icon');
             openIdeaPopup(ideaIcon);
           }
@@ -363,10 +362,7 @@ function _getPopup() {
 }
 function closeAction(divPopup, closeIcon) {
   closeIcon.addEventListener('click', function () {
-    console.log('Ativado');
-    divPopup.style.display = 'none';
-    divPopup.innerHTML = '';
-    divPopup.classList.remove('appear-animation');
+    galaxiesMain.removeChild(divPopup);
   });
 }
 })();
