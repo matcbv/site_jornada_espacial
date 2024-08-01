@@ -4,10 +4,11 @@
     display: flex;
     flex-flow: row nowrap;
     position: relative;
+    justify-content: space-evenly;
     width: 70%;
-    height: auto;
+    max-height: 80%;
     background-color: rgb(16, 13, 21);
-    border: 2px solid rgb(175, 175, 0);
+    border: 2px solid rgba(175, 175, 0, 0.8);
     box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
     border-radius: 10px;
     padding: 50px;
@@ -15,34 +16,164 @@
 
 .idea-popup-content h2{
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1.7em;
     color: yellow;
     font-family: 'Xanh Mono';
     padding-bottom: 25px;
     font-style: italic;
 }
 
-.idea-popup-content p{
+.idea-popup-content h3{
+    font-size: 1.3em;
+    font-family: monospace;
+    color: rgb(199, 199, 0);
+    width: 100%;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.idea-text-div{
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    width: 50%;
+}
+
+.idea-text-div p{
     text-align: left;
     color: white;
     font-family: 'Inconsolata';
     font-size: 1.2em;
 }
 
-.idea-text-div{
-    width: 50%;
-    border-right: 2px solid rgb(199, 199, 0);
-    margin-right: 30px;
-    padding-right: 20px;
+.vertical-row{
+    display: block;
+    width: 2px;
+    background-color:rgb(199, 199, 0);
+    margin: 0 30px;
 }
 
-.form-div{
-    display: flex;
-    flex-flow: column nowrap;
+ form{
+    display: grid;
+    grid-template:  'radios' auto
+                    'textarea' auto
+                    'email' auto
+                    'buttons' auto
+                    / auto;
     width: 50%;
+    align-items: center;
+}
+
+form > *:not(.form-buttons-div){
+    margin-bottom: 15px
+}
+
+label{
+    color: rgb(199, 199, 0);
+    font-family: monospace;
+    font-size: 1.2em;
 }
 
 .radio-div{
+    grid-area: radios;
     display: flex;
     flex-flow: column nowrap;
+}
+
+.radio-div input:checked + label{
+    color: rgb(199, 199, 0);
+}
+
+.radio-div > div label{
+    color:  white;
+}
+
+.input-div{
+    margin-bottom: 5px;
+}
+
+.textarea-div{
+    grid-area: textarea;
+    
+}
+
+.textarea-div > * {
+    display: block;
+    width: 100%;
+}
+
+textarea{
+    border-radius: 5px;
+    border: none;
+    font-size: 1.2em;
+    padding: 10px;
+    margin-top: 5px;
+    resize: none;
+    overflow: hidden;
+    max-width: 80%;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+.email-div{
+    grid-area: email;
+    
+}
+
+.email-div > * {
+    display: block;
+    width: 100%;
+}
+
+.email-div input{
+    border-radius: 5px;
+    border: none;
+    font-size: 1.1em;
+    font-family: monospace;
+    padding: 5px 10px;
+    margin-top: 5px;
+    max-width: 80%;
+}
+
+.email-div input:focus{
+    outline: none;
+}
+
+.email-div p{
+    margin-bottom: 4px;
+    font-family: monospace;
+}
+
+.form-buttons-div{
+    grid-area: buttons;
+}
+
+.form-buttons-div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.form-buttons-div button{
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    font-family: 'Inconsolata';
+    font-weight: bold;
+    transition: transform 0.2s linear 0s;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: 1px solid yellow;
+}
+
+.form-buttons-div button:first-child{
+    margin-right: 10%;
+}
+
+.form-buttons-div button:hover{
+    transform: scale(1.1)
 }

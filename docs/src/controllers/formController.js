@@ -1,7 +1,7 @@
-class IdeaForm{
-    constructor(data){
-        this.subject = data.subject,
-        this.text = data.subject,
-        this.errorList = []
-    }
+const ideaFormModel = require('../models/ideaFormModel')
+
+function sendIdea(req, res){
+    
 }
+
+module.exports = IdeaForm

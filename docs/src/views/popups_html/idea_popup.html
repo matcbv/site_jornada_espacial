@@ -1,40 +1,42 @@
 <div class="popup-box">
     <div class="idea-popup-content">
         <div class="icons-div">
-            <img class="close-icon" src="images/close_icon.png" alt="Ícone de fechamento">
+            <img class="close-icon" src="images/close_icon.png" alt="Ícone de fechamento" title="Fechar">
         </div>
         <div class="idea-text-div">
             <h2>Espaço Ideal</h2>
-            <p>Bem-vindo ao Espaço Ideal mochileiro! Pegou o trogadilho? Espaço Sideral...é... Mudando de assunto! Aqui você pode opinar sobre nossa viagem no espaço dando idéias, sugestões e apontando eventuais problemas ou informações incorretas que encontrar</p>
+            <p>Bem-vindo ao Espaço Ideal <span class="highlight">Mochileiro!</span> Pegou o trocadilho? Espaço Sideral...Espaço Ideal... É, devo admitir que não sou o melhor em piadas, mas afirmo que não há guia espacial melhor que eu nesse Universo! Entretando, não é por isso que você, Mochileiro, não possa me ajudar também! No Espaço Ideal você pode opinar sobre nossa viagem no espaço dando idéias, sugestões e apontando problemas ou informações incorretas que encontrar.</p>
         </div>
-        <div class="form-div">
-            <form action="/idea_data" method="post">
-                <div class="radio-div">
-                    <h3>Assunto:</h3>
-                    <div>
-                        <label for="idea">Ideia/Sugestão</label>
-                        <input checked type="radio" name="subject" id="idea">
-                        <label for="fix">Correção </label>
-                        <input type="radio" name="subject" id="fix">
-                    </div>
-                    <div>
-                        <label for="error">Mau funcionamento</label>
-                        <input type="radio" name="subject" id="error">
-                        <label for="other">Outro assunto</label>
-                        <input type="radio" name="subject" id="other">
-                    </div>
+        <span class="vertical-row"></span>
+        <form action="/popup/idea" method="post">
+            <div class="radio-div">
+                <h3>Assunto:</h3>
+                <div class="input-div">
+                    <input checked type="radio" name="subject" id="idea">
+                    <label for="idea">Ideia/Sugestão</label>
                 </div>
-                <div class="textarea-div">
-                    <label for="subject-text">Mensagem</label>
-                    <textarea name="subject-text" id="subject-text" placeholder="Deixe aqui sua mensagem..."></textarea>
+                <div class="input-div">
+                    <input type="radio" name="subject" id="fix">
+                    <label for="fix">Correção </label>
                 </div>
-                <label for="email">E-mail para contato: </label>
-                <input type="email" name="email" id="email">
-                <div>
-                    <button type="submit">Enviar</button>
-                    <button type="reset">Limpar mensagem</button>
+                <div class="input-div">
+                    <input type="radio" name="subject" id="other">
+                    <label for="other">Outro assunto</label>
                 </div>
-            </form>
-        </div>
+            </div>
+            <div class="textarea-div">
+                <label for="subject-text">Mensagem:</label>
+                <textarea name="subject-text" id="subject-text" placeholder="Deixe aqui sua mensagem..." rows="4"></textarea>
+            </div>
+            <div class="email-div">
+                <p>(Não obrigatório)</p>
+                <label for="email">E-mail para contato:</label>
+                <input type="email" name="email" id="email" placeholder="Informe aqui seu e-mail">
+            </div>
+            <div class="form-buttons-div">
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar mensagem</button>
+            </div>
+        </form>
     </div>
 </div>

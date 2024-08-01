@@ -48,6 +48,8 @@
     color: white;
     font-family: 'Inconsolata';
     font-size: 1.2em;
+    width: 90%;
+    margin: auto;
 }
 
 .icons-div{

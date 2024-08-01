@@ -5,6 +5,7 @@ const router = express.Router()
 // Importando os middlewares de controle de rota
 const homeController = require('./controllers/homeController')
 const popupController = require('./controllers/popupController')
+const formController = require('./controllers/formController')
 
 // Página inicial
 router.get('/', homeController.homePage)
@@ -16,5 +17,7 @@ router.get('/andromeda', homeController.andromeda)
 router.get('/triangle', homeController.triangle)
 // Popups
 router.get('/popup/:body', popupController.getPopup)
+// Popup de idéias
+//router.post('/popup/idea', new formController.sendData)
 
 module.exports = router
