@@ -16,10 +16,8 @@ class IdeaForm{
         this.errorList = []
     }
 
-    checkData = () > {
-        for (){
-            
-        }
+    checkData = () => {
+        return
     }
 
     sendData = (req, res) => {
