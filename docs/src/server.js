@@ -57,16 +57,16 @@ app.use(session({
 const helmet = require('helmet')
 app.use(helmet())
 
-const csrf = require('csurf')
-app.use(csrf())
+// const csrf = require('csurf')
+// app.use(csrf())
 
 const flash = require('connect-flash')
 app.use(flash())
 
 // Aplicando os middlewares globais
-const {csrfMiddleware, globalMiddleware} = require('./middlewares/globalMiddlewares')
+const {globalMiddleware} = require('./middlewares/globalMiddlewares')
 app.use(globalMiddleware)
-app.use(csrfMiddleware)
+//app.use(csrfMiddleware)
 
 // Adicionando nosso roteador de rotas à aplicação
 const routes = require('./routes')

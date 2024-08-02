@@ -11,16 +11,20 @@ const idealModel = new mongoose.model('IdeaForm', ideaSchema)
 
 class IdeaForm{
     constructor(data){
-        this.data = data,
-        // this.subject = data.subject,
-        // this.text = data.subject,
-        // this.email = data.email,
+        this.subject = data.subject,
+        this.text = data.text,
+        this.email = data.email,
         this.errorList = []
     }
 
     checkData = () => {
-        console.dir(this)
-        return
+        if(typeof this.subject !== 'string'){
+            this.subject = ''
+        } else if(typeof this.text !== 'string'){
+            this.text = ''
+        } else if(typeof this.email !== 'string'){
+            this.email = ''
+        }
     }
 
     sendData = (req, res) => {

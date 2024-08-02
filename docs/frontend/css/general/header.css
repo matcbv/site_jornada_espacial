@@ -11,6 +11,7 @@ header{
 .logo{
     width: 60px;
     height: 60px;
+    margin-right: 8px;
 }
 
 .main-ul{
@@ -34,14 +35,14 @@ header{
 .main-ul li > a{
     padding: 9px;
     border-radius: 5px;
-    border: 2px solid rgb(49, 37, 58);
+    border: 2px solid rgb(70, 58, 79);
     color: rgb(199, 199, 0);
 }
 
 .logo-div{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 200px;
 }
@@ -50,8 +51,12 @@ header{
     text-align: center;
     font-family: monospace;
     font-size: 1em;
-    color: rgb(199, 199, 0);
-    margin: 2px 0;
+    color: white;
+    text-shadow: 0 0 5px rgb(220, 190, 233);
+}
+
+.logo-div p:first-child{
+    margin: 0 0 2px -3px;
 }
 
 #spacer{
