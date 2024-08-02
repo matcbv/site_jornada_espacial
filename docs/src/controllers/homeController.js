@@ -13,6 +13,10 @@ const homeController = {
 
     triangle: (req, res) => {
         return res.render('triangle.html')
+    },
+
+    ideaForm: (req, res) => {
+        return res.render('ideaForm.html')
     }
 }
 

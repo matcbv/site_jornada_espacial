@@ -8,9 +8,11 @@
             <p>Bem-vindo ao Espaço Ideal, <span class="highlight">Mochileiro!</span> Pegou o trocadilho? Espaço Sideral...Espaço Ideal... É, devo admitir que não sou o melhor em piadas, mas afirmo que não há guia espacial melhor que eu nesse Universo! Entretando, não é por isso que você, Mochileiro, não possa me ajudar também! No Espaço Ideal você pode opinar sobre nossa viagem no espaço dando idéias, sugestões e apontando problemas ou informações incorretas que encontrar.</p>
         </div>
         <span class="vertical-row"></span>
-        <form action="popup/idea" method="post">
-            <!-- <input type="hidden" name="_csrf" value="<%= csrfToken %>"> -->
+        <form action="ideaForm/sendIdea" method="post">
             <div class="radio-div">
+                <% if(subjectError !== ''){ %>
+                    <span><%= subjectError %></span>
+                <% } %>
                 <h3>Assunto:</h3>
                 <div class="input-div">
                     <input checked type="radio" name="subject" id="idea" value="idea">
@@ -25,9 +27,12 @@
                     <label for="other">Outro assunto</label>
                 </div>
             </div>
+            <% if(textError !== ''){ %>
+                <span><%= textError %></span>
+            <% } %>
             <div class="textarea-div">
-                <label for="subject-text">Mensagem:</label>
-                <textarea name="subject-text" id="subject-text" placeholder="Deixe aqui sua mensagem..." rows="4"></textarea>
+                <label for="text">Mensagem:</label>
+                <textarea name="text" id="subject-text" placeholder="Deixe aqui sua mensagem..." rows="4"></textarea>
             </div>
             <div class="email-div">
                 <p>(Não obrigatório)</p>

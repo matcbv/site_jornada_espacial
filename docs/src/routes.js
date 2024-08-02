@@ -15,9 +15,11 @@ router.get('/milkyway', homeController.milkyway)
 router.get('/andromeda', homeController.andromeda)
 // Seção Triângulo
 router.get('/triangle', homeController.triangle)
+// Popup de ideias
+router.get('/ideaForm', homeController.ideaForm)
+// Enviando dados do formulario
+router.post('/ideaForm/sendIdea', formController.sendIdea)
 // Popups
 router.get('/popup/:body', popupController.getPopup)
-// Popup de ideias
-router.post('/popup/idea', formController.sendIdea)
 
 module.exports = router

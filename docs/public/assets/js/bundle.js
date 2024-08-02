@@ -348,7 +348,7 @@ document.addEventListener('click', function (e) {
 // Função para a requisição do pupup de idéias
 function openIdeaPopup(ideaIcon) {
   ideaIcon.addEventListener('click', function () {
-    fetch("http://localhost:8080/popup/idea").then(function (res) {
+    fetch("http://localhost:8080/ideaForm").then(function (res) {
       if (!res.ok) {
         throw new Error('Erro na requisição do popup de idéias.');
       } else {
