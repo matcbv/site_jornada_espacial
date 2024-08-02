@@ -1,6 +1,5 @@
 function csrfMiddleware(req, res, next){
     res.locals.csrfToken = req.csrfToken()
-    console.log(res.locals.csrfToken)
     next()
 }
 

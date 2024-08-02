@@ -18,6 +18,6 @@ router.get('/triangle', homeController.triangle)
 // Popups
 router.get('/popup/:body', popupController.getPopup)
 // Popup de ideias
-router.post('/popup/idea', formController.sendIdea)
+router.post('/popup/idea', () => {console.log('Token:', csrfToken)})
 
 module.exports = router

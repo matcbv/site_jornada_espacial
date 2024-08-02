@@ -1,10 +1,15 @@
 .popup-box-footer{
+    display: flex;
+    align-items: center;
     width: 60%;
     background-color: rgba(27, 22, 35);
     padding: 40px 50px 40px 0;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
     position: relative;
+    min-height: 35%;
+    max-height: 70%;
+    border: 2px solid yellow;
 }
 
 .popup-content-footer{
@@ -19,17 +24,14 @@
     text-align: justify;
     font-family: 'Inconsolata';
     font-size: 1.2em;
-    padding-bottom: 20px;
     margin: auto;
 }
 
-.popup-text-footer p:nth-child(2){
+.popup-text-footer p:nth-child(3){
     text-align: center;
-    padding: 15px 0 5px 0;
     color: rgb(252, 213, 63);
     font-family: 'Xanh Mono';
-    font-size: 1.3em;
-    border-top: 2px solid rgb(199, 199, 0);
+    font-size: 1.3em
 }
 
 .popup-text-footer ul{
@@ -64,15 +66,15 @@
     color: rgb(252, 213, 63);
 }
 
-#footer-close-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-}
-
 #astronaut-img{
     transition: none;
     transform: none;
     cursor: default;
+}
+.horizontal-row{
+    display: block;
+    width: 90%;
+    height: 2px;
+    background-color: rgb(199, 199, 0);
+    margin: 20px auto;
 }

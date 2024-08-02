@@ -79,17 +79,31 @@ header{
     box-shadow: 0 3px 12px rgba(49, 37, 58, 0.5);
 }
 
+.main-ul li a{
+    text-decoration: none;
+}
+
 .main-ul li > a{
     padding: 9px;
     border-radius: 5px;
     border: 2px solid rgb(49, 37, 58);
     color: rgb(199, 199, 0);
-    text-decoration: none;
 }
 
-.main-ul li span a{
-    display: block;
-    height: 60px;
+.logo-div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 200px;
+}
+
+.logo-div span p{
+    text-align: center;
+    font-family: monospace;
+    font-size: 1em;
+    color: rgb(199, 199, 0);
+    margin: 2px 0;
 }
 
 #spacer{
@@ -348,7 +362,7 @@ header{
 }
 
 #milkyway-btn{
-    border: 3px solid rgb(38, 54, 140);
+    border: 2px solid rgb(38, 54, 140);
 }
 
 #milkyway-btn:hover{
@@ -381,7 +395,7 @@ header{
 }
 
 #andromeda-btn{
-    border: 3px solid rgb(111, 96, 139);
+    border: 2px solid rgb(111, 96, 139);
 }
 
 #andromeda-btn:hover{
@@ -414,7 +428,7 @@ header{
 }
 
 #triangle-btn{
-    border: 3px solid rgb(207, 144, 169);
+    border: 2px solid rgb(207, 144, 169);
 }
 
 #triangle-btn:hover{
@@ -500,7 +514,7 @@ footer{
     background-color: rgba(27, 22, 35);
     border-top: 2px solid rgb(49, 37, 58);
     box-shadow: 0 -7px 15px rgba(27, 22, 35);
-    padding: 15px 30px;
+    padding: 10px 30px;
 }
 
 .footer-links-div{
@@ -520,7 +534,7 @@ footer{
 
 .footer-links-div li{
     color: white;
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-family: monospace;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -533,7 +547,7 @@ footer{
 }
 
 .footer-links-div p{
-    font-size: 1.3em;
+    font-size: 1.2em;
     padding-top: 15px;
     font-family: monospace;
     color: rgb(199, 199, 0);
@@ -599,12 +613,17 @@ footer button:hover{
   !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/popups/footer_popups.css ***!
   \**********************************************************************************************/
 .popup-box-footer{
+    display: flex;
+    align-items: center;
     width: 60%;
     background-color: rgba(27, 22, 35);
     padding: 40px 50px 40px 0;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
     position: relative;
+    min-height: 35%;
+    max-height: 70%;
+    border: 2px solid yellow;
 }
 
 .popup-content-footer{
@@ -619,17 +638,14 @@ footer button:hover{
     text-align: justify;
     font-family: 'Inconsolata';
     font-size: 1.2em;
-    padding-bottom: 20px;
     margin: auto;
 }
 
-.popup-text-footer p:nth-child(2){
+.popup-text-footer p:nth-child(3){
     text-align: center;
-    padding: 15px 0 5px 0;
     color: rgb(252, 213, 63);
     font-family: 'Xanh Mono';
-    font-size: 1.3em;
-    border-top: 2px solid rgb(199, 199, 0);
+    font-size: 1.3em
 }
 
 .popup-text-footer ul{
@@ -664,18 +680,19 @@ footer button:hover{
     color: rgb(252, 213, 63);
 }
 
-#footer-close-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-}
-
 #astronaut-img{
     transition: none;
     transform: none;
     cursor: default;
 }
+.horizontal-row{
+    display: block;
+    width: 90%;
+    height: 2px;
+    background-color: rgb(199, 199, 0);
+    margin: 20px auto;
+}
+
 /*!***************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/general/fonts.css ***!
   \***************************************************************************************/
@@ -967,7 +984,7 @@ main img:hover{
     right: 15px;
 }
 
-.close-icon{
+.close-icon {
     margin-bottom: 10px;
 }
 /*!*******************************************************************************************!*\

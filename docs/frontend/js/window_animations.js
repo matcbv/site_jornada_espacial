@@ -1,5 +1,6 @@
 const introductionSection = document.querySelector(".intro-section")
 const headerSection = document.querySelector("header")
+
 if (introductionSection && headerSection){
     const introVh = introductionSection.getBoundingClientRect().height
     const headerVh = headerSection.getBoundingClientRect().height

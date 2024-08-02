@@ -65,8 +65,8 @@ app.use(flash())
 
 // Aplicando os middlewares globais
 const {csrfMiddleware, globalMiddleware} = require('./middlewares/globalMiddlewares')
-app.use(csrfMiddleware)
 app.use(globalMiddleware)
+app.use(csrfMiddleware)
 
 // Adicionando nosso roteador de rotas à aplicação
 const routes = require('./routes')

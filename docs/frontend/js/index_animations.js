@@ -83,3 +83,11 @@ if (introSection){
         }, 1000)
     })
 }
+
+const topBtn = document.querySelector('.top-btn')
+
+// ---------- TOP BUTTON ----------
+
+topBtn.addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: "smooth"})
+})
