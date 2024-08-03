@@ -28,7 +28,6 @@ document.addEventListener('click', (e) => {
             } else{
                 res.text().then(html => {
                     if (indexMain){
-                        console.log('passei aqui')
                         getPopup(html, indexMain)
                     } else if(galaxiesMain){
                         getPopup(html, galaxiesMain)

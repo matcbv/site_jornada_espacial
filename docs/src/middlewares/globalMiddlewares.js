@@ -1,7 +1,7 @@
-// function csrfMiddleware(req, res, next){
-//     res.locals.csrfToken = req.csrfToken()
-//     next()
-// }
+function csrfMiddleware(req, res, next){
+    res.locals.csrfToken = req.csrfToken()
+    next()
+}
 
 function globalMiddleware(req, res, next){
     res.locals.head = 'includes/head.html'
@@ -9,7 +9,8 @@ function globalMiddleware(req, res, next){
     res.locals.footer = 'includes/footer.html'
     res.locals.subjectError = ''
     res.locals.textError = ''
+    res.locals.messsage = ''
     next()
 }
 
-module.exports = {globalMiddleware}
+module.exports = {csrfMiddleware, globalMiddleware}

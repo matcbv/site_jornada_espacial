@@ -6,16 +6,13 @@ const formController = {
         const status = ideaFormObj.sendData()
         if (status === 'Escolha um assunto'){
             res.locals.subjectError = 'Escolha um assunto'
-            res.redirect('back')
-            return
+            return res.redirect('back')
         } else if(status === 'Mensagem inválida'){
-            console.log('passei aqui')
             res.locals.textError = 'Mensagem inválida'
-            res.redirect('back')
-            return
+            return res.redirect('back')
         }
-        res.redirect('back')
-        return
+        res.locals.message = 'Ideia enviada com sucesso!'
+        return res.redirect('back')
     }
 }
 

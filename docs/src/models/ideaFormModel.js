@@ -31,9 +31,9 @@ class IdeaForm{
     }
 
     sendData = async () => {
-        const status = this.checkData()
-        if(status !== ''){
-            return status
+        this.checkData()
+        if(this.status !== ''){
+            return this.status
         }
         await IdeaModel.create(this.data)
         return true

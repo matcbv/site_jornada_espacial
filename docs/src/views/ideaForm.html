@@ -9,6 +9,7 @@
         </div>
         <span class="vertical-row"></span>
         <form action="ideaForm/sendIdea" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="radio-div">
                 <% if(subjectError !== ''){ %>
                     <span><%= subjectError %></span>
