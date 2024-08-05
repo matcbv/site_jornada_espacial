@@ -6,6 +6,7 @@ const router = express.Router()
 const homeController = require('./controllers/homeController')
 const popupController = require('./controllers/popupController')
 const formController = require('./controllers/formController')
+const errorController = require('./controllers/errorController')
 
 // Página inicial
 router.get('/', homeController.homePage)
@@ -21,5 +22,7 @@ router.get('/ideaform', homeController.ideaForm)
 router.post('/ideaform/sendidea', formController.sendIdea)
 // Popups
 router.get('/popup/:body', popupController.getPopup)
+// Página 404
+router.get('/404', errorController.error_404)
 
 module.exports = router

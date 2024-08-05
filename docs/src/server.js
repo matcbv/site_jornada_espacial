@@ -71,6 +71,8 @@ app.use(csrfMiddleware)
 const routes = require('./routes')
 app.use(routes)
 
+app.use((req, res) => { res.status(404).render('error_404.html') })
+
 app.on('ready', () => {
     // Inicialização da aplicação
     app.listen(process.env.SERVERPORT, () => {

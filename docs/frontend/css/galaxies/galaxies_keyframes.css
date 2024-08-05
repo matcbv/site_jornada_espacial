@@ -7,6 +7,15 @@
     }
 }
 
+@keyframes reverse-levitate{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-7px);
+    }
+}
+
 @keyframes slow-levitation{
     from{
         transform: translateY(0px);
