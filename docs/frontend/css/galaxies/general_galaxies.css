@@ -11,12 +11,3 @@ body, html{
     background-size: contain;
     color: white;
 }
-
-.galaxies-main-grid-div{
-    min-height: 100vh;
-    display: grid; 
-    grid-template:  'header' auto
-                    'main' auto
-                    'footer' auto
-                    / 100%;
-}

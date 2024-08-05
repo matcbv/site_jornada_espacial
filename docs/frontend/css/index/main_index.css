@@ -1,6 +1,7 @@
 @import url(keyframes_index.css);
 
 .index-main{
+    position: relative;
     grid-area: main;
     display: grid;
     grid-template:  'intro-section' 1fr
@@ -126,6 +127,85 @@
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
     transform: translateY(7px);
     cursor: pointer;
+}
+
+.msc-popup{
+    position: fixed;
+    bottom: 5%;
+    left: 50px;
+    width: 15%;
+    border-radius: 7px;
+    padding: 10px 0;
+    background-color: rgb(9, 8, 23);
+    border: 2px solid rgb(45, 62, 92);
+    opacity: 0;
+    z-index: 999;
+}
+
+.msc-popup > p{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding: 0 15px;
+    font-family: monospace;
+    margin-bottom: 15px;
+}
+
+.msc-popup button{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid yellow;
+    color: white;
+    padding: 3px 0;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.msc-popup button img{
+    width: 17px;
+    margin-left: 5px;
+}
+
+.msc-popup button:hover{
+    cursor: pointer;
+
+}
+
+.msc-popup-close-icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    padding: 5px 5px 0 0;
+}
+
+.msc-popup-close-icon:hover{
+    cursor: pointer;
+}
+
+.msc-popup-appear-animation{
+    animation: appear 1s ease-in-out 1s 1 normal forwards;
+}
+
+.sound-icon{
+    width: 40px;
+    position: fixed;
+    bottom: 2%;
+    right: 1%;
+}
+
+.sound-off{
+    display: block;
+}
+
+.sound-on{
+    display: none;
 }
 
 /* ---------- MILKYWAY SECTION ---------- */
@@ -293,7 +373,7 @@
     display: inline-block;
     font-size: 1.8em;
     width: 36px;
-    padding: 10px 0 0 10px;
+    padding-left: 10px;
 }
 
 .rocket{

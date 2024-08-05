@@ -1,6 +1,10 @@
-    <%- include(head) %>
-</head>
+<%- include(head) %>
 <body>
+    <div class="msc-popup">
+        <img class="msc-popup-close-icon" src="images/close_icon.png" alt="Ícone de fechamento">
+        <p>Para uma trilha sonora durante sua Jornada Espacial, clique no botão abaixo.</p>
+        <button class="play">Play <img src="images/play_icon.png" alt="Play"></button>
+    </div>
     <div class="main-grid-div">
         <%- include(header) %>
         <main class="index-main">
@@ -71,6 +75,7 @@
                     </p>
                 </div>
             </section>
+            <%- include(audio) %>
         </main>
         <%- include(footer) %>
     </div>

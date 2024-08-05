@@ -7,6 +7,7 @@ const milkywayRocket = document.querySelector('#milkyway-rocket')
 const andromedaRocket = document.querySelector('#andromeda-rocket')
 const triangleRocket = document.querySelector('#triangle-rocket')
 
+
 // ---------- NAVEGATION ----------
 
 if (milkywayBtn){
@@ -61,7 +62,7 @@ const startingBtn = document.querySelector('.intro-btn')
 const milkywaySection = document.querySelector('.milkyway-section')
 const introSection = document.querySelector('.intro-section')
 
-if (startingBtn){
+if(introSection){
     startingBtn.addEventListener('click', () => {
         if (introSection.classList.contains('appear-animation')) {
             introSection.classList.remove('appear-animation')
@@ -72,9 +73,8 @@ if (startingBtn){
             milkywaySection.scrollIntoView({behavior: "smooth"})
         }, 999)
     })
-}
-
-if (introSection){
+    
+    
     window.addEventListener('load', () => {
         introSection.classList.add('appear-animation')
         setTimeout(() => {
@@ -84,9 +84,71 @@ if (introSection){
     })
 }
 
-const topBtn = document.querySelector('.top-btn')
+// ---------- MUSIC POPUP ----------
+
+const audio = document.querySelector('.music')
+
+if(introSection){
+    const mscPopup = document.querySelector('.msc-popup')
+    const mscPopupCloseIcon = document.querySelector('.msc-popup-close-icon')
+    const play = document.querySelector('.play')
+    const introSectionRect = introSection.getBoundingClientRect()
+
+    window.addEventListener('load', () => {
+        const audioStatus = sessionStorage.getItem('audioStatus')
+        if(window.scrollY < introSectionRect.bottom && audioStatus === 'true'){
+            mscPopup.classList.add('msc-popup-appear-animation') 
+        } else{
+            document.body.removeChild(mscPopup)
+        }
+    })
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY >= introSectionRect.bottom - 0.4){
+            if(mscPopup && mscPopup.parentElement){
+                document.body.removeChild(mscPopup)
+            }
+        }
+    })
+
+    mscPopupCloseIcon.addEventListener('click', () => {
+        document.body.removeChild(mscPopup)
+    })
+
+    play.addEventListener('click', () => {
+        sessionStorage.setItem('audioTime', audio.currentTime)
+        sessionStorage.setItem('audioStatus', audio.paused)
+        audio.play()
+        document.body.removeChild(mscPopup)
+        soundOn.style.display = 'block'
+        soundOff.style.display = 'none'
+    })
+}
+
+// ---------- SOUND ICON ----------
+
+const soundOn = document.querySelector('.sound-on')
+const soundOff = document.querySelector('.sound-off')
+
+soundOn.addEventListener('click', () => {
+    audio.pause()
+    sessionStorage.setItem('audioTime', audio.currentTime)
+    sessionStorage.setItem('audioStatus', audio.paused)
+    soundOn.style.display = 'none'
+    soundOff.style.display = 'block'
+})
+
+soundOff.addEventListener('click', () => {
+    const audioTime = sessionStorage.getItem('audioTime')
+    audio.currentTime = audioTime
+    audio.play()
+    soundOn.style.display = 'block'
+    soundOff.style.display = 'none'
+})
 
 // ---------- TOP BUTTON ----------
+
+const topBtn = document.querySelector('.top-btn')
 
 topBtn.addEventListener('click', () => {
     window.scrollTo({top: 0, behavior: "smooth"})

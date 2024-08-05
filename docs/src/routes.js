@@ -16,9 +16,9 @@ router.get('/andromeda', homeController.andromeda)
 // Seção Triângulo
 router.get('/triangle', homeController.triangle)
 // Popup de ideias
-router.get('/ideaForm', homeController.ideaForm)
+router.get('/ideaform', homeController.ideaForm)
 // Enviando dados do formulario
-router.post('/ideaForm/sendIdea', formController.sendIdea)
+router.post('/ideaform/sendidea', formController.sendIdea)
 // Popups
 router.get('/popup/:body', popupController.getPopup)
 

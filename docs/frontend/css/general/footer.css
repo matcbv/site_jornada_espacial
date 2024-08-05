@@ -13,7 +13,7 @@ footer{
 .footer-links-div{
     display: flex;
     flex-flow: column nowrap;
-    width: 33.3%;
+    width: 40%;
     margin-right: 15px;
 }
 
@@ -25,7 +25,7 @@ footer{
     text-align: center;
 }
 
-.footer-links-div li{
+.footer-links-div li a{
     color: white;
     font-size: 1.3em;
     font-family: monospace;
@@ -34,7 +34,7 @@ footer{
     margin-right: 20px;
 }
 
-.footer-links-div ul li:hover{
+.footer-links-div ul a:hover{
     color: rgb(199, 199, 0);
     cursor: pointer;
 }
@@ -47,7 +47,7 @@ footer{
 }
 
 .footer-msg-div{
-    width: 33.3%;
+    width: 40%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: end;
@@ -68,14 +68,14 @@ footer{
 }
 
 .footer-btn-div{
-    width: 33.3%;
+    width: 20%;
 }
 
 footer button{
     display: block;
     width: auto;
     margin: auto;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border: 2px solid rgb(199, 199, 0);
     background-color: transparent;
     border-radius: 7px;

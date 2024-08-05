@@ -16,7 +16,7 @@ body, html{
     min-height: 100vh;
     display: grid; 
     grid-template:  'header' auto
-                    'main' 1fr
+                    'main' auto
                     'footer' auto
                     / 100%;
 }

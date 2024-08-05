@@ -16,7 +16,7 @@ const homeController = {
     },
 
     ideaForm: (req, res) => {
-        return res.render('ideaForm.html')
+        return res.render('ideaform.html')
     }
 }
 

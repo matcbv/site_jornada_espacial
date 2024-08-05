@@ -25,7 +25,6 @@ const session = require('express-session')
 
 try{
     mongoose.connect(process.env.MONGOURI).then(() => {
-        console.log('Conexão com o banco de dados estabelecida com sucesso.')
         app.emit('ready')
     })
 } catch(e){
