@@ -26,7 +26,7 @@ if(galaxiesMain){
 }
 
 // Fetch para requisição do popup aboutme
-function getAboutmePopup(){
+function getAboutmePage(){
     fetch(`http://localhost:8080/popup/${element.id}`).then(res => {
         if (!res.ok){
             throw new Error (`Erro na requisição do popup ${element.id}`)

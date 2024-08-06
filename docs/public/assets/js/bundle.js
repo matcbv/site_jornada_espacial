@@ -414,7 +414,7 @@ if (galaxiesMain) {
 }
 
 // Fetch para requisição do popup aboutme
-function getAboutmePopup() {
+function getAboutmePage() {
   fetch("http://localhost:8080/popup/".concat(element.id)).then(function (res) {
     if (!res.ok) {
       throw new Error("Erro na requisi\xE7\xE3o do popup ".concat(element.id));
