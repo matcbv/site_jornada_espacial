@@ -133,7 +133,7 @@
     position: fixed;
     bottom: 5%;
     left: 50px;
-    width: 15%;
+    width: 230px;
     border-radius: 7px;
     padding: 10px 0;
     background-color: rgb(9, 8, 23);
@@ -144,9 +144,8 @@
 
 .msc-popup > p{
     text-align: center;
-    width: 80%;
+    width: 79%;
     margin: auto;
-    padding: 0 15px;
     font-family: monospace;
     margin-bottom: 15px;
 }
@@ -190,14 +189,18 @@
 }
 
 .msc-popup-appear-animation{
-    animation: appear 1s ease-in-out 1s 1 normal forwards;
+    animation: appear 1s ease-in-out 1s 1 normal both;
+}
+
+.msc-popup-disappear-animation{
+    animation: disappear 1s ease-in-out 1s 1 normal both;
 }
 
 .sound-icon{
     width: 40px;
     position: fixed;
-    bottom: 2%;
-    right: 1%;
+    bottom: 15px;
+    right: 10px;
 }
 
 .sound-icon:hover{
@@ -365,7 +368,7 @@
     background-color: transparent;
     border-radius: 12px;
     color: white;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: 'Calistoga';
     font-style: italic;
 }

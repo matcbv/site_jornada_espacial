@@ -342,7 +342,7 @@ header{
     position: fixed;
     bottom: 5%;
     left: 50px;
-    width: 15%;
+    width: 230px;
     border-radius: 7px;
     padding: 10px 0;
     background-color: rgb(9, 8, 23);
@@ -353,9 +353,8 @@ header{
 
 .msc-popup > p{
     text-align: center;
-    width: 80%;
+    width: 79%;
     margin: auto;
-    padding: 0 15px;
     font-family: monospace;
     margin-bottom: 15px;
 }
@@ -399,14 +398,18 @@ header{
 }
 
 .msc-popup-appear-animation{
-    animation: appear 1s ease-in-out 1s 1 normal forwards;
+    animation: appear 1s ease-in-out 1s 1 normal both;
+}
+
+.msc-popup-disappear-animation{
+    animation: disappear 1s ease-in-out 1s 1 normal both;
 }
 
 .sound-icon{
     width: 40px;
     position: fixed;
-    bottom: 2%;
-    right: 1%;
+    bottom: 15px;
+    right: 10px;
 }
 
 .sound-icon:hover{
@@ -574,7 +577,7 @@ header{
     background-color: transparent;
     border-radius: 12px;
     color: white;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: 'Calistoga';
     font-style: italic;
 }
@@ -914,12 +917,21 @@ body, html{
     }
 }
 
+@keyframes disappear{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
 @keyframes pulsing {
     0%{
         transform: scale(1);
     }
     50%{
-        transform: scale(1.3);
+        transform: scale(1.2);
     }
     100%{
         transform: scale(1);
@@ -929,6 +941,7 @@ body, html{
   !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/galaxies/main_galaxies.css ***!
   \************************************************************************************************/
 .galaxies-main{
+    position: relative;
     grid-area: main;
 }
 

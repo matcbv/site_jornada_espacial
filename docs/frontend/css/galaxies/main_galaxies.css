@@ -1,6 +1,7 @@
 @import url(./galaxies_keyframes.css);
 
 .galaxies-main{
+    position: relative;
     grid-area: main;
 }
 

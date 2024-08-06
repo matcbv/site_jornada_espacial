@@ -106,7 +106,12 @@ if(introSection){
     window.addEventListener('scroll', () => {
         if (window.scrollY >= introSectionRect.bottom - 0.4){
             if(mscPopup && mscPopup.parentElement){
-                document.body.removeChild(mscPopup)
+                mscPopup.classList.add('msc-popup-disappear-animation')
+                setTimeout(() => {
+                    if(mscPopup && mscPopup.parentElement){
+                        document.body.removeChild(mscPopup)
+                    }
+                }, 2000)
             }
         }
     })
@@ -129,6 +134,9 @@ if(introSection){
 
 const soundOn = document.querySelector('.sound-on')
 const soundOff = document.querySelector('.sound-off')
+const soundOffRectBottom = soundOff.getBoundingClientRect().bottom
+const soundOnRectBottom = soundOn.getBoundingClientRect().bottom
+const footer = document.querySelector('footer')
 
 soundOn.addEventListener('click', () => {
     audio.pause()
@@ -139,11 +147,23 @@ soundOn.addEventListener('click', () => {
 })
 
 soundOff.addEventListener('click', () => {
+    console.log(bodyRectBottom)
     const audioTime = sessionStorage.getItem('audioTime')
     audio.currentTime = audioTime
     audio.play()
     soundOn.style.display = 'block'
     soundOff.style.display = 'none'
+})
+
+window.addEventListener('scroll', () => {
+    const footerRectTop = footer.getBoundingClientRect().top
+    if (footerRectTop <= soundOffRectBottom || footerRectTop <= soundOnRectBottom){
+        soundOff.style.position = 'absolute'
+        soundOn.style.position = 'absolute'
+    } else{
+        soundOff.style.position = 'fixed'
+        soundOn.style.position = 'fixed'
+    }
 })
 
 // ---------- TOP BUTTON ----------
