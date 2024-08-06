@@ -4,18 +4,20 @@
         <%- include(header) %>
         <main class="main-error">
             <div class="astronaut-div">
-                <img class="astronaut" src="images/404_images/astronaut.png" alt="Astronauta">
+                <img class="astronaut" src="/images/404_images/astronaut.png" alt="Astronauta">
             </div>
             <div class="main-div-error">
                 <h1 class="error-title">404</h1>
                 <p class="error-text">Parece que você está tentando explorar áreas desconhecidas, Mochileiro! Para uma jornada segura, siga as instruções do seu Guia Espacial.</p>
-                <button type="button">Página inicial</button>
+                <button class="back-homepage-btn" type="button">Página inicial</button>
             </div>
             <div class="satellite-div">
-                <img class="satellite" src="images/404_images/satellite.png" alt="Satélite">
+                <img class="satellite" src="/images/404_images/satellite.png" alt="Satélite">
             </div>
+            <%- include(audio) %>
         </main>
         <%- include(footer) %>
     </div>
+    <script src="/js/bundle.js"></script>
 </body>
 </html>

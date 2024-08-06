@@ -227,17 +227,17 @@ var triangleRocket = document.querySelector('#triangle-rocket');
 
 if (milkywayBtn) {
   milkywayBtn.addEventListener('click', function () {
-    window.location.href = 'milkyway';
+    window.location.href = '/milkyway';
   });
 }
 if (andromedaBtn) {
   andromedaBtn.addEventListener('click', function () {
-    window.location.href = 'andromeda';
+    window.location.href = '/andromeda';
   });
 }
 if (triangleBtn) {
   triangleBtn.addEventListener('click', function () {
-    window.location.href = 'triangle';
+    window.location.href = '/triangle';
   });
 }
 
@@ -305,7 +305,7 @@ if (introSection) {
   var introSectionRect = introSection.getBoundingClientRect();
   window.addEventListener('load', function () {
     var audioStatus = sessionStorage.getItem('audioStatus');
-    if (window.scrollY < introSectionRect.bottom && audioStatus === 'true') {
+    if (window.scrollY < introSectionRect.bottom && audioStatus !== 'false') {
       mscPopup.classList.add('msc-popup-appear-animation');
     } else {
       document.body.removeChild(mscPopup);
@@ -359,6 +359,15 @@ topBtn.addEventListener('click', function () {
     behavior: "smooth"
   });
 });
+
+// ---------- 404 BUTTON ----------
+
+var backHomePageBtn = document.querySelector('.back-homepage-btn');
+if (backHomePageBtn) {
+  backHomePageBtn.addEventListener('click', function () {
+    window.location.href = '/';
+  });
+}
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.

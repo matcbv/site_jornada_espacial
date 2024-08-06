@@ -12,19 +12,19 @@ const triangleRocket = document.querySelector('#triangle-rocket')
 
 if (milkywayBtn){
     milkywayBtn.addEventListener('click', () => {
-        window.location.href = 'milkyway'
+        window.location.href = '/milkyway'
     })
 }
 
 if (andromedaBtn){
     andromedaBtn.addEventListener('click', () => {
-        window.location.href = 'andromeda'
+        window.location.href = '/andromeda'
     })
 }
 
 if (triangleBtn){
     triangleBtn.addEventListener('click', () => {
-        window.location.href = 'triangle'
+        window.location.href = '/triangle'
     })
 }
 
@@ -96,7 +96,7 @@ if(introSection){
 
     window.addEventListener('load', () => {
         const audioStatus = sessionStorage.getItem('audioStatus')
-        if(window.scrollY < introSectionRect.bottom && audioStatus === 'true'){
+        if(window.scrollY < introSectionRect.bottom && audioStatus !== 'false'){
             mscPopup.classList.add('msc-popup-appear-animation') 
         } else{
             document.body.removeChild(mscPopup)
@@ -153,3 +153,13 @@ const topBtn = document.querySelector('.top-btn')
 topBtn.addEventListener('click', () => {
     window.scrollTo({top: 0, behavior: "smooth"})
 })
+
+// ---------- 404 BUTTON ----------
+
+const backHomePageBtn = document.querySelector('.back-homepage-btn')
+
+if (backHomePageBtn){
+    backHomePageBtn.addEventListener('click', () => {
+        window.location.href = '/'
+    })
+}

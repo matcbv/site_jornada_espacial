@@ -92,7 +92,7 @@ main img{
     transition: transform 0.3s linear 0s;
 }
 
-main img:hover{
+.galaxies-main img:hover{
     transform: scale(1.2);
     cursor: pointer;
 }

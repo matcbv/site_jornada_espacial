@@ -37,10 +37,12 @@
 
 .popup-content h2{
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.2em;
     color: yellow;
     font-family: 'Bungee Outline';
     padding-bottom: 25px;
+    width: 90%;
+    margin: auto;
 }
 
 .popup-content p{
@@ -62,4 +64,8 @@
 
 .close-icon {
     margin-bottom: 10px;
+}
+
+#cepheid_star{
+    animation: pulsing 4s linear 0s infinite normal both;
 }

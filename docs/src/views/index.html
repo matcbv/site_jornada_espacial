@@ -1,9 +1,9 @@
 <%- include(head) %>
 <body>
     <div class="msc-popup">
-        <img class="msc-popup-close-icon" src="images/close_icon.png" alt="Ícone de fechamento">
+        <img class="msc-popup-close-icon" src="/images/close_icon.png" alt="Ícone de fechamento">
         <p>Para uma trilha sonora durante sua Jornada Espacial, clique no botão abaixo.</p>
-        <button class="play">Play <img src="images/play_icon.png" alt="Play"></button>
+        <button class="play">Play <img src="/images/play_icon.png" alt="Play"></button>
     </div>
     <div class="main-grid-div">
         <%- include(header) %>
@@ -25,7 +25,7 @@
             </section>
             <section class="galaxies-section milkyway-section">
                 <div class="milkyway-img">
-                    <img src="images/milkyway_images/milkyway.png" alt="Via Láctea">
+                    <img src="/images/milkyway_images/milkyway.png" alt="Via Láctea">
                     <div class="galaxies-btn-div">
                         <button id="milkyway-btn" type="button">VAMOS PARA VIA LÁCTEA</button><span id="milkyway-rocket"></span>
                     </div>
@@ -49,7 +49,7 @@
                     </p>
                 </div>
                 <div class="andromeda-img">
-                    <img src="images/andromeda_images/andromeda.png" alt="Andrômeda">
+                    <img src="/images/andromeda_images/andromeda.png" alt="Andrômeda">
                     <div class="galaxies-btn-div">
                         <div class="galaxies-btn-div">
                             <button id="andromeda-btn" type="button">VAMOS PARA ANDRÔMEDA</button><span id="andromeda-rocket"></span>
@@ -59,7 +59,7 @@
             </section>
             <section class="galaxies-section triangle-section">
                 <div class="triangle-img">
-                    <img src="images/triangle_images/triangle.png" alt="Galáxia do Triângulo">
+                    <img src="/images/triangle_images/triangle.png" alt="Galáxia do Triângulo">
                     <div class="galaxies-btn-div">
                         <div class="galaxies-btn-div">
                             <button id="triangle-btn" type="button">VAMOS PARA TRIÂNGULO</button><span id="triangle-rocket"></span>
@@ -79,6 +79,6 @@
         </main>
         <%- include(footer) %>
     </div>
+    <script src="/js/bundle.js"></script>
 </body>
-<script src="js/bundle.js"></script>
 </html>

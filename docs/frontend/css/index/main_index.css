@@ -200,6 +200,11 @@
     right: 1%;
 }
 
+.sound-icon:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
 .sound-off{
     display: block;
 }
@@ -239,11 +244,11 @@
 }
 
 #milkyway-btn{
-    border: 2px solid rgb(38, 54, 140);
+    border: 3px solid rgb(38, 54, 140);
 }
 
 #milkyway-btn:hover{
-    box-shadow: inset 0 0 15px rgb(38, 54, 140, 0.6);
+    box-shadow: inset 0 0 12px rgb(38, 54, 140, 0.6);
 }
 
 /* ---------- ANDROMDEDA SECTION ---------- */
@@ -272,11 +277,11 @@
 }
 
 #andromeda-btn{
-    border: 2px solid rgb(111, 96, 139);
+    border: 3px solid rgb(111, 96, 139);
 }
 
 #andromeda-btn:hover{
-    box-shadow: inset 0 0 15px rgb(111, 96, 139, 0.6);
+    box-shadow: inset 0 0 12px rgb(111, 96, 139, 0.6);
 }
 
 /* ---------- TRIANGLE SECTION ---------- */
@@ -305,11 +310,11 @@
 }
 
 #triangle-btn{
-    border: 2px solid rgb(207, 144, 169);
+    border: 3px solid rgb(207, 144, 169);
 }
 
 #triangle-btn:hover{
-    box-shadow: inset 0 0 15px rgb(207, 144, 169, 0.6);
+    box-shadow: inset 0 0 12px rgb(207, 144, 169, 0.6);
 }
 
 /* ---------- SHARED STYLES ---------- */
@@ -356,13 +361,13 @@
     display: block;
     width: auto;
     margin-left: 36px;
-    padding: 12px 15px;
+    padding: 13px 17px;
     background-color: transparent;
-    border-radius: 7px;
+    border-radius: 12px;
     color: white;
-    font-size: 1.4em;
-    font-family: monospace;
-    font-weight: bold;
+    font-size: 1.2em;
+    font-family: 'Calistoga';
+    font-style: italic;
 }
 
 .galaxies-btn-div button:hover{
