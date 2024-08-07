@@ -351,7 +351,6 @@ soundOn.addEventListener('click', function () {
   soundOff.style.display = 'block';
 });
 soundOff.addEventListener('click', function () {
-  console.log(bodyRectBottom);
   var audioTime = sessionStorage.getItem('audioTime');
   audio.currentTime = audioTime;
   audio.play();
