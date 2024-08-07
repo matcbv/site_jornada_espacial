@@ -111,7 +111,7 @@ if(introSection){
                     if(mscPopup && mscPopup.parentElement){
                         document.body.removeChild(mscPopup)
                     }
-                }, 2000)
+                }, 1500)
             }
         }
     })

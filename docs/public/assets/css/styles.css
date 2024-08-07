@@ -342,7 +342,7 @@ header{
     position: fixed;
     bottom: 5%;
     left: 50px;
-    width: 230px;
+    width: 250px;
     border-radius: 7px;
     padding: 10px 0;
     background-color: rgb(9, 8, 23);
@@ -402,7 +402,7 @@ header{
 }
 
 .msc-popup-disappear-animation{
-    animation: disappear 1s ease-in-out 1s 1 normal both;
+    animation: disappear 0.5s ease-in-out 1s 1 normal both;
 }
 
 .sound-icon{
