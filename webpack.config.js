@@ -31,11 +31,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: './docs/src/views/index.html',
-            filename: '../../index.html',
-            inject: 'body'
-          }),
+        // new HtmlWebpackPlugin({
+        //     template: './docs/src/views/index.html',
+        //     filename: '../../index.html',
+        //     inject: 'body'
+        //   }),
         new MiniCssExtractPlugin({
             filename: 'css/styles.css'
         })
