@@ -1,4 +1,4 @@
-@media only screen and (max-width: 992px){
+@media only screen and (max-width: 768px){
 
     .footer-btn-div{
         display: none;
@@ -9,27 +9,30 @@
     }
 
     .footer-links-div p{
-        font-size: 0.8em;
+        font-size: 1em;
+        padding-top: 7px;
     }
 
     .footer-links-div ul{
-        line-height: 1.3em;
+        line-height: 1.7em;
     }
 
     .footer-links-div li a{
-        font-size: 0.9em;
+        font-size: 1.1em;
     }
 
     .footer-msg-div{
         width: 35%;
+        flex-flow: column nowrap;
     }
 
     .footer-msg-div p{
-        font-size: 0.7em;
+        font-size: 0.8em;
         margin-right: 0;
     }
 
     .footer-msg-div img{
         width: 50px;
+        padding-bottom: 0;
     }
 }

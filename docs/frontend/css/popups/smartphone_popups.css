@@ -17,7 +17,7 @@
     animation: levitate-popup 1.5s ease-in-out 0s infinite alternate both;
 }
 
-#close-icon{
+.icons-div{
     padding: 10px;
     position: absolute;
     right: 0;

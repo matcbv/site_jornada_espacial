@@ -80,7 +80,6 @@
     -webkit-text-stroke: 1px yellow;
     animation: levitate 1.5s ease-in-out 0s infinite alternate both;
     text-shadow: none;
-    width: 100%;
 }
 
 .welcomes-text{
@@ -222,6 +221,7 @@
 .galaxies-img-div img{
     display: block;
     margin: 0 auto 40px auto;
+    animation: galaxie-jump 2s ease-in-out 0s infinite alternate both;
 }
 
 /* ---------- MILKYWAY SECTION ---------- */
@@ -229,13 +229,6 @@
 .main-grid-div .milkyway-section{
     grid-area: milkyway-section;
     padding-top: 30vh;
-}
-
-.milkyway-section .milkyway-img img{
-    display: block;
-    margin: auto;
-    animation: milkyway-jump 2s ease-in-out 0s infinite alternate both;
-    margin-bottom: 10%;
 }
 
 .milkyway-section .milkyway-img img:hover{
@@ -258,13 +251,6 @@
 
 .andromeda-section{
     grid-area: andromeda-section;
-}
-
-.andromeda-section .andromeda-img img{
-    display: block;
-    margin: auto;
-    animation: andromeda-jump 2s ease-in-out 0s infinite alternate both;
-    margin-bottom: 10%;
 }
 
 .andromeda-section .andromeda-img img:hover{

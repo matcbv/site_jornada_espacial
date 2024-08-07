@@ -13,14 +13,14 @@ footer{
 .footer-links-div{
     display: flex;
     flex-flow: column nowrap;
-    width: 40%;
+    width: 35%;
     margin-right: 15px;
 }
 
 .footer-links-div ul{
     display: flex;
     flex-flow: row wrap;
-    line-height: 1.7em;
+    line-height: 2em;
     list-style: none;
     text-align: center;
 }
@@ -41,13 +41,13 @@ footer{
 
 .footer-links-div p{
     font-size: 1.2em;
-    padding-top: 15px;
+    padding-top: 5px;
     font-family: monospace;
     color: rgb(199, 199, 0);
 }
 
 .footer-msg-div{
-    width: 40%;
+    width: 35%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: end;
@@ -61,6 +61,7 @@ footer{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-style: italic;
     text-align: center;
+    margin-left: 20px;
 }
 
 .footer-msg-div img{
@@ -69,7 +70,7 @@ footer{
 }
 
 .footer-btn-div{
-    width: 20%;
+    width: 30%;
 }
 
 footer button{
@@ -81,7 +82,7 @@ footer button{
     background-color: transparent;
     border-radius: 7px;
     color: white;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
     font-style: italic;

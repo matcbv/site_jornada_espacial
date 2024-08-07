@@ -1,0 +1,31 @@
+@media only screen and (max-width: 992px){
+    .popup-content{
+        position: fixed;
+        width: 80%;
+        background-color: rgb(16 13 21);
+        border-radius: 10px;
+        border: 2px solid rgb(175, 175, 0);
+        margin: 0 0 -50% 0;
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    }
+    
+    #popup-image{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        animation: levitate-popup 1.5s ease-in-out 0s infinite alternate both;
+        z-index: 1000;
+    }
+
+    /*     
+    .popup-content{
+        position: relative;
+        width: 85%;
+        margin: auto;
+        padding: 40px 0;
+    } */
+    
+    .popup-content p{
+        font-size: 1.1em;
+    }
+}

@@ -1,6 +1,19 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./docs/frontend/css/galaxies/galaxies_media_queries.css":
+/*!***************************************************************!*\
+  !*** ./docs/frontend/css/galaxies/galaxies_media_queries.css ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./docs/frontend/css/galaxies/general_galaxies.css":
 /*!*********************************************************!*\
   !*** ./docs/frontend/css/galaxies/general_galaxies.css ***!
@@ -174,6 +187,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************************!*\
   !*** ./docs/frontend/css/popups/ideaform.css ***!
   \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./docs/frontend/css/popups/popup_media_queries.css":
+/*!**********************************************************!*\
+  !*** ./docs/frontend/css/popups/popup_media_queries.css ***!
+  \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -569,6 +595,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_general_error_404_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/general/error_404.css */ "./docs/frontend/css/general/error_404.css");
 /* harmony import */ var _css_index_index_media_queries_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/index_media_queries.css */ "./docs/frontend/css/index/index_media_queries.css");
 /* harmony import */ var _css_general_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/general/footer_media_queries.css */ "./docs/frontend/css/general/footer_media_queries.css");
+/* harmony import */ var _css_galaxies_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/galaxies/galaxies_media_queries.css */ "./docs/frontend/css/galaxies/galaxies_media_queries.css");
+/* harmony import */ var _css_popups_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/popups/popup_media_queries.css */ "./docs/frontend/css/popups/popup_media_queries.css");
+
+
 
 
 

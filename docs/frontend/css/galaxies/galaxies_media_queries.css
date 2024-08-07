@@ -1,0 +1,14 @@
+@media only screen and (max-width: 992px) {
+    .galaxies-intro-text p{
+        font-size: 1.3em;
+    }
+
+    .galaxies-intro-text .highlight{
+        font-size: 2em;
+    }
+
+    .galaxies-intro-text .guide-text{
+        font-size: 1.1em;
+        width: 70%;
+    }
+}

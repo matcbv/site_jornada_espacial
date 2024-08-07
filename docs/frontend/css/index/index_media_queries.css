@@ -32,6 +32,12 @@
         font-size: 1.1em;
     }
 
+    /* ------- MUSIC POPUP ------- */
+
+    .msc-popup{
+        width: 180px;
+    }
+
     /* ------- GALAXIES SECTION ------- */
 
     .galaxies-section{
@@ -49,17 +55,19 @@
     }
 
     .galaxies-text p{
-        font-size: 1em;
+        font-size: 0.9em;
         text-align: justify;
+        margin-bottom: 35px;
     }
 
     .galaxies-section h2{
         text-align: center;
-        font-size: 2.3em;
     }
 
     .galaxies-btn-div button{
         width: 280px;
+        font-size: 1em;
+        padding: 10px 15px;
     }
 
     .galaxies-img-div{

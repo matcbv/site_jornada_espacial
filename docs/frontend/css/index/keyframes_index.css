@@ -30,25 +30,7 @@
     }
 }
 
-@keyframes milkyway-jump{
-    from{
-        transform: translateY(0px);
-    }
-    to{
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes andromeda-jump{
-    from{
-        transform: translateY(0px);
-    }
-    to{
-        transform: translateY(15px);
-    }
-}
-
-@keyframes triangle-jump{
+@keyframes galaxie-jump{
     from{
         transform: translateY(0px);
     }
