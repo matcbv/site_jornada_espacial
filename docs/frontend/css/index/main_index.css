@@ -1,0 +1,389 @@
+@import url(keyframes_index.css);
+
+.index-main{
+    position: relative;
+    grid-area: main;
+    display: grid;
+    grid-template:  'intro-section' 1fr
+                    'milkyway-section' 1fr
+                    'andromeda-section' 1fr
+                    'triangle-section' 1fr
+                    / 100%;
+}
+
+.popup{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.appear-animation{
+    animation: appear 1s ease-in-out 0.1s 1 normal forwards;
+}
+
+/* ---------- INTRODUCTION SECTION ---------- */
+
+.intro-section{
+    grid-area: intro-section;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: center;
+    background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7), transparent);
+    font-family: monospace;
+    padding-top: 125px;
+    opacity: 0;
+}
+
+.appear-animation{
+    animation: appear 1s ease-in-out 0.1s 1 normal forwards;
+}
+
+.squish-animation{
+    animation: squish 1s ease-in-out 0s 1 normal forwards;
+}
+
+.intro-text-div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 90px;
+}
+
+.intro-text{
+    width: 50%;
+    text-align: center;
+    padding: 0 30px;
+}
+
+.intro-text p{
+    width: 80%;
+    font-size: 1.6em;
+    margin: auto;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.intro-text .highlight{
+    font-family: 'Rubik Mono One';
+    font-size: 3.2em; 
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1px yellow;
+    animation: levitate 1.5s ease-in-out 0s infinite alternate both;
+    text-shadow: none;
+}
+
+.welcomes-text{
+    width: 50%;
+    text-align: center;
+    line-height: 4em;
+    padding: 0 30px;
+}
+
+.welcomes-text p{
+    font-size: 1.6em;
+    margin: auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.welcomes-text .highlight{
+    font-family: 'Xanh Mono';
+    font-size: 3.5em;
+    font-style: italic;
+    color: yellow;
+}
+
+.intro-btn-div{
+    width: 100%;
+}
+
+.intro-btn{
+    display: block;
+    width: 16%;
+    margin: auto;
+    padding: 10px 0;
+    border: 2px solid yellow;
+    background-color: transparent;
+    border-radius: 7px;
+    color: white;
+    font-size: 1.4em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s linear 0s, box-shadow 0.3s linear 0s;
+}
+
+.intro-btn:hover{
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(7px);
+    cursor: pointer;
+}
+
+.msc-popup{
+    position: fixed;
+    bottom: 5%;
+    left: 50px;
+    width: 230px;
+    border-radius: 7px;
+    padding: 10px 0;
+    background-color: rgb(9, 8, 23);
+    border: 2px solid rgb(45, 62, 92);
+    opacity: 0;
+    z-index: 999;
+}
+
+.msc-popup > p{
+    text-align: center;
+    width: 79%;
+    margin: auto;
+    font-family: monospace;
+    margin-bottom: 15px;
+}
+
+.msc-popup button{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid yellow;
+    color: white;
+    padding: 3px 0;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.msc-popup button img{
+    width: 17px;
+    margin-left: 5px;
+}
+
+.msc-popup button:hover{
+    cursor: pointer;
+
+}
+
+.msc-popup-close-icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    padding: 5px 5px 0 0;
+}
+
+.msc-popup-close-icon:hover{
+    cursor: pointer;
+}
+
+.msc-popup-appear-animation{
+    animation: appear 1s ease-in-out 1s 1 normal both;
+}
+
+.msc-popup-disappear-animation{
+    animation: disappear 1s ease-in-out 1s 1 normal both;
+}
+
+.sound-icon{
+    width: 40px;
+    position: fixed;
+    bottom: 15px;
+    right: 10px;
+}
+
+.sound-icon:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.sound-off{
+    display: block;
+}
+
+.sound-on{
+    display: none;
+}
+
+/* ---------- MILKYWAY SECTION ---------- */
+
+.main-grid-div .milkyway-section{
+    grid-area: milkyway-section;
+    padding-top: 30vh;
+}
+
+.milkyway-section .milkyway-img{
+    width: 50%;
+}
+
+.milkyway-section .milkyway-img img{
+    display: block;
+    margin: auto;
+    animation: milkyway-jump 2s ease-in-out 0s infinite alternate both;
+    margin-bottom: 10%;
+}
+
+.milkyway-section .milkyway-img img:hover{
+    cursor: pointer;
+}
+
+.milkyway-btn-div{
+    width: 100%;
+}
+
+.milkyway-section .galaxies-text{
+    width: 50%;
+}
+
+#milkyway-btn{
+    border: 3px solid rgb(38, 54, 140);
+}
+
+#milkyway-btn:hover{
+    box-shadow: inset 0 0 12px rgb(38, 54, 140, 0.6);
+}
+
+/* ---------- ANDROMDEDA SECTION ---------- */
+
+.andromeda-section{
+    grid-area: andromeda-section;
+}
+
+.andromeda-section .andromeda-img{
+    width: 50%;
+}
+
+.andromeda-section .andromeda-img img{
+    display: block;
+    margin: auto;
+    animation: andromeda-jump 2s ease-in-out 0s infinite alternate both;
+    margin-bottom: 10%;
+}
+
+.andromeda-section .andromeda-img img:hover{
+    cursor: pointer;
+}
+
+.andromeda-section .galaxies-text{
+    width: 50%;
+}
+
+#andromeda-btn{
+    border: 3px solid rgb(111, 96, 139);
+}
+
+#andromeda-btn:hover{
+    box-shadow: inset 0 0 12px rgb(111, 96, 139, 0.6);
+}
+
+/* ---------- TRIANGLE SECTION ---------- */
+
+.triangle-section{
+    grid-area: triangle-section;
+}
+
+.triangle-section .triangle-img{
+    width: 50%;
+}
+
+.triangle-section .triangle-img img{
+    display: block;
+    margin: auto;
+    animation: triangle-jump 2s ease-in-out 0s infinite alternate both;
+    margin-bottom: 5%;
+}
+
+.triangle-section .triangle-img img:hover{
+    cursor: pointer;
+}
+
+.triangle-section .galaxies-text{
+    width: 50%;
+}
+
+#triangle-btn{
+    border: 3px solid rgb(207, 144, 169);
+}
+
+#triangle-btn:hover{
+    box-shadow: inset 0 0 12px rgb(207, 144, 169, 0.6);
+}
+
+/* ---------- SHARED STYLES ---------- */
+
+.galaxies-section{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20vh 0;
+}
+
+.galaxies-section:not(.triangle-section){
+    border-bottom: 2px solid rgba(255, 255, 0, 0.7);
+}
+
+.galaxies-section h2{
+    width: 85%;
+    text-align: start;
+    font-family: monospace;
+    font-size: 2.5em;
+    margin: 0 auto 20px auto;
+    color: rgb(187, 187, 0);
+}
+
+.galaxies-text p{
+    width: 85%;
+    text-align: start;
+    font-family: 'Inconsolata';
+    font-size: 1.3em;
+    line-height: 1.3em;
+    margin: auto;
+}
+
+.galaxies-btn-div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.galaxies-btn-div button{
+    display: block;
+    width: auto;
+    margin-left: 36px;
+    padding: 13px 17px;
+    background-color: transparent;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1em;
+    font-family: 'Calistoga';
+    font-style: italic;
+}
+
+.galaxies-btn-div button:hover{
+    cursor: pointer;
+}
+
+.galaxies-btn-div span{
+    display: inline-block;
+    font-size: 1.8em;
+    width: 36px;
+    padding-left: 10px;
+}
+
+.rocket{
+    animation: launch 0.5s linear 0s 1 normal forwards;
+}

@@ -1,0 +1,50 @@
+@import url(../milkyway/keyframes_milkyway.css);
+
+.popup-box{
+    position: fixed;
+    width: 60%;
+    background-color: rgb(16 13 21);
+    border-radius: 10px;
+    border: 2px solid rgb(175, 175, 0);
+    margin-bottom: -10%;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+#popup-image{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    animation: levitate-popup 1.5s ease-in-out 0s infinite alternate both;
+}
+
+#close-icon{
+    padding: 10px;
+    position: absolute;
+    right: 0;
+}
+
+#close-icon:hover{
+    cursor: pointer;
+}
+
+.popup-content{
+    position: relative;
+    width: 85%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.popup-content h2{
+    text-align: center;
+    font-size: 2.5em;
+    color: yellow;
+    font-family: 'Bungee Outline';
+    padding: 35px 0 20px 0;
+}
+
+.popup-content p{
+    text-align: justify;
+    color: white;
+    font-family: 'Inconsolata';
+    font-size: 1.2em;
+}

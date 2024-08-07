@@ -1,0 +1,99 @@
+@import url(./galaxies_keyframes.css);
+
+.galaxies-main{
+    position: relative;
+    grid-area: main;
+}
+
+.popup{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.appear-animation{
+    animation: appear 1s ease-in-out 0.1s 1 normal forwards;
+}
+
+/* ---------- INTRODUCTION SECTION ---------- */
+
+.galaxies-intro-text{
+    text-align: center;
+    padding: 0 30px;
+    padding: 20vh 0;
+    animation: grow 1s linear 0s 1 normal both;
+}
+
+.galaxies-intro-text p{
+    font-family: 'Inconsolata';
+    font-size: 1.5em;
+    margin: auto;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.galaxies-intro-text .highlight{
+    font-family: 'Rubik Mono One';
+    font-size: 3em; 
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1px yellow;
+    animation: levitate 1.5s ease-in-out 0s infinite alternate both;
+    text-shadow: none;
+    font-weight: lighter;
+    margin-bottom: 20vh;
+}
+
+.emphasis{
+    color: yellow;
+}
+
+.galaxies-intro-text .guide-text{
+    font-size: 1.3em;
+}
+
+/* ---------- MAIN SECTION ---------- */
+
+.first-body-div{
+    display: flex;
+    justify-content: center;
+    padding: 10vh 0;
+    animation: slow-levitation 2s ease-in-out 0s infinite alternate both;
+}
+
+.second-body-div{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10vh 20vw;
+    animation: fast-levitation 1s ease-in-out 0s infinite alternate both;
+}
+
+.third-body-div{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10vh 20vw;
+    animation: fast-levitation 1s ease-in-out 0s infinite alternate both;
+}
+
+.fourth-body-div{
+    display: flex;
+    justify-content: flex-start;
+    padding: 15vh 30vw 35vh 25vw;
+    animation: slow-levitation 2s ease-in-out 0s infinite alternate both;
+}
+
+main img{
+    transition: transform 0.3s linear 0s;
+}
+
+.galaxies-main img:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    max-width: 100vw;
+    min-height: 100vh;
+    background: rgb(7, 0, 10) url('../../../public/assets/images/space_background_trasnparent.png') center;
+    background-size: contain;
+    color: white;
+}
+
+.main-grid-div{
+    min-height: 100vh;
+    display: grid; 
+    grid-template:  'header' auto
+                    'main' auto
+                    'footer' auto
+                    / 100%;
+}

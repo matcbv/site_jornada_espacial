@@ -1,0 +1,1377 @@
+/*!****************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/general/window.css ***!
+  \****************************************************************************************/
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track{
+      background-image: linear-gradient(rgba(27, 22, 35) 40%, rgb(3, 0, 5));
+}
+  
+::-webkit-scrollbar-thumb{
+      background: rgb(49, 37, 58);
+      border-radius: 10px;
+}
+
+.change-scrollbar::-webkit-scrollbar-track{
+      background: rgb(3, 0, 5);
+}
+
+.change-scrollbar::-webkit-scrollbar-thumb{
+      border: 1px solid yellow;
+      background: transparent;
+}
+/*!*********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/index/general_index.css ***!
+  \*********************************************************************************************/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    max-width: 100vw;
+    min-height: 100vh;
+    background: rgb(7, 0, 10) url(../2ef3c58a3ad12b3594eb.png) center;
+    background-size: contain;
+    color: white;
+}
+
+.main-grid-div{
+    min-height: 100vh;
+    display: grid; 
+    grid-template:  'header' auto
+                    'main' auto
+                    'footer' auto
+                    / 100%;
+}
+/*!****************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/general/header.css ***!
+  \****************************************************************************************/
+header{
+    grid-area: header;
+    max-width: 100vw;
+    background-color: rgba(27, 22, 35);
+    font-family: monospace;
+    font-size: 1.4em;
+    border-bottom: 2px solid rgb(49, 37, 58);
+    z-index: 998;
+}
+
+.logo{
+    width: 60px;
+    height: 60px;
+    margin-right: 8px;
+}
+
+.main-ul{
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.main-ul:hover{
+    box-shadow: 0 3px 12px rgba(49, 37, 58, 0.5);
+}
+
+.main-ul li a{
+    text-decoration: none;
+}
+
+.main-ul li > a{
+    padding: 9px;
+    border-radius: 5px;
+    border: 2px solid rgb(70, 58, 79);
+    color: rgb(199, 199, 0);
+}
+
+.logo-div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.logo-div span p{
+    text-align: center;
+    font-family: monospace;
+    font-size: 1em;
+    color: white;
+    text-shadow: 0 0 5px rgb(220, 190, 233);
+}
+
+.logo-div p:first-child{
+    margin: 0 0 2px -3px;
+}
+
+#spacer{
+    max-width: 25%;
+    flex-grow: 1;
+    border: none;
+    animation: none;
+}
+
+.main-ul li > a:hover{
+    cursor: pointer;
+    animation: background-gradient 0.2s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes background-gradient {
+    from{
+        background-color: rgba(27, 22, 35, 1);
+    }
+    to{
+        color: rgb(243, 250, 205);
+        border: 2px solid rgba(199, 199, 0, 0.6);
+        text-shadow: 0 0 3px rgba(255, 255, 0, 0.3);
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
+    }
+}
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/index/keyframes_index.css ***!
+  \***********************************************************************************************/
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes squish{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(-7%);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes levitate{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(7px);
+    }
+}
+
+@keyframes milkyway-jump{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes andromeda-jump{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(15px);
+    }
+}
+
+@keyframes triangle-jump{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes launch {
+    from{
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate(75%, -50%);
+    }
+}
+/*!******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/index/main_index.css ***!
+  \******************************************************************************************/
+.index-main{
+    position: relative;
+    grid-area: main;
+    display: grid;
+    grid-template:  'intro-section' 1fr
+                    'milkyway-section' 1fr
+                    'andromeda-section' 1fr
+                    'triangle-section' 1fr
+                    / 100%;
+}
+
+.popup{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.appear-animation{
+    animation: appear 1s ease-in-out 0.1s 1 normal forwards;
+}
+
+/* ---------- INTRODUCTION SECTION ---------- */
+
+.intro-section{
+    grid-area: intro-section;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: center;
+    background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7), transparent);
+    font-family: monospace;
+    padding-top: 125px;
+    opacity: 0;
+}
+
+.appear-animation{
+    animation: appear 1s ease-in-out 0.1s 1 normal forwards;
+}
+
+.squish-animation{
+    animation: squish 1s ease-in-out 0s 1 normal forwards;
+}
+
+.intro-text-div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 90px;
+}
+
+.intro-text{
+    width: 50%;
+    text-align: center;
+    padding: 0 30px;
+}
+
+.intro-text p{
+    width: 80%;
+    font-size: 1.6em;
+    margin: auto;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.intro-text .highlight{
+    font-family: 'Rubik Mono One';
+    font-size: 3.2em; 
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1px yellow;
+    animation: levitate 1.5s ease-in-out 0s infinite alternate both;
+    text-shadow: none;
+}
+
+.welcomes-text{
+    width: 50%;
+    text-align: center;
+    line-height: 4em;
+    padding: 0 30px;
+}
+
+.welcomes-text p{
+    font-size: 1.6em;
+    margin: auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.welcomes-text .highlight{
+    font-family: 'Xanh Mono';
+    font-size: 3.5em;
+    font-style: italic;
+    color: yellow;
+}
+
+.intro-btn-div{
+    width: 100%;
+}
+
+.intro-btn{
+    display: block;
+    width: 16%;
+    margin: auto;
+    padding: 10px 0;
+    border: 2px solid yellow;
+    background-color: transparent;
+    border-radius: 7px;
+    color: white;
+    font-size: 1.4em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s linear 0s, box-shadow 0.3s linear 0s;
+}
+
+.intro-btn:hover{
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(7px);
+    cursor: pointer;
+}
+
+.msc-popup{
+    position: fixed;
+    bottom: 5%;
+    left: 50px;
+    width: 230px;
+    border-radius: 7px;
+    padding: 10px 0;
+    background-color: rgb(9, 8, 23);
+    border: 2px solid rgb(45, 62, 92);
+    opacity: 0;
+    z-index: 999;
+}
+
+.msc-popup > p{
+    text-align: center;
+    width: 79%;
+    margin: auto;
+    font-family: monospace;
+    margin-bottom: 15px;
+}
+
+.msc-popup button{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid yellow;
+    color: white;
+    padding: 3px 0;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.msc-popup button img{
+    width: 17px;
+    margin-left: 5px;
+}
+
+.msc-popup button:hover{
+    cursor: pointer;
+
+}
+
+.msc-popup-close-icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    padding: 5px 5px 0 0;
+}
+
+.msc-popup-close-icon:hover{
+    cursor: pointer;
+}
+
+.msc-popup-appear-animation{
+    animation: appear 1s ease-in-out 1s 1 normal both;
+}
+
+.msc-popup-disappear-animation{
+    animation: disappear 1s ease-in-out 1s 1 normal both;
+}
+
+.sound-icon{
+    width: 40px;
+    position: fixed;
+    bottom: 15px;
+    right: 10px;
+}
+
+.sound-icon:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.sound-off{
+    display: block;
+}
+
+.sound-on{
+    display: none;
+}
+
+/* ---------- MILKYWAY SECTION ---------- */
+
+.main-grid-div .milkyway-section{
+    grid-area: milkyway-section;
+    padding-top: 30vh;
+}
+
+.milkyway-section .milkyway-img{
+    width: 50%;
+}
+
+.milkyway-section .milkyway-img img{
+    display: block;
+    margin: auto;
+    animation: milkyway-jump 2s ease-in-out 0s infinite alternate both;
+    margin-bottom: 10%;
+}
+
+.milkyway-section .milkyway-img img:hover{
+    cursor: pointer;
+}
+
+.milkyway-btn-div{
+    width: 100%;
+}
+
+.milkyway-section .galaxies-text{
+    width: 50%;
+}
+
+#milkyway-btn{
+    border: 3px solid rgb(38, 54, 140);
+}
+
+#milkyway-btn:hover{
+    box-shadow: inset 0 0 12px rgb(38, 54, 140, 0.6);
+}
+
+/* ---------- ANDROMDEDA SECTION ---------- */
+
+.andromeda-section{
+    grid-area: andromeda-section;
+}
+
+.andromeda-section .andromeda-img{
+    width: 50%;
+}
+
+.andromeda-section .andromeda-img img{
+    display: block;
+    margin: auto;
+    animation: andromeda-jump 2s ease-in-out 0s infinite alternate both;
+    margin-bottom: 10%;
+}
+
+.andromeda-section .andromeda-img img:hover{
+    cursor: pointer;
+}
+
+.andromeda-section .galaxies-text{
+    width: 50%;
+}
+
+#andromeda-btn{
+    border: 3px solid rgb(111, 96, 139);
+}
+
+#andromeda-btn:hover{
+    box-shadow: inset 0 0 12px rgb(111, 96, 139, 0.6);
+}
+
+/* ---------- TRIANGLE SECTION ---------- */
+
+.triangle-section{
+    grid-area: triangle-section;
+}
+
+.triangle-section .triangle-img{
+    width: 50%;
+}
+
+.triangle-section .triangle-img img{
+    display: block;
+    margin: auto;
+    animation: triangle-jump 2s ease-in-out 0s infinite alternate both;
+    margin-bottom: 5%;
+}
+
+.triangle-section .triangle-img img:hover{
+    cursor: pointer;
+}
+
+.triangle-section .galaxies-text{
+    width: 50%;
+}
+
+#triangle-btn{
+    border: 3px solid rgb(207, 144, 169);
+}
+
+#triangle-btn:hover{
+    box-shadow: inset 0 0 12px rgb(207, 144, 169, 0.6);
+}
+
+/* ---------- SHARED STYLES ---------- */
+
+.galaxies-section{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20vh 0;
+}
+
+.galaxies-section:not(.triangle-section){
+    border-bottom: 2px solid rgba(255, 255, 0, 0.7);
+}
+
+.galaxies-section h2{
+    width: 85%;
+    text-align: start;
+    font-family: monospace;
+    font-size: 2.5em;
+    margin: 0 auto 20px auto;
+    color: rgb(187, 187, 0);
+}
+
+.galaxies-text p{
+    width: 85%;
+    text-align: start;
+    font-family: 'Inconsolata';
+    font-size: 1.3em;
+    line-height: 1.3em;
+    margin: auto;
+}
+
+.galaxies-btn-div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.galaxies-btn-div button{
+    display: block;
+    width: auto;
+    margin-left: 36px;
+    padding: 13px 17px;
+    background-color: transparent;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1em;
+    font-family: 'Calistoga';
+    font-style: italic;
+}
+
+.galaxies-btn-div button:hover{
+    cursor: pointer;
+}
+
+.galaxies-btn-div span{
+    display: inline-block;
+    font-size: 1.8em;
+    width: 36px;
+    padding-left: 10px;
+}
+
+.rocket{
+    animation: launch 0.5s linear 0s 1 normal forwards;
+}
+/*!****************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/general/footer.css ***!
+  \****************************************************************************************/
+footer{
+    grid-area: footer;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(27, 22, 35);
+    border-top: 2px solid rgb(49, 37, 58);
+    box-shadow: 0 -7px 15px rgba(27, 22, 35);
+    padding: 10px 30px;
+}
+
+.footer-links-div{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 40%;
+    margin-right: 15px;
+}
+
+.footer-links-div ul{
+    display: flex;
+    flex-flow: row wrap;
+    line-height: 1.7em;
+    list-style: none;
+    text-align: center;
+}
+
+.footer-links-div li a{
+    color: white;
+    font-size: 1.3em;
+    font-family: monospace;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-right: 20px;
+}
+
+.footer-links-div ul a:hover{
+    color: rgb(199, 199, 0);
+    cursor: pointer;
+}
+
+.footer-links-div p{
+    font-size: 1.2em;
+    padding-top: 15px;
+    font-family: monospace;
+    color: rgb(199, 199, 0);
+}
+
+.footer-msg-div{
+    width: 40%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    align-items: center;
+}
+
+.footer-msg-div p{
+    font-size: 0.9em;
+    font-family: 'Calistoga';
+    margin-right: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
+
+.footer-msg-div img{
+    width: 70px;
+    padding-bottom: 15px;
+}
+
+.footer-btn-div{
+    width: 20%;
+}
+
+footer button{
+    display: block;
+    width: auto;
+    margin: auto;
+    padding: 10px 15px;
+    border: 2px solid rgb(199, 199, 0);
+    background-color: transparent;
+    border-radius: 7px;
+    color: white;
+    font-size: 1.2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+}
+
+footer button:hover{
+    animation: up 0.4s ease-in-out 0s 1 normal forwards;
+    cursor: pointer;
+}
+
+@keyframes up{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transform: translateY(-7px);
+    }
+}
+/*!**********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/popups/footer_popups.css ***!
+  \**********************************************************************************************/
+.popup-box-footer{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    background-color: rgba(27, 22, 35);
+    padding: 40px 50px 40px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    position: relative;
+    min-height: 35%;
+    max-height: 70%;
+    border: 2px solid yellow;
+}
+
+.popup-content-footer{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.popup-text-footer p:nth-child(1){
+    width: 90%;
+    text-align: justify;
+    font-family: 'Inconsolata';
+    font-size: 1.2em;
+    margin: auto;
+}
+
+.popup-text-footer p:nth-child(3){
+    text-align: center;
+    color: rgb(252, 213, 63);
+    font-family: 'Xanh Mono';
+    font-size: 1.3em
+}
+
+.popup-text-footer ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.popup-text-footer ul li{
+    margin-left: 35px;
+}
+
+.popup-text-footer ul li:first-child{
+    margin-left: 0;
+}
+
+.popup-text-footer li::marker{
+    content: '⭐';
+    padding-bottom: 5px;
+}
+
+.popup-text-footer a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-family: monospace;
+    padding-left: 3px;
+}
+
+.popup-text-footer a:hover{
+    color: rgb(252, 213, 63);
+}
+
+#astronaut-img{
+    transition: none;
+    transform: none;
+    cursor: default;
+}
+.horizontal-row{
+    display: block;
+    width: 90%;
+    height: 2px;
+    background-color: rgb(199, 199, 0);
+    margin: 20px auto;
+}
+
+/*!***************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/general/fonts.css ***!
+  \***************************************************************************************/
+.xanh-mono-regular {
+  font-family: "Xanh Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.xanh-mono-regular-italic {
+  font-family: "Xanh Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.rubik-mono-one-regular {
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.calistoga-regular {
+  font-family: "Calistoga", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.reddit-mono-regular {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bungee-outline-regular {
+  font-family: "Bungee Outline", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inconsolata-regular {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+/*!***************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/galaxies/general_galaxies.css ***!
+  \***************************************************************************************************/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    max-width: 100vw;
+    min-height: 100vh;
+    background: rgba(8, 7, 12, 1) url(../2ef3c58a3ad12b3594eb.png) center;
+    background-size: contain;
+    color: white;
+}
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/galaxies/galaxies_keyframes.css ***!
+  \*****************************************************************************************************/
+@keyframes levitate{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(7px);
+    }
+}
+
+@keyframes reverse-levitate{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes slow-levitation{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fast-levitation{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(10px);
+    }
+}
+
+@keyframes grow{
+    from{
+        transform: scale(0.3)
+    }
+    to{
+        transform: scale(1)
+    }
+}
+
+@keyframes levitate-popup{
+    from{
+        transform: translate(-50%, -72%);
+    }
+    to{
+        transform: translate(-50%, -75%);
+    }
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes disappear{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes pulsing {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+/*!************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/galaxies/main_galaxies.css ***!
+  \************************************************************************************************/
+.galaxies-main{
+    position: relative;
+    grid-area: main;
+}
+
+.popup{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.appear-animation{
+    animation: appear 1s ease-in-out 0.1s 1 normal forwards;
+}
+
+/* ---------- INTRODUCTION SECTION ---------- */
+
+.galaxies-intro-text{
+    text-align: center;
+    padding: 0 30px;
+    padding: 20vh 0;
+    animation: grow 1s linear 0s 1 normal both;
+}
+
+.galaxies-intro-text p{
+    font-family: 'Inconsolata';
+    font-size: 1.5em;
+    margin: auto;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.galaxies-intro-text .highlight{
+    font-family: 'Rubik Mono One';
+    font-size: 3em; 
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1px yellow;
+    animation: levitate 1.5s ease-in-out 0s infinite alternate both;
+    text-shadow: none;
+    font-weight: lighter;
+    margin-bottom: 20vh;
+}
+
+.emphasis{
+    color: yellow;
+}
+
+.galaxies-intro-text .guide-text{
+    font-size: 1.3em;
+}
+
+/* ---------- MAIN SECTION ---------- */
+
+.first-body-div{
+    display: flex;
+    justify-content: center;
+    padding: 10vh 0;
+    animation: slow-levitation 2s ease-in-out 0s infinite alternate both;
+}
+
+.second-body-div{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10vh 20vw;
+    animation: fast-levitation 1s ease-in-out 0s infinite alternate both;
+}
+
+.third-body-div{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10vh 20vw;
+    animation: fast-levitation 1s ease-in-out 0s infinite alternate both;
+}
+
+.fourth-body-div{
+    display: flex;
+    justify-content: flex-start;
+    padding: 15vh 30vw 35vh 25vw;
+    animation: slow-levitation 2s ease-in-out 0s infinite alternate both;
+}
+
+main img{
+    transition: transform 0.3s linear 0s;
+}
+
+.galaxies-main img:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/popups/desktop_popups.css ***!
+  \***********************************************************************************************/
+.popup-box{
+    position: fixed;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+}
+
+.popup-img-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+#popup-image{
+    transform: none;
+    transition: none;
+}
+
+.popup-content{
+    position: relative;
+    width: 50%;
+    height: auto;
+    background-color: rgb(16, 13, 21);
+    border: 2px solid rgb(175, 175, 0);
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    border-radius: 10px;
+    margin-right: 10%;
+    padding: 50px;
+}
+
+.popup-content h2{
+    text-align: center;
+    font-size: 2.2em;
+    color: yellow;
+    font-family: 'Bungee Outline';
+    padding-bottom: 25px;
+    width: 90%;
+    margin: auto;
+}
+
+.popup-content p{
+    text-align: justify;
+    color: white;
+    font-family: 'Inconsolata';
+    font-size: 1.2em;
+    width: 90%;
+    margin: auto;
+}
+
+.icons-div{
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+.close-icon {
+    margin-bottom: 10px;
+}
+
+#cepheid_star{
+    animation: pulsing 4s linear 0s infinite normal both;
+}
+/*!*****************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/popups/ideaform.css ***!
+  \*****************************************************************************************/
+.main-ideaform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    height: 90vh;
+}
+
+.ideaform-content{
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    justify-content: space-evenly;
+    width: 80%;
+    max-height: 80%;
+    background-color: rgb(16, 13, 21);
+    border: 2px solid rgba(175, 175, 0, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.ideaform-content h2{
+    text-align: left;
+    font-size: 1.7em;
+    color: yellow;
+    font-family: 'Xanh Mono';
+    padding-bottom: 25px;
+    font-style: italic;
+}
+
+.ideaform-content h3{
+    font-size: 1.3em;
+    font-family: monospace;
+    color: rgb(199, 199, 0);
+    width: 100%;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.idea-text-div{
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    width: 50%;
+}
+
+.idea-text-div p{
+    text-align: left;
+    color: white;
+    font-family: 'Inconsolata';
+    font-size: 1.2em;
+}
+
+.idea-text-div .highlight{
+    color: yellow;
+    font-family: 'Xanh Mono';
+    font-style: italic;
+}
+
+.vertical-row{
+    display: block;
+    width: 2px;
+    background-color:rgb(199, 199, 0);
+    margin: 0 30px;
+}
+
+ form{
+    display: grid;
+    grid-template:  'radios' auto
+                    'textarea' auto
+                    'email' auto
+                    'buttons' auto
+                    / auto;
+    width: 50%;
+    align-items: center;
+}
+
+form > *:not(.form-buttons-div){
+    margin-bottom: 15px
+}
+
+label{
+    color: rgb(199, 199, 0);
+    font-family: monospace;
+    font-size: 1.2em;
+}
+
+.radio-div{
+    grid-area: radios;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.radio-div input:checked + label{
+    color: rgb(199, 199, 0);
+}
+
+.radio-div > div label{
+    color:  white;
+}
+
+.input-div{
+    margin-bottom: 5px;
+}
+
+.textarea-div{
+    grid-area: textarea;
+}
+
+.textarea-div > * {
+    display: block;
+    width: 100%;
+}
+
+textarea{
+    border-radius: 5px;
+    border: none;
+    font-size: 1.2em;
+    padding: 10px;
+    margin-top: 5px;
+    resize: none;
+    overflow: hidden;
+    max-width: 80%;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+.email-div{
+    grid-area: email;
+    
+}
+
+.email-div > * {
+    display: block;
+    width: 100%;
+}
+
+.email-div input{
+    border-radius: 5px;
+    border: none;
+    font-size: 1.1em;
+    font-family: monospace;
+    padding: 5px 10px;
+    margin-top: 5px;
+    max-width: 80%;
+}
+
+.email-div input:focus{
+    outline: none;
+}
+
+.email-div p{
+    margin-bottom: 4px;
+    font-family: monospace;
+}
+
+.form-buttons-div{
+    grid-area: buttons;
+}
+
+.form-buttons-div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.form-buttons-div button{
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    font-family: 'Inconsolata';
+    font-weight: bold;
+    transition: transform 0.2s linear 0s;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: 1px solid yellow;
+}
+
+.form-buttons-div button:first-child{
+    margin-right: 10%;
+}
+
+.form-buttons-div button:hover{
+    transform: scale(1.1)
+}
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./docs/frontend/css/general/error_404.css ***!
+  \*******************************************************************************************/
+.main-error{
+    display: grid;
+    grid-template: 'astronaut error satellite' 100vh
+                    / 1fr 3fr 1fr;
+    max-width: 100vw;
+    justify-items: center;
+}
+
+.astronaut-div{
+    grid-area: astronaut;
+    align-self: self-start;
+    margin-top: 30%;
+    animation: levitate 1.5s ease-in-out 0s infinite alternate both;
+}
+
+.main-div-error{
+    grid-area: error;
+    align-self: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.satellite-div{
+    grid-area: satellite;
+    align-self: self-end;
+    margin-bottom: 45%;
+    animation: reverse-levitate 1.5s ease-in-out 0s infinite alternate both;
+}
+
+.main-div-error h1{
+    text-align: center;
+    font-size: 7em;
+    color: transparent;
+    -webkit-text-stroke: 4px yellow;
+    font-style: italic;
+    font-family: 'Rubik Mono One';
+}
+
+.main-div-error p{
+    font-family: 'Inconsolata';
+    font-size: 1.3em;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.main-div-error button{
+    display: block;
+    margin: auto;
+    padding: 10px 20px;
+    border: 3px solid rgb(28 23 67);
+    background-color: transparent;
+    border-radius: 7px;
+    color: white;
+    font-size: 1.4em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s linear 0s;
+}
+
+.main-div-error button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map*/

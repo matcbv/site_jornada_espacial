@@ -1,0 +1,31 @@
+    <%- include(head) %>
+<body>
+    <div class="main-grid-div">
+        <%- include(header) %>
+        <main class="galaxies-main">
+            <div class="popup"></div>
+            <div class="galaxies-intro-text">
+                <p>Bem-vindo à</p>
+                <h1 class="highlight">Andrômeda!</h1>
+                <p class="guide-text">Chegou a hora da aventura, <span class="emphasis">Mochileiro!</span> Está preparado?</p>
+                <p class="guide-text"><span class="emphasis">Clique</span> nos corpos celestes que deseja explorar abaixo</p>
+            </div>
+            <div class="first-body-div">
+                <img id="m110" src="/images/andromeda_images/m110.png" alt="Galáxia Anã M110">
+            </div>
+            <div class="second-body-div">
+                <img id="supermassive_star" src="/images/andromeda_images/supermassive_star_small.png" alt="Estrela Supermassiva">
+            </div>
+            <div class="third-body-div">
+                <img id="supernova" src="/images/andromeda_images/supernova.png" alt="Supernova">
+            </div>
+            <div class="fourth-body-div">
+                <img id="cepheid_star" src="/images/andromeda_images/cepheid_star.png" alt="Estrela Cefeida">
+            </div>
+            <%- include(audio) %>
+        </main>
+        <%- include(footer) %>
+    </div>
+    <script src="/js/bundle.js"></script>
+</body>
+</html>

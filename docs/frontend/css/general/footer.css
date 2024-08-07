@@ -1,0 +1,104 @@
+footer{
+    grid-area: footer;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(27, 22, 35);
+    border-top: 2px solid rgb(49, 37, 58);
+    box-shadow: 0 -7px 15px rgba(27, 22, 35);
+    padding: 10px 30px;
+}
+
+.footer-links-div{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 40%;
+    margin-right: 15px;
+}
+
+.footer-links-div ul{
+    display: flex;
+    flex-flow: row wrap;
+    line-height: 1.7em;
+    list-style: none;
+    text-align: center;
+}
+
+.footer-links-div li a{
+    color: white;
+    font-size: 1.3em;
+    font-family: monospace;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-right: 20px;
+}
+
+.footer-links-div ul a:hover{
+    color: rgb(199, 199, 0);
+    cursor: pointer;
+}
+
+.footer-links-div p{
+    font-size: 1.2em;
+    padding-top: 15px;
+    font-family: monospace;
+    color: rgb(199, 199, 0);
+}
+
+.footer-msg-div{
+    width: 40%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    align-items: center;
+}
+
+.footer-msg-div p{
+    font-size: 0.9em;
+    font-family: 'Calistoga';
+    margin-right: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
+
+.footer-msg-div img{
+    width: 70px;
+    padding-bottom: 15px;
+}
+
+.footer-btn-div{
+    width: 20%;
+}
+
+footer button{
+    display: block;
+    width: auto;
+    margin: auto;
+    padding: 10px 15px;
+    border: 2px solid rgb(199, 199, 0);
+    background-color: transparent;
+    border-radius: 7px;
+    color: white;
+    font-size: 1.2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+}
+
+footer button:hover{
+    animation: up 0.4s ease-in-out 0s 1 normal forwards;
+    cursor: pointer;
+}
+
+@keyframes up{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transform: translateY(-7px);
+    }
+}
