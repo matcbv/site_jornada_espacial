@@ -105,6 +105,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./docs/frontend/css/index/index_media_queries.css":
+/*!*********************************************************!*\
+  !*** ./docs/frontend/css/index/index_media_queries.css ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./docs/frontend/css/index/main_index.css":
 /*!************************************************!*\
   !*** ./docs/frontend/css/index/main_index.css ***!
@@ -541,6 +554,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_popups_desktop_popups_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/popups/desktop_popups.css */ "./docs/frontend/css/popups/desktop_popups.css");
 /* harmony import */ var _css_popups_ideaform_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/popups/ideaform.css */ "./docs/frontend/css/popups/ideaform.css");
 /* harmony import */ var _css_general_error_404_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/general/error_404.css */ "./docs/frontend/css/general/error_404.css");
+/* harmony import */ var _css_index_index_media_queries_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/index_media_queries.css */ "./docs/frontend/css/index/index_media_queries.css");
+
 
 
 

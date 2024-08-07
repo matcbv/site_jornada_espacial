@@ -1,0 +1,81 @@
+@media only screen and (max-width: 992px){
+    
+    /* ------- INTRODUCTION SECTION ------- */
+
+    .intro-section{
+        padding-top: 75px;
+    }
+
+    .intro-text-div{
+        flex-flow: column nowrap;
+    }
+    
+    .intro-text{
+        width: 100%;
+    }
+
+    .intro-text-div p{
+        font-size: 1.3em;
+        width: 70%;
+        margin-bottom: 10px;
+    }
+
+    .intro-text .highlight{
+        font-size: 2.5em;
+    }
+
+    .welcomes-text .highlight{
+        font-size: 2.5em;
+    }
+
+    .intro-btn{
+        font-size: 1.1em;
+    }
+
+    /* ------- INDEX ------- */
+
+    .index-main{
+        grid-template:  "intro-section" 1fr
+                        "milkyway-section" 2fr
+                        "andromeda-section" 2fr
+                        "triangle-section" 2fr
+                        / 100%;
+    }
+
+    .main-grid-div .milkyway-section{
+        padding-top: 40vh;
+    }
+
+    /* ------- GALAXIES SECTION ------- */
+
+    .galaxies-section{
+        flex-flow: column nowrap;
+    }
+
+    .welcomes-text{
+        margin-bottom: 100px;
+        width: 100%;
+    }
+
+    .galaxies-text{
+        width: 90%;
+    }
+
+    .galaxies-text p{
+        font-size: 1em;
+        text-align: justify;
+    }
+
+    .galaxies-section h2{
+        text-align: center;
+        font-size: 2.3em;
+    }
+
+    .galaxies-btn-div button{
+        width: 280px;
+    }
+
+    .galaxies-img-div{
+        width: 100%;
+    }
+}
