@@ -147,7 +147,6 @@ soundOn.addEventListener('click', () => {
 })
 
 soundOff.addEventListener('click', () => {
-    console.log(bodyRectBottom)
     const audioTime = sessionStorage.getItem('audioTime')
     audio.currentTime = audioTime
     audio.play()
