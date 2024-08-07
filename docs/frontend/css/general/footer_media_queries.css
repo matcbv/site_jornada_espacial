@@ -1,0 +1,35 @@
+@media only screen and (max-width: 992px){
+
+    .footer-btn-div{
+        display: none;
+    }
+
+    .footer-links-div{
+        width: 65%;
+    }
+
+    .footer-links-div p{
+        font-size: 0.8em;
+    }
+
+    .footer-links-div ul{
+        line-height: 1.3em;
+    }
+
+    .footer-links-div li a{
+        font-size: 0.9em;
+    }
+
+    .footer-msg-div{
+        width: 35%;
+    }
+
+    .footer-msg-div p{
+        font-size: 0.7em;
+        margin-right: 0;
+    }
+
+    .footer-msg-div img{
+        width: 50px;
+    }
+}

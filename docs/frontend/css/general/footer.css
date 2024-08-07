@@ -57,9 +57,10 @@ footer{
 .footer-msg-div p{
     font-size: 0.9em;
     font-family: 'Calistoga';
-    margin-right: 15px;
+    padding-right: 7px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-style: italic;
+    text-align: center;
 }
 
 .footer-msg-div img{

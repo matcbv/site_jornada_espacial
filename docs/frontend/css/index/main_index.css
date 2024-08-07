@@ -219,6 +219,11 @@
     width: 50%;
 }
 
+.galaxies-img-div img{
+    display: block;
+    margin: 0 auto 40px auto;
+}
+
 /* ---------- MILKYWAY SECTION ---------- */
 
 .main-grid-div .milkyway-section{
