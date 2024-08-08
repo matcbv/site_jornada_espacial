@@ -1,39 +1,74 @@
+@media only screen and (max-width: 768px){
+    .popup-content p{
+        font-size: 0.8em;
+        width: 90%;
+    }
+
+    .icons-div{
+        top: 15px
+    }
+
+    .icons-div img{
+        width: 25px;
+    }
+
+    .popup-content h2{
+        font-size: 1.8em;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px){
+    .popup-content p{
+        font-size: 1em;
+        width: 80%;
+    }
+
+    .popup-content h2{
+        font-size: 2em;
+    }
+
+    .icons-div{
+        top: 20px
+    }
+}
+
 @media only screen and (max-width: 992px){
-    
+
+    .popup-box{
+        flex-flow: column nowrap;
+        position: fixed;
+    }
+
     .popup-content{
         display: flex;
         flex-flow: column nowrap;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
-        position: fixed;
-        width: 85%;
-        height: 300px;
+        width: 95%;
         background-color: rgb(16 13 21);
         border-radius: 10px;
         border: 2px solid rgb(175, 175, 0);
         box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
         padding: 0;
-        margin: auto;
+        margin: 0;
     }
     
+    .popup-img-div{
+        height: auto;
+    }
+
     #popup-image{
-        position: absolute;
-        top: 15%;
         z-index: 999;
+        align-self: flex-end;
+        position: relative;
+        bottom: -25px;
     }
 
     .popup-content p{
-        font-size: 0.9em;
-        width: 85%;
         padding-bottom: 20px;
     }
 
     .popup-content h2{
-        font-size: 1.8em;
-        width: 95%;
-    }
-
-    .icons-div{
-        top: 25px
+        padding: 40px 0 10px 0;
     }
 }

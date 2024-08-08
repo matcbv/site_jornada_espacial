@@ -53,6 +53,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./docs/frontend/css/general/error_404_media_queries.css":
+/*!***************************************************************!*\
+  !*** ./docs/frontend/css/general/error_404_media_queries.css ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./docs/frontend/css/general/fluid_header.css":
 /*!****************************************************!*\
   !*** ./docs/frontend/css/general/fluid_header.css ***!
@@ -183,19 +196,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/popups/desktop_popups.css":
-/*!*****************************************************!*\
-  !*** ./docs/frontend/css/popups/desktop_popups.css ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./docs/frontend/css/popups/footer_popups.css":
 /*!****************************************************!*\
   !*** ./docs/frontend/css/popups/footer_popups.css ***!
@@ -226,6 +226,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************************************!*\
   !*** ./docs/frontend/css/popups/popup_media_queries.css ***!
   \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./docs/frontend/css/popups/popups.css":
+/*!*********************************************!*\
+  !*** ./docs/frontend/css/popups/popups.css ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -617,7 +630,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_general_fonts_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/fonts.css */ "./docs/frontend/css/general/fonts.css");
 /* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./docs/frontend/css/galaxies/general_galaxies.css");
 /* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./docs/frontend/css/galaxies/main_galaxies.css");
-/* harmony import */ var _css_popups_desktop_popups_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/popups/desktop_popups.css */ "./docs/frontend/css/popups/desktop_popups.css");
+/* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/popups/popups.css */ "./docs/frontend/css/popups/popups.css");
 /* harmony import */ var _css_popups_ideaform_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/popups/ideaform.css */ "./docs/frontend/css/popups/ideaform.css");
 /* harmony import */ var _css_general_error_404_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/general/error_404.css */ "./docs/frontend/css/general/error_404.css");
 /* harmony import */ var _css_index_index_media_queries_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/index_media_queries.css */ "./docs/frontend/css/index/index_media_queries.css");
@@ -626,6 +639,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_general_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/general/footer_media_queries.css */ "./docs/frontend/css/general/footer_media_queries.css");
 /* harmony import */ var _css_galaxies_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/galaxies/galaxies_media_queries.css */ "./docs/frontend/css/galaxies/galaxies_media_queries.css");
 /* harmony import */ var _css_popups_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/popups/popup_media_queries.css */ "./docs/frontend/css/popups/popup_media_queries.css");
+/* harmony import */ var _css_general_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/general/error_404_media_queries.css */ "./docs/frontend/css/general/error_404_media_queries.css");
+
 
 
 
@@ -666,6 +681,13 @@ menuIcon.addEventListener('click', function () {
       fluidHeader.style.display = 'none';
       fluidHeader.classList.remove('get-up-animation');
     }, 500);
+  }
+});
+window.addEventListener('resize', function () {
+  if (window.innerWidth >= 768) {
+    if (fluidHeader) {
+      fluidHeader.style.display = 'none';
+    }
   }
 });
 })();

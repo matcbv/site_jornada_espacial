@@ -5,7 +5,10 @@
         <main class="main-error">
             <%- include(fluidHeader) %>
             <div class="astronaut-div">
+            <picture>
+                <source media="(max-width: 768px)" srcset="/images/404_images/astronaut_small.png" type="image/png">
                 <img class="astronaut" src="/images/404_images/astronaut.png" alt="Astronauta">
+            </picture>
             </div>
             <div class="main-div-error">
                 <h1 class="error-title">404</h1>
@@ -13,7 +16,10 @@
                 <button class="back-homepage-btn" type="button">Página inicial</button>
             </div>
             <div class="satellite-div">
-                <img class="satellite" src="/images/404_images/satellite.png" alt="Satélite">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="/images/404_images/satellite_small.png" type="image/png">
+                    <img class="satellite" src="/images/404_images/satellite.png" alt="Satélite">
+                </picture>
             </div>
             <%- include(audio) %>
         </main>

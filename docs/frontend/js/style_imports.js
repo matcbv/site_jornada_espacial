@@ -7,7 +7,7 @@ import "../css/popups/footer_popups.css";
 import "../css/general/fonts.css";
 import "../css/galaxies/general_galaxies.css"
 import "../css/galaxies/main_galaxies.css"
-import "../css/popups/desktop_popups.css"
+import "../css/popups/popups.css"
 import "../css/popups/ideaform.css"
 import "../css/general/error_404.css"
 import "../css/index/index_media_queries.css"
@@ -16,3 +16,4 @@ import "../css/general/fluid_header.css"
 import "../css/general/footer_media_queries.css"
 import "../css/galaxies/galaxies_media_queries.css"
 import "../css/popups/popup_media_queries.css"
+import "../css/general/error_404_media_queries.css"

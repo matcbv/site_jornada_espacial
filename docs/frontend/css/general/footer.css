@@ -8,6 +8,7 @@ footer{
     border-top: 2px solid rgb(49, 37, 58);
     box-shadow: 0 -7px 15px rgba(27, 22, 35);
     padding: 10px 30px;
+    z-index: 1000;
 }
 
 .footer-links-div{

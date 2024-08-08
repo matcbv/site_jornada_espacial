@@ -9,7 +9,7 @@
 .astronaut-div{
     grid-area: astronaut;
     align-self: self-start;
-    margin-top: 30%;
+    margin-top: 15vh;
     animation: levitate 1.5s ease-in-out 0s infinite alternate both;
 }
 
@@ -24,7 +24,7 @@
 .satellite-div{
     grid-area: satellite;
     align-self: self-end;
-    margin-bottom: 45%;
+    margin-bottom: 20vh;
     animation: reverse-levitate 1.5s ease-in-out 0s infinite alternate both;
 }
 

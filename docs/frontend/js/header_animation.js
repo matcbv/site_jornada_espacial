@@ -16,3 +16,11 @@ menuIcon.addEventListener('click', () => {
         }, 500)
     }
 })
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768){
+        if (fluidHeader){
+            fluidHeader.style.display = 'none'
+        }
+    }    
+})
