@@ -9,7 +9,8 @@ module.exports = {
     entry:  [path.resolve(__dirname, 'docs', 'frontend', 'js', 'index_animations.js'),
             path.resolve(__dirname, 'docs', 'frontend', 'js', 'popups.js'),
             path.resolve(__dirname, 'docs', 'frontend', 'js', 'window_animations.js'), 
-            path.resolve(__dirname, 'docs', 'frontend', 'js', 'style_imports.js')],
+            path.resolve(__dirname, 'docs', 'frontend', 'js', 'style_imports.js'),
+            path.resolve(__dirname, 'docs', 'frontend', 'js', 'header_animation.js')],
     output: {
         path: path.resolve(__dirname, 'docs', 'public', 'assets'),
         filename: 'js/bundle.js'

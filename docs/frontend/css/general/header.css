@@ -9,7 +9,7 @@ header{
     font-family: monospace;
     font-size: 1.4em;
     border-bottom: 2px solid rgb(49, 37, 58);
-    z-index: 998;
+    z-index: 1000;
     padding: 15px 0;
 }
 
@@ -77,6 +77,10 @@ header a{
     margin-right: 50px;
     width: 50px;
     margin-bottom: 1px;
+}
+
+.menu-icon:hover{
+    cursor: pointer;
 }
 
 @keyframes background-gradient {

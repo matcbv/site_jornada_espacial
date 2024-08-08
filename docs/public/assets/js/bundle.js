@@ -53,6 +53,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./docs/frontend/css/general/fluid_header.css":
+/*!****************************************************!*\
+  !*** ./docs/frontend/css/general/fluid_header.css ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./docs/frontend/css/general/fonts.css":
 /*!*********************************************!*\
   !*** ./docs/frontend/css/general/fonts.css ***!
@@ -468,7 +481,7 @@ if (galaxiesMain) {
   // Fetch para a requisição dos popups
   document.addEventListener('click', function (e) {
     var element = e.target;
-    if (element.tagName.toLowerCase() === "img" && !element.classList.contains('close-icon') && !element.classList.contains('sound-icon')) {
+    if (element.tagName.toLowerCase() === "img" && !element.classList.contains('close-icon') && !element.classList.contains('sound-icon') && !element.classList.contains('menu-icon')) {
       var _iterator = _createForOfIteratorHelper(images),
         _step;
       try {
@@ -590,6 +603,7 @@ window.addEventListener('load', function () {
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
+var __webpack_exports__ = {};
 /*!*******************************************!*\
   !*** ./docs/frontend/js/style_imports.js ***!
   \*******************************************/
@@ -608,9 +622,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_general_error_404_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/general/error_404.css */ "./docs/frontend/css/general/error_404.css");
 /* harmony import */ var _css_index_index_media_queries_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/index_media_queries.css */ "./docs/frontend/css/index/index_media_queries.css");
 /* harmony import */ var _css_general_header_media_queries_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/general/header_media_queries.css */ "./docs/frontend/css/general/header_media_queries.css");
-/* harmony import */ var _css_general_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/general/footer_media_queries.css */ "./docs/frontend/css/general/footer_media_queries.css");
-/* harmony import */ var _css_galaxies_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/galaxies/galaxies_media_queries.css */ "./docs/frontend/css/galaxies/galaxies_media_queries.css");
-/* harmony import */ var _css_popups_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/popups/popup_media_queries.css */ "./docs/frontend/css/popups/popup_media_queries.css");
+/* harmony import */ var _css_general_fluid_header_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/general/fluid_header.css */ "./docs/frontend/css/general/fluid_header.css");
+/* harmony import */ var _css_general_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/general/footer_media_queries.css */ "./docs/frontend/css/general/footer_media_queries.css");
+/* harmony import */ var _css_galaxies_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/galaxies/galaxies_media_queries.css */ "./docs/frontend/css/galaxies/galaxies_media_queries.css");
+/* harmony import */ var _css_popups_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/popups/popup_media_queries.css */ "./docs/frontend/css/popups/popup_media_queries.css");
 
 
 
@@ -628,6 +643,32 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!**********************************************!*\
+  !*** ./docs/frontend/js/header_animation.js ***!
+  \**********************************************/
+var menuIcon = document.querySelector('.menu-icon');
+var fluidHeader = document.querySelector('.fluid-header');
+menuIcon.addEventListener('click', function () {
+  var fluidHeaderDisplay = window.getComputedStyle(fluidHeader).display;
+  if (fluidHeaderDisplay === 'none') {
+    fluidHeader.classList.remove('get-up-animation');
+    fluidHeader.style.display = 'block';
+    fluidHeader.classList.add('get-down-animation');
+  } else if (fluidHeaderDisplay === 'block') {
+    fluidHeader.style.top = '0';
+    fluidHeader.classList.remove('get-down-animation');
+    fluidHeader.classList.add('get-up-animation');
+    setInterval(function () {
+      fluidHeader.style.display = 'none';
+      fluidHeader.classList.remove('get-up-animation');
+    }, 500);
+  }
+});
 })();
 
 /******/ })()

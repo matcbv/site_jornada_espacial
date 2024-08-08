@@ -19,7 +19,7 @@
     #popup-image{
         position: absolute;
         top: 15%;
-        z-index: 1000;
+        z-index: 999;
     }
 
     .popup-content p{
