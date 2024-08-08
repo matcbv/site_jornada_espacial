@@ -1,4 +1,5 @@
 @media only screen and (max-width: 992px){
+    
     .popup-content{
         display: flex;
         flex-flow: column nowrap;
@@ -6,13 +7,13 @@
         align-items: center;
         position: fixed;
         width: 85%;
-        height: 45%;
+        height: 300px;
         background-color: rgb(16 13 21);
         border-radius: 10px;
         border: 2px solid rgb(175, 175, 0);
-        margin: 0 0 -50% 0;
         box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
         padding: 0;
+        margin: auto;
     }
     
     #popup-image{

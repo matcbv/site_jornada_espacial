@@ -140,7 +140,7 @@
 
 .msc-popup > p{
     text-align: center;
-    width: 79%;
+    width: 72%;
     margin: auto;
     font-family: monospace;
     margin-bottom: 15px;
@@ -193,7 +193,6 @@
 }
 
 .sound-icon{
-    width: 40px;
     position: fixed;
     bottom: 15px;
     right: 10px;

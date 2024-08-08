@@ -13,7 +13,7 @@
     /* ------- INTRODUCTION SECTION ------- */
 
     .intro-section{
-        padding-top: 80px;
+        padding-top: 90px;
     }
 
     .intro-text-div{
@@ -31,12 +31,12 @@
     }
 
     .intro-text .highlight{
-        font-size: 2.5em;
+        font-size: 2.1em;
         width: 100%;
     }
 
     .welcomes-text .highlight{
-        font-size: 2.5em;
+        font-size: 2.2em;
     }
 
     .intro-btn{
@@ -46,8 +46,7 @@
     /* ------- MUSIC POPUP ------- */
 
     .msc-popup{
-        width: 220px;
-        height: 180px;
+        height: 160px;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
