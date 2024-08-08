@@ -8,10 +8,9 @@ menuIcon.addEventListener('click', () => {
         fluidHeader.style.display = 'block'
         fluidHeader.classList.add('get-down-animation')
     } else if (fluidHeaderDisplay === 'block'){
-        fluidHeader.style.top = '0'
         fluidHeader.classList.remove('get-down-animation')
         fluidHeader.classList.add('get-up-animation')
-        setInterval(() => {
+        setTimeout(() => {
             fluidHeader.style.display = 'none'
             fluidHeader.classList.remove('get-up-animation')
         }, 500)

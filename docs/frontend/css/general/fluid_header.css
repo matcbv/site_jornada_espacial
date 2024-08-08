@@ -3,15 +3,14 @@
     position: absolute;
     z-index: 999;
     width: 100%;
-    top: -140px;
 }
 
 .get-down-animation{
-    animation: get-down 0.5s ease-in-out 0s 1 forwards;
+    animation: get-down 0.5s ease-in-out 0s 1 both;
 }
 
 .get-up-animation{
-    animation: get-up 0.5s ease-in-out 0s 1 forwards;
+    animation: get-up 0.5s ease-in-out 0s 1 both;
 }
 
 .fluid-header ul{

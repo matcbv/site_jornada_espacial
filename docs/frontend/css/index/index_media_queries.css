@@ -43,24 +43,6 @@
         font-size: 1.1em;
     }
 
-    /* ------- MUSIC POPUP ------- */
-
-    .msc-popup{
-        height: 160px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .msc-popup p{
-        width: 87%;
-        font-size: 1.1em;
-    }
-
-    .msc-popup-close-icon{
-        width: 30px;
-    }
-
     /* ------- GALAXIES SECTION ------- */
 
     .galaxies-section{
@@ -110,4 +92,24 @@
     .main-grid-div .triangle-section{
         flex-flow: column-reverse nowrap;
     }
+}
+@media only screen and (max-width: 768px){
+
+        /* ------- MUSIC POPUP ------- */
+
+        .msc-popup{
+            height: 160px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    
+        .msc-popup p{
+            width: 79%;
+            font-size: 1.1em;
+        }
+    
+        .msc-popup-close-icon{
+            width: 30px;
+        }
 }

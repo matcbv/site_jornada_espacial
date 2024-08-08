@@ -1,14 +1,19 @@
 @media only screen and (max-width: 768px){
+    
+    header{
+        padding: 10px 0;
+    }
+    
     .main-ul{
         display: none;
     }
 
     .logo-div img{
-        width: 50px;
+        width: 45px;
     }
 
     .logo-div p{
-        font-size: 0.8em;
+        font-size: 0.75em;
     }
 
     .menu-icon{
