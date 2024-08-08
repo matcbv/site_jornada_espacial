@@ -1,4 +1,8 @@
 header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
     grid-area: header;
     max-width: 100vw;
     background-color: rgba(27, 22, 35);
@@ -6,37 +10,42 @@ header{
     font-size: 1.4em;
     border-bottom: 2px solid rgb(49, 37, 58);
     z-index: 998;
+    padding: 15px 0;
+}
+
+header:hover{
+    box-shadow: 0 3px 12px rgba(49, 37, 58, 0.5);
+}
+
+header a{
+    text-decoration: none;
 }
 
 .logo{
     width: 60px;
-    height: 60px;
     margin-right: 8px;
 }
 
 .main-ul{
-    height: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    padding: 10px 0;
-}
-
-.main-ul:hover{
-    box-shadow: 0 3px 12px rgba(49, 37, 58, 0.5);
 }
 
 .main-ul li a{
-    text-decoration: none;
-}
-
-.main-ul li > a{
     padding: 9px;
     border-radius: 5px;
-    border: 2px solid rgb(70, 58, 79);
+    outline: 2px solid rgb(70, 58, 79);
     color: rgb(199, 199, 0);
+    margin-right: 45px;
+}
+
+.logo-link{
+    display: block;
+    width: auto;
+    margin-left: 50px;
 }
 
 .logo-div{
@@ -44,10 +53,9 @@ header{
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    width: 200px;
 }
 
-.logo-div span p{
+.logo-div p{
     text-align: center;
     font-family: monospace;
     font-size: 1em;
@@ -56,19 +64,19 @@ header{
 }
 
 .logo-div p:first-child{
-    margin: 0 0 2px -3px;
-}
-
-#spacer{
-    max-width: 25%;
-    flex-grow: 1;
-    border: none;
-    animation: none;
+    margin-left: -3px;
 }
 
 .main-ul li > a:hover{
     cursor: pointer;
     animation: background-gradient 0.2s ease-in-out 0s 1 normal forwards;
+}
+
+.menu-icon{
+    display: none;
+    margin-right: 50px;
+    width: 50px;
+    margin-bottom: 1px;
 }
 
 @keyframes background-gradient {
@@ -77,7 +85,7 @@ header{
     }
     to{
         color: rgb(243, 250, 205);
-        border: 2px solid rgba(199, 199, 0, 0.6);
+        outline: 2px solid rgba(199, 199, 0, 0.6);
         text-shadow: 0 0 3px rgba(255, 255, 0, 0.3);
         box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
     }

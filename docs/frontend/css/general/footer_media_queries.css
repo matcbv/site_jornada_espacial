@@ -1,34 +1,41 @@
 @media only screen and (max-width: 768px){
 
+    footer{
+        padding: 10px 15px;
+    }
+
     .footer-btn-div{
         display: none;
     }
 
     .footer-links-div{
-        width: 65%;
+        width: 75%;
     }
 
     .footer-links-div p{
         font-size: 1em;
-        padding-top: 7px;
+        padding-top: 8px;
     }
 
     .footer-links-div ul{
-        line-height: 1.7em;
+        line-height: 1.6em;
     }
 
     .footer-links-div li a{
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .footer-msg-div{
-        width: 35%;
+        width: 25%;
         flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
     }
 
     .footer-msg-div p{
-        font-size: 0.8em;
-        margin-right: 0;
+        font-size: 0.7em;
+        margin: 0;
+        padding: 0;
     }
 
     .footer-msg-div img{

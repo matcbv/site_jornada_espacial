@@ -1,0 +1,17 @@
+@media only screen and (max-width: 768px){
+    .main-ul{
+        display: none;
+    }
+
+    .logo-div img{
+        width: 50px;
+    }
+
+    .logo-div p{
+        font-size: 0.8em;
+    }
+
+    .menu-icon{
+        display: block;
+    }
+}

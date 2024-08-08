@@ -1,9 +1,19 @@
 @media only screen and (max-width: 992px){
 
+    /* ------- INDEX MAIN ------- */
+
+    .index-main{
+     grid-template: "intro-section" 1fr
+                "milkyway-section" 0.5fr
+                "andromeda-section" 0.5fr
+                "triangle-section" 0.5fr
+                / 100%;
+    }
+
     /* ------- INTRODUCTION SECTION ------- */
 
     .intro-section{
-        padding-top: 75px;
+        padding-top: 80px;
     }
 
     .intro-text-div{
@@ -16,12 +26,13 @@
 
     .intro-text-div p{
         font-size: 1.3em;
-        width: 70%;
         margin-bottom: 10px;
+        width: 82%;
     }
 
     .intro-text .highlight{
         font-size: 2.5em;
+        width: 100%;
     }
 
     .welcomes-text .highlight{
@@ -35,7 +46,20 @@
     /* ------- MUSIC POPUP ------- */
 
     .msc-popup{
-        width: 180px;
+        width: 220px;
+        height: 180px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .msc-popup p{
+        width: 87%;
+        font-size: 1.1em;
+    }
+
+    .msc-popup-close-icon{
+        width: 30px;
     }
 
     /* ------- GALAXIES SECTION ------- */
@@ -57,11 +81,14 @@
     .galaxies-text p{
         font-size: 0.9em;
         text-align: justify;
-        margin-bottom: 35px;
+        margin-bottom: 50px;
+        width: 95%;
     }
 
     .galaxies-section h2{
         text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.2em;
     }
 
     .galaxies-btn-div button{
@@ -77,7 +104,7 @@
     /* ------- MILKYWAY SECTION ------- */
 
     .main-grid-div .milkyway-section{
-        padding-top: 0;
+        padding-top: 50px;
         flex-flow: column-reverse nowrap;
     }
 
