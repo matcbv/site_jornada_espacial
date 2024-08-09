@@ -18,11 +18,11 @@
     /* ------- MILKYWAY IMAGES ------- */
 
     #sun{
-        width: 240px;
+        width: 200px;
     }
     
     #earth{
-        width: 130px;
+        width: 140px;
     }
     
     #mars{
@@ -30,6 +30,38 @@
     }
     
     #saturn{
-        width: 300px;
+        width: 280px;
+    }
+
+    /* ---------- ANDROMEDA IMAGES ---------- */
+
+    #supermassive_star{
+        width: 170px;
+    }
+
+    #supernova{
+        width: 190px;
+    }
+
+    #cepheid_star{
+        width: 110px;
+    }
+
+    /* ---------- TRIANGLE IMAGES ---------- */
+
+    #neutrons_star{
+        width: 210px;
+    }
+
+    #ngc_604{
+        width: 240px;
+    }
+
+    #star_cluster{
+        width: 220px;
+    }
+
+    #m33_x7{
+        width: 220px;
     }
 }
