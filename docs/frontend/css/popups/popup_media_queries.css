@@ -3,7 +3,7 @@
     .popup-content p{
         font-size: 0.8em;
         width: 85%;
-        line-height: 1.3em;
+        line-height: 1.2em;
         text-align: center;
     }
 
@@ -28,55 +28,9 @@
     }
 
     .popup-content h2{
-        font-size: 1.5em;
+        font-size: 1.4em;
         width: 50%;
         font-family: 'Inconsolata';
-    }
-
-    /* ------- MILKYWAY IMAGES ------- */
-
-    #popup-img-sun{
-        width: 240px;
-    }
-    
-    #popup-img-earth{
-        width: 200px;
-    }
-    
-    #popup-img-mars{
-        width: 180px;
-    }
-    
-    #popup-img-saturn{
-        width: 320px;
-    }
-
-    /* ---------- ANDROMEDA IMAGES ---------- */
-
-    #popup-img-supermassive-star{
-        width: 300px;
-    }
-
-    #popup-img-supernova{
-        width: 210px;
-    }
-
-    /* ---------- TRIANGLE IMAGES ---------- */
-
-    #popup-img-neutron-star{
-        width: 220px;
-    }
-
-    #popup-img-ngc-604{
-        width: 220px;
-    }
-
-    #popup-img-star-cluster{
-        width: 200px;
-    }
-
-    #popup-image-m33-x7{
-        width: 250px;
     }
 }
 
