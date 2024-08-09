@@ -8,7 +8,7 @@
     }
 
     .popup-img-div img{
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .icons-div{ 
@@ -36,7 +36,7 @@
     /* ------- MILKYWAY IMAGES ------- */
 
     #popup-img-sun{
-        width: 250px;
+        width: 240px;
     }
     
     #popup-img-earth{
@@ -58,7 +58,7 @@
     }
 
     #popup-img-supernova{
-        width: 220px;
+        width: 210px;
     }
 
     /* ---------- TRIANGLE IMAGES ---------- */
@@ -68,7 +68,7 @@
     }
 
     #popup-img-ngc-604{
-        width: 230px;
+        width: 220px;
     }
 
     #popup-img-star-cluster{

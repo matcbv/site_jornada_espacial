@@ -19,11 +19,6 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.popup img{
-    transition: none;
-    transform: scale(1);
-}
-
 .appear-animation{
     animation: appear 1s ease-in-out 0.1s 1 normal forwards;
 }
@@ -105,9 +100,6 @@ main img{
 }
 
 /* ---------- MILKYWAY IMAGES ---------- */
-#sun{
-    width: 340px;
-}
 
 #earth{
     width: 180px;
@@ -117,15 +109,7 @@ main img{
     width: 160px;
 }
 
-#saturn{
-    width: 400px;
-}
-
 /* ---------- ANDROMEDA IMAGES ---------- */
-
-#supermassive_star{
-    width: 300px;
-}
 
 #supernova{
     width: 230px;
