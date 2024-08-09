@@ -1,19 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./docs/frontend/css/galaxies/galaxies_media_queries.css":
-/*!***************************************************************!*\
-  !*** ./docs/frontend/css/galaxies/galaxies_media_queries.css ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./docs/frontend/css/galaxies/general_galaxies.css":
 /*!*********************************************************!*\
   !*** ./docs/frontend/css/galaxies/general_galaxies.css ***!
@@ -44,19 +31,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************************!*\
   !*** ./docs/frontend/css/general/error_404.css ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/general/error_404_media_queries.css":
-/*!***************************************************************!*\
-  !*** ./docs/frontend/css/general/error_404_media_queries.css ***!
-  \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -105,19 +79,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/general/footer_media_queries.css":
-/*!************************************************************!*\
-  !*** ./docs/frontend/css/general/footer_media_queries.css ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./docs/frontend/css/general/header.css":
 /*!**********************************************!*\
   !*** ./docs/frontend/css/general/header.css ***!
@@ -131,10 +92,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/general/header_media_queries.css":
-/*!************************************************************!*\
-  !*** ./docs/frontend/css/general/header_media_queries.css ***!
-  \************************************************************/
+/***/ "./docs/frontend/css/general/ideaform.css":
+/*!************************************************!*\
+  !*** ./docs/frontend/css/general/ideaform.css ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -170,19 +131,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/index/index_media_queries.css":
-/*!*********************************************************!*\
-  !*** ./docs/frontend/css/index/index_media_queries.css ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./docs/frontend/css/index/main_index.css":
 /*!************************************************!*\
   !*** ./docs/frontend/css/index/main_index.css ***!
@@ -196,36 +144,101 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./docs/frontend/css/media_queries/error_404_media_queries.css":
+/*!*********************************************************************!*\
+  !*** ./docs/frontend/css/media_queries/error_404_media_queries.css ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./docs/frontend/css/media_queries/footer_media_queries.css":
+/*!******************************************************************!*\
+  !*** ./docs/frontend/css/media_queries/footer_media_queries.css ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./docs/frontend/css/media_queries/galaxies_media_queries.css":
+/*!********************************************************************!*\
+  !*** ./docs/frontend/css/media_queries/galaxies_media_queries.css ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./docs/frontend/css/media_queries/header_media_queries.css":
+/*!******************************************************************!*\
+  !*** ./docs/frontend/css/media_queries/header_media_queries.css ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./docs/frontend/css/media_queries/ideaform_media_queries.css":
+/*!********************************************************************!*\
+  !*** ./docs/frontend/css/media_queries/ideaform_media_queries.css ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./docs/frontend/css/media_queries/index_media_queries.css":
+/*!*****************************************************************!*\
+  !*** ./docs/frontend/css/media_queries/index_media_queries.css ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./docs/frontend/css/media_queries/popup_media_queries.css":
+/*!*****************************************************************!*\
+  !*** ./docs/frontend/css/media_queries/popup_media_queries.css ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./docs/frontend/css/popups/footer_popups.css":
 /*!****************************************************!*\
   !*** ./docs/frontend/css/popups/footer_popups.css ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/popups/ideaform.css":
-/*!***********************************************!*\
-  !*** ./docs/frontend/css/popups/ideaform.css ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/popups/popup_media_queries.css":
-/*!**********************************************************!*\
-  !*** ./docs/frontend/css/popups/popup_media_queries.css ***!
-  \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -622,24 +635,26 @@ var __webpack_exports__ = {};
   \*******************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_general_window_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/general/window.css */ "./docs/frontend/css/general/window.css");
-/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/index/general_index.css */ "./docs/frontend/css/index/general_index.css");
+/* harmony import */ var _css_general_footer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/general/footer.css */ "./docs/frontend/css/general/footer.css");
 /* harmony import */ var _css_general_header_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/general/header.css */ "./docs/frontend/css/general/header.css");
-/* harmony import */ var _css_index_main_index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/index/main_index.css */ "./docs/frontend/css/index/main_index.css");
-/* harmony import */ var _css_general_footer_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/general/footer.css */ "./docs/frontend/css/general/footer.css");
-/* harmony import */ var _css_popups_footer_popups_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/popups/footer_popups.css */ "./docs/frontend/css/popups/footer_popups.css");
-/* harmony import */ var _css_general_fonts_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/fonts.css */ "./docs/frontend/css/general/fonts.css");
-/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./docs/frontend/css/galaxies/general_galaxies.css");
-/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./docs/frontend/css/galaxies/main_galaxies.css");
-/* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/popups/popups.css */ "./docs/frontend/css/popups/popups.css");
-/* harmony import */ var _css_popups_ideaform_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/popups/ideaform.css */ "./docs/frontend/css/popups/ideaform.css");
-/* harmony import */ var _css_general_error_404_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/general/error_404.css */ "./docs/frontend/css/general/error_404.css");
-/* harmony import */ var _css_index_index_media_queries_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/index_media_queries.css */ "./docs/frontend/css/index/index_media_queries.css");
-/* harmony import */ var _css_general_header_media_queries_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/general/header_media_queries.css */ "./docs/frontend/css/general/header_media_queries.css");
-/* harmony import */ var _css_general_fluid_header_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/general/fluid_header.css */ "./docs/frontend/css/general/fluid_header.css");
-/* harmony import */ var _css_general_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/general/footer_media_queries.css */ "./docs/frontend/css/general/footer_media_queries.css");
-/* harmony import */ var _css_galaxies_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/galaxies/galaxies_media_queries.css */ "./docs/frontend/css/galaxies/galaxies_media_queries.css");
-/* harmony import */ var _css_popups_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/popups/popup_media_queries.css */ "./docs/frontend/css/popups/popup_media_queries.css");
-/* harmony import */ var _css_general_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/general/error_404_media_queries.css */ "./docs/frontend/css/general/error_404_media_queries.css");
+/* harmony import */ var _css_general_fonts_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/general/fonts.css */ "./docs/frontend/css/general/fonts.css");
+/* harmony import */ var _css_general_ideaform_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/general/ideaform.css */ "./docs/frontend/css/general/ideaform.css");
+/* harmony import */ var _css_general_error_404_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/general/error_404.css */ "./docs/frontend/css/general/error_404.css");
+/* harmony import */ var _css_general_fluid_header_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/fluid_header.css */ "./docs/frontend/css/general/fluid_header.css");
+/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/index/general_index.css */ "./docs/frontend/css/index/general_index.css");
+/* harmony import */ var _css_index_main_index_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/index/main_index.css */ "./docs/frontend/css/index/main_index.css");
+/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./docs/frontend/css/galaxies/general_galaxies.css");
+/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./docs/frontend/css/galaxies/main_galaxies.css");
+/* harmony import */ var _css_popups_footer_popups_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/popups/footer_popups.css */ "./docs/frontend/css/popups/footer_popups.css");
+/* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/popups/popups.css */ "./docs/frontend/css/popups/popups.css");
+/* harmony import */ var _css_media_queries_index_media_queries_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/media_queries/index_media_queries.css */ "./docs/frontend/css/media_queries/index_media_queries.css");
+/* harmony import */ var _css_media_queries_header_media_queries_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/media_queries/header_media_queries.css */ "./docs/frontend/css/media_queries/header_media_queries.css");
+/* harmony import */ var _css_media_queries_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/media_queries/footer_media_queries.css */ "./docs/frontend/css/media_queries/footer_media_queries.css");
+/* harmony import */ var _css_media_queries_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/media_queries/galaxies_media_queries.css */ "./docs/frontend/css/media_queries/galaxies_media_queries.css");
+/* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./docs/frontend/css/media_queries/popup_media_queries.css");
+/* harmony import */ var _css_media_queries_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/media_queries/error_404_media_queries.css */ "./docs/frontend/css/media_queries/error_404_media_queries.css");
+/* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./docs/frontend/css/media_queries/ideaform_media_queries.css");
+// GENERAL STYLES
 
 
 
@@ -648,10 +663,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// INDEX STYLES
 
 
 
+// GALAXIES STYLES
 
+
+
+// POPUPS STYLES
+
+
+
+// MEDIA QUERIES
 
 
 

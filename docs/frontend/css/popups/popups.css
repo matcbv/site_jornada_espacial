@@ -18,9 +18,9 @@
     height: 100%;
 }
 
-.popup-image{
-    transform: scale(1);
-    transition: none;
+.popup-image:hover{
+    transform: scale(1) !important;
+    cursor: default !important;
 }
 
 .popup-content{

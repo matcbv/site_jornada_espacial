@@ -1,0 +1,25 @@
+@media only screen and (max-width: 768px){
+    .ideaform-content{
+        flex-flow: column nowrap;
+        padding: 20px;
+    }
+
+    .idea-text-div{
+        width: 95%;
+    }
+
+    .idea-text-div h1{
+        font-size: 1.4em;
+        padding-bottom: 10px;
+    }
+
+    .idea-text-div p{
+        font-size: 0.9em;
+    }
+
+    form{
+        grid-template:  "radios textarea" auto
+                        "email buttons" auto
+                        / auto;
+    }
+}

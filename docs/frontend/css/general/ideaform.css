@@ -22,12 +22,12 @@
     padding: 50px;
 }
 
-.ideaform-content h2{
+.ideaform-content h1{
     text-align: left;
     font-size: 1.7em;
     color: yellow;
     font-family: 'Xanh Mono';
-    padding-bottom: 25px;
+    padding-bottom: 20px;
     font-style: italic;
 }
 
