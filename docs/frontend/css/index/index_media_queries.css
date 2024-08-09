@@ -93,23 +93,24 @@
         flex-flow: column-reverse nowrap;
     }
 }
+
 @media only screen and (max-width: 768px){
 
-        /* ------- MUSIC POPUP ------- */
+    /* ------- MUSIC POPUP ------- */
 
-        .msc-popup{
-            height: 160px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-    
-        .msc-popup p{
-            width: 79%;
-            font-size: 1.1em;
-        }
-    
-        .msc-popup-close-icon{
-            width: 30px;
-        }
+    .msc-popup{
+        height: 160px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .msc-popup p{
+        width: 79%;
+        font-size: 1.1em;
+    }
+
+    .msc-popup-close-icon{
+        width: 30px;
+    }
 }

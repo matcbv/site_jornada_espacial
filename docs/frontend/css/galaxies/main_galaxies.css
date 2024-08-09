@@ -6,16 +6,22 @@
 }
 
 .popup{
+    position: relative;
     display: none;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     position: fixed;
     top: 0;
     z-index: 998;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup img{
+    transition: none;
+    transform: scale(1);
 }
 
 .appear-animation{
@@ -71,21 +77,21 @@
 .second-body-div{
     display: flex;
     justify-content: flex-start;
-    padding: 10vh 20vw;
+    padding: 10vh 0 10vh 20vw;
     animation: fast-levitation 1s ease-in-out 0s infinite alternate both;
 }
 
 .third-body-div{
     display: flex;
     justify-content: flex-end;
-    padding: 10vh 20vw;
+    padding: 10vh 20vw 10vh 0;
     animation: fast-levitation 1s ease-in-out 0s infinite alternate both;
 }
 
 .fourth-body-div{
     display: flex;
     justify-content: flex-start;
-    padding: 15vh 30vw 35vh 25vw;
+    padding: 15vh 0 35vh 15vw;
     animation: slow-levitation 2s ease-in-out 0s infinite alternate both;
 }
 
@@ -94,6 +100,35 @@ main img{
 }
 
 .galaxies-main img:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
+
+/* ---------- MILKYWAY IMAGES ---------- */
+#sun{
+    width: 340px;
+}
+
+#earth{
+    width: 180px;
+}
+
+#mars{
+    width: 160px;
+}
+
+#saturn{
+    width: 400px;
+}
+
+/* ---------- ANDROMEDA IMAGES ---------- */
+
+#supermassive_star{
+    width: 300px;
+}
+
+#supernova{
+    width: 230px;
+}
+
+/* ---------- TRIANGLE IMAGES ---------- */

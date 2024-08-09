@@ -1,4 +1,7 @@
 @media only screen and (max-width: 992px) {
+
+    /* ------- GENERAL STYLES ------- */
+
     .galaxies-intro-text p{
         font-size: 1.3em;
     }
@@ -10,5 +13,23 @@
     .galaxies-intro-text .guide-text{
         font-size: 1.1em;
         width: 70%;
+    }
+
+    /* ------- MILKYWAY IMAGES ------- */
+
+    #sun{
+        width: 240px;
+    }
+    
+    #earth{
+        width: 130px;
+    }
+    
+    #mars{
+        width: 120px;
+    }
+    
+    #saturn{
+        width: 300px;
     }
 }

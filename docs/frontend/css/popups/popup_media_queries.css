@@ -1,23 +1,87 @@
 @media only screen and (max-width: 768px){
+
     .popup-content p{
         font-size: 0.8em;
-        width: 90%;
+        width: 85%;
+        line-height: 1.3em;
+        text-align: center;
     }
 
-    .icons-div{
-        top: 15px
+    .popup-img-div img{
+        margin-bottom: 20px;
+    }
+
+    .icons-div{ 
+        top: 15px;
+        right: 15px;
+        flex-flow: row nowrap;
     }
 
     .icons-div img{
         width: 25px;
+        height: 25px;
+    }
+
+    .popup-content .icons-div .close-icon{
+        margin-bottom: 0;
+        margin-right: 5px;
     }
 
     .popup-content h2{
-        font-size: 1.8em;
+        font-size: 1.5em;
+        width: 50%;
+        font-family: 'Inconsolata';
+    }
+
+    /* ------- MILKYWAY IMAGES ------- */
+
+    #popup-img-sun{
+        width: 250px;
+    }
+    
+    #popup-img-earth{
+        width: 200px;
+    }
+    
+    #popup-img-mars{
+        width: 180px;
+    }
+    
+    #popup-img-saturn{
+        width: 320px;
+    }
+
+    /* ---------- ANDROMEDA IMAGES ---------- */
+
+    #popup-img-supermassive-star{
+        width: 300px;
+    }
+
+    #popup-img-supernova{
+        width: 220px;
+    }
+
+    /* ---------- TRIANGLE IMAGES ---------- */
+
+    #popup-img-neutron-star{
+        width: 220px;
+    }
+
+    #popup-img-ngc-604{
+        width: 230px;
+    }
+
+    #popup-img-star-cluster{
+        width: 200px;
+    }
+
+    #popup-image-m33-x7{
+        width: 250px;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px){
+
     .popup-content p{
         font-size: 1em;
         width: 80%;
@@ -36,7 +100,6 @@
 
     .popup-box{
         flex-flow: column nowrap;
-        position: fixed;
     }
 
     .popup-content{
@@ -57,11 +120,9 @@
         height: auto;
     }
 
-    #popup-image{
+    .popup-image{
         z-index: 999;
         align-self: flex-end;
-        position: relative;
-        bottom: -25px;
     }
 
     .popup-content p{
@@ -69,6 +130,6 @@
     }
 
     .popup-content h2{
-        padding: 40px 0 10px 0;
+        padding: 20px 0 10px 0;
     }
 }

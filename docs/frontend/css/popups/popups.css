@@ -18,7 +18,7 @@
     height: 100%;
 }
 
-#popup-image{
+.popup-image{
     transform: none;
     transition: none;
 }
@@ -37,7 +37,7 @@
 
 .popup-content h2{
     text-align: center;
-    font-size: 2.2em;
+    font-size: 2.1em;
     color: yellow;
     font-family: 'Bungee Outline';
     padding-bottom: 25px;
