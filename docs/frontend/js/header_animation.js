@@ -3,6 +3,7 @@ const fluidHeader = document.querySelector('.fluid-header')
 
 menuIcon.addEventListener('click', () => {
     const fluidHeaderDisplay = window.getComputedStyle(fluidHeader).display
+    menuIcon.classList.add('shake-animation')
     if (fluidHeaderDisplay === 'none'){
         fluidHeader.classList.remove('get-up-animation')
         fluidHeader.style.display = 'block'
@@ -15,6 +16,9 @@ menuIcon.addEventListener('click', () => {
             fluidHeader.classList.remove('get-up-animation')
         }, 500)
     }
+    setTimeout(() => {
+        menuIcon.classList.remove('shake-animation')
+    }, 500)
 })
 
 window.addEventListener('resize', () => {

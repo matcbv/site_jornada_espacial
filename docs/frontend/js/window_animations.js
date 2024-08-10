@@ -17,9 +17,9 @@ if (introductionSection && headerSection){
     })
 }
 
-const galaxiesMainGridDiv = document.querySelector('.galaxies-main-grid-div')
+const galaxiesMain = document.querySelector('.galaxies-main')
 
-if (galaxiesMainGridDiv){
+if (galaxiesMain){
     document.body.classList.add('change-scrollbar');
 }
 

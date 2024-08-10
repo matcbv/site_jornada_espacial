@@ -3,21 +3,23 @@ const express = require('express')
 const router = express.Router()
 
 // Importando os middlewares de controle de rota
-const homeController = require('./controllers/homeController')
+const pagesController = require('./controllers/pagesController')
 const popupController = require('./controllers/popupController')
 const formController = require('./controllers/formController')
 const errorController = require('./controllers/errorController')
 
 // Página inicial
-router.get('/', homeController.homePage)
+router.get('/', pagesController.homePage)
 // Seção Milkyway
-router.get('/milkyway', homeController.milkyway)
+router.get('/milkyway', pagesController.milkyway)
 // Seção Andrômeda
-router.get('/andromeda', homeController.andromeda)
+router.get('/andromeda', pagesController.andromeda)
 // Seção Triângulo
-router.get('/triangle', homeController.triangle)
-// Popup de ideias
-router.get('/ideaform', homeController.ideaForm)
+router.get('/triangle', pagesController.triangle)
+// Formulário de ideias
+router.get('/ideaform', pagesController.ideaForm)
+// Página sobre mim
+router.get('/aboutme', pagesController.aboutme)
 // Enviando dados do formulario
 router.post('/ideaform/sendidea', formController.sendIdea)
 // Popups

@@ -25,23 +25,6 @@ if(galaxiesMain){
     })
 }
 
-// Fetch para requisição do popup aboutme
-function getAboutmePage(){
-    fetch(`http://localhost:8080/popup/${element.id}`).then(res => {
-        if (!res.ok){
-            throw new Error (`Erro na requisição do popup ${element.id}`)
-        } else{
-            res.text().then(html => {
-                if (indexMain){
-                    getPopup(html, indexMain)
-                } else if(galaxiesMain){
-                    getPopup(html, galaxiesMain)
-                }
-            })
-        }
-    })
-} 
-
 // Função para a requisição do formulário de idéias
 function ideaForm() {
     window.location.href = '/ideaForm'

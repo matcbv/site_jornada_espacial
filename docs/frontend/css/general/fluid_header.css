@@ -30,24 +30,6 @@
     text-decoration: none;
     font-family: monospace;
     font-size: 1.3em;
-    padding: 12px 0;
+    padding: 10px 0;
     text-shadow: 0 0 5px rgb(220, 190, 233);
-}
-
-@keyframes get-down {
-    from{
-        top: -140px;
-    }
-    to{
-        top: 0;
-    }
-}
-
-@keyframes get-up {
-    from{
-        top: 0;
-    }
-    to{
-        top: -140px;
-    }
 }

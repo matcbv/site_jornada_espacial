@@ -103,6 +103,7 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        width: 270px;
     }
 
     .msc-popup p{
@@ -111,6 +112,11 @@
     }
 
     .msc-popup-close-icon{
-        width: 30px;
+        width: 28px;
+    }
+
+    .sound-icon{
+        width: 28px;
+        right: 5px;
     }
 }

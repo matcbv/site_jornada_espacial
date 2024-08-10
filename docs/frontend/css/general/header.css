@@ -83,14 +83,6 @@ header a{
     cursor: pointer;
 }
 
-@keyframes background-gradient {
-    from{
-        background-color: rgba(27, 22, 35, 1);
-    }
-    to{
-        color: rgb(243, 250, 205);
-        outline: 2px solid rgba(199, 199, 0, 0.6);
-        text-shadow: 0 0 3px rgba(255, 255, 0, 0.3);
-        box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
-    }
+.shake-animation{
+    animation: shake 0.5s linear 0s 1 normal none;
 }

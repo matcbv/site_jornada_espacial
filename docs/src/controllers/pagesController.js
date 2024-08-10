@@ -1,4 +1,4 @@
-const homeController = {
+const pagesController = {
     homePage: (req, res) => {
         return res.render('index.html')
     },
@@ -17,7 +17,11 @@ const homeController = {
 
     ideaForm: (req, res) => {
         return res.render('ideaform.html')
+    },
+
+    aboutme: (req, res) => {
+        return res.render('aboutme.html')
     }
 }
 
-module.exports = homeController
+module.exports = pagesController

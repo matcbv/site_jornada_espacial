@@ -2,6 +2,7 @@
     .ideaform-content{
         flex-flow: column nowrap;
         padding: 20px;
+        width: 90%;
     }
 
     .idea-text-div{
@@ -9,17 +10,69 @@
     }
 
     .idea-text-div h1{
-        font-size: 1.4em;
+        font-size: 1.3em;
         padding-bottom: 10px;
     }
 
     .idea-text-div p{
-        font-size: 0.9em;
+        font-size: 0.7em;
     }
 
     form{
-        grid-template:  "radios textarea" auto
-                        "email buttons" auto
-                        / auto;
+        grid-template:  "radios email" auto
+                        "textarea buttons" auto
+                        / auto auto;
+        width: 100%;
+    }
+
+    form label{
+        font-size: 0.8em;
+    }
+
+    .radio-div h2{
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+
+    .textarea-div{
+        margin-top: 5px;
+    }
+
+    .textarea-div textarea{
+        font-size: 0.8em;
+        max-width: 95%;
+        padding: 5px;
+    }
+
+    .form-buttons-div{
+        flex-flow: column nowrap;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .form-buttons-div button{
+        margin: auto !important;
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+
+    form>:not(.form-buttons-div){
+        margin-bottom: 0;
+    }
+
+    .email-div input{
+        font-size: 0.8em;
+        max-width: 100%;
+        padding: 5px;
+    }
+
+    .email-div p{
+        font-size: 0.7em;
+    }
+
+    .vertical-row{
+        width: 100%;
+        height: 2px;
+        margin: 20px 0;
     }
 }
