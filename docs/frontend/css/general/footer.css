@@ -9,6 +9,7 @@ footer{
     box-shadow: 0 -7px 15px rgba(27, 22, 35);
     padding: 10px 30px;
     z-index: 1000;
+    max-height: 140px;
 }
 
 .footer-links-div{
@@ -42,7 +43,7 @@ footer{
 
 .footer-links-div p{
     font-size: 1.2em;
-    padding-top: 5px;
+    padding-top: 7px;
     font-family: monospace;
     color: rgb(199, 199, 0);
 }

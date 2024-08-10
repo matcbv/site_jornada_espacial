@@ -86,7 +86,7 @@
 .fourth-body-div{
     display: flex;
     justify-content: flex-start;
-    padding: 15vh 0 35vh 15vw;
+    padding: 15vh 0 30vh 15vw;
     animation: slow-levitation 2s ease-in-out 0s infinite alternate both;
 }
 

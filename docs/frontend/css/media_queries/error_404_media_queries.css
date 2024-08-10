@@ -1,8 +1,7 @@
 @media only screen and (max-width: 992px){
 
-    .main-div-error{
-        grid-template: "astronaut error satellite" 100vh
-                        / 1fr 2fr 1fr;
+    .main-error{
+        height: 80vh;
     }
 
     .main-div-error h1{
@@ -11,12 +10,19 @@
 
     .main-div-error p{
         font-size: 0.9em;
-        width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 
     .main-div-error button{
         font-size: 1em;
         padding: 5px 10px;
+    }
+
+    .astronaut{
+        width: 50px;
+    }
+
+    .satellite{
+        width: 70px;
     }
 }

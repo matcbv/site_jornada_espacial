@@ -1,17 +1,23 @@
 .main-error{
+    grid-area: main;
     display: grid;
-    grid-template: "astronaut" 33.3%
-                    "error" 33.3%
-                    "satellite" 33.3%
+    grid-template: "astronaut" auto
+                    "error" auto
+                    "satellite" auto
                     / 100%;
     max-width: 100vw;
+    height: 100vh;
     justify-items: center;
+    position: relative;
 }
 
 .astronaut-div{
     grid-area: astronaut;
-    align-self: self-start;
+    align-self: end;
+    justify-self: start;
     animation: levitate 1.5s ease-in-out 0s infinite alternate both;
+    margin-left: 20vw;
+    padding-top: 40px;
 }
 
 .main-div-error{
@@ -24,8 +30,11 @@
 
 .satellite-div{
     grid-area: satellite;
-    align-self: self-end;
+    align-self: start;
+    justify-self: end;
     animation: reverse-levitate 1.5s ease-in-out 0s infinite alternate both;
+    margin-right: 15vw;
+    padding: 30px 0;
 }
 
 .main-div-error h1{
