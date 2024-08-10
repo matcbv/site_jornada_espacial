@@ -1,17 +1,17 @@
-@media only screen and (max-width: 992px) {
+@media (max-width: 992px) {
 
-    /* ------- GENERAL STYLES ------- */
+    /* ------- GENERAL GALAXIES STYLES ------- */
 
     .galaxies-intro-text p{
         font-size: 1.3em;
     }
 
     .galaxies-intro-text .highlight{
-        font-size: 2em;
+        font-size: 2.3em;
     }
 
     .galaxies-intro-text .guide-text{
-        font-size: 1.1em;
+        font-size: 1.2em;
         width: 70%;
     }
 
@@ -35,16 +35,20 @@
 
     /* ---------- ANDROMEDA IMAGES ---------- */
 
+    #exoplanet{
+        width: 160px;
+    }
+
     #supermassive_star{
         width: 170px;
     }
 
     #supernova{
-        width: 190px;
+        width: 200px;
     }
 
     #cepheid_star{
-        width: 110px;
+        width: 100px;
     }
 
     /* ---------- TRIANGLE IMAGES ---------- */
@@ -63,5 +67,23 @@
 
     #m33_x7{
         width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* ------- GENERAL GALAXIES STYLES ------- */
+
+    .galaxies-intro-text p{
+        font-size: 1.2em;
+    }
+
+    .galaxies-intro-text .highlight{
+        font-size: 2em;
+    }
+
+    .galaxies-intro-text .guide-text{
+        font-size: 1.1em;
+        width: 70%;
     }
 }

@@ -415,6 +415,8 @@ if (introSection) {
 // ---------- MUSIC POPUP ----------
 
 var audio = document.querySelector('.music');
+var soundOn = document.querySelector('.sound-on');
+var soundOff = document.querySelector('.sound-off');
 if (introSection) {
   var mscPopup = document.querySelector('.msc-popup');
   var mscPopupCloseIcon = document.querySelector('.msc-popup-close-icon');
@@ -451,12 +453,15 @@ if (introSection) {
     soundOn.style.display = 'block';
     soundOff.style.display = 'none';
   });
+  soundOff.addEventListener('click', function () {
+    if (mscPopup && mscPopup.parentElement) {
+      document.body.removeChild(mscPopup);
+    }
+  });
 }
 
 // ---------- SOUND ICON ----------
 
-var soundOn = document.querySelector('.sound-on');
-var soundOff = document.querySelector('.sound-off');
 var soundOffRectBottom = soundOff.getBoundingClientRect().bottom;
 var soundOnRectBottom = soundOn.getBoundingClientRect().bottom;
 var footer = document.querySelector('footer');

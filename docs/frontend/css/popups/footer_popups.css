@@ -1,15 +1,11 @@
-.popup-box-footer{
+.main-aboutme{
     display: flex;
-    align-items: center;
-    width: 60%;
-    background-color: rgba(27, 22, 35);
-    padding: 40px 50px 40px 0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    flex-flow: row nowrap;
     position: relative;
-    min-height: 35%;
-    max-height: 70%;
-    border: 2px solid yellow;
+    grid-area: main;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
 }
 
 .popup-content-footer{
@@ -19,62 +15,81 @@
     align-items: center;
 }
 
-.popup-text-footer p:nth-child(1){
-    width: 90%;
-    text-align: justify;
-    font-family: 'Inconsolata';
-    font-size: 1.2em;
-    margin: auto;
+.aboutme-text-div{
+    width: 55%;
+    margin-left: 30px;
 }
 
-.popup-text-footer p:nth-child(3){
+.aboutme-text-div h1{
+    text-align: left;
+    font-family: 'Xanh Mono';
+    font-size: 1.8em;
+    margin: auto;
+    margin-bottom: 30px;
+    color: rgb(160, 143, 255);
+}
+
+.aboutme-text-div p{
+    text-align: left;
+    font-family: monospace;
+    font-size: 1.2em;
+    margin: auto;
+    line-height: 1.4em;
+}
+
+.aboutme-nav-div{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 45%;
+}
+
+.aboutme-links-div h2{
     text-align: center;
     color: rgb(252, 213, 63);
     font-family: 'Xanh Mono';
-    font-size: 1.3em
+    font-size: 1.5em;
+    margin-bottom: 30px;
 }
 
-.popup-text-footer ul{
+.aboutme-links-div ul{
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    padding-top: 10px;
 }
 
-.popup-text-footer ul li{
+.aboutme-links-div ul li:not(:first-child){
     margin-left: 35px;
 }
 
-.popup-text-footer ul li:first-child{
-    margin-left: 0;
-}
-
-.popup-text-footer li::marker{
+.aboutme-links-div li::marker{
     content: '⭐';
-    padding-bottom: 5px;
 }
 
-.popup-text-footer a{
+.aboutme-links-div a{
     color: white;
     text-decoration: none;
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-family: monospace;
     padding-left: 3px;
 }
 
-.popup-text-footer a:hover{
+.aboutme-links-div a:hover{
     color: rgb(252, 213, 63);
 }
 
-#astronaut-img{
-    transition: none;
-    transform: none;
-    cursor: default;
+.aboutme-img-div{
+    margin: 50px auto 0 auto;
 }
-.horizontal-row{
+
+#astronaut-img{
     display: block;
-    width: 90%;
-    height: 2px;
-    background-color: rgb(199, 199, 0);
-    margin: 20px auto;
+}
+
+.aboutme-vertical-row{
+    background-color: #c7c700;
+    display: block;
+    margin: 0 20px;
+    width: 2px;
+    height: 70%;
+
 }

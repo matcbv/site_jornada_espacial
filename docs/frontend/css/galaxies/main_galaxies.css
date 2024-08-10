@@ -98,21 +98,3 @@
     transform: scale(1.1);
     cursor: pointer;
 }
-
-/* ---------- MILKYWAY IMAGES ---------- */
-
-#earth{
-    width: 180px;
-}
-
-#mars{
-    width: 160px;
-}
-
-/* ---------- ANDROMEDA IMAGES ---------- */
-
-#supernova{
-    width: 230px;
-}
-
-/* ---------- TRIANGLE IMAGES ---------- */

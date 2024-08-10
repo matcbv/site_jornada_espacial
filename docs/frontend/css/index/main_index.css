@@ -183,6 +183,7 @@
     position: fixed;
     bottom: 25px;
     right: 10px;
+    z-index: 997;
 }
 
 .sound-icon:hover{
@@ -296,7 +297,7 @@
 
 .galaxies-section h2{
     width: 85%;
-    text-align: start;
+    text-align: left;
     font-family: monospace;
     font-size: 2.5em;
     margin: 0 auto 20px auto;
@@ -305,7 +306,7 @@
 
 .galaxies-text p{
     width: 85%;
-    text-align: start;
+    text-align: left;
     font-family: 'Inconsolata';
     font-size: 1.2em;
     line-height: 1.3em;

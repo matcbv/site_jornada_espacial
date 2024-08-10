@@ -87,6 +87,8 @@ if(introSection){
 // ---------- MUSIC POPUP ----------
 
 const audio = document.querySelector('.music')
+const soundOn = document.querySelector('.sound-on')
+const soundOff = document.querySelector('.sound-off')
 
 if(introSection){
     const mscPopup = document.querySelector('.msc-popup')
@@ -128,12 +130,16 @@ if(introSection){
         soundOn.style.display = 'block'
         soundOff.style.display = 'none'
     })
+
+    soundOff.addEventListener('click', () => {
+        if(mscPopup && mscPopup.parentElement){
+            document.body.removeChild(mscPopup)
+        }
+    })
 }
 
 // ---------- SOUND ICON ----------
 
-const soundOn = document.querySelector('.sound-on')
-const soundOff = document.querySelector('.sound-off')
 const soundOffRectBottom = soundOff.getBoundingClientRect().bottom
 const soundOnRectBottom = soundOn.getBoundingClientRect().bottom
 const footer = document.querySelector('footer')

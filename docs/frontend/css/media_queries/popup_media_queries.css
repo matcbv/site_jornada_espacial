@@ -1,8 +1,8 @@
-@media only screen and (max-width: 768px){
+@media (max-width: 768px){
 
     .popup-content p{
-        font-size: 0.8em;
-        width: 85%;
+        font-size: 0.85em;
+        width: 90%;
         line-height: 1.2em;
         text-align: center;
     }
@@ -13,7 +13,7 @@
 
     .icons-div{ 
         top: 15px;
-        right: 15px;
+        right: 12px;
         flex-flow: row nowrap;
     }
 
@@ -24,7 +24,7 @@
 
     .popup-content .icons-div .close-icon{
         margin-bottom: 0;
-        margin-right: 5px;
+        margin-right: 10px;
     }
 
     .popup-content h2{
@@ -34,7 +34,7 @@
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 992px){
+@media (min-width: 768px) and (max-width: 992px){
 
     .popup-content p{
         font-size: 1em;
@@ -50,7 +50,7 @@
     }
 }
 
-@media only screen and (max-width: 992px){
+@media (max-width: 992px){
 
     .popup-box{
         flex-flow: column nowrap;
@@ -61,7 +61,7 @@
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        width: 95%;
+        width: 100%;
         background-color: rgb(16 13 21);
         border-radius: 10px;
         border: 2px solid rgb(175, 175, 0);
