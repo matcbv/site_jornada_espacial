@@ -11,9 +11,7 @@
                     / 100%;
 }
 
-.appear-animation{
-    animation: appear 1s ease-in-out 0.1s 1 normal forwards;
-}
+
 
 /* ---------- INTRODUCTION SECTION ---------- */
 
@@ -27,14 +25,6 @@
     font-family: monospace;
     padding-top: 125px;
     opacity: 0;
-}
-
-.appear-animation{
-    animation: appear 1s ease-in-out 0.1s 1 normal forwards;
-}
-
-.squish-animation{
-    animation: squish 1s ease-in-out 0s 1 normal forwards;
 }
 
 .intro-text-div{
@@ -171,23 +161,19 @@
     cursor: pointer;
 }
 
-.msc-popup-appear-animation{
-    animation: appear 1s ease-in-out 1s 1 normal both;
-}
-
-.msc-popup-disappear-animation{
-    animation: disappear 0.5s ease-in-out 1s 1 normal both;
-}
-
-.sound-icon{
+.audio-div{
     position: fixed;
     bottom: 25px;
     right: 10px;
     z-index: 997;
 }
 
+.sound-icon{
+    margin-top: 15px;
+}
+
 .sound-icon:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
@@ -197,6 +183,11 @@
 
 .sound-on{
     display: none;
+}
+
+.music-icon:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .galaxies-text{

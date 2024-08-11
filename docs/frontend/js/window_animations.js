@@ -23,24 +23,39 @@ if (galaxiesMain){
     document.body.classList.add('change-scrollbar');
 }
 
+const playlistMusics = document.querySelectorAll('.musics')
+
 window.addEventListener('beforeunload', () => {
-    const audio = document.querySelector('.music')
-    sessionStorage.setItem('audioTime', audio.currentTime)
-    sessionStorage.setItem('audioStatus', audio.paused)
+    const currentAudio = sessionStorage.getItem('currentAudio')
+    if(currentAudio){
+        const audio = getMusic(currentAudio)
+        sessionStorage.setItem('audioTime', audio.currentTime)
+        sessionStorage.setItem('audioStatus', audio.paused)
+    }
 })
 
 window.addEventListener('load', () => {
-    const audio = document.querySelector('.music')
-    const audioStatus = sessionStorage.getItem('audioStatus')
-    if(audioStatus === 'false'){
-        const audioTime = sessionStorage.getItem('audioTime')
-        audio.currentTime = audioTime
-        audio.play()
-        soundOn.style.display = 'block'
-        soundOff.style.display = 'none'
-
-    } else{
-        soundOn.style.display = 'none'
-        soundOff.style.display = 'block'
+    const currentAudio = sessionStorage.getItem('currentAudio')
+    if(currentAudio){
+        const audio = getMusic(currentAudio)
+        const audioStatus = sessionStorage.getItem('audioStatus')
+        if(audioStatus === 'false'){
+            const audioTime = sessionStorage.getItem('audioTime')
+            audio.currentTime = audioTime
+            audio.play()
+            soundOn.style.display = 'block'
+            soundOff.style.display = 'none'
+        } else{
+            soundOn.style.display = 'none'
+            soundOff.style.display = 'block'
+        }
     }
 })
+
+function getMusic(id){
+    for(const music of playlistMusics){
+        if(music.classList.contains(id)){
+            return music
+        }
+    }
+}

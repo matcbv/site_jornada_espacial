@@ -6,6 +6,8 @@ import "../css/general/fonts.css";
 import "../css/general/ideaform.css"
 import "../css/general/error_404.css"
 import "../css/general/fluid_header.css"
+import "../css/general/playlist.css"
+import "../css/general/animation_classes.css"
 import "../css/general/general_keyframes.css"
 
 // INDEX STYLES

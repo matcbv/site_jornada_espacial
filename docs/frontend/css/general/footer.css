@@ -43,9 +43,20 @@ footer{
 
 .footer-links-div p{
     font-size: 1.2em;
-    padding-top: 7px;
+    padding-top: 10px;
     font-family: monospace;
     color: rgb(199, 199, 0);
+}
+
+.icons-link{
+    color: rgb(199, 199, 0);
+    font-family: monospace;
+    text-decoration: none;
+}
+
+.icons-link:hover{
+    cursor: pointer;
+    color: white;
 }
 
 .footer-msg-div{

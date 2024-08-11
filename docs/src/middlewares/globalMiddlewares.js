@@ -8,6 +8,7 @@ function globalMiddleware(req, res, next){
     res.locals.header = 'includes/header.html'
     res.locals.fluidHeader = 'includes/fluid_header.html'
     res.locals.footer = 'includes/footer.html'
+    res.locals.playlist = 'includes/playlist.html'
     res.locals.audio = 'includes/audio.html'
     res.locals.subjectError = ''
     res.locals.textError = ''

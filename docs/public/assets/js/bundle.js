@@ -27,6 +27,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./docs/frontend/css/general/animation_classes.css":
+/*!*********************************************************!*\
+  !*** ./docs/frontend/css/general/animation_classes.css ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./docs/frontend/css/general/error_404.css":
 /*!*************************************************!*\
   !*** ./docs/frontend/css/general/error_404.css ***!
@@ -108,6 +121,19 @@ __webpack_require__.r(__webpack_exports__);
 /***/ "./docs/frontend/css/general/ideaform.css":
 /*!************************************************!*\
   !*** ./docs/frontend/css/general/ideaform.css ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./docs/frontend/css/general/playlist.css":
+/*!************************************************!*\
+  !*** ./docs/frontend/css/general/playlist.css ***!
   \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -389,106 +415,226 @@ document.addEventListener('mouseout', function (e) {
 
 var startingBtn = document.querySelector('.intro-btn');
 var milkywaySection = document.querySelector('.milkyway-section');
-var introSection = document.querySelector('.intro-section');
-if (introSection) {
+var introductionSection = document.querySelector('.intro-section');
+if (startingBtn) {
   startingBtn.addEventListener('click', function () {
-    if (introSection.classList.contains('appear-animation')) {
-      introSection.classList.remove('appear-animation');
+    if (introductionSection.classList.contains('appear-animation')) {
+      introductionSection.classList.remove('appear-animation');
     }
-    introSection.classList.add('squish-animation');
+    introductionSection.classList.add('squish-animation');
     setTimeout(function () {
-      introSection.classList.remove('squish-animation');
+      introductionSection.classList.remove('squish-animation');
       milkywaySection.scrollIntoView({
         behavior: "smooth"
       });
     }, 999);
   });
   window.addEventListener('load', function () {
-    introSection.classList.add('appear-animation');
+    introductionSection.classList.add('intro-appear-animation');
     setTimeout(function () {
-      introSection.classList.remove('appear-animation');
-      introSection.style.opacity = '1';
+      introductionSection.classList.remove('intro-appear-animation');
+      introductionSection.style.opacity = '1';
     }, 1000);
   });
 }
+})();
 
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!***********************************************!*\
+  !*** ./docs/frontend/js/header_animations.js ***!
+  \***********************************************/
+var menuIcon = document.querySelector('.menu-icon');
+var fluidHeader = document.querySelector('.fluid-header');
+menuIcon.addEventListener('click', function () {
+  var fluidHeaderDisplay = window.getComputedStyle(fluidHeader).display;
+  menuIcon.classList.add('shake-animation');
+  if (fluidHeaderDisplay === 'none') {
+    fluidHeader.classList.remove('get-up-animation');
+    fluidHeader.style.display = 'block';
+    fluidHeader.classList.add('get-down-animation');
+  } else if (fluidHeaderDisplay === 'block') {
+    fluidHeader.classList.remove('get-down-animation');
+    fluidHeader.classList.add('get-up-animation');
+    setTimeout(function () {
+      fluidHeader.style.display = 'none';
+      fluidHeader.classList.remove('get-up-animation');
+    }, 500);
+  }
+  setTimeout(function () {
+    menuIcon.classList.remove('shake-animation');
+  }, 500);
+});
+window.addEventListener('resize', function () {
+  if (window.innerWidth >= 768) {
+    if (fluidHeader) {
+      fluidHeader.style.display = 'none';
+    }
+  }
+});
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!************************************************!*\
+  !*** ./docs/frontend/js/general_animations.js ***!
+  \************************************************/
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 // ---------- MUSIC POPUP ----------
 
-var audio = document.querySelector('.music');
+var musics = document.querySelectorAll('.musics');
+var introSection = document.querySelector('.intro-section');
 var soundOn = document.querySelector('.sound-on');
 var soundOff = document.querySelector('.sound-off');
+var playlistDiv = document.querySelector('.playlist-div');
+var toStopAudio = '';
+var toPlayAudio = '';
 if (introSection) {
-  var mscPopup = document.querySelector('.msc-popup');
+  var _mscPopup = document.querySelector('.msc-popup');
   var mscPopupCloseIcon = document.querySelector('.msc-popup-close-icon');
   var play = document.querySelector('.play');
   var introSectionRect = introSection.getBoundingClientRect();
   window.addEventListener('load', function () {
     var audioStatus = sessionStorage.getItem('audioStatus');
     if (window.scrollY < introSectionRect.bottom && audioStatus !== 'false') {
-      mscPopup.classList.add('msc-popup-appear-animation');
+      _mscPopup.classList.add('msc-popup-appear-animation');
     } else {
-      document.body.removeChild(mscPopup);
+      document.body.removeChild(_mscPopup);
     }
   });
   window.addEventListener('scroll', function () {
     if (window.scrollY >= introSectionRect.bottom - 0.4) {
-      if (mscPopup && mscPopup.parentElement) {
-        mscPopup.classList.add('msc-popup-disappear-animation');
+      if (_mscPopup && _mscPopup.parentElement) {
+        _mscPopup.classList.add('disappear-animation');
         setTimeout(function () {
-          if (mscPopup && mscPopup.parentElement) {
-            document.body.removeChild(mscPopup);
+          if (_mscPopup && _mscPopup.parentElement) {
+            document.body.removeChild(_mscPopup);
           }
         }, 1500);
       }
     }
   });
   mscPopupCloseIcon.addEventListener('click', function () {
-    document.body.removeChild(mscPopup);
+    document.body.removeChild(_mscPopup);
   });
   play.addEventListener('click', function () {
-    sessionStorage.setItem('audioTime', audio.currentTime);
-    sessionStorage.setItem('audioStatus', audio.paused);
-    audio.play();
-    document.body.removeChild(mscPopup);
+    var currentAudio = sessionStorage.getItem('currentAudio');
+    if (currentAudio) {
+      toPlayAudio = getMusic(currentAudio);
+      toPlayAudio.play();
+      sessionStorage.setItem('audioStatus', toPlayAudio.paused);
+    } else {
+      toPlayAudio = getMusic('redbone');
+      toPlayAudio.play();
+      sessionStorage.setItem('audioStatus', toPlayAudio.paused);
+    }
+    document.body.removeChild(_mscPopup);
     soundOn.style.display = 'block';
     soundOff.style.display = 'none';
-  });
-  soundOff.addEventListener('click', function () {
-    if (mscPopup && mscPopup.parentElement) {
-      document.body.removeChild(mscPopup);
-    }
   });
 }
 
 // ---------- SOUND ICON ----------
 
-var soundOffRectBottom = soundOff.getBoundingClientRect().bottom;
-var soundOnRectBottom = soundOn.getBoundingClientRect().bottom;
+var audioDiv = document.querySelector('.audio-div');
+var audioDivRectBottom = audioDiv.getBoundingClientRect().bottom;
 var footer = document.querySelector('footer');
 soundOn.addEventListener('click', function () {
-  audio.pause();
-  sessionStorage.setItem('audioTime', audio.currentTime);
-  sessionStorage.setItem('audioStatus', audio.paused);
-  soundOn.style.display = 'none';
-  soundOff.style.display = 'block';
+  var currentAudio = sessionStorage.getItem('currentAudio');
+  if (currentAudio) {
+    toStopAudio = getMusic(currentAudio);
+    toStopAudio.pause();
+    sessionStorage.setItem('audioTime', toStopAudio.currentTime);
+    sessionStorage.setItem('audioStatus', toStopAudio.paused);
+    soundOn.style.display = 'none';
+    soundOff.style.display = 'block';
+  }
 });
 soundOff.addEventListener('click', function () {
-  var audioTime = sessionStorage.getItem('audioTime');
-  audio.currentTime = audioTime;
-  audio.play();
-  soundOn.style.display = 'block';
-  soundOff.style.display = 'none';
+  var currentAudio = sessionStorage.getItem('currentAudio');
+  if (currentAudio) {
+    toPlayAudio = getMusic(currentAudio);
+    var audioTime = sessionStorage.getItem('audioTime');
+    toPlayAudio.currentTime = audioTime;
+    toPlayAudio.play();
+    soundOn.style.display = 'block';
+    soundOff.style.display = 'none';
+  } else {
+    toPlayAudio = getMusic('redbone');
+    toPlayAudio.play();
+    soundOn.style.display = 'block';
+    soundOff.style.display = 'none';
+  }
+  if (mscPopup && mscPopup.parentElement) {
+    document.body.removeChild(mscPopup);
+  }
+  sessionStorage.setItem('audioStatus', toPlayAudio.paused);
 });
 window.addEventListener('scroll', function () {
   var footerRectTop = footer.getBoundingClientRect().top;
-  if (footerRectTop <= soundOffRectBottom || footerRectTop <= soundOnRectBottom) {
-    soundOff.style.position = 'absolute';
-    soundOn.style.position = 'absolute';
+  if (footerRectTop <= audioDivRectBottom) {
+    audioDiv.style.position = 'absolute';
+    playlistDiv.style.position = 'absolute';
   } else {
-    soundOff.style.position = 'fixed';
-    soundOn.style.position = 'fixed';
+    audioDiv.style.position = 'fixed';
+    playlistDiv.style.position = 'fixed';
   }
 });
+
+// ---------- MUSIC ICON ----------
+
+var musicIcon = document.querySelector('.music-icon');
+musicIcon.addEventListener('click', function () {
+  if (window.getComputedStyle(playlistDiv).display === 'none') {
+    playlistDiv.classList.add('playlist-appear-animation');
+    playlistDiv.style.display = 'block';
+    setTimeout(function () {
+      playlistDiv.classList.remove('playlist-appear-animation');
+    }, 500);
+  } else {
+    playlistDiv.classList.add('disappear-animation');
+    setTimeout(function () {
+      playlistDiv.style.display = 'none';
+      playlistDiv.classList.remove('disappear-animation');
+    }, 500);
+  }
+});
+
+// ---------- PLAYLIST ----------
+
+playlistDiv.addEventListener('click', function (e) {
+  var element = e.target;
+  if (!element.classList.contains('msc-div')) {
+    element = element.parentElement;
+  }
+  var music = getMusic(element.id);
+  var currentAudio = sessionStorage.getItem('currentAudio');
+  if (currentAudio) {
+    toStopAudio = getMusic(currentAudio);
+    toStopAudio.pause();
+  }
+  sessionStorage.setItem('audioStatus', toPlayAudio.paused);
+  sessionStorage.setItem('currentAudio', element.id);
+  music.play();
+});
+function getMusic(id) {
+  var _iterator = _createForOfIteratorHelper(musics),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var music = _step.value;
+      if (music.classList.contains(id)) {
+        return music;
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+}
 
 // ---------- TOP BUTTON ----------
 
@@ -586,6 +732,9 @@ function closeAction(main, divPopup, closeIcon) {
 /*!***********************************************!*\
   !*** ./docs/frontend/js/window_animations.js ***!
   \***********************************************/
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 var introductionSection = document.querySelector(".intro-section");
 var headerSection = document.querySelector("header");
 var soundOn = document.querySelector(".sound-on");
@@ -606,31 +755,53 @@ var galaxiesMain = document.querySelector('.galaxies-main');
 if (galaxiesMain) {
   document.body.classList.add('change-scrollbar');
 }
+var playlistMusics = document.querySelectorAll('.musics');
 window.addEventListener('beforeunload', function () {
-  var audio = document.querySelector('.music');
-  sessionStorage.setItem('audioTime', audio.currentTime);
-  sessionStorage.setItem('audioStatus', audio.paused);
-});
-window.addEventListener('load', function () {
-  var audio = document.querySelector('.music');
-  var audioStatus = sessionStorage.getItem('audioStatus');
-  if (audioStatus === 'false') {
-    var audioTime = sessionStorage.getItem('audioTime');
-    audio.currentTime = audioTime;
-    audio.play();
-    soundOn.style.display = 'block';
-    soundOff.style.display = 'none';
-  } else {
-    soundOn.style.display = 'none';
-    soundOff.style.display = 'block';
+  var currentAudio = sessionStorage.getItem('currentAudio');
+  if (currentAudio) {
+    var audio = getMusic(currentAudio);
+    sessionStorage.setItem('audioTime', audio.currentTime);
+    sessionStorage.setItem('audioStatus', audio.paused);
   }
 });
+window.addEventListener('load', function () {
+  var currentAudio = sessionStorage.getItem('currentAudio');
+  if (currentAudio) {
+    var audio = getMusic(currentAudio);
+    var audioStatus = sessionStorage.getItem('audioStatus');
+    if (audioStatus === 'false') {
+      var audioTime = sessionStorage.getItem('audioTime');
+      audio.currentTime = audioTime;
+      audio.play();
+      soundOn.style.display = 'block';
+      soundOff.style.display = 'none';
+    } else {
+      soundOn.style.display = 'none';
+      soundOff.style.display = 'block';
+    }
+  }
+});
+function getMusic(id) {
+  var _iterator = _createForOfIteratorHelper(playlistMusics),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var music = _step.value;
+      if (music.classList.contains(id)) {
+        return music;
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+}
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-var __webpack_exports__ = {};
 /*!*******************************************!*\
   !*** ./docs/frontend/js/style_imports.js ***!
   \*******************************************/
@@ -642,21 +813,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_general_ideaform_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/general/ideaform.css */ "./docs/frontend/css/general/ideaform.css");
 /* harmony import */ var _css_general_error_404_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/general/error_404.css */ "./docs/frontend/css/general/error_404.css");
 /* harmony import */ var _css_general_fluid_header_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/fluid_header.css */ "./docs/frontend/css/general/fluid_header.css");
-/* harmony import */ var _css_general_general_keyframes_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/general/general_keyframes.css */ "./docs/frontend/css/general/general_keyframes.css");
-/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/index/general_index.css */ "./docs/frontend/css/index/general_index.css");
-/* harmony import */ var _css_index_main_index_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/index/main_index.css */ "./docs/frontend/css/index/main_index.css");
-/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./docs/frontend/css/galaxies/general_galaxies.css");
-/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./docs/frontend/css/galaxies/main_galaxies.css");
-/* harmony import */ var _css_popups_footer_popups_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/popups/footer_popups.css */ "./docs/frontend/css/popups/footer_popups.css");
-/* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/popups/popups.css */ "./docs/frontend/css/popups/popups.css");
-/* harmony import */ var _css_media_queries_index_media_queries_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/media_queries/index_media_queries.css */ "./docs/frontend/css/media_queries/index_media_queries.css");
-/* harmony import */ var _css_media_queries_header_media_queries_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/media_queries/header_media_queries.css */ "./docs/frontend/css/media_queries/header_media_queries.css");
-/* harmony import */ var _css_media_queries_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/media_queries/footer_media_queries.css */ "./docs/frontend/css/media_queries/footer_media_queries.css");
-/* harmony import */ var _css_media_queries_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/media_queries/galaxies_media_queries.css */ "./docs/frontend/css/media_queries/galaxies_media_queries.css");
-/* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./docs/frontend/css/media_queries/popup_media_queries.css");
-/* harmony import */ var _css_media_queries_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../css/media_queries/error_404_media_queries.css */ "./docs/frontend/css/media_queries/error_404_media_queries.css");
-/* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./docs/frontend/css/media_queries/ideaform_media_queries.css");
+/* harmony import */ var _css_general_playlist_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/general/playlist.css */ "./docs/frontend/css/general/playlist.css");
+/* harmony import */ var _css_general_animation_classes_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/general/animation_classes.css */ "./docs/frontend/css/general/animation_classes.css");
+/* harmony import */ var _css_general_general_keyframes_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/general/general_keyframes.css */ "./docs/frontend/css/general/general_keyframes.css");
+/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/index/general_index.css */ "./docs/frontend/css/index/general_index.css");
+/* harmony import */ var _css_index_main_index_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/index/main_index.css */ "./docs/frontend/css/index/main_index.css");
+/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./docs/frontend/css/galaxies/general_galaxies.css");
+/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./docs/frontend/css/galaxies/main_galaxies.css");
+/* harmony import */ var _css_popups_footer_popups_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/popups/footer_popups.css */ "./docs/frontend/css/popups/footer_popups.css");
+/* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/popups/popups.css */ "./docs/frontend/css/popups/popups.css");
+/* harmony import */ var _css_media_queries_index_media_queries_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/media_queries/index_media_queries.css */ "./docs/frontend/css/media_queries/index_media_queries.css");
+/* harmony import */ var _css_media_queries_header_media_queries_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/media_queries/header_media_queries.css */ "./docs/frontend/css/media_queries/header_media_queries.css");
+/* harmony import */ var _css_media_queries_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/media_queries/footer_media_queries.css */ "./docs/frontend/css/media_queries/footer_media_queries.css");
+/* harmony import */ var _css_media_queries_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../css/media_queries/galaxies_media_queries.css */ "./docs/frontend/css/media_queries/galaxies_media_queries.css");
+/* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./docs/frontend/css/media_queries/popup_media_queries.css");
+/* harmony import */ var _css_media_queries_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../css/media_queries/error_404_media_queries.css */ "./docs/frontend/css/media_queries/error_404_media_queries.css");
+/* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./docs/frontend/css/media_queries/ideaform_media_queries.css");
 // GENERAL STYLES
+
+
 
 
 
@@ -686,41 +861,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-})();
-
-// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
-(() => {
-/*!**********************************************!*\
-  !*** ./docs/frontend/js/header_animation.js ***!
-  \**********************************************/
-var menuIcon = document.querySelector('.menu-icon');
-var fluidHeader = document.querySelector('.fluid-header');
-menuIcon.addEventListener('click', function () {
-  var fluidHeaderDisplay = window.getComputedStyle(fluidHeader).display;
-  menuIcon.classList.add('shake-animation');
-  if (fluidHeaderDisplay === 'none') {
-    fluidHeader.classList.remove('get-up-animation');
-    fluidHeader.style.display = 'block';
-    fluidHeader.classList.add('get-down-animation');
-  } else if (fluidHeaderDisplay === 'block') {
-    fluidHeader.classList.remove('get-down-animation');
-    fluidHeader.classList.add('get-up-animation');
-    setTimeout(function () {
-      fluidHeader.style.display = 'none';
-      fluidHeader.classList.remove('get-up-animation');
-    }, 500);
-  }
-  setTimeout(function () {
-    menuIcon.classList.remove('shake-animation');
-  }, 500);
-});
-window.addEventListener('resize', function () {
-  if (window.innerWidth >= 768) {
-    if (fluidHeader) {
-      fluidHeader.style.display = 'none';
-    }
-  }
-});
 })();
 
 /******/ })()

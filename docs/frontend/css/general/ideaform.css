@@ -36,7 +36,7 @@
 .ideaform-content h2{
     font-size: 1.3em;
     font-family: monospace;
-    color: rgb(199, 199, 0);
+    color: yellow;
     width: 100%;
     font-weight: normal;
     margin-bottom: 15px;
@@ -54,6 +54,7 @@
     color: white;
     font-family: 'Inconsolata';
     font-size: 1.1em;
+    font-weight: bold;
 }
 
 .idea-text-div .highlight{
@@ -85,7 +86,7 @@ form > *:not(.form-buttons-div){
 }
 
 label{
-    color: rgb(199, 199, 0);
+    color: yellow;
     font-family: monospace;
     font-size: 1.2em;
 }
@@ -97,7 +98,7 @@ label{
 }
 
 .radio-div input:checked + label{
-    color: rgb(199, 199, 0);
+    color: yellow;
 }
 
 .radio-div > div label{
@@ -147,7 +148,7 @@ textarea:focus{
     border: none;
     font-size: 1em;
     font-family: monospace;
-    padding: 5px;
+    padding: 7px;
     margin-top: 5px;
     max-width: 80%;
 }
