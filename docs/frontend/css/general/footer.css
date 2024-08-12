@@ -117,6 +117,7 @@ footer button:hover{
     position: fixed;
     top: 50vh;
     left: -200px;
+    z-index: 997;
 }
 
 .swordfish-div img{

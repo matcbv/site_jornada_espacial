@@ -512,7 +512,6 @@ var backHomePageBtn = document.querySelector('.back-homepage-btn');
 // Audio elements
 var mscPopup = document.querySelector('.msc-popup');
 var audioDiv = document.querySelector('.audio-div');
-var audioDivRectBottom = audioDiv.getBoundingClientRect().bottom;
 var soundOn = document.querySelector('.sound-on');
 var soundOff = document.querySelector('.sound-off');
 var musicIcon = document.querySelector('.music-icon');
@@ -640,6 +639,8 @@ playlistDiv.addEventListener('click', function (e) {
     toStopAudio.pause();
     if (lastSoundWaveIcon) {
       lastSoundWaveIcon.style.display = 'none';
+      soundOff.style.display = 'block';
+      soundOn.style.display = 'none';
     }
   }
   sessionStorage.setItem('audioStatus', toPlayAudio.paused);
@@ -648,6 +649,8 @@ playlistDiv.addEventListener('click', function (e) {
     music.play();
     soundWaveIcon.style.display = 'block';
     lastSoundWaveIcon = soundWaveIcon;
+    soundOff.style.display = 'none';
+    soundOn.style.display = 'block';
   } catch (_unused) {
     throw new Error('Erro ao tocar a música');
   }
@@ -681,16 +684,19 @@ function getSoundWaveIcon(element) {
 
 // ---------- AUDIO DIV ----------
 
-window.addEventListener('scroll', function () {
+if (audioDiv) {
   var footerRectTop = footer.getBoundingClientRect().top;
-  if (footerRectTop <= audioDivRectBottom) {
-    audioDiv.style.position = 'absolute';
-    playlistDiv.style.position = 'absolute';
-  } else {
-    audioDiv.style.position = 'fixed';
-    playlistDiv.style.position = 'fixed';
-  }
-});
+  var audioDivRectBottom = audioDiv.getBoundingClientRect().bottom;
+  window.addEventListener('scroll', function () {
+    if (window.scrollY >= footerRectTop - audioDivRectBottom) {
+      audioDiv.style.position = 'absolute';
+      playlistDiv.style.position = 'absolute';
+    } else {
+      audioDiv.style.position = 'fixed';
+      playlistDiv.style.position = 'fixed';
+    }
+  });
+}
 if (ideaformMain) {
   audioDiv.style.flexFlow = 'row nowrap';
   soundOff.style.margin = '0 auto 0 10px';

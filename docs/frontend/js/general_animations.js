@@ -10,7 +10,6 @@ const backHomePageBtn = document.querySelector('.back-homepage-btn')
 // Audio elements
 const mscPopup = document.querySelector('.msc-popup')
 const audioDiv = document.querySelector('.audio-div')
-const audioDivRectBottom = audioDiv.getBoundingClientRect().bottom
 const soundOn = document.querySelector('.sound-on')
 const soundOff = document.querySelector('.sound-off')
 const musicIcon = document.querySelector('.music-icon')
@@ -144,6 +143,8 @@ playlistDiv.addEventListener('click', (e) => {
         toStopAudio.pause()
         if(lastSoundWaveIcon){
             lastSoundWaveIcon.style.display = 'none'
+            soundOff.style.display = 'block'
+            soundOn.style.display = 'none'
         }
     }
     sessionStorage.setItem('audioStatus', toPlayAudio.paused)
@@ -152,6 +153,8 @@ playlistDiv.addEventListener('click', (e) => {
         music.play()
         soundWaveIcon.style.display = 'block'
         lastSoundWaveIcon = soundWaveIcon
+        soundOff.style.display = 'none'
+        soundOn.style.display = 'block'
     }catch{
         throw new Error('Erro ao tocar a música')
     }
@@ -178,16 +181,20 @@ function getSoundWaveIcon(element){
 
 // ---------- AUDIO DIV ----------
 
-window.addEventListener('scroll', () => {
+if(audioDiv){
     const footerRectTop = footer.getBoundingClientRect().top
-    if (footerRectTop <= audioDivRectBottom){
-        audioDiv.style.position = 'absolute'
-        playlistDiv.style.position = 'absolute'
-    } else{
-        audioDiv.style.position = 'fixed'
-        playlistDiv.style.position = 'fixed'
-    }
-})
+    const audioDivRectBottom = audioDiv.getBoundingClientRect().bottom
+    window.addEventListener('scroll', () => {
+        if (window.scrollY >= footerRectTop - audioDivRectBottom){
+            audioDiv.style.position = 'absolute'
+            playlistDiv.style.position = 'absolute'
+        } else{
+            audioDiv.style.position = 'fixed'
+            playlistDiv.style.position = 'fixed'
+        }
+    })
+}
+
 
 if(ideaformMain){
     audioDiv.style.flexFlow = 'row nowrap'

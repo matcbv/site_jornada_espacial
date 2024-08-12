@@ -3,10 +3,9 @@
     flex-flow: column nowrap;
     position: relative;
     grid-area: main;
-    height: 100vh;
     align-items: start;
     justify-content: center;
-    margin-left: 100px;
+    padding: 100px 0 100px 50px;
 }
 
 .aboutme-text-div h1{
