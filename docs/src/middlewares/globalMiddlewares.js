@@ -10,9 +10,10 @@ function globalMiddleware(req, res, next){
     res.locals.footer = 'includes/footer.html'
     res.locals.playlist = 'includes/playlist.html'
     res.locals.audio = 'includes/audio.html'
-    res.locals.subjectError = ''
-    res.locals.textError = ''
-    res.locals.messsage = ''
+    res.locals.swordfish = 'includes/swordfish.html'
+    res.locals.subjectError = req.flash('subjectError')
+    res.locals.textError = req.flash('textError')
+    res.locals.messsage = req.flash('message')
     next()
 }
 

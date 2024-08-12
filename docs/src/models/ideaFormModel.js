@@ -15,28 +15,28 @@ class IdeaForm{
         this.subject = data.subject,
         this.text = data.text,
         this.email = data.email
-        this.status = ''
+        this.status = []
     }
 
     checkData = () => {
         if(typeof this.subject !== 'string' || this.subject === ''){
-            this.status = 'Escolha um assunto'
-        } else if(typeof this.text !== 'string' || this.text === ''){
-            this.status = 'Mensagem inválida'
-        } else if(typeof this.email !== 'string'){
+            this.status.push('Escolha um assunto')
+        }
+        if(typeof this.text !== 'string' || this.text === ''){
+            this.status.push('Mensagem inválida')
+        }
+        if(typeof this.email !== 'string'){
             this.email = ''
-        } else{
-            this.status = ''
         }
     }
 
     sendData = async () => {
         this.checkData()
-        if(this.status !== ''){
+        if(this.status.length !== 0){
             return this.status
         }
         await IdeaModel.create(this.data)
-        return true
+        return this.status
     }
 }
 

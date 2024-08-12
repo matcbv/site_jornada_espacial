@@ -33,3 +33,7 @@
 .shake-animation{
     animation: shake 0.5s linear 0s 1 normal none;
 }
+
+.travel-animation{
+    animation: travel 2s linear 0s normal forwards;
+}

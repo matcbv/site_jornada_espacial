@@ -2,8 +2,9 @@
 <body>
     <div class="main-grid-div">
         <%- include(header) %>
-        <main class="main-ideaform">
+        <main class="ideaform-main">
             <%- include(fluidHeader) %>
+            <%- include(playlist) %>
             <div class="ideaform-content">
                 <div class="idea-text-div">
                     <h1>Espaço Ideal</h1>
@@ -14,7 +15,7 @@
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     <div class="radio-div">
                         <% if(subjectError !== ''){ %>
-                            <span><%= subjectError %></span>
+                            <div class="error-messages"><%= subjectError %></div>
                         <% } %>
                         <h2>Assunto:</h2>
                         <div class="input-div">
@@ -30,21 +31,21 @@
                             <label for="other">Outro assunto</label>
                         </div>
                     </div>
-                    <% if(textError !== ''){ %>
-                        <span><%= textError %></span>
-                    <% } %>
                     <div class="textarea-div">
+                        <% if(textError !== ''){ %>
+                            <div class="error-messages"><%= textError %></div>
+                        <% } %>
                         <label for="text">Mensagem:</label>
                         <textarea name="text" id="subject-text" placeholder="Deixe aqui sua mensagem..." rows="5"></textarea>
                     </div>
                     <div class="email-div">
-                        <p>(Não obrigatório)</p>
+                        <p>(Opcional)</p>
                         <label for="email">E-mail para contato:</label>
                         <input type="email" name="email" id="email" placeholder="Informe aqui seu e-mail">
                     </div>
                     <div class="form-buttons-div">
                         <button type="submit">Enviar</button>
-                        <button type="reset">Limpar mensagem</button>
+                        <button type="reset">Limpar</button>
                     </div>
                 </form>
             </div>

@@ -27,6 +27,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./docs/frontend/css/general/aboutme.css":
+/*!***********************************************!*\
+  !*** ./docs/frontend/css/general/aboutme.css ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./docs/frontend/css/general/animation_classes.css":
 /*!*********************************************************!*\
   !*** ./docs/frontend/css/general/animation_classes.css ***!
@@ -261,10 +274,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/media_queries/popup_media_queries.css":
-/*!*****************************************************************!*\
-  !*** ./docs/frontend/css/media_queries/popup_media_queries.css ***!
-  \*****************************************************************/
+/***/ "./docs/frontend/css/media_queries/playlist_media_queries.css":
+/*!********************************************************************!*\
+  !*** ./docs/frontend/css/media_queries/playlist_media_queries.css ***!
+  \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -274,10 +287,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/popups/footer_popups.css":
-/*!****************************************************!*\
-  !*** ./docs/frontend/css/popups/footer_popups.css ***!
-  \****************************************************/
+/***/ "./docs/frontend/css/media_queries/popup_media_queries.css":
+/*!*****************************************************************!*\
+  !*** ./docs/frontend/css/media_queries/popup_media_queries.css ***!
+  \*****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -427,14 +440,14 @@ if (startingBtn) {
       milkywaySection.scrollIntoView({
         behavior: "smooth"
       });
-    }, 999);
+    }, 998);
   });
   window.addEventListener('load', function () {
     introductionSection.classList.add('intro-appear-animation');
     setTimeout(function () {
       introductionSection.classList.remove('intro-appear-animation');
       introductionSection.style.opacity = '1';
-    }, 1000);
+    }, 999);
   });
 }
 })();
@@ -444,8 +457,11 @@ if (startingBtn) {
 /*!***********************************************!*\
   !*** ./docs/frontend/js/header_animations.js ***!
   \***********************************************/
+// Elementos do cabeçalho
 var menuIcon = document.querySelector('.menu-icon');
 var fluidHeader = document.querySelector('.fluid-header');
+
+// Evento para animações do cabeçalho fluido
 menuIcon.addEventListener('click', function () {
   var fluidHeaderDisplay = window.getComputedStyle(fluidHeader).display;
   menuIcon.classList.add('shake-animation');
@@ -465,6 +481,8 @@ menuIcon.addEventListener('click', function () {
     menuIcon.classList.remove('shake-animation');
   }, 500);
 });
+
+// Evento para fechar o cabeçalho fluido no aumento da tela
 window.addEventListener('resize', function () {
   if (window.innerWidth >= 768) {
     if (fluidHeader) {
@@ -482,42 +500,57 @@ window.addEventListener('resize', function () {
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-// ---------- MUSIC POPUP ----------
+// ---------- HTML ELEMENTS ----------
 
-var musics = document.querySelectorAll('.musics');
+// Intro and footer
 var introSection = document.querySelector('.intro-section');
+var footer = document.querySelector('footer');
+
+// Buttons
+var backHomePageBtn = document.querySelector('.back-homepage-btn');
+
+// Audio elements
+var mscPopup = document.querySelector('.msc-popup');
+var audioDiv = document.querySelector('.audio-div');
+var audioDivRectBottom = audioDiv.getBoundingClientRect().bottom;
 var soundOn = document.querySelector('.sound-on');
 var soundOff = document.querySelector('.sound-off');
+var musicIcon = document.querySelector('.music-icon');
 var playlistDiv = document.querySelector('.playlist-div');
+var musics = document.querySelectorAll('.musics');
 var toStopAudio = '';
 var toPlayAudio = '';
+var lastSoundWaveIcon = '';
+
+// Ideaform main
+var ideaformMain = document.querySelector('.ideaform-main');
+
+// ---------- MUSIC POPUP ----------
+
 if (introSection) {
-  var _mscPopup = document.querySelector('.msc-popup');
   var mscPopupCloseIcon = document.querySelector('.msc-popup-close-icon');
   var play = document.querySelector('.play');
   var introSectionRect = introSection.getBoundingClientRect();
   window.addEventListener('load', function () {
     var audioStatus = sessionStorage.getItem('audioStatus');
     if (window.scrollY < introSectionRect.bottom && audioStatus !== 'false') {
-      _mscPopup.classList.add('msc-popup-appear-animation');
+      mscPopup.classList.add('msc-popup-appear-animation');
     } else {
-      document.body.removeChild(_mscPopup);
+      document.body.removeChild(mscPopup);
     }
   });
   window.addEventListener('scroll', function () {
     if (window.scrollY >= introSectionRect.bottom - 0.4) {
-      if (_mscPopup && _mscPopup.parentElement) {
-        _mscPopup.classList.add('disappear-animation');
+      if (mscPopup && mscPopup.parentElement) {
+        mscPopup.classList.remove('msc-popup-appear-animation');
+        mscPopup.classList.add('disappear-animation');
         setTimeout(function () {
-          if (_mscPopup && _mscPopup.parentElement) {
-            document.body.removeChild(_mscPopup);
+          if (mscPopup && mscPopup.parentElement) {
+            document.body.removeChild(mscPopup);
           }
-        }, 1500);
+        }, 500);
       }
     }
-  });
-  mscPopupCloseIcon.addEventListener('click', function () {
-    document.body.removeChild(_mscPopup);
   });
   play.addEventListener('click', function () {
     var currentAudio = sessionStorage.getItem('currentAudio');
@@ -528,19 +561,20 @@ if (introSection) {
     } else {
       toPlayAudio = getMusic('redbone');
       toPlayAudio.play();
+      sessionStorage.setItem('currentAudio', 'redbone');
       sessionStorage.setItem('audioStatus', toPlayAudio.paused);
     }
-    document.body.removeChild(_mscPopup);
+    document.body.removeChild(mscPopup);
     soundOn.style.display = 'block';
     soundOff.style.display = 'none';
+  });
+  mscPopupCloseIcon.addEventListener('click', function () {
+    document.body.removeChild(mscPopup);
   });
 }
 
 // ---------- SOUND ICON ----------
 
-var audioDiv = document.querySelector('.audio-div');
-var audioDivRectBottom = audioDiv.getBoundingClientRect().bottom;
-var footer = document.querySelector('footer');
 soundOn.addEventListener('click', function () {
   var currentAudio = sessionStorage.getItem('currentAudio');
   if (currentAudio) {
@@ -572,20 +606,9 @@ soundOff.addEventListener('click', function () {
   }
   sessionStorage.setItem('audioStatus', toPlayAudio.paused);
 });
-window.addEventListener('scroll', function () {
-  var footerRectTop = footer.getBoundingClientRect().top;
-  if (footerRectTop <= audioDivRectBottom) {
-    audioDiv.style.position = 'absolute';
-    playlistDiv.style.position = 'absolute';
-  } else {
-    audioDiv.style.position = 'fixed';
-    playlistDiv.style.position = 'fixed';
-  }
-});
 
 // ---------- MUSIC ICON ----------
 
-var musicIcon = document.querySelector('.music-icon');
 musicIcon.addEventListener('click', function () {
   if (window.getComputedStyle(playlistDiv).display === 'none') {
     playlistDiv.classList.add('playlist-appear-animation');
@@ -606,6 +629,7 @@ musicIcon.addEventListener('click', function () {
 
 playlistDiv.addEventListener('click', function (e) {
   var element = e.target;
+  var soundWaveIcon = getSoundWaveIcon(element);
   if (!element.classList.contains('msc-div')) {
     element = element.parentElement;
   }
@@ -614,10 +638,22 @@ playlistDiv.addEventListener('click', function (e) {
   if (currentAudio) {
     toStopAudio = getMusic(currentAudio);
     toStopAudio.pause();
+    if (lastSoundWaveIcon) {
+      lastSoundWaveIcon.style.display = 'none';
+    }
   }
   sessionStorage.setItem('audioStatus', toPlayAudio.paused);
   sessionStorage.setItem('currentAudio', element.id);
-  music.play();
+  try {
+    music.play();
+    soundWaveIcon.style.display = 'block';
+    lastSoundWaveIcon = soundWaveIcon;
+  } catch (_unused) {
+    throw new Error('Erro ao tocar a música');
+  }
+  if (mscPopup && mscPopup.parentElement) {
+    document.body.removeChild(mscPopup);
+  }
 });
 function getMusic(id) {
   var _iterator = _createForOfIteratorHelper(musics),
@@ -635,20 +671,35 @@ function getMusic(id) {
     _iterator.f();
   }
 }
+function getSoundWaveIcon(element) {
+  var parentElement = element.parentElement;
+  if (!parentElement.classList.contains('playlist-div')) {
+    var soundWaveIcon = parentElement.querySelector('.sound-wave-icon');
+    return soundWaveIcon;
+  }
+}
 
-// ---------- TOP BUTTON ----------
+// ---------- AUDIO DIV ----------
 
-var topBtn = document.querySelector('.top-btn');
-topBtn.addEventListener('click', function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+window.addEventListener('scroll', function () {
+  var footerRectTop = footer.getBoundingClientRect().top;
+  if (footerRectTop <= audioDivRectBottom) {
+    audioDiv.style.position = 'absolute';
+    playlistDiv.style.position = 'absolute';
+  } else {
+    audioDiv.style.position = 'fixed';
+    playlistDiv.style.position = 'fixed';
+  }
 });
+if (ideaformMain) {
+  audioDiv.style.flexFlow = 'row nowrap';
+  soundOff.style.margin = '0 auto 0 10px';
+  soundOn.style.margin = '0 auto 0 10px';
+  playlistDiv.style.bottom = '90px';
+}
 
 // ---------- 404 BUTTON ----------
 
-var backHomePageBtn = document.querySelector('.back-homepage-btn');
 if (backHomePageBtn) {
   backHomePageBtn.addEventListener('click', function () {
     window.location.href = '/';
@@ -671,7 +722,7 @@ if (galaxiesMain) {
   // Fetch para a requisição dos popups
   document.addEventListener('click', function (e) {
     var element = e.target;
-    if (element.tagName.toLowerCase() === "img" && !element.classList.contains('close-icon') && !element.classList.contains('sound-icon') && !element.classList.contains('menu-icon')) {
+    if (element.tagName.toLowerCase() === "img" && element.classList.contains('celestial-body-img')) {
       var _iterator = _createForOfIteratorHelper(images),
         _step;
       try {
@@ -799,6 +850,36 @@ function getMusic(id) {
 }
 })();
 
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!***********************************************!*\
+  !*** ./docs/frontend/js/footer_animations.js ***!
+  \***********************************************/
+// ---------- HTML ELEMENTS ----------
+var topBtn = document.querySelector('.top-btn');
+var cowboyBebopDiv = document.querySelector('.cowboy-bebop-div');
+var swordfishDiv = document.querySelector('.swordfish-div');
+
+// ---------- TOP BUTTON ----------
+
+topBtn.addEventListener('click', function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+// ---------- COWBOY BEBOP ANIMATION ----------
+
+cowboyBebopDiv.addEventListener('click', function () {
+  swordfishDiv.classList.add('travel-animation');
+  swordfishDiv.style.display = 'block';
+  setTimeout(function () {
+    swordfishDiv.classList.remove('travel-animation');
+  }, 2000);
+});
+})();
+
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
@@ -816,11 +897,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_general_playlist_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/general/playlist.css */ "./docs/frontend/css/general/playlist.css");
 /* harmony import */ var _css_general_animation_classes_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/general/animation_classes.css */ "./docs/frontend/css/general/animation_classes.css");
 /* harmony import */ var _css_general_general_keyframes_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/general/general_keyframes.css */ "./docs/frontend/css/general/general_keyframes.css");
-/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/index/general_index.css */ "./docs/frontend/css/index/general_index.css");
-/* harmony import */ var _css_index_main_index_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/index/main_index.css */ "./docs/frontend/css/index/main_index.css");
-/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./docs/frontend/css/galaxies/general_galaxies.css");
-/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./docs/frontend/css/galaxies/main_galaxies.css");
-/* harmony import */ var _css_popups_footer_popups_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/popups/footer_popups.css */ "./docs/frontend/css/popups/footer_popups.css");
+/* harmony import */ var _css_general_aboutme_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/general/aboutme.css */ "./docs/frontend/css/general/aboutme.css");
+/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/index/general_index.css */ "./docs/frontend/css/index/general_index.css");
+/* harmony import */ var _css_index_main_index_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/main_index.css */ "./docs/frontend/css/index/main_index.css");
+/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./docs/frontend/css/galaxies/general_galaxies.css");
+/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./docs/frontend/css/galaxies/main_galaxies.css");
 /* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/popups/popups.css */ "./docs/frontend/css/popups/popups.css");
 /* harmony import */ var _css_media_queries_index_media_queries_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/media_queries/index_media_queries.css */ "./docs/frontend/css/media_queries/index_media_queries.css");
 /* harmony import */ var _css_media_queries_header_media_queries_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/media_queries/header_media_queries.css */ "./docs/frontend/css/media_queries/header_media_queries.css");
@@ -829,7 +910,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./docs/frontend/css/media_queries/popup_media_queries.css");
 /* harmony import */ var _css_media_queries_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../css/media_queries/error_404_media_queries.css */ "./docs/frontend/css/media_queries/error_404_media_queries.css");
 /* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./docs/frontend/css/media_queries/ideaform_media_queries.css");
+/* harmony import */ var _css_media_queries_playlist_media_queries_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../css/media_queries/playlist_media_queries.css */ "./docs/frontend/css/media_queries/playlist_media_queries.css");
 // GENERAL STYLES
+
 
 
 
@@ -852,8 +935,8 @@ __webpack_require__.r(__webpack_exports__);
 // POPUPS STYLES
 
 
-
 // MEDIA QUERIES
+
 
 
 

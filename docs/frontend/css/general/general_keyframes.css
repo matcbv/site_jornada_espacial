@@ -1,4 +1,3 @@
-
 @keyframes get-down {
     from{
         top: -126px;
@@ -16,7 +15,6 @@
         top: -126px;
     }
 }
-
 
 @keyframes background-gradient {
     from{
@@ -42,5 +40,25 @@
     }
     100%{
         transform: rotate(0);
+    }
+}
+
+@keyframes up{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes travel {
+    from{
+        left: -200px;
+    }
+    to{
+        left: 100vw;
+        display: none;
     }
 }

@@ -10,7 +10,8 @@ module.exports = {
             path.resolve(__dirname, 'docs', 'frontend', 'js', 'header_animations.js'),
             path.resolve(__dirname, 'docs', 'frontend', 'js', 'general_animations.js'),
             path.resolve(__dirname, 'docs', 'frontend', 'js', 'popups.js'),
-            path.resolve(__dirname, 'docs', 'frontend', 'js', 'window_animations.js'), 
+            path.resolve(__dirname, 'docs', 'frontend', 'js', 'window_animations.js'),
+            path.resolve(__dirname, 'docs', 'frontend', 'js', 'footer_animations.js'), 
             path.resolve(__dirname, 'docs', 'frontend', 'js', 'style_imports.js')],
     output: {
         path: path.resolve(__dirname, 'docs', 'public', 'assets'),

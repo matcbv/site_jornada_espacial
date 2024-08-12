@@ -105,24 +105,23 @@
     /* ------- MUSIC POPUP ------- */
 
     .msc-popup{
-        height: 160px;
+        height: 140px;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 270px;
+        width: 250px;
     }
 
     .msc-popup p{
-        width: 79%;
-        font-size: 1.1em;
+        font-size: 1em;
+        margin-bottom: 5px;
     }
 
     .msc-popup-close-icon{
         width: 28px;
     }
 
-    .sound-icon{
+    .sound-icon, .music-icon{
         width: 28px;
-        right: 7px;
     }
 }

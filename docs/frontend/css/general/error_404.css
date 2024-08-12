@@ -1,4 +1,4 @@
-.main-error{
+.error-main{
     grid-area: main;
     display: grid;
     grid-template: "astronaut" auto

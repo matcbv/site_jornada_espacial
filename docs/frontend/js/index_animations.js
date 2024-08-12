@@ -71,7 +71,7 @@ if(startingBtn){
         setTimeout(() => {
             introductionSection.classList.remove('squish-animation')
             milkywaySection.scrollIntoView({behavior: "smooth"})
-        }, 999)
+        }, 998)
     })
     
     
@@ -80,6 +80,6 @@ if(startingBtn){
         setTimeout(() => {
             introductionSection.classList.remove('intro-appear-animation')
             introductionSection.style.opacity = '1'
-        }, 1000)
+        }, 999)
     })
 }

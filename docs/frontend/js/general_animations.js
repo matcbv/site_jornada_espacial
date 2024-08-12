@@ -1,15 +1,32 @@
-// ---------- MUSIC POPUP ----------
+// ---------- HTML ELEMENTS ----------
 
-const musics = document.querySelectorAll('.musics')
+// Intro and footer
 const introSection = document.querySelector('.intro-section')
+const footer = document.querySelector('footer')
+
+// Buttons
+const backHomePageBtn = document.querySelector('.back-homepage-btn')
+
+// Audio elements
+const mscPopup = document.querySelector('.msc-popup')
+const audioDiv = document.querySelector('.audio-div')
+const audioDivRectBottom = audioDiv.getBoundingClientRect().bottom
 const soundOn = document.querySelector('.sound-on')
 const soundOff = document.querySelector('.sound-off')
+const musicIcon = document.querySelector('.music-icon')
 const playlistDiv = document.querySelector('.playlist-div')
+const musics = document.querySelectorAll('.musics')
 let toStopAudio = ''
 let toPlayAudio = ''
+let lastSoundWaveIcon = ''
+
+// Ideaform main
+const ideaformMain = document.querySelector('.ideaform-main')
+
+
+// ---------- MUSIC POPUP ----------
 
 if(introSection){
-    const mscPopup = document.querySelector('.msc-popup')
     const mscPopupCloseIcon = document.querySelector('.msc-popup-close-icon')
     const play = document.querySelector('.play')
     const introSectionRect = introSection.getBoundingClientRect()
@@ -26,18 +43,15 @@ if(introSection){
     window.addEventListener('scroll', () => {
         if (window.scrollY >= introSectionRect.bottom - 0.4){
             if(mscPopup && mscPopup.parentElement){
+                mscPopup.classList.remove('msc-popup-appear-animation')
                 mscPopup.classList.add('disappear-animation')
                 setTimeout(() => {
                     if(mscPopup && mscPopup.parentElement){
                         document.body.removeChild(mscPopup)
                     }
-                }, 1500)
+                }, 500)
             }
         }
-    })
-
-    mscPopupCloseIcon.addEventListener('click', () => {
-        document.body.removeChild(mscPopup)
     })
 
     play.addEventListener('click', () => {
@@ -46,23 +60,23 @@ if(introSection){
             toPlayAudio = getMusic(currentAudio)
             toPlayAudio.play()
             sessionStorage.setItem('audioStatus', toPlayAudio.paused)
-
         }else{
             toPlayAudio = getMusic('redbone')
             toPlayAudio.play()
+            sessionStorage.setItem('currentAudio', 'redbone')
             sessionStorage.setItem('audioStatus', toPlayAudio.paused)
         }
         document.body.removeChild(mscPopup)
         soundOn.style.display = 'block'
         soundOff.style.display = 'none'
     })
+
+    mscPopupCloseIcon.addEventListener('click', () => {
+        document.body.removeChild(mscPopup)
+    })
 }
 
 // ---------- SOUND ICON ----------
-
-const audioDiv = document.querySelector('.audio-div')
-const audioDivRectBottom = audioDiv.getBoundingClientRect().bottom
-const footer = document.querySelector('footer')
 
 soundOn.addEventListener('click', () => {
     const currentAudio = sessionStorage.getItem('currentAudio')
@@ -97,20 +111,7 @@ soundOff.addEventListener('click', () => {
     sessionStorage.setItem('audioStatus', toPlayAudio.paused)
 })
 
-window.addEventListener('scroll', () => {
-    const footerRectTop = footer.getBoundingClientRect().top
-    if (footerRectTop <= audioDivRectBottom){
-        audioDiv.style.position = 'absolute'
-        playlistDiv.style.position = 'absolute'
-    } else{
-        audioDiv.style.position = 'fixed'
-        playlistDiv.style.position = 'fixed'
-    }
-})
-
 // ---------- MUSIC ICON ----------
-
-const musicIcon = document.querySelector('.music-icon')
 
 musicIcon.addEventListener('click', () => {
     if(window.getComputedStyle(playlistDiv).display === 'none'){
@@ -132,6 +133,7 @@ musicIcon.addEventListener('click', () => {
 
 playlistDiv.addEventListener('click', (e) => {
     let element = e.target
+    const soundWaveIcon =  getSoundWaveIcon(element)
     if (!element.classList.contains('msc-div')){
        element = element.parentElement
     }
@@ -139,11 +141,23 @@ playlistDiv.addEventListener('click', (e) => {
     const currentAudio = sessionStorage.getItem('currentAudio')
     if(currentAudio){
         toStopAudio = getMusic(currentAudio)
-        toStopAudio.pause()     
+        toStopAudio.pause()
+        if(lastSoundWaveIcon){
+            lastSoundWaveIcon.style.display = 'none'
+        }
     }
     sessionStorage.setItem('audioStatus', toPlayAudio.paused)
     sessionStorage.setItem('currentAudio', element.id)
-    music.play()
+    try{
+        music.play()
+        soundWaveIcon.style.display = 'block'
+        lastSoundWaveIcon = soundWaveIcon
+    }catch{
+        throw new Error('Erro ao tocar a música')
+    }
+    if(mscPopup && mscPopup.parentElement){
+        document.body.removeChild(mscPopup)
+    }
 })
 
 function getMusic(id){
@@ -154,17 +168,35 @@ function getMusic(id){
     }
 }
 
-// ---------- TOP BUTTON ----------
+function getSoundWaveIcon(element){
+    const parentElement = element.parentElement
+    if(!parentElement.classList.contains('playlist-div')){
+        const soundWaveIcon = parentElement.querySelector('.sound-wave-icon')
+        return soundWaveIcon
+    }
+}
 
-const topBtn = document.querySelector('.top-btn')
+// ---------- AUDIO DIV ----------
 
-topBtn.addEventListener('click', () => {
-    window.scrollTo({top: 0, behavior: "smooth"})
+window.addEventListener('scroll', () => {
+    const footerRectTop = footer.getBoundingClientRect().top
+    if (footerRectTop <= audioDivRectBottom){
+        audioDiv.style.position = 'absolute'
+        playlistDiv.style.position = 'absolute'
+    } else{
+        audioDiv.style.position = 'fixed'
+        playlistDiv.style.position = 'fixed'
+    }
 })
 
-// ---------- 404 BUTTON ----------
+if(ideaformMain){
+    audioDiv.style.flexFlow = 'row nowrap'
+    soundOff.style.margin = '0 auto 0 10px'
+    soundOn.style.margin = '0 auto 0 10px'
+    playlistDiv.style.bottom = '90px'
+}
 
-const backHomePageBtn = document.querySelector('.back-homepage-btn')
+// ---------- 404 BUTTON ----------
 
 if (backHomePageBtn){
     backHomePageBtn.addEventListener('click', () => {

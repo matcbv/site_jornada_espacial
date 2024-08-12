@@ -1,6 +1,6 @@
 @import url(../galaxies/galaxies_keyframes.css);
 
-.main-ideaform{
+.ideaform-main{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,9 +187,16 @@ textarea:focus{
 }
 
 .form-buttons-div button:first-child{
-    margin-right: 10%;
+    margin-right: 20px;
 }
 
 .form-buttons-div button:hover{
     transform: scale(1.1)
+}
+
+.error-messages{
+    font-size: 1.1em;
+    color: rgb(217, 57, 57);
+    font-family: monospace;
+    margin-bottom: 5px;
 }

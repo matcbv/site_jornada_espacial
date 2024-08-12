@@ -9,6 +9,7 @@ import "../css/general/fluid_header.css"
 import "../css/general/playlist.css"
 import "../css/general/animation_classes.css"
 import "../css/general/general_keyframes.css"
+import "../css/general/aboutme.css";
 
 // INDEX STYLES
 import "../css/index/general_index.css";
@@ -19,7 +20,6 @@ import "../css/galaxies/general_galaxies.css"
 import "../css/galaxies/main_galaxies.css"
 
 // POPUPS STYLES
-import "../css/popups/footer_popups.css";
 import "../css/popups/popups.css"
 
 // MEDIA QUERIES
@@ -30,3 +30,4 @@ import "../css/media_queries/galaxies_media_queries.css"
 import "../css/media_queries/popup_media_queries.css"
 import "../css/media_queries/error_404_media_queries.css"
 import "../css/media_queries/ideaform_media_queries.css"
+import "../css/media_queries/playlist_media_queries.css"

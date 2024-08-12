@@ -6,7 +6,7 @@ if(galaxiesMain){
     // Fetch para a requisição dos popups
     document.addEventListener('click', (e) => {
         const element = e.target
-        if(element.tagName.toLowerCase() === "img" && !element.classList.contains('close-icon') && !element.classList.contains('sound-icon') && !element.classList.contains('menu-icon')){
+        if(element.tagName.toLowerCase() === "img" && element.classList.contains('celestial-body-img')){
             for(const image of images){
                 if (element.id === image.id) {
                     fetch(`http://localhost:8080/popup/${element.id}`).then(res => {

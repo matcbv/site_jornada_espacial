@@ -1,6 +1,8 @@
+// Elementos do cabeçalho
 const menuIcon = document.querySelector('.menu-icon')
 const fluidHeader = document.querySelector('.fluid-header')
 
+// Evento para animações do cabeçalho fluido
 menuIcon.addEventListener('click', () => {
     const fluidHeaderDisplay = window.getComputedStyle(fluidHeader).display
     menuIcon.classList.add('shake-animation')
@@ -21,6 +23,7 @@ menuIcon.addEventListener('click', () => {
     }, 500)
 })
 
+// Evento para fechar o cabeçalho fluido no aumento da tela
 window.addEventListener('resize', () => {
     if (window.innerWidth >= 768){
         if (fluidHeader){

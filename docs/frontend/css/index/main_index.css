@@ -112,12 +112,12 @@
     background-color: rgb(9, 8, 23);
     border: 2px solid rgb(45, 62, 92);
     opacity: 0;
-    z-index: 999;
+    z-index: 998;
 }
 
-.msc-popup > p{
+.msc-popup p{
     text-align: center;
-    width: 72%;
+    width: 175px;
     margin: auto;
     font-family: monospace;
     margin-bottom: 15px;
@@ -162,10 +162,12 @@
 }
 
 .audio-div{
+    display: flex;
+    flex-flow: column nowrap;
     position: fixed;
     bottom: 25px;
     right: 10px;
-    z-index: 997;
+    z-index: 996;
 }
 
 .sound-icon{

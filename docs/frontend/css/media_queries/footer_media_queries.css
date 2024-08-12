@@ -1,7 +1,7 @@
 @media (max-width: 992px){
 
     footer{
-        padding: 10px 20px;
+        padding: 10px 18px;
     }
 
     footer button{
@@ -10,10 +10,6 @@
 
     .footer-links-div li a{
         font-size: 1.05em;
-    }
-
-    .footer-links-div p, .icons-link{
-        font-size: 1em;
     }
 }
 
@@ -44,20 +40,20 @@
         font-size: 1em;
     }
 
-    .footer-msg-div{
+    .cowboy-bebop-div{
         width: 25%;
         flex-flow: column nowrap;
         align-items: center;
         justify-content: center;
     }
 
-    .footer-msg-div p{
+    .cowboy-bebop-div p{
         font-size: 0.7em;
         margin: 0;
         padding: 0;
     }
 
-    .footer-msg-div img{
+    .cowboy-bebop-div img{
         width: 50px;
         padding-bottom: 0;
     }
