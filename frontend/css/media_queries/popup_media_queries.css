@@ -30,6 +30,8 @@
         font-size: 1.5em;
         width: 50%;
         font-family: 'Inconsolata';
+        color: yellow;
+        -webkit-text-stroke: 0;
     }
 }
 

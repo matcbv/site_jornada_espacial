@@ -38,8 +38,9 @@
 .popup-content h2{
     text-align: center;
     font-size: 2em;
-    color: yellow;
-    font-family: 'Bungee Outline';
+    color: transparent;
+    -webkit-text-stroke: 1px yellow;
+    font-family: 'Rubik Mono One';
     padding-bottom: 25px;
     width: 90%;
     margin: auto;
