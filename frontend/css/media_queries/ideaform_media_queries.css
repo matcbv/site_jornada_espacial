@@ -1,4 +1,4 @@
-@media (max-width: 768px), (max-height: 650px){
+@media (max-width: 768px){
     .ideaform-content{
         flex-flow: column nowrap;
         padding: 20px;
