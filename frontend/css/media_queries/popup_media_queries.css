@@ -4,7 +4,6 @@
         font-size: 0.85em;
         width: 90%;
         line-height: 1.2em;
-        text-align: center;
     }
 
     .popup-img-div img{
@@ -83,6 +82,6 @@
     }
 
     .popup-content h2{
-        padding: 20px 0 10px 0;
+        padding: 15px 0;
     }
 }
