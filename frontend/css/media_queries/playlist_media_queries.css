@@ -1,7 +1,6 @@
 @media (max-width: 992px){
     .playlist-div{
         width: 180px;
-        bottom: 120px;
     }
     
     .music-img{
@@ -14,5 +13,11 @@
 
     .sound-wave-icon{
         width: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .playlist-div{
+        bottom: 120px;
     }
 }
