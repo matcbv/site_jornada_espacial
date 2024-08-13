@@ -1,74 +1,9 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./docs/frontend/css/galaxies/general_galaxies.css":
-/*!*********************************************************!*\
-  !*** ./docs/frontend/css/galaxies/general_galaxies.css ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/galaxies/main_galaxies.css":
-/*!******************************************************!*\
-  !*** ./docs/frontend/css/galaxies/main_galaxies.css ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/general/aboutme.css":
-/*!***********************************************!*\
-  !*** ./docs/frontend/css/general/aboutme.css ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/general/animation_classes.css":
-/*!*********************************************************!*\
-  !*** ./docs/frontend/css/general/animation_classes.css ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/general/error_404.css":
-/*!*************************************************!*\
-  !*** ./docs/frontend/css/general/error_404.css ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/general/fluid_header.css":
+/***/ "./frontend/css/galaxies/general_galaxies.css":
 /*!****************************************************!*\
-  !*** ./docs/frontend/css/general/fluid_header.css ***!
+  !*** ./frontend/css/galaxies/general_galaxies.css ***!
   \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -79,10 +14,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/general/fonts.css":
-/*!*********************************************!*\
-  !*** ./docs/frontend/css/general/fonts.css ***!
-  \*********************************************/
+/***/ "./frontend/css/galaxies/main_galaxies.css":
+/*!*************************************************!*\
+  !*** ./frontend/css/galaxies/main_galaxies.css ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -92,9 +27,152 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/general/footer.css":
+/***/ "./frontend/css/general/aboutme.css":
+/*!******************************************!*\
+  !*** ./frontend/css/general/aboutme.css ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/general/animation_classes.css":
+/*!****************************************************!*\
+  !*** ./frontend/css/general/animation_classes.css ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/general/error_404.css":
+/*!********************************************!*\
+  !*** ./frontend/css/general/error_404.css ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/general/fluid_header.css":
+/*!***********************************************!*\
+  !*** ./frontend/css/general/fluid_header.css ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/general/fonts.css":
+/*!****************************************!*\
+  !*** ./frontend/css/general/fonts.css ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/general/footer.css":
+/*!*****************************************!*\
+  !*** ./frontend/css/general/footer.css ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/general/general_keyframes.css":
+/*!****************************************************!*\
+  !*** ./frontend/css/general/general_keyframes.css ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/general/header.css":
+/*!*****************************************!*\
+  !*** ./frontend/css/general/header.css ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/general/ideaform.css":
+/*!*******************************************!*\
+  !*** ./frontend/css/general/ideaform.css ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/general/playlist.css":
+/*!*******************************************!*\
+  !*** ./frontend/css/general/playlist.css ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/general/window.css":
+/*!*****************************************!*\
+  !*** ./frontend/css/general/window.css ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/index/general_index.css":
 /*!**********************************************!*\
-  !*** ./docs/frontend/css/general/footer.css ***!
+  !*** ./frontend/css/index/general_index.css ***!
   \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -105,10 +183,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/general/general_keyframes.css":
-/*!*********************************************************!*\
-  !*** ./docs/frontend/css/general/general_keyframes.css ***!
-  \*********************************************************/
+/***/ "./frontend/css/index/main_index.css":
+/*!*******************************************!*\
+  !*** ./frontend/css/index/main_index.css ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -118,10 +196,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/general/header.css":
-/*!**********************************************!*\
-  !*** ./docs/frontend/css/general/header.css ***!
-  \**********************************************/
+/***/ "./frontend/css/media_queries/error_404_media_queries.css":
+/*!****************************************************************!*\
+  !*** ./frontend/css/media_queries/error_404_media_queries.css ***!
+  \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -131,10 +209,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/general/ideaform.css":
-/*!************************************************!*\
-  !*** ./docs/frontend/css/general/ideaform.css ***!
-  \************************************************/
+/***/ "./frontend/css/media_queries/footer_media_queries.css":
+/*!*************************************************************!*\
+  !*** ./frontend/css/media_queries/footer_media_queries.css ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -144,10 +222,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/general/playlist.css":
-/*!************************************************!*\
-  !*** ./docs/frontend/css/general/playlist.css ***!
-  \************************************************/
+/***/ "./frontend/css/media_queries/galaxies_media_queries.css":
+/*!***************************************************************!*\
+  !*** ./frontend/css/media_queries/galaxies_media_queries.css ***!
+  \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -157,10 +235,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/general/window.css":
-/*!**********************************************!*\
-  !*** ./docs/frontend/css/general/window.css ***!
-  \**********************************************/
+/***/ "./frontend/css/media_queries/header_media_queries.css":
+/*!*************************************************************!*\
+  !*** ./frontend/css/media_queries/header_media_queries.css ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -170,10 +248,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/index/general_index.css":
-/*!***************************************************!*\
-  !*** ./docs/frontend/css/index/general_index.css ***!
-  \***************************************************/
+/***/ "./frontend/css/media_queries/ideaform_media_queries.css":
+/*!***************************************************************!*\
+  !*** ./frontend/css/media_queries/ideaform_media_queries.css ***!
+  \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -183,10 +261,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/index/main_index.css":
-/*!************************************************!*\
-  !*** ./docs/frontend/css/index/main_index.css ***!
-  \************************************************/
+/***/ "./frontend/css/media_queries/index_media_queries.css":
+/*!************************************************************!*\
+  !*** ./frontend/css/media_queries/index_media_queries.css ***!
+  \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -196,10 +274,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/media_queries/error_404_media_queries.css":
-/*!*********************************************************************!*\
-  !*** ./docs/frontend/css/media_queries/error_404_media_queries.css ***!
-  \*********************************************************************/
+/***/ "./frontend/css/media_queries/playlist_media_queries.css":
+/*!***************************************************************!*\
+  !*** ./frontend/css/media_queries/playlist_media_queries.css ***!
+  \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -209,10 +287,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/media_queries/footer_media_queries.css":
-/*!******************************************************************!*\
-  !*** ./docs/frontend/css/media_queries/footer_media_queries.css ***!
-  \******************************************************************/
+/***/ "./frontend/css/media_queries/popup_media_queries.css":
+/*!************************************************************!*\
+  !*** ./frontend/css/media_queries/popup_media_queries.css ***!
+  \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -222,88 +300,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./docs/frontend/css/media_queries/galaxies_media_queries.css":
-/*!********************************************************************!*\
-  !*** ./docs/frontend/css/media_queries/galaxies_media_queries.css ***!
-  \********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/media_queries/header_media_queries.css":
-/*!******************************************************************!*\
-  !*** ./docs/frontend/css/media_queries/header_media_queries.css ***!
-  \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/media_queries/ideaform_media_queries.css":
-/*!********************************************************************!*\
-  !*** ./docs/frontend/css/media_queries/ideaform_media_queries.css ***!
-  \********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/media_queries/index_media_queries.css":
-/*!*****************************************************************!*\
-  !*** ./docs/frontend/css/media_queries/index_media_queries.css ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/media_queries/playlist_media_queries.css":
-/*!********************************************************************!*\
-  !*** ./docs/frontend/css/media_queries/playlist_media_queries.css ***!
-  \********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/media_queries/popup_media_queries.css":
-/*!*****************************************************************!*\
-  !*** ./docs/frontend/css/media_queries/popup_media_queries.css ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./docs/frontend/css/popups/popups.css":
-/*!*********************************************!*\
-  !*** ./docs/frontend/css/popups/popups.css ***!
-  \*********************************************/
+/***/ "./frontend/css/popups/popups.css":
+/*!****************************************!*\
+  !*** ./frontend/css/popups/popups.css ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -367,9 +367,9 @@ __webpack_require__.r(__webpack_exports__);
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 (() => {
-/*!**********************************************!*\
-  !*** ./docs/frontend/js/index_animations.js ***!
-  \**********************************************/
+/*!*****************************************!*\
+  !*** ./frontend/js/index_animations.js ***!
+  \*****************************************/
 // ---------- HTML ELEMENTS ----------
 
 var milkywayBtn = document.querySelector('#milkyway-btn');
@@ -454,9 +454,9 @@ if (startingBtn) {
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 (() => {
-/*!***********************************************!*\
-  !*** ./docs/frontend/js/header_animations.js ***!
-  \***********************************************/
+/*!******************************************!*\
+  !*** ./frontend/js/header_animations.js ***!
+  \******************************************/
 // Elementos do cabeçalho
 var menuIcon = document.querySelector('.menu-icon');
 var fluidHeader = document.querySelector('.fluid-header');
@@ -494,9 +494,9 @@ window.addEventListener('resize', function () {
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 (() => {
-/*!************************************************!*\
-  !*** ./docs/frontend/js/general_animations.js ***!
-  \************************************************/
+/*!*******************************************!*\
+  !*** ./frontend/js/general_animations.js ***!
+  \*******************************************/
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
@@ -716,9 +716,9 @@ if (backHomePageBtn) {
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 (() => {
-/*!************************************!*\
-  !*** ./docs/frontend/js/popups.js ***!
-  \************************************/
+/*!*******************************!*\
+  !*** ./frontend/js/popups.js ***!
+  \*******************************/
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
@@ -787,9 +787,9 @@ function closeAction(main, divPopup, closeIcon) {
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 (() => {
-/*!***********************************************!*\
-  !*** ./docs/frontend/js/window_animations.js ***!
-  \***********************************************/
+/*!******************************************!*\
+  !*** ./frontend/js/window_animations.js ***!
+  \******************************************/
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
@@ -882,9 +882,9 @@ window.addEventListener('load', function () {
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 (() => {
-/*!***********************************************!*\
-  !*** ./docs/frontend/js/footer_animations.js ***!
-  \***********************************************/
+/*!******************************************!*\
+  !*** ./frontend/js/footer_animations.js ***!
+  \******************************************/
 // ---------- HTML ELEMENTS ----------
 var topBtn = document.querySelector('.top-btn');
 var cowboyBebopDiv = document.querySelector('.cowboy-bebop-div');
@@ -913,34 +913,34 @@ cowboyBebopDiv.addEventListener('click', function () {
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!*******************************************!*\
-  !*** ./docs/frontend/js/style_imports.js ***!
-  \*******************************************/
+/*!**************************************!*\
+  !*** ./frontend/js/style_imports.js ***!
+  \**************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _css_general_window_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/general/window.css */ "./docs/frontend/css/general/window.css");
-/* harmony import */ var _css_general_footer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/general/footer.css */ "./docs/frontend/css/general/footer.css");
-/* harmony import */ var _css_general_header_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/general/header.css */ "./docs/frontend/css/general/header.css");
-/* harmony import */ var _css_general_fonts_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/general/fonts.css */ "./docs/frontend/css/general/fonts.css");
-/* harmony import */ var _css_general_ideaform_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/general/ideaform.css */ "./docs/frontend/css/general/ideaform.css");
-/* harmony import */ var _css_general_error_404_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/general/error_404.css */ "./docs/frontend/css/general/error_404.css");
-/* harmony import */ var _css_general_fluid_header_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/fluid_header.css */ "./docs/frontend/css/general/fluid_header.css");
-/* harmony import */ var _css_general_playlist_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/general/playlist.css */ "./docs/frontend/css/general/playlist.css");
-/* harmony import */ var _css_general_animation_classes_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/general/animation_classes.css */ "./docs/frontend/css/general/animation_classes.css");
-/* harmony import */ var _css_general_general_keyframes_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/general/general_keyframes.css */ "./docs/frontend/css/general/general_keyframes.css");
-/* harmony import */ var _css_general_aboutme_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/general/aboutme.css */ "./docs/frontend/css/general/aboutme.css");
-/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/index/general_index.css */ "./docs/frontend/css/index/general_index.css");
-/* harmony import */ var _css_index_main_index_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/main_index.css */ "./docs/frontend/css/index/main_index.css");
-/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./docs/frontend/css/galaxies/general_galaxies.css");
-/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./docs/frontend/css/galaxies/main_galaxies.css");
-/* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/popups/popups.css */ "./docs/frontend/css/popups/popups.css");
-/* harmony import */ var _css_media_queries_index_media_queries_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/media_queries/index_media_queries.css */ "./docs/frontend/css/media_queries/index_media_queries.css");
-/* harmony import */ var _css_media_queries_header_media_queries_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/media_queries/header_media_queries.css */ "./docs/frontend/css/media_queries/header_media_queries.css");
-/* harmony import */ var _css_media_queries_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/media_queries/footer_media_queries.css */ "./docs/frontend/css/media_queries/footer_media_queries.css");
-/* harmony import */ var _css_media_queries_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../css/media_queries/galaxies_media_queries.css */ "./docs/frontend/css/media_queries/galaxies_media_queries.css");
-/* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./docs/frontend/css/media_queries/popup_media_queries.css");
-/* harmony import */ var _css_media_queries_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../css/media_queries/error_404_media_queries.css */ "./docs/frontend/css/media_queries/error_404_media_queries.css");
-/* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./docs/frontend/css/media_queries/ideaform_media_queries.css");
-/* harmony import */ var _css_media_queries_playlist_media_queries_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../css/media_queries/playlist_media_queries.css */ "./docs/frontend/css/media_queries/playlist_media_queries.css");
+/* harmony import */ var _css_general_window_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/general/window.css */ "./frontend/css/general/window.css");
+/* harmony import */ var _css_general_footer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/general/footer.css */ "./frontend/css/general/footer.css");
+/* harmony import */ var _css_general_header_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/general/header.css */ "./frontend/css/general/header.css");
+/* harmony import */ var _css_general_fonts_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/general/fonts.css */ "./frontend/css/general/fonts.css");
+/* harmony import */ var _css_general_ideaform_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/general/ideaform.css */ "./frontend/css/general/ideaform.css");
+/* harmony import */ var _css_general_error_404_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/general/error_404.css */ "./frontend/css/general/error_404.css");
+/* harmony import */ var _css_general_fluid_header_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/fluid_header.css */ "./frontend/css/general/fluid_header.css");
+/* harmony import */ var _css_general_playlist_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/general/playlist.css */ "./frontend/css/general/playlist.css");
+/* harmony import */ var _css_general_animation_classes_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/general/animation_classes.css */ "./frontend/css/general/animation_classes.css");
+/* harmony import */ var _css_general_general_keyframes_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/general/general_keyframes.css */ "./frontend/css/general/general_keyframes.css");
+/* harmony import */ var _css_general_aboutme_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/general/aboutme.css */ "./frontend/css/general/aboutme.css");
+/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/index/general_index.css */ "./frontend/css/index/general_index.css");
+/* harmony import */ var _css_index_main_index_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/main_index.css */ "./frontend/css/index/main_index.css");
+/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./frontend/css/galaxies/general_galaxies.css");
+/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./frontend/css/galaxies/main_galaxies.css");
+/* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/popups/popups.css */ "./frontend/css/popups/popups.css");
+/* harmony import */ var _css_media_queries_index_media_queries_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/media_queries/index_media_queries.css */ "./frontend/css/media_queries/index_media_queries.css");
+/* harmony import */ var _css_media_queries_header_media_queries_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/media_queries/header_media_queries.css */ "./frontend/css/media_queries/header_media_queries.css");
+/* harmony import */ var _css_media_queries_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/media_queries/footer_media_queries.css */ "./frontend/css/media_queries/footer_media_queries.css");
+/* harmony import */ var _css_media_queries_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../css/media_queries/galaxies_media_queries.css */ "./frontend/css/media_queries/galaxies_media_queries.css");
+/* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./frontend/css/media_queries/popup_media_queries.css");
+/* harmony import */ var _css_media_queries_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../css/media_queries/error_404_media_queries.css */ "./frontend/css/media_queries/error_404_media_queries.css");
+/* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./frontend/css/media_queries/ideaform_media_queries.css");
+/* harmony import */ var _css_media_queries_playlist_media_queries_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../css/media_queries/playlist_media_queries.css */ "./frontend/css/media_queries/playlist_media_queries.css");
 // GENERAL STYLES
 
 
