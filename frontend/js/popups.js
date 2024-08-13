@@ -9,7 +9,7 @@ if(galaxiesMain){
         if(element.tagName.toLowerCase() === "img" && element.classList.contains('celestial-body-img')){
             for(const image of images){
                 if (element.id === image.id) {
-                    fetch(`http://localhost:8080/popup/${element.id}`).then(res => {
+                    fetch(`popup/${element.id}`).then(res => {
                         if (!res.ok){
                             throw new Error('Erro na requisição do popup.')
                         } else{
