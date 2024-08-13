@@ -671,6 +671,19 @@ function getSoundWaveIcon(element) {
   }
 }
 
+// ---------- EVENTO PARA DESAPARECIMENTO DA PLAYLIST ----------
+
+window.addEventListener('click', function (e) {
+  element = e.target;
+  if (!playlistDiv.contains(element) && element !== musicIcon && window.getComputedStyle(playlistDiv).display === 'block') {
+    playlistDiv.classList.add('disappear-animation');
+    setTimeout(function () {
+      playlistDiv.style.display = 'none';
+      playlistDiv.classList.remove('disappear-animation');
+    }, 500);
+  }
+});
+
 // ---------- AUDIO DIV ----------
 
 if (audioDiv) {
@@ -787,6 +800,7 @@ var introductionSection = document.querySelector(".intro-section");
 var galaxiesMain = document.querySelector('.galaxies-main');
 var soundOn = document.querySelector(".sound-on");
 var soundOff = document.querySelector(".sound-off");
+var playlist = document.querySelector('playlist-div');
 var playlistMusics = document.querySelectorAll('.musics');
 
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------

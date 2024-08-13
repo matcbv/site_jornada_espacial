@@ -180,6 +180,19 @@ function getSoundWaveIcon(element){
     }
 }
 
+// ---------- EVENTO PARA DESAPARECIMENTO DA PLAYLIST ----------
+
+window.addEventListener('click', (e) => {
+    element = e.target
+    if(!playlistDiv.contains(element) && element !== musicIcon && window.getComputedStyle(playlistDiv).display === 'block'){
+        playlistDiv.classList.add('disappear-animation')
+        setTimeout(() => {
+            playlistDiv.style.display = 'none'
+            playlistDiv.classList.remove('disappear-animation')
+        }, 500)
+    }
+})
+
 // ---------- AUDIO DIV ----------
 
 if(audioDiv){

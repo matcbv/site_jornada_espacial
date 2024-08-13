@@ -6,6 +6,7 @@ const galaxiesMain = document.querySelector('.galaxies-main')
 
 const soundOn = document.querySelector(".sound-on")
 const soundOff = document.querySelector(".sound-off")
+const playlist = document.querySelector('playlist-div')
 const playlistMusics = document.querySelectorAll('.musics')
 
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
