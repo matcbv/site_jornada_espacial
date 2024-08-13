@@ -5,16 +5,16 @@ const formController = {
     sendIdea: (req, res) => {
         const ideaFormObj = new ideaFormModel(req.body)
         ideaFormObj.sendData().then(status => {
-            if (status.lenght !== 0){
+            if (status.length > 0){                
                 if (status.includes('Escolha um assunto')){
                     req.flash('subjectError', 'Escolha um assunto')
                 }
                 if(status.includes('Mensagem inválida')){
                     req.flash('textError', 'Mensagem inválida')
                 }
-                res.redirect('/ideaform')
+                return res.redirect('/ideaform')
             } else{
-                req.flash('message', 'Ideia enviada com sucesso!')
+                req.flash('successMsg', 'Ideia enviada com sucesso!')
                 return res.redirect('/ideaform')
             }
         })

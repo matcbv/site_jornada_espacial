@@ -1,7 +1,14 @@
-const introductionSection = document.querySelector(".intro-section")
+// ---------- HTML ELEMENTS ----------
+
 const headerSection = document.querySelector("header")
+const introductionSection = document.querySelector(".intro-section")
+const galaxiesMain = document.querySelector('.galaxies-main')
+
 const soundOn = document.querySelector(".sound-on")
 const soundOff = document.querySelector(".sound-off")
+const playlistMusics = document.querySelectorAll('.musics')
+
+// ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
 
 if (introductionSection && headerSection){
     const introVh = introductionSection.getBoundingClientRect().height
@@ -17,13 +24,11 @@ if (introductionSection && headerSection){
     })
 }
 
-const galaxiesMain = document.querySelector('.galaxies-main')
-
 if (galaxiesMain){
     document.body.classList.add('change-scrollbar');
 }
 
-const playlistMusics = document.querySelectorAll('.musics')
+// ---------- EVENTOS PARA OBTER E ALTERAR ESTADOS DOS ÁUDIOS ----------
 
 window.addEventListener('beforeunload', () => {
     const currentAudio = sessionStorage.getItem('currentAudio')
@@ -59,3 +64,18 @@ function getMusic(id){
         }
     }
 }
+
+// ---------- EVENTO PARA EXCLUSÃO DA MENSAGEM DE SUCESSO ----------
+
+window.addEventListener('load', () => {
+    const ideaformMain = document.querySelector('.ideaform-main')
+    const successPopup = document.querySelector('.success-popup')
+    if (successPopup){
+        setTimeout(() => {
+            successPopup.classList.add('disappear-animation')
+            setTimeout(() => {
+                ideaformMain.removeChild(successPopup)
+            }, 500)
+        }, 3000)
+    }
+})

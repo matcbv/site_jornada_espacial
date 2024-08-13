@@ -13,7 +13,7 @@ function globalMiddleware(req, res, next){
     res.locals.swordfish = 'includes/swordfish.html'
     res.locals.subjectError = req.flash('subjectError')
     res.locals.textError = req.flash('textError')
-    res.locals.messsage = req.flash('message')
+    res.locals.successMsg = req.flash('successMsg')
     next()
 }
 

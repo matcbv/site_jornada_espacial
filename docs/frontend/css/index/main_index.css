@@ -104,8 +104,8 @@
     flex-flow: column nowrap;
     justify-content: center;
     position: fixed;
-    bottom: 5%;
-    left: 5%;
+    bottom: 50px;
+    left: 50px;
     width: 250px;
     border-radius: 7px;
     padding: 10px 0;

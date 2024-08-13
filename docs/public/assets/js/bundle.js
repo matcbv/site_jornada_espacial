@@ -571,93 +571,94 @@ if (introSection) {
     document.body.removeChild(mscPopup);
   });
 }
+if (audioDiv) {
+  // ---------- SOUND ICONS ----------
 
-// ---------- SOUND ICON ----------
-
-soundOn.addEventListener('click', function () {
-  var currentAudio = sessionStorage.getItem('currentAudio');
-  if (currentAudio) {
-    toStopAudio = getMusic(currentAudio);
-    toStopAudio.pause();
-    sessionStorage.setItem('audioTime', toStopAudio.currentTime);
-    sessionStorage.setItem('audioStatus', toStopAudio.paused);
-    soundOn.style.display = 'none';
-    soundOff.style.display = 'block';
-  }
-});
-soundOff.addEventListener('click', function () {
-  var currentAudio = sessionStorage.getItem('currentAudio');
-  if (currentAudio) {
-    toPlayAudio = getMusic(currentAudio);
-    var audioTime = sessionStorage.getItem('audioTime');
-    toPlayAudio.currentTime = audioTime;
-    toPlayAudio.play();
-    soundOn.style.display = 'block';
-    soundOff.style.display = 'none';
-  } else {
-    toPlayAudio = getMusic('redbone');
-    toPlayAudio.play();
-    soundOn.style.display = 'block';
-    soundOff.style.display = 'none';
-  }
-  if (mscPopup && mscPopup.parentElement) {
-    document.body.removeChild(mscPopup);
-  }
-  sessionStorage.setItem('audioStatus', toPlayAudio.paused);
-});
-
-// ---------- MUSIC ICON ----------
-
-musicIcon.addEventListener('click', function () {
-  if (window.getComputedStyle(playlistDiv).display === 'none') {
-    playlistDiv.classList.add('playlist-appear-animation');
-    playlistDiv.style.display = 'block';
-    setTimeout(function () {
-      playlistDiv.classList.remove('playlist-appear-animation');
-    }, 500);
-  } else {
-    playlistDiv.classList.add('disappear-animation');
-    setTimeout(function () {
-      playlistDiv.style.display = 'none';
-      playlistDiv.classList.remove('disappear-animation');
-    }, 500);
-  }
-});
-
-// ---------- PLAYLIST ----------
-
-playlistDiv.addEventListener('click', function (e) {
-  var element = e.target;
-  var soundWaveIcon = getSoundWaveIcon(element);
-  if (!element.classList.contains('msc-div')) {
-    element = element.parentElement;
-  }
-  var music = getMusic(element.id);
-  var currentAudio = sessionStorage.getItem('currentAudio');
-  if (currentAudio) {
-    toStopAudio = getMusic(currentAudio);
-    toStopAudio.pause();
-    if (lastSoundWaveIcon) {
-      lastSoundWaveIcon.style.display = 'none';
-      soundOff.style.display = 'block';
+  soundOn.addEventListener('click', function () {
+    var currentAudio = sessionStorage.getItem('currentAudio');
+    if (currentAudio) {
+      toStopAudio = getMusic(currentAudio);
+      toStopAudio.pause();
+      sessionStorage.setItem('audioTime', toStopAudio.currentTime);
+      sessionStorage.setItem('audioStatus', toStopAudio.paused);
       soundOn.style.display = 'none';
+      soundOff.style.display = 'block';
     }
-  }
-  sessionStorage.setItem('audioStatus', toPlayAudio.paused);
-  sessionStorage.setItem('currentAudio', element.id);
-  try {
-    music.play();
-    soundWaveIcon.style.display = 'block';
-    lastSoundWaveIcon = soundWaveIcon;
-    soundOff.style.display = 'none';
-    soundOn.style.display = 'block';
-  } catch (_unused) {
-    throw new Error('Erro ao tocar a música');
-  }
-  if (mscPopup && mscPopup.parentElement) {
-    document.body.removeChild(mscPopup);
-  }
-});
+  });
+  soundOff.addEventListener('click', function () {
+    var currentAudio = sessionStorage.getItem('currentAudio');
+    if (currentAudio) {
+      toPlayAudio = getMusic(currentAudio);
+      var audioTime = sessionStorage.getItem('audioTime');
+      toPlayAudio.currentTime = audioTime;
+      toPlayAudio.play();
+      soundOn.style.display = 'block';
+      soundOff.style.display = 'none';
+    } else {
+      toPlayAudio = getMusic('redbone');
+      toPlayAudio.play();
+      soundOn.style.display = 'block';
+      soundOff.style.display = 'none';
+    }
+    if (mscPopup && mscPopup.parentElement) {
+      document.body.removeChild(mscPopup);
+    }
+    sessionStorage.setItem('audioStatus', toPlayAudio.paused);
+  });
+
+  // ---------- MUSIC ICON ----------
+
+  musicIcon.addEventListener('click', function () {
+    if (window.getComputedStyle(playlistDiv).display === 'none') {
+      playlistDiv.classList.add('playlist-appear-animation');
+      playlistDiv.style.display = 'block';
+      setTimeout(function () {
+        playlistDiv.classList.remove('playlist-appear-animation');
+      }, 500);
+    } else {
+      playlistDiv.classList.add('disappear-animation');
+      setTimeout(function () {
+        playlistDiv.style.display = 'none';
+        playlistDiv.classList.remove('disappear-animation');
+      }, 500);
+    }
+  });
+
+  // ---------- PLAYLIST ----------
+
+  playlistDiv.addEventListener('click', function (e) {
+    var element = e.target;
+    var soundWaveIcon = getSoundWaveIcon(element);
+    if (!element.classList.contains('msc-div')) {
+      element = element.parentElement;
+    }
+    var music = getMusic(element.id);
+    var currentAudio = sessionStorage.getItem('currentAudio');
+    if (currentAudio) {
+      toStopAudio = getMusic(currentAudio);
+      toStopAudio.pause();
+      if (lastSoundWaveIcon) {
+        lastSoundWaveIcon.style.display = 'none';
+        soundOff.style.display = 'block';
+        soundOn.style.display = 'none';
+      }
+    }
+    sessionStorage.setItem('audioStatus', toPlayAudio.paused);
+    sessionStorage.setItem('currentAudio', element.id);
+    try {
+      music.play();
+      soundWaveIcon.style.display = 'block';
+      lastSoundWaveIcon = soundWaveIcon;
+      soundOff.style.display = 'none';
+      soundOn.style.display = 'block';
+    } catch (_unused) {
+      throw new Error('Erro ao tocar a música');
+    }
+    if (mscPopup && mscPopup.parentElement) {
+      document.body.removeChild(mscPopup);
+    }
+  });
+}
 function getMusic(id) {
   var _iterator = _createForOfIteratorHelper(musics),
     _step;
@@ -792,10 +793,17 @@ function closeAction(main, divPopup, closeIcon) {
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-var introductionSection = document.querySelector(".intro-section");
+// ---------- HTML ELEMENTS ----------
+
 var headerSection = document.querySelector("header");
+var introductionSection = document.querySelector(".intro-section");
+var galaxiesMain = document.querySelector('.galaxies-main');
 var soundOn = document.querySelector(".sound-on");
 var soundOff = document.querySelector(".sound-off");
+var playlistMusics = document.querySelectorAll('.musics');
+
+// ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
+
 if (introductionSection && headerSection) {
   var introVh = introductionSection.getBoundingClientRect().height;
   var headerVh = headerSection.getBoundingClientRect().height;
@@ -808,11 +816,12 @@ if (introductionSection && headerSection) {
     }
   });
 }
-var galaxiesMain = document.querySelector('.galaxies-main');
 if (galaxiesMain) {
   document.body.classList.add('change-scrollbar');
 }
-var playlistMusics = document.querySelectorAll('.musics');
+
+// ---------- EVENTOS PARA OBTER E ALTERAR ESTADOS DOS ÁUDIOS ----------
+
 window.addEventListener('beforeunload', function () {
   var currentAudio = sessionStorage.getItem('currentAudio');
   if (currentAudio) {
@@ -854,6 +863,21 @@ function getMusic(id) {
     _iterator.f();
   }
 }
+
+// ---------- EVENTO PARA EXCLUSÃO DA MENSAGEM DE SUCESSO ----------
+
+window.addEventListener('load', function () {
+  var ideaformMain = document.querySelector('.ideaform-main');
+  var successPopup = document.querySelector('.success-popup');
+  if (successPopup) {
+    setTimeout(function () {
+      successPopup.classList.add('disappear-animation');
+      setTimeout(function () {
+        ideaformMain.removeChild(successPopup);
+      }, 500);
+    }, 3000);
+  }
+});
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.

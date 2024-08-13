@@ -22,7 +22,6 @@ let lastSoundWaveIcon = ''
 // Ideaform main
 const ideaformMain = document.querySelector('.ideaform-main')
 
-
 // ---------- MUSIC POPUP ----------
 
 if(introSection){
@@ -75,93 +74,95 @@ if(introSection){
     })
 }
 
-// ---------- SOUND ICON ----------
+if (audioDiv){
+    // ---------- SOUND ICONS ----------
 
-soundOn.addEventListener('click', () => {
-    const currentAudio = sessionStorage.getItem('currentAudio')
-    if(currentAudio){
-        toStopAudio = getMusic(currentAudio)
-        toStopAudio.pause()
-        sessionStorage.setItem('audioTime', toStopAudio.currentTime)
-        sessionStorage.setItem('audioStatus', toStopAudio.paused)
-        soundOn.style.display = 'none'
-        soundOff.style.display = 'block'
-    }
-})
-
-soundOff.addEventListener('click', () => {
-    const currentAudio = sessionStorage.getItem('currentAudio')
-    if(currentAudio){
-        toPlayAudio = getMusic(currentAudio)
-        const audioTime = sessionStorage.getItem('audioTime')
-        toPlayAudio.currentTime = audioTime
-        toPlayAudio.play()
-        soundOn.style.display = 'block'
-        soundOff.style.display = 'none'
-    }else{
-        toPlayAudio = getMusic('redbone')
-        toPlayAudio.play()
-        soundOn.style.display = 'block'
-        soundOff.style.display = 'none'
-    }
-    if(mscPopup && mscPopup.parentElement){
-        document.body.removeChild(mscPopup)
-    }
-    sessionStorage.setItem('audioStatus', toPlayAudio.paused)
-})
-
-// ---------- MUSIC ICON ----------
-
-musicIcon.addEventListener('click', () => {
-    if(window.getComputedStyle(playlistDiv).display === 'none'){
-        playlistDiv.classList.add('playlist-appear-animation')
-        playlistDiv.style.display = 'block'
-        setTimeout(() => {
-            playlistDiv.classList.remove('playlist-appear-animation')
-        }, 500)
-    } else{
-        playlistDiv.classList.add('disappear-animation')
-        setTimeout(() => {
-            playlistDiv.style.display = 'none'
-            playlistDiv.classList.remove('disappear-animation')
-        }, 500)
-    }
-})
-
-// ---------- PLAYLIST ----------
-
-playlistDiv.addEventListener('click', (e) => {
-    let element = e.target
-    const soundWaveIcon =  getSoundWaveIcon(element)
-    if (!element.classList.contains('msc-div')){
-       element = element.parentElement
-    }
-    const music = getMusic(element.id)
-    const currentAudio = sessionStorage.getItem('currentAudio')
-    if(currentAudio){
-        toStopAudio = getMusic(currentAudio)
-        toStopAudio.pause()
-        if(lastSoundWaveIcon){
-            lastSoundWaveIcon.style.display = 'none'
-            soundOff.style.display = 'block'
+    soundOn.addEventListener('click', () => {
+        const currentAudio = sessionStorage.getItem('currentAudio')
+        if(currentAudio){
+            toStopAudio = getMusic(currentAudio)
+            toStopAudio.pause()
+            sessionStorage.setItem('audioTime', toStopAudio.currentTime)
+            sessionStorage.setItem('audioStatus', toStopAudio.paused)
             soundOn.style.display = 'none'
+            soundOff.style.display = 'block'
         }
-    }
-    sessionStorage.setItem('audioStatus', toPlayAudio.paused)
-    sessionStorage.setItem('currentAudio', element.id)
-    try{
-        music.play()
-        soundWaveIcon.style.display = 'block'
-        lastSoundWaveIcon = soundWaveIcon
-        soundOff.style.display = 'none'
-        soundOn.style.display = 'block'
-    }catch{
-        throw new Error('Erro ao tocar a música')
-    }
-    if(mscPopup && mscPopup.parentElement){
-        document.body.removeChild(mscPopup)
-    }
-})
+    })
+    
+    soundOff.addEventListener('click', () => {
+        const currentAudio = sessionStorage.getItem('currentAudio')
+        if(currentAudio){
+            toPlayAudio = getMusic(currentAudio)
+            const audioTime = sessionStorage.getItem('audioTime')
+            toPlayAudio.currentTime = audioTime
+            toPlayAudio.play()
+            soundOn.style.display = 'block'
+            soundOff.style.display = 'none'
+        }else{
+            toPlayAudio = getMusic('redbone')
+            toPlayAudio.play()
+            soundOn.style.display = 'block'
+            soundOff.style.display = 'none'
+        }
+        if(mscPopup && mscPopup.parentElement){
+            document.body.removeChild(mscPopup)
+        }
+        sessionStorage.setItem('audioStatus', toPlayAudio.paused)
+    })
+
+    // ---------- MUSIC ICON ----------
+
+    musicIcon.addEventListener('click', () => {
+        if(window.getComputedStyle(playlistDiv).display === 'none'){
+            playlistDiv.classList.add('playlist-appear-animation')
+            playlistDiv.style.display = 'block'
+            setTimeout(() => {
+                playlistDiv.classList.remove('playlist-appear-animation')
+            }, 500)
+        } else{
+            playlistDiv.classList.add('disappear-animation')
+            setTimeout(() => {
+                playlistDiv.style.display = 'none'
+                playlistDiv.classList.remove('disappear-animation')
+            }, 500)
+        }
+    })
+
+    // ---------- PLAYLIST ----------
+
+    playlistDiv.addEventListener('click', (e) => {
+        let element = e.target
+        const soundWaveIcon =  getSoundWaveIcon(element)
+        if (!element.classList.contains('msc-div')){
+        element = element.parentElement
+        }
+        const music = getMusic(element.id)
+        const currentAudio = sessionStorage.getItem('currentAudio')
+        if(currentAudio){
+            toStopAudio = getMusic(currentAudio)
+            toStopAudio.pause()
+            if(lastSoundWaveIcon){
+                lastSoundWaveIcon.style.display = 'none'
+                soundOff.style.display = 'block'
+                soundOn.style.display = 'none'
+            }
+        }
+        sessionStorage.setItem('audioStatus', toPlayAudio.paused)
+        sessionStorage.setItem('currentAudio', element.id)
+        try{
+            music.play()
+            soundWaveIcon.style.display = 'block'
+            lastSoundWaveIcon = soundWaveIcon
+            soundOff.style.display = 'none'
+            soundOn.style.display = 'block'
+        }catch{
+            throw new Error('Erro ao tocar a música')
+        }
+        if(mscPopup && mscPopup.parentElement){
+            document.body.removeChild(mscPopup)
+        }
+    })
+}
 
 function getMusic(id){
     for(const music of musics){
@@ -194,7 +195,6 @@ if(audioDiv){
         }
     })
 }
-
 
 if(ideaformMain){
     audioDiv.style.flexFlow = 'row nowrap'

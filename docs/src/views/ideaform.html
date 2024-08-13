@@ -5,6 +5,11 @@
         <main class="ideaform-main">
             <%- include(fluidHeader) %>
             <%- include(playlist) %>
+            <% if(successMsg.length > 0){ %>
+                <div class="success-popup">
+                    <p><%= successMsg %></p>
+                </div>
+            <% } %>
             <div class="ideaform-content">
                 <div class="idea-text-div">
                     <h1>Espaço Ideal</h1>
@@ -14,8 +19,8 @@
                 <form action="/ideaform/sendidea" method="post">
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     <div class="radio-div">
-                        <% if(subjectError !== ''){ %>
-                            <div class="error-messages"><%= subjectError %></div>
+                        <% if(subjectError.length > 0){ %>
+                            <div><p class="error-messages"><%= subjectError %></p></div>
                         <% } %>
                         <h2>Assunto:</h2>
                         <div class="input-div">
@@ -32,8 +37,8 @@
                         </div>
                     </div>
                     <div class="textarea-div">
-                        <% if(textError !== ''){ %>
-                            <div class="error-messages"><%= textError %></div>
+                        <% if(textError.length > 0){ %>
+                            <div><p class="error-messages"><%= textError %></p></div>
                         <% } %>
                         <label for="text">Mensagem:</label>
                         <textarea name="text" id="subject-text" placeholder="Deixe aqui sua mensagem..." rows="5"></textarea>

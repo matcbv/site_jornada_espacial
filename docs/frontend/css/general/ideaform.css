@@ -200,3 +200,26 @@ textarea:focus{
     font-family: monospace;
     margin-bottom: 5px;
 }
+
+.success-popup{
+    display: flex;
+    justify-content: center;
+    width: 180px;
+    position: absolute;
+    top: 50px;
+    padding: 30px 20px;
+    border-radius: 7px;
+    background-color: rgb(9, 8, 23);
+    border: 2px solid rgb(45, 62, 92);
+    z-index: 998;
+    animation: appear 1s ease-in-out 0s 1 normal both;
+}
+
+.success-popup p{
+    text-align: center;
+    margin: auto;
+    font-family: monospace;
+    color: yellow;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
