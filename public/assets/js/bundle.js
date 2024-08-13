@@ -340,18 +340,6 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -736,11 +724,10 @@ if (galaxiesMain) {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
           var image = _step.value;
           if (element.id === image.id) {
-            fetch("https://localhost:8080/popup/".concat(element.id)).then(function (res) {
+            fetch("http://localhost:8080/popup/".concat(element.id)).then(function (res) {
               if (!res.ok) {
                 throw new Error('Erro na requisição do popup.');
               } else {
-                __webpack_require__.g.currentPopup = element.id;
                 res.text().then(function (html) {
                   getPopup(html, galaxiesMain);
                 });
