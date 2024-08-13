@@ -31,7 +31,7 @@ if(introSection){
 
     window.addEventListener('load', () => {
         const audioStatus = sessionStorage.getItem('audioStatus')
-        if(window.scrollY < introSectionRect.bottom && audioStatus !== 'false'){
+        if(window.scrollY <= introSectionRect.bottom && audioStatus !== 'false'){
             mscPopup.classList.add('msc-popup-appear-animation')
         } else{
             document.body.removeChild(mscPopup)

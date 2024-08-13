@@ -520,7 +520,7 @@ if (introSection) {
   var introSectionRect = introSection.getBoundingClientRect();
   window.addEventListener('load', function () {
     var audioStatus = sessionStorage.getItem('audioStatus');
-    if (window.scrollY < introSectionRect.bottom && audioStatus !== 'false') {
+    if (window.scrollY <= introSectionRect.bottom && audioStatus !== 'false') {
       mscPopup.classList.add('msc-popup-appear-animation');
     } else {
       document.body.removeChild(mscPopup);
