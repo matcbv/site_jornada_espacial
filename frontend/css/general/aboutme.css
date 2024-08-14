@@ -92,7 +92,7 @@
     font-size: 1.5em;
     font-family: 'Xanh Mono';
     margin-bottom: 30px;
-    color: rgb(224, 224, 135);
+    color: rgb(255, 231, 142);
 }
 
 .specials-div p{
@@ -104,7 +104,7 @@
 blockquote{
     font-size: 1.2em;
     color: rgb(255, 252, 208);
-    font-family: 'Xanh Mono' !important;
+    font-family: 'Inconsolata' !important;
 }
 
 blockquote p{
@@ -112,7 +112,7 @@ blockquote p{
 }
 
 blockquote a{
-    color: rgb(255, 252, 208);
+    color: rgb(255, 247, 127);
     text-decoration: none;
 }
 
