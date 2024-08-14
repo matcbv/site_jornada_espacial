@@ -4,13 +4,12 @@
         <%- include(header) %>
         <main class="ideaform-main">
             <%- include(fluidHeader) %>
-            <%- include(playlist) %>
             <% if(successMsg.length > 0){ %>
                 <div class="success-popup">
                     <p><%= successMsg %></p>
                 </div>
             <% } %>
-            <div class="ideaform-content">
+            <div class="ideaform-content-div">
                 <div class="idea-text-div">
                     <h1>Espaço Ideal</h1>
                     <p>Bem-vindo ao Espaço Ideal, <span class="highlight">Mochileiro!</span> Pegou o trocadilho? Espaço Sideral...Espaço Ideal... É, devo admitir que não sou o melhor em piadas, mas afirmo que não há Guia Espacial melhor que eu nesse Universo! Entretando, não é por isso que você, Mochileiro, não possa me ajudar também! No Espaço Ideal você pode opinar sobre nossa viagem no espaço dando idéias, sugestões e apontando problemas ou informações incorretas que encontrar.</p>
@@ -54,8 +53,9 @@
                     </div>
                 </form>
             </div>
-            <%- include(swordfish) %>
+            <%- include(playlist) %>
             <%- include(audio) %>
+            <%- include(swordfish) %>
         </main>
         <%- include(footer) %>
     </div>

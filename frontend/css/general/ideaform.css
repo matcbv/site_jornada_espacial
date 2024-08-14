@@ -8,7 +8,7 @@
     position: relative;
 }
 
-.ideaform-content{
+.ideaform-content-div{
     display: flex;
     flex-flow: row nowrap;
     position: relative;
@@ -21,7 +21,7 @@
     padding: 35px;
 }
 
-.ideaform-content h1{
+.ideaform-content-div h1{
     text-align: left;
     font-size: 1.7em;
     color: yellow;
@@ -30,7 +30,7 @@
     font-style: italic;
 }
 
-.ideaform-content h2{
+.ideaform-content-div h2{
     font-size: 1.3em;
     font-family: monospace;
     color: yellow;
@@ -177,6 +177,7 @@ textarea:focus{
     color: white;
     border: none;
     outline: 1px solid yellow;
+    width: 150px;
 }
 
 .form-buttons-div button:first-child{

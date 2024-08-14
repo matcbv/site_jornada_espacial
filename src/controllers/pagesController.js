@@ -21,6 +21,10 @@ const pagesController = {
 
     aboutme: (req, res) => {
         return res.render('aboutme.html')
+    },
+
+    inspirations: (req, res) => {
+        return res.render('inspirations.html')
     }
 }
 

@@ -20,6 +20,8 @@ router.get('/triangle', pagesController.triangle)
 router.get('/ideaform', pagesController.ideaForm)
 // Página sobre mim
 router.get('/aboutme', pagesController.aboutme)
+// Página de inspirações
+router.get('/inspirations', pagesController.inspirations)
 // Enviando dados do formulario
 router.post('/ideaform/sendidea', formController.sendIdea)
 // Popups
