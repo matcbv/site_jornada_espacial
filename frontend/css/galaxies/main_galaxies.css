@@ -47,28 +47,28 @@
     display: flex;
     justify-content: center;
     padding: 10vh 0;
-    animation: slow-levitation 2s ease-in-out 0s infinite alternate both;
+    animation: bigger-reverse-levitation 2s ease-in-out 0s infinite alternate both;
 }
 
 .second-body-div{
     display: flex;
     justify-content: flex-start;
     padding: 10vh 0 10vh 20vw;
-    animation: fast-levitation 1s ease-in-out 0s infinite alternate both;
+    animation: bigger-levitation 1s ease-in-out 0s infinite alternate both;
 }
 
 .third-body-div{
     display: flex;
     justify-content: flex-end;
     padding: 10vh 20vw 10vh 0;
-    animation: fast-levitation 1s ease-in-out 0s infinite alternate both;
+    animation: bigger-levitation 1s ease-in-out 0s infinite alternate both;
 }
 
 .fourth-body-div{
     display: flex;
     justify-content: flex-start;
     padding: 15vh 0 30vh 15vw;
-    animation: slow-levitation 2s ease-in-out 0s infinite alternate both;
+    animation: bigger-reverse-levitation 2s ease-in-out 0s infinite alternate both;
 }
 
 .galaxies-main img{

@@ -4,8 +4,21 @@
     position: relative;
     grid-area: main;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    min-height: 100vh;
     padding: 100px 50px;
+}
+
+.aboutme-content-div{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    height: 100%;
+    width: 60%;
+}
+
+.aboutme-content-div div:not(:last-child){
+    margin-bottom: 70px;
 }
 
 .aboutme-text-div h1{
@@ -13,7 +26,7 @@
     font-family: 'Xanh Mono';
     font-size: 1.8em;
     margin-bottom: 30px;
-    color: rgb(199, 199, 0);
+    color: rgb(205, 205, 27);
 }
 
 .aboutme-text-div p{
@@ -21,7 +34,6 @@
     font-family: monospace;
     font-size: 1.2em;
     line-height: 1.4em;
-    width: 60%;
 }
 
 .aboutme-nav-div{
@@ -40,7 +52,7 @@
     margin-left: 15px
 }
 
-.aboutme-links-div ul li{
+.aboutme-links-div ul li:not(:last-child){
     margin-bottom: 20px;
 }
 
@@ -61,6 +73,7 @@
 }
 
 .aboutme-img-div{
+    animation: bigger-levitation 1.5s ease-in-out 0s infinite alternate both;;
 }
 
 #astronaut-img{
@@ -84,7 +97,26 @@
 
 .specials-div p{
     font-size: 1.2em;
-    width: 60%;
     font-family: monospace;
     line-height: 1.4em;
+}
+
+blockquote{
+    font-size: 1.2em;
+    color: rgb(255, 252, 208);
+    font-family: 'Xanh Mono' !important;
+}
+
+blockquote p{
+    margin-bottom: 20px;
+}
+
+blockquote a{
+    color: rgb(255, 252, 208);
+    text-decoration: none;
+}
+
+blockquote a:hover{
+    cursor: pointer;
+    color: white;
 }
