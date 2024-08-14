@@ -55,6 +55,7 @@
 
     .popup-box{
         flex-flow: column nowrap;
+        justify-content: center;
     }
 
     .popup-content{
@@ -67,7 +68,7 @@
         border-radius: 10px;
         border: 2px solid rgb(175, 175, 0);
         box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
-        padding: 0;
+        padding: 20px 0;
         margin: 0;
     }
     
@@ -79,11 +80,7 @@
         align-self: flex-end;
     }
 
-    .popup-content p{
-        padding-bottom: 20px;
-    }
-
     .popup-content h2{
-        padding: 15px 0;
+        margin: 0 auto 15px auto;
     }
 }

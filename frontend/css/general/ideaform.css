@@ -160,19 +160,15 @@ textarea:focus{
 }
 
 .form-buttons-div{
-    grid-area: buttons;
-}
-
-.form-buttons-div{
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    grid-area: buttons;
+    margin-top: 10px;
 }
 
 .form-buttons-div button{
     border-radius: 5px;
     padding: 5px 10px;
-    margin-bottom: 10px;
     font-size: 1em;
     font-family: 'Inconsolata';
     font-weight: bold;

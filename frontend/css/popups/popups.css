@@ -1,10 +1,24 @@
 @import url(../galaxies/galaxies_keyframes.css);
 
+.popup{
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 998;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 .popup-box{
     position: fixed;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     width: 90%;
     height: 100%;
@@ -14,7 +28,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
     height: 100%;
 }
 
@@ -25,13 +38,12 @@
 
 .popup-content{
     position: relative;
-    width: 50%;
+    width: 60%;
     height: auto;
     background-color: rgb(16, 13, 21);
     border: 2px solid rgb(175, 175, 0);
     box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
     border-radius: 10px;
-    margin-right: 10%;
     padding: 40px 30px;
 }
 
@@ -39,18 +51,17 @@
     text-align: center;
     font-size: 2em;
     color: transparent;
-    -webkit-text-stroke: 1px yellow;
+    -webkit-text-stroke: 1.5px yellow;
     font-family: 'Rubik Mono One';
-    padding-bottom: 25px;
     width: 90%;
-    margin: auto;
+    margin: 0 auto 20px auto;
 }
 
 .popup-content p{
     text-align: justify;
     color: white;
     font-family: 'Inconsolata';
-    font-size: 1.1em;
+    font-size: 1.15em;
     width: 90%;
     margin: auto;
     line-height: 1.4em;

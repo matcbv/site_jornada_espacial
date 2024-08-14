@@ -3,22 +3,6 @@
     grid-area: main;
 }
 
-.popup{
-    position: relative;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 998;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-
-
 /* ---------- INTRODUCTION SECTION ---------- */
 
 .galaxies-intro-text{
