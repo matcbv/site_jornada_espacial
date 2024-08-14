@@ -1,11 +1,11 @@
 .main-aboutme{
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     position: relative;
     grid-area: main;
-    align-items: start;
+    align-items: center;
     justify-content: center;
-    padding: 100px 0 100px 50px;
+    padding: 100px 50px;
 }
 
 .aboutme-text-div h1{
@@ -13,7 +13,7 @@
     font-family: 'Xanh Mono';
     font-size: 1.8em;
     margin-bottom: 30px;
-    color: rgb(97, 142, 249);
+    color: rgb(199, 199, 0);
 }
 
 .aboutme-text-div p{
@@ -32,7 +32,7 @@
 .aboutme-links-div h2{
     color: rgb(252, 213, 63);
     font-family: 'Xanh Mono';
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin-bottom: 30px;
 }
 
@@ -61,8 +61,6 @@
 }
 
 .aboutme-img-div{
-    display: none;
-    margin: 50px auto 0 auto;
 }
 
 #astronaut-img{
@@ -77,15 +75,11 @@
     height: 70%;
 }
 
-.specials-div{
-    margin: 50px 0;
-}
-
 .specials-div h2{
     font-size: 1.5em;
     font-family: 'Xanh Mono';
     margin-bottom: 30px;
-    color: rgb(215, 169, 244);
+    color: rgb(224, 224, 135);
 }
 
 .specials-div p{
