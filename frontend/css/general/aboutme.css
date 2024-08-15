@@ -1,10 +1,9 @@
 .aboutme-main{
     display: grid;
-    grid-template:  "aboutme astronaut" auto
-                    "specials astronaut" auto
-                    "nav astronaut" auto
-                    "quote astronaut" auto
-                    / 60% 40%;
+    grid-template:  "aboutme  aboutme astronaut" auto
+                    "specials specials astronaut" auto
+                    "nav quote astronaut" auto
+                    / 20% 40% 40%;
     position: relative;
     align-items: center;
     justify-content: space-evenly;
@@ -111,7 +110,7 @@
 
 blockquote{
     grid-area: quote;
-    width: 80%;
+    width: 100%;
     border: 1px solid white;
     border-radius: 7px;
     padding: 25px;
