@@ -13,12 +13,12 @@
             <div class="specials-div">
                 <h2>Considerações especiais</h2>
                 <p>
-                    Como considerações para essa Jornada, quero agradecer a meu amigo Marcos, que me ajudou desde o início dando ideias, opiniões e testando as funcionalidades do site sempre que precisei, meu professor Júlio da Coderhouse, que me deu sugestões e direcionamentos nos momentos em que precisei, e principalmente você, Mochileiro Espacial, que fez parte da nossa aventura e chegou até aqui comigo. Vocês são demais!
+                    Como considerações para essa Jornada, quero agradecer a meu amigo Marcos, que me ajudou desde o início dando ideias, opiniões e testando as funcionalidades do site sempre que precisei, meu professor Júlio da Coderhouse, que me deu sugestões e direcionamentos nos momentos em que precisei, e principalmente você, <span>Mochileiro Espacial</span>, que fez parte da nossa aventura e chegou até aqui comigo. Vocês são demais!
                 </p>
             </div>
             <div class="aboutme-nav-div">
                 <div class="aboutme-links-div">
-                    <h2>Entre em contato e conheça meu trabalho:</h2>
+                    <h2>Contate-me:</h2>
                     <ul>
                         <li><a href="https://github.com/matcbv" target="_blank" rel="noopener">GitHub</a></li>
                         <li><a href="www.linkedin.com/in/matheus-cerqueira-baiao-victor" target="_blank" rel="noopener">Linkedin</a></li>
@@ -31,7 +31,12 @@
                     <cite>Carl Seagan</cite>
             </blockquote>
             <div class="aboutme-img-div">
-                <img id="astronaut-img" src="/images/aboutme_images/aboutme_astronaut.png" alt="Astronauta">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="/images/aboutme_images/aboutme_astronaut_small.png" type="image/png">
+                    <source media="(min-width: 768px) and (max-width: 992px)" srcset="/images/aboutme_images/aboutme_astronaut_medium.png" type="image/png">
+                    <img id="astronaut-img" src="/images/aboutme_images/aboutme_astronaut.png" alt="Astronauta">
+                </picture>
+               
             </div>
             <%- include(playlist) %>
             <%- include(audio) %>

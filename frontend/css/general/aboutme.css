@@ -51,6 +51,10 @@
     color: rgb(255, 246, 140);
 }
 
+.specials-div span{
+    color: rgb(255, 246, 140);
+}
+
 .specials-div p{
     font-size: 1.3em;
     font-family: monospace;
