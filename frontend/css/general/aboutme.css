@@ -1,24 +1,20 @@
-.main-aboutme{
-    display: flex;
-    flex-flow: row nowrap;
+.aboutme-main{
+    display: grid;
+    grid-template:  "aboutme astronaut" auto
+                    "specials astronaut" auto
+                    "nav astronaut" auto
+                    "quote astronaut" auto
+                    / 60% 40%;
     position: relative;
-    grid-area: main;
     align-items: center;
     justify-content: space-evenly;
     min-height: 100vh;
     padding: 100px 50px;
+    row-gap: 80px;
 }
 
-.aboutme-content-div{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    height: 100%;
-    width: 60%;
-}
-
-.aboutme-content-div div:not(:last-child){
-    margin-bottom: 70px;
+.aboutme-text-div{
+    grid-area: aboutme;
 }
 
 .aboutme-text-div h1{
@@ -32,11 +28,37 @@
 .aboutme-text-div p{
     text-align: left;
     font-family: monospace;
-    font-size: 1.2em;
+    font-size: 1.3em;
+    line-height: 1.4em;
+}
+
+.aboutme-vertical-row{
+    background-color: yellow;
+    display: block;
+    margin: 0 20px;
+    width: 2px;
+    height: 70%;
+}
+
+.specials-div{
+    grid-area: specials;
+}
+
+.specials-div h2{
+    font-size: 1.5em;
+    font-family: 'Xanh Mono';
+    margin-bottom: 30px;
+    color: rgb(255, 246, 140);
+}
+
+.specials-div p{
+    font-size: 1.3em;
+    font-family: monospace;
     line-height: 1.4em;
 }
 
 .aboutme-nav-div{
+    grid-area: nav;
     display: flex;
     flex-flow: column nowrap;
 }
@@ -44,7 +66,7 @@
 .aboutme-links-div h2{
     color: rgb(255, 246, 140);
     font-family: 'Xanh Mono';
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-bottom: 30px;
 }
 
@@ -73,6 +95,9 @@
 }
 
 .aboutme-img-div{
+    display: flex;
+    justify-content: center;
+    grid-area: astronaut;
     animation: bigger-levitation 1.5s ease-in-out 0s infinite alternate both;;
 }
 
@@ -80,42 +105,23 @@
     display: block;
 }
 
-.aboutme-vertical-row{
-    background-color: yellow;
-    display: block;
-    margin: 0 20px;
-    width: 2px;
-    height: 70%;
-}
-
-.specials-div h2{
-    font-size: 1.5em;
-    font-family: 'Xanh Mono';
-    margin-bottom: 30px;
-    color: rgb(255, 246, 140);
-}
-
-.specials-div p{
-    font-size: 1.2em;
-    font-family: monospace;
-    line-height: 1.4em;
-}
-
 blockquote{
+    grid-area: quote;
     width: 80%;
     border: 1px solid white;
     border-radius: 7px;
     padding: 25px;
-    font-size: 1.3em;
-    color: rgb(211, 211, 92);
+    font-size: 1.2em;
+    color: white;
     font-family: 'Inconsolata' !important;
-    box-shadow: inset 0 0 10px rgb(205, 205, 27, 0.3);
+    box-shadow: inset 0 0 10px rgb(241, 241, 52, 0.2);
 }
 
 blockquote p{
     margin-bottom: 20px;
+    text-shadow: 0 0 3px rgba(241, 241, 52, 0.4);
 }
 
 blockquote cite{
-    color: white;
+    color: rgb(241, 241, 52);
 }

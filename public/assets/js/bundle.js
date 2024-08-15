@@ -196,6 +196,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./frontend/css/media_queries/aboutme_media_queries.css":
+/*!**************************************************************!*\
+  !*** ./frontend/css/media_queries/aboutme_media_queries.css ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./frontend/css/media_queries/error_404_media_queries.css":
 /*!****************************************************************!*\
   !*** ./frontend/css/media_queries/error_404_media_queries.css ***!
@@ -942,6 +955,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_media_queries_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../css/media_queries/error_404_media_queries.css */ "./frontend/css/media_queries/error_404_media_queries.css");
 /* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./frontend/css/media_queries/ideaform_media_queries.css");
 /* harmony import */ var _css_media_queries_playlist_media_queries_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../css/media_queries/playlist_media_queries.css */ "./frontend/css/media_queries/playlist_media_queries.css");
+/* harmony import */ var _css_media_queries_aboutme_media_queries_css__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../css/media_queries/aboutme_media_queries.css */ "./frontend/css/media_queries/aboutme_media_queries.css");
 // GENERAL STYLES
 
 
@@ -967,6 +981,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // MEDIA QUERIES
+
 
 
 

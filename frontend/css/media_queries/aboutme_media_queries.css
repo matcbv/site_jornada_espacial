@@ -1,0 +1,36 @@
+@media (max-width: 992px) {
+    
+    .aboutme-main{
+        display: grid;
+        grid-template:  "aboutme aboutme" auto
+                        "specials specials" auto
+                        "nav astronaut" auto
+                        "quote quote" auto
+                        / 60% 40%;
+        row-gap: 50px;
+    }
+
+    .aboutme-text-div{
+        grid-area: aboutme;
+    }
+
+    .aboutme-text-div h1{
+        font-size: 1.7em;
+    }
+
+    .aboutme-text-div p{
+        font-size: 1.1em;
+    }
+
+    .aboutme-links-div h2{
+        font-size: 1em;
+    }
+
+    blockquote{
+        width: 80%;
+    }
+
+    blockquote p{
+        font-size: 1em;
+    }
+}
