@@ -24,9 +24,9 @@
 .aboutme-text-div h1{
     text-align: left;
     font-family: 'Xanh Mono';
-    font-size: 1.8em;
+    font-size: 2em;
     margin-bottom: 30px;
-    color: rgb(205, 205, 27);
+    color: rgb(241, 241, 52);
 }
 
 .aboutme-text-div p{
@@ -42,9 +42,9 @@
 }
 
 .aboutme-links-div h2{
-    color: rgb(252, 213, 63);
+    color: rgb(211, 211, 92);
     font-family: 'Xanh Mono';
-    font-size: 1.4em;
+    font-size: 1.5em;
     margin-bottom: 30px;
 }
 
@@ -63,7 +63,7 @@
 .aboutme-links-div a{
     color: white;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-family: monospace;
     padding-left: 3px;
 }
@@ -92,7 +92,7 @@
     font-size: 1.5em;
     font-family: 'Xanh Mono';
     margin-bottom: 30px;
-    color: rgb(255, 231, 142);
+    color: rgb(211, 211, 92);
 }
 
 .specials-div p{
@@ -102,21 +102,20 @@
 }
 
 blockquote{
-    font-size: 1.2em;
-    color: rgb(255, 247, 127);
+    width: 80%;
+    border: 1px solid white;
+    border-radius: 7px;
+    padding: 25px;
+    font-size: 1.3em;
+    color: rgb(211, 211, 92);
     font-family: 'Inconsolata' !important;
+    box-shadow: inset 0 0 10px rgb(205, 205, 27, 0.3);
 }
 
 blockquote p{
     margin-bottom: 20px;
 }
 
-blockquote a{
-    color: rgb(255, 247, 127);
-    text-decoration: none;
-}
-
-blockquote a:hover{
-    cursor: pointer;
+blockquote cite{
     color: white;
 }

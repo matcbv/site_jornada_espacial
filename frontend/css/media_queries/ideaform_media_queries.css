@@ -40,6 +40,7 @@
         font-size: 0.85em;
         padding: 5px;
         font-weight: bold;
+        max-width: 95%;
     }
 
     .form-buttons-div{
@@ -98,5 +99,16 @@
 
     .success-popup p{
         font-size: 0.9em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+
+    .email-div{
+        margin-bottom: 0 !important;
+    }
+
+    .form-buttons-div button{
+        margin-top: 15px;
     }
 }
