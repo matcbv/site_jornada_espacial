@@ -124,6 +124,7 @@ textarea{
     resize: none;
     overflow: hidden;
     max-width: 80%;
+    font-weight: bold;
 }
 
 textarea:focus{
@@ -148,6 +149,7 @@ textarea:focus{
     padding: 7px;
     margin-top: 5px;
     max-width: 80%;
+    font-weight: bold;
 }
 
 .email-div input:focus{
