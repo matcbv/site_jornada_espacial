@@ -58,4 +58,7 @@
         font-size: 0.8em;
     }
 
+    .aboutme-img-div{
+        justify-content: flex-start;
+    }
 }
