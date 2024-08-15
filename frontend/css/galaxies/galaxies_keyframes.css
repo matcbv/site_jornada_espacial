@@ -16,7 +16,7 @@
     }
 }
 
-@keyframes slow-levitation{
+@keyframes bigger-levitation{
     from{
         transform: translateY(0px);
     }
@@ -25,7 +25,7 @@
     }
 }
 
-@keyframes fast-levitation{
+@keyframes bigger-reverse-levitation{
     from{
         transform: translateY(0px);
     }
