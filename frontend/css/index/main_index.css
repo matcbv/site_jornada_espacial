@@ -19,11 +19,10 @@
     grid-area: intro-section;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7), transparent 90%);
+    background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7) 30%, transparent);
     font-family: monospace;
-    padding-top: 125px;
     opacity: 0;
 }
 

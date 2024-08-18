@@ -15,10 +15,6 @@
     text-align: center;
 }
 
-.galaxies-title-div{
-    width: 100%;
-}
-
 .galaxies-title-div p{
     font-family: 'Inconsolata';
     font-size: 1.5em;
@@ -35,6 +31,7 @@
     text-shadow: none;
     font-weight: lighter;
     text-align: center;
+    padding: 0 5px;
 }
 
 .emphasis{
