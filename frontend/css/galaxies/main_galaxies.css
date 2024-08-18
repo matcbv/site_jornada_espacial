@@ -12,12 +12,17 @@
     align-items: center;
     animation: grow 1s linear 0s 1 normal both;
     height: 90vh;
+    text-align: center;
 }
 
-.galaxies-intro-div p{
+.galaxies-title-div{
+    width: 100%;
+}
+
+.galaxies-title-div p{
     font-family: 'Inconsolata';
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1.5em;
+    margin-bottom: 40px;
 }
 
 .galaxies-title-div .highlight{
@@ -32,16 +37,12 @@
     text-align: center;
 }
 
-.galaxies-title-div p{
-    font-size: 1.5em;
-    margin-bottom: 40px;
-}
-
 .emphasis{
     color: yellow;
 }
 
 .galaxies-text-div{
+    font-family: 'Inconsolata';
     font-size: 1.2em;
     width: 50%;
 }
