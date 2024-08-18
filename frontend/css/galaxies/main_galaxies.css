@@ -5,22 +5,22 @@
 
 /* ---------- INTRODUCTION SECTION ---------- */
 
-.galaxies-intro-text{
-    text-align: center;
-    padding: 0 30px;
-    padding: 20vh 0;
+.galaxies-intro-div{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
     animation: grow 1s linear 0s 1 normal both;
+    height: 90vh;
 }
 
-.galaxies-intro-text p{
+.galaxies-intro-div p{
     font-family: 'Inconsolata';
-    font-size: 1.5em;
-    margin: auto;
-    margin-bottom: 30px;
+    text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.galaxies-intro-text .highlight{
+.galaxies-title-div .highlight{
     font-family: 'Rubik Mono One';
     font-size: 3em; 
     font-style: italic;
@@ -29,16 +29,25 @@
     animation: levitate 1.5s ease-in-out 0s infinite alternate both;
     text-shadow: none;
     font-weight: lighter;
-    margin-bottom: 20vh;
+    text-align: center;
+}
+
+.galaxies-title-div p{
+    font-size: 1.5em;
+    margin-bottom: 40px;
 }
 
 .emphasis{
     color: yellow;
 }
 
-.galaxies-intro-text .guide-text{
+.galaxies-text-div{
     font-size: 1.2em;
     width: 50%;
+}
+
+.galaxies-text-div p:first-child{
+    margin-bottom: 50px;
 }
 
 /* ---------- MAIN SECTION ---------- */

@@ -2,17 +2,17 @@
 
     /* ------- GENERAL GALAXIES STYLES ------- */
 
-    .galaxies-intro-text p{
+    .galaxies-title-div p{
         font-size: 1.3em;
     }
 
-    .galaxies-intro-text .highlight{
-        font-size: 2.3em;
+    .galaxies-title-div .highlight{
+        font-size: 2.2em;
     }
 
-    .galaxies-intro-text .guide-text{
-        font-size: 1.2em;
+    .galaxies-text-div{
         width: 70%;
+        font-size: 1em;
     }
 
     /* ------- MILKYWAY IMAGES ------- */
@@ -67,22 +67,5 @@
 
     #m33_x7{
         width: 220px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    /* ------- GENERAL GALAXIES STYLES ------- */
-
-    .galaxies-intro-text p{
-        font-size: 1.2em;
-    }
-
-    .galaxies-intro-text .highlight{
-        font-size: 2em;
-    }
-
-    .galaxies-intro-text .guide-text{
-        font-size: 1.1em;
     }
 }
