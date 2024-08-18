@@ -1,13 +1,12 @@
 @media (max-width: 992px){
     
     .aboutme-main{
-        display: grid;
-        grid-template:  "aboutme aboutme" auto
-                        "specials specials" auto
-                        "nav astronaut" auto
-                        "quote quote" auto
-                        / 30% 70%;
+        grid-template:  "aboutme  aboutme aboutme" auto
+                        "specials specials astronaut" auto
+                        "nav quote astronaut" auto
+        / 20% 40% 40%;
         row-gap: 50px;
+        padding: 60px 45px;
     }
 
     .aboutme-text-div{
@@ -58,4 +57,7 @@
         font-size: 0.8em;
     }
 
+    .aboutme-img-div{
+        justify-content: flex-start;
+    }
 }
