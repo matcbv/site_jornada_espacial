@@ -24,14 +24,12 @@
 .galaxies-title-div .highlight{
     font-family: 'Rubik Mono One';
     font-size: 3em; 
-    font-style: italic;
     color: transparent;
     -webkit-text-stroke: 1px yellow;
     animation: levitate 1.5s ease-in-out 0s infinite alternate both;
     text-shadow: none;
     font-weight: lighter;
     text-align: center;
-    padding: 0 5px;
 }
 
 .emphasis{
