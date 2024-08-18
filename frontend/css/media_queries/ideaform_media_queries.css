@@ -7,8 +7,8 @@
     }
 
     form{
-        grid-template:  "radios textarea" auto
-                        "email buttons" auto
+        grid-template:  "radios textarea" 2fr
+                        "email buttons" 1fr
                         / auto auto;
         width: 100%;
     }
