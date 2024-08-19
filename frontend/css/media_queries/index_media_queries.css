@@ -3,7 +3,7 @@
     /* ------- INDEX MAIN ------- */
 
     .index-main{
-     grid-template: "intro-section" 1fr
+     grid-template: "intro-section" 90vh
                 "milkyway-section" 0.5fr
                 "andromeda-section" 0.5fr
                 "triangle-section" 0.5fr
@@ -13,8 +13,7 @@
     /* ------- INTRODUCTION SECTION ------- */
 
     .intro-section{
-        padding-top: 90px;
-        background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7), transparent 80%);
+        background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7), transparent 70%);
     }
 
     .intro-text-div{
@@ -86,7 +85,7 @@
     /* ------- MILKYWAY SECTION ------- */
 
     .main-grid-div .milkyway-section{
-        padding-top: 50px;
+        padding-top: 100px;
         flex-flow: column-reverse nowrap;
     }
 
