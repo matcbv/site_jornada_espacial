@@ -9,18 +9,50 @@
 
     .signin-main h1{
         font-family: 'Inconsolata';
-        font-size: 1.4em;
+        font-size: 1.6em;
         text-shadow: none;
         color: white;
+    }
+
+    .signin-main h2{
+        font-family: 'Inconsolata';
+        font-size: 1.8em;
+        -webkit-text-stroke: 0;
+    }
+
+    .login-div h2{
+        color: rgb(137, 111, 185);
+    }
+
+    .register-div h2{
+        color: rgb(77, 95, 199);
     }
 
     .signin-template-div p{
         font-size: 1.1em;
     }
 
+    .login-div, .register-div{
+        width: 90%;
+    }
+
+    .signin-template-div a{
+        width: 150px;
+        text-align: center;
+        font-size: 1.1em;
+    }
+
+    .login-div a{
+        padding: 7px;
+    }
+    
+    .register-div a{
+        padding: 7px;
+    }
+
     .signin-row{
         height: 2px;
         width: 80%;
-        margin: 10px 0;
+        margin: 30px 0;
     }
 }
