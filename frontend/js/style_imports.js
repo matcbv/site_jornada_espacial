@@ -23,6 +23,7 @@ import "../css/galaxies/main_galaxies.css"
 import "../css/popups/popups.css"
 
 //PROFILE IMPORTS
+import "../css/profile/signin_template.css";
 import "../css/profile/login.css";
 
 // MEDIA QUERIES

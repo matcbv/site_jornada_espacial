@@ -1,0 +1,9 @@
+.signin-main{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: main;
+    position: relative;
+    background-image: linear-gradient(to right, rgb(27, 22, 35), transparent, rgb(9, 8, 23));
+}
