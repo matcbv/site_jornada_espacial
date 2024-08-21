@@ -6,13 +6,13 @@
     align-items: center;
     grid-area: main;
     position: relative;
-    background-image: linear-gradient(to right, rgb(27, 22, 35), rgba(27,22,35,.7), transparent, rgb(6, 5, 35, 0.7), rgb(6, 5, 35));
+    background-image: linear-gradient(to right, rgb(27, 22, 35), rgba(27,22,35,0.8), transparent, rgb(5, 13, 35, 0.8), rgb(5, 13, 35));
 }
 
 .signin-main h1{
     font-family: 'Rubik Mono One';
     font-size: 1.8em;
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: 0.1px white;
     color: transparent;
     text-shadow: 0 3px 6px hsla(0,0%,100%, 0.2);
 }
@@ -46,18 +46,18 @@
     text-align: center;
 }
 
-.login-div h2{
-    font-size: 2.2em;
-    color: rgb(21, 15, 32);
-    -webkit-text-stroke: 1px #ff0;
+.signin-template-div h2{
+    font-size: 2em;
+    -webkit-text-stroke: 0.1px #ff0;
     font-family: 'Rubik Mono One';
 }
 
+.login-div h2{
+    color: rgb(21, 15, 32);
+}
+
 .register-div h2{
-    font-size: 2.2em;
     color: rgb(6, 5, 35);
-    -webkit-text-stroke: 1px #ff0;
-    font-family: 'Rubik Mono One';
 }
 
 .signin-template-div a{
@@ -74,7 +74,7 @@
 
 .login-div a{
     border-radius: 5px;
-    outline: 2px solid rgb(70, 58, 79);
+    outline: 2px solid rgb(71, 49, 90);
     padding: 9px;
     text-decoration: none;
     box-shadow: inset 0 0 5px rgb(70, 58, 79);
@@ -82,13 +82,13 @@
 
 .register-div a{
     border-radius: 5px;
-    outline: 2px solid rgb(45, 62, 92);
+    outline: 2px solid rgb(54, 71, 102);
     box-shadow: inset 0 0 5px rgb(45, 62, 92);
     padding: 9px;
     text-decoration: none;
 }
 
-.signin-template-div .vertical-row{
+.signin-row{
     width: 2px;
     height: 80%;
     background-color: yellow;

@@ -29,6 +29,10 @@ const pagesController = {
 
     signin_template: (req, res) => {
         return res.render('signin_template.html')
+    },
+
+    login: (req, res) => {
+        return res.render('login.html')
     }
 }
 

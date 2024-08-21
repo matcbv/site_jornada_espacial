@@ -1,0 +1,26 @@
+@media (max-width: 992px){
+    .signin-main{
+        background-image: linear-gradient(rgb(27, 22, 35), rgba(27,22,35,0.8), transparent, rgb(5, 13, 35, 0.8), rgb(5, 13, 35));
+    }
+
+    .signin-template-div{
+        flex-flow: column nowrap;
+    }
+
+    .signin-main h1{
+        font-family: 'Inconsolata';
+        font-size: 1.4em;
+        text-shadow: none;
+        color: white;
+    }
+
+    .signin-template-div p{
+        font-size: 1.1em;
+    }
+
+    .signin-row{
+        height: 2px;
+        width: 80%;
+        margin: 10px 0;
+    }
+}
