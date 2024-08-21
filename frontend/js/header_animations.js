@@ -25,7 +25,7 @@ menuIcon.addEventListener('click', () => {
 
 // Evento para fechar o cabeçalho fluido no aumento da tela
 window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768){
+    if (window.innerWidth >= 992){
         if (fluidHeader){
             fluidHeader.style.display = 'none'
         }
