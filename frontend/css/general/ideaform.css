@@ -67,7 +67,7 @@
     margin: 0 30px;
 }
 
- form{
+ .idea-form{
     display: grid;
     grid-template:  'radios' auto
                     'textarea' auto
@@ -78,11 +78,11 @@
     align-items: center;
 }
 
-form > *:not(.form-buttons-div){
+.idea-form > *:not(.form-buttons-div){
     margin-bottom: 15px
 }
 
-label{
+.idea-form label{
     color: yellow;
     font-family: monospace;
     font-size: 1.2em;
@@ -115,7 +115,7 @@ label{
     width: 100%;
 }
 
-textarea{
+.idea-form textarea{
     border-radius: 5px;
     border: none;
     font-size: 1.3em;

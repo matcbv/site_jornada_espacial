@@ -3,13 +3,25 @@
     <div class="main-grid-div">
         <%- include(header) %>
         <main class="main-login">
-            <div>
-                <form action="/src/controllers/login_controller.js" method="get">
-                    <label for="username"><img src="/images/profile_images/username_icon.png" alt="Ícone de usuário"></label>
-                    <input type="text" name="username" id="username" autocomplete="username">
-                    <label for="password"><img src="/images/profile_images/password_icon.png" alt="Ícone de senha"></label>
-                    <input type="password" name="password" id="password" autocomplete="current-password">
-                    <input type="submit" value="Entrar">
+            <div class="login-form-content-div">
+                <div class="login-form-text">
+                    <h1>Espaço do Mochileiro</h1>
+                    <p>Bem-vindo de volta Mochileiro! No Espaço do Mochileiro, você consegue acesso a seu progresso duranto nossa Jornada Espacial.</p>
+                </div>
+                <span class="horizontal-row"></span>
+                <form class="login-form" action="/src/controllers/login_controller.js" method="get">
+                    <div class="login-form-input-div">
+                        <label for="username"><img src="/images/profile_images/username_icon.png" alt="Ícone de usuário"></label>
+                        <input type="text" name="username" id="username" autocomplete="username">
+                    </div>
+                    <div class="login-form-input-div">
+                        <label for="password"><img src="/images/profile_images/password_icon.png" alt="Ícone de senha"></label>
+                        <input type="password" name="password" id="password" autocomplete="current-password">
+                    </div>
+                    <div class="login-form-btn-div">
+                        <input class="login-btn" type="submit" value="Entrar">
+                        <input class="login-btn" type="button" value="Esqueci minha senha">
+                    </div>
                 </form>
             </div>
             <%- include(playlist) %>

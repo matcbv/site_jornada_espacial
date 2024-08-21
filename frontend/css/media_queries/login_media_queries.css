@@ -1,0 +1,45 @@
+@media (max-width: 992px){
+
+    .login-form-content-div{
+        width: 80vw;
+        padding: 30px 0;
+    }
+
+    .login-form-text{
+        width: 90%;
+    }
+
+    .login-form-text h1{
+        font-size: 1.5em;
+    }
+
+    .login-form-text p{
+        font-size: 0.9em;
+    }
+
+    .login-form-input-div input{
+        height: 25px;
+        width: 160px;
+        font-size: 0.9em;
+    }
+
+    .login-form div:not(:last-child){
+        margin-bottom: 20px;
+    }
+    
+
+    .login-form-btn-div .login-btn{
+        font-size: 0.8em;
+        padding: 8px 10px;
+    }
+
+    .login-form label img{
+        width: 30px;
+    }
+
+    .horizontal-row{
+        height: 1px;
+        width: 90%;
+        margin: 30px 0;
+    }
+}

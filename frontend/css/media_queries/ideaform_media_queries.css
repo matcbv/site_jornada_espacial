@@ -6,7 +6,7 @@
         width: 90%;
     }
 
-    form{
+    .idea-form{
         grid-template:  "radios textarea" 2fr
                         "email buttons" 1fr
                         / auto auto;
@@ -62,7 +62,7 @@
         margin-right: 0;
     }
 
-    form>:not(.form-buttons-div){
+    .idea-form>:not(.form-buttons-div){
         margin-bottom: 0;
     }
 

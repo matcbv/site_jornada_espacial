@@ -1,0 +1,100 @@
+.main-login{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-content-div{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgb(27, 22, 35) 40%, transparent);
+    width: 50vw;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    outline: 1px solid white;
+    padding: 50px 0;
+}
+
+.login-form{
+    width: 80%;
+}
+
+.login-form div{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.login-form-input-div input{
+    height: 30px;
+    width: 240px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-family: 'Inconsolata';
+    font-size: 1.2em;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: 1px solid white;
+    padding: 2px 10px;
+}
+
+.login-form-input-div input:focus{
+    outline: 1px solid yellow;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.login-form div:not(:last-child){
+    margin-bottom: 30px;
+}
+
+.login-form-text{
+    width: 80%;
+}
+
+.login-form-text h1{
+    color: yellow;
+    font-family: monospace;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.login-form-text p{
+    font-family: 'Inconsolata';
+    font-size: 1.1em;
+}
+
+.login-form-btn-div{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.login-form-btn-div .login-btn{
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-family: Inconsolata;
+    font-size: 1em;
+    font-weight: 700;
+    outline: 1px solid #ff0;
+    padding: 10px 30px;
+}
+
+.login-form-btn-div .login-btn:first-child{
+    margin-right: 30px;
+}
+
+.login-btn:hover{
+    cursor: pointer;
+}
+
+.horizontal-row{
+    height: 2px;
+    background-color: yellow;
+    width: 80%;
+    margin: 50px 0;
+}

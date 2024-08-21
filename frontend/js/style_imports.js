@@ -22,6 +22,9 @@ import "../css/galaxies/main_galaxies.css"
 // POPUPS STYLES
 import "../css/popups/popups.css"
 
+//PROFILE IMPORTS
+import "../css/profile/login.css";
+
 // MEDIA QUERIES
 import "../css/media_queries/index_media_queries.css"
 import "../css/media_queries/header_media_queries.css"
@@ -32,3 +35,4 @@ import "../css/media_queries/error_404_media_queries.css"
 import "../css/media_queries/ideaform_media_queries.css"
 import "../css/media_queries/playlist_media_queries.css"
 import "../css/media_queries/aboutme_media_queries.css"
+import "../css/media_queries/login_media_queries.css"
