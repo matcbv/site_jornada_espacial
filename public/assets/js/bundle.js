@@ -489,7 +489,8 @@ var menuIcon = document.querySelector('.menu-icon');
 var fluidHeader = document.querySelector('.fluid-header');
 
 // Evento para animações do cabeçalho fluido
-menuIcon.addEventListener('click', function () {
+menuIcon.addEventListener('click', function (e) {
+  console.dir(e.target);
   var fluidHeaderDisplay = window.getComputedStyle(fluidHeader).display;
   menuIcon.classList.add('shake-animation');
   if (fluidHeaderDisplay === 'none') {

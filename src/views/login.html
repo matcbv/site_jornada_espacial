@@ -2,11 +2,12 @@
 <body>
     <div class="main-grid-div">
         <%- include(header) %>
-        <main class="main-login">
+        <main class="login-main">
+            <%- include(fluidHeader) %>
             <div class="login-form-content-div">
                 <div class="login-form-text">
                     <h1>Espaço do Mochileiro</h1>
-                    <p>Bem-vindo de volta Mochileiro! No Espaço do Mochileiro, você consegue acesso a seu progresso duranto nossa Jornada Espacial.</p>
+                    <p>Seja bem-vindo de volta! Acesse o Espaço do Mochileiro para acompanhar seu progresso durante nossa Jornada Espacial.</p>
                 </div>
                 <span class="horizontal-row"></span>
                 <form class="login-form" action="/src/controllers/login_controller.js" method="get">

@@ -1,12 +1,19 @@
-@media (max-width: 992px){
+@media (min-width: 768px) and (max-width: 992px){
+
+    .login-form-content-div{
+        width: 60vw;
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 768px){
 
     .login-form-content-div{
         width: 80vw;
-        padding: 30px 0;
     }
 
     .login-form-text{
-        width: 90%;
+        width: 80%;
     }
 
     .login-form-text h1{
@@ -19,7 +26,7 @@
 
     .login-form-input-div input{
         height: 25px;
-        width: 160px;
+        width: 60%;
         font-size: 0.9em;
     }
 
