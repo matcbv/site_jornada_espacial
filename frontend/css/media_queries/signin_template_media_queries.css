@@ -9,14 +9,15 @@
 
     .signin-main h1{
         font-family: 'Inconsolata';
-        font-size: 1.6em;
+        font-size: 1.5em;
         text-shadow: none;
         color: white;
+        margin-bottom: 30px;
     }
 
     .signin-main h2{
         font-family: 'Inconsolata';
-        font-size: 1.8em;
+        font-size: 1.7em;
         -webkit-text-stroke: 0;
     }
 
@@ -53,6 +54,6 @@
     .signin-row{
         height: 2px;
         width: 80%;
-        margin: 30px 0;
+        margin: 40px 0;
     }
 }
