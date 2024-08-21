@@ -25,6 +25,10 @@ const pagesController = {
 
     inspirations: (req, res) => {
         return res.render('inspirations.html')
+    },
+
+    login: (req, res) => {
+        return res.render('login.html')
     }
 }
 

@@ -21,12 +21,18 @@ header a{
     text-decoration: none;
 }
 
-.logo{
-    width: 60px;
-    margin-right: 8px;
+.header-nav{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
 }
 
-.main-ul{
+.logo{
+    width: 60px;
+    margin-right: 10px;
+}
+
+.header-nav ul{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -34,18 +40,16 @@ header a{
     list-style: none;
 }
 
-.main-ul li a{
+.galaxies-link{
     padding: 9px;
     border-radius: 5px;
     outline: 2px solid rgb(70, 58, 79);
     color: rgb(199, 199, 0);
-    margin-right: 45px;
+    margin-right: 35px;
     text-shadow: 1px 3px 3px rgba(0,0,0,.5);
 }
 
 .logo-link{
-    display: block;
-    width: auto;
     margin-left: 50px;
 }
 
@@ -68,9 +72,17 @@ header a{
     margin-left: -3px;
 }
 
-.main-ul li > a:hover{
+.galaxies-link:hover{
     cursor: pointer;
     animation: background-gradient 0.2s ease-in-out 0s 1 normal forwards;
+}
+
+.login-link{
+    margin-right: 45px;
+}
+
+.login-link img{
+    width: 55px;
 }
 
 .menu-icon{

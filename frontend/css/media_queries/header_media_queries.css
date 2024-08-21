@@ -4,11 +4,15 @@
         padding: 10px 0;
     }
     
-    .main-ul{
+    .header-nav ul{
         display: none;
     }
 
     .logo-div img{
+        width: 45px;
+    }
+
+    .header-nav img{
         width: 45px;
     }
 

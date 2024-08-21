@@ -22,6 +22,8 @@ router.get('/ideaform', pagesController.ideaForm)
 router.get('/aboutme', pagesController.aboutme)
 // Página de inspirações
 router.get('/inspirations', pagesController.inspirations)
+// Página de login
+router.get('/login', pagesController.login)
 // Enviando dados do formulario
 router.post('/ideaform/sendidea', formController.sendIdea)
 // Popups

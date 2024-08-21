@@ -1,0 +1,23 @@
+<%- include(head) %>
+<body>
+    <div class="main-grid-div">
+        <%- include(header) %>
+        <main class="main-login">
+            <div>
+                <form action="/src/controllers/login_controller.js" method="get">
+                    <label for="username"><img src="/images/profile_images/username_icon.png" alt="Ícone de usuário"></label>
+                    <input type="text" name="username" id="username" autocomplete="username">
+                    <label for="password"><img src="/images/profile_images/password_icon.png" alt="Ícone de senha"></label>
+                    <input type="password" name="password" id="password" autocomplete="current-password">
+                    <input type="submit" value="Entrar">
+                </form>
+            </div>
+            <%- include(playlist) %>
+            <%- include(audio) %>
+            <%- include(swordfish) %>
+        </main>
+        <%- include(footer) %>
+    </div>
+    <script src="/js/bundle.js"></script>
+</body>
+</html>
