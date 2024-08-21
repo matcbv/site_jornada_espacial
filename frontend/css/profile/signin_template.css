@@ -1,9 +1,96 @@
 .signin-main{
     min-height: 100vh;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     grid-area: main;
     position: relative;
-    background-image: linear-gradient(to right, rgb(27, 22, 35), transparent, rgb(9, 8, 23));
+    background-image: linear-gradient(to right, rgb(27, 22, 35), rgba(27,22,35,.7), transparent, rgb(6, 5, 35, 0.7), rgb(6, 5, 35));
+}
+
+.signin-main h1{
+    font-family: 'Rubik Mono One';
+    font-size: 1.8em;
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    text-shadow: 0 3px 6px hsla(0,0%,100%, 0.2);
+}
+
+.signin-template-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.login-div, .register-div{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+}
+
+.login-div div, .register-div div{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.signin-template-div p{
+    font-size: 1.2em;
+    font-family: 'Inconsolata';
+    width: 80%;
+    margin: 30px 0 50px 0;
+    text-align: center;
+}
+
+.login-div h2{
+    font-size: 2.2em;
+    color: rgb(21, 15, 32);
+    -webkit-text-stroke: 1px #ff0;
+    font-family: 'Rubik Mono One';
+}
+
+.register-div h2{
+    font-size: 2.2em;
+    color: rgb(6, 5, 35);
+    -webkit-text-stroke: 1px #ff0;
+    font-family: 'Rubik Mono One';
+}
+
+.signin-template-div a{
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Inconsolata';
+    color: white;
+    font-weight: bold;
+}
+
+.login-div a{
+    border-radius: 5px;
+    outline: 2px solid rgb(70, 58, 79);
+    padding: 9px;
+    text-decoration: none;
+    box-shadow: inset 0 0 5px rgb(70, 58, 79);
+}
+
+.register-div a{
+    border-radius: 5px;
+    outline: 2px solid rgb(45, 62, 92);
+    box-shadow: inset 0 0 5px rgb(45, 62, 92);
+    padding: 9px;
+    text-decoration: none;
+}
+
+.signin-template-div .vertical-row{
+    width: 2px;
+    height: 80%;
+    background-color: yellow;
+    margin: 0 30px;
 }
