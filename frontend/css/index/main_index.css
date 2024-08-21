@@ -4,7 +4,7 @@
     position: relative;
     grid-area: main;
     display: grid;
-    grid-template:  'intro-section' 1fr
+    grid-template:  'intro-section' 90vh
                     'milkyway-section' 1fr
                     'andromeda-section' 1fr
                     'triangle-section' 1fr
