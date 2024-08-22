@@ -72,6 +72,16 @@
     font-weight: bold;
 }
 
+.login-div a:hover{
+    cursor: pointer;
+    background-color: rgb(39, 26, 51);
+}
+
+.register-div a:hover{
+    cursor: pointer;
+    background-color: rgb(16, 24, 51);
+}
+
 .login-div a{
     border-radius: 5px;
     outline: 2px solid rgb(71, 49, 90);
