@@ -18,9 +18,9 @@
     }
 
     .login-form-input-div input{
-        height: 25px;
         font-size: 0.9em;
         width: 190px;
+        height: 30px;
     }
 
     .login-form div:not(:last-child){
@@ -33,13 +33,16 @@
         padding: 8px 10px;
     }
 
-    .login-form label img{
-        width: 30px;
+    .login-form-input-div img{
+        width: 25px;
+    }
+
+    .login-form-input-div label{
+        font-size: 1em;
     }
 
     .horizontal-row{
-        height: 1px;
-        width: 90%;
+        height: 2px;
         margin: 30px 0;
     }
 }

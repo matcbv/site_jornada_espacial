@@ -33,11 +33,12 @@
 }
 
 .login-form-input-div input{
-    height: 30px;
+    height: 35px;
     width: 310px;
     border-radius: 5px;
     font-family: 'Inconsolata';
     font-size: 1.2em;
+    font-weight: bold;
     background-color: transparent;
     color: white;
     border: none;
@@ -46,14 +47,14 @@
 }
 
 .login-form-input-div input:focus{
-    outline: 1px solid rgb(73, 36, 149);
-    box-shadow: 0 0 5px rgb(73, 36, 149, 0.5);
+    outline: 1px solid rgb(48, 31, 85);
+    box-shadow: 0 0 5px rgb(48, 31, 85, 0.5);
 }
 
 .login-form-input-div img{
     position: absolute;
     left: 5px;
-    bottom: 0;
+    bottom: 2.5px;
 }
 
 .login-form div:not(:last-child){
@@ -112,8 +113,8 @@
 }
 
 .horizontal-row{
-    height: 2px;
-    background-color: rgb(73, 36, 149);
+    height: 3px;
+    background-color: rgb(48, 31, 85);
     width: 80%;
     margin: 50px 0;
 }

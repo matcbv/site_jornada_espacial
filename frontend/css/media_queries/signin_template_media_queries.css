@@ -1,4 +1,5 @@
 @media (max-width: 992px){
+
     .signin-main{
         background-image: linear-gradient(rgb(27, 22, 35), rgba(27,22,35,0.8), transparent, rgb(5, 13, 35, 0.8), rgb(5, 13, 35));
     }
@@ -10,9 +11,7 @@
     .signin-main h1{
         font-family: 'Inconsolata';
         font-size: 1.5em;
-        text-shadow: none;
         color: white;
-        margin-bottom: 30px;
     }
 
     .signin-main h2{
@@ -33,10 +32,6 @@
         font-size: 1.1em;
     }
 
-    .login-div, .register-div{
-        width: 90%;
-    }
-
     .signin-template-div a{
         width: 150px;
         text-align: center;
@@ -53,7 +48,21 @@
 
     .signin-row{
         height: 2px;
-        width: 80%;
+        width: 60%;
         margin: 40px 0;
+    }
+}
+
+@media (max-width: 768px){
+    .signin-main{
+        min-height: 110vh;
+    }
+
+    .login-div, .register-div{
+        width: 90%;
+    }
+
+    .signin-row{
+        width: 80%;
     }
 }
