@@ -10,7 +10,7 @@
     }
 
     .login-form-text h1{
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 
     .login-form-text p{
@@ -19,7 +19,7 @@
 
     .login-form-input-div input{
         font-size: 0.9em;
-        width: 190px;
+        width: 220px;
         height: 30px;
     }
 
@@ -31,6 +31,7 @@
     .login-form-btn-div .login-btn{
         font-size: 0.8em;
         padding: 8px 10px;
+        margin-top: 10px;
     }
 
     .login-form-input-div img{
@@ -53,7 +54,7 @@
         width: 80vw;
     }
 
-    .login-form-input-div input{
-        width: 160px;
+    .login-form-btn-div .login-btn:first-child{
+        margin-right: 20px;
     }
 }

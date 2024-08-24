@@ -5,7 +5,7 @@
 ::-webkit-scrollbar-track{
       background-image: linear-gradient(rgba(27, 22, 35) 40%, rgb(3, 0, 5));
 }
-  
+
 ::-webkit-scrollbar-thumb{
       background: rgb(49, 37, 58);
       border-radius: 10px;
