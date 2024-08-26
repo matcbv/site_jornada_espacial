@@ -23,9 +23,7 @@ if (introductionSection && headerSection){
             document.body.classList.remove('change-scrollbar');
         }
     })
-}
-
-if (galaxiesMain){
+} else if (galaxiesMain){
     document.body.classList.add('change-scrollbar');
 }
 

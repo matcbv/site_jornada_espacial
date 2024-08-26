@@ -25,6 +25,7 @@ import "../css/popups/popups.css"
 //PROFILE IMPORTS
 import "../css/profile/signin_template.css";
 import "../css/profile/login.css";
+import "../css/profile/register.css";
 
 // MEDIA QUERIES
 import "../css/media_queries/index_media_queries.css"

@@ -26,6 +26,8 @@ router.get('/inspirations', pagesController.inspirations)
 router.get('/signin', pagesController.signin_template)
 // Página de login
 router.get('/signin/login', pagesController.login)
+// Página de cadastro
+router.get('/signin/register', pagesController.register)
 // Enviando dados do formulario
 router.post('/ideaform/sendidea', formController.sendIdea)
 // Popups

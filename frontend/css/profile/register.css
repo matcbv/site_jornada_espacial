@@ -1,0 +1,9 @@
+.register-main{
+    grid-area: main;
+    min-height: 100vh;
+    background-image: linear-gradient(to right, rgb(5, 13, 35, 0.8), rgb(5, 13, 35), transparent);
+}
+
+.register-form-content-div{
+    margin-left: 50px;
+}

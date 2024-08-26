@@ -1,15 +1,4 @@
-@media (min-width: 768px) and (max-width: 992px){
-
-    .email-div{
-        margin-bottom: 0 !important;
-    }
-
-    .form-buttons-div button{
-        margin-top: 15px;
-    }
-}
-
-@media (max-width: 768px){
+@media (max-width: 992px){
     
     .ideaform-content-div{
         flex-flow: column nowrap;
@@ -18,7 +7,7 @@
     }
 
     .idea-form{
-        grid-template:  "radios textarea" 2fr
+        grid-template:  "radios textarea" 1.5fr
                         "email buttons" 1fr
                         / auto auto;
         width: 100%;
@@ -39,7 +28,7 @@
 
     .idea-text-div p{
         font-size: 0.75em;
-        line-height: 1.1em;
+        line-height: 1.2em;
     }
 
     .radio-div h2{
@@ -77,6 +66,10 @@
         margin-bottom: 0;
     }
 
+    .form-buttons-div button{
+        margin-top: 15px;
+    }
+
     .email-div{
         align-self: end;
         margin-top: 12px;
@@ -90,6 +83,11 @@
 
     .email-div p{
         font-size: 0.8em;
+    }
+
+
+    .email-div{
+        margin-bottom: 0 !important;
     }
 
     .vertical-row{

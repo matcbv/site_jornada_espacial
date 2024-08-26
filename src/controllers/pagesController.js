@@ -33,6 +33,10 @@ const pagesController = {
 
     login: (req, res) => {
         return res.render('login.html')
+    },
+
+    register: (req, res) => {
+        return res.render('register.html')
     }
 }
 
