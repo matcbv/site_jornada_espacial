@@ -4,7 +4,6 @@
     align-items: center;
     max-width: 100vw;
     min-height: 100vh;
-    grid-area: main;
     position: relative;
 }
 

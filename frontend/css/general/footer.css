@@ -1,22 +1,22 @@
 footer{
-    grid-area: footer;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template: 'links btn cowboy' 100% / 2fr 1fr 2fr;
+    justify-items: center;
     align-items: center;
     background-color: rgba(27, 22, 35);
     border-top: 2px solid rgb(49, 37, 58);
-    box-shadow: 0 -7px 15px rgba(27, 22, 35);
-    padding: 10px 30px;
+    box-shadow: 0 -3px 40px rgba(27, 22, 35);
+    padding: 10px 0;
+    position: relative;
     z-index: 997;
     max-height: 140px;
 }
 
 .footer-links-div{
+    grid-area: links;
     display: flex;
     flex-flow: column nowrap;
-    width: 35%;
-    margin-right: 15px;
+    padding-left: 60px;
 }
 
 .footer-links-div ul{
@@ -29,7 +29,7 @@ footer{
 
 .footer-links-div li a{
     color: white;
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-family: monospace;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -54,13 +54,17 @@ footer{
     text-decoration: none;
 }
 
+.footer-btn-div{
+    grid-area: btn;
+}
+
 .icons-link:hover{
     cursor: pointer;
     color: white;
 }
 
 .cowboy-bebop-div{
-    width: 35%;
+    grid-area: cowboy;
     display: flex;
     flex-flow: row nowrap;
     justify-content: end;
@@ -86,14 +90,9 @@ footer{
     padding-bottom: 15px;
 }
 
-.footer-btn-div{
-    width: 30%;
-}
 
 footer button{
     display: block;
-    width: auto;
-    margin: auto;
     padding: 10px 15px;
     border: 2px solid rgb(199, 199, 0);
     background-color: transparent;

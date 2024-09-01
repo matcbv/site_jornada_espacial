@@ -1,50 +1,48 @@
 <%- include(head) %>
 <body>
-    <div class="main-grid-div">
-        <%- include(header) %>
-        <main class="register-main">
-            <%- include(fluidHeader) %>
-            <div class="register-form-content-div">
-                <div class="register-form-text">
-                    <h1>Cadastro do Mochileiro</h1>
-                </div>
-                <form class="login-form" action="/src/controllers/login_controller.js" method="get">
-                    <form class="login-form" action="/src/controllers/login_controller.js" method="get">
-                        <div class="login-form-input-div">
-                            <label for="name">Nome</label>
-                            <input type="text" name="name" id="name" autocomplete="given-name">
-                        </div>
-                        <div class="login-form-input-div">
-                            <label for="lastname">Sobrenome</label>
-                            <input type="text" name="lastname" id="lastname" autocomplete="family-name">
-                        </div>
-                        <div class="login-form-input-div">
-                            <label for="birthday">Data de nascimento</label>
-                            <input type="date" name="birthday" id="birthday" autocomplete="bday">
-                        </div>
-                        <div class="login-form-input-div">
-                            <label for="password">Usuário</label>
-                            <input type="password" name="password" id="password" autocomplete="current-password">
-                        </div>
-                        <div class="login-form-input-div">
-                            <label for="password">Senha</label>
-                            <input type="password" name="password" id="password" autocomplete="current-password">
-                        </div>
-                        <div class="login-form-input-div">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" autocomplete="email">
-                        </div>
-                        <div class="login-form-btn-div">
-                            <input class="login-btn" type="submit" value="Criar conta">
-                        </div>
-                </form>
+    <%- include(header) %>
+    <main class="register-main">
+        <%- include(fluidHeader) %>
+        <div class="register-form-content-div">
+            <div class="register-form-text">
+                <h1>Cadastro do Mochileiro</h1>
             </div>
-            <%- include(playlist) %>
-            <%- include(audio) %>
-            <%- include(swordfish) %>
-        </main>
-        <%- include(footer) %>
-    </div>
+            <form class="login-form" action="/src/controllers/login_controller.js" method="get">
+                <form class="login-form" action="/src/controllers/login_controller.js" method="get">
+                    <div class="login-form-input-div">
+                        <label for="name">Nome</label>
+                        <input type="text" name="name" id="name" autocomplete="given-name">
+                    </div>
+                    <div class="login-form-input-div">
+                        <label for="lastname">Sobrenome</label>
+                        <input type="text" name="lastname" id="lastname" autocomplete="family-name">
+                    </div>
+                    <div class="login-form-input-div">
+                        <label for="birthday">Data de nascimento</label>
+                        <input type="date" name="birthday" id="birthday" autocomplete="bday">
+                    </div>
+                    <div class="login-form-input-div">
+                        <label for="password">Usuário</label>
+                        <input type="password" name="password" id="password" autocomplete="current-password">
+                    </div>
+                    <div class="login-form-input-div">
+                        <label for="password">Senha</label>
+                        <input type="password" name="password" id="password" autocomplete="current-password">
+                    </div>
+                    <div class="login-form-input-div">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" autocomplete="email">
+                    </div>
+                    <div class="login-form-btn-div">
+                        <input class="login-btn" type="submit" value="Criar conta">
+                    </div>
+            </form>
+        </div>
+        <%- include(playlist) %>
+        <%- include(audio) %>
+        <%- include(swordfish) %>
+    </main>
+    <%- include(footer) %>
     <script src="/js/bundle.js"></script>
 </body>
 </html>

@@ -2,7 +2,6 @@
 
 .index-main{
     position: relative;
-    grid-area: main;
     display: grid;
     grid-template:  'intro-section' 90vh
                     'milkyway-section' 1fr
@@ -10,8 +9,6 @@
                     'triangle-section' 1fr
                     / 100%;
 }
-
-
 
 /* ---------- INTRODUCTION SECTION ---------- */
 
@@ -101,11 +98,13 @@
 .msc-popup{
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
     position: fixed;
     bottom: 50px;
     left: 50px;
     width: 250px;
+    height: 150px;
     border-radius: 7px;
     padding: 10px 0;
     background-color: rgb(9, 8, 23);
@@ -117,9 +116,7 @@
 .msc-popup p{
     text-align: center;
     width: 175px;
-    margin: auto;
     font-family: monospace;
-    margin-bottom: 15px;
 }
 
 .msc-popup button{
@@ -128,7 +125,6 @@
     justify-content: center;
     align-items: center;
     width: 50%;
-    margin: auto;
     border-radius: 5px;
     background-color: transparent;
     border: 1px solid yellow;
@@ -206,7 +202,7 @@
 
 /* ---------- MILKYWAY SECTION ---------- */
 
-.main-grid-div .milkyway-section{
+.milkyway-section{
     grid-area: milkyway-section;
     padding-top: 25vh;
 }
@@ -215,15 +211,11 @@
     cursor: pointer;
 }
 
-.milkyway-btn-div{
-    width: 100%;
-}
-
-#milkyway-btn{
+#milkyway-link{
     border: 3px solid rgb(38, 54, 140);
 }
 
-#milkyway-btn:hover{
+#milkyway-link:hover{
     box-shadow: inset 0 0 12px rgb(38, 54, 140, 0.6);
 }
 
@@ -237,11 +229,11 @@
     cursor: pointer;
 }
 
-#andromeda-btn{
+#andromeda-link{
     border: 3px solid rgb(111, 96, 139);
 }
 
-#andromeda-btn:hover{
+#andromeda-link:hover{
     box-shadow: inset 0 0 12px rgb(111, 96, 139, 0.6);
 }
 
@@ -262,11 +254,11 @@
     cursor: pointer;
 }
 
-#triangle-btn{
+#triangle-link{
     border: 3px solid rgb(207, 144, 169);
 }
 
-#triangle-btn:hover{
+#triangle-link:hover{
     box-shadow: inset 0 0 12px rgb(207, 144, 169, 0.6);
 }
 
@@ -304,13 +296,13 @@
     margin: auto;
 }
 
-.galaxies-btn-div{
+.galaxies-link-div{
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
 }
 
-.galaxies-btn-div button{
+.galaxies-link-div a{
     display: block;
     width: auto;
     margin-left: 36px;
@@ -321,13 +313,14 @@
     font-size: 1.1em;
     font-family: 'Calistoga';
     font-style: italic;
+    text-decoration: none;
 }
 
-.galaxies-btn-div button:hover{
+.galaxies-link-div a:hover{
     cursor: pointer;
 }
 
-.galaxies-btn-div span{
+.galaxies-link-div span{
     display: inline-block;
     font-size: 1.8em;
     width: 36px;

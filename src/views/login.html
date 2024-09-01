@@ -1,38 +1,36 @@
 <%- include(head) %>
 <body>
-    <div class="main-grid-div">
-        <%- include(header) %>
-        <main class="login-main">
-            <%- include(fluidHeader) %>
-            <div class="login-form-content-div">
-                <div class="login-form-text">
-                    <h1>Espaço do Mochileiro</h1>
-                    <p>Seja bem-vindo de volta! Acesse o Espaço do Mochileiro para acompanhar seu progresso durante nossa Jornada Espacial.</p>
-                </div>
-                <span class="horizontal-row"></span>
-                <form class="login-form" action="/src/controllers/login_controller.js" method="get">
-                    <div class="login-form-input-div">
-                        <label for="username">Usuário</label>
-                        <img src="/images/profile_images/username_icon.png" alt="Ícone de usuário">
-                        <input type="text" name="username" id="username" autocomplete="username">
-                    </div>
-                    <div class="login-form-input-div">
-                        <label for="password">Senha</label>
-                        <img src="/images/profile_images/password_icon.png" alt="Ícone de senha">
-                        <input type="password" name="password" id="password" autocomplete="current-password">
-                    </div>
-                    <div class="login-form-btn-div">
-                        <input class="login-btn" type="submit" value="Entrar">
-                        <input class="login-btn" type="button" value="Esqueci minha senha">
-                    </div>
-                </form>
+    <%- include(header) %>
+    <main class="login-main">
+        <%- include(fluidHeader) %>
+        <div class="login-form-content-div">
+            <div class="login-form-text">
+                <h1>Espaço do Mochileiro</h1>
+                <p>Seja bem-vindo de volta! Acesse o Espaço do Mochileiro para acompanhar seu progresso durante nossa Jornada Espacial.</p>
             </div>
-            <%- include(playlist) %>
-            <%- include(audio) %>
-            <%- include(swordfish) %>
-        </main>
-        <%- include(footer) %>
-    </div>
+            <span class="horizontal-row"></span>
+            <form class="login-form" action="/src/controllers/login_controller.js" method="get">
+                <div class="login-form-input-div">
+                    <label for="username">Usuário</label>
+                    <img src="/images/profile_images/username_icon.png" alt="Ícone de usuário">
+                    <input type="text" name="username" id="username" autocomplete="username">
+                </div>
+                <div class="login-form-input-div">
+                    <label for="password">Senha</label>
+                    <img src="/images/profile_images/password_icon.png" alt="Ícone de senha">
+                    <input type="password" name="password" id="password" autocomplete="current-password">
+                </div>
+                <div class="login-form-btn-div">
+                    <input class="login-btn" type="submit" value="Entrar">
+                    <input class="login-btn" type="button" value="Esqueci minha senha">
+                </div>
+            </form>
+        </div>
+        <%- include(playlist) %>
+        <%- include(audio) %>
+        <%- include(swordfish) %>
+    </main>
+    <%- include(footer) %>
     <script src="/js/bundle.js"></script>
 </body>
 </html>

@@ -1,28 +1,6 @@
 @media (max-width: 992px){
-
-    /* ------- INDEX MAIN ------- */
-
-    .index-main{
-     grid-template: "intro-section" 90vh
-                "milkyway-section" 0.5fr
-                "andromeda-section" 0.5fr
-                "triangle-section" 0.5fr
-                / 100%;
-    }
-
-    /* ------- INTRODUCTION SECTION ------- */
-
-    .intro-section{
-        background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7), transparent 70%);
-    }
-
-    .intro-text-div{
-        flex-flow: column nowrap;
-    }
     
-    .intro-text{
-        width: 100%;
-    }
+    /* ------- INTRODUCTION SECTION ------- */
 
     .intro-text-div p{
         font-size: 1.3em;
@@ -50,20 +28,16 @@
         padding: 12vh 0;
     }
 
-    .welcomes-text{
-        margin-bottom: 100px;
-        width: 100%;
-    }
-
     .galaxies-text{
         width: 90%;
     }
 
     .galaxies-text p{
-        font-size: 1em;
+        font-size: 0.9em;
         text-align: justify;
         margin-bottom: 50px;
         width: 95%;
+        line-height: 1.5em;
     }
 
     .galaxies-section h2{
@@ -72,7 +46,7 @@
         font-size: 2em;
     }
 
-    .galaxies-btn-div button{
+    .galaxies-link-div a{
         width: 250px;
         font-size: 1em;
         padding: 10px 0;
@@ -84,36 +58,43 @@
 
     /* ------- MILKYWAY SECTION ------- */
 
-    .main-grid-div .milkyway-section{
+    .milkyway-section{
         padding-top: 100px;
         flex-flow: column-reverse nowrap;
     }
 
-    .main-grid-div .triangle-section{
+    .triangle-section{
         flex-flow: column-reverse nowrap;
     }
 }
 
 @media (max-width: 768px){
 
-    .galaxies-text p{
-        font-size: 0.8em;
-        line-height: 1.5em;
+    /* ------- INTRODUCTION SECTION ------- */
+
+    .intro-section{
+        background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7), transparent 70%);
+    }
+
+    .intro-text-div{
+        flex-flow: column nowrap;
+    }
+
+    .welcomes-text{
+        margin-bottom: 100px;
+        width: 100%;
+    }
+    
+    .intro-text{
+        width: 100%;
     }
 
     /* ------- MUSIC POPUP ------- */
 
     .msc-popup{
-        height: 140px;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 250px;
-    }
-
-    .msc-popup p{
-        font-size: 1em;
-        margin-bottom: 5px;
     }
 
     .msc-popup-close-icon{

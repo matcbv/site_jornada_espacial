@@ -5,86 +5,84 @@
         <p>Para uma trilha sonora durante sua Jornada Espacial, clique no botão abaixo.</p>
         <button class="play">Play <img src="/images/play_icon.png" alt="Play"></button>
     </div>
-    <div class="main-grid-div">
-        <%- include(header) %>
-        <main class="index-main">
-            <%- include(fluidHeader) %>
-            <section class="intro-section">
-                <div class="intro-text-div">
-                    <div class="welcomes-text">
-                        <p>Seja bem-vindo,</p>
-                        <p class="highlight">Mochileiro!</p>
-                    </div>
-                    <div class="intro-text">
-                        <p>Prepare-se, pois iremos embarcar em uma Jornada</p>
-                        <p class="highlight">Espacial</p>
-                    </div>
+    <%- include(header) %>
+    <main class="index-main">
+        <%- include(fluidHeader) %>
+        <section class="intro-section">
+            <div class="intro-text-div">
+                <div class="welcomes-text">
+                    <p>Seja bem-vindo,</p>
+                    <p class="highlight">Mochileiro!</p>
                 </div>
-                <div class="intro-btn-div">
-                    <button type="button" class="intro-btn">VAMOS LÁ!</button>
+                <div class="intro-text">
+                    <p>Prepare-se, pois iremos embarcar em uma Jornada</p>
+                    <p class="highlight">Espacial</p>
                 </div>
-            </section>
-            <section class="galaxies-section milkyway-section">
-                <div class="galaxies-img-div">
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="/images/milkyway_images/milkyway_small.png" type="image/png">
-                        <img src="/images/milkyway_images/milkyway.png" alt="Via Láctea">
-                    </picture>
-                    <div class="galaxies-btn-div">
-                        <button id="milkyway-btn" type="button">VAMOS PARA VIA LÁCTEA</button><span id="milkyway-rocket"></span>
-                    </div>
+            </div>
+            <div class="intro-btn-div">
+                <button type="button" class="intro-btn">VAMOS LÁ!</button>
+            </div>
+        </section>
+        <section class="galaxies-section milkyway-section">
+            <div class="galaxies-img-div">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="/images/milkyway_images/milkyway_small.png" type="image/png">
+                    <img src="/images/milkyway_images/milkyway.png" alt="Via Láctea">
+                </picture>
+                <div class="galaxies-link-div">
+                    <a href="/milkyway" id="milkyway-link" type="button">VAMOS PARA VIA LÁCTEA</a> <span id="milkyway-rocket"></span>
                 </div>
-                <div class="galaxies-text">
-                    <h2>Via Láctea</h2>
-                    <p>
-                        A Via Láctea é a nossa casa no vasto universo, uma galáxia espiral que abriga cerca de 200 bilhões a 400 bilhões de estrelas, incluindo o nosso Sol. Com um diâmetro de cerca de 100.000 anos-luz, ela é uma galáxia majestosa, com seus braços espirais rodopiando em torno de um núcleo denso e brilhante. Dentro dela, existem milhões de sistemas solares, nebulosas e até buracos negros. O nome "Via Láctea" vem da aparência esbranquiçada que a galáxia forma no céu noturno, como um caminho de leite derramado. Olhar para a Via Láctea é como olhar para as nossas raízes cósmicas, lembrando-nos de que somos parte de algo imensamente maior do que imaginamos.
-                    </p>
-                </div>
-            </section>
-            <section class="galaxies-section andromeda-section">
-                <div class="galaxies-text">
-                    <h2>Andrômeda</h2>
-                    <p>
-                        A Galáxia de Andrômeda, também conhecida como M31, é a maior galáxia do nosso Grupo Local e uma das mais brilhantes do céu noturno. Situada a cerca de 2,5 milhões de anos-luz da Terra, Andrômeda é uma galáxia espiral gigante, semelhante à Via Láctea, mas com aproximadamente o dobro do número de estrelas, estimadas em um trilhão! Ela está em rota de colisão com a nossa galáxia, e em cerca de 4,5 bilhões de anos, as duas galáxias irão se fundir em uma única galáxia elíptica, em um evento cósmico espetacular. Mas não se preocupe, até lá ainda temos muito tempo para observarmos a beleza de Andrômeda no céu.
-                    </p>
-                </div>
-                <div class="galaxies-img-div">
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="/images/andromeda_images/andromeda_small.png" type="image/png">
-                        <img src="/images/andromeda_images/andromeda.png" alt="Andrômeda">
-                    </picture>
-                    <div class="galaxies-btn-div">
-                        <div class="galaxies-btn-div">
-                            <button id="andromeda-btn" type="button">VAMOS PARA ANDRÔMEDA</button><span id="andromeda-rocket"></span>
-                        </div>
+            </div>
+            <div class="galaxies-text">
+                <h2>Via Láctea</h2>
+                <p>
+                    A Via Láctea é a nossa casa no vasto universo, uma galáxia espiral que abriga cerca de 200 bilhões a 400 bilhões de estrelas, incluindo o nosso Sol. Com um diâmetro de cerca de 100.000 anos-luz, ela é uma galáxia majestosa, com seus braços espirais rodopiando em torno de um núcleo denso e brilhante. Dentro dela, existem milhões de sistemas solares, nebulosas e até buracos negros. O nome "Via Láctea" vem da aparência esbranquiçada que a galáxia forma no céu noturno, como um caminho de leite derramado. Olhar para a Via Láctea é como olhar para as nossas raízes cósmicas, lembrando-nos de que somos parte de algo imensamente maior do que imaginamos.
+                </p>
+            </div>
+        </section>
+        <section class="galaxies-section andromeda-section">
+            <div class="galaxies-text">
+                <h2>Andrômeda</h2>
+                <p>
+                    A Galáxia de Andrômeda, também conhecida como M31, é a maior galáxia do nosso Grupo Local e uma das mais brilhantes do céu noturno. Situada a cerca de 2,5 milhões de anos-luz da Terra, Andrômeda é uma galáxia espiral gigante, semelhante à Via Láctea, mas com aproximadamente o dobro do número de estrelas, estimadas em um trilhão! Ela está em rota de colisão com a nossa galáxia, e em cerca de 4,5 bilhões de anos, as duas galáxias irão se fundir em uma única galáxia elíptica, em um evento cósmico espetacular. Mas não se preocupe, até lá ainda temos muito tempo para observarmos a beleza de Andrômeda no céu.
+                </p>
+            </div>
+            <div class="galaxies-img-div">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="/images/andromeda_images/andromeda_small.png" type="image/png">
+                    <img src="/images/andromeda_images/andromeda.png" alt="Andrômeda">
+                </picture>
+                <div class="galaxies-link-div">
+                    <div class="galaxies-link-div">
+                        <a href="/andromeda" id="andromeda-link" type="button">VAMOS PARA ANDRÔMEDA</a><span id="andromeda-rocket"></span>
                     </div>
                 </div>
-            </section>
-            <section class="galaxies-section triangle-section">
-                <div class="galaxies-img-div">
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="/images/triangle_images/triangle_small.png" type="image/png">
-                        <img src="/images/triangle_images/triangle.png" alt="Galáxia do Triângulo">
-                    </picture>
-                    <div class="galaxies-btn-div">
-                        <div class="galaxies-btn-div">
-                            <button id="triangle-btn" type="button">VAMOS PARA TRIÂNGULO</button><span id="triangle-rocket"></span>
-                        </div>
+            </div>
+        </section>
+        <section class="galaxies-section triangle-section">
+            <div class="galaxies-img-div">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="/images/triangle_images/triangle_small.png" type="image/png">
+                    <img src="/images/triangle_images/triangle.png" alt="Galáxia do Triângulo">
+                </picture>
+                <div class="galaxies-link-div">
+                    <div class="galaxies-link-div">
+                        <a href="/triangle" id="triangle-link" type="button">VAMOS PARA TRIÂNGULO</a><span id="triangle-rocket"></span>
                     </div>
                 </div>
-                <div class="galaxies-text">
-                    <h2>Triângulo</h2>
-                    <p>
-                        A Galáxia do Triângulo, ou M33, é a terceira maior galáxia do Grupo Local, depois de Andrômeda e da Via Láctea. Localizada a cerca de 3 milhões de anos-luz de distância, esta galáxia espiral é um pouco menor, com um diâmetro de aproximadamente 60.000 anos-luz. Mesmo assim, a Galáxia do Triângulo é um verdadeiro tesouro cósmico, especialmente conhecida por abrigar NGC 604, uma das maiores regiões de formação estelar conhecidas. M33 tem uma forma espiral bem definida, e seus braços estão repletos de estrelas jovens e brilhantes, o que a torna um objeto fascinante para observar e estudar. Ela é uma peça importante na compreensão da estrutura e da dinâmica das galáxias espirais no universo.
-                    </p>
-                </div>
-            </section>
-            <%- include(playlist) %>
-            <%- include(audio) %>
-            <%- include(swordfish) %>
-        </main>
-        <%- include(footer) %>
-    </div>
+            </div>
+            <div class="galaxies-text">
+                <h2>Triângulo</h2>
+                <p>
+                    A Galáxia do Triângulo, ou M33, é a terceira maior galáxia do Grupo Local, depois de Andrômeda e da Via Láctea. Localizada a cerca de 3 milhões de anos-luz de distância, esta galáxia espiral é um pouco menor, com um diâmetro de aproximadamente 60.000 anos-luz. Mesmo assim, a Galáxia do Triângulo é um verdadeiro tesouro cósmico, especialmente conhecida por abrigar NGC 604, uma das maiores regiões de formação estelar conhecidas. M33 tem uma forma espiral bem definida, e seus braços estão repletos de estrelas jovens e brilhantes, o que a torna um objeto fascinante para observar e estudar. Ela é uma peça importante na compreensão da estrutura e da dinâmica das galáxias espirais no universo.
+                </p>
+            </div>
+        </section>
+        <%- include(playlist) %>
+        <%- include(audio) %>
+        <%- include(swordfish) %>
+    </main>
+    <%- include(footer) %>
     <script src="/js/bundle.js"></script>
 </body>
 </html>

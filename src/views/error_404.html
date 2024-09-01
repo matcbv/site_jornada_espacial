@@ -1,29 +1,27 @@
 <%- include(head) %>
 <body>
-    <div class="main-grid-div">
-        <%- include(header) %>
-        <main class="error-main">
-            <%- include(fluidHeader) %>
-            <div class="astronaut-div">
+    <%- include(header) %>
+    <main class="error-main">
+        <%- include(fluidHeader) %>
+        <div class="astronaut-div">
+        <picture>
+            <source media="(max-width: 768px)" srcset="/images/404_images/astronaut_small.png" type="image/png">
+            <img class="astronaut" src="/images/404_images/astronaut.png" alt="Astronauta">
+        </picture>
+        </div>
+        <div class="main-div-error">
+            <h1 class="error-title">404</h1>
+            <p class="error-text">Parece que você está tentando explorar áreas desconhecidas, Mochileiro! Para uma jornada segura, siga as instruções do seu Guia Espacial.</p>
+            <button class="back-homepage-btn" type="button">Página inicial</button>
+        </div>
+        <div class="satellite-div">
             <picture>
-                <source media="(max-width: 768px)" srcset="/images/404_images/astronaut_small.png" type="image/png">
-                <img class="astronaut" src="/images/404_images/astronaut.png" alt="Astronauta">
+                <source media="(max-width: 768px)" srcset="/images/404_images/satellite_small.png" type="image/png">
+                <img class="satellite" src="/images/404_images/satellite.png" alt="Satélite">
             </picture>
-            </div>
-            <div class="main-div-error">
-                <h1 class="error-title">404</h1>
-                <p class="error-text">Parece que você está tentando explorar áreas desconhecidas, Mochileiro! Para uma jornada segura, siga as instruções do seu Guia Espacial.</p>
-                <button class="back-homepage-btn" type="button">Página inicial</button>
-            </div>
-            <div class="satellite-div">
-                <picture>
-                    <source media="(max-width: 768px)" srcset="/images/404_images/satellite_small.png" type="image/png">
-                    <img class="satellite" src="/images/404_images/satellite.png" alt="Satélite">
-                </picture>
-            </div>
-        </main>
-        <%- include(footer) %>
-    </div>
+        </div>
+    </main>
+    <%- include(footer) %>
     <script src="/js/bundle.js"></script>
 </body>
 </html>

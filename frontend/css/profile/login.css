@@ -3,17 +3,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-area: main;
     position: relative;
 }
 
 .login-form-content-div{
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
     align-items: center;
     background-image: linear-gradient(rgba(27, 22, 35, 0.8),  rgba(27, 22, 35, 0.7), transparent);
-    width: 50vw;
+    width: 775px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
     outline: 1px solid white;

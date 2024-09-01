@@ -1,49 +1,47 @@
 <%- include(head) %>
 <body>
-    <div class="main-grid-div">
-        <%- include(header) %>
-        <main class="aboutme-main">
-            <%- include(fluidHeader) %>
-            <div class="aboutme-text-div">
-                <h1>Conhecendo seu Guia Espacial</h1>
-                <p>
-                    Muito prazer, <span class="emphasis">Mochileiro!</span> Finalmente chegou a hora de nos conhecermos, nâo é? Me chamo <span class="emphasis">Matheus Cerqueira</span>, nascido em 2002 no estado do Rio de Janeiro, sou um apaixonado pelo espaço, obras de ficção científica e pelo mundo da programação. Com essas paixões em mente pensei: "Por que não juntar todas elas?". A partir disso, foi dado início no site <span class="emphasis">Jornada Espacial</span>, feito com muito carinho, dedicação e café, o resultado excedeu minhas expectativas, assim como espero que tenha excedido as suas. Para saber mais sobre todas as inspirações que utilizei para a construção do site, acesse a seção de Inspirações.
-                </p>
+    <%- include(header) %>
+    <main class="aboutme-main">
+        <%- include(fluidHeader) %>
+        <div class="aboutme-text-div">
+            <h1>Conhecendo seu Guia Espacial</h1>
+            <p>
+                Muito prazer, <span class="emphasis">Mochileiro!</span> Finalmente chegou a hora de nos conhecermos, nâo é? Me chamo <span class="emphasis">Matheus Cerqueira</span>, nascido em 2002 no estado do Rio de Janeiro, sou um apaixonado pelo espaço, obras de ficção científica e pelo mundo da programação. Com essas paixões em mente pensei: "Por que não juntar todas elas?". A partir disso, foi dado início no site <span class="emphasis">Jornada Espacial</span>, feito com muito carinho, dedicação e café, o resultado excedeu minhas expectativas, assim como espero que tenha excedido as suas. Para saber mais sobre todas as inspirações que utilizei para a construção do site, acesse a seção de Inspirações.
+            </p>
+        </div>
+        <div class="specials-div">
+            <h2>Considerações especiais</h2>
+            <p>
+                Como considerações para esta jornada, quero agradecer ao meu amigo <span>Marcos</span>, que me ajudou desde o início, dando ideias, opiniões e testando as funcionalidades do site sempre que necessário. Agradeço também ao professor <span>Júlio</span> e à tutora e amiga <span>Ângela</span>, da Coderhouse, que me deram sugestões e direcionamentos nos momentos em que precisei. Por último, não poderia deixar de agradecer a você, <span>Mochileiro Espacial</span>, que fez parte da nossa aventura e chegou até aqui comigo. Obrigado a cada um de vocês!
+            </p>
+        </div>
+        <div class="aboutme-nav-div">
+            <div class="aboutme-links-div">
+                <h2>Contate-me:</h2>
+                <ul>
+                    <li><a href="https://github.com/matcbv" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="www.linkedin.com/in/matheus-cerqueira-baiao-victor" target="_blank" rel="noopener">Linkedin</a></li>
+                    <li><a href="https://www.instagram.com/matheus.cbv/" target="_blank" rel="noopener">Instagram</a></li>
+                </ul>
             </div>
-            <div class="specials-div">
-                <h2>Considerações especiais</h2>
-                <p>
-                    Como considerações para esta jornada, quero agradecer ao meu amigo <span>Marcos</span>, que me ajudou desde o início, dando ideias, opiniões e testando as funcionalidades do site sempre que necessário. Agradeço também ao professor <span>Júlio</span> e à tutora e amiga <span>Ângela</span>, da Coderhouse, que me deram sugestões e direcionamentos nos momentos em que precisei. Por último, não poderia deixar de agradecer a você, <span>Mochileiro Espacial</span>, que fez parte da nossa aventura e chegou até aqui comigo. Obrigado a cada um de vocês!
-                </p>
-            </div>
-            <div class="aboutme-nav-div">
-                <div class="aboutme-links-div">
-                    <h2>Contate-me:</h2>
-                    <ul>
-                        <li><a href="https://github.com/matcbv" target="_blank" rel="noopener">GitHub</a></li>
-                        <li><a href="www.linkedin.com/in/matheus-cerqueira-baiao-victor" target="_blank" rel="noopener">Linkedin</a></li>
-                        <li><a href="https://www.instagram.com/matheus.cbv/" target="_blank" rel="noopener">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            <blockquote cite="https://www.pensador.com/frase/NTU4NjQ0/">
-                <p>"Diante da vastidão do tempo e da imensidão do universo, é um imenso prazer para mim dividir um planeta e uma época com você."</p>
-                    <cite>Carl Seagan</cite>
-            </blockquote>
-            <div class="aboutme-img-div">
-                <picture>
-                    <source media="(max-width: 768px)" srcset="/images/aboutme_images/aboutme_astronaut_small.png" type="image/png">
-                    <source media="(min-width: 768px) and (max-width: 992px)" srcset="/images/aboutme_images/aboutme_astronaut_medium.png" type="image/png">
-                    <img id="astronaut-img" src="/images/aboutme_images/aboutme_astronaut.png" alt="Astronauta">
-                </picture>
-               
-            </div>
-            <%- include(playlist) %>
-            <%- include(audio) %>
-            <%- include(swordfish) %>
-        </main>
-        <%- include(footer) %>
-    </div>
+        </div>
+        <blockquote cite="https://www.pensador.com/frase/NTU4NjQ0/">
+            <p>"Diante da vastidão do tempo e da imensidão do universo, é um imenso prazer para mim dividir um planeta e uma época com você."</p>
+                <cite>Carl Seagan</cite>
+        </blockquote>
+        <div class="aboutme-img-div">
+            <picture>
+                <source media="(max-width: 768px)" srcset="/images/aboutme_images/aboutme_astronaut_small.png" type="image/png">
+                <source media="(min-width: 768px) and (max-width: 992px)" srcset="/images/aboutme_images/aboutme_astronaut_medium.png" type="image/png">
+                <img id="astronaut-img" src="/images/aboutme_images/aboutme_astronaut.png" alt="Astronauta">
+            </picture>
+            
+        </div>
+        <%- include(playlist) %>
+        <%- include(audio) %>
+        <%- include(swordfish) %>
+    </main>
+    <%- include(footer) %>
     <script src="/js/bundle.js"></script>
 </body>
 </html>

@@ -1,6 +1,5 @@
 .galaxies-main{
     position: relative;
-    grid-area: main;
 }
 
 /* ---------- INTRODUCTION SECTION ---------- */
@@ -8,11 +7,15 @@
 .galaxies-intro-div{
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     animation: grow 1s linear 0s 1 normal both;
-    height: 90vh;
     text-align: center;
+    height: 90vh;
+}
+
+.galaxies-title-div{
+    margin-bottom: 100px;
 }
 
 .galaxies-title-div p{
@@ -23,13 +26,12 @@
 
 .galaxies-title-div .highlight{
     font-family: 'Rubik Mono One';
-    font-size: 3em; 
+    font-size: 3em;
     color: transparent;
     -webkit-text-stroke: 1px yellow;
     animation: levitate 1.5s ease-in-out 0s infinite alternate both;
     text-shadow: none;
     font-weight: lighter;
-    text-align: center;
 }
 
 .emphasis{

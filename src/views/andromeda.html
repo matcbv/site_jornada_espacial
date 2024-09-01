@@ -1,38 +1,36 @@
     <%- include(head) %>
 <body>
-    <div class="main-grid-div">
-        <%- include(header) %>
-        <main class="galaxies-main">
-            <%- include(fluidHeader) %>
-            <div class="popup"></div>
-            <div class="galaxies-intro-div">
-                <div class="galaxies-title-div">
-                    <p>Bem-vindo à</p>
-                    <h1 class="highlight">Andrômeda</h1>
-                </div>
-                <div class="galaxies-text-div">
-                    <p class="guide-text">Chegou a hora da aventura, <span class="emphasis">Mochileiro!</span> Está preparado? Conheça <span class="emphasis">Andrômeda</span>, a galáxia espiral mais próxima de nós, onde um trilhão de estrelas brilham intensamente no céu noturno.</p>
-                    <p class="guide-text"><span class="emphasis">Clique</span> nos corpos celestes que deseja explorar abaixo</p>
-                </div>
+    <%- include(header) %>
+    <main class="galaxies-main">
+        <%- include(fluidHeader) %>
+        <div class="popup"></div>
+        <div class="galaxies-intro-div">
+            <div class="galaxies-title-div">
+                <p>Bem-vindo à</p>
+                <h1 class="highlight">Andrômeda</h1>
             </div>
-            <div class="first-body-div">
-                <img class="celestial-body-img" id="exoplanet" src="/images/andromeda_images/andromeda_b_exoplanet.png" alt="Exoplaneta Andrômeda b">
+            <div class="galaxies-text-div">
+                <p class="guide-text">Chegou a hora da aventura, <span class="emphasis">Mochileiro!</span> Está preparado? Conheça <span class="emphasis">Andrômeda</span>, a galáxia espiral mais próxima de nós, onde um trilhão de estrelas brilham intensamente no céu noturno.</p>
+                <p class="guide-text"><span class="emphasis">Clique</span> nos corpos celestes que deseja explorar abaixo</p>
             </div>
-            <div class="second-body-div">
-                <img class="celestial-body-img" id="supermassive_star" src="/images/andromeda_images/supermassive_star.png" alt="Estrela Supermassiva">
-            </div>
-            <div class="third-body-div">
-                <img class="celestial-body-img" id="supernova" src="/images/andromeda_images/supernova.png" alt="Supernova">
-            </div>
-            <div class="fourth-body-div">
-                <img class="celestial-body-img" id="cepheid_star" src="/images/andromeda_images/cepheid_star.png" alt="Estrela Cefeida">
-            </div>
-            <%- include(playlist) %>
-            <%- include(audio) %>
-            <%- include(swordfish) %>
-        </main>
-        <%- include(footer) %>
-    </div>
+        </div>
+        <div class="first-body-div">
+            <img class="celestial-body-img" id="exoplanet" src="/images/andromeda_images/andromeda_b_exoplanet.png" alt="Exoplaneta Andrômeda b">
+        </div>
+        <div class="second-body-div">
+            <img class="celestial-body-img" id="supermassive_star" src="/images/andromeda_images/supermassive_star.png" alt="Estrela Supermassiva">
+        </div>
+        <div class="third-body-div">
+            <img class="celestial-body-img" id="supernova" src="/images/andromeda_images/supernova.png" alt="Supernova">
+        </div>
+        <div class="fourth-body-div">
+            <img class="celestial-body-img" id="cepheid_star" src="/images/andromeda_images/cepheid_star.png" alt="Estrela Cefeida">
+        </div>
+        <%- include(playlist) %>
+        <%- include(audio) %>
+        <%- include(swordfish) %>
+    </main>
+    <%- include(footer) %>
     <script src="/js/bundle.js"></script>
 </body>
 </html>

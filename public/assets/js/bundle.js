@@ -438,63 +438,31 @@ var __webpack_exports__ = {};
   \*****************************************/
 // ---------- HTML ELEMENTS ----------
 
-var milkywayBtn = document.querySelector('#milkyway-btn');
-var andromedaBtn = document.querySelector('#andromeda-btn');
-var triangleBtn = document.querySelector('#triangle-btn');
-var milkywayRocket = document.querySelector('#milkyway-rocket');
-var andromedaRocket = document.querySelector('#andromeda-rocket');
-var triangleRocket = document.querySelector('#triangle-rocket');
-
-// ---------- NAVEGATION ----------
-
-if (milkywayBtn) {
-  milkywayBtn.addEventListener('click', function () {
-    window.location.href = '/milkyway';
-  });
-}
-if (andromedaBtn) {
-  andromedaBtn.addEventListener('click', function () {
-    window.location.href = '/andromeda';
-  });
-}
-if (triangleBtn) {
-  triangleBtn.addEventListener('click', function () {
-    window.location.href = '/triangle';
-  });
-}
-
-// ---------- ROCKET ANIMATION ----------
-
-document.addEventListener('mouseover', function (e) {
-  if (e.target.id == 'milkyway-btn') {
-    milkywayRocket.innerHTML = '🚀';
-    milkywayRocket.classList.add('rocket');
-  } else if (e.target.id == 'andromeda-btn') {
-    andromedaRocket.innerHTML = '🚀';
-    andromedaRocket.classList.add('rocket');
-  } else if (e.target.id == 'triangle-btn') {
-    triangleRocket.innerHTML = '🚀';
-    triangleRocket.classList.add('rocket');
-  }
-});
-document.addEventListener('mouseout', function (e) {
-  if (e.target.id == 'milkyway-btn') {
-    milkywayRocket.innerHTML = '';
-    milkywayRocket.classList.remove('rocket');
-  } else if (e.target.id == 'andromeda-btn') {
-    andromedaRocket.innerHTML = '';
-    andromedaRocket.classList.remove('rocket');
-  } else if (e.target.id == 'triangle-btn') {
-    triangleRocket.innerHTML = '';
-    triangleRocket.classList.remove('rocket');
-  }
-});
-
-// ---------- INTRO BUTTON ----------
-
+var indexMain = document.querySelector('.index-main');
 var startingBtn = document.querySelector('.intro-btn');
 var milkywaySection = document.querySelector('.milkyway-section');
 var introductionSection = document.querySelector('.intro-section');
+
+// ---------- ROCKET ANIMATION ----------
+
+indexMain.addEventListener('mouseover', function (e) {
+  var element = e.target;
+  if (element.tagName.toLowerCase() == 'a') {
+    var rocket = element.nextElementSibling;
+    rocket.innerHTML = '🚀';
+    rocket.classList.add('rocket');
+    removeRocket(element, rocket);
+  }
+});
+function removeRocket(element, rocket) {
+  element.addEventListener('mouseout', function () {
+    rocket.innerHTML = '';
+    rocket.classList.remove('rocket');
+  });
+}
+
+// ---------- INTRO BUTTON ----------
+
 if (startingBtn) {
   startingBtn.addEventListener('click', function () {
     if (introductionSection.classList.contains('appear-animation')) {

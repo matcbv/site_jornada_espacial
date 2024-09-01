@@ -1,33 +1,31 @@
 <%- include(head) %>
 <body>
-    <div class="main-grid-div">
-        <%- include(header) %>
-        <main class="signin-main">
-            <%- include(fluidHeader) %>
-            <h1>Escolha seu lado da força</h1>
-            <div class="signin-template-div">
-                <div class="login-div">
-                    <div>
-                        <h2>Faça login</h2>
-                        <p>Já é veterano, Mochileiro? Faça login para ter acesso ao Espaço do Mochileiro!</p>
-                    </div>
-                    <a href="/signin/login">Login</a>
+    <%- include(header) %>
+    <main class="signin-main">
+        <%- include(fluidHeader) %>
+        <h1>Escolha seu lado da força</h1>
+        <div class="signin-template-div">
+            <div class="login-div">
+                <div>
+                    <h2>Faça login</h2>
+                    <p>Já é veterano, Mochileiro? Faça login para ter acesso ao Espaço do Mochileiro!</p>
                 </div>
-                <span class="signin-row"></span>
-                <div class="register-div">
-                    <div>
-                        <h2>Crie sua conta</h2>
-                        <p>Novo por aqui? Crie sua conta para acompanhar seu progresso durante nossa Jornada Espacial e ficar por dentro de todas as novidades!</p>
-                    </div>
-                    <a href="/signin/register">Cadastrar</a>
-                </div>
+                <a href="/signin/login">Login</a>
             </div>
-            <%- include(playlist) %>
-            <%- include(audio) %>
-            <%- include(swordfish) %>
-        </main>
-        <%- include(footer) %>
-    </div>
+            <span class="signin-row"></span>
+            <div class="register-div">
+                <div>
+                    <h2>Crie sua conta</h2>
+                    <p>Novo por aqui? Crie sua conta para acompanhar seu progresso durante nossa Jornada Espacial e ficar por dentro de todas as novidades!</p>
+                </div>
+                <a href="/signin/register">Cadastrar</a>
+            </div>
+        </div>
+        <%- include(playlist) %>
+        <%- include(audio) %>
+        <%- include(swordfish) %>
+    </main>
+    <%- include(footer) %>
     <script src="/js/bundle.js"></script>
 </body>
 </html>

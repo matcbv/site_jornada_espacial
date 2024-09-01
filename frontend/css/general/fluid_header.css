@@ -5,14 +5,9 @@
     width: 100%;
 }
 
-.fluid-header ul{
-    display: block;
-}
-
 .fluid-header ul li{
     background-color: rgb(27, 22, 35);
     border-bottom: 2px solid rgb(49, 37, 58);
-    
 }
 
 .fluid-header a{

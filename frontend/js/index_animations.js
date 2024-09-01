@@ -1,66 +1,30 @@
 // ---------- HTML ELEMENTS ----------
 
-const milkywayBtn = document.querySelector('#milkyway-btn')
-const andromedaBtn = document.querySelector('#andromeda-btn')
-const triangleBtn = document.querySelector('#triangle-btn')
-const milkywayRocket = document.querySelector('#milkyway-rocket')
-const andromedaRocket = document.querySelector('#andromeda-rocket')
-const triangleRocket = document.querySelector('#triangle-rocket')
-
-
-// ---------- NAVEGATION ----------
-
-if (milkywayBtn){
-    milkywayBtn.addEventListener('click', () => {
-        window.location.href = '/milkyway'
-    })
-}
-
-if (andromedaBtn){
-    andromedaBtn.addEventListener('click', () => {
-        window.location.href = '/andromeda'
-    })
-}
-
-if (triangleBtn){
-    triangleBtn.addEventListener('click', () => {
-        window.location.href = '/triangle'
-    })
-}
-
-// ---------- ROCKET ANIMATION ----------
-
-document.addEventListener('mouseover', e => {
-    if (e.target.id == 'milkyway-btn'){
-        milkywayRocket.innerHTML = '🚀'
-        milkywayRocket.classList.add('rocket')
-    } else if (e.target.id ==  'andromeda-btn'){
-        andromedaRocket.innerHTML = '🚀'
-        andromedaRocket.classList.add('rocket')
-    } else if (e.target.id ==  'triangle-btn'){
-        triangleRocket.innerHTML = '🚀'
-        triangleRocket.classList.add('rocket')
-    }
-})
-
-document.addEventListener('mouseout', e => {
-    if (e.target.id == 'milkyway-btn'){
-        milkywayRocket.innerHTML = ''
-        milkywayRocket.classList.remove('rocket')
-    } else if (e.target.id ==  'andromeda-btn'){
-        andromedaRocket.innerHTML = ''
-        andromedaRocket.classList.remove('rocket')
-    } else if (e.target.id ==  'triangle-btn'){
-        triangleRocket.innerHTML = ''
-        triangleRocket.classList.remove('rocket')
-    }
-})
-
-// ---------- INTRO BUTTON ----------
-
+const indexMain = document.querySelector('.index-main')
 const startingBtn = document.querySelector('.intro-btn')
 const milkywaySection = document.querySelector('.milkyway-section')
 const introductionSection = document.querySelector('.intro-section')
+
+// ---------- ROCKET ANIMATION ----------
+
+indexMain.addEventListener('mouseover', (e) => {
+    const element = e.target
+    if (element.tagName.toLowerCase() == 'a'){
+        const rocket = element.nextElementSibling
+        rocket.innerHTML = '🚀'
+        rocket.classList.add('rocket')
+        removeRocket(element, rocket)
+    }
+})
+
+function removeRocket(element, rocket){
+    element.addEventListener('mouseout', () => {
+        rocket.innerHTML = ''
+        rocket.classList.remove('rocket')
+    })
+}
+
+// ---------- INTRO BUTTON ----------
 
 if(startingBtn){
     startingBtn.addEventListener('click', () => {

@@ -1,6 +1,7 @@
 @media (max-width: 992px){
 
     .signin-main{
+        height: 120vh;
         background-image: linear-gradient(rgb(27, 22, 35), rgba(27,22,35,0.8), transparent, rgb(5, 13, 35, 0.8), rgb(5, 13, 35));
     }
 
@@ -8,10 +9,15 @@
         flex-flow: column nowrap;
     }
 
+    .login-div, .register-div{
+        width: 90%;
+    }
+
     .signin-main h1{
         font-size: 1.4em;
         width: 80%;
         text-align: center;
+        text-shadow: 0 0 5px hsla(0, 0%, 100%, .2);
     }
 
     .signin-main h2{
@@ -38,22 +44,7 @@
 
     .signin-row{
         height: 2px;
-        width: 60%;
-        margin: 50px 0;
-    }
-}
-
-@media (max-width: 768px){
-
-    .signin-main{
-        min-height: 120vh;
-    }
-
-    .login-div, .register-div{
-        width: 90%;
-    }
-
-    .signin-row{
         width: 80%;
+        margin: 50px 0;
     }
 }

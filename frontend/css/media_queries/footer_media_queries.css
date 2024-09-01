@@ -1,31 +1,20 @@
 @media (max-width: 992px){
 
     footer{
-        padding: 10px 18px;
-    }
-
-    footer button{
-        padding: 7px 10px;
-    }
-
-    .footer-links-div li a{
-        font-size: 1.05em;
-    }
-}
-
-@media (max-width: 768px){
-
-    footer{
+        grid-template: 'links cowboy' 100% / 2fr 1fr;
         padding: 10px 15px;
+    }
+
+    .footer-links-div {
+        padding-left: 0;
     }
 
     .footer-btn-div{
         display: none;
     }
+}
 
-    .footer-links-div{
-        width: 75%;
-    }
+@media (max-width: 768px){
 
     .footer-links-div p{
         font-size: 1em;
@@ -41,7 +30,6 @@
     }
 
     .cowboy-bebop-div{
-        width: 25%;
         flex-flow: column nowrap;
         align-items: center;
         justify-content: center;
