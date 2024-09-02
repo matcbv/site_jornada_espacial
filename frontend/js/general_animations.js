@@ -192,7 +192,7 @@ window.addEventListener('click', (e) => {
 
 // ---------- AUDIO DIV ----------
 
-if(audioDiv){
+if(audioDiv && !ideaformMain && !loginMain){
     const footerRectTop = footer.getBoundingClientRect().top
     const audioDivRectBottom = audioDiv.getBoundingClientRect().bottom
     window.addEventListener('scroll', () => {
@@ -207,10 +207,12 @@ if(audioDiv){
 }
 
 if(ideaformMain || loginMain){
+    audioDiv.style.position = 'absolute'
     audioDiv.style.flexFlow = 'row nowrap'
     soundOff.style.margin = '0 auto 0 10px'
     soundOn.style.margin = '0 auto 0 10px'
-    playlistDiv.style.bottom = '90px'
+    playlistDiv.style.position = 'absolute'
+    playlistDiv.style.bottom = '70px'
 }
 
 // ---------- 404 BUTTON ----------

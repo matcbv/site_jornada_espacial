@@ -16,7 +16,8 @@
         font-size: 1.4em;
         width: 80%;
         text-align: center;
-        text-shadow: 0 0 5px hsla(0, 0%, 100%, .2);
+        text-shadow: none;
+        padding: 30px 0;
     }
 
     .signin-main h2{

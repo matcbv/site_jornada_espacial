@@ -733,7 +733,7 @@ window.addEventListener('click', function (e) {
 
 // ---------- AUDIO DIV ----------
 
-if (audioDiv) {
+if (audioDiv && !ideaformMain && !loginMain) {
   var footerRectTop = footer.getBoundingClientRect().top;
   var audioDivRectBottom = audioDiv.getBoundingClientRect().bottom;
   window.addEventListener('scroll', function () {
@@ -747,10 +747,12 @@ if (audioDiv) {
   });
 }
 if (ideaformMain || loginMain) {
+  audioDiv.style.position = 'absolute';
   audioDiv.style.flexFlow = 'row nowrap';
   soundOff.style.margin = '0 auto 0 10px';
   soundOn.style.margin = '0 auto 0 10px';
-  playlistDiv.style.bottom = '90px';
+  playlistDiv.style.position = 'absolute';
+  playlistDiv.style.bottom = '70px';
 }
 
 // ---------- 404 BUTTON ----------
