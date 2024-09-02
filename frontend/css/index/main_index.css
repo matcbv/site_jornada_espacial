@@ -104,9 +104,8 @@
     bottom: 50px;
     left: 50px;
     width: 250px;
-    height: 150px;
+    height: 130px;
     border-radius: 7px;
-    padding: 10px 0;
     background-color: rgb(9, 8, 23);
     border: 2px solid rgb(45, 62, 92);
     opacity: 0;
@@ -204,7 +203,6 @@
 
 .milkyway-section{
     grid-area: milkyway-section;
-    padding-top: 25vh;
 }
 
 .milkyway-section .milkyway-img img:hover{

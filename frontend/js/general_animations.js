@@ -21,16 +21,19 @@ let lastSoundWaveIcon = ''
 
 // Ideaform main
 const ideaformMain = document.querySelector('.ideaform-main')
+const loginMain = document.querySelector('.login-main')
 
-// ---------- MUSIC POPUP ----------
+// ---------- PLAY POPUP ----------
 
 if(introSection){
     const mscPopupCloseIcon = document.querySelector('.msc-popup-close-icon')
     const play = document.querySelector('.play')
     const introSectionRect = introSection.getBoundingClientRect()
 
+    // Evento para aparição do popup para início da trilha sonora:
     window.addEventListener('load', () => {
         const audioStatus = sessionStorage.getItem('audioStatus')
+        // Adicionando caso a tela ultrapasse ou não o fim da seção de introdução:
         if(window.scrollY <= introSectionRect.bottom && audioStatus !== 'false'){
             mscPopup.classList.add('msc-popup-appear-animation')
         } else{
@@ -39,7 +42,8 @@ if(introSection){
     })
     
     window.addEventListener('scroll', () => {
-        if (window.scrollY >= introSectionRect.bottom - 0.4){
+        // Removendo o popup para início da trilha sonora caso ele passa o fim da seção de introdução:
+        if (window.scrollY >= introSectionRect.bottom){
             if(mscPopup && mscPopup.parentElement){
                 mscPopup.classList.remove('msc-popup-appear-animation')
                 mscPopup.classList.add('disappear-animation')
@@ -75,7 +79,8 @@ if(introSection){
 }
 
 if (audioDiv){
-    // ---------- SOUND ICONS ----------
+
+    // ---------- SOUND ICON ----------
 
     soundOn.addEventListener('click', () => {
         const currentAudio = sessionStorage.getItem('currentAudio')
@@ -132,32 +137,32 @@ if (audioDiv){
 
     playlistDiv.addEventListener('click', (e) => {
         let element = e.target
-        const soundWaveIcon =  getSoundWaveIcon(element)
-        if (!element.classList.contains('msc-div')){
-        element = element.parentElement
+        let soundWaveIcon =  ''
+        if (!element.classList.contains('music-div')){
+            element = element.parentElement
+            soundWaveIcon = element.querySelector('.sound-wave-icon')
+        }else{
+            soundWaveIcon = element.querySelector('.sound-wave-icon')
         }
         const music = getMusic(element.id)
         const currentAudio = sessionStorage.getItem('currentAudio')
+        lastSoundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon')
         if(currentAudio){
             toStopAudio = getMusic(currentAudio)
             toStopAudio.pause()
-            if(lastSoundWaveIcon){
+            soundOff.style.display = 'block'
+            soundOn.style.display = 'none'
+            if (lastSoundWaveIcon){
                 lastSoundWaveIcon.style.display = 'none'
-                soundOff.style.display = 'block'
-                soundOn.style.display = 'none'
             }
         }
         sessionStorage.setItem('audioStatus', toPlayAudio.paused)
         sessionStorage.setItem('currentAudio', element.id)
-        try{
-            music.play()
-            soundWaveIcon.style.display = 'block'
-            lastSoundWaveIcon = soundWaveIcon
-            soundOff.style.display = 'none'
-            soundOn.style.display = 'block'
-        }catch{
-            throw new Error('Erro ao tocar a música')
-        }
+        music.play()
+        soundWaveIcon.style.display = 'block'
+        lastSoundWaveIcon = soundWaveIcon
+        soundOff.style.display = 'none'
+        soundOn.style.display = 'block'
         if(mscPopup && mscPopup.parentElement){
             document.body.removeChild(mscPopup)
         }
@@ -169,14 +174,6 @@ function getMusic(id){
         if(music.classList.contains(id)){
             return music
         }
-    }
-}
-
-function getSoundWaveIcon(element){
-    const parentElement = element.parentElement
-    if(!parentElement.classList.contains('playlist-div')){
-        const soundWaveIcon = parentElement.querySelector('.sound-wave-icon')
-        return soundWaveIcon
     }
 }
 
@@ -209,7 +206,7 @@ if(audioDiv){
     })
 }
 
-if(ideaformMain){
+if(ideaformMain || loginMain){
     audioDiv.style.flexFlow = 'row nowrap'
     soundOff.style.margin = '0 auto 0 10px'
     soundOn.style.margin = '0 auto 0 10px'

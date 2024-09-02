@@ -445,15 +445,17 @@ var introductionSection = document.querySelector('.intro-section');
 
 // ---------- ROCKET ANIMATION ----------
 
-indexMain.addEventListener('mouseover', function (e) {
-  var element = e.target;
-  if (element.tagName.toLowerCase() == 'a') {
-    var rocket = element.nextElementSibling;
-    rocket.innerHTML = '🚀';
-    rocket.classList.add('rocket');
-    removeRocket(element, rocket);
-  }
-});
+if (indexMain) {
+  indexMain.addEventListener('mouseover', function (e) {
+    var element = e.target;
+    if (element.tagName.toLowerCase() == 'a') {
+      var rocket = element.nextElementSibling;
+      rocket.innerHTML = '🚀';
+      rocket.classList.add('rocket');
+      removeRocket(element, rocket);
+    }
+  });
+}
 function removeRocket(element, rocket) {
   element.addEventListener('mouseout', function () {
     rocket.innerHTML = '';
@@ -558,15 +560,19 @@ var lastSoundWaveIcon = '';
 
 // Ideaform main
 var ideaformMain = document.querySelector('.ideaform-main');
+var loginMain = document.querySelector('.login-main');
 
-// ---------- MUSIC POPUP ----------
+// ---------- PLAY POPUP ----------
 
 if (introSection) {
   var mscPopupCloseIcon = document.querySelector('.msc-popup-close-icon');
   var play = document.querySelector('.play');
   var introSectionRect = introSection.getBoundingClientRect();
+
+  // Evento para aparição do popup para início da trilha sonora:
   window.addEventListener('load', function () {
     var audioStatus = sessionStorage.getItem('audioStatus');
+    // Adicionando caso a tela ultrapasse ou não o fim da seção de introdução:
     if (window.scrollY <= introSectionRect.bottom && audioStatus !== 'false') {
       mscPopup.classList.add('msc-popup-appear-animation');
     } else {
@@ -574,7 +580,8 @@ if (introSection) {
     }
   });
   window.addEventListener('scroll', function () {
-    if (window.scrollY >= introSectionRect.bottom - 0.4) {
+    // Removendo o popup para início da trilha sonora caso ele passa o fim da seção de introdução:
+    if (window.scrollY >= introSectionRect.bottom) {
       if (mscPopup && mscPopup.parentElement) {
         mscPopup.classList.remove('msc-popup-appear-animation');
         mscPopup.classList.add('disappear-animation');
@@ -607,7 +614,7 @@ if (introSection) {
   });
 }
 if (audioDiv) {
-  // ---------- SOUND ICONS ----------
+  // ---------- SOUND ICON ----------
 
   soundOn.addEventListener('click', function () {
     var currentAudio = sessionStorage.getItem('currentAudio');
@@ -663,32 +670,32 @@ if (audioDiv) {
 
   playlistDiv.addEventListener('click', function (e) {
     var element = e.target;
-    var soundWaveIcon = getSoundWaveIcon(element);
-    if (!element.classList.contains('msc-div')) {
+    var soundWaveIcon = '';
+    if (!element.classList.contains('music-div')) {
       element = element.parentElement;
+      soundWaveIcon = element.querySelector('.sound-wave-icon');
+    } else {
+      soundWaveIcon = element.querySelector('.sound-wave-icon');
     }
     var music = getMusic(element.id);
     var currentAudio = sessionStorage.getItem('currentAudio');
+    lastSoundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon');
     if (currentAudio) {
       toStopAudio = getMusic(currentAudio);
       toStopAudio.pause();
+      soundOff.style.display = 'block';
+      soundOn.style.display = 'none';
       if (lastSoundWaveIcon) {
         lastSoundWaveIcon.style.display = 'none';
-        soundOff.style.display = 'block';
-        soundOn.style.display = 'none';
       }
     }
     sessionStorage.setItem('audioStatus', toPlayAudio.paused);
     sessionStorage.setItem('currentAudio', element.id);
-    try {
-      music.play();
-      soundWaveIcon.style.display = 'block';
-      lastSoundWaveIcon = soundWaveIcon;
-      soundOff.style.display = 'none';
-      soundOn.style.display = 'block';
-    } catch (_unused) {
-      throw new Error('Erro ao tocar a música');
-    }
+    music.play();
+    soundWaveIcon.style.display = 'block';
+    lastSoundWaveIcon = soundWaveIcon;
+    soundOff.style.display = 'none';
+    soundOn.style.display = 'block';
     if (mscPopup && mscPopup.parentElement) {
       document.body.removeChild(mscPopup);
     }
@@ -708,13 +715,6 @@ function getMusic(id) {
     _iterator.e(err);
   } finally {
     _iterator.f();
-  }
-}
-function getSoundWaveIcon(element) {
-  var parentElement = element.parentElement;
-  if (!parentElement.classList.contains('playlist-div')) {
-    var soundWaveIcon = parentElement.querySelector('.sound-wave-icon');
-    return soundWaveIcon;
   }
 }
 
@@ -746,7 +746,7 @@ if (audioDiv) {
     }
   });
 }
-if (ideaformMain) {
+if (ideaformMain || loginMain) {
   audioDiv.style.flexFlow = 'row nowrap';
   soundOff.style.margin = '0 auto 0 10px';
   soundOn.style.margin = '0 auto 0 10px';
@@ -847,7 +847,7 @@ var introductionSection = document.querySelector(".intro-section");
 var galaxiesMain = document.querySelector('.galaxies-main');
 var soundOn = document.querySelector(".sound-on");
 var soundOff = document.querySelector(".sound-off");
-var playlist = document.querySelector('playlist-div');
+var playlist = document.querySelector('.playlist-div');
 var playlistMusics = document.querySelectorAll('.musics');
 
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
@@ -867,7 +867,7 @@ if (introductionSection && headerSection) {
   document.body.classList.add('change-scrollbar');
 }
 
-// ---------- EVENTOS PARA OBTER E ALTERAR ESTADOS DOS ÁUDIOS ----------
+// ---------- EVENTOS PARA OBTER E ALTERAR ESTADO DO ÁUDIO ----------
 
 window.addEventListener('beforeunload', function () {
   var currentAudio = sessionStorage.getItem('currentAudio');
@@ -880,6 +880,7 @@ window.addEventListener('beforeunload', function () {
 window.addEventListener('load', function () {
   var currentAudio = sessionStorage.getItem('currentAudio');
   if (currentAudio) {
+    soundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon');
     var audio = getMusic(currentAudio);
     var audioStatus = sessionStorage.getItem('audioStatus');
     if (audioStatus === 'false') {
@@ -888,9 +889,11 @@ window.addEventListener('load', function () {
       audio.play();
       soundOn.style.display = 'block';
       soundOff.style.display = 'none';
+      soundWaveIcon.style.display = 'block';
     } else {
       soundOn.style.display = 'none';
       soundOff.style.display = 'block';
+      soundWaveIcon.style.display = 'none';
     }
   }
 });

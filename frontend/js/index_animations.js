@@ -7,15 +7,17 @@ const introductionSection = document.querySelector('.intro-section')
 
 // ---------- ROCKET ANIMATION ----------
 
-indexMain.addEventListener('mouseover', (e) => {
-    const element = e.target
-    if (element.tagName.toLowerCase() == 'a'){
-        const rocket = element.nextElementSibling
-        rocket.innerHTML = '🚀'
-        rocket.classList.add('rocket')
-        removeRocket(element, rocket)
-    }
-})
+if (indexMain){
+    indexMain.addEventListener('mouseover', (e) => {
+        const element = e.target
+        if (element.tagName.toLowerCase() == 'a'){
+            const rocket = element.nextElementSibling
+            rocket.innerHTML = '🚀'
+            rocket.classList.add('rocket')
+            removeRocket(element, rocket)
+        }
+    })
+}
 
 function removeRocket(element, rocket){
     element.addEventListener('mouseout', () => {
@@ -23,6 +25,7 @@ function removeRocket(element, rocket){
         rocket.classList.remove('rocket')
     })
 }
+
 
 // ---------- INTRO BUTTON ----------
 

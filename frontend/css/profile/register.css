@@ -1,8 +1,27 @@
 .register-main{
     min-height: 100vh;
-    background-image: linear-gradient(to right, rgb(5, 13, 35, 0.8), rgb(5, 13, 35), transparent);
+    background-image: linear-gradient(to right, rgb(5, 13, 35, 0.8), rgb(5, 13, 35), transparent 70%);
 }
 
 .register-form-content-div{
     margin-left: 50px;
+}
+
+.register-form{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.register-form > div{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.register-form-input-div{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.register-form-input-div input{
+    
 }

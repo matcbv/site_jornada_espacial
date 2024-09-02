@@ -6,7 +6,7 @@ const galaxiesMain = document.querySelector('.galaxies-main')
 
 const soundOn = document.querySelector(".sound-on")
 const soundOff = document.querySelector(".sound-off")
-const playlist = document.querySelector('playlist-div')
+const playlist = document.querySelector('.playlist-div')
 const playlistMusics = document.querySelectorAll('.musics')
 
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
@@ -27,7 +27,7 @@ if (introductionSection && headerSection){
     document.body.classList.add('change-scrollbar');
 }
 
-// ---------- EVENTOS PARA OBTER E ALTERAR ESTADOS DOS ÁUDIOS ----------
+// ---------- EVENTOS PARA OBTER E ALTERAR ESTADO DO ÁUDIO ----------
 
 window.addEventListener('beforeunload', () => {
     const currentAudio = sessionStorage.getItem('currentAudio')
@@ -41,6 +41,7 @@ window.addEventListener('beforeunload', () => {
 window.addEventListener('load', () => {
     const currentAudio = sessionStorage.getItem('currentAudio')
     if(currentAudio){
+        soundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon')
         const audio = getMusic(currentAudio)
         const audioStatus = sessionStorage.getItem('audioStatus')
         if(audioStatus === 'false'){
@@ -49,9 +50,11 @@ window.addEventListener('load', () => {
             audio.play()
             soundOn.style.display = 'block'
             soundOff.style.display = 'none'
+            soundWaveIcon.style.display = 'block'
         } else{
             soundOn.style.display = 'none'
             soundOff.style.display = 'block'
+            soundWaveIcon.style.display = 'none'
         }
     }
 })
