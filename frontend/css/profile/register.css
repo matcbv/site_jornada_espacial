@@ -18,7 +18,7 @@
 .register-main h1{
     font-family: 'Rubik Mono One';
     color: rgb(9, 8, 23);
-    -webkit-text-stroke: 1px yellow;
+    -webkit-text-stroke: 1px rgb(199, 199, 0);
     font-size: 2.25em;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .register-form-input-div input{
-    height: 40px;
+    height: 35px;
     width: 320px;
     border-radius: 20px;
     font-family: 'Inconsolata';
@@ -62,11 +62,52 @@
 }
 
 .register-form-input-div label{
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-family: 'Inconsolata';
     font-weight: bold;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
     padding-left: 10px;
+}
+
+.password-div div:first-child{
+    display: flex;
+    align-items: flex-end;
+    width: 320px;
+    margin-bottom: 5px;
+}
+
+.password-div input{
+    padding-right: 40px;
+}
+
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+.password-div label{
+    margin-bottom: 0;
+    margin-right: 5px;
+}
+
+.password-div div:last-child{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-div div:first-child img{
+    width: 20px;
+    height: 20px;
+}
+
+.password-div div:last-child img{
+    width: 32px;
+    position: absolute;
+    right: 5px;
+}
+
+.password-div img:hover{
+    cursor: pointer;
 }
 
 .register-form-btn-div .register-btn{

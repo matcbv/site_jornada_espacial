@@ -2,7 +2,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 //const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
-const { optimize } = require('webpack')
 
 module.exports = {
     mode: 'development',
@@ -11,7 +10,8 @@ module.exports = {
             path.resolve(__dirname, 'frontend', 'js', 'general_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'popups.js'),
             path.resolve(__dirname, 'frontend', 'js', 'window_animations.js'),
-            path.resolve(__dirname, 'frontend', 'js', 'footer_animations.js'), 
+            path.resolve(__dirname, 'frontend', 'js', 'footer_animations.js'),
+            path.resolve(__dirname, 'frontend', 'js', 'forms_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'style_imports.js')],
     output: {
         path: path.resolve(__dirname, 'public', 'assets'),

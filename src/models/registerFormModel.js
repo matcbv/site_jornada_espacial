@@ -29,12 +29,16 @@ class Register{
                 if(!validator.isDate(this.data[k])){
                     this.error_list.push('Data inválida.')
                 }
-            } else if(typeof this.data[k] !== 'string' || this.data[k] === ''){
+            } else if (k == 'password'){
+                if (length(this.data[k] < 8 || this.data[k].filter(l => validator.isNumeric(l)).length < 1 || this.data[k].filter(l => validator.isAlpha(l)).length )){
+                    this.error_list.push('Senha inválida.')
+                }
+            } 
+            else if(typeof this.data[k] !== 'string' || this.data[k] === ''){
                 this.data[k] = ''
-                this.error_list.push(`Insira um valor válido para ${this.dataKeys[k]}.`)
+                this.error_list.push(`${this.dataKeys[k]} inválido.`)
             }
         }
-        console.log(this.data)
     }
 }
 

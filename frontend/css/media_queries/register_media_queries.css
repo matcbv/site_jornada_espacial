@@ -6,6 +6,14 @@
         padding: 0 15px;
     }
 
+    .password-div div:first-child{
+        width: 250px;
+    }
+
+    .password-div div:last-child img{
+        width: 28px;
+    }
+
     .register-main h1{
         font-size: 1.75em;
     }
@@ -21,7 +29,7 @@
     }
 
     .register-form-input-div label{
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 
     .rocket-img-div img{
