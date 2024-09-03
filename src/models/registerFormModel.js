@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const validator = require('validator')
 
 const registerModel = new mongoose.Schema({
     name: {type: String, required: true},
@@ -20,12 +21,20 @@ class Register{
 
     checkData(){
         for (let k of Object.keys(this.data)){
-            if (typeof this.data[k] !== 'string' || this.data[k] === ''){
+            if (k === 'email'){
+                if(!validator.isEmail(this.data[k])){
+                    this.error_list.push('Email inválido.')
+                }
+            } else if(k == 'data'){
+                if(!validator.isDate(this.data[k])){
+                    this.error_list.push('Data inválida.')
+                }
+            } else if(typeof this.data[k] !== 'string' || this.data[k] === ''){
                 this.data[k] = ''
-                this.error_list.push(`O campo ${this.dataKeys[k]} possui um valor inválido.`)
-                console.dir(this.error_list)
+                this.error_list.push(`Insira um valor válido para ${this.dataKeys[k]}.`)
             }
         }
+        console.log(this.data)
     }
 }
 
