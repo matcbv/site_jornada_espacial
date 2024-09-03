@@ -1,0 +1,85 @@
+@media (max-width: 992px){
+    .register-form-input-div input{
+        height: 30px;
+        width: 250px;
+        font-size: 1.1em;
+        padding: 0 15px;
+    }
+
+    .register-main h1{
+        font-size: 1.75em;
+    }
+
+    .register-form-input-div:nth-child(1) {
+        margin-right: 30px;
+    }
+
+    .register-form-btn-div .register-btn{
+        height: 40px;
+        font-size: 1.2em;
+        padding: 0 20px;
+    }
+
+    .register-form-input-div label{
+        font-size: 1.2em;
+    }
+
+    .rocket-img-div img{
+        width: 140px;
+    }
+}
+
+@media (max-width: 768px){
+
+    .register-main{
+        background-image: linear-gradient(to bottom, rgb(10, 18, 43, 0.8), rgb(12, 17, 33, 0.8), transparent 90%);
+    }
+
+    .register-form > div{
+        margin-top: 0;
+    }
+
+    .register-form > div:not(:last-child){
+       flex-flow: column nowrap;
+    }
+
+    .register-form-input-div{
+        margin-top: 30px;
+    }
+
+    .register-form-input-div:nth-child(1) {
+        margin-right: 0;
+    }
+
+    .register-form-input-div label{
+        font-size: 1em;
+    }
+
+    .register-main h1{
+        font-family: 'Calistoga';
+        -webkit-text-stroke: 0;
+        color: yellow;
+        font-size: 1.5em;
+        font-weight: lighter;
+    }
+
+    .register-form-btn-div{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 30px !important;
+    }
+
+    .register-form-btn-div .register-btn{
+        height: 35px;
+        font-size: 1.1em;
+    }
+
+    .rocket-img-div{
+        display: none;
+    }
+
+    .rocket-img-div-small{
+        display: block;
+    }
+}

@@ -33,7 +33,7 @@
 .login-form-input-div input{
     height: 40px;
     width: 310px;
-    border-radius: 5px;
+    border-radius: 15px;
     font-family: 'Inconsolata';
     font-size: 1.2em;
     font-weight: bold;
@@ -41,7 +41,7 @@
     color: white;
     border: none;
     outline: 1.5px solid white;
-    padding: 0 0 0 40px;
+    padding: 0 0 0 45px;
 }
 
 .login-form-input-div input:focus{
@@ -54,11 +54,12 @@
     font-family: 'Inconsolata';
     font-weight: bold;
     margin-bottom: 7px;
+    padding-left: 10px;
 }
 
 .login-form-input-div img{
     position: absolute;
-    left: 5px;
+    left: 10px;
     bottom: 5px;
 }
 
@@ -91,7 +92,7 @@
 .login-form-btn-div .login-btn{
     background-color: transparent;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     color: #fff;
     font-family: 'Inconsolata';
     font-size: 1em;

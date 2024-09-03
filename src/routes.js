@@ -5,7 +5,8 @@ const router = express.Router()
 // Importando os middlewares de controle de rota
 const pagesController = require('./controllers/pagesController')
 const popupController = require('./controllers/popupController')
-const formController = require('./controllers/formController')
+const ideaformController = require('./controllers/ideaformController')
+const registerController = require('./controllers/registerController')
 const errorController = require('./controllers/errorController')
 
 // Página inicial
@@ -28,8 +29,10 @@ router.get('/signin', pagesController.signin_template)
 router.get('/signin/login', pagesController.login)
 // Página de cadastro
 router.get('/signin/register', pagesController.register)
+// Registro do usuário
+router.post('/signin/register/signup', registerController.signup)
 // Enviando dados do formulario
-router.post('/ideaform/sendidea', formController.sendIdea)
+router.post('/ideaform/sendidea', ideaformController.sendIdea)
 // Popups
 router.get('/popup/:body', popupController.getPopup)
 // Página 404

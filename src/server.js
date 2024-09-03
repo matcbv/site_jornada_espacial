@@ -18,6 +18,9 @@ app.set('view engine', 'ejs')
 app.set('views', path.resolve(__dirname, 'views'))
 app.engine('html', require('ejs').renderFile)
 
+// Definindo o tempo de vida do servidor
+app.keepAliveTimeout = 120000
+
 // Conexão com o banco de dados
 const mongoose = require('mongoose')
 const MongoStore = require('connect-mongo')
@@ -59,6 +62,7 @@ app.use(helmet())
 const csrf = require('csurf')
 app.use(csrf())
 
+// Adição de mensagens flash para validadção de formulários
 const flash = require('connect-flash')
 app.use(flash())
 
@@ -71,6 +75,7 @@ app.use(csrfMiddleware)
 const routes = require('./routes')
 app.use(routes)
 
+// Definindo a página de erro em caso de erro 404
 app.use((req, res) => { res.status(404).render('error_404.html') })
 
 app.on('ready', () => {

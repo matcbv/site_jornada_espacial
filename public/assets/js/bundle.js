@@ -326,6 +326,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./frontend/css/media_queries/register_media_queries.css":
+/*!***************************************************************!*\
+  !*** ./frontend/css/media_queries/register_media_queries.css ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./frontend/css/media_queries/signin_template_media_queries.css":
 /*!**********************************************************************!*\
   !*** ./frontend/css/media_queries/signin_template_media_queries.css ***!
@@ -999,6 +1012,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_media_queries_aboutme_media_queries_css__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../css/media_queries/aboutme_media_queries.css */ "./frontend/css/media_queries/aboutme_media_queries.css");
 /* harmony import */ var _css_media_queries_signin_template_media_queries_css__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../css/media_queries/signin_template_media_queries.css */ "./frontend/css/media_queries/signin_template_media_queries.css");
 /* harmony import */ var _css_media_queries_login_media_queries_css__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../css/media_queries/login_media_queries.css */ "./frontend/css/media_queries/login_media_queries.css");
+/* harmony import */ var _css_media_queries_register_media_queries_css__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../css/media_queries/register_media_queries.css */ "./frontend/css/media_queries/register_media_queries.css");
 // GENERAL STYLES
 
 
@@ -1029,6 +1043,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // MEDIA QUERIES
+
 
 
 

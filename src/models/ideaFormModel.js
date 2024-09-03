@@ -14,7 +14,7 @@ class IdeaForm{
         this.data = data,
         this.subject = data.subject,
         this.text = data.text,
-        this.email = data.email
+        this.email = data.email,
         this.status = []
     }
 

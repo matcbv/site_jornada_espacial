@@ -7,7 +7,8 @@
             <div class="register-form-text">
                 <h1>Cadastro do Mochileiro</h1>
             </div>
-            <form class="register-form" action="/src/controllers/register_controller.js" method="post">
+            <form class="register-form" action="/signin/register/signup" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div>
                     <div class="register-form-input-div">
                         <label for="name">Nome</label>
@@ -30,18 +31,24 @@
                 </div>
                 <div class="">
                     <div class="register-form-input-div">
-                        <label for="birthday">Data de nascimento</label>
-                        <input type="date" name="birthday" id="birthday" autocomplete="bday">
-                    </div>
-                    <div class="register-form-input-div">
                         <label for="email">Email</label>
                         <input type="email" name="email" id="email" autocomplete="email">
+                    </div>
+                    <div class="register-form-input-div">
+                        <label for="birthday">Data de nascimento</label>
+                        <input type="date" name="birthday" id="birthday" autocomplete="bday">
                     </div>
                 </div>
                 <div class="register-form-btn-div">
                     <input class="register-btn" type="submit" value="Criar conta">
+                    <div class="rocket-img-div-small">
+                        <img src="/images/profile_images/rocket.gif" alt="Foguete">
+                    </div>
                 </div>
             </form>
+        </div>
+        <div class="rocket-img-div">
+            <img src="/images/profile_images/rocket.gif" alt="Foguete">
         </div>
         <%- include(playlist) %>
         <%- include(audio) %>

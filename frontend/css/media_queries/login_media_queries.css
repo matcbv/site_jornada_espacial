@@ -46,6 +46,10 @@
         height: 2px;
         margin: 30px 0;
     }
+
+    .login-form-input-div img{
+        bottom: 3px;
+    }
 }
 
 @media (max-width: 768px){
@@ -56,9 +60,5 @@
 
     .login-form-btn-div .login-btn:first-child{
         margin-right: 20px;
-    }
-
-    .login-form-input-div img{
-        bottom: 3px;
     }
 }

@@ -1,20 +1,40 @@
 .register-main{
-    min-height: 100vh;
-    background-image: linear-gradient(to right, rgb(5, 13, 35, 0.8), rgb(5, 13, 35), transparent 70%);
+    height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: linear-gradient(to right, rgb(10, 18, 43, 0.8), rgb(12, 17, 33, 0.8), transparent 80%);
+    position: relative;
 }
 
 .register-form-content-div{
-    margin-left: 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.register-main h1{
+    font-family: 'Rubik Mono One';
+    color: rgb(9, 8, 23);
+    -webkit-text-stroke: 1px yellow;
+    font-size: 2.25em;
 }
 
 .register-form{
     display: flex;
     flex-flow: column nowrap;
+    justify-content: space-evenly;
 }
 
 .register-form > div{
     display: flex;
     flex-flow: row nowrap;
+    margin-top: 50px;
+}
+
+.register-form-input-div:nth-child(1) {
+    margin-right: 50px;
 }
 
 .register-form-input-div{
@@ -23,5 +43,63 @@
 }
 
 .register-form-input-div input{
-    
+    height: 40px;
+    width: 320px;
+    border-radius: 20px;
+    font-family: 'Inconsolata';
+    font-size: 1.3em;
+    font-weight: bold;
+    background-color: rgb(9, 8, 23);
+    color: white;
+    border: none;
+    outline: 1.5px solid white;
+    padding: 0 15px;
+}
+
+.register-form-input-div input:focus{
+    outline: 1.5px solid yellow;
+}
+
+.register-form-input-div label{
+    font-size: 1.3em;
+    font-family: 'Inconsolata';
+    font-weight: bold;
+    margin-bottom: 3px;
+    padding-left: 10px;
+}
+
+.register-form-btn-div .register-btn{
+    height: 45px;
+    background-color: transparent;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-family: 'Inconsolata';
+    font-size: 1.3em;
+    font-weight: bold;
+    outline: 2px solid #ff0;
+    padding: 0 25px;
+}
+
+.register-btn:hover, .register-btn:focus{
+    cursor: pointer;
+    outline: 1px solid white;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+.rocket-img-div{
+    display: flex;
+    justify-content: center;
+}
+
+.rocket-img-div img{
+    width: 200px;
+}
+
+.rocket-img-div-small{
+    display: none;
+}
+
+.rocket-img-div-small img{
+    width: 60px;
 }

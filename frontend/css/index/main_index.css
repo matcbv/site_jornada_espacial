@@ -86,12 +86,11 @@
     font-weight: bold;
     font-style: italic;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s linear 0s, box-shadow 0.3s linear 0s;
+    transition: border-radius 0.1s linear 0s;
 }
 
 .intro-btn:hover{
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
-    transform: translateY(7px);
+    border-radius: 25px;
     cursor: pointer;
 }
 
@@ -304,9 +303,9 @@
     display: block;
     width: auto;
     margin-left: 36px;
-    padding: 13px 17px;
+    padding: 13px 25px;
     background-color: transparent;
-    border-radius: 12px;
+    border-radius: 28px;
     color: white;
     font-size: 1.1em;
     font-family: 'Calistoga';

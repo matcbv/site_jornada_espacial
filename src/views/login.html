@@ -6,10 +6,11 @@
         <div class="login-form-content-div">
             <div class="login-form-text">
                 <h1>Espaço do Mochileiro</h1>
-                <p>Seja bem-vindo de volta! Acesse o Espaço do Mochileiro para acompanhar seu progresso durante nossa Jornada Espacial.</p>
+                <p>Seja bem-vindo de volta! Acesse o Espaço do Mochileiro para acompanhar seu progresso durante sua Jornada Espacial.</p>
             </div>
             <span class="horizontal-row"></span>
             <form class="login-form" action="/src/controllers/login_controller.js" method="get">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="login-form-input-div">
                     <label for="username">Usuário</label>
                     <img src="/images/profile_images/username_icon.png" alt="Ícone de usuário">
