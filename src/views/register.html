@@ -12,17 +12,17 @@
                 <div>
                     <div class="register-form-input-div">
                         <label for="name">Nome</label>
-                        <input type="text" name="name" id="name" autocomplete="given-name">
+                        <input type="text" name="name" id="name" autocomplete="given-name" value="<%= nameError %>">
                     </div>
                     <div class="register-form-input-div">
                         <label for="lastname">Sobrenome</label>
-                        <input type="text" name="lastname" id="lastname" autocomplete="family-name">
+                        <input type="text" name="lastname" id="lastname" autocomplete="family-name" value="<%= lastnameError %>">
                     </div>
                 </div>
                 <div>
                     <div class="register-form-input-div">
                         <label for="username">Usuário</label>
-                        <input type="username" name="username" id="username" autocomplete="username">
+                        <input type="username" name="username" id="username" autocomplete="username" value="<%= usernameError %>">
                     </div>
                     <div class="register-form-input-div password-div">
                         <div>
@@ -30,19 +30,20 @@
                             <img src="/images/profile_images/info_icon.png" alt="Requisitos da senha">
                         </div>
                         <div>
-                            <input class="password-input" type="password" name="password" id="password" autocomplete="current-password" >
+                            <input class="password-input" type="password" name="password" id="password" autocomplete="current-password" value="<%= passwordError %>">
                             <img class="eye-icon" src="/images/profile_images/eye_icon.png" alt="Ver Senha">
+                            <span class="crossline"></span>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="register-form-input-div">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" autocomplete="email">
+                        <input type="email" name="email" id="email" autocomplete="email" value="<%= emailError %>">
                     </div>
                     <div class="register-form-input-div">
                         <label for="birthday">Data de nascimento</label>
-                        <input type="text" name="birthday" id="birthday" autocomplete="bday">
+                        <input type="text" name="birthday" id="birthday" autocomplete="bday" placeholder="dd/mm/aaaa" value="<%= birthdayError %>">
                     </div>
                 </div>
                 <div class="register-form-btn-div">

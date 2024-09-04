@@ -14,6 +14,12 @@ function globalMiddleware(req, res, next){
     res.locals.subjectError = req.flash('subjectError')
     res.locals.textError = req.flash('textError')
     res.locals.successMsg = req.flash('successMsg')
+    res.locals.nameError = req.flash('nameError')
+    res.locals.lastnameError = req.flash('lastnameError')
+    res.locals.usernameError = req.flash('usernameError')
+    res.locals.passwordError = req.flash('passwordError')
+    res.locals.emailError = req.flash('emailError')
+    res.locals.birthdayError = req.flash('birthdayError')
     next()
 }
 

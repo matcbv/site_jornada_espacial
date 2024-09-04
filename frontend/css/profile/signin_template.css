@@ -1,11 +1,16 @@
 .signin-main{
     min-height: 100vh;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
-    align-items: center;
     position: relative;
     background-image: linear-gradient(to right, rgb(27, 22, 35), rgba(27,22,35,0.8), transparent, rgb(5, 13, 35, 0.8), rgb(5, 13, 35));
+}
+
+.signin-template-content-div{
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
 }
 
 .signin-main h1{
@@ -20,6 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 60px 0;
 }
 
 .login-div, .register-div{

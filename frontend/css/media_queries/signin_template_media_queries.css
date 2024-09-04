@@ -1,7 +1,7 @@
 @media (max-width: 992px){
 
     .signin-main{
-        background-image: linear-gradient(rgb(27, 22, 35), rgba(27,22,35,0.8), transparent, rgb(5, 13, 35, 0.8), rgb(5, 13, 35));
+        background-image: linear-gradient(rgb(27, 22, 35), rgba(27,22,35,0.8), transparent 55%, rgb(5, 13, 35, 0.8), rgb(5, 13, 35));
     }
 
     .signin-template-div{
