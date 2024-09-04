@@ -183,10 +183,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./frontend/css/index/main_index.css":
-/*!*******************************************!*\
-  !*** ./frontend/css/index/main_index.css ***!
-  \*******************************************/
+/***/ "./frontend/css/index/index.css":
+/*!**************************************!*\
+  !*** ./frontend/css/index/index.css ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1071,7 +1071,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_general_general_keyframes_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/general/general_keyframes.css */ "./frontend/css/general/general_keyframes.css");
 /* harmony import */ var _css_general_aboutme_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/general/aboutme.css */ "./frontend/css/general/aboutme.css");
 /* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/index/general_index.css */ "./frontend/css/index/general_index.css");
-/* harmony import */ var _css_index_main_index_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/main_index.css */ "./frontend/css/index/main_index.css");
+/* harmony import */ var _css_index_index_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/index.css */ "./frontend/css/index/index.css");
 /* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./frontend/css/galaxies/general_galaxies.css");
 /* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./frontend/css/galaxies/main_galaxies.css");
 /* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/popups/popups.css */ "./frontend/css/popups/popups.css");

@@ -25,7 +25,7 @@
 
     .galaxies-section{
         flex-flow: column nowrap;
-        padding: 8vh 0 12vh 0;
+        padding: 8vh 0 20vh 0;
     }
 
     .galaxies-text{
@@ -55,10 +55,9 @@
         width: 100%;
     }
 
-    /* ------- MILKYWAY SECTION ------- */
-
     .milkyway-section{
         flex-flow: column-reverse nowrap;
+        padding: 20vh 0;
     }
 
     .triangle-section{

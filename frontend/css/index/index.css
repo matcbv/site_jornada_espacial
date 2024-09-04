@@ -3,11 +3,12 @@
 .index-main{
     position: relative;
     display: grid;
-    grid-template:  'intro-section' 90vh
+    grid-template:  'intro-section' auto
                     'milkyway-section' 1fr
                     'andromeda-section' 1fr
                     'triangle-section' 1fr
                     / 100%;
+    min-height: 100vh;
 }
 
 /* ---------- INTRODUCTION SECTION ---------- */
@@ -18,6 +19,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    min-height: 86vh;
     background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7) 30%, transparent);
     font-family: monospace;
     opacity: 0;
@@ -28,7 +30,7 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 90px;
+    margin: 80px 0;
 }
 
 .intro-text{

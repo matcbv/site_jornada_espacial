@@ -13,7 +13,7 @@ import "../css/general/aboutme.css";
 
 // INDEX STYLES
 import "../css/index/general_index.css";
-import "../css/index/main_index.css";
+import "../css/index/index.css";
 
 // GALAXIES STYLES
 import "../css/galaxies/general_galaxies.css"
