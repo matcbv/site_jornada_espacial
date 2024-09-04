@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     min-height: 86vh;
-    background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7) 30%, transparent);
+    background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7), transparent);
     font-family: monospace;
     opacity: 0;
 }
