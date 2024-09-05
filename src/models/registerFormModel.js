@@ -37,7 +37,7 @@ class Register{
                     this.data[k] = this.data[k][0].toUpperCase() + this.data[k].slice(1)
                 }
             } else if (k === 'password'){
-                if (this.data[k].length < 8 || Array.from(this.data[k]).filter(l => validator.isNumeric(l)).length === 0 || Array.from(this.data[k]).filter(l => validator.isAlpha(l)).length === 0 ){
+                if (this.data[k].length < 8 || Array.from(this.data[k]).filter(l => validator.isNumeric(l)).length === 0 || Array.from(this.data[k]).filter(l => validator.isAlpha(l)).length === 0 || Array.from(this.data[k]).filter(l => validator.isAlpha(l)).filter(l => validator.isUppercase(l))){
                     this.error_list.push({[k]: 'Senha inválida'})
                 } else{
                     const salt = bcrypt.genSaltSync()

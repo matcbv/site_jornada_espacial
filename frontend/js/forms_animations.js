@@ -37,18 +37,16 @@ if (registerForm){
 }
 
 if (eyeIcon && crossline){
-    eyeIcon.addEventListener('mousedown', () => showPassword())
-    crossline.addEventListener('mousedown', () => showPassword())
-    eyeIcon.addEventListener('mouseup', () => hidePassword())
-    crossline.addEventListener('mouseup', () => hidePassword())
+    eyeIcon.addEventListener('click', () => showPassword())
+    crossline.addEventListener('click', () => showPassword())
 }
 
 function showPassword() {
-    passwordInput.type = 'text'
-    crossline.style.display = 'none'
-}
-
-function hidePassword() {
-    passwordInput.type = 'password'
-    crossline.style.display = 'block'
+    if (passwordInput.type === 'password'){
+        passwordInput.type = 'text'
+        crossline.style.display = 'none'
+    } else{
+        passwordInput.type = 'password'
+        crossline.style.display = 'block'
+    }
 }

@@ -1029,26 +1029,21 @@ if (registerForm) {
   }
 }
 if (eyeIcon && crossline) {
-  eyeIcon.addEventListener('mousedown', function () {
+  eyeIcon.addEventListener('click', function () {
     return showPassword();
   });
-  crossline.addEventListener('mousedown', function () {
+  crossline.addEventListener('click', function () {
     return showPassword();
-  });
-  eyeIcon.addEventListener('mouseup', function () {
-    return hidePassword();
-  });
-  crossline.addEventListener('mouseup', function () {
-    return hidePassword();
   });
 }
 function showPassword() {
-  passwordInput.type = 'text';
-  crossline.style.display = 'none';
-}
-function hidePassword() {
-  passwordInput.type = 'password';
-  crossline.style.display = 'block';
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    crossline.style.display = 'none';
+  } else {
+    passwordInput.type = 'password';
+    crossline.style.display = 'block';
+  }
 }
 })();
 

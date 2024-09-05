@@ -1,7 +1,7 @@
 const Register = require('../models/registerFormModel')
+const nodemailer = require('nodemailer')
 const path = require('path')
 const fs = require('fs')
-const nodemailer = require('nodemailer')
 
 const registerController = {
     signup: (req, res) => {
@@ -15,7 +15,7 @@ const registerController = {
             }
         } else {
             const code = codeGenerator()
-            verificationEmail(registerClass.data.email, code)
+            verificationEmail(code, registerClass.data.email, registerClass.data.username)
             registerClass.saveData()
         }
         res.redirect('/signin/register')
@@ -31,12 +31,12 @@ function codeGenerator(){
     return code;
 }
 
-async function verificationEmail(receiver, code){
+async function verificationEmail(code, receiver, username){
 
     function getEmail() {
         const filePath = path.resolve(__dirname, '..', 'views', 'profile', 'email.html');
         const data = fs.readFileSync(filePath, 'utf8')
-        return data.replace('{{code}}', code);
+        return data.replace('{{code}}', code).replace('{{username}}', username)
     }
 
     // Criando um transportador (Remetente):

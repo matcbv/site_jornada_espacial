@@ -111,7 +111,7 @@ input[type="password"]::-ms-reveal {
 }
 
 .register-form-btn-div .register-btn{
-    height: 45px;
+    height: 40px;
     background-color: transparent;
     border: none;
     border-radius: 20px;
@@ -148,6 +148,10 @@ input[type="password"]::-ms-reveal {
 
 .register-form input::placeholder{
     color: rgba(255, 255, 248, 0.7);
+}
+
+.password-requirements{
+    display: none !important;
 }
 
 .crossline{
