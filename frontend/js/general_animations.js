@@ -119,10 +119,10 @@ if (audioDiv){
 
     musicIcon.addEventListener('click', () => {
         if(window.getComputedStyle(playlistDiv).display === 'none'){
-            playlistDiv.classList.add('playlist-appear-animation')
+            playlistDiv.classList.add('fast-appear-animation')
             playlistDiv.style.display = 'block'
             setTimeout(() => {
-                playlistDiv.classList.remove('playlist-appear-animation')
+                playlistDiv.classList.remove('fast-appear-animation')
             }, 500)
         } else{
             playlistDiv.classList.add('disappear-animation')

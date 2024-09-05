@@ -35,6 +35,14 @@
     .rocket-img-div img{
         width: 140px;
     }
+
+    .password-requirements p{
+        font-size: 1.1em;
+    }
+
+    .password-div ul{
+        font-size: 0.9em;
+    }
 }
 
 @media (max-width: 768px){

@@ -16,9 +16,13 @@ const registerController = {
         } else {
             const code = codeGenerator()
             verificationEmail(code, registerClass.data.email, registerClass.data.username)
-            registerClass.saveData()
+            return res.redirect('/signin/register/validation')
         }
-        res.redirect('/signin/register')
+        return res.redirect('/signin/register')
+    },
+
+    validation: (req, res) => {
+        return res.render('profile/code_popup.html')
     }
 }
 

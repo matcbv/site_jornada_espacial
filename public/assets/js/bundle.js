@@ -665,10 +665,10 @@ if (audioDiv) {
 
   musicIcon.addEventListener('click', function () {
     if (window.getComputedStyle(playlistDiv).display === 'none') {
-      playlistDiv.classList.add('playlist-appear-animation');
+      playlistDiv.classList.add('fast-appear-animation');
       playlistDiv.style.display = 'block';
       setTimeout(function () {
-        playlistDiv.classList.remove('playlist-appear-animation');
+        playlistDiv.classList.remove('fast-appear-animation');
       }, 500);
     } else {
       playlistDiv.classList.add('disappear-animation');
@@ -985,7 +985,10 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 // ---------- HTML ELEMENTS ----------
 
+var registerMain = document.querySelector('.register-main');
 var eyeIcon = document.querySelector('.eye-icon');
+var requirementsIcon = document.querySelector('.requirements-icon');
+var requirementsDiv = document.querySelector('.password-requirements');
 var passwordInput = document.querySelector('.password-input');
 var crossline = document.querySelector('.crossline');
 var registerForm = document.querySelector('.register-form');
@@ -1044,6 +1047,41 @@ function showPassword() {
     passwordInput.type = 'password';
     crossline.style.display = 'block';
   }
+}
+if (requirementsIcon) {
+  requirementsIcon.addEventListener('click', function () {
+    var requirementsDivStyles = window.getComputedStyle(requirementsDiv);
+    if (requirementsDivStyles.display === 'none') {
+      requirementsDiv.classList.remove('disappear-animation');
+      requirementsDiv.classList.add('fast-appear-animation');
+      setTimeout(function () {
+        requirementsDiv.style.display = 'flex';
+      }, 500);
+      hideRequirements(requirementsDivStyles);
+    } else if (requirementsDivStyles.display === 'flex') {
+      requirementsDiv.classList.remove('fast-appear-animation');
+      requirementsDiv.classList.add('disappear-animation');
+      setTimeout(function () {
+        requirementsDiv.style.display = 'none';
+      }, 500);
+    }
+  });
+}
+function hideRequirements(requirementsDivStyles) {
+  registerMain.addEventListener('click', function (e) {
+    var element = e.target;
+    if (!element.classList.contains('password-requirements' || 0)) {
+      console.log('passei aqui');
+      if (requirementsDivStyles.display === 'flex') {
+        console.log('aqui tambem');
+        requirementsDiv.classList.remove('fast-appear-animation');
+        requirementsDiv.classList.add('disappear-animation');
+        setTimeout(function () {
+          requirementsDiv.style.display = 'none';
+        }, 500);
+      }
+    }
+  });
 }
 })();
 

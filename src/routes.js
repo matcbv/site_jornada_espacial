@@ -30,6 +30,8 @@ router.get('/signin/login', pagesController.login)
 router.get('/signin/register', pagesController.register)
 // Registro do usuário
 router.post('/signin/register/signup', registerController.signup)
+// Validação da conta
+router.get('/signin/register/validation', registerController.validation)
 // Enviando dados do formulario
 router.post('/ideaform/sendidea', ideaformController.sendIdea)
 // Requisição dos popups
