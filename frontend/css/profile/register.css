@@ -74,6 +74,7 @@
     align-items: flex-end;
     width: 320px;
     margin-bottom: 5px;
+    position: relative;
 }
 
 .password-div input{
@@ -150,8 +151,34 @@ input[type="password"]::-ms-reveal {
     color: rgba(255, 255, 248, 0.7);
 }
 
-.password-requirements{
-    display: none !important;
+.password-div div .password-requirements{
+    display: none;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    background-color: rgb(9, 8, 23);
+    outline: 1px solid white;
+    border-radius: 10px;
+    position: absolute;
+    padding: 15px;
+    right: -52px;
+    bottom: 3px;
+}
+
+.password-requirements p{
+    color: yellow;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-family: monospace;
+}
+
+.password-div ul{
+    list-style-position: inside;
+    margin-left: 5px;
+}
+
+.password-requirements li{
+    font-family: monospace;
+    margin-bottom: 2px;
 }
 
 .crossline{
