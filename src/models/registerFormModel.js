@@ -26,7 +26,8 @@ class Register{
                     this.error_list.push({[k]: 'Email inválido'})
                 }
             } else if(k === 'birthday'){
-                if(!validator.isDate(this.data[k])){
+                // Especificando o único formato a ser aceito com o stricMode:
+                if(!validator.isDate(this.data[k], { format: 'DD/MM/YYYY', strictMode: true })){
                     this.error_list.push({[k]: 'Data inválida'})
                 }
             } else if (k === 'name' || k === 'lastname'){
@@ -42,12 +43,15 @@ class Register{
                     const salt = bcrypt.genSaltSync()
                     this.data[k] = bcrypt.hashSync(this.data[k], salt)
                 }
-            } else if (k === 'user'){
+            } else if (k === 'username'){
                 if (!this.data[k]){
                     this.error_list.push({[k]: 'Usuário inválido'})
                 } else{
-                    if(registerModel.findOne({name: this.data[k]})){
-                        this.error_list.push({[k]: 'Usuário já existente'})
+                    async () => {
+                        const dataQuery = await registerModel.findOne({username: this.data[k]})
+                        if(dataQuery){
+                            this.error_list.push({[k]: 'Usuário já existente'})
+                        }
                     }
                 }
             }

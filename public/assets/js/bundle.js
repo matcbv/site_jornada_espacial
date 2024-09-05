@@ -799,7 +799,7 @@ if (galaxiesMain) {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
           var image = _step.value;
           if (element.id === image.id) {
-            fetch("popup/".concat(element.id)).then(function (res) {
+            fetch("/popup/".concat(element.id)).then(function (res) {
               if (!res.ok) {
                 throw new Error('Erro na requisição do popup.');
               } else {

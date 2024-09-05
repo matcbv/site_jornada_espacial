@@ -37,6 +37,10 @@ const pagesController = {
 
     register: (req, res) => {
         return res.render('register.html')
+    },
+    
+    error_404: (req, res) => {
+        return res.render('error_404.html')
     }
 }
 

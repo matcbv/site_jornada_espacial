@@ -104,8 +104,8 @@
     position: fixed;
     bottom: 50px;
     left: 50px;
-    width: 250px;
-    height: 130px;
+    width: 230px;
+    height: 150px;
     border-radius: 7px;
     background-color: rgb(9, 8, 23);
     border: 2px solid rgb(45, 62, 92);
@@ -115,7 +115,7 @@
 
 .msc-popup p{
     text-align: center;
-    width: 175px;
+    width: 170px;
     font-family: monospace;
 }
 
