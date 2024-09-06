@@ -608,6 +608,7 @@ if (introSection) {
   });
   play.addEventListener('click', function () {
     var currentAudio = sessionStorage.getItem('currentAudio');
+    var redbonesSoundWaveIcon = document.querySelector('#redbone').querySelector('.sound-wave-icon');
     if (currentAudio) {
       toPlayAudio = getMusic(currentAudio);
       toPlayAudio.play();
@@ -617,6 +618,8 @@ if (introSection) {
       toPlayAudio.play();
       sessionStorage.setItem('currentAudio', 'redbone');
       sessionStorage.setItem('audioStatus', toPlayAudio.paused);
+      redbonesSoundWaveIcon.style.display = 'block';
+      lastSoundWaveIcon = redbonesSoundWaveIcon;
     }
     document.body.removeChild(mscPopup);
     soundOn.style.display = 'block';

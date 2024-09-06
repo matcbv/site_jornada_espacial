@@ -80,8 +80,11 @@
         font-family: 'Calistoga';
         -webkit-text-stroke: 0;
         color: yellow;
-        font-size: 1.5em;
         font-weight: lighter;
+        width: 250px;
+        text-align: center;
+        font-size: 1.6em;
+        letter-spacing: 2.5px;
     }
 
     .register-form-btn-div{
@@ -102,5 +105,36 @@
 
     .rocket-img-div-small{
         display: block;
+    }
+
+    .code-popup-div{
+        width: 300px;
+        padding: 30px;
+    }
+
+    .code-popup-div h1{
+        font-size: 1em;
+    }
+
+    .code-popup-div p{
+        font-size: 0.95em;
+    }
+
+    .code-form > input{
+        width: 100%;
+        font-size: 1.1em;
+    }
+
+    .code-btn-div{
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .code-btn-div input{
+        font-size: 1em;
+    }
+
+    .code-btn-div input:first-child{
+        margin: 0 0 20px 0;
     }
 }

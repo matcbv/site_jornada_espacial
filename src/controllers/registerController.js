@@ -9,20 +9,22 @@ const registerController = {
 
     signup: (req, res) => {
         const registerClass = new Register(req.body)
-        const errorList = registerClass.checkData()
-        if (errorList.length > 0){
-            for (let e of errorList){
-                Object.entries(e).forEach(([field, msg]) => {
-                    req.flash(`${field}Error`, msg)
-                })
+        console.log('Retorno do checkData!!!!!!!!!', registerClass.checkData())
+        registerClass.checkData().then(errorList => {
+            if (errorList.length > 0){
+                for (let e of errorList){
+                    Object.entries(e).forEach(([field, msg]) => {
+                        req.flash(`${field}Error`, msg)
+                    })
+                }
+            } else {
+                this.userData = registerClass
+                this.code = codeGenerator()
+                verificationEmail(this.code, registerClass.data.email, registerClass.data.username)
+                return res.redirect('/signin/register/validation')
             }
-        } else {
-            this.userData = registerClass
-            this.code = codeGenerator()
-            verificationEmail(this.code, registerClass.data.email, registerClass.data.username)
-            return res.redirect('/signin/register/validation')
-        }
-        return res.redirect('/signin/register')
+            return res.redirect('/signin/register')
+        })
     },
 
     validation: (req, res) => {
@@ -32,6 +34,7 @@ const registerController = {
             return res.redirect('/signin/login')
         } else{
             req.flash('codeError', 'Código inválido')
+            return res.redirect('/signin/register/validation')
         }
     }
 }

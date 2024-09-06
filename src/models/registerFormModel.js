@@ -16,26 +16,23 @@ const registerModel = new mongoose.model('users', registerSchema)
 class Register {
     constructor(data) {
         this.data = data,
-            this.error_list = []
+        this.error_list = []
     }
 
     checkData() {
         for (let k of Object.keys(this.data)) {
             if (k === 'email') {
-
                 if (!validator.isEmail(this.data[k])) {
                     this.error_list.push({ [k]: 'Email inválido' })
                 }
 
             } else if (k === 'birthday') {
-
                 // Especificando o único formato a ser aceito com o stricMode:
                 if (!validator.isDate(this.data[k], { format: 'DD/MM/YYYY', strictMode: true })) {
                     this.error_list.push({ [k]: 'Data inválida' })
                 }
 
             } else if (k === 'name' || k === 'lastname') {
-
                 if (!this.data[k]) {
                     k === 'name' ? this.error_list.push({ [k]: 'Nome inválido' }) : this.error_list.push({ [k]: 'Sobrenome inválido' });
                 } else {
@@ -43,7 +40,6 @@ class Register {
                 }
                 
             } else if (k === 'password') {
-
                 const alphaArr = Array.from(this.data[k]).filter(l => validator.isAlpha(l))
                 const numericArr = Array.from(this.data[k]).filter(l => validator.isNumeric(l))
                 const upperArr = alphaArr.filter(l => validator.isUppercase(l))
@@ -56,24 +52,27 @@ class Register {
                 }
 
             } else if (k === 'username') {
-
                 if (!this.data[k]) {
                     this.error_list.push({ [k]: 'Usuário inválido' })
                 } else {
-                    async () => {
-                        const dataQuery = await registerModel.findOne({ username: this.data[k] })
-                        if (dataQuery) {
-                            this.error_list.push({ [k]: 'Usuário já existente' })
-                        }
-                    }
+                    this._checkUser().then(res => {
+                        return res
+                    })
                 }
             }
         }
-        return this.error_list
     }
 
     saveData() {
         registerModel.create(this.data)
+    }
+
+    async _checkUser() {
+        const dataQuery = await registerModel.findOne({ username: this.data['username'] })
+        if (dataQuery) {
+            this.error_list.push({ 'username': 'Usuário já existente' })
+        }
+        return this.error_list
     }
 }
 

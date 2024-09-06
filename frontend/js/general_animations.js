@@ -58,6 +58,7 @@ if(introSection){
 
     play.addEventListener('click', () => {
         const currentAudio = sessionStorage.getItem('currentAudio')
+        const redbonesSoundWaveIcon = document.querySelector('#redbone').querySelector('.sound-wave-icon')
         if(currentAudio){
             toPlayAudio = getMusic(currentAudio)
             toPlayAudio.play()
@@ -67,6 +68,8 @@ if(introSection){
             toPlayAudio.play()
             sessionStorage.setItem('currentAudio', 'redbone')
             sessionStorage.setItem('audioStatus', toPlayAudio.paused)
+            redbonesSoundWaveIcon.style.display = 'block'
+            lastSoundWaveIcon = redbonesSoundWaveIcon
         }
         document.body.removeChild(mscPopup)
         soundOn.style.display = 'block'
