@@ -995,17 +995,18 @@ var requirementsDiv = document.querySelector('.password-requirements');
 var passwordInput = document.querySelector('.password-input');
 var crossline = document.querySelector('.crossline');
 var registerForm = document.querySelector('.register-form');
+var codeForm = document.querySelector('.code-form');
 var inputs = document.querySelectorAll('input');
 
 // ---------- REGISTER FORM ANIMATIONS ----------
 
-if (registerForm) {
+if (registerForm || codeForm) {
   var _iterator = _createForOfIteratorHelper(inputs),
     _step;
   try {
     var _loop = function _loop() {
       var input = _step.value;
-      if (input.type !== 'submit') {
+      if (input.type !== 'submit' && input.type !== 'button') {
         if (input.value) {
           if (input.name === 'password') {
             input.type = 'text';

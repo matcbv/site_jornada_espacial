@@ -34,7 +34,7 @@
 .login-form-input-div input{
     height: 40px;
     width: 310px;
-    border-radius: 15px;
+    border-radius: 20px;
     font-family: 'Inconsolata';
     font-size: 1.2em;
     font-weight: bold;
@@ -93,7 +93,7 @@
 .login-form-btn-div .login-btn{
     background-color: transparent;
     border: none;
-    border-radius: 15px;
+    border-radius: 20px;
     color: #fff;
     font-family: 'Inconsolata';
     font-size: 1em;

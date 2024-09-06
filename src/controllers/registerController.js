@@ -9,7 +9,6 @@ const registerController = {
 
     signup: (req, res) => {
         const registerClass = new Register(req.body)
-        console.log('Retorno do checkData!!!!!!!!!', registerClass.checkData())
         registerClass.checkData().then(errorList => {
             if (errorList.length > 0){
                 for (let e of errorList){

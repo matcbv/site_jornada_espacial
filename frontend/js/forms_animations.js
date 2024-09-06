@@ -7,13 +7,14 @@ const requirementsDiv = document.querySelector('.password-requirements')
 const passwordInput = document.querySelector('.password-input')
 const crossline = document.querySelector('.crossline')
 const registerForm = document.querySelector('.register-form')
+const codeForm = document.querySelector('.code-form')
 const inputs = document.querySelectorAll('input')
 
 // ---------- REGISTER FORM ANIMATIONS ----------
 
-if (registerForm){
+if (registerForm || codeForm){
     for (let input of inputs){
-        if (input.type !== 'submit'){
+        if (input.type !== 'submit' && input.type !== 'button'){
 
             if (input.value){
                 if (input.name === 'password'){

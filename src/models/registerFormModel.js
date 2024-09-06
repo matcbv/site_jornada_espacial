@@ -19,7 +19,7 @@ class Register {
         this.error_list = []
     }
 
-    checkData() {
+    async checkData() {
         for (let k of Object.keys(this.data)) {
             if (k === 'email') {
                 if (!validator.isEmail(this.data[k])) {
@@ -55,9 +55,8 @@ class Register {
                 if (!this.data[k]) {
                     this.error_list.push({ [k]: 'Usuário inválido' })
                 } else {
-                    this._checkUser().then(res => {
-                        return res
-                    })
+                    const errorList = await this._checkUser()
+                    return errorList
                 }
             }
         }
