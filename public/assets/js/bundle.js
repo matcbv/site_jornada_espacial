@@ -996,11 +996,12 @@ var passwordInput = document.querySelector('.password-input');
 var crossline = document.querySelector('.crossline');
 var registerForm = document.querySelector('.register-form');
 var codeForm = document.querySelector('.code-form');
+var loginForm = document.querySelector('.login-form');
 var inputs = document.querySelectorAll('input');
 
 // ---------- REGISTER FORM ANIMATIONS ----------
 
-if (registerForm || codeForm) {
+if (registerForm || codeForm || loginForm) {
   var _iterator = _createForOfIteratorHelper(inputs),
     _step;
   try {

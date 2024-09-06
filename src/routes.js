@@ -7,6 +7,7 @@ const pagesController = require('./controllers/pagesController')
 const staticController = require('./controllers/staticController')
 const ideaformController = require('./controllers/ideaformController')
 const registerController = require('./controllers/registerController')
+const loginController = require('./controllers/loginController')
 
 // Página inicial
 router.get('/', pagesController.homePage)
@@ -22,16 +23,18 @@ router.get('/ideaform', pagesController.ideaForm)
 router.get('/aboutme', pagesController.aboutme)
 // Página de inspirações
 router.get('/inspirations', pagesController.inspirations)
-// Template de entrada
-router.get('/signin', pagesController.signin_template)
+// Template para login ou cadastro
+router.get('/account', pagesController.log_template)
 // Página de login
-router.get('/signin/login', pagesController.login)
+router.get('/account/signin', pagesController.login)
+// Login do usuário
+router.post('/account/signin/login', loginController.logUser)
 // Página de cadastro
-router.get('/signin/register', pagesController.register)
+router.get('/account/signup', pagesController.register)
 // Registro do usuário
-router.post('/signin/register/signup', registerController.signup)
+router.post('/account/signup/register', registerController.signup)
 // Página para validação da conta
-router.get('/signin/register/validation', pagesController.validationPage)
+router.get('/account/signup/validation', pagesController.validationPage)
 // Validação da conta
 router.post('/validation', registerController.validation)
 // Enviando dados do formulario

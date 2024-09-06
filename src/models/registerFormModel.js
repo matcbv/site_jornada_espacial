@@ -1,17 +1,6 @@
-const mongoose = require('mongoose')
+const userModel = require('./userModel')
 const validator = require('validator')
 const bcrypt = require('bcrypt')
-
-const registerSchema = new mongoose.Schema({
-    name: { type: String, required: true, trim: true },
-    lastname: { type: String, require: true, trim: true },
-    username: { type: String, required: true, trim: true },
-    password: { type: String, required: true },
-    email: { type: String, required: true, trim: true },
-    birthday: { type: String, required: true, trim: true }
-})
-
-const registerModel = new mongoose.model('users', registerSchema)
 
 class Register {
     constructor(data) {
@@ -63,11 +52,11 @@ class Register {
     }
 
     saveData() {
-        registerModel.create(this.data)
+        userModel.create(this.data)
     }
 
     async _checkUser() {
-        const dataQuery = await registerModel.findOne({ username: this.data['username'] })
+        const dataQuery = await userModel.findOne({ username: this.data['username'] })
         if (dataQuery) {
             this.error_list.push({ 'username': 'Usuário já existente' })
         }

@@ -8,11 +8,12 @@ const passwordInput = document.querySelector('.password-input')
 const crossline = document.querySelector('.crossline')
 const registerForm = document.querySelector('.register-form')
 const codeForm = document.querySelector('.code-form')
+const loginForm = document.querySelector('.login-form')
 const inputs = document.querySelectorAll('input')
 
 // ---------- REGISTER FORM ANIMATIONS ----------
 
-if (registerForm || codeForm){
+if (registerForm || codeForm || loginForm){
     for (let input of inputs){
         if (input.type !== 'submit' && input.type !== 'button'){
 

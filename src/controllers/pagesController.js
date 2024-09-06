@@ -27,8 +27,8 @@ const pagesController = {
         return res.render('inspirations.html')
     },
 
-    signin_template: (req, res) => {
-        return res.render('signin_template.html')
+    log_template: (req, res) => {
+        return res.render('log_template.html')
     },
 
     login: (req, res) => {

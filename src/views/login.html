@@ -15,17 +15,17 @@
                 <p>Seja bem-vindo de volta! Acesse o Espaço do Mochileiro para acompanhar seu progresso durante sua Jornada Espacial.</p>
             </div>
             <span class="horizontal-row"></span>
-            <form class="login-form" action="/src/controllers/login_controller.js" method="get">
+            <form class="login-form" action="/account/signin/login" method="post">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="login-form-input-div">
                     <label for="username">Usuário</label>
                     <img src="/images/profile_images/username_icon.png" alt="Ícone de usuário">
-                    <input type="text" name="username" id="username" autocomplete="username">
+                    <input type="text" name="username" id="username" autocomplete="username" value="<%= usernameError %>">
                 </div>
                 <div class="login-form-input-div">
                     <label for="password">Senha</label>
                     <img src="/images/profile_images/password_icon.png" alt="Ícone de senha">
-                    <input type="password" name="password" id="password" autocomplete="current-password">
+                    <input type="password" name="password" id="password" autocomplete="current-password" value="<%= passwordError %>">
                 </div>
                 <div class="login-form-btn-div">
                     <input class="login-btn" type="submit" value="Entrar">

@@ -20,9 +20,9 @@ const registerController = {
                 this.userData = registerClass
                 this.code = codeGenerator()
                 verificationEmail(this.code, registerClass.data.email, registerClass.data.username)
-                return res.redirect('/signin/register/validation')
+                return res.redirect('/account/signup/validation')
             }
-            return res.redirect('/signin/register')
+            return res.redirect('/account/signup')
         })
     },
 
@@ -30,10 +30,10 @@ const registerController = {
         if (req.body.code === this.code){
             this.userData.saveData()
             req.flash('registerMsg', 'Cadastro realizado com sucesso!')
-            return res.redirect('/signin/login')
+            return res.redirect('/account/signin')
         } else{
             req.flash('codeError', 'Código inválido')
-            return res.redirect('/signin/register/validation')
+            return res.redirect('/account/signup/validation')
         }
     }
 }
