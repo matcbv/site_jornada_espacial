@@ -205,7 +205,7 @@ textarea:focus{
 .success-popup{
     display: flex;
     justify-content: center;
-    width: 180px;
+    width: 200px;
     position: absolute;
     top: 50px;
     padding: 30px 20px;

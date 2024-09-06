@@ -38,6 +38,10 @@ const pagesController = {
     register: (req, res) => {
         return res.render('register.html')
     },
+
+    validationPage: (req, res) => {
+        return res.render('code_popup.html')
+    },
     
     error_404: (req, res) => {
         return res.render('error_404.html')

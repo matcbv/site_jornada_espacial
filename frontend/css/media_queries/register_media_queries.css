@@ -37,11 +37,16 @@
     }
 
     .password-requirements p{
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .password-div ul{
-        font-size: 0.9em;
+        font-size: 0.8em;
+    }
+
+    .requirements-icon{
+        width: 18px;
+        height: 18px;
     }
 }
 

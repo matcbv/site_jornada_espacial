@@ -3,6 +3,12 @@
     <%- include(header) %>
     <main class="login-main">
         <%- include(fluidHeader) %>
+        <% if(registerMsg.length > 0){ %>
+            <div class="success-popup">
+                <p><%= registerMsg[0] %></p>
+            </div>
+        <% } %>
+        <div></div>
         <div class="login-form-content-div">
             <div class="login-form-text">
                 <h1>Espaço do Mochileiro</h1>

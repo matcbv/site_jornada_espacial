@@ -4,6 +4,9 @@ const path = require('path')
 const fs = require('fs')
 
 const registerController = {
+    code: '',
+    userData: '',
+
     signup: (req, res) => {
         const registerClass = new Register(req.body)
         const errorList = registerClass.checkData()
@@ -14,15 +17,22 @@ const registerController = {
                 })
             }
         } else {
-            const code = codeGenerator()
-            verificationEmail(code, registerClass.data.email, registerClass.data.username)
+            this.userData = registerClass
+            this.code = codeGenerator()
+            verificationEmail(this.code, registerClass.data.email, registerClass.data.username)
             return res.redirect('/signin/register/validation')
         }
         return res.redirect('/signin/register')
     },
 
     validation: (req, res) => {
-        return res.render('profile/code_popup.html')
+        if (req.body.code === this.code){
+            this.userData.saveData()
+            req.flash('registerMsg', 'Cadastro realizado com sucesso!')
+            return res.redirect('/signin/login')
+        } else{
+            req.flash('codeError', 'Código inválido')
+        }
     }
 }
 
@@ -38,7 +48,7 @@ function codeGenerator(){
 async function verificationEmail(code, receiver, username){
 
     function getEmail() {
-        const filePath = path.resolve(__dirname, '..', 'views', 'profile', 'email.html');
+        const filePath = path.resolve(__dirname, '..', 'views', 'includes', 'email.html');
         const data = fs.readFileSync(filePath, 'utf8')
         return data.replace('{{code}}', code).replace('{{username}}', username)
     }

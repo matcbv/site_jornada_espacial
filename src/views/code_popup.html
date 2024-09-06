@@ -1,0 +1,25 @@
+<%- include(head) %>
+<body>
+    <%- include(header) %>
+    <main class="validation-main">
+        <%- include(fluidHeader) %>
+        <div class="code-popup-div">
+            <h1>Estamos quase lá, <span class="emphasis">Mochileiro!</span></h1>
+            <p>Para finalizarmos a criação de sua conta, insira no campo abaixo o código recebido no email cadastrado.</p>
+            <form class="code-form" action="/validation" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="text" name="code" id="code" placeholder="Código secreto" value="<%= codeError %>">
+                <div class="code-btn-div">
+                    <input type="submit" value="Enviar">
+                    <input type="button" value="Reenviar email">
+                </div>
+            </form>
+        </div>
+        <%- include(playlist) %>
+        <%- include(audio) %>
+        <%- include(swordfish) %>
+    </main>
+    <%- include(footer) %>
+    <script src="/js/bundle.js"></script>
+</body>
+</html>

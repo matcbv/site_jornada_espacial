@@ -3,7 +3,7 @@ function csrfMiddleware(req, res, next){
     next()
 }
 
-function globalMiddleware(req, res, next){
+function includesMiddleware(req, res, next){
     res.locals.head = 'includes/head.html'
     res.locals.header = 'includes/header.html'
     res.locals.fluidHeader = 'includes/fluid_header.html'
@@ -11,6 +11,10 @@ function globalMiddleware(req, res, next){
     res.locals.playlist = 'includes/playlist.html'
     res.locals.audio = 'includes/audio.html'
     res.locals.swordfish = 'includes/swordfish.html'
+    next()
+}
+
+function flashesMiddleware(req, res, next){
     res.locals.subjectError = req.flash('subjectError')
     res.locals.textError = req.flash('textError')
     res.locals.successMsg = req.flash('successMsg')
@@ -20,7 +24,9 @@ function globalMiddleware(req, res, next){
     res.locals.passwordError = req.flash('passwordError')
     res.locals.emailError = req.flash('emailError')
     res.locals.birthdayError = req.flash('birthdayError')
+    res.locals.codeError = req.flash('codeError')
+    res.locals.registerMsg = req.flash('registerMsg')
     next()
 }
 
-module.exports = {csrfMiddleware, globalMiddleware}
+module.exports = {csrfMiddleware, includesMiddleware, flashesMiddleware}
