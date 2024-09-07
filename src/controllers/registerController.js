@@ -7,23 +7,22 @@ const registerController = {
     code: '',
     userData: '',
 
-    signup: (req, res) => {
+    signup: async (req, res) => {
         const registerClass = new Register(req.body)
-        registerClass.checkData().then(errorList => {
-            if (errorList.length > 0){
-                for (let e of errorList){
-                    Object.entries(e).forEach(([field, msg]) => {
-                        req.flash(`${field}Error`, msg)
-                    })
-                }
-            } else {
-                this.userData = registerClass
-                this.code = codeGenerator()
-                verificationEmail(this.code, registerClass.data.email, registerClass.data.username)
-                return res.redirect('/account/signup/validation')
+        await registerClass.checkData()
+        if (registerClass.error_list.length > 0){
+            for (let e of registerClass.error_list){
+                Object.entries(e).forEach(([field, msg]) => {
+                    req.flash(`${field}Error`, msg)
+                })
             }
-            return res.redirect('/account/signup')
-        })
+        } else {
+            this.userData = registerClass
+            this.code = codeGenerator()
+            verificationEmail(this.code, registerClass.data.email, registerClass.data.username)
+            return res.redirect('/account/signup/validation')
+        }
+        return res.redirect('/account/signup')
     },
 
     validation: (req, res) => {

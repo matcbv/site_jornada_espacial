@@ -1,5 +1,5 @@
 @media (max-width: 992px){
-    .register-form-input-div input{
+    .register-input-div input{
         height: 30px;
         width: 250px;
         font-size: 1.1em;
@@ -18,17 +18,17 @@
         font-size: 1.75em;
     }
 
-    .register-form-input-div:nth-child(1) {
+    .register-input-div:nth-child(1) {
         margin-right: 30px;
     }
 
-    .register-form-btn-div .register-btn{
+    .register-btn-div .register-btn{
         height: 40px;
         font-size: 1.2em;
         padding: 0 20px;
     }
 
-    .register-form-input-div label{
+    .register-input-div label{
         font-size: 1.1em;
     }
 
@@ -64,15 +64,15 @@
        flex-flow: column nowrap;
     }
 
-    .register-form-input-div{
+    .register-input-div{
         margin-top: 30px;
     }
 
-    .register-form-input-div:nth-child(1) {
+    .register-input-div:nth-child(1) {
         margin-right: 0;
     }
 
-    .register-form-input-div label{
+    .register-input-div label{
         font-size: 1em;
     }
 
@@ -87,14 +87,14 @@
         letter-spacing: 2.5px;
     }
 
-    .register-form-btn-div{
+    .register-btn-div{
         display: flex;
         align-items: center;
         justify-content: space-around;
         margin-top: 30px !important;
     }
 
-    .register-form-btn-div .register-btn{
+    .register-btn-div .register-btn{
         height: 35px;
         font-size: 1.1em;
     }

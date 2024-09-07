@@ -141,16 +141,16 @@ if (audioDiv){
     playlistDiv.addEventListener('click', (e) => {
         let element = e.target
         let soundWaveIcon =  ''
-        if (!element.classList.contains('music-div')){
-            element = element.parentElement
+        if (element.tagName.toLowerCase() !== 'div'){
+            element = element.closest('div')
             soundWaveIcon = element.querySelector('.sound-wave-icon')
         }else{
             soundWaveIcon = element.querySelector('.sound-wave-icon')
         }
         const music = getMusic(element.id)
         const currentAudio = sessionStorage.getItem('currentAudio')
-        lastSoundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon')
         if(currentAudio){
+            lastSoundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon')
             toStopAudio = getMusic(currentAudio)
             toStopAudio.pause()
             soundOff.style.display = 'block'
@@ -183,7 +183,7 @@ function getMusic(id){
 // ---------- EVENTO PARA DESAPARECIMENTO DA PLAYLIST ----------
 
 window.addEventListener('click', (e) => {
-    element = e.target
+    const element = e.target
     if(!playlistDiv.contains(element) && element !== musicIcon && window.getComputedStyle(playlistDiv).display === 'block'){
         playlistDiv.classList.add('disappear-animation')
         setTimeout(() => {

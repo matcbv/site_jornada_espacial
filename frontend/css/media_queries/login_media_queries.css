@@ -1,24 +1,24 @@
 @media (max-width: 992px){
 
-    .login-form-content-div{
-        width: 525px;
+    .login-form-div{
+        width: 415px;
         padding: 30px 0;
     }
     
-    .login-form-text{
+    .login-text-div{
         width: 80%;
     }
 
-    .login-form-text h1{
+    .login-text-div h1{
         font-size: 1.4em;
         text-shadow: 0 0 8px hsla(0,0%,100%,.2);
     }
 
-    .login-form-text p{
+    .login-text-div p{
         font-size: 0.9em;
     }
 
-    .login-form-input-div input{
+    .login-input-div input{
         font-size: 0.9em;
         width: 220px;
         height: 30px;
@@ -28,17 +28,17 @@
         margin-bottom: 20px;
     }
     
-    .login-form-btn-div .login-btn{
+    .login-btn-div .login-btn{
         font-size: 0.8em;
         padding: 8px 10px;
         margin-top: 10px;
     }
 
-    .login-form-input-div img{
+    .login-input-div img{
         width: 25px;
     }
 
-    .login-form-input-div label{
+    .login-input-div label{
         font-size: 1em;
     }
 
@@ -47,18 +47,19 @@
         margin: 30px 0;
     }
 
-    .login-form-input-div img{
+    .login-input-div img{
         bottom: 3px;
     }
 }
 
 @media (max-width: 768px){
 
-    .login-form-content-div{
+    .login-form-div{
         width: 85vw;
+        max-width: 415px;
     }
 
-    .login-form-btn-div .login-btn:first-child{
+    .login-btn-div .login-btn:first-child{
         margin-right: 20px;
     }
 }

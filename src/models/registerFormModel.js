@@ -10,13 +10,13 @@ class Register {
 
     async checkData() {
         for (let k of Object.keys(this.data)) {
+            
             if (k === 'email') {
                 if (!validator.isEmail(this.data[k])) {
                     this.error_list.push({ [k]: 'Email inválido' })
                 }
 
             } else if (k === 'birthday') {
-                // Especificando o único formato a ser aceito com o stricMode:
                 if (!validator.isDate(this.data[k], { format: 'DD/MM/YYYY', strictMode: true })) {
                     this.error_list.push({ [k]: 'Data inválida' })
                 }
@@ -33,7 +33,7 @@ class Register {
                 const numericArr = Array.from(this.data[k]).filter(l => validator.isNumeric(l))
                 const upperArr = alphaArr.filter(l => validator.isUppercase(l))
 
-                if (this.data[k].length < 8 || numericArr.length === 0 || alphaArr.length === 0 || upperArr.length === 0) {
+                if (this.data[k].length < 8 || this.data[k].length > 16 || numericArr.length === 0 || alphaArr.length === 0 || upperArr.length === 0) {
                     this.error_list.push({ [k]: 'Senha inválida' })
                 } else {
                     const salt = bcrypt.genSaltSync()
@@ -44,15 +44,11 @@ class Register {
                 if (!this.data[k]) {
                     this.error_list.push({ [k]: 'Usuário inválido' })
                 } else {
-                    const errorList = await this._checkUser()
-                    return errorList
+                    await this._checkUser()
                 }
             }
         }
-    }
-
-    saveData() {
-        userModel.create(this.data)
+        return this.error_list
     }
 
     async _checkUser() {
@@ -60,7 +56,10 @@ class Register {
         if (dataQuery) {
             this.error_list.push({ 'username': 'Usuário já existente' })
         }
-        return this.error_list
+    }
+
+    saveData() {
+        userModel.create(this.data)
     }
 }
 

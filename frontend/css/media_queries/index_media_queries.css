@@ -25,7 +25,7 @@
 
     .galaxies-section{
         flex-flow: column nowrap;
-        padding: 8vh 0 14vh 0;
+        padding: 25px 0 115px 0;
     }
 
     .galaxies-text{
@@ -57,11 +57,12 @@
 
     .milkyway-section{
         flex-flow: column-reverse nowrap;
-        padding-top: 4vh;
+        padding-top: 40px;
     }
 
     .triangle-section{
         flex-flow: column-reverse nowrap;
+        padding: 50px 0 125px 0 !important;
     }
 }
 

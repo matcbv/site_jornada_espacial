@@ -6,12 +6,12 @@
     position: relative;
 }
 
-.login-form-content-div{
+.login-form-div{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     background-image: linear-gradient(rgba(27, 22, 35, 0.8),  rgba(27, 22, 35, 0.7), transparent);
-    width: 775px;
+    width: 580px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
     outline: 1px solid white;
@@ -24,14 +24,15 @@
     width: 80%;
 }
 
-.login-form .login-form-input-div{
+.login-input-div{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     position: relative;
+    width: 310px;
 }
 
-.login-form-input-div input{
+.login-input-div input{
     height: 40px;
     width: 310px;
     border-radius: 20px;
@@ -45,12 +46,16 @@
     padding: 0 0 0 45px;
 }
 
-.login-form-input-div input:focus{
+.login-input-div input::placeholder{
+    color: rgb(217, 57, 57);
+}
+
+.login-input-div input:focus{
     outline: 1px solid rgb(48, 31, 85);
     box-shadow: 0 0 5px rgb(48, 31, 85, 0.5);
 }
 
-.login-form-input-div label{
+.login-input-div label{
     font-size: 1.1em;
     font-family: 'Inconsolata';
     font-weight: bold;
@@ -58,39 +63,43 @@
     padding-left: 10px;
 }
 
-.login-form-input-div img{
+.login-input-div span{
+    display: flex;
+    align-items: center;
+}
+
+.login-icons{
     position: absolute;
     left: 10px;
-    bottom: 5px;
 }
 
 .login-form div:not(:last-child){
     margin-bottom: 30px;
 }
 
-.login-form-text{
+.login-text-div{
     width: 80%;
 }
 
-.login-form-text h1{
+.login-text-div h1{
     color: yellow;
     font-family: monospace;
     font-size: 2.2em;
     margin-bottom: 20px;
 }
 
-.login-form-text p{
+.login-text-div p{
     font-family: 'Inconsolata';
     font-size: 1.1em;
 }
 
-.login-form-btn-div{
+.login-btn-div{
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
 }
 
-.login-form-btn-div .login-btn{
+.login-btn-div .login-btn{
     background-color: transparent;
     border: none;
     border-radius: 20px;
@@ -102,7 +111,7 @@
     padding: 10px 20px;
 }
 
-.login-form-btn-div .login-btn:first-child{
+.login-btn-div .login-btn:first-child{
     margin-right: 30px;
 }
 

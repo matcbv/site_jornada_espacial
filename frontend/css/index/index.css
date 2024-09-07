@@ -104,7 +104,7 @@
     position: fixed;
     bottom: 50px;
     left: 50px;
-    width: 230px;
+    width: 220px;
     height: 150px;
     border-radius: 7px;
     background-color: rgb(9, 8, 23);
@@ -240,6 +240,7 @@
 
 .triangle-section{
     grid-area: triangle-section;
+    padding-bottom: 155px !important;
 }
 
 .triangle-section .triangle-img img{
@@ -270,7 +271,7 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    padding: 20vh 0;
+    padding: 120px 0;
 }
 
 .galaxies-section:not(.triangle-section){

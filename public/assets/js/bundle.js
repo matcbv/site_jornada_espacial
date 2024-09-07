@@ -687,16 +687,16 @@ if (audioDiv) {
   playlistDiv.addEventListener('click', function (e) {
     var element = e.target;
     var soundWaveIcon = '';
-    if (!element.classList.contains('music-div')) {
-      element = element.parentElement;
+    if (element.tagName.toLowerCase() !== 'div') {
+      element = element.closest('div');
       soundWaveIcon = element.querySelector('.sound-wave-icon');
     } else {
       soundWaveIcon = element.querySelector('.sound-wave-icon');
     }
     var music = getMusic(element.id);
     var currentAudio = sessionStorage.getItem('currentAudio');
-    lastSoundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon');
     if (currentAudio) {
+      lastSoundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon');
       toStopAudio = getMusic(currentAudio);
       toStopAudio.pause();
       soundOff.style.display = 'block';
@@ -737,7 +737,7 @@ function getMusic(id) {
 // ---------- EVENTO PARA DESAPARECIMENTO DA PLAYLIST ----------
 
 window.addEventListener('click', function (e) {
-  element = e.target;
+  var element = e.target;
   if (!playlistDiv.contains(element) && element !== musicIcon && window.getComputedStyle(playlistDiv).display === 'block') {
     playlistDiv.classList.add('disappear-animation');
     setTimeout(function () {
@@ -988,16 +988,23 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 // ---------- HTML ELEMENTS ----------
 
+// ---------- FORM MAIN ----------
 var registerMain = document.querySelector('.register-main');
+
+// ---------- ICONS ---------- 
 var eyeIcon = document.querySelector('.eye-icon');
 var requirementsIcon = document.querySelector('.requirements-icon');
 var requirementsDiv = document.querySelector('.password-requirements');
-var passwordInput = document.querySelector('.password-input');
 var crossline = document.querySelector('.crossline');
+
+// ---------- FORMS ----------
 var registerForm = document.querySelector('.register-form');
 var codeForm = document.querySelector('.code-form');
 var loginForm = document.querySelector('.login-form');
+
+// ---------- INPUTS ----------
 var inputs = document.querySelectorAll('input');
+var passwordInput = document.querySelector('.password-input');
 
 // ---------- REGISTER FORM ANIMATIONS ----------
 
@@ -1008,22 +1015,17 @@ if (registerForm || codeForm || loginForm) {
     var _loop = function _loop() {
       var input = _step.value;
       if (input.type !== 'submit' && input.type !== 'button') {
-        if (input.value) {
-          if (input.name === 'password') {
-            input.type = 'text';
-            input.addEventListener('click', function () {
-              input.type = 'password';
-            });
-          }
-          input.style.color = '#d93939';
+        if (input.placeholder && input.name === 'password') {
+          input.type = 'text';
+          input.addEventListener('click', function () {
+            input.type = 'password';
+          });
         }
         input.addEventListener('click', function () {
-          input.value = '';
-          input.style.color = 'white';
+          input.placeholder = '';
         });
         input.addEventListener('focus', function () {
-          input.value = '';
-          input.style.color = 'white';
+          input.placeholder = '';
         });
       }
     };
@@ -1076,9 +1078,7 @@ function hideRequirements(requirementsDivStyles) {
   registerMain.addEventListener('click', function (e) {
     var element = e.target;
     if (!element.classList.contains('password-requirements' || 0)) {
-      console.log('passei aqui');
       if (requirementsDivStyles.display === 'flex') {
-        console.log('aqui tambem');
         requirementsDiv.classList.remove('fast-appear-animation');
         requirementsDiv.classList.add('disappear-animation');
         setTimeout(function () {

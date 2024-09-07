@@ -1,15 +1,24 @@
 // ---------- HTML ELEMENTS ----------
 
+// ---------- FORM MAIN ----------
 const registerMain = document.querySelector('.register-main')
+
+// ---------- ICONS ---------- 
 const eyeIcon = document.querySelector('.eye-icon')
 const requirementsIcon = document.querySelector('.requirements-icon')
 const requirementsDiv = document.querySelector('.password-requirements')
-const passwordInput = document.querySelector('.password-input')
 const crossline = document.querySelector('.crossline')
+
+
+// ---------- FORMS ----------
 const registerForm = document.querySelector('.register-form')
 const codeForm = document.querySelector('.code-form')
 const loginForm = document.querySelector('.login-form')
+
+// ---------- INPUTS ----------
 const inputs = document.querySelectorAll('input')
+const passwordInput = document.querySelector('.password-input')
+
 
 // ---------- REGISTER FORM ANIMATIONS ----------
 
@@ -17,25 +26,19 @@ if (registerForm || codeForm || loginForm){
     for (let input of inputs){
         if (input.type !== 'submit' && input.type !== 'button'){
 
-            if (input.value){
-                if (input.name === 'password'){
-                    input.type = 'text'
-
-                    input.addEventListener('click', () => {
-                        input.type = 'password'
-                    })
-                }
-                input.style.color = '#d93939'
+            if (input.placeholder && input.name === 'password'){
+                input.type = 'text'
+                input.addEventListener('click', () => {
+                    input.type = 'password'
+                })
             }
     
             input.addEventListener('click', () => {
-                input.value = ''
-                input.style.color = 'white'
+                input.placeholder = ''
             })
     
             input.addEventListener('focus', () => {
-                input.value = ''
-                input.style.color = 'white'
+                input.placeholder = ''
             })
         }
     }
@@ -79,10 +82,8 @@ if (requirementsIcon){
 function hideRequirements(requirementsDivStyles){
     registerMain.addEventListener('click', (e) => {
         const element = e.target
-        if (!element.classList.contains('password-requirements' || !element.closest(div).classList.contains('password-requirements'))){
-            console.log('passei aqui')
+        if (!element.classList.contains('password-requirements' || !element.closest('div').classList.contains('password-requirements'))){
             if (requirementsDivStyles.display === 'flex'){
-                console.log('aqui tambem')
                 requirementsDiv.classList.remove('fast-appear-animation')
                 requirementsDiv.classList.add('disappear-animation')
                 setTimeout(() => {
