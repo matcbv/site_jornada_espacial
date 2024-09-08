@@ -3,7 +3,8 @@
     <%- include(header) %>
     <main class="min-h-screen max-w-100">
         <%- include(fluidHeader) %>
-        <div class="bg-main min-h-screen max-w-full grid grid-cols-1 md:grid-cols-[96px_auto]">
+        <div class="bg-main min-h-screen max-w-full grid grid-cols-1 md:grid-cols-[96px_auto] relative">
+            <img class=" w-10 md:hidden fixed top-1 left-1 cursor-pointer z-10" src="/images/profile_images/right_arrow_icon.png" alt="Abrir menu de navegação">
            <nav class="bg-dark-blue border-y-0 border-l-0 border-r-2 border-solid border-r-white hidden md:flex md:flex-col md:items-center md:justify-center md:w-24">
                 <ul class="list-none">
                     <li class="mb-7">
@@ -28,29 +29,32 @@
                     </li>
                 </ul>
            </nav>
-           <section class="py-28">
-                <div class="flex items-center pb-20 mb-20 px-40 border-x-0 border-t-0 border-b-2 border-solid border-original-yellow">
-                    <div class="text-center pr-14">
+           <section class="py-16 md:py-28">
+                <div class="flex items-center pb-12 md:pb-20 mb-8 md:mb-20 px-5 md:px-40 border-x-0 border-t-0 border-b-2 border-solid border-original-yellow">
+                    <div class="text-center pr-5 md:pr-14">
                         <div class="relative group">
-                            <img class="mb-4 font-mono w-52" src="/images/profile_images/astronaut_man_icon.png" alt="Ícone de perfil">
-                            <img class="hidden absolute w-10 cursor-pointer group-hover:inline" src="/images/profile_images/edit_icon.png" alt="Editar ícone" title="Editar ícone">
+                            <img class="mb-1 md:mb-4 font-mono w-20 md:w-52" src="/images/profile_images/astronaut_man_icon.png" alt="Ícone de perfil">
+                            <img class="hidden absolute z-10 md:w-10 md:-right-4 cursor-pointer md:group-hover:inline" src="/images/profile_images/edit_icon.png" alt="Editar ícone" title="Editar ícone">
                         </div>
-                        <h1 class="text-3xl font-mono">matcbv</h1>
+                        <p class="text-lg md:text-3xl font-mono font-bold">matcbv</p>
                     </div>
                     <div>
-                        <h2 class="text-3xl mb-7 font-xanh-mono tracking-widest text-original-yellow">Sobre o Mochileiro</h2>
-                        <p class="text-xl font-mono">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil temporibus, pariatur, ad ut impedit, qui quod rerum repellat ab labore hic ipsam quidem a! Dignissimos a expedita quis sequi assumenda.</p>
+                        <h1 class="text-lg md:text-3xl mb-2 md:mb-7 font-xanh-mono tracking-widest text-original-yellow">Sobre o Mochileiro</h1>
+                        <p class="text-sm md:text-xl font-mono">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil temporibus, pariatur, ad ut impedit, qui quod rerum repellat ab labore hic ipsam quidem a! Dignissimos a expedita quis sequi assumenda.</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 px-20 pt-8">
-                    <div class="bg-mid-blue-transparent rounded-lg p-9 border-2 border-solid border-blue-950 tracking-widest">
-                        <h3 class="mb-7 font-mono text-4xl text-gray-200 text-center">Insígnias</h3>
+                <div class="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 px-5 md:px-20 pt-8">
+                    <div class="bg-mid-blue-transparent rounded-lg p-9 border-2 border-solid border-blue-950 tracking-widest order-last md:order-first">
+                        <h3 class="font-rubik-mono-one text-2xl md:text-3xl text-gray-200 text-center webkit-text-black">Insígnias</h3>
                         <div>
                         </div>
                     </div>
-                    <div class="text-center">
-                        <h3 class="mb-7 font-rubik-mono-one text-3xl text-mid-blue webkit-text-white">Corpo celeste favorito</h3>
-                        <img src="/images/milkyway_images/earth.png" alt="Corpo celeste favorito">
+                    <div class="text-center mb-12 md:mb-0">
+                        <h3 class="mb-7 font-rubik-mono-one text-2xl md:text-3xl text-mid-blue webkit-text-white order-first md:order-last">Corpo celeste favorito</h3>
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="/images/milkyway_images/earth_popup.png" type="image/png" loading="eager">
+                            <img class="popup-image" id="popup-img-earth" src="/images/milkyway_images/earth.png" alt="Corpo celeste favorito" loading="eager">
+                        </picture>
                     </div>
                 </div>
            </section>
