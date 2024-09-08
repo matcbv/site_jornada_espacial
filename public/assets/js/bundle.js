@@ -1,6 +1,58 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./frontend/css/account/login.css":
+/*!****************************************!*\
+  !*** ./frontend/css/account/login.css ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/account/profile/tailwind.css":
+/*!***************************************************!*\
+  !*** ./frontend/css/account/profile/tailwind.css ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/account/register.css":
+/*!*******************************************!*\
+  !*** ./frontend/css/account/register.css ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/account/signin_template.css":
+/*!**************************************************!*\
+  !*** ./frontend/css/account/signin_template.css ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./frontend/css/galaxies/general_galaxies.css":
 /*!****************************************************!*\
   !*** ./frontend/css/galaxies/general_galaxies.css ***!
@@ -356,45 +408,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************!*\
   !*** ./frontend/css/popups/popups.css ***!
   \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./frontend/css/profile/login.css":
-/*!****************************************!*\
-  !*** ./frontend/css/profile/login.css ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./frontend/css/profile/register.css":
-/*!*******************************************!*\
-  !*** ./frontend/css/profile/register.css ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./frontend/css/profile/signin_template.css":
-/*!**************************************************!*\
-  !*** ./frontend/css/profile/signin_template.css ***!
-  \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1097,37 +1110,41 @@ function hideRequirements(requirementsDivStyles) {
   !*** ./frontend/js/style_imports.js ***!
   \**************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _css_general_window_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/general/window.css */ "./frontend/css/general/window.css");
-/* harmony import */ var _css_general_footer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/general/footer.css */ "./frontend/css/general/footer.css");
-/* harmony import */ var _css_general_header_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/general/header.css */ "./frontend/css/general/header.css");
-/* harmony import */ var _css_general_fonts_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/general/fonts.css */ "./frontend/css/general/fonts.css");
-/* harmony import */ var _css_general_ideaform_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/general/ideaform.css */ "./frontend/css/general/ideaform.css");
-/* harmony import */ var _css_general_error_404_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/general/error_404.css */ "./frontend/css/general/error_404.css");
-/* harmony import */ var _css_general_fluid_header_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/fluid_header.css */ "./frontend/css/general/fluid_header.css");
-/* harmony import */ var _css_general_playlist_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/general/playlist.css */ "./frontend/css/general/playlist.css");
-/* harmony import */ var _css_general_animation_classes_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/general/animation_classes.css */ "./frontend/css/general/animation_classes.css");
-/* harmony import */ var _css_general_general_keyframes_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/general/general_keyframes.css */ "./frontend/css/general/general_keyframes.css");
-/* harmony import */ var _css_general_aboutme_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/general/aboutme.css */ "./frontend/css/general/aboutme.css");
-/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/index/general_index.css */ "./frontend/css/index/general_index.css");
-/* harmony import */ var _css_index_index_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/index.css */ "./frontend/css/index/index.css");
-/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./frontend/css/galaxies/general_galaxies.css");
-/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./frontend/css/galaxies/main_galaxies.css");
-/* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/popups/popups.css */ "./frontend/css/popups/popups.css");
-/* harmony import */ var _css_profile_signin_template_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/profile/signin_template.css */ "./frontend/css/profile/signin_template.css");
-/* harmony import */ var _css_profile_login_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/profile/login.css */ "./frontend/css/profile/login.css");
-/* harmony import */ var _css_profile_register_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/profile/register.css */ "./frontend/css/profile/register.css");
-/* harmony import */ var _css_media_queries_index_media_queries_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../css/media_queries/index_media_queries.css */ "./frontend/css/media_queries/index_media_queries.css");
-/* harmony import */ var _css_media_queries_header_media_queries_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../css/media_queries/header_media_queries.css */ "./frontend/css/media_queries/header_media_queries.css");
-/* harmony import */ var _css_media_queries_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../css/media_queries/footer_media_queries.css */ "./frontend/css/media_queries/footer_media_queries.css");
-/* harmony import */ var _css_media_queries_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../css/media_queries/galaxies_media_queries.css */ "./frontend/css/media_queries/galaxies_media_queries.css");
-/* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./frontend/css/media_queries/popup_media_queries.css");
-/* harmony import */ var _css_media_queries_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../css/media_queries/error_404_media_queries.css */ "./frontend/css/media_queries/error_404_media_queries.css");
-/* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./frontend/css/media_queries/ideaform_media_queries.css");
-/* harmony import */ var _css_media_queries_playlist_media_queries_css__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../css/media_queries/playlist_media_queries.css */ "./frontend/css/media_queries/playlist_media_queries.css");
-/* harmony import */ var _css_media_queries_aboutme_media_queries_css__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../css/media_queries/aboutme_media_queries.css */ "./frontend/css/media_queries/aboutme_media_queries.css");
-/* harmony import */ var _css_media_queries_signin_template_media_queries_css__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../css/media_queries/signin_template_media_queries.css */ "./frontend/css/media_queries/signin_template_media_queries.css");
-/* harmony import */ var _css_media_queries_login_media_queries_css__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../css/media_queries/login_media_queries.css */ "./frontend/css/media_queries/login_media_queries.css");
-/* harmony import */ var _css_media_queries_register_media_queries_css__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../css/media_queries/register_media_queries.css */ "./frontend/css/media_queries/register_media_queries.css");
+/* harmony import */ var _css_account_profile_tailwind_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/account/profile/tailwind.css */ "./frontend/css/account/profile/tailwind.css");
+/* harmony import */ var _css_general_window_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/general/window.css */ "./frontend/css/general/window.css");
+/* harmony import */ var _css_general_footer_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/general/footer.css */ "./frontend/css/general/footer.css");
+/* harmony import */ var _css_general_header_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/general/header.css */ "./frontend/css/general/header.css");
+/* harmony import */ var _css_general_fonts_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/general/fonts.css */ "./frontend/css/general/fonts.css");
+/* harmony import */ var _css_general_ideaform_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/general/ideaform.css */ "./frontend/css/general/ideaform.css");
+/* harmony import */ var _css_general_error_404_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/error_404.css */ "./frontend/css/general/error_404.css");
+/* harmony import */ var _css_general_fluid_header_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/general/fluid_header.css */ "./frontend/css/general/fluid_header.css");
+/* harmony import */ var _css_general_playlist_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/general/playlist.css */ "./frontend/css/general/playlist.css");
+/* harmony import */ var _css_general_animation_classes_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/general/animation_classes.css */ "./frontend/css/general/animation_classes.css");
+/* harmony import */ var _css_general_general_keyframes_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/general/general_keyframes.css */ "./frontend/css/general/general_keyframes.css");
+/* harmony import */ var _css_general_aboutme_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/general/aboutme.css */ "./frontend/css/general/aboutme.css");
+/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/general_index.css */ "./frontend/css/index/general_index.css");
+/* harmony import */ var _css_index_index_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/index/index.css */ "./frontend/css/index/index.css");
+/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./frontend/css/galaxies/general_galaxies.css");
+/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./frontend/css/galaxies/main_galaxies.css");
+/* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/popups/popups.css */ "./frontend/css/popups/popups.css");
+/* harmony import */ var _css_account_signin_template_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/account/signin_template.css */ "./frontend/css/account/signin_template.css");
+/* harmony import */ var _css_account_login_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/account/login.css */ "./frontend/css/account/login.css");
+/* harmony import */ var _css_account_register_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../css/account/register.css */ "./frontend/css/account/register.css");
+/* harmony import */ var _css_media_queries_index_media_queries_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../css/media_queries/index_media_queries.css */ "./frontend/css/media_queries/index_media_queries.css");
+/* harmony import */ var _css_media_queries_header_media_queries_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../css/media_queries/header_media_queries.css */ "./frontend/css/media_queries/header_media_queries.css");
+/* harmony import */ var _css_media_queries_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../css/media_queries/footer_media_queries.css */ "./frontend/css/media_queries/footer_media_queries.css");
+/* harmony import */ var _css_media_queries_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../css/media_queries/galaxies_media_queries.css */ "./frontend/css/media_queries/galaxies_media_queries.css");
+/* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./frontend/css/media_queries/popup_media_queries.css");
+/* harmony import */ var _css_media_queries_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../css/media_queries/error_404_media_queries.css */ "./frontend/css/media_queries/error_404_media_queries.css");
+/* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./frontend/css/media_queries/ideaform_media_queries.css");
+/* harmony import */ var _css_media_queries_playlist_media_queries_css__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../css/media_queries/playlist_media_queries.css */ "./frontend/css/media_queries/playlist_media_queries.css");
+/* harmony import */ var _css_media_queries_aboutme_media_queries_css__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../css/media_queries/aboutme_media_queries.css */ "./frontend/css/media_queries/aboutme_media_queries.css");
+/* harmony import */ var _css_media_queries_signin_template_media_queries_css__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../css/media_queries/signin_template_media_queries.css */ "./frontend/css/media_queries/signin_template_media_queries.css");
+/* harmony import */ var _css_media_queries_login_media_queries_css__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../css/media_queries/login_media_queries.css */ "./frontend/css/media_queries/login_media_queries.css");
+/* harmony import */ var _css_media_queries_register_media_queries_css__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../css/media_queries/register_media_queries.css */ "./frontend/css/media_queries/register_media_queries.css");
+// TAILWIND
+
+
 // GENERAL STYLES
 
 
@@ -1152,7 +1169,7 @@ __webpack_require__.r(__webpack_exports__);
 // POPUPS STYLES
 
 
-//PROFILE IMPORTS
+// ACCOUNT IMPORTS
 
 
 

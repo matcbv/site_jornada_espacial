@@ -1,3 +1,6 @@
+// TAILWIND
+import "../css/account/profile/tailwind.css"
+
 // GENERAL STYLES
 import "../css/general/window.css";
 import "../css/general/footer.css";
@@ -22,10 +25,10 @@ import "../css/galaxies/main_galaxies.css"
 // POPUPS STYLES
 import "../css/popups/popups.css"
 
-//PROFILE IMPORTS
-import "../css/profile/signin_template.css";
-import "../css/profile/login.css";
-import "../css/profile/register.css";
+// ACCOUNT IMPORTS
+import "../css/account/signin_template.css";
+import "../css/account/login.css";
+import "../css/account/register.css";
 
 // MEDIA QUERIES
 import "../css/media_queries/index_media_queries.css"

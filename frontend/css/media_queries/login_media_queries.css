@@ -9,6 +9,10 @@
         width: 80%;
     }
 
+    .login-input-div{
+        width: 220px;
+    }
+
     .login-text-div h1{
         font-size: 1.4em;
         text-shadow: 0 0 8px hsla(0,0%,100%,.2);

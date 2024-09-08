@@ -10,8 +10,13 @@
         width: 250px;
     }
 
-    .password-div div:last-child img{
+    .eye-icon{
         width: 28px;
+    }
+
+    .crossline{
+        height: 28px;
+        right: 21px
     }
 
     .register-main h1{

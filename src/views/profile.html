@@ -1,0 +1,65 @@
+<%- include(head) %>
+<body>
+    <%- include(header) %>
+    <main class="min-h-screen max-w-100">
+        <%- include(fluidHeader) %>
+        <div class="bg-main min-h-screen max-w-full grid grid-cols-1 md:grid-cols-[96px_auto]">
+           <nav class="bg-dark-blue border-y-0 border-l-0 border-r-2 border-solid border-r-white hidden md:flex md:flex-col md:items-center md:justify-center md:w-24">
+                <ul class="list-none">
+                    <li class="mb-7">
+                        <a class="block" href="">
+                            <img class="w-14 cursor-pointer" src="/images/profile_images/edit_profile_icon.png" alt="Editar perfil" title="Editar perfil">
+                        </a>
+                    </li>
+                    <li class="mb-7">
+                        <a class="block cursor-pointer" href="">
+                            <img class="w-14" src="/images/profile_images/game_icon.png" alt="Jogos" title="Jogos">
+                        </a>
+                    </li>
+                    <li class="mb-7">
+                        <a class="block cursor-pointer" href="">
+                            <img class="w-14" src="/images/profile_images/rank_icon.png" alt="Rank" title="Rank">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="block" href="">
+                            <img class="w-14 cursor-pointer" src="/images/profile_images/like_icon.png" alt="Curtir" title="Curtir">
+                        </a>
+                    </li>
+                </ul>
+           </nav>
+           <section class="py-28">
+                <div class="flex items-center pb-20 mb-20 px-40 border-x-0 border-t-0 border-b-2 border-solid border-original-yellow">
+                    <div class="text-center pr-14">
+                        <div class="relative group">
+                            <img class="mb-4 font-mono w-52" src="/images/profile_images/astronaut_man_icon.png" alt="Ícone de perfil">
+                            <img class="hidden absolute w-10 cursor-pointer group-hover:inline" src="/images/profile_images/edit_icon.png" alt="Editar ícone" title="Editar ícone">
+                        </div>
+                        <h1 class="text-3xl font-mono">matcbv</h1>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl mb-7 font-xanh-mono tracking-widest text-original-yellow">Sobre o Mochileiro</h2>
+                        <p class="text-xl font-mono">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil temporibus, pariatur, ad ut impedit, qui quod rerum repellat ab labore hic ipsam quidem a! Dignissimos a expedita quis sequi assumenda.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 px-20 pt-8">
+                    <div class="bg-mid-blue-transparent rounded-lg p-9 border-2 border-solid border-blue-950 tracking-widest">
+                        <h3 class="mb-7 font-mono text-4xl text-gray-200 text-center">Insígnias</h3>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="mb-7 font-rubik-mono-one text-3xl text-mid-blue webkit-text-white">Corpo celeste favorito</h3>
+                        <img src="/images/milkyway_images/earth.png" alt="Corpo celeste favorito">
+                    </div>
+                </div>
+           </section>
+        </div>
+        <%- include(playlist) %>
+        <%- include(audio) %>
+        <%- include(swordfish) %>
+    </main>
+    <%- include(footer) %>
+    <script src="/js/bundle.js"></script>
+</body>
+</html>

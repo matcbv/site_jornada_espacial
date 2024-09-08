@@ -37,6 +37,8 @@ router.post('/account/signup/register', registerController.signup)
 router.get('/account/signup/validation', pagesController.validationPage)
 // Validação da conta
 router.post('/validation', registerController.validation)
+// Página inicial do perfil do usuário:
+router.get('/profile', pagesController.profile)
 // Enviando dados do formulario
 router.post('/ideaform/sendidea', ideaformController.sendIdea)
 // Requisição dos popups

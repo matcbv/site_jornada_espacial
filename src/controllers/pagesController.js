@@ -42,6 +42,10 @@ const pagesController = {
     validationPage: (req, res) => {
         return res.render('code_popup.html')
     },
+
+    profile: (req, res) => {
+        return res.render('profile.html')
+    },
     
     error_404: (req, res) => {
         return res.render('error_404.html')
