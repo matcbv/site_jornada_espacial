@@ -13,8 +13,6 @@
         width: 100%;
         background-color: rgb(16 13 21);
         border-radius: 10px;
-        border: 2px solid rgb(175, 175, 0);
-        box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
         padding: 20px 0;
         margin: 0;
     }
@@ -66,12 +64,12 @@
         flex-flow: row nowrap;
     }
 
-    .icons-div img{
+    .icons-div img, .close-icon{
         width: 25px;
         height: 25px;
     }
 
-    .popup-content .icons-div .close-icon{
+    .star-icon, .selected-star-icon{
         margin-bottom: 0;
         margin-right: 10px;
     }

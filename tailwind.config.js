@@ -22,8 +22,9 @@ module.exports = {
         'dark-blue': '#040216',
         'mid-blue': '#121251',
         'mid-blue-transparent': '#1212511f',
-        'dark-purple-transparent': '#0f003333',
-        'light-blue': '#6f7acd',
+        'light-purple-transparent': '#5c69cf38',
+        'dark-purple-transparent': '#12125152',
+        'light-blue': '#5c69cf',
         'original-yellow': 'yellow',
         'white-gray': '#d1d1d1',
       },
@@ -46,6 +47,9 @@ module.exports = {
       zIndex:{
         '998': '998',
         '999': '999'
+      },
+      backgroundImage:{
+        'radial-purple': 'radial-gradient(#16124780, transparent)'
       }
     },
   },

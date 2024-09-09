@@ -818,6 +818,7 @@ if (galaxiesMain) {
               if (!res.ok) {
                 throw new Error('Erro na requisição do popup.');
               } else {
+                sessionStorage.setItem('currentBody', "".concat(element.id));
                 res.text().then(function (html) {
                   getPopup(html, galaxiesMain);
                 });
@@ -848,10 +849,11 @@ function getPopup(html, main) {
   main.appendChild(divPopup);
   closeAction(main, divPopup, divPopup.querySelector('.close-icon'));
   var ideaIcon = document.querySelector('.idea-icon');
-  if (ideaIcon) {
-    ideaIcon.removeEventListener('click', ideaForm);
-    ideaIcon.addEventListener('click', ideaForm);
-  }
+  ideaIcon.addEventListener('click', ideaForm);
+  var starIcon = document.querySelector('.star-icon');
+  starIcon.addEventListener('click', function () {
+    window.location.href = "/favbody/".concat(sessionStorage.getItem('currentBody'));
+  });
 }
 
 // Função do botão de fechar o popup

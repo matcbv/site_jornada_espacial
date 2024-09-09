@@ -23,9 +23,9 @@
     }
 
     .login-input-div input{
-        font-size: 0.9em;
+        font-size: 1.1em;
         width: 220px;
-        height: 30px;
+        height: 35px;
     }
 
     .login-form div:not(:last-child){
@@ -40,6 +40,7 @@
 
     .login-input-div img{
         width: 25px;
+        bottom: 5px;
     }
 
     .login-input-div label{
@@ -49,10 +50,6 @@
     .horizontal-row{
         height: 2px;
         margin: 30px 0;
-    }
-
-    .login-input-div img{
-        bottom: 3px;
     }
 }
 

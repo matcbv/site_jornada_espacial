@@ -25,7 +25,7 @@
 
     .galaxies-section{
         flex-flow: column nowrap;
-        padding: 25px 0 115px 0;
+        padding: 0 0 110px 0;
     }
 
     .galaxies-text{
@@ -62,13 +62,21 @@
 
     .triangle-section{
         flex-flow: column-reverse nowrap;
-        padding: 50px 0 125px 0 !important;
+        padding: 35px 0 125px 0 !important;
+    }
+
+    .adromeda-section{
+        padding-top: 40px;
     }
 }
 
 @media (max-width: 768px){
 
     /* ------- INTRODUCTION SECTION ------- */
+
+    .intro-section{
+        margin-bottom: 100px;
+    }
 
     .intro-text-div{
         flex-flow: column nowrap;

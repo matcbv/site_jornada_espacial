@@ -19,7 +19,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    min-height: 85vh;
+    min-height: 75vh;
     background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7), transparent);
     font-family: monospace;
     opacity: 0;

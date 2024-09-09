@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true, trim: true },
     birthday: { type: String, required: true, trim: true },
     bio: {type: String, trim: true, maxlength: 200, default: 'Olá! Sou novo por aqui!'},
-    favBody: {type: String, trim:true, default: ''},
+    favBody: {type: String, trim:true, default: 'dotted_circle'},
     badges: {type: [String], trim:true, default: []}
 })
 

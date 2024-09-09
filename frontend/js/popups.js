@@ -13,6 +13,7 @@ if(galaxiesMain){
                         if (!res.ok){
                             throw new Error('Erro na requisição do popup.')
                         } else{
+                            sessionStorage.setItem('currentBody', `${element.id}`)
                             res.text().then(html => {
                                 getPopup(html, galaxiesMain)
                             })
@@ -40,11 +41,12 @@ function getPopup(html, main){
     closeAction(main, divPopup, divPopup.querySelector('.close-icon'))
 
     const ideaIcon = document.querySelector('.idea-icon')
-    
-    if(ideaIcon){
-        ideaIcon.removeEventListener('click', ideaForm)
-        ideaIcon.addEventListener('click', ideaForm)
-    }
+    ideaIcon.addEventListener('click', ideaForm)
+
+    const starIcon = document.querySelector('.star-icon')
+    starIcon.addEventListener('click', () => {
+        window.location.href = `/favbody/${sessionStorage.getItem('currentBody')}`
+    })   
 }
 
 // Função do botão de fechar o popup

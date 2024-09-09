@@ -1,8 +1,16 @@
-function checkLog(req, res, next){
+const userModel = require('../models/userModel')
+
+async function checkLog(req, res, next){
     if (req.session.user){
+        try{
+            const userData = await userModel.findOne({ username: req.session.user['username'] })
+            req.session.user = userData
+        } catch(e){
+            console.log('Falha ao atualizar dados do usuário', e)
+        }
         next()
     } else{
-        res.redirect('/account')
+        res.redirect('/account/signin')
     }
 }
 
@@ -21,9 +29,21 @@ function userData(req, res, next){
     res.locals.username = req.session.user['username']
     res.locals.birthday = req.session.user['birthday']
     res.locals.bio = req.session.user['bio']
-    res.locals.favBody = req.session['favBody']
-    res.locals.badges = req.session['badges']
+    res.locals.favBody = req.session.user['favBody']
+    res.locals.badges = req.session.user['badges']
     next()
 }
 
-module.exports = {checkLog, userData, logoutUser}
+async function addFavBody(req, res, next){
+    const currentBody = req.params.body
+    try{
+        const user = await userModel.findOne({ username: res.locals.username })
+        user.favBody = currentBody
+        await user.save()
+        res.redirect('/account/profile')
+    } catch(e){
+        console.log('Erro ao favoritar corpo celeste', e)
+    }
+}
+
+module.exports = {checkLog, userData, logoutUser, addFavBody}
