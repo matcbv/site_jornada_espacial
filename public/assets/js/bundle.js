@@ -1104,27 +1104,29 @@ function hideRequirements(requirementsDivStyles) {
 var rightArrowIcon = document.querySelector('.right-arrow-icon');
 var leftArrowIcon = document.querySelector('.left-arrow-icon');
 var profileNav = document.querySelector('.profile-nav');
-rightArrowIcon.addEventListener('click', function () {
-  var profileNavDisplay = window.getComputedStyle(profileNav).display;
-  if (profileNavDisplay === 'none') {
-    profileNav.classList.remove('to-left-animation');
-    profileNav.style.display = 'flex';
-    profileNav.classList.add('to-right-animation');
-    rightArrowIcon.style.display = 'none';
-    leftArrowIcon.style.display = 'inline';
-    leftArrowIcon.addEventListener('click', function () {
-      profileNav.classList.remove('to-right-animation');
-      profileNav.classList.add('to-left-animation');
-      setTimeout(function () {
-        profileNav.classList.remove('show-profile-nav');
-        profileNav.style.display = 'none';
-        profileNav.classList.remove('to-left-animation');
-        leftArrowIcon.style.display = 'none';
-        rightArrowIcon.style.display = 'inline';
-      }, 500);
-    });
-  }
-});
+if (rightArrowIcon) {
+  rightArrowIcon.addEventListener('click', function () {
+    var profileNavDisplay = window.getComputedStyle(profileNav).display;
+    if (profileNavDisplay === 'none') {
+      profileNav.classList.remove('to-left-animation');
+      profileNav.style.display = 'flex';
+      profileNav.classList.add('to-right-animation');
+      rightArrowIcon.style.display = 'none';
+      leftArrowIcon.style.display = 'inline';
+      leftArrowIcon.addEventListener('click', function () {
+        profileNav.classList.remove('to-right-animation');
+        profileNav.classList.add('to-left-animation');
+        setTimeout(function () {
+          profileNav.classList.remove('show-profile-nav');
+          profileNav.style.display = 'none';
+          profileNav.classList.remove('to-left-animation');
+          leftArrowIcon.style.display = 'none';
+          rightArrowIcon.style.display = 'inline';
+        }, 500);
+      });
+    }
+  });
+}
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
