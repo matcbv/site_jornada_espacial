@@ -103,11 +103,11 @@
     }
 
     .success-popup{
-        width: 150px;
-        padding: 20px;
+        width: 200px;
+        padding: 25px;
     }
 
     .success-popup p{
-        font-size: 0.9em;
+        font-size: 1.1em;
     }
 }

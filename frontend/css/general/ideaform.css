@@ -204,10 +204,10 @@ textarea:focus{
 .success-popup{
     display: flex;
     justify-content: center;
-    width: 200px;
+    width: 275px;
     position: absolute;
     top: 50px;
-    padding: 30px 20px;
+    padding: 40px;
     border-radius: 7px;
     background-color: rgb(9, 8, 23);
     border: 2px solid rgb(45, 62, 92);
@@ -220,6 +220,6 @@ textarea:focus{
     margin: auto;
     font-family: monospace;
     color: yellow;
-    font-size: 1.1em;
+    font-size: 1.3em;
     line-height: 1.5em;
 }

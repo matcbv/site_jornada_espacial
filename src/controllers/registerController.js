@@ -40,7 +40,7 @@ const registerController = {
 // Função para gerar o código de criação da conta:
 function codeGenerator(){
     let code = ''
-    for(let i=0; i<=6; i++){
+    for(let i=0; i<=5; i++){
         code += String.fromCharCode((Math.floor(Math.random() * 93 + 33)))
     }
     return code;

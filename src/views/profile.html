@@ -3,77 +3,75 @@
     <%- include(header) %>
     <main class="min-h-screen max-w-100 relative">
         <%- include(fluidHeader) %>
-        <div class="min-h-screen max-w-100 grid grid-cols-1 relative">
-            <div class=" z-10 cursor-pointer absolute right-2 mt-4 group">
-                <a class="logout-link block group-hover:hidden" href="/account/profile/logout">
-                    <img class="w-9 md:w-14" src="/images/profile_images/logout_icon.png" alt="Sair" title="Sair">
-                </a>
-                <a class="logout-link hidden group-hover:block" href="/account/profile/logout">
-                    <img class="w-9 md:w-14" src="/images/profile_images/logout_icon_hovered.png" alt="Sair" title="Sair">
-                </a>
-            </div>
-            <img class="right-arrow-icon arrow-icons" src="/images/profile_images/right_arrow_icon.png" alt="Abrir menu">
-            <img class="left-arrow-icon arrow-icons hidden" src="/images/profile_images/left_arrow.png" alt="Fechar menu">
-           <nav class="hidden h-92 profile-nav sm:flex flex-col items-center justify-center fixed z-998 pl-2 md:pl-4">
-                <ul class="list-none">
-                    <li class="mb-6">
-                        <a class="profile-nav-buttons" href="">
-                            <img class="nav-button-images" src="/images/profile_images/edit_profile_icon.png" alt="Editar perfil" title="Editar perfil">
-                        </a>
-                    </li>
-                    <li class="mb-6">
-                        <a class="profile-nav-buttons" href="">
-                            <img class="nav-button-images" src="/images/profile_images/game_icon.png" alt="Jogos" title="Jogos">
-                        </a>
-                    </li>
-                    <li class="mb-6">
-                        <a class="profile-nav-buttons" href="">
-                            <img class="nav-button-images" src="/images/profile_images/rank_icon.png" alt="Rank" title="Rank">
-                        </a>
-                    </li>
-                    <li>
-                        <a class="profile-nav-buttons" href="">
-                            <img class="nav-button-images" src="/images/profile_images/like_icon.png" alt="Curtidas" title="Curtidas">
-                        </a>
-                    </li>
-                </ul>
-           </nav>
-           <section>
-                <div class="flex items-center justify-center border-bottom-white md:border-none bg-dark-blue md:bg-transparent md:bg-radial-purple">
-                    <div class="md:my-28 flex items-center justify-center md:border-2 md:border-solid md:border-white-gray py-7 md:py-10 px-5 sm:px-10 md:px-20 rounded-lg md:bg-dark-blue md:shadow-white-10">
-                        <div class="text-center pr-5 md:pr-14">
-                            <div class="relative group">
-                                <img class="mb-1 md:mb-4 font-mono w-20 sm:w-30 md:w-40" src="/images/profile_images/astronaut_man_icon.png" alt="Homem atronauta">
-                                <img class="hidden absolute z-10 md:w-8 md:-right-4 cursor-pointer md:group-hover:inline hover:scale-110    " src="/images/profile_images/edit_icon.png" alt="Editar ícone" title="Editar ícone">
-                            </div>
-                            <p class="text-lg sm:text-2xl md:text-3xl font-mono font-bold"><%= username %></p>
-                        </div>
-                        <div>
-                            <h1 class="text-lg sm:text-xl md:text-2xl mb-3 md:mb-7 font-xanh-mono tracking-widest text-original-yellow">Sobre o Mochileiro</h1>
-                            <p class="text-custom-sm sm:text-base md:text-lg font-mono"><%= bio %></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="min-h-80 grid grid-cols-1 grid-rows-2 justify-items-center md:grid-cols-2 md:grid-rows-1">
-                    <div class="py-9 px-9 md:px-24 border-t-r-blue border-original-yellow bg-light-purple-transparent tracking-widest order-last md:order-first">
-                        <h3 class="mb-7 font-rubik-mono-one text-2xl sm:text-3xl text-light-blue text-center webkit-text-black">Insígnias</h3>
-                        <div>
-                            <p class="text-sm sm:text-base md:text-xl font-mono">As insígneas estão em produção, <span class="text-original-yellow">Mochileiro!</span> Avisarei assim que estiverem prontas, ok?</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col justify-end items-center md:flex-col-reverse border-top-blue w-100 md:bg-dark-purple-transparent order-first py-12">
-                        <h3 class="mb-7 text-center font-rubik-mono-one text-2xl sm:text-3xl text-mid-blue webkit-text-white w-90 md:w-100 md:order-last">Corpo celeste favorito</h3>
-                        <picture>
-                            <source media="(max-width: 992px)" srcset="/images/galaxies_images/<%= favBody %>.png" type="image/png" loading="eager">
-                            <picture>
-                                <source srcset="/images/galaxies_images/<%= favBody %>.png" type="image/png">
-                                <img class="max-w-52 md:max-w-none" src="/images/galaxies_images/<%= favBody %>.gif" alt="Corpo celeste favorito">
-                            </picture>
-                        </picture>
-                    </div>
-                </div>
-           </section>
+        <div class=" z-10 cursor-pointer absolute right-2 mt-4 group">
+            <a class="logout-link block group-hover:hidden" href="/account/profile/logout">
+                <img class="w-9 md:w-14" src="/images/profile_images/logout_icon.png" alt="Sair" title="Sair">
+            </a>
+            <a class="logout-link hidden group-hover:block" href="/account/profile/logout">
+                <img class="w-9 md:w-14" src="/images/profile_images/logout_icon_hovered.png" alt="Sair" title="Sair">
+            </a>
         </div>
+        <img class="right-arrow-icon arrow-icons" src="/images/profile_images/right_arrow_icon.png" alt="Abrir menu">
+        <img class="left-arrow-icon arrow-icons hidden" src="/images/profile_images/left_arrow.png" alt="Fechar menu">
+        <nav class="hidden h-92 profile-nav sm:flex flex-col items-center justify-center fixed z-998 pl-2 md:pl-4">
+            <ul class="list-none">
+                <li class="mb-6">
+                    <a class="profile-nav-buttons" href="">
+                        <img class="nav-button-images" src="/images/profile_images/edit_profile_icon.png" alt="Editar perfil" title="Editar perfil">
+                    </a>
+                </li>
+                <li class="mb-6">
+                    <a class="profile-nav-buttons" href="">
+                        <img class="nav-button-images" src="/images/profile_images/game_icon.png" alt="Jogos" title="Jogos">
+                    </a>
+                </li>
+                <li class="mb-6">
+                    <a class="profile-nav-buttons" href="">
+                        <img class="nav-button-images" src="/images/profile_images/rank_icon.png" alt="Rank" title="Rank">
+                    </a>
+                </li>
+                <li>
+                    <a class="profile-nav-buttons" href="">
+                        <img class="nav-button-images" src="/images/profile_images/like_icon.png" alt="Curtidas" title="Curtidas">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <section class=" min-h-screen grid grid-cols-1 grid-rows-[auto_auto]">
+            <div class="flex items-center justify-center border-bottom-white md:border-none bg-dark-blue md:bg-transparent md:bg-radial-purple">
+                <div class="md:my-28 flex items-center justify-center md:border-2 md:border-solid md:border-white-gray py-7 md:py-10 px-5 sm:px-10 md:px-20 rounded-lg md:bg-dark-blue md:shadow-white-10">
+                    <div class="text-center pr-5 md:pr-14">
+                        <div class="relative group">
+                            <img class="mb-1 md:mb-4 font-mono w-20 sm:w-30 md:w-40" src="/images/profile_images/astronaut_man_icon.png" alt="Homem atronauta">
+                            <img class="hidden absolute z-10 md:w-8 md:-right-4 cursor-pointer md:group-hover:inline hover:scale-110    " src="/images/profile_images/edit_icon.png" alt="Editar ícone" title="Editar ícone">
+                        </div>
+                        <p class="text-lg sm:text-2xl md:text-3xl font-mono font-bold"><%= username %></p>
+                    </div>
+                    <div>
+                        <h1 class="text-lg sm:text-xl md:text-2xl mb-3 md:mb-7 font-xanh-mono tracking-widest text-original-yellow">Sobre o Mochileiro</h1>
+                        <p class="text-custom-sm sm:text-base md:text-lg font-mono"><%= bio %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="min-h-60 grid grid-cols-1 grid-rows-2 justify-items-center md:grid-cols-2 md:grid-rows-1">
+                <div class="py-9 px-9 md:px-24 border-t-r-blue border-original-yellow bg-light-purple-transparent tracking-widest order-last md:order-first">
+                    <h3 class="mb-7 font-rubik-mono-one text-2xl sm:text-3xl text-light-blue text-center webkit-text-black">Insígnias</h3>
+                    <div>
+                        <p class="text-sm sm:text-base md:text-xl font-mono">As insígneas estão em produção, <span class="text-original-yellow">Mochileiro!</span> Avisarei assim que estiverem prontas, ok?</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-end items-center md:flex-col-reverse border-top-blue w-100 md:bg-dark-purple-transparent order-first py-12">
+                    <h3 class="mb-7 text-center font-rubik-mono-one text-2xl sm:text-3xl text-mid-blue webkit-text-white w-90 md:w-100 md:order-last">Corpo celeste favorito</h3>
+                    <picture>
+                        <source media="(max-width: 992px)" srcset="/images/galaxies_images/<%= favBody %>.png" type="image/png" loading="eager">
+                        <picture>
+                            <source srcset="/images/galaxies_images/<%= favBody %>.png" type="image/png">
+                            <img class="max-w-52 md:max-w-none" src="/images/galaxies_images/<%= favBody %>.gif" alt="Corpo celeste favorito">
+                        </picture>
+                    </picture>
+                </div>
+            </div>
+        </section>
         <%- include(playlist) %>
         <%- include(audio) %>
         <%- include(swordfish) %>

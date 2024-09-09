@@ -23,7 +23,7 @@ module.exports = {
         'mid-blue': '#121251',
         'mid-blue-transparent': '#1212511f',
         'light-purple-transparent': '#5c69cf38',
-        'dark-purple-transparent': '#12125152',
+        'dark-purple-transparent': '#12125178',
         'light-blue': '#5c69cf',
         'original-yellow': 'yellow',
         'white-gray': '#d1d1d1',
