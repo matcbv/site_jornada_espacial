@@ -61,3 +61,21 @@
         display: none;
     }
 }
+
+@keyframes to-right {
+    from{
+        left: -70px;
+    }
+    to{
+        left: 0px;
+    }
+}
+
+@keyframes to-left {
+    from{
+        left: 0px;
+    }
+    to{
+        left: -70px;
+    }
+}

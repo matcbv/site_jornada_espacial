@@ -3,8 +3,7 @@ const menuIcon = document.querySelector('.menu-icon')
 const fluidHeader = document.querySelector('.fluid-header')
 
 // Evento para animações do cabeçalho fluido
-menuIcon.addEventListener('click', (e) => {
-    console.dir(e.target)
+menuIcon.addEventListener('click', () => {
     const fluidHeaderDisplay = window.getComputedStyle(fluidHeader).display
     menuIcon.classList.add('shake-animation')
     if (fluidHeaderDisplay === 'none'){

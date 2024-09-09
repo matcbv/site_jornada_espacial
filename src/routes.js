@@ -8,6 +8,7 @@ const staticController = require('./controllers/staticController')
 const ideaformController = require('./controllers/ideaformController')
 const registerController = require('./controllers/registerController')
 const loginController = require('./controllers/loginController')
+const {checkLog, userData, logoutUser} = require('./middlewares/userMiddlewares')
 
 // Página inicial
 router.get('/', pagesController.homePage)
@@ -38,7 +39,9 @@ router.get('/account/signup/validation', pagesController.validationPage)
 // Validação da conta
 router.post('/validation', registerController.validation)
 // Página inicial do perfil do usuário:
-router.get('/profile', pagesController.profile)
+router.get('/account/profile', checkLog, userData, pagesController.profile)
+// Logout do usuário
+router.get('/account/profile/logout', logoutUser)
 // Enviando dados do formulario
 router.post('/ideaform/sendidea', ideaformController.sendIdea)
 // Requisição dos popups

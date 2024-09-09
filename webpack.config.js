@@ -12,6 +12,7 @@ module.exports = {
             path.resolve(__dirname, 'frontend', 'js', 'window_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'footer_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'forms_animations.js'),
+            path.resolve(__dirname, 'frontend', 'js', 'profile_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'style_imports.js')],
     output: {
         path: path.resolve(__dirname, 'public', 'assets'),

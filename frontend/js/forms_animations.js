@@ -25,13 +25,6 @@ const passwordInput = document.querySelector('.password-input')
 if (registerForm || codeForm || loginForm){
     for (let input of inputs){
         if (input.type !== 'submit' && input.type !== 'button'){
-
-            if (input.placeholder && input.name === 'password'){
-                input.type = 'text'
-                input.addEventListener('click', () => {
-                    input.type = 'password'
-                })
-            }
     
             input.addEventListener('click', () => {
                 input.placeholder = ''

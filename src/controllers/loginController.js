@@ -13,7 +13,7 @@ const loginController = {
             res.redirect('/account/signin')
         } else{
             req.session.user = loginClass.userData
-            return res.redirect('/profile')
+            return res.redirect('/account/profile')
         }
     }
 }

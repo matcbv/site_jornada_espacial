@@ -524,8 +524,7 @@ var menuIcon = document.querySelector('.menu-icon');
 var fluidHeader = document.querySelector('.fluid-header');
 
 // Evento para animações do cabeçalho fluido
-menuIcon.addEventListener('click', function (e) {
-  console.dir(e.target);
+menuIcon.addEventListener('click', function () {
   var fluidHeaderDisplay = window.getComputedStyle(fluidHeader).display;
   menuIcon.classList.add('shake-animation');
   if (fluidHeaderDisplay === 'none') {
@@ -1028,12 +1027,6 @@ if (registerForm || codeForm || loginForm) {
     var _loop = function _loop() {
       var input = _step.value;
       if (input.type !== 'submit' && input.type !== 'button') {
-        if (input.placeholder && input.name === 'password') {
-          input.type = 'text';
-          input.addEventListener('click', function () {
-            input.type = 'password';
-          });
-        }
         input.addEventListener('click', function () {
           input.placeholder = '';
         });
@@ -1101,6 +1094,37 @@ function hideRequirements(requirementsDivStyles) {
     }
   });
 }
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!*******************************************!*\
+  !*** ./frontend/js/profile_animations.js ***!
+  \*******************************************/
+var rightArrowIcon = document.querySelector('.right-arrow-icon');
+var leftArrowIcon = document.querySelector('.left-arrow-icon');
+var profileNav = document.querySelector('.profile-nav');
+rightArrowIcon.addEventListener('click', function () {
+  var profileNavDisplay = window.getComputedStyle(profileNav).display;
+  if (profileNavDisplay === 'none') {
+    profileNav.classList.remove('to-left-animation');
+    profileNav.style.display = 'flex';
+    profileNav.classList.add('to-right-animation');
+    rightArrowIcon.style.display = 'none';
+    leftArrowIcon.style.display = 'inline';
+    leftArrowIcon.addEventListener('click', function () {
+      profileNav.classList.remove('to-right-animation');
+      profileNav.classList.add('to-left-animation');
+      setTimeout(function () {
+        profileNav.classList.remove('show-profile-nav');
+        profileNav.style.display = 'none';
+        profileNav.classList.remove('to-left-animation');
+        leftArrowIcon.style.display = 'none';
+        rightArrowIcon.style.display = 'inline';
+      }, 500);
+    });
+  }
+});
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.

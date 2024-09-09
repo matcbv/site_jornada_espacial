@@ -1,6 +1,7 @@
 
 const userModel = require('./userModel')
 const validator = require('validator')
+const bcrypt = require('bcrypt')
 
 class Login{
     constructor(data){
@@ -41,7 +42,7 @@ class Login{
             this.error_list.push({ 'username': this.msgList[2] })
             return
         }
-        if (this.data.password !== dataQuery.password){
+        if (!bcrypt.compareSync(this.data.password, dataQuery.password)){
             this.error_list.push({ 'password': this.msgList[3] })
             return
         }

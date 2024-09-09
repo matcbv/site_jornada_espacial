@@ -43,7 +43,9 @@ class Register {
             } else if (k === 'username') {
                 if (!this.data[k]) {
                     this.error_list.push({ [k]: 'Usuário inválido' })
-                } else {
+                } else if(this.data[k].length > 16) {
+                    this.error_list.push({ [k]: 'Máximo de 16 caracteres' })
+                } else{
                     await this._checkUser()
                 }
             }
