@@ -10,7 +10,7 @@ async function checkLog(req, res, next){
         }
         next()
     } else{
-        res.redirect('/account/signin')
+        res.redirect('/account')
     }
 }
 

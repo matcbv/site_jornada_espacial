@@ -148,7 +148,7 @@ input[type="password"]::-ms-reveal {
 }
 
 .register-form input::placeholder{
-    color: rgb(217, 57, 57);
+    color: #d93939;
 }
 
 .password-div div .password-requirements{
