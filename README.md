@@ -8,6 +8,9 @@ Embarque em uma imersiva jornada espacial, visitando três galáxias e conhecend
 - [@matcbv](https://www.github.com/matcbv)
 
 
+## Disponível em
+
+www.jornadaespacial.com.br
 ## Instalação
 
 Instale Jornada Espacial com npm
