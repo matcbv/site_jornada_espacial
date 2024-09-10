@@ -1040,6 +1040,10 @@ var loginForm = document.querySelector('.login-form');
 var inputs = document.querySelectorAll('input');
 var passwordInput = document.querySelector('.password-input');
 
+// ---------- BUTTONS ----------
+var resendEmailBtn = document.querySelector('.resend-email');
+var timerSpan = document.querySelector('.timer');
+
 // ---------- REGISTER FORM ANIMATIONS ----------
 
 if (registerForm || codeForm || loginForm) {
@@ -1114,6 +1118,22 @@ function hideRequirements(requirementsDivStyles) {
         }, 500);
       }
     }
+  });
+}
+
+// ---------- VALIDATION POPUP ANIMATIONS ----------
+if (resendEmailBtn) {
+  resendEmailBtn.addEventListener('click', function () {
+    window.location.href = '/account/signup/validation/resend';
+    resendEmailBtn.disable = true;
+    setTimeout(function () {
+      resendEmailBtn.disable = false;
+    }, 15000);
+    var t = 15;
+    do {
+      timerSpan.innerHTML = "".concat(t);
+      t--;
+    } while (t >= 0);
   });
 }
 })();

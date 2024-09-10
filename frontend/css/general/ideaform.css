@@ -195,7 +195,7 @@ textarea:focus{
 
 .error-messages{
     font-size: 1.1em;
-    color: #d93939;
+    color: rgb(217, 57, 57);
     font-family: monospace;
     margin-bottom: 5px;
 }

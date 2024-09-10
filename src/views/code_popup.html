@@ -6,12 +6,17 @@
         <div class="code-popup-div">
             <h1>Estamos quase lá, <span class="emphasis">Mochileiro!</span></h1>
             <p>Para finalizarmos a criação de sua conta, insira no campo abaixo o código recebido no email cadastrado.</p>
-            <form class="code-form" action="/validation" method="post">
+            <form class="code-form" action="/checkCode" method="post">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <input type="text" name="code" id="code" placeholder="Código secreto" value="<%= codeError %>">
+                <% if(codeError.length > 0){ %>
+                    <input type="text" name="code" id="code" placeholder="<%= codeError %>">
+                <% }else{ %>
+                    <input type="text" name="code" id="code" placeholder="Código secreto">
+                <% } %>
                 <div class="code-btn-div">
                     <input type="submit" value="Enviar">
-                    <input type="button" value="Reenviar email">
+                    <button class="resend-email" type="button">Reenviar email</button>
+                    <span class="timer"></span>
                 </div>
             </form>
         </div>

@@ -4,8 +4,9 @@ const path = require('path')
 const fs = require('fs')
 
 const registerController = {
-    code: '',
     userData: '',
+    code: '',
+    registerClassData: '',
 
     signup: async (req, res) => {
         const registerClass = new Register(req.body)
@@ -17,9 +18,10 @@ const registerController = {
                 })
             }
         } else {
+            this.registerClassData = registerClass
             this.userData = registerClass
-            this.code = codeGenerator()
-            verificationEmail(this.code, registerClass.data.email, registerClass.data.username)
+            this.code =  codeGenerator()
+            sendVerifEmail(this.code, registerClass.data.email, registerClass.data.username)
             return res.redirect('/account/signup/validation')
         }
         return res.redirect('/account/signup')
@@ -34,6 +36,11 @@ const registerController = {
             req.flash('codeError', 'Código inválido')
             return res.redirect('/account/signup/validation')
         }
+    },
+
+    resendVerifEmail: async (req, res) => {
+        await sendVerifEmail(this.code, this.registerClassData.data.email, this.registerClassData.data.username)
+        res.redirect('/account/signup/validation')
     }
 }
 
@@ -46,8 +53,7 @@ function codeGenerator(){
     return code;
 }
 
-async function verificationEmail(code, receiver, username){
-
+async function sendVerifEmail(code, receiver, username){
     function getEmail() {
         const filePath = path.resolve(__dirname, '..', 'views', 'includes', 'email.html');
         const data = fs.readFileSync(filePath, 'utf8')
@@ -82,4 +88,4 @@ async function verificationEmail(code, receiver, username){
     }
 }
 
-module.exports = registerController
+module.exports = {registerController, sendVerifEmail}

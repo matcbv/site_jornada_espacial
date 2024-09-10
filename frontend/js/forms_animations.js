@@ -9,7 +9,6 @@ const requirementsIcon = document.querySelector('.requirements-icon')
 const requirementsDiv = document.querySelector('.password-requirements')
 const crossline = document.querySelector('.crossline')
 
-
 // ---------- FORMS ----------
 const registerForm = document.querySelector('.register-form')
 const codeForm = document.querySelector('.code-form')
@@ -19,6 +18,9 @@ const loginForm = document.querySelector('.login-form')
 const inputs = document.querySelectorAll('input')
 const passwordInput = document.querySelector('.password-input')
 
+// ---------- BUTTONS ----------
+const resendEmailBtn = document.querySelector('.resend-email')
+const timerSpan = document.querySelector('.timer')
 
 // ---------- REGISTER FORM ANIMATIONS ----------
 
@@ -84,5 +86,21 @@ function hideRequirements(requirementsDivStyles){
                 }, 500)
             }
         }
+    })
+}
+
+// ---------- VALIDATION POPUP ANIMATIONS ----------
+if (resendEmailBtn){
+    resendEmailBtn.addEventListener('click', () => {
+        window.location.href = '/account/signup/validation/resend'
+        resendEmailBtn.disable = true
+        setTimeout(() => {
+            resendEmailBtn.disable = false
+        }, 15000)
+        let t = 15
+        do {
+            timerSpan.innerHTML = `${t}`
+            t--
+        } while(t >= 0)
     })
 }
