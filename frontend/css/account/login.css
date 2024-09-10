@@ -11,7 +11,7 @@
     flex-flow: column nowrap;
     align-items: center;
     background-image: linear-gradient(rgba(27, 22, 35, 0.8),  rgba(27, 22, 35, 0.7), transparent);
-    width: 580px;
+    width: 650px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
     outline: 1px solid white;
@@ -43,7 +43,7 @@
     color: white;
     border: none;
     outline: 1.5px solid white;
-    padding: 0 0 0 45px;
+    padding: 0 45px;
 }
 
 .login-input-div input::placeholder{

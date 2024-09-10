@@ -17,6 +17,11 @@
         <nav class="hidden h-92 profile-nav md:flex flex-col items-center justify-center fixed z-998 pl-2 md:pl-4">
             <ul class="list-none">
                 <li class="mb-6">
+                    <a class="profile-nav-buttons" href="/account/profile">
+                        <img class="nav-button-images" src="/images/profile_images/home_icon.png" alt="Início" title="Início">
+                    </a>
+                </li>
+                <li class="mb-6">
                     <a class="profile-nav-buttons" href="">
                         <img class="nav-button-images" src="/images/profile_images/edit_profile_icon.png" alt="Editar perfil" title="Editar perfil">
                     </a>
@@ -26,14 +31,9 @@
                         <img class="nav-button-images" src="/images/profile_images/game_icon.png" alt="Jogos" title="Jogos">
                     </a>
                 </li>
-                <li class="mb-6">
-                    <a class="profile-nav-buttons" href="">
-                        <img class="nav-button-images" src="/images/profile_images/rank_icon.png" alt="Rank" title="Rank">
-                    </a>
-                </li>
                 <li>
                     <a class="profile-nav-buttons" href="">
-                        <img class="nav-button-images" src="/images/profile_images/like_icon.png" alt="Curtidas" title="Curtidas">
+                        <img class="nav-button-images" src="/images/profile_images/rank_icon.png" alt="Rank" title="Rank">
                     </a>
                 </li>
             </ul>
@@ -63,7 +63,7 @@
                     <div>
                         <p class="text-sm sm:text-base md:text-xl font-mono text-center">As insígneas estão em produção, <span class="text-original-yellow">Mochileiro!</span> Avisarei assim que estiverem prontas, ok?</p>
                     </div>
-                </div>
+                </div>  
                 <div class="flex flex-col justify-end items-center md:flex-col-reverse border-t-white w-100 md:bg-radial-blue order-first py-12">
                     <h3 class="mb-7 text-center font-rubik-mono-one text-2xl sm:text-3xl text-mid-blue webkit-text-white w-90 md:w-100 md:order-last">Corpo celeste favorito</h3>
                     <% if(favBody === 'dotted_circle'){ %>

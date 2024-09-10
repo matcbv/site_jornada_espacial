@@ -556,15 +556,6 @@ menuIcon.addEventListener('click', function () {
     menuIcon.classList.remove('shake-animation');
   }, 500);
 });
-
-// Evento para fechar o cabeçalho fluido no aumento da tela
-window.addEventListener('resize', function () {
-  if (window.innerWidth >= 992) {
-    if (fluidHeader) {
-      fluidHeader.style.display = 'none';
-    }
-  }
-});
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
@@ -894,6 +885,8 @@ var soundOn = document.querySelector(".sound-on");
 var soundOff = document.querySelector(".sound-off");
 var playlist = document.querySelector('.playlist-div');
 var playlistMusics = document.querySelectorAll('.musics');
+var fluidHeader = document.querySelector('.fluid-header');
+var profileImgPopup = document.querySelector('.profile-img-popup');
 
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
 
@@ -971,6 +964,20 @@ window.addEventListener('load', function () {
         ideaformMain.removeChild(successPopup);
       }, 500);
     }, 3000);
+  }
+});
+
+// Evento para fechar o cabeçalho fluido ao aumentar a tela
+window.addEventListener('resize', function () {
+  if (window.innerWidth >= 992) {
+    if (fluidHeader) {
+      fluidHeader.style.display = 'none';
+    }
+  }
+  if (window.innerWidth <= 992) {
+    if (profileImgPopup) {
+      profileImgPopup.style.display = 'none';
+    }
   }
 });
 })();

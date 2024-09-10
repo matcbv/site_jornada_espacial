@@ -6,7 +6,7 @@
         max-width: 550px;
         width: 100%;
         box-shadow: 0 0 150px rgb(49, 37, 58);
-        border: inset 1px white;
+        border: none;
     }
 
     .idea-form{
@@ -46,7 +46,7 @@
         font-size: 0.85em;
         padding: 5px;
         font-weight: bold;
-        max-width: 350px;
+        max-width: 275px;
     }
 
     .form-buttons-div button{
@@ -62,7 +62,7 @@
 
     .email-div input{
         font-size: 1em;
-        max-width: 350px;
+        max-width: 275px;
         padding: 5px;
     }
 

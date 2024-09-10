@@ -9,6 +9,9 @@ const soundOff = document.querySelector(".sound-off")
 const playlist = document.querySelector('.playlist-div')
 const playlistMusics = document.querySelectorAll('.musics')
 
+const fluidHeader = document.querySelector('.fluid-header')
+const profileImgPopup = document.querySelector('.profile-img-popup')
+
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
 
 if (introductionSection && headerSection){
@@ -79,5 +82,20 @@ window.addEventListener('load', () => {
                 ideaformMain.removeChild(successPopup)
             }, 500)
         }, 3000)
+    }
+})
+
+
+// Evento para fechar o cabeçalho fluido ao aumentar a tela
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 992){
+        if (fluidHeader){
+            fluidHeader.style.display = 'none'
+        }
+    }
+    if (window.innerWidth <= 992){
+        if (profileImgPopup){
+            profileImgPopup.style.display = 'none'
+        }
     }
 })

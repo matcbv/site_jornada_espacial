@@ -22,12 +22,3 @@ menuIcon.addEventListener('click', () => {
         menuIcon.classList.remove('shake-animation')
     }, 500)
 })
-
-// Evento para fechar o cabeçalho fluido no aumento da tela
-window.addEventListener('resize', () => {
-    if (window.innerWidth >= 992){
-        if (fluidHeader){
-            fluidHeader.style.display = 'none'
-        }
-    }    
-})
