@@ -13,6 +13,7 @@ import "../css/general/playlist.css"
 import "../css/general/animation_classes.css"
 import "../css/general/general_keyframes.css"
 import "../css/general/aboutme.css";
+import "../css/general/profile.css"
 
 // INDEX STYLES
 import "../css/index/general_index.css";

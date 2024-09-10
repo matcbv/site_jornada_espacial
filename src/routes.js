@@ -8,7 +8,7 @@ const staticController = require('./controllers/staticController')
 const ideaformController = require('./controllers/ideaformController')
 const registerController = require('./controllers/registerController')
 const loginController = require('./controllers/loginController')
-const {checkLog, userData, logoutUser, addFavBody} = require('./middlewares/userMiddlewares')
+const {checkLog, userData, logoutUser, addFavBody, changeProfileImg} = require('./middlewares/userMiddlewares')
 
 // Página inicial
 router.get('/', pagesController.homePage)
@@ -47,7 +47,9 @@ router.post('/ideaform/sendidea', ideaformController.sendIdea)
 // Requisição dos popups
 router.get('/popup/:body', staticController.getPopup)
 // Favoritar corpo celeste
-router.get('/favbody/:body', checkLog, userData, addFavBody)
+router.get('/favBody/:body', checkLog, userData, addFavBody)
+// Alterar ícone do perfil
+router.get('/profileImg/:img', checkLog, userData, changeProfileImg)
 // Página 404
 router.get('/404', pagesController.error_404)
 

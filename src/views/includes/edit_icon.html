@@ -1,14 +1,19 @@
-<div class="hidden p-8 border-2 border-solid border-white bg-mid-blue z-999">
-    <h2 class="font-inconsolata text-2xl ">Escolha uma foto de perfil</h2>
-    <div class="flex flex-col">
-        <div>
-            <img src="/images/profile_images/astronaut_man_icon.png" alt="Astronauta homem">
-            <img src="/images/profile_images/astronaut_woman_icon.png" alt="Astronauta mulher">
+<div class="profile-img-popup hidden h-100 w-screen fixed top-0 items-center justify-center bg-black-transparent z-1001">
+    <div class="px-16 py-8 border border-solid border-original-yellow purple bg-dark-blue rounded-lg w-550 relative">
+        <img class="profile-img-close-icon w-7 absolute right-5 top-5 cursor-pointer hover:scale-105" src="/images/close_icon.png" alt="Fechar">
+        <h2 class="font-inconsolata text-2xl text-center">Escolha uma foto de perfil</h2>
+        <div class="flex flex-col mt-8 mb-9">
+            <div class="flex justify-evenly mb-5">
+                <img class="w-36 p-2 cursor-pointer" id="astronaut_man" src="/images/profile_images/astronaut_man_icon.png" alt="Astronauta homem">
+                <img class="w-36 p-2 cursor-pointer" id="astronaut_woman" src="/images/profile_images/astronaut_woman_icon.png" alt="Astronauta mulher">
+            </div>
+            <div class="flex justify-evenly">
+                <img class="w-36 p-2 cursor-pointer" id="alien" src="/images/profile_images/alien_icon.png" alt="Alienígena">
+                <img class="w-36 p-2 cursor-pointer" id="robot" src="/images/profile_images/robot_icon.png" alt="Robô">
+            </div>
         </div>
-        <div class="w-24">
-            <img src="/images/profile_images/alien_icon.png" alt="Alienígena">
-            <img src="/images/profile_images/robot_icon.png" alt="Robô">
+        <div class="text-center">
+            <button class="save-img-button text-white font-mono text-xl pt-2 pb-1 px-6 border-2 border-solid border-white rounded-full bg-mid-blue cursor-pointer">Salvar</button>
         </div>
     </div>
-    <a href="/editIcon">Salvar</a>
 </div>

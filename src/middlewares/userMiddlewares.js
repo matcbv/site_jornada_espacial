@@ -30,20 +30,33 @@ function userData(req, res, next){
     res.locals.birthday = req.session.user['birthday']
     res.locals.bio = req.session.user['bio']
     res.locals.favBody = req.session.user['favBody']
+    res.locals.profileImg = req.session.user['profileImg']
     res.locals.badges = req.session.user['badges']
     next()
 }
 
-async function addFavBody(req, res, next){
+async function addFavBody(req, res){
     const currentBody = req.params.body
     try{
         const user = await userModel.findOne({ username: res.locals.username })
         user.favBody = currentBody
         await user.save()
-        res.redirect('/account/profile')
+        window.history.back()
     } catch(e){
         console.log('Erro ao favoritar corpo celeste', e)
     }
 }
 
-module.exports = {checkLog, userData, logoutUser, addFavBody}
+async function changeProfileImg(req, res) {
+    const newProfileImg = req.params.img
+    try{
+        const user = await userModel.findOne({ username: res.locals.username })
+        user.profileImg = newProfileImg
+        await user.save()
+        res.redirect('/account/profile')
+    } catch(e){
+        console.log('Erro ao alterar imagem de perfil', e)
+    }
+}
+
+module.exports = {checkLog, userData, logoutUser, addFavBody, changeProfileImg}

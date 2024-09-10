@@ -2,21 +2,25 @@
     
     .ideaform-content-div{
         flex-flow: column nowrap;
-        padding: 20px;
-        width: 90%;
-        max-width: 580px;
+        padding: 30px;
+        max-width: 550px;
+        width: 100%;
+        box-shadow: 0 0 150px rgb(49, 37, 58);
+        border: inset 1px white;
     }
 
     .idea-form{
-        grid-template:  "radios textarea" 1.5fr
-                        "email buttons" 1fr
-                        / auto auto;
+        grid-template:  "radios" 1fr
+                        'textarea' 1fr
+                        "email" 0.5fr
+                        "buttons" 0.5fr
+                        / auto;
         width: 100%;
         padding: 0;
     }
 
     .idea-form label{
-        font-size: 0.85em;
+        font-size: 1em;
     }
 
     .idea-text-div{
@@ -29,7 +33,7 @@
     }
 
     .idea-text-div p{
-        font-size: 0.75em;
+        font-size: 0.8em;
         line-height: 1.3em;
     }
 
@@ -42,49 +46,28 @@
         font-size: 0.85em;
         padding: 5px;
         font-weight: bold;
-        max-width: 100%;
-    }
-
-    .form-buttons-div{
-        height: 100%;
-        width: 100%;
-        align-items: flex-end;
-        justify-content: space-evenly;
-        margin-top: 0;
+        max-width: 350px;
     }
 
     .form-buttons-div button{
-        padding: 4px 8px;
-        font-size: 0.9em;
+        padding: 6px 10px;
+        font-size: 1em;
         width: 100px;
 
     }
-
-    .form-buttons-div button:first-child{
-        margin-right: 0;
-    }
-
-    .idea-form>:not(.form-buttons-div){
-        margin-bottom: 0;
-    }
-
-    .form-buttons-div button{
-        margin-top: 15px;
-    }
-
+    
     .email-div{
-        align-self: end;
-        margin-top: 12px;
+        margin-top: 5px;
     }
 
     .email-div input{
-        font-size: 0.85em;
-        max-width: 95%;
+        font-size: 1em;
+        max-width: 350px;
         padding: 5px;
     }
 
     .email-div p{
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
 
@@ -99,7 +82,7 @@
     }
 
     .error-messages{
-        font-size: 0.8em;
+        font-size: 1em;
     }
 
     .success-popup{

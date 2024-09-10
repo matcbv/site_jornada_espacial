@@ -33,7 +33,6 @@
 .ideaform-content-div h2{
     font-size: 1.3em;
     font-family: monospace;
-    color: yellow;
     width: 100%;
     font-weight: normal;
     margin-bottom: 15px;
@@ -81,11 +80,10 @@
 }
 
 .idea-form > *:not(.form-buttons-div){
-    margin-bottom: 15px
+    margin-bottom: 15px;
 }
 
 .idea-form label{
-    color: yellow;
     font-family: monospace;
     font-size: 1.2em;
 }
@@ -136,7 +134,7 @@ textarea:focus{
 
 .email-div{
     grid-area: email;
-    
+    margin-top: 10px;
 }
 
 .email-div > * {
@@ -163,6 +161,7 @@ textarea:focus{
 .email-div p{
     margin-bottom: 4px;
     font-family: monospace;
+    color: yellow;
 }
 
 .form-buttons-div{

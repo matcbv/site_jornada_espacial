@@ -45,7 +45,7 @@ function getPopup(html, main){
 
     const starIcon = document.querySelector('.star-icon')
     starIcon.addEventListener('click', () => {
-        window.location.href = `/favbody/${sessionStorage.getItem('currentBody')}`
+        window.location.href = `/favBody/${sessionStorage.getItem('currentBody')}`
     })   
 }
 

@@ -1,6 +1,15 @@
+// ---------- HTML ELEMENTS ----------
+
 const rightArrowIcon = document.querySelector('.right-arrow-icon')
 const leftArrowIcon = document.querySelector('.left-arrow-icon')
+const editImageIcon = document.querySelector('.edit-img-icon')
+const saveImgButton = document.querySelector('.save-img-button')
 const profileNav = document.querySelector('.profile-nav')
+const profileImgCloseIcon = document.querySelector('.profile-img-close-icon')
+const profileImgPopup = document.querySelector('.profile-img-popup')
+const mainProfile = document.querySelector('.main-profile')
+
+// ---------- NAV ANIMATION ----------
 
 if (rightArrowIcon){
     rightArrowIcon.addEventListener('click', () => {
@@ -25,5 +34,49 @@ if (rightArrowIcon){
     
             })
         }
+    })
+}
+
+// ---------- PROFILE ICON ANIMATION ----------
+
+if (mainProfile){
+    const iconImages = profileImgPopup.querySelectorAll('img')
+
+    profileImgCloseIcon.addEventListener('click', () => {
+        if(window.getComputedStyle(profileImgPopup).display === 'flex'){
+            profileImgPopup.classList.add('disappear-animation')
+            setTimeout(() => {
+                profileImgPopup.style.display = 'none'
+                profileImgPopup.classList.remove('disappear-animation')
+            }, 500)
+        }
+    })
+
+    editImageIcon.addEventListener('click', () => {
+        if(window.getComputedStyle(profileImgPopup).display === 'none'){
+            profileImgPopup.classList.add('fast-appear-animation')
+                profileImgPopup.style.display = 'flex'
+            setTimeout(() => {
+                profileImgPopup.classList.remove('fast-appear-animation')
+            }, 500)
+        }
+    })
+
+    iconImages.forEach(element => {
+        if(element !== profileImgCloseIcon){    
+            element.addEventListener('click', () =>{
+                iconImages.forEach(img => {
+                    if(img.classList.contains('outline-icons')){
+                        img.classList.remove('outline-icons')
+                    }
+                })
+                element.classList.add('outline-icons')
+                sessionStorage.setItem('profileImg', element.id)
+            })
+        }
+    });
+
+    saveImgButton.addEventListener('click', () => {
+        window.location.href = `/profileImg/${sessionStorage.getItem('profileImg')}`
     })
 }

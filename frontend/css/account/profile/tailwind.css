@@ -6,7 +6,7 @@
 @layer components{
 
     .profile-nav-buttons{
-        @apply block p-2 border border-solid border-white bg-dark-blue rounded-full cursor-pointer hover:scale-110
+        @apply block p-2 border border-solid border-white bg-blue-950 rounded-full cursor-pointer hover:scale-110
     }
 
     .nav-button-images{
@@ -20,16 +20,16 @@
 
 @layer utilities{
 
-    .border-bottom-white{
+    .border-b-white{
         @apply border-x-0 border-t-0 border-b border-solid border-white max-w-100
     }
 
-    .border-top-blue{
-        @apply border-x-0 border-b-0 border-t border-solid border-blue-950 max-w-100
+    .border-t-white{
+        @apply border-x-0 border-b-0 border-t border-solid border-white max-w-100
     }
 
-    .border-t-r-blue{
-        @apply border-l-0 border-b-0 border-r-2 border-t-2 border-solid border-blue-950 max-w-100
+    .border-r-white{
+        @apply border-l-0 border-x-0 border-r-2 border-solid border-white max-w-100
     }
 }
 

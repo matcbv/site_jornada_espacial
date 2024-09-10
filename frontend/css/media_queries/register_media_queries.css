@@ -82,14 +82,11 @@
     }
 
     .register-main h1{
-        font-family: 'Calistoga';
-        -webkit-text-stroke: 0;
-        color: yellow;
-        font-weight: lighter;
         width: 250px;
         text-align: center;
-        font-size: 1.6em;
-        letter-spacing: 2.5px;
+        font-size: 1.5em;
+        letter-spacing: 2.3px;
+        line-height: 35px;
     }
 
     .register-btn-div{
