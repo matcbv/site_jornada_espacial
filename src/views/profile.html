@@ -66,7 +66,7 @@
                 </div>  
                 <div class="flex flex-col justify-end items-center md:flex-col-reverse border-t-white w-100 md:bg-radial-blue order-first py-12">
                     <h3 class="mb-7 text-center font-rubik-mono-one text-2xl sm:text-3xl text-mid-blue webkit-text-white w-90 md:w-100 md:order-last">Corpo celeste favorito</h3>
-                    <% if(favBody === 'dotted_circle'){ %>
+                    <% if(favBody[0] === 'dotted_circle'){ %>
                         <img class="max-w-52 md:max-w-none" src="/images/galaxies_images/dotted_circle.gif" alt="Corpo celeste favorito">
                     <% } else{ %>
                         <img class="max-w-52 md:max-w-none" src="/images/galaxies_images/<%= favBody %>.png" alt="Corpo celeste favorito">

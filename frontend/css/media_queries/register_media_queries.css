@@ -138,4 +138,8 @@
     .code-btn-div input:first-child{
         margin: 0 0 20px 0;
     }
+
+    .code-btn-div button{
+        width: 100%;
+    }
 }

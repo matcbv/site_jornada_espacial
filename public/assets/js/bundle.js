@@ -887,6 +887,8 @@ var playlist = document.querySelector('.playlist-div');
 var playlistMusics = document.querySelectorAll('.musics');
 var fluidHeader = document.querySelector('.fluid-header');
 var profileImgPopup = document.querySelector('.profile-img-popup');
+var resendEmailBtn = document.querySelector('.resend-email');
+var timerSpan = document.querySelector('.timer');
 
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
 
@@ -967,7 +969,8 @@ window.addEventListener('load', function () {
   }
 });
 
-// Evento para fechar o cabeçalho fluido ao aumentar a tela
+// ---------- EVENTO PARA FECHAMENTO DO CABECALHO FLUIDO AO AUMENTAR A TELA ----------
+
 window.addEventListener('resize', function () {
   if (window.innerWidth >= 992) {
     if (fluidHeader) {
@@ -978,6 +981,29 @@ window.addEventListener('resize', function () {
     if (profileImgPopup) {
       profileImgPopup.style.display = 'none';
     }
+  }
+});
+
+// ---------- EVENTO PARA DESABILITAR O BOTÃO DE REENVIAR EMAIL ----------
+
+window.addEventListener('load', function () {
+  if (sessionStorage.getItem('emailSent') === 'true' && resendEmailBtn) {
+    resendEmailBtn.disabled = true;
+    timerSpan.style.display = 'block';
+    timerSpan.classList.add('disabled-btn');
+    var s = 15;
+    counter = setInterval(function () {
+      timerSpan.innerHTML = "".concat(s);
+      s--;
+    }, 1000);
+    setTimeout(function () {
+      clearInterval(counter);
+      resendEmailBtn.disabled = false;
+      timerSpan.innerHTML = '';
+      timerSpan.style.display = 'none';
+      timerSpan.classList.remove('disabled-btn');
+      sessionStorage.setItem('emailSent', 'false');
+    }, 15000);
   }
 });
 })();
@@ -1039,6 +1065,9 @@ var loginForm = document.querySelector('.login-form');
 // ---------- INPUTS ----------
 var inputs = document.querySelectorAll('input');
 var passwordInput = document.querySelector('.password-input');
+
+// ---------- BUTTONS ----------
+var resendEmailBtn = document.querySelector('.resend-email');
 
 // ---------- REGISTER FORM ANIMATIONS ----------
 
@@ -1114,6 +1143,14 @@ function hideRequirements(requirementsDivStyles) {
         }, 500);
       }
     }
+  });
+}
+
+// ---------- VALIDATION POPUP ANIMATIONS ----------
+if (resendEmailBtn) {
+  resendEmailBtn.addEventListener('click', function () {
+    sessionStorage.setItem('emailSent', 'true');
+    window.location.href = '/account/signup/validation/resend';
   });
 }
 })();

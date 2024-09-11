@@ -52,7 +52,12 @@
                     </div>
                     <div class="register-input-div">
                         <label for="birthday">Data de nascimento</label>
-                        <input type="text" name="birthday" id="birthday" autocomplete="bday" placeholder="<%= birthdayError %>">
+                        <% if(codeError.length > 0){ %>
+                            <p>opa</p>
+                            <input name="birthday" id="birthday" autocomplete="bday" placeholder="<%= birthdayError %>">
+                        <% }else{ %>
+                            <input class="data-placeholder" type="text" name="birthday" id="birthday" autocomplete="bday" placeholder="dd/mm/aaaa">
+                        <% }%>
                     </div>
                 </div>
                 <div class="register-btn-div">

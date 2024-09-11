@@ -12,6 +12,9 @@ const playlistMusics = document.querySelectorAll('.musics')
 const fluidHeader = document.querySelector('.fluid-header')
 const profileImgPopup = document.querySelector('.profile-img-popup')
 
+const resendEmailBtn = document.querySelector('.resend-email')
+const timerSpan = document.querySelector('.timer')
+
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
 
 if (introductionSection && headerSection){
@@ -85,8 +88,8 @@ window.addEventListener('load', () => {
     }
 })
 
+// ---------- EVENTO PARA FECHAMENTO DO CABECALHO FLUIDO AO AUMENTAR A TELA ----------
 
-// Evento para fechar o cabeçalho fluido ao aumentar a tela
 window.addEventListener('resize', () => {
     if (window.innerWidth >= 992){
         if (fluidHeader){
@@ -97,5 +100,28 @@ window.addEventListener('resize', () => {
         if (profileImgPopup){
             profileImgPopup.style.display = 'none'
         }
+    }
+})
+
+// ---------- EVENTO PARA DESABILITAR O BOTÃO DE REENVIAR EMAIL ----------
+
+window.addEventListener('load', () => {
+    if(sessionStorage.getItem('emailSent') === 'true' && resendEmailBtn){
+        resendEmailBtn.disabled = true
+        timerSpan.style.display = 'block'
+        timerSpan.classList.add('disabled-btn')
+        let s = 15
+        counter = setInterval(() => {
+            timerSpan.innerHTML = `${s}`
+            s--
+        }, 1000)
+        setTimeout(() => {
+            clearInterval(counter)
+            resendEmailBtn.disabled = false
+            timerSpan.innerHTML = ''
+            timerSpan.style.display = 'none'
+            timerSpan.classList.remove('disabled-btn')
+            sessionStorage.setItem('emailSent', 'false')
+        }, 15000)
     }
 })

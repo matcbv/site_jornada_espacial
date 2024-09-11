@@ -6,7 +6,7 @@ const router = express.Router()
 const pagesController = require('./controllers/pagesController')
 const staticController = require('./controllers/staticController')
 const ideaformController = require('./controllers/ideaformController')
-const registerController = require('./controllers/registerController')
+const {registerController, resendVerifEmail} = require('./controllers/registerController')
 const loginController = require('./controllers/loginController')
 const {checkLog, userData, logoutUser, addFavBody, changeProfileImg} = require('./middlewares/userMiddlewares')
 
@@ -36,8 +36,10 @@ router.get('/account/signup', pagesController.register)
 router.post('/account/signup/register', registerController.signup)
 // Página para validação da conta
 router.get('/account/signup/validation', pagesController.validationPage)
+// Reenvio do email para validação da conta
+router.get('/account/signup/validation/resend', registerController.resendVerifEmail)
 // Validação da conta
-router.post('/validation', registerController.validation)
+router.post('/checkCode', registerController.validation)
 // Página inicial do perfil do usuário:
 router.get('/account/profile', checkLog, userData, pagesController.profile)
 // Logout do usuário
