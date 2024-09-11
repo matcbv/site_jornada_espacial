@@ -251,6 +251,10 @@ input[type="password"]::-ms-reveal {
     color: rgba(223, 255, 255, 0.7);
 }
 
+.code-input::placeholder{
+    color: rgb(217, 57, 57) !important;
+}
+
 .code-btn-div input, .code-btn-div button{
     height: 25px;
     background-color: transparent;

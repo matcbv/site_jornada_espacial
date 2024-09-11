@@ -1,6 +1,8 @@
 // Elementos do cabeçalho
 const menuIcon = document.querySelector('.menu-icon')
+const header = document.querySelector('header')
 const fluidHeader = document.querySelector('.fluid-header')
+const profileMain = document.querySelector('.main-profile')
 
 // Evento para animações do cabeçalho fluido
 menuIcon.addEventListener('click', () => {
@@ -22,3 +24,26 @@ menuIcon.addEventListener('click', () => {
         menuIcon.classList.remove('shake-animation')
     }, 500)
 })
+
+// Trocando cores do cabeçalho ao entrar no perfil do usuário
+if (profileMain){
+    header.classList.add('profile-header')
+    const galaxiesLinks = header.querySelector('ul').querySelectorAll('a')
+    galaxiesLinks.forEach(element => {
+        element.classList.add('profile-galaxies-links')
+    });
+    const fluidHeaderLinks = fluidHeader.querySelectorAll('li')
+    fluidHeaderLinks.forEach(element => {
+        element.classList.add('profile-fluid-header-links')
+    });
+} else{
+    header.classList.remove('profile-header')
+    const galaxiesLinks = header.querySelector('ul').querySelectorAll('a')
+    galaxiesLinks.forEach(element => {
+        element.classList.remove('profile-galaxies-links')
+    });
+    const fluidHeaderLinks = fluidHeader.querySelectorAll('li')
+    fluidHeaderLinks.forEach(element => {
+        element.classList.remove('profile-fluid-header-links')
+    });
+}

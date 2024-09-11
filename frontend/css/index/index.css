@@ -296,13 +296,13 @@
     margin: auto;
 }
 
-.galaxies-link-div{
+.galaxies-links-div{
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
 }
 
-.galaxies-link-div a{
+.galaxies-links-div a{
     display: block;
     width: auto;
     margin-left: 36px;
@@ -316,11 +316,11 @@
     text-decoration: none;
 }
 
-.galaxies-link-div a:hover{
+.galaxies-links-div a:hover{
     cursor: pointer;
 }
 
-.galaxies-link-div span{
+.galaxies-links-div span{
     display: inline-block;
     font-size: 1.8em;
     width: 36px;

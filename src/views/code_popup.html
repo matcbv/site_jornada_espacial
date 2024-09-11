@@ -9,7 +9,7 @@
             <form class="code-form" action="/checkCode" method="post">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <% if(codeError.length > 0){ %>
-                    <input type="text" name="code" id="code" placeholder="<%= codeError %>">
+                    <input class="code-input" type="text" name="code" id="code" placeholder="<%= codeError %>">
                 <% }else{ %>
                     <input type="text" name="code" id="code" placeholder="Código secreto">
                 <% } %>

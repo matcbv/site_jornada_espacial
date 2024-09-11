@@ -40,13 +40,13 @@ header a{
     list-style: none;
 }
 
-.galaxies-link{
+.galaxies-links{
     padding: 9px;
     border-radius: 5px;
     outline: 3px solid rgb(49, 37, 58);
     color: white;
     margin-right: 35px;
-    text-shadow: 1px 3px 3px rgba(0,0,0,.5);
+    text-shadow: 1px 3px 3px rgba(0,0,0, 0.5);
 }
 
 .logo-link{
@@ -72,7 +72,7 @@ header a{
     margin-left: -3px;
 }
 
-.galaxies-link:hover{
+.galaxies-links:hover{
     cursor: pointer;
     animation: background-gradient 0.2s ease-in-out 0s 1 normal forwards;
 }
@@ -93,4 +93,17 @@ header a{
 
 .menu-icon:hover{
     cursor: pointer;
+}
+
+.profile-header{
+    background-color: rgb(5, 3, 23);
+    border-bottom: 2px solid rgb(56, 52, 52);
+}
+
+.profile-header:hover{
+    box-shadow: 0 3px 12px rgb(56, 52, 52, 0.5);
+}
+
+.profile-galaxies-links{
+    outline: 2px solid rgb(56, 52, 52);
 }

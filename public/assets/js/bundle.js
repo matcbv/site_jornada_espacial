@@ -534,7 +534,9 @@ if (startingBtn) {
   \******************************************/
 // Elementos do cabeçalho
 var menuIcon = document.querySelector('.menu-icon');
+var header = document.querySelector('header');
 var fluidHeader = document.querySelector('.fluid-header');
+var profileMain = document.querySelector('.main-profile');
 
 // Evento para animações do cabeçalho fluido
 menuIcon.addEventListener('click', function () {
@@ -556,6 +558,29 @@ menuIcon.addEventListener('click', function () {
     menuIcon.classList.remove('shake-animation');
   }, 500);
 });
+
+// Trocando cores do cabeçalho ao entrar no perfil do usuário
+if (profileMain) {
+  header.classList.add('profile-header');
+  var galaxiesLinks = header.querySelector('ul').querySelectorAll('a');
+  galaxiesLinks.forEach(function (element) {
+    element.classList.add('profile-galaxies-links');
+  });
+  var fluidHeaderLinks = fluidHeader.querySelectorAll('li');
+  fluidHeaderLinks.forEach(function (element) {
+    element.classList.add('profile-fluid-header-links');
+  });
+} else {
+  header.classList.remove('profile-header');
+  var _galaxiesLinks = header.querySelector('ul').querySelectorAll('a');
+  _galaxiesLinks.forEach(function (element) {
+    element.classList.remove('profile-galaxies-links');
+  });
+  var _fluidHeaderLinks = fluidHeader.querySelectorAll('li');
+  _fluidHeaderLinks.forEach(function (element) {
+    element.classList.remove('profile-fluid-header-links');
+  });
+}
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.

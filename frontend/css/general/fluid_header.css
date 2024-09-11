@@ -5,7 +5,7 @@
     width: 100%;
 }
 
-.fluid-header ul li{
+.fluid-header-links{
     background-color: rgb(27, 22, 35);
     border-bottom: 2px solid rgb(49, 37, 58);
 }
@@ -19,4 +19,9 @@
     font-size: 1.3em;
     padding: 10px 0;
     text-shadow: 0 0 5px rgb(220, 190, 233);
+}
+
+.profile-fluid-header-links{
+    background-color: rgb(5, 3, 23);
+    border-bottom: 1px solid rgb(56, 52, 52);
 }

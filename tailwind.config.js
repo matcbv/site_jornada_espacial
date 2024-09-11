@@ -53,7 +53,7 @@ module.exports = {
       },
       backgroundImage:{
         'radial-purple': 'radial-gradient(#16124780, transparent)',
-        'radial-blue': 'radial-gradient(transparent 30%, #110726ad)'
+        'radial-blue': 'radial-gradient(transparent 30%, #0c122e)'
       }
     },
   },
