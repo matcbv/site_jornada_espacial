@@ -1039,9 +1039,12 @@ window.addEventListener('load', function () {
   !*** ./frontend/js/footer_animations.js ***!
   \******************************************/
 // ---------- HTML ELEMENTS ----------
+
 var topBtn = document.querySelector('.top-btn');
 var cowboyBebopDiv = document.querySelector('.cowboy-bebop-div');
 var swordfishDiv = document.querySelector('.swordfish-div');
+var footer = document.querySelector('footer');
+var profileMain = document.querySelector('.main-profile');
 
 // ---------- TOP BUTTON ----------
 
@@ -1061,6 +1064,13 @@ cowboyBebopDiv.addEventListener('click', function () {
     swordfishDiv.classList.remove('travel-animation');
   }, 2000);
 });
+
+// ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------
+if (profileMain) {
+  footer.classList.add('profile-footer');
+} else {
+  footer.classList.remove('profile-footer');
+}
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.

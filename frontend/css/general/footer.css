@@ -120,3 +120,9 @@ footer button:hover{
 .swordfish-div img{
     display: block;
 }
+
+.profile-footer{
+    background-color: rgb(23 25 50);
+    border-top: 2px solid rgb(190, 190, 190);
+    box-shadow: 0 -3px 40px rgba(92, 105, 207, 0.4);
+}

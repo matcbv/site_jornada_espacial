@@ -41,8 +41,8 @@ header a{
 }
 
 .galaxies-links{
-    padding: 9px;
-    border-radius: 5px;
+    padding: 10px 16px;
+    border-radius: 10px;
     outline: 3px solid rgb(49, 37, 58);
     color: white;
     margin-right: 35px;
@@ -82,7 +82,10 @@ header a{
 }
 
 .login-link img{
-    width: 55px;
+    width: 60px;
+    border: 2px solid rgb(201 201 201);
+    border-radius: 30px;
+    padding: 3px;
 }
 
 .menu-icon{

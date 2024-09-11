@@ -1,7 +1,10 @@
 // ---------- HTML ELEMENTS ----------
+
 const topBtn = document.querySelector('.top-btn')
 const cowboyBebopDiv = document.querySelector('.cowboy-bebop-div')
 const swordfishDiv = document.querySelector('.swordfish-div')
+const footer = document.querySelector('footer')
+const profileMain = document.querySelector('.main-profile')
 
 // ---------- TOP BUTTON ----------
 
@@ -18,3 +21,10 @@ cowboyBebopDiv.addEventListener('click', () => {
         swordfishDiv.classList.remove('travel-animation')
     }, 2000)
 })
+
+// ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------
+if (profileMain){
+    footer.classList.add('profile-footer')
+}else{
+    footer.classList.remove('profile-footer')
+}

@@ -14,7 +14,7 @@
         </div>
         <img class="right-arrow-icon arrow-icons" src="/images/profile_images/right_arrow_icon.png" alt="Abrir menu">
         <img class="left-arrow-icon arrow-icons hidden" src="/images/profile_images/left_arrow.png" alt="Fechar menu">
-        <nav class="hidden h-92 profile-nav md:flex flex-col items-center justify-center fixed z-998 pl-2 md:pl-4">
+        <nav class="hidden h-92 profile-nav md:flex flex-col items-center justify-center fixed z-997 pl-2 md:pl-4">
             <ul class="list-none">
                 <li class="mb-6">
                     <a class="profile-nav-buttons" href="/account/profile">
@@ -66,7 +66,7 @@
                 </div>  
                 <div class="flex flex-col justify-end items-center md:flex-col-reverse border-t-white w-100 md:bg-radial-blue order-first py-12">
                     <h3 class="mb-7 text-center font-rubik-mono-one text-2xl sm:text-3xl text-mid-blue webkit-text-white w-90 md:w-100 md:order-last">Corpo celeste favorito</h3>
-                    <% if(favBody[0] === 'dotted_circle'){ %>
+                    <% if(favBody === 'dotted_circle'){ %>
                         <img class="max-w-52 md:max-w-none" src="/images/galaxies_images/dotted_circle.gif" alt="Corpo celeste favorito">
                     <% } else{ %>
                         <img class="max-w-52 md:max-w-none" src="/images/galaxies_images/<%= favBody %>.png" alt="Corpo celeste favorito">
