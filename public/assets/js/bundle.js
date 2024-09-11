@@ -847,9 +847,8 @@ if (galaxiesMain) {
               if (!res.ok) {
                 throw new Error('Erro na requisição do popup.');
               } else {
-                sessionStorage.setItem('currentBody', "".concat(element.id));
                 res.text().then(function (html) {
-                  getPopup(html, galaxiesMain);
+                  getPopup(html, galaxiesMain, element.id);
                 });
               }
             });
@@ -864,31 +863,37 @@ if (galaxiesMain) {
   });
 }
 
-// Função para a requisição do formulário de idéias
-function ideaForm() {
-  window.location.href = '/ideaForm';
-}
-
 // Função para adição do conteúdo obtido na página
-function getPopup(html, main) {
+function getPopup(html, main, celestialBody) {
   var divPopup = document.createElement('div');
   divPopup.style.display = 'flex';
   divPopup.classList.add('appear-animation', 'popup');
   divPopup.innerHTML = html;
   main.appendChild(divPopup);
-  closeAction(main, divPopup, divPopup.querySelector('.close-icon'));
-  var ideaIcon = document.querySelector('.idea-icon');
-  ideaIcon.addEventListener('click', ideaForm);
-  var starIcon = document.querySelector('.star-icon');
-  starIcon.addEventListener('click', function () {
-    window.location.href = "/favBody/".concat(sessionStorage.getItem('currentBody'));
-  });
-}
-
-// Função do botão de fechar o popup
-function closeAction(main, divPopup, closeIcon) {
+  var closeIcon = divPopup.querySelector('.close-icon');
   closeIcon.addEventListener('click', function () {
     main.removeChild(divPopup);
+  });
+  var ideaIcon = document.querySelector('.idea-icon');
+  ideaIcon.addEventListener('click', function () {
+    window.location.href = '/ideaForm';
+  });
+  var starIcon = document.querySelector('.star-icon');
+  var selectedStarIcon = document.querySelector('.selected-star-icon');
+  if (localStorage.getItem('favBody') === celestialBody) {
+    starIcon.style.display = 'none';
+    selectedStarIcon.style.display = 'block';
+  } else {
+    starIcon.style.display = 'block';
+    selectedStarIcon.style.display = 'none';
+  }
+  starIcon.addEventListener('click', function () {
+    localStorage.setItem('favBody', "".concat(celestialBody));
+    if (localStorage.getItem('loggedIn') === 'true') {
+      starIcon.style.display = 'none';
+      selectedStarIcon.style.display = 'block';
+    }
+    window.location.href = "/favBody/".concat(celestialBody);
   });
 }
 })();
@@ -1235,6 +1240,7 @@ if (rightArrowIcon) {
 // ---------- PROFILE ICON ANIMATION ----------
 
 if (mainProfile) {
+  localStorage.setItem('loggedIn', 'true');
   var iconImages = profileImgPopup.querySelectorAll('img');
   profileImgCloseIcon.addEventListener('click', function () {
     if (window.getComputedStyle(profileImgPopup).display === 'flex') {
@@ -1269,6 +1275,11 @@ if (mainProfile) {
   });
   saveImgButton.addEventListener('click', function () {
     window.location.href = "/profileImg/".concat(sessionStorage.getItem('profileImg'));
+  });
+  var logoutIcon = document.querySelector('.logout-icon');
+  logoutIcon.addEventListener('click', function () {
+    localStorage.setItem('favBody', '');
+    localStorage.setItem('loggedIn', 'false');
   });
 }
 })();

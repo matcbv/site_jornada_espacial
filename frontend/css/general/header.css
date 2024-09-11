@@ -88,6 +88,10 @@ header a{
     padding: 3px;
 }
 
+.login-link img:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 .menu-icon{
     display: none;
     width: 45px;

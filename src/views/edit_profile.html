@@ -1,0 +1,26 @@
+<%- include(head) %>
+<body>
+    <%- include(header) %>
+    <main class="main-profile min-h-screen max-w-100 relative">
+        <%- include(fluidHeader) %>
+        <%- include(editIcon) %>
+        <div class=" z-10 cursor-pointer absolute right-2 mt-4 group">
+            <a class="logout-link block group-hover:hidden" href="/account/profile/logout">
+                <img class="w-9 md:w-14" src="/images/profile_images/logout_icon.png" alt="Sair" title="Sair">
+            </a>
+            <a class="logout-link hidden group-hover:block" href="/account/profile/logout">
+                <img class="logout-icon w-9 md:w-14" src="/images/profile_images/logout_icon_hovered.png" alt="Sair" title="Sair">
+            </a>
+        </div>
+        <% include(profileNav) %>
+        <section>
+            
+        </section>
+        <%- include(playlist) %>
+        <%- include(audio) %>
+        <%- include(swordfish) %>
+    </main>
+    <%- include(footer) %>
+    <script src="/js/bundle.js"></script>
+</body>
+</html>

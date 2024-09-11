@@ -82,7 +82,7 @@
     left: 15px;
 }
 
-.star-icon{
+.star-icon, .selected-star-icon{
     margin-bottom: 15px;
 }
 

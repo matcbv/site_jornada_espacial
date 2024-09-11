@@ -40,6 +40,7 @@ if (rightArrowIcon){
 // ---------- PROFILE ICON ANIMATION ----------
 
 if (mainProfile){
+    localStorage.setItem('loggedIn', 'true')
     const iconImages = profileImgPopup.querySelectorAll('img')
 
     profileImgCloseIcon.addEventListener('click', () => {
@@ -78,5 +79,11 @@ if (mainProfile){
 
     saveImgButton.addEventListener('click', () => {
         window.location.href = `/profileImg/${sessionStorage.getItem('profileImg')}`
+    })
+
+    const logoutIcon = document.querySelector('.logout-icon')
+    logoutIcon.addEventListener('click', () => {
+        localStorage.setItem('favBody', '')
+        localStorage.setItem('loggedIn', 'false')
     })
 }

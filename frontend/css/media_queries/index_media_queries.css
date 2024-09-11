@@ -94,13 +94,7 @@
     /* ------- MUSIC POPUP ------- */
 
     .msc-popup{
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .msc-popup-close-icon{
-        width: 28px;
+        display: none;
     }
 
     .sound-icon, .music-icon{

@@ -9,35 +9,10 @@
                 <img class="w-9 md:w-14" src="/images/profile_images/logout_icon.png" alt="Sair" title="Sair">
             </a>
             <a class="logout-link hidden group-hover:block" href="/account/profile/logout">
-                <img class="w-9 md:w-14" src="/images/profile_images/logout_icon_hovered.png" alt="Sair" title="Sair">
+                <img class="logout-icon w-9 md:w-14" src="/images/profile_images/logout_icon_hovered.png" alt="Sair" title="Sair">
             </a>
         </div>
-        <img class="right-arrow-icon arrow-icons" src="/images/profile_images/right_arrow_icon.png" alt="Abrir menu">
-        <img class="left-arrow-icon arrow-icons hidden" src="/images/profile_images/left_arrow.png" alt="Fechar menu">
-        <nav class="hidden h-92 profile-nav md:flex flex-col items-center justify-center fixed z-997 pl-2 md:pl-4">
-            <ul class="list-none">
-                <li class="mb-6">
-                    <a class="profile-nav-buttons" href="/account/profile">
-                        <img class="nav-button-images" src="/images/profile_images/home_icon.png" alt="Início" title="Início">
-                    </a>
-                </li>
-                <li class="mb-6">
-                    <a class="profile-nav-buttons" href="">
-                        <img class="nav-button-images" src="/images/profile_images/edit_profile_icon.png" alt="Editar perfil" title="Editar perfil">
-                    </a>
-                </li>
-                <li class="mb-6">
-                    <a class="profile-nav-buttons" href="">
-                        <img class="nav-button-images" src="/images/profile_images/game_icon.png" alt="Jogos" title="Jogos">
-                    </a>
-                </li>
-                <li>
-                    <a class="profile-nav-buttons" href="">
-                        <img class="nav-button-images" src="/images/profile_images/rank_icon.png" alt="Rank" title="Rank">
-                    </a>
-                </li>
-            </ul>
-        </nav>
+       <%- include(profileNav) %>
         <section class=" min-h-screen grid grid-cols-1 grid-rows-[auto_auto]">
             <div class="flex items-center justify-center border-b-white md:border-none bg-dark-blue md:bg-transparent md:bg-radial-purple">
                 <div class="md:my-28 flex items-center justify-center md:border-2 md:border-solid md:border-white-gray py-8 md:py-10 px-5 sm:px-10 md:px-20 rounded-lg md:bg-dark-blue md:shadow-white-10">

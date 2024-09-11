@@ -13,9 +13,8 @@ if(galaxiesMain){
                         if (!res.ok){
                             throw new Error('Erro na requisição do popup.')
                         } else{
-                            sessionStorage.setItem('currentBody', `${element.id}`)
                             res.text().then(html => {
-                                getPopup(html, galaxiesMain)
+                                getPopup(html, galaxiesMain, element.id)
                             })
                         }
                     })
@@ -25,33 +24,39 @@ if(galaxiesMain){
     })
 }
 
-// Função para a requisição do formulário de idéias
-function ideaForm() {
-    window.location.href = '/ideaForm'
-}
-
 // Função para adição do conteúdo obtido na página
-function getPopup(html, main){
+function getPopup(html, main, celestialBody){
     const divPopup = document.createElement('div')
     divPopup.style.display = 'flex'
     divPopup.classList.add('appear-animation', 'popup')
     divPopup.innerHTML = html
     main.appendChild(divPopup)
-    
-    closeAction(main, divPopup, divPopup.querySelector('.close-icon'))
 
-    const ideaIcon = document.querySelector('.idea-icon')
-    ideaIcon.addEventListener('click', ideaForm)
-
-    const starIcon = document.querySelector('.star-icon')
-    starIcon.addEventListener('click', () => {
-        window.location.href = `/favBody/${sessionStorage.getItem('currentBody')}`
-    })   
-}
-
-// Função do botão de fechar o popup
-function closeAction(main, divPopup, closeIcon) {
+    const closeIcon = divPopup.querySelector('.close-icon')
     closeIcon.addEventListener('click', () => {
         main.removeChild(divPopup)
+    })
+
+    const ideaIcon = document.querySelector('.idea-icon')
+    ideaIcon.addEventListener('click', () => {
+        window.location.href = '/ideaForm'
+    })
+
+    const starIcon = document.querySelector('.star-icon')
+    const selectedStarIcon = document.querySelector('.selected-star-icon')
+    if (localStorage.getItem('favBody') === celestialBody){
+        starIcon.style.display = 'none'
+        selectedStarIcon.style.display = 'block'
+    } else{
+        starIcon.style.display = 'block'
+        selectedStarIcon.style.display = 'none'
+    }
+    starIcon.addEventListener('click', () => {
+        localStorage.setItem('favBody', `${celestialBody}`)
+        if(localStorage.getItem('loggedIn') === 'true'){
+            starIcon.style.display = 'none'
+            selectedStarIcon.style.display = 'block'
+        }
+        window.location.href = `/favBody/${celestialBody}`
     })
 }
