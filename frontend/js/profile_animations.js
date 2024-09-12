@@ -1,13 +1,15 @@
 // ---------- HTML ELEMENTS ----------
 
+const mainProfile = document.querySelector('.main-profile')
+const profileNav = document.querySelector('.profile-nav')
+
 const rightArrowIcon = document.querySelector('.right-arrow-icon')
 const leftArrowIcon = document.querySelector('.left-arrow-icon')
 const editImageIcon = document.querySelector('.edit-img-icon')
-const saveImgButton = document.querySelector('.save-img-button')
-const profileNav = document.querySelector('.profile-nav')
-const profileImgCloseIcon = document.querySelector('.profile-img-close-icon')
+
 const profileImgPopup = document.querySelector('.profile-img-popup')
-const mainProfile = document.querySelector('.main-profile')
+const profileImgCloseIcon = document.querySelector('.profile-img-close-icon')
+const saveImgButton = document.querySelector('.save-img-button')
 
 // ---------- NAV ANIMATION ----------
 
@@ -42,15 +44,18 @@ if (rightArrowIcon){
 if (mainProfile){
     localStorage.setItem('loggedIn', 'true')
 
-    profileImgCloseIcon.addEventListener('click', () => {
-        if(window.getComputedStyle(profileImgPopup).display === 'flex'){
-            profileImgPopup.classList.add('disappear-animation')
-            setTimeout(() => {
-                profileImgPopup.style.display = 'none'
-                profileImgPopup.classList.remove('disappear-animation')
-            }, 500)
-        }
-    })
+    if (profileImgCloseIcon){
+        profileImgCloseIcon.addEventListener('click', () => {
+            if(window.getComputedStyle(profileImgPopup).display === 'flex'){
+                profileImgPopup.classList.add('disappear-animation')
+                setTimeout(() => {
+                    profileImgPopup.style.display = 'none'
+                    profileImgPopup.classList.remove('disappear-animation')
+                }, 500)
+            }
+        })
+    }
+
     if(editImageIcon){
         editImageIcon.addEventListener('click', () => {
             if(window.getComputedStyle(profileImgPopup).display === 'none'){
@@ -66,7 +71,7 @@ if (mainProfile){
     const iconImages = profileImgPopup.querySelectorAll('img')
     if(iconImages){
         iconImages.forEach(element => {
-            if(element !== profileImgCloseIcon){    
+            if(element !== profileImgCloseIcon){
                 element.addEventListener('click', () =>{
                     iconImages.forEach(img => {
                         if(img.classList.contains('outline-icons')){

@@ -1,8 +1,11 @@
 // Elementos do cabeçalho
 const menuIcon = document.querySelector('.menu-icon')
+
 const header = document.querySelector('header')
 const fluidHeader = document.querySelector('.fluid-header')
+
 const profileMain = document.querySelector('.main-profile')
+const editProfileMain = document.querySelector('.main-edit-profile')
 
 // Evento para animações do cabeçalho fluido
 menuIcon.addEventListener('click', () => {
@@ -26,7 +29,7 @@ menuIcon.addEventListener('click', () => {
 })
 
 // Trocando cores do cabeçalho ao entrar no perfil do usuário
-if (profileMain){
+if (profileMain || editProfileMain){
     header.classList.add('profile-header')
     const galaxiesLinks = header.querySelector('ul').querySelectorAll('a')
     galaxiesLinks.forEach(element => {

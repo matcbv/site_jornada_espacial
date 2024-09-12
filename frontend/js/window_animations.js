@@ -15,6 +15,9 @@ const profileImgPopup = document.querySelector('.profile-img-popup')
 const resendEmailBtn = document.querySelector('.resend-email')
 const timerSpan = document.querySelector('.timer')
 
+const profileMain = document.querySelector('.main-profile')
+const editProfileMain = document.querySelector('.main-edit-profile')
+
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
 
 if (introductionSection && headerSection){
@@ -29,7 +32,7 @@ if (introductionSection && headerSection){
             document.body.classList.remove('change-scrollbar');
         }
     })
-} else if (galaxiesMain){
+} else if (galaxiesMain || editProfileMain || profileMain){
     document.body.classList.add('change-scrollbar');
 }
 

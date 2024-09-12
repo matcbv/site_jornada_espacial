@@ -537,6 +537,7 @@ var menuIcon = document.querySelector('.menu-icon');
 var header = document.querySelector('header');
 var fluidHeader = document.querySelector('.fluid-header');
 var profileMain = document.querySelector('.main-profile');
+var editProfileMain = document.querySelector('.main-edit-profile');
 
 // Evento para animações do cabeçalho fluido
 menuIcon.addEventListener('click', function () {
@@ -560,7 +561,7 @@ menuIcon.addEventListener('click', function () {
 });
 
 // Trocando cores do cabeçalho ao entrar no perfil do usuário
-if (profileMain) {
+if (profileMain || editProfileMain) {
   header.classList.add('profile-header');
   var galaxiesLinks = header.querySelector('ul').querySelectorAll('a');
   galaxiesLinks.forEach(function (element) {
@@ -919,6 +920,8 @@ var fluidHeader = document.querySelector('.fluid-header');
 var profileImgPopup = document.querySelector('.profile-img-popup');
 var resendEmailBtn = document.querySelector('.resend-email');
 var timerSpan = document.querySelector('.timer');
+var profileMain = document.querySelector('.main-profile');
+var editProfileMain = document.querySelector('.main-edit-profile');
 
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
 
@@ -933,7 +936,7 @@ if (introductionSection && headerSection) {
       document.body.classList.remove('change-scrollbar');
     }
   });
-} else if (galaxiesMain) {
+} else if (galaxiesMain || editProfileMain || profileMain) {
   document.body.classList.add('change-scrollbar');
 }
 
@@ -1045,11 +1048,12 @@ window.addEventListener('load', function () {
   \******************************************/
 // ---------- HTML ELEMENTS ----------
 
+var footer = document.querySelector('footer');
 var topBtn = document.querySelector('.top-btn');
 var cowboyBebopDiv = document.querySelector('.cowboy-bebop-div');
 var swordfishDiv = document.querySelector('.swordfish-div');
-var footer = document.querySelector('footer');
 var profileMain = document.querySelector('.main-profile');
+var editProfileMain = document.querySelector('.main-edit-profile');
 
 // ---------- TOP BUTTON ----------
 
@@ -1071,7 +1075,8 @@ cowboyBebopDiv.addEventListener('click', function () {
 });
 
 // ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------
-if (profileMain) {
+
+if (profileMain || editProfileMain) {
   footer.classList.add('profile-footer');
 } else {
   footer.classList.remove('profile-footer');
@@ -1202,14 +1207,14 @@ if (resendEmailBtn) {
   \*******************************************/
 // ---------- HTML ELEMENTS ----------
 
+var mainProfile = document.querySelector('.main-profile');
+var profileNav = document.querySelector('.profile-nav');
 var rightArrowIcon = document.querySelector('.right-arrow-icon');
 var leftArrowIcon = document.querySelector('.left-arrow-icon');
 var editImageIcon = document.querySelector('.edit-img-icon');
-var saveImgButton = document.querySelector('.save-img-button');
-var profileNav = document.querySelector('.profile-nav');
-var profileImgCloseIcon = document.querySelector('.profile-img-close-icon');
 var profileImgPopup = document.querySelector('.profile-img-popup');
-var mainProfile = document.querySelector('.main-profile');
+var profileImgCloseIcon = document.querySelector('.profile-img-close-icon');
+var saveImgButton = document.querySelector('.save-img-button');
 
 // ---------- NAV ANIMATION ----------
 
@@ -1241,15 +1246,17 @@ if (rightArrowIcon) {
 
 if (mainProfile) {
   localStorage.setItem('loggedIn', 'true');
-  profileImgCloseIcon.addEventListener('click', function () {
-    if (window.getComputedStyle(profileImgPopup).display === 'flex') {
-      profileImgPopup.classList.add('disappear-animation');
-      setTimeout(function () {
-        profileImgPopup.style.display = 'none';
-        profileImgPopup.classList.remove('disappear-animation');
-      }, 500);
-    }
-  });
+  if (profileImgCloseIcon) {
+    profileImgCloseIcon.addEventListener('click', function () {
+      if (window.getComputedStyle(profileImgPopup).display === 'flex') {
+        profileImgPopup.classList.add('disappear-animation');
+        setTimeout(function () {
+          profileImgPopup.style.display = 'none';
+          profileImgPopup.classList.remove('disappear-animation');
+        }, 500);
+      }
+    });
+  }
   if (editImageIcon) {
     editImageIcon.addEventListener('click', function () {
       if (window.getComputedStyle(profileImgPopup).display === 'none') {
@@ -1283,9 +1290,59 @@ if (mainProfile) {
     });
   }
   var logoutIcon = document.querySelector('.logout-icon');
-  logoutIcon.addEventListener('click', function () {
-    localStorage.setItem('favBody', '');
-    localStorage.setItem('loggedIn', 'false');
+  if (logoutIcon) {
+    logoutIcon.addEventListener('click', function () {
+      localStorage.setItem('favBody', '');
+      localStorage.setItem('loggedIn', 'false');
+    });
+  }
+}
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!************************************************!*\
+  !*** ./frontend/js/edit_profile_animations.js ***!
+  \************************************************/
+// ---------- HTML ELEMENTS ----------
+
+var editProfileMain = document.querySelector('.main-edit-profile');
+var profileImgEdit = document.querySelector('.profile-img-edit');
+var saveImgEditButton = document.querySelector('.save-img-edit-button');
+var bioTextarea = document.querySelector('.bio-textarea');
+var caractersSpan = document.querySelector('.caracters-span');
+
+// ---------- EVENTOS DA SEÇÃO DE EDIÇÃO DO PERFIL ----------
+
+if (editProfileMain) {
+  var iconImagesEdit = profileImgEdit.querySelectorAll('img');
+  if (iconImagesEdit) {
+    iconImagesEdit.forEach(function (element) {
+      element.addEventListener('click', function () {
+        iconImagesEdit.forEach(function (img) {
+          if (img.classList.contains('outline-icons')) {
+            img.classList.remove('outline-icons');
+          }
+        });
+        element.classList.add('outline-icons');
+        sessionStorage.setItem('profileImg', element.id);
+      });
+    });
+  }
+
+  // ---------- BOTÃO DE ATUALIZAR IMAGEM ----------
+  saveImgEditButton.addEventListener('click', function () {
+    window.location.href = "/profileImg/".concat(sessionStorage.getItem('profileImg'));
+  });
+
+  // ---------- EVENTOS PARA ATUALIZAÇÃO DA ÁREA DE TEXTO DA BIO ----------
+
+  caractersSpan.innerHTML = Array.from(bioTextarea.value).length;
+  bioTextarea.addEventListener('keydown', function () {
+    caractersSpan.innerHTML = Array.from(bioTextarea.value).length;
+  });
+  bioTextarea.addEventListener('keyup', function () {
+    caractersSpan.innerHTML = Array.from(bioTextarea.value).length;
   });
 }
 })();

@@ -18,12 +18,22 @@ router.get('/milkyway', pagesController.milkyway)
 router.get('/andromeda', pagesController.andromeda)
 // Seção Triângulo
 router.get('/triangle', pagesController.triangle)
+// Requisição dos popups
+router.get('/popup/:body', staticController.getPopup)
+// Favoritar corpo celeste
+router.get('/favBody/:body', checkLog, userData, addFavBody)
+
+
 // Formulário de ideias
 router.get('/ideaform', pagesController.ideaForm)
+// Enviando dados do formulario
+router.post('/ideaform/sendidea', ideaformController.sendIdea)
 // Página sobre mim
 router.get('/aboutme', pagesController.aboutme)
 // Página de inspirações
-router.get('/inspirations', pagesController.inspirations)
+router.get('/inspirations', pagesController.inspirations) // Em produção
+
+
 // Template para login ou cadastro
 router.get('/account', pagesController.log_template)
 // Página de login
@@ -40,20 +50,20 @@ router.get('/account/signup/validation', pagesController.validationPage)
 router.get('/account/signup/validation/resend', registerController.resendVerifEmail)
 // Validação da conta
 router.post('/checkCode', registerController.validation)
+
+
 // Página inicial do perfil do usuário:
 router.get('/account/profile', checkLog, userData, pagesController.profile)
-// Página para editar dados do usuário
-router.get('/account/profile/editProfile', checkLog, userData, pagesController.editProfile)
 // Logout do usuário
 router.get('/account/profile/logout', logoutUser)
-// Enviando dados do formulario
-router.post('/ideaform/sendidea', ideaformController.sendIdea)
-// Requisição dos popups
-router.get('/popup/:body', staticController.getPopup)
-// Favoritar corpo celeste
-router.get('/favBody/:body', checkLog, userData, addFavBody)
+// Página para editar dados do usuário
+router.get('/account/profile/editProfile', checkLog, userData, pagesController.editProfile)
+// Atualizar dados do usuário
+router.post('/account/profile/editProfile/updateData')
 // Alterar ícone do perfil
 router.get('/profileImg/:img', checkLog, userData, changeProfileImg)
+
+
 // Página 404
 router.get('/404', pagesController.error_404)
 

@@ -1,10 +1,13 @@
 // ---------- HTML ELEMENTS ----------
 
+const footer = document.querySelector('footer')
+
 const topBtn = document.querySelector('.top-btn')
 const cowboyBebopDiv = document.querySelector('.cowboy-bebop-div')
 const swordfishDiv = document.querySelector('.swordfish-div')
-const footer = document.querySelector('footer')
+
 const profileMain = document.querySelector('.main-profile')
+const editProfileMain = document.querySelector('.main-edit-profile')
 
 // ---------- TOP BUTTON ----------
 
@@ -23,7 +26,8 @@ cowboyBebopDiv.addEventListener('click', () => {
 })
 
 // ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------
-if (profileMain){
+
+if (profileMain || editProfileMain){
     footer.classList.add('profile-footer')
 }else{
     footer.classList.remove('profile-footer')
