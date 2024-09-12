@@ -1,7 +1,9 @@
-const userModel = require('../models/userModel')
+const Update = require('../models/updateFormModel')
 
 const updateController = (req, res) => {
-    this.newData = req.body
-
-    checkNewData = {}
+    this.userData = userModel.findOne({username: req.session.user.username})
+    const update = new Update(req.body)
+    
 }
+
+exports.module = updateController

@@ -6,22 +6,22 @@ const fs = require('fs')
 const registerController = {
     userData: '',
     code: '',
-    registerClassData: '',
+    registerData: '',
 
     signup: async (req, res) => {
-        const registerClass = new Register(req.body)
-        await registerClass.checkData()
-        if (registerClass.error_list.length > 0){
-            for (let e of registerClass.error_list){
+        const register = new Register(req.body)
+        await register.checkData()
+        if (register.error_list.length > 0){
+            for (let e of register.error_list){
                 Object.entries(e).forEach(([field, msg]) => {
                     req.flash(`${field}Error`, msg)
                 })
             }
         } else {
-            this.registerClassData = registerClass.data
-            this.userData = registerClass
+            this.registerData = register.data
+            this.userData = register
             this.code =  codeGenerator()
-            sendVerifEmail(this.code, registerClass.data.email, registerClass.data.username)
+            sendVerifEmail(this.code, register.data.email, register.data.username)
             return res.redirect('/account/signup/validation')
         }
         return res.redirect('/account/signup')
@@ -39,7 +39,7 @@ const registerController = {
     },
 
     resendVerifEmail: async (req, res) => {
-        await sendVerifEmail(this.code, this.registerClassData.email, this.registerClassData.username)
+        await sendVerifEmail(this.code, this.registerData.email, this.registerData.username)
         res.redirect('/account/signup/validation')
     }
 }
