@@ -87,8 +87,10 @@ if (mainProfile){
     }
 
     const logoutIcon = document.querySelector('.logout-icon')
-    logoutIcon.addEventListener('click', () => {
-        localStorage.setItem('favBody', '')
-        localStorage.setItem('loggedIn', 'false')
-    })
+    if (logoutIcon){
+        logoutIcon.addEventListener('click', () => {
+            localStorage.setItem('favBody', '')
+            localStorage.setItem('loggedIn', 'false')
+        })
+    }
 }
