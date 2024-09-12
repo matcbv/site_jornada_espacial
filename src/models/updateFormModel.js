@@ -1,41 +1,48 @@
+const validator = require('validator')
+const userModel = require('../models/userModel')
+const { data } = require('autoprefixer')
+
 class Update{
     constructor(newData){
-        ths.newData = newData
+        this.newData = newData
         this.error_list = []
     }
 
     async checkData() {
         for (let k of Object.keys(this.newData)) {
-            
             if (k === 'email') {
-                if (!validator.isEmail(this.data[k])) {
+                if (!validator.isEmail(this.newData[k])) {
                     this.error_list.push({ [k]: 'Email inválido' })
                 }
 
             } else if (k === 'name' || k === 'lastname') {
-                if (!this.data[k]) {
+                if (!this.newData[k]) {
                     k === 'name' ? this.error_list.push({ [k]: 'Nome inválido' }) : this.error_list.push({ [k]: 'Sobrenome inválido' });
                 } else {
-                    this.data[k] = this.data[k][0].toUpperCase() + this.data[k].slice(1)
+                    this.newData[k] = this.newData[k][0].toUpperCase() + this.newData[k].slice(1)
                 }
                 
             } else if (k === 'username') {
-                if (!this.data[k]) {
+                if (!this.newData[k]) {
                     this.error_list.push({ [k]: 'Usuário inválido' })
-                } else if(this.data[k].length > 16) {
+                } else if(this.newData[k].length > 16) {
                     this.error_list.push({ [k]: 'Máximo de 16 caracteres' })
                 } else{
-                    await this._checkUser()
+                    await this._checkUser(this.newData[k])
                 }
             }
         }
-        return this.error_list
     }
 
-    async _checkUser() {
-        const dataQuery = await userModel.findOne({ username: this.data['username'] })
-        if (dataQuery) {
-            this.error_list.push({ 'username': 'Usuário já existente' })
+    async _checkUser(newUsername) {
+        const dataQuery = await userModel.findOne({ username: newUsername })
+        console.log('!!!!!!!!!!!!!!!')
+        console.dir(dataQuery)
+        console.log('!!!!!!!!!!!!!!!')
+        if (dataQuery){
+            if (dataQuery['username'] !== this.newData['username']){
+                this.error_list.push({ 'username': 'Usuário já existente' })
+            }
         }
     }
 }

@@ -16,6 +16,7 @@ const registerController = {
                 Object.entries(e).forEach(([field, msg]) => {
                     req.flash(`${field}Error`, msg)
                 })
+                return res.redirect('/account/signup')
             }
         } else {
             this.registerData = register.data
@@ -24,7 +25,6 @@ const registerController = {
             sendVerifEmail(this.code, register.data.email, register.data.username)
             return res.redirect('/account/signup/validation')
         }
-        return res.redirect('/account/signup')
     },
 
     validation: (req, res) => {

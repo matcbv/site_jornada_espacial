@@ -8,6 +8,7 @@ const staticController = require('./controllers/staticController')
 const ideaformController = require('./controllers/ideaformController')
 const registerController = require('./controllers/registerController')
 const loginController = require('./controllers/loginController')
+const updateController = require('./controllers/updateController')
 const {checkLog, userData, logoutUser, addFavBody, changeProfileImg} = require('./middlewares/userMiddlewares')
 
 // Página inicial
@@ -59,7 +60,7 @@ router.get('/account/profile/logout', logoutUser)
 // Página para editar dados do usuário
 router.get('/account/profile/editProfile', checkLog, userData, pagesController.editProfile)
 // Atualizar dados do usuário
-router.post('/account/profile/editProfile/updateData')
+router.post('/account/profile/editProfile/updateData', checkLog, updateController.updateData, userData)
 // Alterar ícone do perfil
 router.get('/profileImg/:img', checkLog, userData, changeProfileImg)
 

@@ -26,6 +26,7 @@ function flashesMiddleware(req, res, next){
     res.locals.passwordError = req.flash('passwordError')
     res.locals.emailError = req.flash('emailError')
     res.locals.birthdayError = req.flash('birthdayError')
+    res.locals.bioError = req.flash('bioError')
     res.locals.codeError = req.flash('codeError')
     res.locals.registerMsg = req.flash('registerMsg')
     next()

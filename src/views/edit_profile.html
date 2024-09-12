@@ -27,29 +27,49 @@
                         <button type="button" class="save-img-edit-button text-white font-mono text-base md:text-lg py-2 px-6 border-2 border-solid border-gray-400 rounded-full bg-dark-blue cursor-pointer font-bold leading-snug w-48 md:hidden">Salvar imagem</button>
                     </div>
                 </div>
-                <form class="flex flex-col items-center md:[align-items:initial] w-100" action="" method="post">
+                <form class="flex flex-col items-center md:[align-items:initial] w-100" action="/account/profile/editProfile/updateData" method="post">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     <div class="flex flex-col mb-7 w-72 md:w-auto md:mb-10">
                         <label class="edit-profile-labels" for="bio">Biografia (<span class="caracters-span"></span>/150)</label>
+                        <% if(nameError.length !== 0){ %>
+                            <textarea class="edit-error-placeholder bio-textarea resize-none bg-mid-blue rounded-lg text-white py-2 px-4 border-2 border-solid border-gray-400 text-base md:text-lg font-mono font-bold focus:outline-none focus:border-original-yellow" name="bio" id="bio" rows="4" maxlength="150"><%= bioError %></textarea>
+                        <% } %>
                         <textarea class="bio-textarea resize-none bg-mid-blue rounded-lg text-white py-2 px-4 border-2 border-solid border-gray-400 text-base md:text-lg font-mono font-bold focus:outline-none focus:border-original-yellow" name="bio" id="bio" rows="4" maxlength="150"><%= bio %></textarea>
                     </div>
                     <div class="flex flex-col md:flex-row w-72 md:w-auto md:justify-between md:mb-10">
                         <div class="flex flex-col mb-7 md:mb-0">
                             <label class="edit-profile-labels" for="name">Nome</label>
-                            <input class="edit-profile-inputs" type="text" name="name" id="name" value="<%= name %>">
+                            <% if(nameError.length !== 0){ %>
+                                <input class="placeholder-error-red edit-profile-inputs" type="text" name="name" id="name" placeholder="<%= nameError %>">
+                            <% } else{ %>
+                                <input class="edit-profile-inputs" type="text" name="name" id="name" value="<%= name %>">
+                            <% } %>
                         </div>
                         <div class="flex flex-col mb-7 md:mb-0">
                             <label class="edit-profile-labels" for="lastname">Sobrenome</label>
-                            <input class="edit-profile-inputs" type="text" name="lastname" id="lastname" value="<%= lastname %>">
+                            <% if(lastnameError.length !== 0){ %>
+                                <input class="placeholder-error-red edit-profile-inputs" type="text" name="lastname" id="lastname" placeholder="<%= lastnameError %>">
+                            <% } else{ %>
+                                <input class="edit-profile-inputs" type="text" name="lastname" id="lastname" value="<%= lastname %>">
+                            <% } %>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row w-72 md:w-auto md:justify-between md:mb-10">
                         <div class="flex flex-col mb-7 md:mb-0">
                             <label class="edit-profile-labels" for="username">Usuário:</label>
-                            <input class="edit-profile-inputs" type="text" name="username" id="username" value="<%= username %>">
+                            <% if(usernameError.length !== 0){ %>
+                                <input class="placeholder-error-red edit-profile-inputs" type="text" name="username" id="username" placeholder="<%= usernameError %>">
+                            <% } else{ %>
+                                <input class="edit-profile-inputs" type="text" name="username" id="username" value="<%= username %>">
+                            <% } %>
                         </div>
                         <div class="flex flex-col mb-7 md:mb-0">
                             <label class="edit-profile-labels" for="email">Email</label>
-                            <input class="edit-profile-inputs" type="email" name="email" id="email" value="<%= email %>">
+                            <% if(emailError.length !== 0){ %>
+                                <input class="placeholder-error-red edit-profile-inputs" type="email" name="email" id="email" placeholder="<%= emailError %>">
+                            <% } else{ %>
+                                <input class="edit-profile-inputs" type="email" name="email" id="email" value="<%= email %>">
+                            <% } %>
                         </div>
                     </div>
                     <div class="flex flex-col-reverse items-center md:flex-row w-100">

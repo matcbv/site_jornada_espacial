@@ -28,7 +28,8 @@ module.exports = {
         'light-blue': '#5c69cf',
         'original-yellow': 'yellow',
         'white-gray': '#d1d1d1',
-        'black-transparent': 'rgba(0, 0, 0, 0.8)'
+        'black-transparent': 'rgba(0, 0, 0, 0.8)',
+        'error-red': '#d93939'
       },
       screens:{
         'md': '992px',
