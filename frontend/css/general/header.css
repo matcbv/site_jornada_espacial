@@ -104,7 +104,7 @@ header a{
 
 .profile-header{
     background-color: rgb(5, 3, 23);
-    border-bottom: 2px solid rgb(56, 52, 52);
+    border-bottom: 2px solid rgb(87, 87, 87);
 }
 
 .profile-header:hover{
@@ -112,5 +112,5 @@ header a{
 }
 
 .profile-galaxies-links{
-    outline: 2px solid rgb(56, 52, 52);
+    outline: 2px solid rgb(87, 87, 87);
 }

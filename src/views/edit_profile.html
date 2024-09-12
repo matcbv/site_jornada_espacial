@@ -4,18 +4,63 @@
     <main class="main-profile min-h-screen max-w-100 relative">
         <%- include(fluidHeader) %>
         <%- include(editIcon) %>
-        <div class=" z-10 cursor-pointer absolute right-2 mt-4 group">
-            <a class="logout-link block group-hover:hidden" href="/account/profile/logout">
-                <img class="w-9 md:w-14" src="/images/profile_images/logout_icon.png" alt="Sair" title="Sair">
-            </a>
-            <a class="logout-link hidden group-hover:block" href="/account/profile/logout">
-                <img class="logout-icon w-9 md:w-14" src="/images/profile_images/logout_icon_hovered.png" alt="Sair" title="Sair">
-            </a>
+        <%- include(profileNav) %>
+        <div class="flex justify-center sm:justify-evenly max-w-100 min-h-screen py-20">
+            <div class="hidden sm:inline self-start">
+                <img class="animate-levitate w-32 md:w-40" src="/images/profile_images/spaceship.png" alt="Espaçonave">
+            </div>
+            <section class="flex flex-col items-center justify-evenly max-w-xl">
+                <div class="block md:flex items-center mb-10">
+                    <div class="hidden md:flex flex-col justify-evenly items-center h-100 mr-5 md:mr-10">
+                        <img class="w-40 h-40" src="/images/profile_images/<%= profileImg %>_icon.png" alt="Imagem de perfil">
+                        <button type="button" class="save-img-button text-white font-mono text-lg py-2 px-6 border-2 border-solid border-gray-400 rounded-full bg-dark-blue cursor-pointer font-bold leading-snug">Salvar imagem</button>
+                    </div>
+                    <div class="flex flex-col justify-evenly w-72 md:w-80 p-6 border border-solid border-original-yellow bg-dark-blue rounded-lg">
+                        <div class="flex justify-evenly mb-5 w-100">
+                            <img class="w-24 md:w-28 p-2 cursor-pointer" id="astronaut_man" src="/images/profile_images/astronaut_man_icon.png" alt="Astronauta homem">
+                            <img class="w-24 md:w-28 p-2 cursor-pointer" id="astronaut_woman" src="/images/profile_images/astronaut_woman_icon.png" alt="Astronauta mulher">
+                        </div>
+                        <div class="flex justify-evenly w-100">
+                            <img class="w-24 md:w-28 p-2 cursor-pointer" id="alien" src="/images/profile_images/alien_icon.png" alt="Alienígena">
+                            <img class="w-24 md:w-28 p-2 cursor-pointer" id="robot" src="/images/profile_images/robot_icon.png" alt="Robô">
+                        </div>
+                    </div>
+                </div>
+                <form class="flex flex-col items-center md:[align-items:initial] w-100" action="" method="post">
+                    <div class="flex flex-col mb-7 w-72 md:w-auto md:mb-10">
+                        <label class="edit-profile-labels" for="bio">Biografia (22/100)</label>
+                        <textarea class="resize-none bg-mid-blue rounded-lg text-white py-2 px-4 border-2 border-solid border-gray-400 text-base md:text-lg font-mono font-bold focus:outline-none focus:border-original-yellow" name="bio" id="bio" rows="4"><%= bio %></textarea>
+                    </div>
+                    <div class="flex flex-col md:flex-row w-72 md:w-auto md:justify-between md:mb-10">
+                        <div class="flex flex-col mb-7 md:mb-0">
+                            <label class="edit-profile-labels" for="name">Nome</label>
+                            <input class="edit-profile-inputs" type="text" name="name" id="name" value="<%= name %>">
+                        </div>
+                        <div class="flex flex-col mb-7 md:mb-0">
+                            <label class="edit-profile-labels" for="lastname">Sobrenome</label>
+                            <input class="edit-profile-inputs" type="text" name="lastname" id="lastname" value="<%= lastname %>">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row w-72 md:w-auto md:justify-between md:mb-10">
+                        <div class="flex flex-col mb-7 md:mb-0">
+                            <label class="edit-profile-labels" for="username">Usuário:</label>
+                            <input class="edit-profile-inputs" type="text" name="username" id="username" value="<%= username %>">
+                        </div>
+                        <div class="flex flex-col mb-7 md:mb-0">
+                            <label class="edit-profile-labels" for="email">Email</label>
+                            <input class="edit-profile-inputs" type="email" name="email" id="email" value="<%= email %>">
+                        </div>
+                    </div>
+                    <div class="flex flex-col-reverse items-center md:flex-row w-100">
+                        <input class="bg-transparent w-64 md:w-auto text-base md:text-xl font-mono font-bold border-2 border-solid border-original-yellow text-white py-2 md:px-6 rounded-full md:mr-5 cursor-pointer " type="submit" value="Salvar dados">
+                        <button class="text-white font-mono text-base md:text-lg bg-transparent border-none underline font-bold cursor-pointer mb-5 md:mb-0" type="button">Esqueceu sua senha?</button>
+                    </div>
+                </form>
+            </section>
+            <div class="hidden sm:inline self-end">
+                <img class="animate-levitate w-32 md:w-40" src="/images/profile_images/asteroid.png" alt="Asteroide">
+            </div>
         </div>
-        <% include(profileNav) %>
-        <section>
-            
-        </section>
         <%- include(playlist) %>
         <%- include(audio) %>
         <%- include(swordfish) %>

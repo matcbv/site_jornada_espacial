@@ -101,6 +101,10 @@ input[type="password"]::-ms-reveal {
     height: 20px;
 }
 
+.requirements-icon:hover{
+    cursor: pointer;
+}
+
 .eye-icon{
     width: 32px;
     position: absolute;

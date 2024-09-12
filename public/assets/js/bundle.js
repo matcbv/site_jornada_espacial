@@ -880,7 +880,7 @@ function getPopup(html, main, celestialBody) {
   });
   var starIcon = document.querySelector('.star-icon');
   var selectedStarIcon = document.querySelector('.selected-star-icon');
-  if (localStorage.getItem('favBody') === celestialBody) {
+  if (localStorage.getItem('favBody') === celestialBody && localStorage.getItem('loggedIn') === 'true') {
     starIcon.style.display = 'none';
     selectedStarIcon.style.display = 'block';
   } else {
@@ -888,8 +888,8 @@ function getPopup(html, main, celestialBody) {
     selectedStarIcon.style.display = 'none';
   }
   starIcon.addEventListener('click', function () {
-    localStorage.setItem('favBody', "".concat(celestialBody));
     if (localStorage.getItem('loggedIn') === 'true') {
+      localStorage.setItem('favBody', "".concat(celestialBody));
       starIcon.style.display = 'none';
       selectedStarIcon.style.display = 'block';
     }
@@ -1241,7 +1241,6 @@ if (rightArrowIcon) {
 
 if (mainProfile) {
   localStorage.setItem('loggedIn', 'true');
-  var iconImages = profileImgPopup.querySelectorAll('img');
   profileImgCloseIcon.addEventListener('click', function () {
     if (window.getComputedStyle(profileImgPopup).display === 'flex') {
       profileImgPopup.classList.add('disappear-animation');
@@ -1251,31 +1250,38 @@ if (mainProfile) {
       }, 500);
     }
   });
-  editImageIcon.addEventListener('click', function () {
-    if (window.getComputedStyle(profileImgPopup).display === 'none') {
-      profileImgPopup.classList.add('fast-appear-animation');
-      profileImgPopup.style.display = 'flex';
-      setTimeout(function () {
-        profileImgPopup.classList.remove('fast-appear-animation');
-      }, 500);
-    }
-  });
-  iconImages.forEach(function (element) {
-    if (element !== profileImgCloseIcon) {
-      element.addEventListener('click', function () {
-        iconImages.forEach(function (img) {
-          if (img.classList.contains('outline-icons')) {
-            img.classList.remove('outline-icons');
-          }
+  if (editImageIcon) {
+    editImageIcon.addEventListener('click', function () {
+      if (window.getComputedStyle(profileImgPopup).display === 'none') {
+        profileImgPopup.classList.add('fast-appear-animation');
+        profileImgPopup.style.display = 'flex';
+        setTimeout(function () {
+          profileImgPopup.classList.remove('fast-appear-animation');
+        }, 500);
+      }
+    });
+  }
+  var iconImages = profileImgPopup.querySelectorAll('img');
+  if (iconImages) {
+    iconImages.forEach(function (element) {
+      if (element !== profileImgCloseIcon) {
+        element.addEventListener('click', function () {
+          iconImages.forEach(function (img) {
+            if (img.classList.contains('outline-icons')) {
+              img.classList.remove('outline-icons');
+            }
+          });
+          element.classList.add('outline-icons');
+          sessionStorage.setItem('profileImg', element.id);
         });
-        element.classList.add('outline-icons');
-        sessionStorage.setItem('profileImg', element.id);
-      });
-    }
-  });
-  saveImgButton.addEventListener('click', function () {
-    window.location.href = "/profileImg/".concat(sessionStorage.getItem('profileImg'));
-  });
+      }
+    });
+  }
+  if (saveImgButton) {
+    saveImgButton.addEventListener('click', function () {
+      window.location.href = "/profileImg/".concat(sessionStorage.getItem('profileImg'));
+    });
+  }
   var logoutIcon = document.querySelector('.logout-icon');
   logoutIcon.addEventListener('click', function () {
     localStorage.setItem('favBody', '');

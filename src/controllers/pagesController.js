@@ -1,3 +1,5 @@
+const { userData } = require("./registerController")
+
 const pagesController = {
     homePage: (req, res) => {
         return res.render('index.html')
@@ -45,6 +47,10 @@ const pagesController = {
 
     profile: (req, res) => {
         return res.render('profile.html')
+    },
+
+    editProfile: (req, res) => {
+        return res.render('edit_profile.html')
     },
     
     error_404: (req, res) => {

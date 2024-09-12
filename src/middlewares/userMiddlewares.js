@@ -28,6 +28,7 @@ function userData(req, res, next){
     res.locals.lastname = req.session.user['lastname']
     res.locals.username = req.session.user['username']
     res.locals.birthday = req.session.user['birthday']
+    res.locals.email = req.session.user['email']
     res.locals.bio = req.session.user['bio']
     res.locals.favBody = req.session.user['favBody']
     res.locals.profileImg = req.session.user['profileImg']

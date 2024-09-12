@@ -41,7 +41,6 @@ if (rightArrowIcon){
 
 if (mainProfile){
     localStorage.setItem('loggedIn', 'true')
-    const iconImages = profileImgPopup.querySelectorAll('img')
 
     profileImgCloseIcon.addEventListener('click', () => {
         if(window.getComputedStyle(profileImgPopup).display === 'flex'){
@@ -52,34 +51,40 @@ if (mainProfile){
             }, 500)
         }
     })
+    if(editImageIcon){
+        editImageIcon.addEventListener('click', () => {
+            if(window.getComputedStyle(profileImgPopup).display === 'none'){
+                profileImgPopup.classList.add('fast-appear-animation')
+                    profileImgPopup.style.display = 'flex'
+                setTimeout(() => {
+                    profileImgPopup.classList.remove('fast-appear-animation')
+                }, 500)
+            }
+        })
+    }
 
-    editImageIcon.addEventListener('click', () => {
-        if(window.getComputedStyle(profileImgPopup).display === 'none'){
-            profileImgPopup.classList.add('fast-appear-animation')
-                profileImgPopup.style.display = 'flex'
-            setTimeout(() => {
-                profileImgPopup.classList.remove('fast-appear-animation')
-            }, 500)
-        }
-    })
-
-    iconImages.forEach(element => {
-        if(element !== profileImgCloseIcon){    
-            element.addEventListener('click', () =>{
-                iconImages.forEach(img => {
-                    if(img.classList.contains('outline-icons')){
-                        img.classList.remove('outline-icons')
-                    }
+    const iconImages = profileImgPopup.querySelectorAll('img')
+    if(iconImages){
+        iconImages.forEach(element => {
+            if(element !== profileImgCloseIcon){    
+                element.addEventListener('click', () =>{
+                    iconImages.forEach(img => {
+                        if(img.classList.contains('outline-icons')){
+                            img.classList.remove('outline-icons')
+                        }
+                    })
+                    element.classList.add('outline-icons')
+                    sessionStorage.setItem('profileImg', element.id)
                 })
-                element.classList.add('outline-icons')
-                sessionStorage.setItem('profileImg', element.id)
-            })
-        }
-    });
+            }
+        });
+    }
 
-    saveImgButton.addEventListener('click', () => {
-        window.location.href = `/profileImg/${sessionStorage.getItem('profileImg')}`
-    })
+    if (saveImgButton){
+        saveImgButton.addEventListener('click', () => {
+            window.location.href = `/profileImg/${sessionStorage.getItem('profileImg')}`
+        })
+    }
 
     const logoutIcon = document.querySelector('.logout-icon')
     logoutIcon.addEventListener('click', () => {

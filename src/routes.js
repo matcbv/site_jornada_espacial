@@ -6,7 +6,7 @@ const router = express.Router()
 const pagesController = require('./controllers/pagesController')
 const staticController = require('./controllers/staticController')
 const ideaformController = require('./controllers/ideaformController')
-const {registerController, resendVerifEmail} = require('./controllers/registerController')
+const registerController = require('./controllers/registerController')
 const loginController = require('./controllers/loginController')
 const {checkLog, userData, logoutUser, addFavBody, changeProfileImg} = require('./middlewares/userMiddlewares')
 
@@ -42,6 +42,8 @@ router.get('/account/signup/validation/resend', registerController.resendVerifEm
 router.post('/checkCode', registerController.validation)
 // Página inicial do perfil do usuário:
 router.get('/account/profile', checkLog, userData, pagesController.profile)
+// Página para editar dados do usuário
+router.get('/account/profile/editProfile', checkLog, userData, pagesController.editProfile)
 // Logout do usuário
 router.get('/account/profile/logout', logoutUser)
 // Enviando dados do formulario

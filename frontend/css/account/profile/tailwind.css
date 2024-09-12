@@ -9,6 +9,14 @@
         @apply block p-2 border border-solid border-white bg-blue-950 rounded-full cursor-pointer hover:scale-110
     }
 
+    .edit-profile-inputs{
+        @apply max-w-72 md:max-w-none bg-mid-blue rounded-full text-white py-1 px-4 border-2 border-solid border-gray-400 text-lg font-mono font-bold  focus:outline-none focus:border-original-yellow 
+    }
+
+    .edit-profile-labels{
+        @apply font-mono text-sm md:text-base ml-4 font-bold
+    }
+
     .nav-button-images{
         @apply block m-auto w-8 md:w-10
     }

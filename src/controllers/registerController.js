@@ -88,4 +88,4 @@ async function sendVerifEmail(code, receiver, username){
     }
 }
 
-module.exports = {registerController, sendVerifEmail}
+module.exports = registerController
