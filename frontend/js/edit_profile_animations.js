@@ -3,7 +3,7 @@
 const editProfileMain = document.querySelector('.main-edit-profile')
 
 const profileImgEdit = document.querySelector('.profile-img-edit')
-const saveImgEditButton = document.querySelector('.save-img-edit-button')
+const saveImgEditButton = document.querySelectorAll('.save-img-edit-button')
 const bioTextarea = document.querySelector('.bio-textarea')
 const caractersSpan = document.querySelector('.caracters-span')
 
@@ -26,8 +26,11 @@ if (editProfileMain){
     }
 
     // ---------- BOTÃO DE ATUALIZAR IMAGEM ----------
-    saveImgEditButton.addEventListener('click', () => {
-        window.location.href = `/profileImg/${sessionStorage.getItem('profileImg')}`
+
+    saveImgEditButton.forEach(element => {
+        element.addEventListener('click', () => {
+            window.location.href = `/profileImg/${sessionStorage.getItem('profileImg')}`
+        })
     })
 
     // ---------- EVENTOS PARA ATUALIZAÇÃO DA ÁREA DE TEXTO DA BIO ----------

@@ -1314,7 +1314,7 @@ if (mainProfile) {
 
 var editProfileMain = document.querySelector('.main-edit-profile');
 var profileImgEdit = document.querySelector('.profile-img-edit');
-var saveImgEditButton = document.querySelector('.save-img-edit-button');
+var saveImgEditButton = document.querySelectorAll('.save-img-edit-button');
 var bioTextarea = document.querySelector('.bio-textarea');
 var caractersSpan = document.querySelector('.caracters-span');
 
@@ -1337,8 +1337,11 @@ if (editProfileMain) {
   }
 
   // ---------- BOTÃO DE ATUALIZAR IMAGEM ----------
-  saveImgEditButton.addEventListener('click', function () {
-    window.location.href = "/profileImg/".concat(sessionStorage.getItem('profileImg'));
+
+  saveImgEditButton.forEach(function (element) {
+    element.addEventListener('click', function () {
+      window.location.href = "/profileImg/".concat(sessionStorage.getItem('profileImg'));
+    });
   });
 
   // ---------- EVENTOS PARA ATUALIZAÇÃO DA ÁREA DE TEXTO DA BIO ----------

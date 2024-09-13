@@ -53,6 +53,8 @@ router.get('/account/signup/validation/resend', registerController.resendVerifEm
 router.post('/checkCode', registerController.validation)
 // Página para troca da senha
 router.get('/account/changePassword', pagesController.changePasswordPage)
+// Checar se o usuário é existente
+router.get('/account/changePassword/getUser', loginController.getUser)
 
 
 // Página inicial do perfil do usuário:
