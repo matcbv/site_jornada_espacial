@@ -1,10 +1,10 @@
 const validator = require('validator')
 const userModel = require('../models/userModel')
-const { data } = require('autoprefixer')
 
 class Update{
-    constructor(newData){
+    constructor(newData, currentUserId){
         this.newData = newData
+        this.currentUserId = currentUserId
         this.error_list = []
     }
 
@@ -28,20 +28,13 @@ class Update{
                 } else if(this.newData[k].length > 16) {
                     this.error_list.push({ [k]: 'Máximo de 16 caracteres' })
                 } else{
-                    await this._checkUser(this.newData[k])
+                    const dataQuery = await userModel.findOne({ username: this.newData[k]})
+                    if(dataQuery){
+                        if(this.currentUserId.toString() !== dataQuery._id.toString()){
+                            this.error_list.push({ [k]: 'Usuário já existente' })
+                        }
+                    }
                 }
-            }
-        }
-    }
-
-    async _checkUser(newUsername) {
-        const dataQuery = await userModel.findOne({ username: newUsername })
-        console.log('!!!!!!!!!!!!!!!')
-        console.dir(dataQuery)
-        console.log('!!!!!!!!!!!!!!!')
-        if (dataQuery){
-            if (dataQuery['username'] !== this.newData['username']){
-                this.error_list.push({ 'username': 'Usuário já existente' })
             }
         }
     }

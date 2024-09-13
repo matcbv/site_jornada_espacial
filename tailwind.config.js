@@ -17,7 +17,8 @@ module.exports = {
       },
       maxWidth:{
         '100': '100vw',
-        '500': '500px'
+        '500': '500px',
+        '800': '800px'
       },
       colors:{
         'dark-blue': '#040216',

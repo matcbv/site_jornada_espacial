@@ -6,6 +6,7 @@ const profileNav = document.querySelector('.profile-nav')
 const rightArrowIcon = document.querySelector('.right-arrow-icon')
 const leftArrowIcon = document.querySelector('.left-arrow-icon')
 const editImageIcon = document.querySelector('.edit-img-icon')
+const pencilIcon = document.querySelector('.pencil-icon')
 
 const profileImgPopup = document.querySelector('.profile-img-popup')
 const profileImgCloseIcon = document.querySelector('.profile-img-close-icon')
@@ -88,6 +89,12 @@ if (mainProfile){
     if (saveImgButton){
         saveImgButton.addEventListener('click', () => {
             window.location.href = `/profileImg/${sessionStorage.getItem('profileImg')}`
+        })
+    }
+
+    if (pencilIcon){
+        pencilIcon.addEventListener('click', () => {
+            window.location.href = `/account/profile/editProfile`
         })
     }
 

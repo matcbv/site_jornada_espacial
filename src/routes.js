@@ -51,6 +51,8 @@ router.get('/account/signup/validation', pagesController.validationPage)
 router.get('/account/signup/validation/resend', registerController.resendVerifEmail)
 // Validação da conta
 router.post('/checkCode', registerController.validation)
+// Página para troca da senha
+router.get('/account/changePassword', pagesController.changePasswordPage)
 
 
 // Página inicial do perfil do usuário:

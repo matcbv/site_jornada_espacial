@@ -1,13 +1,13 @@
 @media (max-width: 992px){
     .register-input-div input{
         height: 30px;
-        width: 250px;
+        width: 260px;
         font-size: 1.1em;
         padding: 0 15px;
     }
 
     .password-div div:first-child{
-        width: 250px;
+        width: 260px;
     }
 
     .eye-icon{
@@ -16,7 +16,7 @@
 
     .crossline{
         height: 28px;
-        right: 21px
+        right: 23px
     }
 
     .register-main h1{
@@ -30,7 +30,7 @@
     .register-btn-div .register-btn{
         height: 40px;
         font-size: 1.2em;
-        padding: 0 20px;
+        padding: 0 30px;
     }
 
     .register-input-div label{
@@ -82,10 +82,10 @@
     }
 
     .register-main h1{
-        width: 250px;
+        width: 260px;
         text-align: center;
-        font-size: 1.45em;
-        letter-spacing: 2.3px;
+        font-size: 1.5em;
+        letter-spacing: 2.2px;
         line-height: 35px;
     }
 
@@ -114,7 +114,7 @@
         padding: 30px;
     }
 
-    .code-popup-div h1{
+    .code-popup-div p:first-child{
         font-size: 1em;
     }
 
@@ -140,6 +140,10 @@
     }
 
     .code-btn-div button{
+        width: 100%;
+    }
+
+    .code-input{
         width: 100%;
     }
 }

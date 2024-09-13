@@ -100,7 +100,8 @@
     justify-content: flex-start;
 }
 
-.login-btn-div .login-btn{
+.login-btn{
+    text-decoration: none;
     background-color: transparent;
     border: none;
     border-radius: 20px;
@@ -112,7 +113,7 @@
     padding: 10px 20px;
 }
 
-.login-btn-div .login-btn:first-child{
+.login-btn:first-child{
     margin-right: 30px;
 }
 

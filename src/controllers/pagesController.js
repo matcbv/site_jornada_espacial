@@ -1,3 +1,4 @@
+const { changePassword } = require("./loginController")
 const { userData } = require("./registerController")
 
 const pagesController = {
@@ -51,6 +52,10 @@ const pagesController = {
 
     editProfile: (req, res) => {
         return res.render('edit_profile.html')
+    },
+
+    changePasswordPage: (req, res) => {
+        return res.render('change_password.html')
     },
     
     error_404: (req, res) => {

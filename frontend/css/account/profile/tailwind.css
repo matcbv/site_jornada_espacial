@@ -48,3 +48,8 @@
 .webkit-text-black{
     -webkit-text-stroke: 2px black;
 }
+
+.outline-icons{
+    outline: 2px solid white;
+    border-radius: 100%;
+}

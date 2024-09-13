@@ -15,6 +15,10 @@ const loginController = {
             req.session.user = loginClass.userData
             return res.redirect('/account/profile')
         }
+    },
+
+    changePassword: (req, res) => {
+
     }
 }
 

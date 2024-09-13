@@ -125,7 +125,7 @@ input[type="password"]::-ms-reveal {
     font-size: 1.3em;
     font-weight: bold;
     outline: 2px solid #ff0;
-    padding: 0 25px;
+    padding: 0 40px;
 }
 
 .register-btn:hover, .register-btn:focus{
@@ -219,11 +219,12 @@ input[type="password"]::-ms-reveal {
     padding: 50px;
 }
 
-.code-popup-div h1{
-    font-size: 1.3em;
+.code-popup-div p:first-child{
+    font-size: 1.4em;
     font-family: 'Inconsolata';
     line-height: 1.2em;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .code-popup-div p{
@@ -256,7 +257,7 @@ input[type="password"]::-ms-reveal {
     color: rgba(223, 255, 255, 0.7);
 }
 
-.code-input::placeholder{
+.error-code::placeholder{
     color: rgb(217, 57, 57) !important;
 }
 
