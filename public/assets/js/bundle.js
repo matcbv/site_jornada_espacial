@@ -1,6 +1,19 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./frontend/css/account/change_password.css":
+/*!**************************************************!*\
+  !*** ./frontend/css/account/change_password.css ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./frontend/css/account/login.css":
 /*!****************************************!*\
   !*** ./frontend/css/account/login.css ***!
@@ -1384,18 +1397,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_account_login_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/account/login.css */ "./frontend/css/account/login.css");
 /* harmony import */ var _css_account_register_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../css/account/register.css */ "./frontend/css/account/register.css");
 /* harmony import */ var _css_account_password_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../css/account/password.css */ "./frontend/css/account/password.css");
-/* harmony import */ var _css_media_queries_index_media_queries_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../css/media_queries/index_media_queries.css */ "./frontend/css/media_queries/index_media_queries.css");
-/* harmony import */ var _css_media_queries_header_media_queries_css__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../css/media_queries/header_media_queries.css */ "./frontend/css/media_queries/header_media_queries.css");
-/* harmony import */ var _css_media_queries_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../css/media_queries/footer_media_queries.css */ "./frontend/css/media_queries/footer_media_queries.css");
-/* harmony import */ var _css_media_queries_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../css/media_queries/galaxies_media_queries.css */ "./frontend/css/media_queries/galaxies_media_queries.css");
-/* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./frontend/css/media_queries/popup_media_queries.css");
-/* harmony import */ var _css_media_queries_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../css/media_queries/error_404_media_queries.css */ "./frontend/css/media_queries/error_404_media_queries.css");
-/* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./frontend/css/media_queries/ideaform_media_queries.css");
-/* harmony import */ var _css_media_queries_playlist_media_queries_css__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../css/media_queries/playlist_media_queries.css */ "./frontend/css/media_queries/playlist_media_queries.css");
-/* harmony import */ var _css_media_queries_aboutme_media_queries_css__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../css/media_queries/aboutme_media_queries.css */ "./frontend/css/media_queries/aboutme_media_queries.css");
-/* harmony import */ var _css_media_queries_signin_template_media_queries_css__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../css/media_queries/signin_template_media_queries.css */ "./frontend/css/media_queries/signin_template_media_queries.css");
-/* harmony import */ var _css_media_queries_login_media_queries_css__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../css/media_queries/login_media_queries.css */ "./frontend/css/media_queries/login_media_queries.css");
-/* harmony import */ var _css_media_queries_register_media_queries_css__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../css/media_queries/register_media_queries.css */ "./frontend/css/media_queries/register_media_queries.css");
+/* harmony import */ var _css_account_change_password_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../css/account/change_password.css */ "./frontend/css/account/change_password.css");
+/* harmony import */ var _css_media_queries_index_media_queries_css__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../css/media_queries/index_media_queries.css */ "./frontend/css/media_queries/index_media_queries.css");
+/* harmony import */ var _css_media_queries_header_media_queries_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../css/media_queries/header_media_queries.css */ "./frontend/css/media_queries/header_media_queries.css");
+/* harmony import */ var _css_media_queries_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../css/media_queries/footer_media_queries.css */ "./frontend/css/media_queries/footer_media_queries.css");
+/* harmony import */ var _css_media_queries_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../css/media_queries/galaxies_media_queries.css */ "./frontend/css/media_queries/galaxies_media_queries.css");
+/* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./frontend/css/media_queries/popup_media_queries.css");
+/* harmony import */ var _css_media_queries_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../css/media_queries/error_404_media_queries.css */ "./frontend/css/media_queries/error_404_media_queries.css");
+/* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./frontend/css/media_queries/ideaform_media_queries.css");
+/* harmony import */ var _css_media_queries_playlist_media_queries_css__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../css/media_queries/playlist_media_queries.css */ "./frontend/css/media_queries/playlist_media_queries.css");
+/* harmony import */ var _css_media_queries_aboutme_media_queries_css__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../css/media_queries/aboutme_media_queries.css */ "./frontend/css/media_queries/aboutme_media_queries.css");
+/* harmony import */ var _css_media_queries_signin_template_media_queries_css__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../css/media_queries/signin_template_media_queries.css */ "./frontend/css/media_queries/signin_template_media_queries.css");
+/* harmony import */ var _css_media_queries_login_media_queries_css__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../css/media_queries/login_media_queries.css */ "./frontend/css/media_queries/login_media_queries.css");
+/* harmony import */ var _css_media_queries_register_media_queries_css__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../css/media_queries/register_media_queries.css */ "./frontend/css/media_queries/register_media_queries.css");
 // TAILWIND
 
 
@@ -1424,6 +1438,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // ACCOUNT IMPORTS
+
 
 
 

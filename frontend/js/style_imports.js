@@ -31,6 +31,7 @@ import "../css/account/signin_template.css"
 import "../css/account/login.css"
 import "../css/account/register.css"
 import "../css/account/password.css"
+import "../css/account/change_password.css"
 
 // MEDIA QUERIES
 import "../css/media_queries/index_media_queries.css"

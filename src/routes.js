@@ -56,8 +56,7 @@ router.get('/account/password', pagesController.passwordPage)
 // Checar se o usuário é existente
 router.get('/account/password/getUser', loginController.getUser)
 // Página para troca da senha
-router.post('/account/password/changePassword', pagesController.changePasswordPage)
-
+router.get('/account/password/changePassword', pagesController.changePasswordPage)
 
 
 // Página inicial do perfil do usuário:
