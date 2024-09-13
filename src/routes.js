@@ -36,7 +36,7 @@ router.get('/inspirations', pagesController.inspirations) // Em produção
 
 
 // Template para login ou cadastro
-router.get('/account', pagesController.log_template)
+router.get('/account', pagesController.accountPage)
 // Página de login
 router.get('/account/signin', pagesController.login)
 // Login do usuário
@@ -51,10 +51,13 @@ router.get('/account/signup/validation', pagesController.validationPage)
 router.get('/account/signup/validation/resend', registerController.resendVerifEmail)
 // Validação da conta
 router.post('/checkCode', registerController.validation)
-// Página para troca da senha
-router.get('/account/changePassword', pagesController.changePasswordPage)
+// Página para obtenção do usuário
+router.get('/account/password', pagesController.passwordPage)
 // Checar se o usuário é existente
-router.get('/account/changePassword/getUser', loginController.getUser)
+router.get('/account/password/getUser', loginController.getUser)
+// Página para troca da senha
+router.post('/account/password/changePassword', pagesController.changePasswordPage)
+
 
 
 // Página inicial do perfil do usuário:

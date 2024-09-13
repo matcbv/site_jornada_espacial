@@ -22,29 +22,33 @@ const loginController = {
 
     getUser: async (req, res) => {
         const data = req.query.username
-        if (validator.isEmail(data)){
-            const userByEmail = await userModel.findOne({email: data})
-            if(userByEmail){
-                try{
-                    sendVerifEmail(codeGenerator(), userByEmail.email, userByEmail.username)
-                }catch(e){
-                    console.log('Erro ao enviar o email.', e)
-                }
-            }
-        } else{
-            const userByUsername = await userModel.findOne({username: data})
-            if (userByUsername){
-                try{
-                    sendVerifEmail(codeGenerator(), userByUsername.email, userByUsername.username)
-                }catch(e){
-                    console.log('Erro ao enviar o email.', e)
+        if(data){
+            if (validator.isEmail(data)){
+                const userByEmail = await userModel.findOne({email: data})
+                if(userByEmail){
+                    try{
+                        sendVerifEmail(codeGenerator(), userByEmail.email, userByEmail.username)
+                        return res.redirect('/account/password/changePassword')
+                    }catch(e){
+                        console.log('Erro ao enviar o email.', e)
+                    }
                 }
             } else{
-                req.flash('userError', 'Usuário/Email inválido')
-                res.redirect('/account/changePassword')
+                const userByUsername = await userModel.findOne({username: data})
+                if (userByUsername){
+                    try{
+                        sendVerifEmail(codeGenerator(), userByUsername.email, userByUsername.username)
+                        return res.redirect('/account/password/changePassword')
+                    }catch(e){
+                        console.log('Erro ao enviar o email.', e)
+                    }
+                } else{
+                    req.flash('userError', 'Usuário/Email inválido')
+                }
             }
         }
-    }
+        return res.redirect('/account/password')
+    },
 }
 
 module.exports = loginController

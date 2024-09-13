@@ -30,8 +30,8 @@ const pagesController = {
         return res.render('inspirations.html')
     },
 
-    log_template: (req, res) => {
-        return res.render('log_template.html')
+    accountPage: (req, res) => {
+        return res.render('account_page.html')
     },
 
     login: (req, res) => {
@@ -52,6 +52,10 @@ const pagesController = {
 
     editProfile: (req, res) => {
         return res.render('edit_profile.html')
+    },
+
+    passwordPage: (req, res) => {
+        return res.render('password.html')
     },
 
     changePasswordPage: (req, res) => {
