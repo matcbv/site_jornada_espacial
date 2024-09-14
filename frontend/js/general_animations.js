@@ -22,6 +22,7 @@ let lastSoundWaveIcon = ''
 // Ideaform main
 const ideaformMain = document.querySelector('.ideaform-main')
 const loginMain = document.querySelector('.login-main')
+const passwordMain = document.querySelector('.password-main')
 
 // ---------- PLAY POPUP ----------
 
@@ -209,7 +210,7 @@ if(audioDiv && !ideaformMain && !loginMain){
     })
 }
 
-if(ideaformMain || loginMain){
+if(ideaformMain || loginMain || passwordMain){
     audioDiv.style.position = 'absolute'
     audioDiv.style.flexFlow = 'row nowrap'
     soundOff.style.margin = '0 auto 0 10px'

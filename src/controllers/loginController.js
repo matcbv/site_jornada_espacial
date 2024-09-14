@@ -1,25 +1,23 @@
 const Login = require('../models/loginFormModel')
 const validator = require('validator')
 const userModel = require('../models/userModel')
+const loginFormModel = require('../models/loginFormModel')
 const {codeGenerator, sendVerifEmail} = require('../controllers/emailController')
 
 const loginController = {
-    code: '',
-    userData: '',
-    
-    
+
     logUser: async (req, res) => {
-        const loginClass = new Login(req.body)
-        await loginClass.checkUser()
-        if (loginClass.error_list.length > 0){
-            for (let e of loginClass.error_list){
+        const login = new Login(req.body)
+        await login.checkUser()
+        if (login.error_list.length > 0){
+            for (let e of login.error_list){
                 Object.entries(e).forEach(([field, msg]) => {
                     req.flash(`${field}Error`, msg)
                 })
             }
-            res.redirect('/account/signin')
+            return res.redirect('/account/signin')
         } else{
-            req.session.user = loginClass.userData
+            req.session.user = login.userData
             return res.redirect('/account/profile')
         }
     },
@@ -57,29 +55,22 @@ const loginController = {
 
     savePassword: async (req, res) => {
         const dataQuery = req.body
-        if (this.code !== dataQuery.code){
-            req.flash('codeError', 'Código inválido')
+        const login = new loginFormModel()
+        login.checkNewPassword(dataQuery.password)
+
+        if(login.error_list.length > 0){
+            for (let e of login.error_list){
+                Object.entries(e).forEach(([field, msg]) => {
+                    req.flash(`${field}Error`, msg)
+                })
+            }
             return res.redirect('/account/password/changePassword')
-        }
-
-        if(dataQuery.password !== dataQuery.password_confirmation){
-            req.flash('passwordError', 'Senhas não conferem')
-            return res.redirect('/account/password/changePassword')
-        }
-
-        const alphaArr = Array.from(dataQuery.password).filter(l => validator.isAlpha(l))
-        const numericArr = Array.from(dataQuery.password).filter(l => validator.isNumeric(l))
-        const upperArr = alphaArr.filter(l => validator.isUppercase(l))
-
-        if (dataQuery.password.length < 8 || dataQuery.password.length > 16 || numericArr.length === 0 || alphaArr.length === 0 || upperArr.length === 0) {
-            req.flash('passwordError', 'Senha inválida')
-        } else {
+        } else{
             const salt = bcrypt.genSaltSync()
             dataQuery.password = bcrypt.hashSync(dataQuery.password, salt)
-            this.userData.password = dataQuery.password
-            await save(this.userData)
+            const user = await userModel.findOne()
+            user.save()
         }
-        return res.redirect('/account/signin')
     }
 }
 

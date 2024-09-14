@@ -655,6 +655,7 @@ var lastSoundWaveIcon = '';
 // Ideaform main
 var ideaformMain = document.querySelector('.ideaform-main');
 var loginMain = document.querySelector('.login-main');
+var passwordMain = document.querySelector('.password-main');
 
 // ---------- PLAY POPUP ----------
 
@@ -843,7 +844,7 @@ if (audioDiv && !ideaformMain && !loginMain) {
     }
   });
 }
-if (ideaformMain || loginMain) {
+if (ideaformMain || loginMain || passwordMain) {
   audioDiv.style.position = 'absolute';
   audioDiv.style.flexFlow = 'row nowrap';
   soundOff.style.margin = '0 auto 0 10px';
