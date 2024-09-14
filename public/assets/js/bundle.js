@@ -1,6 +1,19 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./frontend/css/account/account_page.css":
+/*!***********************************************!*\
+  !*** ./frontend/css/account/account_page.css ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./frontend/css/account/change_password.css":
 /*!**************************************************!*\
   !*** ./frontend/css/account/change_password.css ***!
@@ -57,19 +70,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************!*\
   !*** ./frontend/css/account/register.css ***!
   \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./frontend/css/account/signin_template.css":
-/*!**************************************************!*\
-  !*** ./frontend/css/account/signin_template.css ***!
-  \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -287,6 +287,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./frontend/css/media_queries/account_page_media_queries.css":
+/*!*******************************************************************!*\
+  !*** ./frontend/css/media_queries/account_page_media_queries.css ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/media_queries/change_password_media_queries.css":
+/*!**********************************************************************!*\
+  !*** ./frontend/css/media_queries/change_password_media_queries.css ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./frontend/css/media_queries/error_404_media_queries.css":
 /*!****************************************************************!*\
   !*** ./frontend/css/media_queries/error_404_media_queries.css ***!
@@ -378,6 +404,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./frontend/css/media_queries/password_media_queries.css":
+/*!***************************************************************!*\
+  !*** ./frontend/css/media_queries/password_media_queries.css ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./frontend/css/media_queries/playlist_media_queries.css":
 /*!***************************************************************!*\
   !*** ./frontend/css/media_queries/playlist_media_queries.css ***!
@@ -408,19 +447,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************************!*\
   !*** ./frontend/css/media_queries/register_media_queries.css ***!
   \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./frontend/css/media_queries/signin_template_media_queries.css":
-/*!**********************************************************************!*\
-  !*** ./frontend/css/media_queries/signin_template_media_queries.css ***!
-  \**********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1110,26 +1136,26 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 var registerMain = document.querySelector('.register-main');
 
 // ---------- ICONS ---------- 
-var eyeIcon = document.querySelector('.eye-icon');
+var eyeIcons = document.querySelectorAll('.eye-icon');
+var crosslines = document.querySelectorAll('.crossline');
 var requirementsIcon = document.querySelector('.requirements-icon');
 var requirementsDiv = document.querySelector('.password-requirements');
-var crossline = document.querySelector('.crossline');
 
 // ---------- FORMS ----------
 var registerForm = document.querySelector('.register-form');
 var codeForm = document.querySelector('.code-form');
 var loginForm = document.querySelector('.login-form');
+var passwordForm = document.querySelector('.password-form');
 
 // ---------- INPUTS ----------
 var inputs = document.querySelectorAll('input');
-var passwordInput = document.querySelector('.password-input');
 
 // ---------- BUTTONS ----------
 var resendEmailBtn = document.querySelector('.resend-email');
 
 // ---------- REGISTER FORM ANIMATIONS ----------
 
-if (registerForm || codeForm || loginForm) {
+if (registerForm || codeForm || loginForm || passwordForm) {
   var _iterator = _createForOfIteratorHelper(inputs),
     _step;
   try {
@@ -1153,21 +1179,26 @@ if (registerForm || codeForm || loginForm) {
     _iterator.f();
   }
 }
-if (eyeIcon && crossline) {
-  eyeIcon.addEventListener('click', function () {
-    return showPassword();
+if (Array.from(eyeIcons).length > 0 && Array.from(crosslines).length > 0) {
+  eyeIcons.forEach(function (element) {
+    element.addEventListener('click', function () {
+      return showPassword(element);
+    });
   });
-  crossline.addEventListener('click', function () {
-    return showPassword();
+  crosslines.forEach(function (element) {
+    element.addEventListener('click', function () {
+      return showPassword(element);
+    });
   });
 }
-function showPassword() {
-  if (passwordInput.type === 'password') {
-    passwordInput.type = 'text';
-    crossline.style.display = 'none';
+function showPassword(element) {
+  var input = element.previousElementSibling;
+  if (input.type === 'password') {
+    input.type = 'text';
+    element.classList.contains('crossline') ? element.style.display = 'none' : element.nextElementSibling.style.display = 'none';
   } else {
-    passwordInput.type = 'password';
-    crossline.style.display = 'block';
+    input.type = 'password';
+    element.classList.contains('crossline') ? element.style.display = 'block' : element.nextElementSibling.style.display = 'block';
   }
 }
 if (requirementsIcon) {
@@ -1205,6 +1236,7 @@ function hideRequirements(requirementsDivStyles) {
 }
 
 // ---------- VALIDATION POPUP ANIMATIONS ----------
+
 if (resendEmailBtn) {
   resendEmailBtn.addEventListener('click', function () {
     sessionStorage.setItem('emailSent', 'true');
@@ -1393,7 +1425,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./frontend/css/galaxies/general_galaxies.css");
 /* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./frontend/css/galaxies/main_galaxies.css");
 /* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/popups/popups.css */ "./frontend/css/popups/popups.css");
-/* harmony import */ var _css_account_signin_template_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/account/signin_template.css */ "./frontend/css/account/signin_template.css");
+/* harmony import */ var _css_account_account_page_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/account/account_page.css */ "./frontend/css/account/account_page.css");
 /* harmony import */ var _css_account_login_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/account/login.css */ "./frontend/css/account/login.css");
 /* harmony import */ var _css_account_register_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../css/account/register.css */ "./frontend/css/account/register.css");
 /* harmony import */ var _css_account_password_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../css/account/password.css */ "./frontend/css/account/password.css");
@@ -1407,9 +1439,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./frontend/css/media_queries/ideaform_media_queries.css");
 /* harmony import */ var _css_media_queries_playlist_media_queries_css__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../css/media_queries/playlist_media_queries.css */ "./frontend/css/media_queries/playlist_media_queries.css");
 /* harmony import */ var _css_media_queries_aboutme_media_queries_css__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../css/media_queries/aboutme_media_queries.css */ "./frontend/css/media_queries/aboutme_media_queries.css");
-/* harmony import */ var _css_media_queries_signin_template_media_queries_css__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../css/media_queries/signin_template_media_queries.css */ "./frontend/css/media_queries/signin_template_media_queries.css");
+/* harmony import */ var _css_media_queries_account_page_media_queries_css__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../css/media_queries/account_page_media_queries.css */ "./frontend/css/media_queries/account_page_media_queries.css");
 /* harmony import */ var _css_media_queries_login_media_queries_css__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../css/media_queries/login_media_queries.css */ "./frontend/css/media_queries/login_media_queries.css");
 /* harmony import */ var _css_media_queries_register_media_queries_css__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../css/media_queries/register_media_queries.css */ "./frontend/css/media_queries/register_media_queries.css");
+/* harmony import */ var _css_media_queries_password_media_queries_css__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../css/media_queries/password_media_queries.css */ "./frontend/css/media_queries/password_media_queries.css");
+/* harmony import */ var _css_media_queries_change_password_media_queries_css__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../css/media_queries/change_password_media_queries.css */ "./frontend/css/media_queries/change_password_media_queries.css");
 // TAILWIND
 
 
@@ -1445,6 +1479,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // MEDIA QUERIES
+
+
 
 
 

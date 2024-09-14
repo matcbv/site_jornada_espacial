@@ -4,26 +4,26 @@
 const registerMain = document.querySelector('.register-main')
 
 // ---------- ICONS ---------- 
-const eyeIcon = document.querySelector('.eye-icon')
+const eyeIcons = document.querySelectorAll('.eye-icon')
+const crosslines = document.querySelectorAll('.crossline')
 const requirementsIcon = document.querySelector('.requirements-icon')
 const requirementsDiv = document.querySelector('.password-requirements')
-const crossline = document.querySelector('.crossline')
 
 // ---------- FORMS ----------
 const registerForm = document.querySelector('.register-form')
 const codeForm = document.querySelector('.code-form')
 const loginForm = document.querySelector('.login-form')
+const passwordForm = document.querySelector('.password-form')
 
 // ---------- INPUTS ----------
 const inputs = document.querySelectorAll('input')
-const passwordInput = document.querySelector('.password-input')
 
 // ---------- BUTTONS ----------
 const resendEmailBtn = document.querySelector('.resend-email')
 
 // ---------- REGISTER FORM ANIMATIONS ----------
 
-if (registerForm || codeForm || loginForm){
+if (registerForm || codeForm || loginForm || passwordForm){
     for (let input of inputs){
         if (input.type !== 'submit' && input.type !== 'button'){
     
@@ -38,18 +38,23 @@ if (registerForm || codeForm || loginForm){
     }
 }
 
-if (eyeIcon && crossline){
-    eyeIcon.addEventListener('click', () => showPassword())
-    crossline.addEventListener('click', () => showPassword())
+if (Array.from(eyeIcons).length > 0 && Array.from(crosslines).length > 0){
+    eyeIcons.forEach(element => {
+        element.addEventListener('click', () => showPassword(element))
+    });
+    crosslines.forEach(element => {
+        element.addEventListener('click', () => showPassword(element))
+    });
 }
 
-function showPassword() {
-    if (passwordInput.type === 'password'){
-        passwordInput.type = 'text'
-        crossline.style.display = 'none'
+function showPassword(element) {
+    const input = element.previousElementSibling
+    if (input.type === 'password'){
+        input.type = 'text'
+        element.classList.contains('crossline') ? element.style.display = 'none': element.nextElementSibling.style.display = 'none'
     } else{
-        passwordInput.type = 'password'
-        crossline.style.display = 'block'
+        input.type = 'password'
+        element.classList.contains('crossline') ? element.style.display = 'block': element.nextElementSibling.style.display = 'block'
     }
 }
 
@@ -89,6 +94,7 @@ function hideRequirements(requirementsDivStyles){
 }
 
 // ---------- VALIDATION POPUP ANIMATIONS ----------
+
 if (resendEmailBtn){
     resendEmailBtn.addEventListener('click', () => {
         sessionStorage.setItem('emailSent', 'true')

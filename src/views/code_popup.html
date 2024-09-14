@@ -8,11 +8,10 @@
             <p>Para finalizarmos a criação de sua conta, insira no campo abaixo o código recebido no email cadastrado.</p>
             <form class="code-form" action="/checkCode" method="post">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <% if(codeError.length > 0){ %>
-                    <input class="code-input error-code" type="text" name="code" placeholder="<%= codeError %>">
-                <% }else{ %>
-                    <input class="code-input" type="text" name="code" placeholder="Código secreto">
-                <% } %>
+                <div class="code-input-div">
+                    <label for="code">Código de confirmação</label>
+                    <input class="code-input error-code" type="text" name="code" id="code" placeholder="<%= codeError %>" autofocus>
+                </div>
                 <div class="code-btn-div">
                     <input type="submit" value="Enviar">
                     <div>

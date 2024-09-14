@@ -57,6 +57,8 @@ router.get('/account/password', pagesController.passwordPage)
 router.get('/account/password/getUser', loginController.getUser)
 // Página para troca da senha
 router.get('/account/password/changePassword', pagesController.changePasswordPage)
+// Checando e atualizando a nova senha
+router.post('/savePassword', loginController.savePassword)
 
 
 // Página inicial do perfil do usuário:

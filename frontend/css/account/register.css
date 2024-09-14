@@ -238,6 +238,19 @@ input[type="password"]::-ms-reveal {
     flex-flow: column nowrap;
 }
 
+.code-input-div{
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 30px 0;
+}
+
+.code-input-div label{
+    font-family: 'Inconsolata';
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
 .code-input{
     background-color: rgb(10, 18, 43);
     border: none;
@@ -250,7 +263,6 @@ input[type="password"]::-ms-reveal {
     width: 300px;
     outline: 1.5px solid #fff;
     padding: 0 15px;
-    margin: 30px 0;
 }
 
 .code-input::placeholder{

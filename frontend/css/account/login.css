@@ -16,7 +16,6 @@
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
     outline: 1px solid white;
     padding: 50px 0;
-    overflow: hidden;
     margin: 80px 0;
 }
 
@@ -29,12 +28,12 @@
     flex-flow: column nowrap;
     justify-content: center;
     position: relative;
-    width: 310px;
+    width: 320px;
 }
 
 .login-input-div input{
     height: 40px;
-    width: 310px;
+    width: 320px;
     border-radius: 20px;
     font-family: 'Inconsolata';
     font-size: 1.2em;
@@ -59,7 +58,7 @@
     font-size: 1.1em;
     font-family: 'Inconsolata';
     font-weight: bold;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
     padding-left: 10px;
 }
 
