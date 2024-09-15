@@ -159,7 +159,7 @@ input[type="password"]::-ms-reveal {
     color: rgba(83, 111, 206, 0.7) !important;
 }
 
-.password-div div .password-requirements{
+.password-requirements{
     display: none;
     flex-flow: column nowrap;
     align-items: flex-start;

@@ -11,7 +11,7 @@
 
     .login-input-div{
         width: 100%;
-        max-width: 220px;
+        max-width: 240px;
     }
 
     .login-text-div h1{
@@ -26,7 +26,7 @@
     .login-input-div input{
         font-size: 1.1em;
         width: 100%;
-        max-width: 220px;
+        max-width: 240px;
         height: 35px;
     }
 
@@ -35,12 +35,12 @@
     }
 
     .login-btn-div{
-        width: 220px;
+        width: 240px;
     }
     
     .login-btn-div .login-btn{
         font-size: 0.8em;
-        padding: 8px 10px;
+        padding: 10px 15px;
         margin-top: 10px;
     }
 
@@ -64,9 +64,5 @@
     .login-form-div{
         width: 85vw;
         max-width: 415px;
-    }
-
-    .login-btn-div .login-btn:first-child{
-        margin-right: 20px;
     }
 }

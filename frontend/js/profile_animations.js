@@ -131,7 +131,7 @@ if (mainProfile){
                 shootingStar.style.display = 'none'
                 shootingStar.style.animation = ''
             }, 1499)
-        }, 3000)
+        }, 3500)
     } else{
         document.removeChild(styleSheet)
     }
