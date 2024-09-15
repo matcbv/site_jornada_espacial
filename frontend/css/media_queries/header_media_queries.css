@@ -30,7 +30,7 @@
 
     .profile-header{
         border-bottom: 0;
-        box-shadow: 0 2px 12px rgb(56 52 52, 0.4);
+        box-shadow: 0 2px 12px rgb(56, 52, 52, 0.4);
     }
 
     .profile-header:hover{

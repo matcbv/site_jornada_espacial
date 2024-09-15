@@ -15,7 +15,7 @@
         </div>
         <section class=" min-h-screen grid grid-cols-1 grid-rows-[auto_auto]">
             <div class="stars-div relative flex items-center justify-center border-b-white md:border-none bg-dark-blue md:bg-transparent md:bg-radial-purple">
-                <div class="md:my-28 flex items-center justify-center md:border-2 md:border-solid md:border-white-gray py-8 md:py-10 px-5 sm:px-10 md:px-20 rounded-lg md:bg-dark-blue md:shadow-white-10 md:max-w-800">
+                <div class="md:my-28 flex items-center justify-center md:border-2 md:border-solid md:border-white-gray p-8 md:py-10 sm:px-10 md:px-20 rounded-lg md:bg-dark-blue md:shadow-white-10 md:max-w-800">
                     <div class="text-center pr-5 md:pr-14">
                         <div class="relative group">
                             <img class="z-0 mb-1 md:mb-4 font-mono w-20 sm:w-30 md:w-40" src="/images/profile_images/<%= profileImg %>_icon.png" alt="Imagem de perfil">
@@ -26,7 +26,7 @@
                     <div>
                         <h1 class="text-lg sm:text-xl md:text-2xl mb-3 md:mb-7 font-xanh-mono tracking-widest text-original-yellow">Sobre o Mochileiro</h1>
                         <div class="group">
-                            <p class="text-custom-sm sm:text-base md:text-lg font-mono w-auto"><%= bio %><span><img class="pencil-icon hidden cursor-pointer group-hover:inline w-4 ml-2" src="/images/profile_images/pencil_icon.png" alt="Editar bio"></span></p>
+                            <p class="text-custom-sm sm:text-base md:text-lg font-mono w-auto"><%= bio %><span class="relative"><img class="hidden pencil-icon cursor-pointer md:group-hover:inline w-4 ml-2 absolute" src="/images/profile_images/pencil_icon.png" alt="Editar bio"></span></p>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         <p class="text-sm sm:text-base md:text-xl font-mono text-center">As insígneas estão em produção, <span class="text-original-yellow">Mochileiro!</span> Avisarei assim que estiverem prontas, ok?</p>
                     </div>
                 </div>  
-                <div class="flex flex-col justify-end items-center md:flex-col-reverse border-t-white w-100 md:bg-radial-blue order-first py-12">
+                <div class="flex flex-col justify-center items-center md:flex-col-reverse border-t-white w-100 md:bg-radial-blue order-first py-12">
                     <h3 class="mb-7 text-center font-rubik-mono-one text-2xl sm:text-3xl text-mid-blue webkit-text-white w-90 md:w-100 md:order-last">Corpo celeste favorito</h3>
                     <% if(favBody === 'dotted_circle'){ %>
                         <img class="max-w-52 md:max-w-none" src="/images/galaxies_images/dotted_circle.gif" alt="Corpo celeste favorito">

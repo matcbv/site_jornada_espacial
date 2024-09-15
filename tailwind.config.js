@@ -6,9 +6,9 @@ module.exports = {
   theme: {
     extend: {
       width:{
+        '18': '75px',
         '90': '90%',
         '100': '100%',
-        '100vw': '100vw',
         '550': '550px'
       },
       height: {
@@ -59,7 +59,8 @@ module.exports = {
         'radial-blue': 'radial-gradient(transparent 30%, #0c122e)'
       },
       animation:{
-        'levitate': 'levitate 1.5s ease-in-out 0s infinite alternate both'
+        'levitate': 'levitate 1.5s ease-in-out 0s infinite alternate both',
+        'resizing': 'resizing 2s linear 0s infinite normal both;'
       }
     },
   },

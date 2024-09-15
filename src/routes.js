@@ -72,6 +72,8 @@ router.get('/account/profile/editProfile', checkLog, userData, pagesController.e
 router.post('/account/profile/editProfile/updateData', checkLog, updateController.updateData, userData)
 // Alterar ícone do perfil
 router.get('/profileImg/:img', checkLog, userData, changeProfileImg)
+// Deletar conta do usuário
+router.get('/deleteAccount', loginController.deleteAccount, logoutUser)
 
 
 // Página 404

@@ -196,7 +196,7 @@ window.addEventListener('click', (e) => {
 
 // ---------- AUDIO DIV ----------
 
-if(audioDiv && !ideaformMain && !loginMain){
+if(audioDiv && !ideaformMain && !loginMain && !passwordMain){
     const footerRectTop = footer.getBoundingClientRect().top
     const audioDivRectBottom = audioDiv.getBoundingClientRect().bottom
     window.addEventListener('scroll', () => {

@@ -78,6 +78,15 @@ const loginController = {
             req.flash('registerMsg', 'Senha alterada com sucesso!')
             return res.redirect('/account/signin')
         }
+    },
+
+    deleteAccount: async (req, res, next) => {
+        try{
+            await userModel.findOneAndDelete({username: req.session.user.username})
+            next()
+        }catch(e){
+            console.log('Erro ao excluir o usuário.', e)
+        }
     }
 }
 

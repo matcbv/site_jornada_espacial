@@ -831,7 +831,7 @@ window.addEventListener('click', function (e) {
 
 // ---------- AUDIO DIV ----------
 
-if (audioDiv && !ideaformMain && !loginMain) {
+if (audioDiv && !ideaformMain && !loginMain && !passwordMain) {
   var footerRectTop = footer.getBoundingClientRect().top;
   var audioDivRectBottom = audioDiv.getBoundingClientRect().bottom;
   window.addEventListener('scroll', function () {
@@ -1255,6 +1255,7 @@ if (resendEmailBtn) {
 // ---------- HTML ELEMENTS ----------
 
 var mainProfile = document.querySelector('.main-profile');
+var mainEditProfile = document.querySelector('.main-edit-profile');
 var profileNav = document.querySelector('.profile-nav');
 var starsDiv = document.querySelector('.stars-div');
 var rightArrowIcon = document.querySelector('.right-arrow-icon');
@@ -1263,7 +1264,11 @@ var editImageIcon = document.querySelector('.edit-img-icon');
 var pencilIcon = document.querySelector('.pencil-icon');
 var profileImgPopup = document.querySelector('.profile-img-popup');
 var profileImgCloseIcon = document.querySelector('.profile-img-close-icon');
-var saveImgButton = document.querySelector('.save-img-button');
+var saveImgButton = document.querySelector('.save-img-btn');
+var removeAccountBtn = document.querySelector('.remove-account-btn');
+var deleteAccountPopup = document.querySelector('.delete-account-popup');
+var backBtn = document.querySelector('.back-btn');
+var continueBtn = document.querySelector('.continue-btn');
 var shootingStar = document.querySelector('.shooting-star');
 
 // ---------- NAV ANIMATION ----------
@@ -1296,28 +1301,24 @@ if (rightArrowIcon) {
 
 if (mainProfile) {
   localStorage.setItem('loggedIn', 'true');
-  if (profileImgCloseIcon) {
-    profileImgCloseIcon.addEventListener('click', function () {
-      if (window.getComputedStyle(profileImgPopup).display === 'flex') {
-        profileImgPopup.classList.add('disappear-animation');
-        setTimeout(function () {
-          profileImgPopup.style.display = 'none';
-          profileImgPopup.classList.remove('disappear-animation');
-        }, 500);
-      }
-    });
-  }
-  if (editImageIcon) {
-    editImageIcon.addEventListener('click', function () {
-      if (window.getComputedStyle(profileImgPopup).display === 'none') {
-        profileImgPopup.classList.add('fast-appear-animation');
-        profileImgPopup.style.display = 'flex';
-        setTimeout(function () {
-          profileImgPopup.classList.remove('fast-appear-animation');
-        }, 500);
-      }
-    });
-  }
+  profileImgCloseIcon.addEventListener('click', function () {
+    if (window.getComputedStyle(profileImgPopup).display === 'flex') {
+      profileImgPopup.classList.add('disappear-animation');
+      setTimeout(function () {
+        profileImgPopup.style.display = 'none';
+        profileImgPopup.classList.remove('disappear-animation');
+      }, 500);
+    }
+  });
+  editImageIcon.addEventListener('click', function () {
+    if (window.getComputedStyle(profileImgPopup).display === 'none') {
+      profileImgPopup.classList.add('fast-appear-animation');
+      profileImgPopup.style.display = 'flex';
+      setTimeout(function () {
+        profileImgPopup.classList.remove('fast-appear-animation');
+      }, 500);
+    }
+  });
   var iconImages = profileImgPopup.querySelectorAll('img');
   if (iconImages) {
     iconImages.forEach(function (element) {
@@ -1339,18 +1340,14 @@ if (mainProfile) {
       window.location.href = "/profileImg/".concat(sessionStorage.getItem('profileImg'));
     });
   }
-  if (pencilIcon) {
-    pencilIcon.addEventListener('click', function () {
-      window.location.href = "/account/profile/editProfile";
-    });
-  }
+  pencilIcon.addEventListener('click', function () {
+    window.location.href = "/account/profile/editProfile";
+  });
   var logoutIcon = document.querySelector('.logout-icon');
-  if (logoutIcon) {
-    logoutIcon.addEventListener('click', function () {
-      localStorage.setItem('favBody', '');
-      localStorage.setItem('loggedIn', 'false');
-    });
-  }
+  logoutIcon.addEventListener('click', function () {
+    localStorage.setItem('favBody', '');
+    localStorage.setItem('loggedIn', 'false');
+  });
 
   // ---------- SHOOTING STAR ANIMATION ----------
 
@@ -1359,7 +1356,7 @@ if (mainProfile) {
     document.head.appendChild(styleSheet);
     setInterval(function () {
       var starHeight = Math.random() * window.innerHeight / 2;
-      styleSheet.innerHTML = "@keyframes shooting-star{\n                                    from{\n                                        right: -200px;\n                                        top: ".concat(starHeight, "px;\n                                    }\n                                    to{\n                                        right: 100vw;\n                                        top: ").concat(starHeight + window.innerHeight, "px;\n                                    }\n                                }");
+      styleSheet.innerHTML = "@keyframes shooting-star{\n                                    from{\n                                        right: -200px;\n                                        top: ".concat(starHeight, "px;\n                                    }\n                                    to{\n                                        right: 100vw;\n                                        top: ").concat(starHeight + window.innerHeight / 2, "px;\n                                    }\n                                }");
       shootingStar.style.animation = 'shooting-star 1.5s linear 0s 1 normal both';
       shootingStar.style.display = 'inline';
       setTimeout(function () {
@@ -1370,6 +1367,27 @@ if (mainProfile) {
   } else {
     document.removeChild(styleSheet);
   }
+}
+if (mainEditProfile) {
+  // ---------- REMOVE ACCOUNT ANIMATIONS ----------
+
+  removeAccountBtn.addEventListener('click', function () {
+    deleteAccountPopup.classList.add('fast-appear-animation');
+    deleteAccountPopup.style.display = 'flex';
+    setTimeout(function () {
+      deleteAccountPopup.classList.remove('fast-appear-animation');
+    }, 500);
+  });
+  backBtn.addEventListener('click', function () {
+    deleteAccountPopup.classList.add('disappear-animation');
+    setTimeout(function () {
+      deleteAccountPopup.style.display = 'none';
+      deleteAccountPopup.classList.remove('disappear-animation');
+    }, 500);
+  });
+  continueBtn.addEventListener('click', function () {
+    window.location.href = '/deleteAccount';
+  });
 }
 })();
 

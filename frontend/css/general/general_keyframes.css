@@ -79,3 +79,15 @@
         left: -70px;
     }
 }
+
+@keyframes resizing {
+    0%{
+        font-size: large;
+    }
+    50%{
+        font-size: medium;
+    }
+    100%{
+        font-size: large;
+    }
+}

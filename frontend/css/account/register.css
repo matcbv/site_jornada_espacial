@@ -156,10 +156,10 @@ input[type="password"]::-ms-reveal {
 }
 
 .data-placeholder::placeholder{
-    color: rgba(83, 111, 206, 0.7) !important;
+    color: rgba(141, 165, 243, 0.7) !important;
 }
 
-.password-requirements{
+.password-div div .password-requirements{
     display: none;
     flex-flow: column nowrap;
     align-items: flex-start;

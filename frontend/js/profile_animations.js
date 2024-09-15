@@ -1,6 +1,7 @@
 // ---------- HTML ELEMENTS ----------
 
 const mainProfile = document.querySelector('.main-profile')
+const mainEditProfile = document.querySelector('.main-edit-profile')
 const profileNav = document.querySelector('.profile-nav')
 const starsDiv = document.querySelector('.stars-div')
 
@@ -11,7 +12,14 @@ const pencilIcon = document.querySelector('.pencil-icon')
 
 const profileImgPopup = document.querySelector('.profile-img-popup')
 const profileImgCloseIcon = document.querySelector('.profile-img-close-icon')
-const saveImgButton = document.querySelector('.save-img-button')
+const saveImgButton = document.querySelector('.save-img-btn')
+
+
+const removeAccountBtn = document.querySelector('.remove-account-btn')
+const deleteAccountPopup = document.querySelector('.delete-account-popup')
+const backBtn = document.querySelector('.back-btn')
+const continueBtn = document.querySelector('.continue-btn')
+
 const shootingStar = document.querySelector('.shooting-star')
 
 // ---------- NAV ANIMATION ----------
@@ -47,29 +55,25 @@ if (rightArrowIcon){
 if (mainProfile){
     localStorage.setItem('loggedIn', 'true')
 
-    if (profileImgCloseIcon){
-        profileImgCloseIcon.addEventListener('click', () => {
-            if(window.getComputedStyle(profileImgPopup).display === 'flex'){
-                profileImgPopup.classList.add('disappear-animation')
-                setTimeout(() => {
-                    profileImgPopup.style.display = 'none'
-                    profileImgPopup.classList.remove('disappear-animation')
-                }, 500)
-            }
-        })
-    }
-
-    if(editImageIcon){
-        editImageIcon.addEventListener('click', () => {
-            if(window.getComputedStyle(profileImgPopup).display === 'none'){
-                profileImgPopup.classList.add('fast-appear-animation')
-                    profileImgPopup.style.display = 'flex'
-                setTimeout(() => {
-                    profileImgPopup.classList.remove('fast-appear-animation')
-                }, 500)
-            }
-        })
-    }
+    profileImgCloseIcon.addEventListener('click', () => {
+        if(window.getComputedStyle(profileImgPopup).display === 'flex'){
+            profileImgPopup.classList.add('disappear-animation')
+            setTimeout(() => {
+                profileImgPopup.style.display = 'none'
+                profileImgPopup.classList.remove('disappear-animation')
+            }, 500)
+        }
+    })
+    
+    editImageIcon.addEventListener('click', () => {
+        if(window.getComputedStyle(profileImgPopup).display === 'none'){
+            profileImgPopup.classList.add('fast-appear-animation')
+                profileImgPopup.style.display = 'flex'
+            setTimeout(() => {
+                profileImgPopup.classList.remove('fast-appear-animation')
+            }, 500)
+        }
+    })
 
     const iconImages = profileImgPopup.querySelectorAll('img')
     if(iconImages){
@@ -94,19 +98,16 @@ if (mainProfile){
         })
     }
 
-    if (pencilIcon){
-        pencilIcon.addEventListener('click', () => {
-            window.location.href = `/account/profile/editProfile`
-        })
-    }
+    pencilIcon.addEventListener('click', () => {
+        window.location.href = `/account/profile/editProfile`
+    })
 
     const logoutIcon = document.querySelector('.logout-icon')
-    if (logoutIcon){
-        logoutIcon.addEventListener('click', () => {
-            localStorage.setItem('favBody', '')
-            localStorage.setItem('loggedIn', 'false')
-        })
-    }
+    logoutIcon.addEventListener('click', () => {
+        localStorage.setItem('favBody', '')
+        localStorage.setItem('loggedIn', 'false')
+    })
+    
 
     // ---------- SHOOTING STAR ANIMATION ----------
 
@@ -122,7 +123,7 @@ if (mainProfile){
                                     }
                                     to{
                                         right: 100vw;
-                                        top: ${starHeight + window.innerHeight}px;
+                                        top: ${starHeight + window.innerHeight / 2}px;
                                     }
                                 }`
             shootingStar.style.animation =  'shooting-star 1.5s linear 0s 1 normal both'
@@ -135,4 +136,29 @@ if (mainProfile){
     } else{
         document.removeChild(styleSheet)
     }
+}
+
+if (mainEditProfile){
+
+    // ---------- REMOVE ACCOUNT ANIMATIONS ----------
+
+    removeAccountBtn.addEventListener('click', () => {
+    deleteAccountPopup.classList.add('fast-appear-animation')
+    deleteAccountPopup.style.display = 'flex'
+    setTimeout(() => {
+        deleteAccountPopup.classList.remove('fast-appear-animation')
+    }, 500)
+    })
+    
+    backBtn.addEventListener('click', () => {
+        deleteAccountPopup.classList.add('disappear-animation')
+        setTimeout(() => {
+            deleteAccountPopup.style.display = 'none'
+            deleteAccountPopup.classList.remove('disappear-animation')
+        }, 500)
+    })
+
+    continueBtn.addEventListener('click', () => {
+        window.location.href = '/deleteAccount'
+    })  
 }
