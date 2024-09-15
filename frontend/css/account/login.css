@@ -96,7 +96,8 @@
 .login-btn-div{
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
+    width: 320px;
 }
 
 .login-btn{
@@ -109,11 +110,7 @@
     font-size: 1em;
     font-weight: 700;
     outline: 1px solid #ff0;
-    padding: 10px 20px;
-}
-
-.login-btn:first-child{
-    margin-right: 30px;
+    padding: 10px 25px;
 }
 
 .login-btn:hover, .login-btn:focus{

@@ -53,3 +53,8 @@
     outline: 2px solid white;
     border-radius: 100%;
 }
+
+.shooting-star{
+    display: none;
+    position: absolute;
+}

@@ -127,7 +127,7 @@
     }
 
     .code-btn-div{
-        display: flex;
+        width: 240px;
         flex-flow: column nowrap;
     }
 

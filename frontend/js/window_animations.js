@@ -111,7 +111,7 @@ window.addEventListener('resize', () => {
 window.addEventListener('load', () => {
     if(sessionStorage.getItem('emailSent') === 'true' && resendEmailBtn){
         resendEmailBtn.disabled = true
-        timerSpan.style.display = 'block'
+        timerSpan.style.display = 'flex'
         timerSpan.classList.add('disabled-btn')
         let s = 15
         counter = setInterval(() => {

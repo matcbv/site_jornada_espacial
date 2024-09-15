@@ -33,6 +33,10 @@
     .login-form div:not(:last-child){
         margin-bottom: 20px;
     }
+
+    .login-btn-div{
+        width: 220px;
+    }
     
     .login-btn-div .login-btn{
         font-size: 0.8em;

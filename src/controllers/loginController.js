@@ -1,10 +1,13 @@
 const Login = require('../models/loginFormModel')
 const validator = require('validator')
+const bcrypt = require('bcrypt')
 const userModel = require('../models/userModel')
 const loginFormModel = require('../models/loginFormModel')
-const {codeGenerator, sendVerifEmail} = require('../controllers/emailController')
+const emailController = require('../controllers/emailController')
 
 const loginController = {
+    _code: '',
+    _userData: '',
 
     logUser: async (req, res) => {
         const login = new Login(req.body)
@@ -23,24 +26,22 @@ const loginController = {
     },
 
     getUser: async (req, res) => {
-        this.userData = req.query.data
-        if(this.userData){
-            if (validator.isEmail(this.userData)){
-                const userByEmail = await userModel.findOne({email: this.userData})
-                if(userByEmail){
-                    code = codeGenerator()
+        if(req.query.data){
+            if (validator.isEmail(req.query.data)){
+                loginController._userData = await userModel.findOne({email: req.query.data})
+                if(loginController._userData){
                     try{
-                        sendVerifEmail(code, userByEmail.email, userByEmail.username)
+                        loginController._code = await emailController.sendVerifEmail(loginController._userData)
                         return res.redirect('/account/password/changePassword')
                     }catch(e){
                         console.log('Erro ao enviar o email.', e)
                     }
                 }
             } else{
-                const userByUsername = await userModel.findOne({username: this.userData})
-                if (userByUsername){
+                loginController._userData = await userModel.findOne({username: req.query.data})
+                if (loginController._userData){
                     try{
-                        sendVerifEmail(codeGenerator(), userByUsername.email, userByUsername.username)
+                        loginController._code = await emailController.sendVerifEmail(loginController._userData)
                         return res.redirect('/account/password/changePassword')
                     }catch(e){
                         console.log('Erro ao enviar o email.', e)
@@ -49,14 +50,19 @@ const loginController = {
                     req.flash('userError', 'Usuário/Email inválido')
                 }
             }
+        } else{
+            req.flash('userError', 'Usuário/Email inválido')
         }
         return res.redirect('/account/password')
     },
 
     savePassword: async (req, res) => {
-        const dataQuery = req.body
         const login = new loginFormModel()
-        login.checkNewPassword(dataQuery.password)
+        if (loginController._code !== req.body.code){
+            login.error_list.push({ 'code': 'Código inválido' })
+        }
+
+        login.checkNewPassword(loginController._code, req.body)
 
         if(login.error_list.length > 0){
             for (let e of login.error_list){
@@ -67,9 +73,10 @@ const loginController = {
             return res.redirect('/account/password/changePassword')
         } else{
             const salt = bcrypt.genSaltSync()
-            dataQuery.password = bcrypt.hashSync(dataQuery.password, salt)
-            const user = await userModel.findOne()
-            user.save()
+            loginController._userData['password'] = bcrypt.hashSync(req.body.password, salt)
+            await loginController._userData.save()
+            req.flash('registerMsg', 'Senha alterada com sucesso!')
+            return res.redirect('/account/signin')
         }
     }
 }

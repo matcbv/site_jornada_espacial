@@ -2,6 +2,7 @@
 
 const mainProfile = document.querySelector('.main-profile')
 const profileNav = document.querySelector('.profile-nav')
+const starsDiv = document.querySelector('.stars-div')
 
 const rightArrowIcon = document.querySelector('.right-arrow-icon')
 const leftArrowIcon = document.querySelector('.left-arrow-icon')
@@ -11,6 +12,7 @@ const pencilIcon = document.querySelector('.pencil-icon')
 const profileImgPopup = document.querySelector('.profile-img-popup')
 const profileImgCloseIcon = document.querySelector('.profile-img-close-icon')
 const saveImgButton = document.querySelector('.save-img-button')
+const shootingStar = document.querySelector('.shooting-star')
 
 // ---------- NAV ANIMATION ----------
 
@@ -104,5 +106,33 @@ if (mainProfile){
             localStorage.setItem('favBody', '')
             localStorage.setItem('loggedIn', 'false')
         })
+    }
+
+    // ---------- SHOOTING STAR ANIMATION ----------
+
+    const styleSheet = document.createElement('style')
+    if(shootingStar){
+        document.head.appendChild(styleSheet)
+        setInterval(() => {
+            const starHeight = Math.random() * window.innerHeight / 2
+            styleSheet.innerHTML = `@keyframes shooting-star{
+                                    from{
+                                        right: -200px;
+                                        top: ${starHeight}px;
+                                    }
+                                    to{
+                                        right: 100vw;
+                                        top: ${starHeight + window.innerHeight}px;
+                                    }
+                                }`
+            shootingStar.style.animation =  'shooting-star 1.5s linear 0s 1 normal both'
+            shootingStar.style.display = 'inline'
+            setTimeout(() => {
+                shootingStar.style.display = 'none'
+                shootingStar.style.animation = ''
+            }, 1499)
+        }, 3000)
+    } else{
+        document.removeChild(styleSheet)
     }
 }

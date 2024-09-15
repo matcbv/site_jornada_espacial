@@ -1,10 +1,9 @@
 const Register = require('../models/registerFormModel')
-const {codeGenerator, sendVerifEmail} = require('../controllers/emailController')
+const emailController = require('../controllers/emailController')
 
 const registerController = {
-    userData: '',
-    code: '',
-    registerData: '',
+    _user: '',
+    _code: '',
 
     signup: async (req, res) => {
         const register = new Register(req.body)
@@ -17,28 +16,21 @@ const registerController = {
                 return res.redirect('/account/signup')
             }
         } else {
-            this.registerData = register.data
-            this.userData = register
-            this.code =  codeGenerator()
-            sendVerifEmail(this.code, register.data.email, register.data.username)
+            registerController._user = register
+            registerController._code = await emailController.sendVerifEmail(registerController._user.data)
             return res.redirect('/account/signup/validation')
         }
     },
 
     validation: (req, res) => {
-        if (req.body.code === this.code){
-            this.userData.saveData()
+        if (req.body.code === registerController._code){
+            registerController._user.saveData()
             req.flash('registerMsg', 'Cadastro realizado com sucesso!')
             return res.redirect('/account/signin')
         } else{
             req.flash('codeError', 'Código inválido')
             return res.redirect('/account/signup/validation')
         }
-    },
-
-    resendVerifEmail: async (req, res) => {
-        await sendVerifEmail(this.code, this.registerData.email, this.registerData.username)
-        res.redirect('/account/signup/validation')
     }
 }
 

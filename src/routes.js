@@ -9,6 +9,7 @@ const ideaformController = require('./controllers/ideaformController')
 const registerController = require('./controllers/registerController')
 const loginController = require('./controllers/loginController')
 const updateController = require('./controllers/updateController')
+const emailController = require('./controllers/emailController')
 const {checkLog, userData, logoutUser, addFavBody, changeProfileImg} = require('./middlewares/userMiddlewares')
 
 // Página inicial
@@ -48,7 +49,7 @@ router.post('/account/signup/register', registerController.signup)
 // Página para validação da conta
 router.get('/account/signup/validation', pagesController.validationPage)
 // Reenvio do email para validação da conta
-router.get('/account/signup/validation/resend', registerController.resendVerifEmail)
+router.get('/resendEmail', emailController.resendVerifEmail)
 // Validação da conta
 router.post('/checkCode', registerController.validation)
 // Página para obtenção do usuário

@@ -42,7 +42,7 @@ async function addFavBody(req, res){
         const user = await userModel.findOne({ username: res.locals.username })
         user.favBody = currentBody
         await user.save()
-        window.history.back()
+        res.redirect('/account/profile')
     } catch(e){
         console.log('Erro ao favoritar corpo celeste', e)
     }

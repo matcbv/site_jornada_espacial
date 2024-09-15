@@ -49,6 +49,9 @@ if (Array.from(eyeIcons).length > 0 && Array.from(crosslines).length > 0){
 
 function showPassword(element) {
     const input = element.previousElementSibling
+    if (input.tagName.toLowerCase() !== 'input'){
+        
+    }
     if (input.type === 'password'){
         input.type = 'text'
         element.classList.contains('crossline') ? element.style.display = 'none': element.nextElementSibling.style.display = 'none'
@@ -98,6 +101,6 @@ function hideRequirements(requirementsDivStyles){
 if (resendEmailBtn){
     resendEmailBtn.addEventListener('click', () => {
         sessionStorage.setItem('emailSent', 'true')
-        window.location.href = '/account/signup/validation/resend'
+        window.location.href = '/resendEmail?prevPage=' + encodeURIComponent(window.location.href);
     })
 }

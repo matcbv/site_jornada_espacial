@@ -1062,7 +1062,7 @@ window.addEventListener('resize', function () {
 window.addEventListener('load', function () {
   if (sessionStorage.getItem('emailSent') === 'true' && resendEmailBtn) {
     resendEmailBtn.disabled = true;
-    timerSpan.style.display = 'block';
+    timerSpan.style.display = 'flex';
     timerSpan.classList.add('disabled-btn');
     var s = 15;
     counter = setInterval(function () {
@@ -1194,6 +1194,7 @@ if (Array.from(eyeIcons).length > 0 && Array.from(crosslines).length > 0) {
 }
 function showPassword(element) {
   var input = element.previousElementSibling;
+  if (input.tagName.toLowerCase() !== 'input') {}
   if (input.type === 'password') {
     input.type = 'text';
     element.classList.contains('crossline') ? element.style.display = 'none' : element.nextElementSibling.style.display = 'none';
@@ -1241,7 +1242,7 @@ function hideRequirements(requirementsDivStyles) {
 if (resendEmailBtn) {
   resendEmailBtn.addEventListener('click', function () {
     sessionStorage.setItem('emailSent', 'true');
-    window.location.href = '/account/signup/validation/resend';
+    window.location.href = '/resendEmail?prevPage=' + encodeURIComponent(window.location.href);
   });
 }
 })();
@@ -1255,6 +1256,7 @@ if (resendEmailBtn) {
 
 var mainProfile = document.querySelector('.main-profile');
 var profileNav = document.querySelector('.profile-nav');
+var starsDiv = document.querySelector('.stars-div');
 var rightArrowIcon = document.querySelector('.right-arrow-icon');
 var leftArrowIcon = document.querySelector('.left-arrow-icon');
 var editImageIcon = document.querySelector('.edit-img-icon');
@@ -1262,6 +1264,7 @@ var pencilIcon = document.querySelector('.pencil-icon');
 var profileImgPopup = document.querySelector('.profile-img-popup');
 var profileImgCloseIcon = document.querySelector('.profile-img-close-icon');
 var saveImgButton = document.querySelector('.save-img-button');
+var shootingStar = document.querySelector('.shooting-star');
 
 // ---------- NAV ANIMATION ----------
 
@@ -1347,6 +1350,25 @@ if (mainProfile) {
       localStorage.setItem('favBody', '');
       localStorage.setItem('loggedIn', 'false');
     });
+  }
+
+  // ---------- SHOOTING STAR ANIMATION ----------
+
+  var styleSheet = document.createElement('style');
+  if (shootingStar) {
+    document.head.appendChild(styleSheet);
+    setInterval(function () {
+      var starHeight = Math.random() * window.innerHeight / 2;
+      styleSheet.innerHTML = "@keyframes shooting-star{\n                                    from{\n                                        right: -200px;\n                                        top: ".concat(starHeight, "px;\n                                    }\n                                    to{\n                                        right: 100vw;\n                                        top: ").concat(starHeight + window.innerHeight, "px;\n                                    }\n                                }");
+      shootingStar.style.animation = 'shooting-star 1.5s linear 0s 1 normal both';
+      shootingStar.style.display = 'inline';
+      setTimeout(function () {
+        shootingStar.style.display = 'none';
+        shootingStar.style.animation = '';
+      }, 1499);
+    }, 3000);
+  } else {
+    document.removeChild(styleSheet);
   }
 }
 })();

@@ -1,7 +1,7 @@
 <%- include(head) %>
 <body>
     <%- include(header) %>
-    <main class="main-profile min-h-screen max-w-100 relative">
+    <main class="main-profile min-h-screen max-w-100 relative overflow-hidden">
         <%- include(fluidHeader) %>
         <%- include(editIcon) %>
        <%- include(profileNav) %>
@@ -14,7 +14,7 @@
             </a>
         </div>
         <section class=" min-h-screen grid grid-cols-1 grid-rows-[auto_auto]">
-            <div class="flex items-center justify-center border-b-white md:border-none bg-dark-blue md:bg-transparent md:bg-radial-purple">
+            <div class="stars-div relative flex items-center justify-center border-b-white md:border-none bg-dark-blue md:bg-transparent md:bg-radial-purple">
                 <div class="md:my-28 flex items-center justify-center md:border-2 md:border-solid md:border-white-gray py-8 md:py-10 px-5 sm:px-10 md:px-20 rounded-lg md:bg-dark-blue md:shadow-white-10 md:max-w-800">
                     <div class="text-center pr-5 md:pr-14">
                         <div class="relative group">
@@ -51,6 +51,7 @@
         <%- include(playlist) %>
         <%- include(audio) %>
         <%- include(swordfish) %>
+        <img class="shooting-star" src="/images/profile_images/shooting_star.png" alt="Estrela cadente">
     </main>
     <%- include(footer) %>
     <script src="/js/bundle.js"></script>

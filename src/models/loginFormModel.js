@@ -50,21 +50,17 @@ class Login{
         this.userData = dataQuery
     }
 
-    async checkNewPassword(dataQuery){
-        if (this.code !== dataQuery.code){
-            this.error_list.push({ 'code': this.msgList[4] })
-        }
-
+    async checkNewPassword(code, dataQuery){
         if(dataQuery.password !== dataQuery.password_confirmation){
             this.error_list.push({ 'password': this.msgList[5] })
-        }
-
-        const alphaArr = Array.from(dataQuery.password).filter(l => validator.isAlpha(l))
-        const numericArr = Array.from(dataQuery.password).filter(l => validator.isNumeric(l))
-        const upperArr = alphaArr.filter(l => validator.isUppercase(l))
-
-        if (Array.from(dataQuery.password).length < 8 || Array.from(dataQuery.password).length > 16 || numericArr.length === 0 || alphaArr.length === 0 || upperArr.length === 0) {
-            this.error_list.push({ 'password': this.msgList[1] })
+        }else{
+            const alphaArr = Array.from(dataQuery.password).filter(l => validator.isAlpha(l))
+            const numericArr = Array.from(dataQuery.password).filter(l => validator.isNumeric(l))
+            const upperArr = alphaArr.filter(l => validator.isUppercase(l))
+    
+            if (Array.from(dataQuery.password).length < 8 || Array.from(dataQuery.password).length > 16 || numericArr.length === 0 || alphaArr.length === 0 || upperArr.length === 0) {
+                this.error_list.push({ 'password': this.msgList[1] })
+            }
         }
     }
 }

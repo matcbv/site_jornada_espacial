@@ -246,7 +246,7 @@ input[type="password"]::-ms-reveal {
 
 .code-input-div label{
     font-family: 'Inconsolata';
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 5px;
     padding-left: 10px;
 }
@@ -273,8 +273,13 @@ input[type="password"]::-ms-reveal {
     color: rgb(217, 57, 57) !important;
 }
 
+.code-btn-div{
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+
 .code-btn-div input, .code-btn-div button{
-    height: 25px;
     background-color: transparent;
     border: none;
     border-radius: 20px;
@@ -283,11 +288,7 @@ input[type="password"]::-ms-reveal {
     font-size: 1.1em;
     font-weight: bold;
     outline: 2px solid white;
-    padding: 0 25px;
-}
-
-.code-btn-div input:first-child{
-    margin-right: 20px;
+    padding: 6px 24px;
 }
 
 .code-btn-div input:hover, .code-btn-div input:focus, .code-btn-div button:hover, .code-btn-div button:focus{
@@ -303,10 +304,13 @@ input[type="password"]::-ms-reveal {
 
 .timer{
     display: none;
+    align-items: center;
+    justify-content: center;
     color: rgb(217, 57, 57);
     position: absolute;
     left: 50%;
     top: 50%;
+    height: 100%;
     transform: translate(-50%, -50%);
     font-size: 1.3em;
     font-weight: bold;
