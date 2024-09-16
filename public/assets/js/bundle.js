@@ -575,8 +575,8 @@ if (startingBtn) {
 var menuIcon = document.querySelector('.menu-icon');
 var header = document.querySelector('header');
 var fluidHeader = document.querySelector('.fluid-header');
-var profileMain = document.querySelector('.main-profile');
-var editProfileMain = document.querySelector('.main-edit-profile');
+var profileMain = document.querySelector('.profile-main');
+var editProfileMain = document.querySelector('.edit-profile-main');
 
 // Evento para animações do cabeçalho fluido
 menuIcon.addEventListener('click', function () {
@@ -872,8 +872,9 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 var images = document.querySelectorAll('img');
 var galaxiesMain = document.querySelector('.galaxies-main');
+var profileMain = document.querySelector('.profile-main');
 var indexMain = document.querySelector('.index-main');
-if (galaxiesMain) {
+if (galaxiesMain || profileMain) {
   // Fetch para a requisição dos popups
   document.addEventListener('click', function (e) {
     var element = e.target;
@@ -888,9 +889,15 @@ if (galaxiesMain) {
               if (!res.ok) {
                 throw new Error('Erro na requisição do popup.');
               } else {
-                res.text().then(function (html) {
-                  getPopup(html, galaxiesMain, element.id);
-                });
+                if (galaxiesMain) {
+                  res.text().then(function (html) {
+                    getPopup(html, galaxiesMain, element.id);
+                  });
+                } else {
+                  res.text().then(function (html) {
+                    getPopup(html, profileMain, element.id);
+                  });
+                }
               }
             });
           }
@@ -910,6 +917,9 @@ function getPopup(html, main, celestialBody) {
   divPopup.style.display = 'flex';
   divPopup.classList.add('appear-animation', 'popup');
   divPopup.innerHTML = html;
+  if (profileMain) {
+    divPopup.querySelector('.popup-content').style.backgroundColor = '#040216';
+  }
   main.appendChild(divPopup);
   var closeIcon = divPopup.querySelector('.close-icon');
   closeIcon.addEventListener('click', function () {
@@ -960,8 +970,8 @@ var fluidHeader = document.querySelector('.fluid-header');
 var profileImgPopup = document.querySelector('.profile-img-popup');
 var resendEmailBtn = document.querySelector('.resend-email');
 var timerSpan = document.querySelector('.timer');
-var profileMain = document.querySelector('.main-profile');
-var editProfileMain = document.querySelector('.main-edit-profile');
+var profileMain = document.querySelector('.profile-main');
+var editProfileMain = document.querySelector('.edit-profile-main');
 
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
 
@@ -1092,8 +1102,8 @@ var footer = document.querySelector('footer');
 var topBtn = document.querySelector('.top-btn');
 var cowboyBebopDiv = document.querySelector('.cowboy-bebop-div');
 var swordfishDiv = document.querySelector('.swordfish-div');
-var profileMain = document.querySelector('.main-profile');
-var editProfileMain = document.querySelector('.main-edit-profile');
+var profileMain = document.querySelector('.profile-main');
+var editProfileMain = document.querySelector('.edit-profile-main');
 
 // ---------- TOP BUTTON ----------
 
@@ -1254,8 +1264,8 @@ if (resendEmailBtn) {
   \*******************************************/
 // ---------- HTML ELEMENTS ----------
 
-var mainProfile = document.querySelector('.main-profile');
-var mainEditProfile = document.querySelector('.main-edit-profile');
+var mainProfile = document.querySelector('.profile-main');
+var mainEditProfile = document.querySelector('.edit-profile-main');
 var profileNav = document.querySelector('.profile-nav');
 var starsDiv = document.querySelector('.stars-div');
 var rightArrowIcon = document.querySelector('.right-arrow-icon');
@@ -1398,7 +1408,7 @@ if (mainEditProfile) {
   \************************************************/
 // ---------- HTML ELEMENTS ----------
 
-var editProfileMain = document.querySelector('.main-edit-profile');
+var editProfileMain = document.querySelector('.edit-profile-main');
 var profileImgEdit = document.querySelector('.profile-img-edit');
 var saveImgEditButton = document.querySelectorAll('.save-img-edit-button');
 var bioTextarea = document.querySelector('.bio-textarea');

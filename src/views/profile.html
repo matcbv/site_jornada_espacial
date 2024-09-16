@@ -1,10 +1,10 @@
 <%- include(head) %>
 <body>
     <%- include(header) %>
-    <main class="main-profile min-h-screen max-w-100 relative overflow-hidden">
+    <main class="profile-main min-h-screen max-w-100 relative overflow-hidden">
         <%- include(fluidHeader) %>
         <%- include(editIcon) %>
-       <%- include(profileNav) %>
+        <%- include(profileNav) %>
         <div class=" z-10 cursor-pointer absolute right-2 mt-4 group">
             <a class="logout-link block group-hover:hidden" href="/account/profile/logout">
                 <img class="w-9 md:w-14" src="/images/profile_images/logout_icon.png" alt="Sair" title="Sair">
@@ -41,9 +41,9 @@
                 <div class="flex flex-col justify-center items-center md:flex-col-reverse border-t-white w-100 md:bg-radial-blue order-first py-12">
                     <h3 class="mb-7 text-center font-rubik-mono-one text-2xl sm:text-3xl text-mid-blue webkit-text-white w-90 md:w-100 md:order-last">Corpo celeste favorito</h3>
                     <% if(favBody === 'dotted_circle'){ %>
-                        <img class="max-w-52 md:max-w-none" src="/images/galaxies_images/dotted_circle.gif" alt="Corpo celeste favorito">
+                        <img class="celestial-body-img fav-body" src="/images/galaxies_images/dotted_circle.gif" alt="Corpo celeste favorito">
                     <% } else{ %>
-                        <img class="max-w-52 md:max-w-none" src="/images/galaxies_images/<%= favBody %>.png" alt="Corpo celeste favorito">
+                        <img class="celestial-body-img fav-body transition-transform duration-300 hover:scale-110" id="<%= favBody %>" src="/images/galaxies_images/<%= favBody %>.png" alt="Corpo celeste favorito">
                     <% } %>
                 </div>
             </div>

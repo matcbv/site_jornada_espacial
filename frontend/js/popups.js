@@ -1,8 +1,9 @@
 const images = document.querySelectorAll('img')
 const galaxiesMain = document.querySelector('.galaxies-main')
+const profileMain = document.querySelector('.profile-main')
 const indexMain = document.querySelector('.index-main')
 
-if(galaxiesMain){
+if(galaxiesMain || profileMain){
     // Fetch para a requisição dos popups
     document.addEventListener('click', (e) => {
         const element = e.target
@@ -13,9 +14,15 @@ if(galaxiesMain){
                         if (!res.ok){
                             throw new Error('Erro na requisição do popup.')
                         } else{
-                            res.text().then(html => {
-                                getPopup(html, galaxiesMain, element.id)
-                            })
+                            if (galaxiesMain){
+                                res.text().then(html => {
+                                    getPopup(html, galaxiesMain, element.id)
+                                })
+                            }else{
+                                res.text().then(html => {
+                                    getPopup(html, profileMain, element.id)
+                                })
+                            }
                         }
                     })
                 }
@@ -30,6 +37,9 @@ function getPopup(html, main, celestialBody){
     divPopup.style.display = 'flex'
     divPopup.classList.add('appear-animation', 'popup')
     divPopup.innerHTML = html
+    if(profileMain){
+        divPopup.querySelector('.popup-content').style.backgroundColor = '#040216'
+    }
     main.appendChild(divPopup)
 
     const closeIcon = divPopup.querySelector('.close-icon')

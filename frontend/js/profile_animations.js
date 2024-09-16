@@ -1,7 +1,7 @@
 // ---------- HTML ELEMENTS ----------
 
-const mainProfile = document.querySelector('.main-profile')
-const mainEditProfile = document.querySelector('.main-edit-profile')
+const mainProfile = document.querySelector('.profile-main')
+const mainEditProfile = document.querySelector('.edit-profile-main')
 const profileNav = document.querySelector('.profile-nav')
 const starsDiv = document.querySelector('.stars-div')
 

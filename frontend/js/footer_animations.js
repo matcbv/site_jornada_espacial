@@ -6,8 +6,8 @@ const topBtn = document.querySelector('.top-btn')
 const cowboyBebopDiv = document.querySelector('.cowboy-bebop-div')
 const swordfishDiv = document.querySelector('.swordfish-div')
 
-const profileMain = document.querySelector('.main-profile')
-const editProfileMain = document.querySelector('.main-edit-profile')
+const profileMain = document.querySelector('.profile-main')
+const editProfileMain = document.querySelector('.edit-profile-main')
 
 // ---------- TOP BUTTON ----------
 

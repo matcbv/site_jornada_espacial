@@ -15,8 +15,8 @@ const profileImgPopup = document.querySelector('.profile-img-popup')
 const resendEmailBtn = document.querySelector('.resend-email')
 const timerSpan = document.querySelector('.timer')
 
-const profileMain = document.querySelector('.main-profile')
-const editProfileMain = document.querySelector('.main-edit-profile')
+const profileMain = document.querySelector('.profile-main')
+const editProfileMain = document.querySelector('.edit-profile-main')
 
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
 

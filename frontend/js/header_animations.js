@@ -4,8 +4,8 @@ const menuIcon = document.querySelector('.menu-icon')
 const header = document.querySelector('header')
 const fluidHeader = document.querySelector('.fluid-header')
 
-const profileMain = document.querySelector('.main-profile')
-const editProfileMain = document.querySelector('.main-edit-profile')
+const profileMain = document.querySelector('.profile-main')
+const editProfileMain = document.querySelector('.edit-profile-main')
 
 // Evento para animações do cabeçalho fluido
 menuIcon.addEventListener('click', () => {
