@@ -12,8 +12,8 @@ const loginController = {
     logUser: async (req, res) => {
         const login = new Login(req.body)
         await login.checkUser()
-        if (login.error_list.length > 0){
-            for (let e of login.error_list){
+        if (login.errorList.length > 0){
+            for (let e of login.errorList){
                 Object.entries(e).forEach(([field, msg]) => {
                     req.flash(`${field}Error`, msg)
                 })
@@ -59,13 +59,13 @@ const loginController = {
     savePassword: async (req, res) => {
         const login = new loginFormModel()
         if (loginController._code !== req.body.code){
-            login.error_list.push({ 'code': 'Código inválido' })
+            login.errorList.push({ 'code': 'Código inválido' })
         }
 
         login.checkNewPassword(loginController._code, req.body)
 
-        if(login.error_list.length > 0){
-            for (let e of login.error_list){
+        if(login.errorList.length > 0){
+            for (let e of login.errorList){
                 Object.entries(e).forEach(([field, msg]) => {
                     req.flash(`${field}Error`, msg)
                 })

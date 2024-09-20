@@ -14,7 +14,7 @@ async function checkLog(req, res, next){
     }
 }
 
-function logoutUser(req, res, next){
+function logoutUser(req, res){
     req.session.destroy((err) => {
         if (err) {
           return res.status(500).send('Erro ao finalizar a sessão.');
@@ -47,8 +47,6 @@ async function addFavBody(req, res){
         console.log('Erro ao favoritar corpo celeste', e)
     }
 }
-
-
 
 async function changeProfileImg(req, res) {
     const newProfileImg = req.params.img

@@ -8,8 +8,8 @@ const registerController = {
     signup: async (req, res) => {
         const register = new Register(req.body)
         await register.checkData()
-        if (register.error_list.length > 0){
-            for (let e of register.error_list){
+        if (register.errorList.length > 0){
+            for (let e of register.errorList){
                 Object.entries(e).forEach(([field, msg]) => {
                     req.flash(`${field}Error`, msg)
                 })

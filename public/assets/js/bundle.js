@@ -131,9 +131,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./frontend/css/general/error_404.css":
+/***/ "./frontend/css/general/error404.css":
 /*!********************************************!*\
-  !*** ./frontend/css/general/error_404.css ***!
+  !*** ./frontend/css/general/error404.css ***!
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -313,9 +313,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./frontend/css/media_queries/error_404_media_queries.css":
+/***/ "./frontend/css/media_queries/error404_media_queries.css":
 /*!****************************************************************!*\
-  !*** ./frontend/css/media_queries/error_404_media_queries.css ***!
+  !*** ./frontend/css/media_queries/error404_media_queries.css ***!
   \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -1465,7 +1465,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_general_header_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/general/header.css */ "./frontend/css/general/header.css");
 /* harmony import */ var _css_general_fonts_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/general/fonts.css */ "./frontend/css/general/fonts.css");
 /* harmony import */ var _css_general_ideaform_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/general/ideaform.css */ "./frontend/css/general/ideaform.css");
-/* harmony import */ var _css_general_error_404_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/error_404.css */ "./frontend/css/general/error_404.css");
+/* harmony import */ var _css_general_error404_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/error404.css */ "./frontend/css/general/error404.css");
 /* harmony import */ var _css_general_fluid_header_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/general/fluid_header.css */ "./frontend/css/general/fluid_header.css");
 /* harmony import */ var _css_general_playlist_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/general/playlist.css */ "./frontend/css/general/playlist.css");
 /* harmony import */ var _css_general_animation_classes_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/general/animation_classes.css */ "./frontend/css/general/animation_classes.css");
@@ -1486,7 +1486,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_media_queries_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../css/media_queries/footer_media_queries.css */ "./frontend/css/media_queries/footer_media_queries.css");
 /* harmony import */ var _css_media_queries_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../css/media_queries/galaxies_media_queries.css */ "./frontend/css/media_queries/galaxies_media_queries.css");
 /* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./frontend/css/media_queries/popup_media_queries.css");
-/* harmony import */ var _css_media_queries_error_404_media_queries_css__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../css/media_queries/error_404_media_queries.css */ "./frontend/css/media_queries/error_404_media_queries.css");
+/* harmony import */ var _css_media_queries_error404_media_queries_css__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../css/media_queries/error404_media_queries.css */ "./frontend/css/media_queries/error404_media_queries.css");
 /* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./frontend/css/media_queries/ideaform_media_queries.css");
 /* harmony import */ var _css_media_queries_playlist_media_queries_css__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../css/media_queries/playlist_media_queries.css */ "./frontend/css/media_queries/playlist_media_queries.css");
 /* harmony import */ var _css_media_queries_aboutme_media_queries_css__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../css/media_queries/aboutme_media_queries.css */ "./frontend/css/media_queries/aboutme_media_queries.css");

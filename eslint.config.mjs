@@ -20,7 +20,7 @@ export default [
       sourceType: "module",
     }
   },
-  { 
+  {
     rules: {
       // Garante que sejam usadas apenas operadores de comparação estrita
       eqeqeq: ["error"],
@@ -31,6 +31,13 @@ export default [
       // Regra para não uso de mensagem de alerta em geral.
       "no-alert": ["warn"],
     }
-},
-  pluginJs.configs.recommended
+  },
+  pluginJs.configs.recommended,
+  {
+    ignores: [
+      "*.config.js",
+      "node_modules",
+      "public/assets/js"
+    ],
+  },
 ];

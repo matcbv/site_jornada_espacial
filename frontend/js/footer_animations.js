@@ -15,8 +15,6 @@ topBtn.addEventListener('click', () => {
     window.scrollTo({top: 0, behavior: "smooth"})
 })
 
-
-
 // ---------- COWBOY BEBOP ANIMATION ----------
 
 cowboyBebopDiv.addEventListener('click', () => {

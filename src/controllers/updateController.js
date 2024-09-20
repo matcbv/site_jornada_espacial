@@ -5,8 +5,8 @@ const updateController = {
     updateData: async (req, res) => {
         const update = new Update(req.body, req.session.user._id)
         await update.checkData()
-        if (update.error_list.length > 0){
-            for (let e of update.error_list){
+        if (update.errorList.length > 0){
+            for (let e of update.errorList){
                 Object.entries(e).forEach(([field, msg]) => {
                     req.flash(`${field}Error`, msg)
                 })

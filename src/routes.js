@@ -77,6 +77,6 @@ router.get('/deleteAccount', loginController.deleteAccount, logoutUser)
 
 
 // Página 404
-router.get('/404', pagesController.error_404)
+router.get('/404', pagesController.error404)
 
 module.exports = router

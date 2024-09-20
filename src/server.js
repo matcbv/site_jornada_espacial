@@ -74,10 +74,11 @@ app.use(flashesMiddleware)
 
 // Adicionando nosso roteador de rotas à aplicação
 const routes = require('./routes')
+const { error } = require('console')
 app.use(routes)
 
 // Definindo a página de erro em caso de erro 404
-app.use((req, res) => { res.status(404).render('error_404.html') })
+app.use((req, res) => { res.status(404).render('error404.html') })
 
 app.on('ready', () => {
     // Inicialização da aplicação
