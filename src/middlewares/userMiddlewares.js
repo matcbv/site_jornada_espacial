@@ -48,6 +48,8 @@ async function addFavBody(req, res){
     }
 }
 
+
+
 async function changeProfileImg(req, res) {
     const newProfileImg = req.params.img
     try{

@@ -1,4 +1,3 @@
-const loginController = require('../controllers/loginController')
 const nodemailer = require('nodemailer')
 const path = require('path')
 const fs = require('fs')
@@ -44,7 +43,7 @@ const emailController = {
             // Utilizando o encodeURIComponent para codificação de caracteres não alfanuméricos:
             html: getEmail()
         }
-        
+
         try{
             // Realizando o envio do email:
             await transporter.sendMail(emailParams)
@@ -61,7 +60,5 @@ const emailController = {
         return res.redirect(prevPage)
     }
 }
-
-
 
 module.exports = emailController

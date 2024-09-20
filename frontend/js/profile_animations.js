@@ -3,7 +3,6 @@
 const mainProfile = document.querySelector('.profile-main')
 const mainEditProfile = document.querySelector('.edit-profile-main')
 const profileNav = document.querySelector('.profile-nav')
-const starsDiv = document.querySelector('.stars-div')
 
 const rightArrowIcon = document.querySelector('.right-arrow-icon')
 const leftArrowIcon = document.querySelector('.left-arrow-icon')

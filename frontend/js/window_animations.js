@@ -6,7 +6,6 @@ const galaxiesMain = document.querySelector('.galaxies-main')
 
 const soundOn = document.querySelector(".sound-on")
 const soundOff = document.querySelector(".sound-off")
-const playlist = document.querySelector('.playlist-div')
 const playlistMusics = document.querySelectorAll('.musics')
 
 const fluidHeader = document.querySelector('.fluid-header')
@@ -50,7 +49,7 @@ window.addEventListener('beforeunload', () => {
 window.addEventListener('load', () => {
     const currentAudio = sessionStorage.getItem('currentAudio')
     if(currentAudio){
-        soundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon')
+        let soundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon')
         const audio = getMusic(currentAudio)
         const audioStatus = sessionStorage.getItem('audioStatus')
         if(audioStatus === 'false'){
@@ -114,7 +113,7 @@ window.addEventListener('load', () => {
         timerSpan.style.display = 'flex'
         timerSpan.classList.add('disabled-btn')
         let s = 15
-        counter = setInterval(() => {
+        const counter = setInterval(() => {
             timerSpan.innerHTML = `${s}`
             s--
         }, 1000)

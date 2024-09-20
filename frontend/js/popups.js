@@ -1,7 +1,6 @@
 const images = document.querySelectorAll('img')
 const galaxiesMain = document.querySelector('.galaxies-main')
 const profileMain = document.querySelector('.profile-main')
-const indexMain = document.querySelector('.index-main')
 
 if(galaxiesMain || profileMain){
     // Fetch para a requisição dos popups

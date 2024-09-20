@@ -1,7 +1,6 @@
 // ---------- HTML ELEMENTS ----------
 
 const editProfileMain = document.querySelector('.edit-profile-main')
-
 const profileImgEdit = document.querySelector('.profile-img-edit')
 const saveImgEditButton = document.querySelectorAll('.save-img-edit-button')
 const bioTextarea = document.querySelector('.bio-textarea')

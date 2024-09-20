@@ -4,7 +4,7 @@
   "description": "Projeto de minha autoria, sendo planejado e desenvolvido do início ao fim de forma individual. Esse projeto é o resultado da primeira etapa do Curso Carreira FullStack Python da Coderhouse, focado em HTML5 e CSS3.",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "nodemon src/server.js --ignore node_modules --ignore frontend",
+    "start": "node src/server.js",
     "dev": "webpack -w"
   },
   "repository": {

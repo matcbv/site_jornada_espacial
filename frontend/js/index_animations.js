@@ -10,7 +10,7 @@ const introductionSection = document.querySelector('.intro-section')
 if (indexMain){
     indexMain.addEventListener('mouseover', (e) => {
         const element = e.target
-        if (element.tagName.toLowerCase() == 'a'){
+        if (element.tagName.toLowerCase() === 'a'){
             const rocket = element.nextElementSibling
             rocket.innerHTML = '🚀'
             rocket.classList.add('rocket')
