@@ -10,7 +10,7 @@ const registerController = require('./controllers/registerController')
 const loginController = require('./controllers/loginController')
 const updateController = require('./controllers/updateController')
 const emailController = require('./controllers/emailController')
-const {checkLog, userData, logoutUser, addFavBody, changeProfileImg} = require('./middlewares/userMiddlewares')
+const {checkLog, userData, logoutUser, addFavBody, addBadge, changeProfileImg} = require('./middlewares/userMiddlewares')
 
 // Página inicial
 router.get('/', pagesController.homePage)
@@ -24,6 +24,8 @@ router.get('/triangle', pagesController.triangle)
 router.get('/popup/:body', staticController.getPopup)
 // Favoritar corpo celeste
 router.get('/favBody/:body', checkLog, userData, addFavBody)
+// Evento para adicionar insígnea
+router.get('/addBadge/:badge', checkLog, userData, addBadge)
 
 
 // Formulário de ideias

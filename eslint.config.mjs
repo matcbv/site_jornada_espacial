@@ -34,6 +34,7 @@ export default [
   },
   pluginJs.configs.recommended,
   {
+    // Arquivos a serem ignorados
     ignores: [
       "*.config.js",
       "node_modules",

@@ -41,16 +41,14 @@ class Login{
         const dataQuery = await userModel.findOne({ username: this.data['username'] })
         if (!dataQuery) {
             this.errorList.push({ 'username': this.msgList[2] })
-            return
         }
         if (!bcrypt.compareSync(this.data.password, dataQuery.password)){
             this.errorList.push({ 'password': this.msgList[3] })
-            return
         }
         this.userData = dataQuery
     }
 
-    async checkNewPassword(code, dataQuery){
+    async checkNewPassword(dataQuery){
         if(dataQuery.password !== dataQuery.password_confirmation){
             this.errorList.push({ 'password': this.msgList[5] })
         }else{

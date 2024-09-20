@@ -132,9 +132,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ "./frontend/css/general/error404.css":
-/*!********************************************!*\
+/*!*******************************************!*\
   !*** ./frontend/css/general/error404.css ***!
-  \********************************************/
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -314,9 +314,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ "./frontend/css/media_queries/error404_media_queries.css":
-/*!****************************************************************!*\
+/*!***************************************************************!*\
   !*** ./frontend/css/media_queries/error404_media_queries.css ***!
-  \****************************************************************/
+  \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -526,7 +526,7 @@ var introductionSection = document.querySelector('.intro-section');
 if (indexMain) {
   indexMain.addEventListener('mouseover', function (e) {
     var element = e.target;
-    if (element.tagName.toLowerCase() == 'a') {
+    if (element.tagName.toLowerCase() === 'a') {
       var rocket = element.nextElementSibling;
       rocket.innerHTML = '🚀';
       rocket.classList.add('rocket');
@@ -873,7 +873,6 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 var images = document.querySelectorAll('img');
 var galaxiesMain = document.querySelector('.galaxies-main');
 var profileMain = document.querySelector('.profile-main');
-var indexMain = document.querySelector('.index-main');
 if (galaxiesMain || profileMain) {
   // Fetch para a requisição dos popups
   document.addEventListener('click', function (e) {
@@ -931,7 +930,7 @@ function getPopup(html, main, celestialBody) {
   });
   var starIcon = document.querySelector('.star-icon');
   var selectedStarIcon = document.querySelector('.selected-star-icon');
-  if (localStorage.getItem('favBody') === celestialBody && localStorage.getItem('loggedIn') === 'true') {
+  if (sessionStorage.getItem('favBody') === celestialBody && sessionStorage.getItem('loggedIn') === 'true') {
     starIcon.style.display = 'none';
     selectedStarIcon.style.display = 'block';
   } else {
@@ -939,8 +938,8 @@ function getPopup(html, main, celestialBody) {
     selectedStarIcon.style.display = 'none';
   }
   starIcon.addEventListener('click', function () {
-    if (localStorage.getItem('loggedIn') === 'true') {
-      localStorage.setItem('favBody', "".concat(celestialBody));
+    if (sessionStorage.getItem('loggedIn') === 'true') {
+      sessionStorage.setItem('favBody', "".concat(celestialBody));
       starIcon.style.display = 'none';
       selectedStarIcon.style.display = 'block';
     }
@@ -964,7 +963,6 @@ var introductionSection = document.querySelector(".intro-section");
 var galaxiesMain = document.querySelector('.galaxies-main');
 var soundOn = document.querySelector(".sound-on");
 var soundOff = document.querySelector(".sound-off");
-var playlist = document.querySelector('.playlist-div');
 var playlistMusics = document.querySelectorAll('.musics');
 var fluidHeader = document.querySelector('.fluid-header');
 var profileImgPopup = document.querySelector('.profile-img-popup');
@@ -1003,7 +1001,7 @@ window.addEventListener('beforeunload', function () {
 window.addEventListener('load', function () {
   var currentAudio = sessionStorage.getItem('currentAudio');
   if (currentAudio) {
-    soundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon');
+    var soundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon');
     var audio = getMusic(currentAudio);
     var audioStatus = sessionStorage.getItem('audioStatus');
     if (audioStatus === 'false') {
@@ -1075,7 +1073,7 @@ window.addEventListener('load', function () {
     timerSpan.style.display = 'flex';
     timerSpan.classList.add('disabled-btn');
     var s = 15;
-    counter = setInterval(function () {
+    var counter = setInterval(function () {
       timerSpan.innerHTML = "".concat(s);
       s--;
     }, 1000);
@@ -1121,6 +1119,14 @@ cowboyBebopDiv.addEventListener('click', function () {
   swordfishDiv.style.display = 'block';
   setTimeout(function () {
     swordfishDiv.classList.remove('travel-animation');
+  }, 2000);
+  setTimeout(function () {
+    var badges = localStorage.getItem('badges');
+    if (!badges.includes('spaceCowboy')) {
+      badges.push('spaceCowboy');
+      localStorage.setItem('badges', badges);
+      window.location.href('/addBadge/spaceCowboy');
+    }
   }, 2000);
 });
 
@@ -1204,7 +1210,6 @@ if (Array.from(eyeIcons).length > 0 && Array.from(crosslines).length > 0) {
 }
 function showPassword(element) {
   var input = element.previousElementSibling;
-  if (input.tagName.toLowerCase() !== 'input') {}
   if (input.type === 'password') {
     input.type = 'text';
     element.classList.contains('crossline') ? element.style.display = 'none' : element.nextElementSibling.style.display = 'none';
@@ -1235,7 +1240,7 @@ if (requirementsIcon) {
 function hideRequirements(requirementsDivStyles) {
   registerMain.addEventListener('click', function (e) {
     var element = e.target;
-    if (!element.classList.contains('password-requirements' || 0)) {
+    if (!element.classList.contains('password-requirements') || !element.closest('div').classList.contains('password-requirements')) {
       if (requirementsDivStyles.display === 'flex') {
         requirementsDiv.classList.remove('fast-appear-animation');
         requirementsDiv.classList.add('disappear-animation');
@@ -1267,7 +1272,6 @@ if (resendEmailBtn) {
 var mainProfile = document.querySelector('.profile-main');
 var mainEditProfile = document.querySelector('.edit-profile-main');
 var profileNav = document.querySelector('.profile-nav');
-var starsDiv = document.querySelector('.stars-div');
 var rightArrowIcon = document.querySelector('.right-arrow-icon');
 var leftArrowIcon = document.querySelector('.left-arrow-icon');
 var editImageIcon = document.querySelector('.edit-img-icon');
@@ -1310,7 +1314,7 @@ if (rightArrowIcon) {
 // ---------- PROFILE ICON ANIMATION ----------
 
 if (mainProfile) {
-  localStorage.setItem('loggedIn', 'true');
+  sessionStorage.setItem('loggedIn', 'true');
   profileImgCloseIcon.addEventListener('click', function () {
     if (window.getComputedStyle(profileImgPopup).display === 'flex') {
       profileImgPopup.classList.add('disappear-animation');
@@ -1355,8 +1359,8 @@ if (mainProfile) {
   });
   var logoutIcon = document.querySelector('.logout-icon');
   logoutIcon.addEventListener('click', function () {
-    localStorage.setItem('favBody', '');
-    localStorage.setItem('loggedIn', 'false');
+    sessionStorage.setItem('favBody', '');
+    sessionStorage.setItem('loggedIn', 'false');
   });
 
   // ---------- SHOOTING STAR ANIMATION ----------

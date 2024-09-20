@@ -53,7 +53,7 @@ function getPopup(html, main, celestialBody){
 
     const starIcon = document.querySelector('.star-icon')
     const selectedStarIcon = document.querySelector('.selected-star-icon')
-    if (localStorage.getItem('favBody') === celestialBody && localStorage.getItem('loggedIn') === 'true'){
+    if (sessionStorage.getItem('favBody') === celestialBody && sessionStorage.getItem('loggedIn') === 'true'){
         starIcon.style.display = 'none'
         selectedStarIcon.style.display = 'block'
     } else{
@@ -61,8 +61,8 @@ function getPopup(html, main, celestialBody){
         selectedStarIcon.style.display = 'none'
     }
     starIcon.addEventListener('click', () => {
-        if(localStorage.getItem('loggedIn') === 'true'){
-            localStorage.setItem('favBody', `${celestialBody}`)
+        if(sessionStorage.getItem('loggedIn') === 'true'){
+            sessionStorage.setItem('favBody', `${celestialBody}`)
             starIcon.style.display = 'none'
             selectedStarIcon.style.display = 'block'
         }

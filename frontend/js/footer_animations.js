@@ -23,6 +23,14 @@ cowboyBebopDiv.addEventListener('click', () => {
     setTimeout(() => {
         swordfishDiv.classList.remove('travel-animation')
     }, 2000)
+    setTimeout(() => {
+        let badges = localStorage.getItem('badges')
+        if (!badges.includes('spaceCowboy')){
+            badges.push('spaceCowboy')
+            localStorage.setItem('badges', badges)
+            window.location.href('/addBadge/spaceCowboy')
+        }
+    }, 2000)
 })
 
 // ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------

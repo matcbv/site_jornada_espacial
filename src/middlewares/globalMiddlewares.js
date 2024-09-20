@@ -11,7 +11,6 @@ function includesMiddleware(req, res, next){
     res.locals.playlist = 'includes/playlist.html'
     res.locals.audio = 'includes/audio.html'
     res.locals.swordfish = 'includes/swordfish.html'
-    res.locals.editIcon = 'includes/edit_icon.html'
     res.locals.profileNav = 'includes/profile_nav.html'
     next()
 }

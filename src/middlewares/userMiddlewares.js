@@ -6,7 +6,7 @@ async function checkLog(req, res, next){
             const userData = await userModel.findOne({ username: req.session.user['username'] })
             req.session.user = userData
         } catch(e){
-            console.log('Falha ao atualizar dados do usuário', e)
+            console.log('Erro ao atualizar dados do usuário', e)
         }
         next()
     } else{
@@ -60,4 +60,10 @@ async function changeProfileImg(req, res) {
     }
 }
 
-module.exports = {checkLog, userData, logoutUser, addFavBody, changeProfileImg}
+async function addBadge(req, res) {
+    const badge = req.query.badge
+    req.session.user.badges[0].push(badge) 
+    res.redirect('back')
+}
+
+module.exports = {checkLog, userData, logoutUser, addFavBody, addBadge, changeProfileImg}

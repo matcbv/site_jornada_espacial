@@ -52,7 +52,7 @@ if (rightArrowIcon){
 // ---------- PROFILE ICON ANIMATION ----------
 
 if (mainProfile){
-    localStorage.setItem('loggedIn', 'true')
+    sessionStorage.setItem('loggedIn', 'true')
 
     profileImgCloseIcon.addEventListener('click', () => {
         if(window.getComputedStyle(profileImgPopup).display === 'flex'){
@@ -103,8 +103,8 @@ if (mainProfile){
 
     const logoutIcon = document.querySelector('.logout-icon')
     logoutIcon.addEventListener('click', () => {
-        localStorage.setItem('favBody', '')
-        localStorage.setItem('loggedIn', 'false')
+        sessionStorage.setItem('favBody', '')
+        sessionStorage.setItem('loggedIn', 'false')
     })
     
 
