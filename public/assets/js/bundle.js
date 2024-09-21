@@ -1126,13 +1126,9 @@ topBtn.addEventListener('click', function () {
 cowboyBebopDiv.addEventListener('click', function () {
   swordfishDiv.classList.add('travel-animation');
   swordfishDiv.style.display = 'block';
-  setTimeout(function () {
-    swordfishDiv.classList.remove('travel-animation');
-  }, 2000);
-  setTimeout(function () {
+  swordfishDiv.addEventListener('click', function () {
     if (sessionStorage.getItem('loggedIn') === 'true') {
       var badges = JSON.parse(localStorage.getItem('badges'));
-      console.log(badges);
       if (!badges) {
         localStorage.setItem('badges', JSON.stringify(['spaceCowboy']));
       } else if (!badges.includes('spaceCowboy')) {
@@ -1146,6 +1142,9 @@ cowboyBebopDiv.addEventListener('click', function () {
       });
       // window.location.href('/addBadge/spaceCowboy')
     }
+  });
+  setTimeout(function () {
+    swordfishDiv.classList.remove('travel-animation');
   }, 2000);
 });
 function addModal(currentMain, html) {
@@ -1154,7 +1153,12 @@ function addModal(currentMain, html) {
   divModal.classList.add('appear-animation', 'modal');
   divModal.innerHTML = html;
   currentMain.appendChild(divModal);
-  var closeIcon = divModal.querySelector('.close-icon');
+  var badge = divModal.querySelector('.badge');
+  badge.classList.add('spinning-animation');
+  setTimeout(function () {
+    badge.classList.remove('spinning-animation');
+  }, 2000);
+  var closeIcon = divModal.querySelector('.bridge-modal-close-icon');
   closeIcon.addEventListener('click', function () {
     currentMain.removeChild(divModal);
   });

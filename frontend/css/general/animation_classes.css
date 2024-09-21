@@ -45,3 +45,7 @@
 .travel-animation{
     animation: travel 2s linear 0s normal forwards;
 }
+
+.spinning-animation{
+    animation: spinning 0.5s linear 0s infinite normal both;
+}

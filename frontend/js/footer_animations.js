@@ -19,13 +19,9 @@ topBtn.addEventListener('click', () => {
 cowboyBebopDiv.addEventListener('click', () => {
     swordfishDiv.classList.add('travel-animation')
     swordfishDiv.style.display = 'block'
-    setTimeout(() => {
-        swordfishDiv.classList.remove('travel-animation')
-    }, 2000)
-    setTimeout(() => {
+    swordfishDiv.addEventListener('click', () => {
         if (sessionStorage.getItem('loggedIn') === 'true'){
             let badges = JSON.parse(localStorage.getItem('badges'))
-            console.log(badges)
             if (!badges){
                 localStorage.setItem('badges', JSON.stringify(['spaceCowboy']))
             } else if(!badges.includes('spaceCowboy')){
@@ -37,6 +33,9 @@ cowboyBebopDiv.addEventListener('click', () => {
             })
             // window.location.href('/addBadge/spaceCowboy')
         }
+    })
+    setTimeout(() => {
+        swordfishDiv.classList.remove('travel-animation')
     }, 2000)
 })
 
@@ -48,7 +47,14 @@ function addModal(currentMain, html) {
 
     currentMain.appendChild(divModal)
 
-    const closeIcon = divModal.querySelector('.close-icon')
+    const badge = divModal.querySelector('.badge')
+    badge.classList.add('spinning-animation')
+
+    setTimeout(() => {
+        badge.classList.remove('spinning-animation')
+    }, 2000);
+
+    const closeIcon = divModal.querySelector('.bridge-modal-close-icon')
     closeIcon.addEventListener('click', () => {
         currentMain.removeChild(divModal)
     })

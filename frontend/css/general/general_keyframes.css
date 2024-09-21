@@ -91,3 +91,14 @@
         font-size: large;
     }
 }
+
+@keyframes spinning {
+    from{
+        transform: scale(0.3);
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: scale(1);
+        transform: rotate(360deg);
+    }
+}

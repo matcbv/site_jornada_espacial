@@ -84,7 +84,7 @@ footer{
 }
 
 .cowboy-bebop-div img{
-    width: 70px;
+    width: 75px;
     padding-bottom: 15px;
 }
 
@@ -119,6 +119,10 @@ footer button:hover{
 
 .swordfish-div img{
     display: block;
+}
+
+.swordfish-div img:hover{
+    cursor: pointer;
 }
 
 .profile-footer{
