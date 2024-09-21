@@ -13,6 +13,7 @@ import "../css/general/playlist.css"
 import "../css/general/animation_classes.css"
 import "../css/general/general_keyframes.css"
 import "../css/general/aboutme.css"
+import "../css/general/badge_modal.css"
 
 
 // INDEX STYLES

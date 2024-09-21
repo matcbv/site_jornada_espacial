@@ -1,0 +1,25 @@
+.modal{
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 998;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-box{
+    position: fixed;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8) url("../../../public/assets/images/confetti.gif") center;
+    background-size: contain;
+}

@@ -6,8 +6,7 @@ const topBtn = document.querySelector('.top-btn')
 const cowboyBebopDiv = document.querySelector('.cowboy-bebop-div')
 const swordfishDiv = document.querySelector('.swordfish-div')
 
-const profileMain = document.querySelector('.profile-main')
-const editProfileMain = document.querySelector('.edit-profile-main')
+const currentMain = document.querySelector('main')
 
 // ---------- TOP BUTTON ----------
 
@@ -24,19 +23,41 @@ cowboyBebopDiv.addEventListener('click', () => {
         swordfishDiv.classList.remove('travel-animation')
     }, 2000)
     setTimeout(() => {
-        let badges = localStorage.getItem('badges')
-        if (!badges.includes('spaceCowboy')){
-            badges.push('spaceCowboy')
-            localStorage.setItem('badges', badges)
-            window.location.href('/addBadge/spaceCowboy')
+        if (sessionStorage.getItem('loggedIn') === 'true'){
+            let badges = JSON.parse(localStorage.getItem('badges'))
+            console.log(badges)
+            if (!badges){
+                localStorage.setItem('badges', JSON.stringify(['spaceCowboy']))
+            } else if(!badges.includes('spaceCowboy')){
+                badges.push('spaceCowboy')
+                localStorage.setItem('badges', JSON.stringify(badges))
+            }
+            fetch('/addBadge/spaceCowboy').then(data => {
+                data.text().then(html => {addModal(currentMain, html)})
+            })
+            // window.location.href('/addBadge/spaceCowboy')
         }
     }, 2000)
 })
 
+function addModal(currentMain, html) {
+    const divModal = document.createElement('div')
+    divModal.style.display = 'flex'
+    divModal.classList.add('appear-animation', 'modal')
+    divModal.innerHTML = html
+
+    currentMain.appendChild(divModal)
+
+    const closeIcon = divModal.querySelector('.close-icon')
+    closeIcon.addEventListener('click', () => {
+        currentMain.removeChild(divModal)
+    })
+}
+
 // ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------
 
-if (profileMain || editProfileMain){
+if (currentMain.classList.contains('profile-main') || currentMain.classList.contains('edit-profile-main')){
     footer.classList.add('profile-footer')
-}else{
+} else{
     footer.classList.remove('profile-footer')
 }

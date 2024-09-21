@@ -64,7 +64,7 @@ if(introSection){
             toPlayAudio = getMusic(currentAudio)
             toPlayAudio.play()
             sessionStorage.setItem('audioStatus', toPlayAudio.paused)
-        }else{
+        } else{
             toPlayAudio = getMusic('redbone')
             toPlayAudio.play()
             sessionStorage.setItem('currentAudio', 'redbone')
@@ -107,7 +107,7 @@ if (audioDiv){
             toPlayAudio.play()
             soundOn.style.display = 'block'
             soundOff.style.display = 'none'
-        }else{
+        } else{
             toPlayAudio = getMusic('redbone')
             toPlayAudio.play()
             soundOn.style.display = 'block'
@@ -145,7 +145,7 @@ if (audioDiv){
         if (element.tagName.toLowerCase() !== 'div'){
             element = element.closest('div')
             soundWaveIcon = element.querySelector('.sound-wave-icon')
-        }else{
+        } else{
             soundWaveIcon = element.querySelector('.sound-wave-icon')
         }
         const music = getMusic(element.id)

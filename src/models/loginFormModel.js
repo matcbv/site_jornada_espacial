@@ -13,21 +13,15 @@ class Login{
     }
 
     _checkData() {
-        if(Object.keys(this.data).length === 0){
-            this.errorList.push({'username': this.msgList[0]})
-            this.errorList.push({'password': this.msgList[1]})
-            return
-        } else{
-            for (let k of Object.keys(this.data)){
-                if (k === 'username'){
-                    if (!this.data[k]){
-                        this.errorList.push({[k]: this.msgList[0]})
-                    }
+        for (let k of Object.keys(this.data)){
+            if (k === 'username'){
+                if (!this.data[k]){
+                    this.errorList.push({[k]: this.msgList[0]})
                 }
-                if (k === 'password'){
-                    if (!this.data[k]){
-                        this.errorList.push({[k]: this.msgList[1]})
-                    }
+            }
+            if (k === 'password'){
+                if (!this.data[k]){
+                    this.errorList.push({[k]: this.msgList[1]})
                 }
             }
         }
@@ -41,17 +35,17 @@ class Login{
         const dataQuery = await userModel.findOne({ username: this.data['username'] })
         if (!dataQuery) {
             this.errorList.push({ 'username': this.msgList[2] })
-        }
-        if (!bcrypt.compareSync(this.data.password, dataQuery.password)){
+        } else if(!bcrypt.compareSync(this.data.password, dataQuery.password)){
             this.errorList.push({ 'password': this.msgList[3] })
+        } else{
+            this.userData = dataQuery
         }
-        this.userData = dataQuery
     }
 
     async checkNewPassword(dataQuery){
         if(dataQuery.password !== dataQuery.password_confirmation){
             this.errorList.push({ 'password': this.msgList[5] })
-        }else{
+        } else{
             const alphaArr = Array.from(dataQuery.password).filter(l => validator.isAlpha(l))
             const numericArr = Array.from(dataQuery.password).filter(l => validator.isNumeric(l))
             const upperArr = alphaArr.filter(l => validator.isUppercase(l))

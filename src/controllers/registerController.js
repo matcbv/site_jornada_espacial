@@ -13,8 +13,8 @@ const registerController = {
                 Object.entries(e).forEach(([field, msg]) => {
                     req.flash(`${field}Error`, msg)
                 })
-                return res.redirect('/account/signup')
             }
+            return res.redirect('/account/signup')
         } else {
             registerController._user = register
             registerController._code = await emailController.sendVerifEmail(registerController._user.data)

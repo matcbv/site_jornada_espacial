@@ -1,6 +1,6 @@
 {
     "ignore": ["node_modules"],
-    "js": "js",
+    "ext": "js",
     "exec": "node src/server.js",
     "restartable": "rs"
 }

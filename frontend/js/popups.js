@@ -1,8 +1,7 @@
 const images = document.querySelectorAll('img')
-const galaxiesMain = document.querySelector('.galaxies-main')
-const profileMain = document.querySelector('.profile-main')
+const currentMain = document.querySelector('main')
 
-if(galaxiesMain || profileMain){
+if(currentMain.classList.contains('galaxies-main') || currentMain.classList.contains('profile-main')){
     // Fetch para a requisição dos popups
     document.addEventListener('click', (e) => {
         const element = e.target
@@ -12,16 +11,10 @@ if(galaxiesMain || profileMain){
                     fetch(`/popup/${element.id}`).then(res => {
                         if (!res.ok){
                             throw new Error('Erro na requisição do popup.')
+                        } else if(currentMain.classList.contains('galaxies-main')){
+                                    res.text().then(html => {getPopup(html, currentMain, element.id)})
                         } else{
-                            if (galaxiesMain){
-                                res.text().then(html => {
-                                    getPopup(html, galaxiesMain, element.id)
-                                })
-                            }else{
-                                res.text().then(html => {
-                                    getPopup(html, profileMain, element.id)
-                                })
-                            }
+                            res.text().then(html => {getPopup(html, currentMain, element.id)})
                         }
                     })
                 }
@@ -31,19 +24,19 @@ if(galaxiesMain || profileMain){
 }
 
 // Função para adição do conteúdo obtido na página
-function getPopup(html, main, celestialBody){
+function getPopup(html, currentMain, celestialBody){
     const divPopup = document.createElement('div')
     divPopup.style.display = 'flex'
     divPopup.classList.add('appear-animation', 'popup')
     divPopup.innerHTML = html
-    if(profileMain){
+    if(currentMain.classList.contains('profile-main')){
         divPopup.querySelector('.popup-content').style.backgroundColor = '#040216'
     }
-    main.appendChild(divPopup)
+    currentMain.appendChild(divPopup)
 
     const closeIcon = divPopup.querySelector('.close-icon')
     closeIcon.addEventListener('click', () => {
-        main.removeChild(divPopup)
+        currentMain.removeChild(divPopup)
     })
 
     const ideaIcon = document.querySelector('.idea-icon')
