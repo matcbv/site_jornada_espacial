@@ -5,9 +5,11 @@ const staticController = {
         return res.sendFile(path.resolve(__dirname, '..', 'views', 'popups', `${req.params.body}_popup.html`))
     },
 
-    addModal: (req, res) => {
-        console.log(req.params.body)
-        return res.sendFile(path.resolve(__dirname, '..', 'views', `badge_modal.html`))
+    getModal: (req, res) => {
+        if(req.newBadge){
+            return res.sendFile(path.resolve(__dirname, '..', 'views', 'badge_modal.html'))
+        }
+        return res.redirect('back');
     }
 }
 

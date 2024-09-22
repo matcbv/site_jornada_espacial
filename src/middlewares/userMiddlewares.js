@@ -24,22 +24,22 @@ function logoutUser(req, res){
 }
 
 function userData(req, res, next){
-    res.locals.name = req.session.user['name']
-    res.locals.lastname = req.session.user['lastname']
-    res.locals.username = req.session.user['username']
-    res.locals.birthday = req.session.user['birthday']
-    res.locals.email = req.session.user['email']
-    res.locals.bio = req.session.user['bio']
-    res.locals.favBody = req.session.user['favBody']
-    res.locals.profileImg = req.session.user['profileImg']
-    res.locals.badges = req.session.user['badges']
+    res.locals.name = req.session.user.name
+    res.locals.lastname = req.session.user.lastname
+    res.locals.username = req.session.user.username
+    res.locals.birthday = req.session.user.birthday
+    res.locals.email = req.session.user.email
+    res.locals.bio = req.session.user.bio
+    res.locals.favBody = req.session.user.favBody
+    res.locals.profileImg = req.session.user.profileImg
+    res.locals.badges = req.session.user.badges
     next()
 }
 
 async function addFavBody(req, res){
     const currentBody = req.params.body
     try{
-        const user = await userModel.findOne({ username: res.locals.username })
+        const user = await userModel.findOne({ username: req.session.user.username })
         user.favBody = currentBody
         await user.save()
         res.redirect('/account/profile')
@@ -51,7 +51,7 @@ async function addFavBody(req, res){
 async function changeProfileImg(req, res) {
     const newProfileImg = req.params.img
     try{
-        const user = await userModel.findOne({ username: res.locals.username })
+        const user = await userModel.findOne({ username: req.session.user.username })
         user.profileImg = newProfileImg
         await user.save()
         res.redirect('/account/profile')
@@ -60,10 +60,18 @@ async function changeProfileImg(req, res) {
     }
 }
 
-async function addBadge(req, res) {
-    const badge = req.query.badge
-    req.session.user.badges[0].push(badge) 
-    res.redirect('back')
+async function checkBadge(req, res, next) {
+    const user = await userModel.findOne({ username: req.session.user.username })
+    req.newBadge = !user.badges.includes(req.params.badge)
+    next()
 }
 
-module.exports = {checkLog, userData, logoutUser, addFavBody, addBadge, changeProfileImg}
+async function addBadge(req, res) {
+    const user = await userModel.findOne({ username: req.session.user.username })
+    user.badges.push(req.params.badge)
+    req.session.user.badges = user.badges 
+    await user.save()
+    res.redirect('back');
+}
+
+module.exports = {checkLog, userData, logoutUser, addFavBody, addBadge, checkBadge, changeProfileImg}

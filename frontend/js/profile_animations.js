@@ -125,7 +125,7 @@ if (mainProfile){
                                         top: ${starHeight + window.innerHeight / 2}px;
                                     }
                                 }`
-            shootingStar.style.animation =  'shooting-star 1.5s linear 0s 1 normal both'
+            shootingStar.style.animation =  'shooting-star 1s linear 0s 1 normal both'
             shootingStar.style.display = 'inline'
             setTimeout(() => {
                 shootingStar.style.display = 'none'

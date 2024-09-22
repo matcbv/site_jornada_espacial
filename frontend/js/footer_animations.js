@@ -1,3 +1,5 @@
+import addModal from "./modal_animations"
+
 // ---------- HTML ELEMENTS ----------
 
 const footer = document.querySelector('footer')
@@ -19,45 +21,20 @@ topBtn.addEventListener('click', () => {
 cowboyBebopDiv.addEventListener('click', () => {
     swordfishDiv.classList.add('travel-animation')
     swordfishDiv.style.display = 'block'
-    swordfishDiv.addEventListener('click', () => {
-        if (sessionStorage.getItem('loggedIn') === 'true'){
-            let badges = JSON.parse(localStorage.getItem('badges'))
-            if (!badges){
-                localStorage.setItem('badges', JSON.stringify(['spaceCowboy']))
-            } else if(!badges.includes('spaceCowboy')){
-                badges.push('spaceCowboy')
-                localStorage.setItem('badges', JSON.stringify(badges))
-            }
-            fetch('/addBadge/spaceCowboy').then(data => {
-                data.text().then(html => {addModal(currentMain, html)})
-            })
-            // window.location.href('/addBadge/spaceCowboy')
-        }
-    })
+    swordfishDiv.addEventListener('click', swordFishClick)
     setTimeout(() => {
         swordfishDiv.classList.remove('travel-animation')
+        swordfishDiv.removeEventListener('click', swordFishClick)
+        swordfishDiv.style.display = 'none'
     }, 2000)
 })
 
-function addModal(currentMain, html) {
-    const divModal = document.createElement('div')
-    divModal.style.display = 'flex'
-    divModal.classList.add('appear-animation', 'modal')
-    divModal.innerHTML = html
-
-    currentMain.appendChild(divModal)
-
-    const badge = divModal.querySelector('.badge')
-    badge.classList.add('spinning-animation')
-
-    setTimeout(() => {
-        badge.classList.remove('spinning-animation')
-    }, 2000);
-
-    const closeIcon = divModal.querySelector('.bridge-modal-close-icon')
-    closeIcon.addEventListener('click', () => {
-        currentMain.removeChild(divModal)
-    })
+function swordFishClick() {
+    if (sessionStorage.getItem('loggedIn') === 'true'){
+        fetch('/getModal/space_cowboy').then(data => {
+            data.text().then(html => {addModal(currentMain, html, 'space_cowboy')})
+        })
+    }
 }
 
 // ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------

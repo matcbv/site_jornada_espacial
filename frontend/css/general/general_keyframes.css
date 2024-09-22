@@ -92,13 +92,32 @@
     }
 }
 
-@keyframes spinning {
-    from{
-        transform: scale(0.3);
-        transform: rotate(0deg);
+@keyframes resizing-big {
+    0%{
+        font-size: 2.5em;
+    }
+    50%{
+        font-size: 2.3em;
     }
     100%{
-        transform: scale(1);
+        font-size: 2.5em;
+    }
+}
+
+@keyframes scaleUp {
+    from{
+        transform: scale(0.5);
+    }
+    to{
+        transform: scale(1.5);
+    }
+}
+
+@keyframes spinning {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
         transform: rotate(360deg);
     }
 }

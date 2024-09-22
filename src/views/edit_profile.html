@@ -30,7 +30,7 @@
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     <div class="flex flex-col mb-7 w-72 md:w-auto md:mb-10">
                         <label class="edit-profile-labels" for="bio">Biografia (<span class="caracters-span"></span>/150)</label>
-                        <% if(nameError.length !== 0){ %>
+                        <% if(nameError.length > 0){ %>
                             <textarea class="edit-error-placeholder bio-textarea resize-none bg-mid-blue rounded-lg text-white py-2 px-4 border-2 border-solid border-gray-400 text-base md:text-lg font-mono font-bold focus:outline-none focus:border-original-yellow" name="bio" id="bio" rows="4" maxlength="150"><%= bioError %></textarea>
                         <% } %>
                         <textarea class="bio-textarea resize-none bg-mid-blue rounded-lg text-white py-2 px-4 border-2 border-solid border-gray-400 text-base md:text-lg font-mono font-bold focus:outline-none focus:border-original-yellow" name="bio" id="bio" rows="4" maxlength="150"><%= bio %></textarea>
@@ -38,7 +38,7 @@
                     <div class="flex flex-col md:flex-row w-72 md:w-auto md:justify-between md:mb-10">
                         <div class="flex flex-col mb-7 md:mb-0">
                             <label class="edit-profile-labels" for="name">Nome</label>
-                            <% if(nameError.length !== 0){ %>
+                            <% if(nameError.length > 0){ %>
                                 <input class="placeholder-error-red edit-profile-inputs" type="text" name="name" id="name" placeholder="<%= nameError %>">
                             <% } else{ %>
                                 <input class="edit-profile-inputs" type="text" name="name" id="name" value="<%= name %>">
@@ -46,7 +46,7 @@
                         </div>
                         <div class="flex flex-col mb-7 md:mb-0">
                             <label class="edit-profile-labels" for="lastname">Sobrenome</label>
-                            <% if(lastnameError.length !== 0){ %>
+                            <% if(lastnameError.length > 0){ %>
                                 <input class="placeholder-error-red edit-profile-inputs" type="text" name="lastname" id="lastname" placeholder="<%= lastnameError %>">
                             <% } else{ %>
                                 <input class="edit-profile-inputs" type="text" name="lastname" id="lastname" value="<%= lastname %>">
@@ -56,7 +56,7 @@
                     <div class="flex flex-col md:flex-row w-72 md:w-auto md:justify-between md:mb-10">
                         <div class="flex flex-col mb-7 md:mb-0">
                             <label class="edit-profile-labels" for="username">Usuário:</label>
-                            <% if(usernameError.length !== 0){ %>
+                            <% if(usernameError.length > 0){ %>
                                 <input class="placeholder-error-red edit-profile-inputs" type="text" name="username" id="username" placeholder="<%= usernameError %>">
                             <% } else{ %>
                                 <input class="edit-profile-inputs" type="text" name="username" id="username" value="<%= username %>">
@@ -64,7 +64,7 @@
                         </div>
                         <div class="flex flex-col mb-7 md:mb-0">
                             <label class="edit-profile-labels" for="email">Email</label>
-                            <% if(emailError.length !== 0){ %>
+                            <% if(emailError.length > 0){ %>
                                 <input class="placeholder-error-red edit-profile-inputs" type="email" name="email" id="email" placeholder="<%= emailError %>">
                             <% } else{ %>
                                 <input class="edit-profile-inputs" type="email" name="email" id="email" value="<%= email %>">
@@ -87,7 +87,7 @@
         <div class="delete-account-popup hidden items-center justify-center w-screen h-screen bg-black-transparent fixed top-0 left-0 z-999">
             <div class="bg-dark-blue rounded-lg border-2 border-solid border-white w-72 md:w-550 p-6 md:p-8">
                 <h1 class="font-inconsolata text-base md:text-xl">Está de partida, <span class="text-original-yellow">Mochileiro?</span></h1>
-                <p class="font-mono text-sm md:text-lg my-7"><span class="text-error-red inline-block text-base md:text-lg md:w- md:h-6 md:animate-resizing">Excluir</span> sua conta fará com que todo o seu progresso durante nossa jornada seja perdido!</p>
+                <p class="font-mono text-sm md:text-lg my-7"><span class="text-error-red inline-block text-base md:text-lg md:w-18 md:h-6 md:animate-resizing">Excluir</span> sua conta fará com que todo o seu progresso durante nossa jornada seja perdido!</p>
                 <div class="flex justify-between md:justify-start">
                     <button type="button" class="continue-btn bg-transparent w-28 md:w-auto text-sm md:text-base font-mono font-bold border-2 border-solid border-error-red text-red-200 py-1 md:px-6 rounded-full md:mb-0 md:mr-5 cursor-pointer hover:border-white">Continuar</button>
                     <button type="button" class="back-btn bg-transparent w-28 md:w-auto text-sm md:text-base font-mono font-bold border-2 border-solid border-original-yellow text-white py-1 md:px-6 rounded-full md:mb-0 md:mr-5 cursor-pointer hover:border-white">Voltar</button>

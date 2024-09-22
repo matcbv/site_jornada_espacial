@@ -68,6 +68,10 @@
     font-weight: bold;
 }
 
+.popup-content img:hover{
+    cursor: pointer;
+}
+
 .icons-div{
     display: flex;
     flex-flow: column nowrap;

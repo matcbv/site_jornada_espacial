@@ -7,59 +7,57 @@
     height: 100%;
     position: fixed;
     top: 0;
-    z-index: 998;
+    z-index: 1001;
     opacity: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-box{
     position: fixed;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5) url("../../../public/assets/images/confetti.gif") center;
+    background: url("../../../public/assets/images/confetti.gif") center;
     background-size: contain;
 }
 
 .modal-content{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
+    margin: 80px 0;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content h1{
-    font-size: 2em;
     font-family: 'Inconsolata';
+    margin-bottom: 60px;
+    width: 500px;
+    height: 45px;
+    text-align: center;
+    font-size: 2.5em;
+    letter-spacing: 2px;
 }
 
-.modal-content div:first-child{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-}
-
-.modal-content div:last-child{
-    display: flex;
-    flex-flow: column nowrap;
-    margin-left: 20px;
-}
-
-.modal-content img:not(.badge){
-    width: 32px;
+.save-badge-button{
+    display: block;
+    margin: 80px auto 0 auto;
+    padding: 10px 30px;
+    border: 2px solid yellow;
+    background-color: transparent;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.6em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s linear 0s;
 }
 
-.modal-content img:not(.badge){
-    transform: scale(1.1);
+.save-badge-button:hover{
     cursor: pointer;
-}
-
-.badge{
-    width: 300px;
-}
-
-.badge-modal-close-icon{
-    margin-bottom: 10px;
+    transform: scale(1.05);
 }

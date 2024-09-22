@@ -67,14 +67,15 @@ footer{
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    transition: transform 0.3s linear 0s;
 }
 
 .cowboy-bebop-div:hover{
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 .cowboy-bebop-div p{
-    font-size: 0.9em;
     font-family: 'Calistoga';
     width: 130px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);

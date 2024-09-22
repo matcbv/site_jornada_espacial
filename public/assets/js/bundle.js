@@ -1,6 +1,42 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./frontend/js/modal_animations.js":
+/*!*****************************************!*\
+  !*** ./frontend/js/modal_animations.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function addModal(currentMain, html, badgeName) {
+  var divModal = document.createElement('div');
+  divModal.style.display = 'flex';
+  divModal.classList.add('appear-animation', 'modal');
+  divModal.innerHTML = html;
+  currentMain.appendChild(divModal);
+  var badgeDiv = divModal.querySelector('.badge-div');
+  badgeDiv.classList.add('spinning-animation');
+  var badge = divModal.querySelector('.badge');
+  badge.src = "/images/profile_images/".concat(badgeName, "_badge.png");
+  badge.classList.add('scaleUp-animation');
+  setTimeout(function () {
+    badgeDiv.classList.remove('spinning-animation');
+    var badgeTitle = divModal.querySelector('h1');
+    badgeTitle.classList.add('resizing-big-animation');
+  }, 2000);
+  var saveBadgeButton = divModal.querySelector('.save-badge-button');
+  saveBadgeButton.addEventListener('click', function () {
+    window.location.href = "/addBadge/".concat(badgeName);
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addModal);
+
+/***/ }),
+
 /***/ "./frontend/css/account/account_page.css":
 /*!***********************************************!*\
   !*** ./frontend/css/account/account_page.css ***!
@@ -509,6 +545,23 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -932,7 +985,10 @@ function getPopup(html, currentMain, celestialBody) {
   currentMain.appendChild(divPopup);
   var closeIcon = divPopup.querySelector('.close-icon');
   closeIcon.addEventListener('click', function () {
-    currentMain.removeChild(divPopup);
+    divPopup.classList.add('disappear-animation');
+    setTimeout(function () {
+      currentMain.removeChild(divPopup);
+    }, 500);
   });
   var ideaIcon = document.querySelector('.idea-icon');
   ideaIcon.addEventListener('click', function () {
@@ -1099,11 +1155,17 @@ window.addEventListener('load', function () {
 });
 })();
 
-// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
+var __webpack_exports__ = {};
 /*!******************************************!*\
   !*** ./frontend/js/footer_animations.js ***!
   \******************************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modal_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal_animations */ "./frontend/js/modal_animations.js");
+
+
 // ---------- HTML ELEMENTS ----------
 
 var footer = document.querySelector('footer');
@@ -1126,42 +1188,21 @@ topBtn.addEventListener('click', function () {
 cowboyBebopDiv.addEventListener('click', function () {
   swordfishDiv.classList.add('travel-animation');
   swordfishDiv.style.display = 'block';
-  swordfishDiv.addEventListener('click', function () {
-    if (sessionStorage.getItem('loggedIn') === 'true') {
-      var badges = JSON.parse(localStorage.getItem('badges'));
-      if (!badges) {
-        localStorage.setItem('badges', JSON.stringify(['spaceCowboy']));
-      } else if (!badges.includes('spaceCowboy')) {
-        badges.push('spaceCowboy');
-        localStorage.setItem('badges', JSON.stringify(badges));
-      }
-      fetch('/addBadge/spaceCowboy').then(function (data) {
-        data.text().then(function (html) {
-          addModal(currentMain, html);
-        });
-      });
-      // window.location.href('/addBadge/spaceCowboy')
-    }
-  });
+  swordfishDiv.addEventListener('click', swordFishClick);
   setTimeout(function () {
     swordfishDiv.classList.remove('travel-animation');
+    swordfishDiv.removeEventListener('click', swordFishClick);
+    swordfishDiv.style.display = 'none';
   }, 2000);
 });
-function addModal(currentMain, html) {
-  var divModal = document.createElement('div');
-  divModal.style.display = 'flex';
-  divModal.classList.add('appear-animation', 'modal');
-  divModal.innerHTML = html;
-  currentMain.appendChild(divModal);
-  var badge = divModal.querySelector('.badge');
-  badge.classList.add('spinning-animation');
-  setTimeout(function () {
-    badge.classList.remove('spinning-animation');
-  }, 2000);
-  var closeIcon = divModal.querySelector('.bridge-modal-close-icon');
-  closeIcon.addEventListener('click', function () {
-    currentMain.removeChild(divModal);
-  });
+function swordFishClick() {
+  if (sessionStorage.getItem('loggedIn') === 'true') {
+    fetch('/getModal/space_cowboy').then(function (data) {
+      data.text().then(function (html) {
+        (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'space_cowboy');
+      });
+    });
+  }
 }
 
 // ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------
@@ -1405,7 +1446,7 @@ if (mainProfile) {
     setInterval(function () {
       var starHeight = Math.random() * window.innerHeight / 2;
       styleSheet.innerHTML = "@keyframes shooting-star{\n                                    from{\n                                        right: -200px;\n                                        top: ".concat(starHeight, "px;\n                                    }\n                                    to{\n                                        right: 100vw;\n                                        top: ").concat(starHeight + window.innerHeight / 2, "px;\n                                    }\n                                }");
-      shootingStar.style.animation = 'shooting-star 1.5s linear 0s 1 normal both';
+      shootingStar.style.animation = 'shooting-star 1s linear 0s 1 normal both';
       shootingStar.style.display = 'inline';
       setTimeout(function () {
         shootingStar.style.display = 'none';

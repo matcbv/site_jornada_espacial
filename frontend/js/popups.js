@@ -36,7 +36,10 @@ function getPopup(html, currentMain, celestialBody){
 
     const closeIcon = divPopup.querySelector('.close-icon')
     closeIcon.addEventListener('click', () => {
-        currentMain.removeChild(divPopup)
+        divPopup.classList.add('disappear-animation')
+        setTimeout(() => {
+            currentMain.removeChild(divPopup)
+        }, 500)
     })
 
     const ideaIcon = document.querySelector('.idea-icon')
