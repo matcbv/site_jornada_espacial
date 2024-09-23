@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 const userModel = require('../models/userModel')
 const loginFormModel = require('../models/loginFormModel')
 const emailController = require('../controllers/emailController')
+const { userData } = require('../middlewares/userMiddlewares')
 
 const loginController = {
     _code: '',
@@ -21,7 +22,9 @@ const loginController = {
             return res.redirect('/account/signin')
         } else{
             req.session.user = login.userData
-            return res.redirect('/account/profile')
+            userData(req, res, () => {
+                return res.redirect('/account/profile')
+            })
         }
     },
 
@@ -34,7 +37,7 @@ const loginController = {
                         loginController._code = await emailController.sendVerifEmail(loginController._userData)
                         return res.redirect('/account/password/changePassword')
                     }catch(e){
-                        console.log('Erro ao enviar o email.', e)
+                        console.error('Erro ao enviar o email.', e)
                     }
                 }
             } else{
@@ -44,7 +47,7 @@ const loginController = {
                         loginController._code = await emailController.sendVerifEmail(loginController._userData)
                         return res.redirect('/account/password/changePassword')
                     }catch(e){
-                        console.log('Erro ao enviar o email.', e)
+                        console.error('Erro ao enviar o email.', e)
                     }
                 } else{
                     req.flash('userError', 'Usuário/Email inválido')
@@ -61,8 +64,8 @@ const loginController = {
         if (loginController._code !== req.body.code){
             login.errorList.push({ 'code': 'Código inválido' })
         }
-
-        login.checkNewPassword(loginController._code, req.body)
+        
+        login.checkNewPassword(req.body)
 
         if(login.errorList.length > 0){
             for (let e of login.errorList){
@@ -85,7 +88,7 @@ const loginController = {
             await userModel.findOneAndDelete({username: req.session.user.username})
             next()
         }catch(e){
-            console.log('Erro ao excluir o usuário.', e)
+            console.error('Erro ao excluir o usuário.', e)
         }
     }
 }

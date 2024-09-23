@@ -68,8 +68,13 @@
     font-weight: bold;
 }
 
+.popup-content img{
+    transition: transform 0.3s linear 0s;;
+}
+
 .popup-content img:hover{
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 .icons-div{

@@ -95,13 +95,17 @@ cowboyBebopDiv.addEventListener('click', function () {
   }, 2000);
 });
 function swordFishClick() {
-  if (sessionStorage.getItem('loggedIn') === 'true') {
-    fetch('/getModal/space_cowboy').then(function (data) {
-      data.text().then(function (html) {
+  fetch('/loggedIn').then(function (res) {
+    return res.json();
+  }).then(function (bool) {
+    if (bool) {
+      fetch('/getModal').then(function (data) {
+        return data.text();
+      }).then(function (html) {
         (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'space_cowboy');
-      });
-    });
-  }
+      })["catch"](function () {});
+    }
+  });
 }
 
 // ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------
@@ -627,7 +631,10 @@ function addModal(currentMain, html, badgeName) {
   }, 2000);
   var saveBadgeButton = divModal.querySelector('.save-badge-button');
   saveBadgeButton.addEventListener('click', function () {
-    window.location.href = "/addBadge/".concat(badgeName);
+    badge.classList.add('centralizing-badge', 'shake-animation', 'to-profile-animation');
+    setTimeout(function () {
+      window.location.href = "/addBadge/".concat(badgeName);
+    }, 1000);
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addModal);
@@ -638,11 +645,15 @@ function addModal(currentMain, html, badgeName) {
 /*!*******************************!*\
   !*** ./frontend/js/popups.js ***!
   \*******************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modal_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal_animations */ "./frontend/js/modal_animations.js");
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+
 var images = document.querySelectorAll('img');
 var currentMain = document.querySelector('main');
 if (currentMain.classList.contains('galaxies-main') || currentMain.classList.contains('profile-main')) {
@@ -659,11 +670,26 @@ if (currentMain.classList.contains('galaxies-main') || currentMain.classList.con
             fetch("/popup/".concat(element.id)).then(function (res) {
               if (!res.ok) {
                 throw new Error('Erro na requisição do popup.');
-              } else if (currentMain.classList.contains('galaxies-main')) {
-                res.text().then(function (html) {
-                  getPopup(html, currentMain, element.id);
-                });
               } else {
+                fetch('/loggedIn').then(function (res) {
+                  return res.json();
+                }).then(function (bool) {
+                  if (bool) {
+                    fetch('/getVisitedBodies').then(function (res) {
+                      return res.json();
+                    }).then(function (visitedBodies) {
+                      if (visitedBodies.length === 12) {
+                        setTimeout(function () {
+                          fetch('/getModal').then(function (data) {
+                            return data.text();
+                          }).then(function (html) {
+                            (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'galactic_explorer');
+                          })["catch"](function () {});
+                        }, 1000);
+                      }
+                    });
+                  }
+                });
                 res.text().then(function (html) {
                   getPopup(html, currentMain, element.id);
                 });
@@ -703,20 +729,31 @@ function getPopup(html, currentMain, celestialBody) {
   });
   var starIcon = document.querySelector('.star-icon');
   var selectedStarIcon = document.querySelector('.selected-star-icon');
-  if (sessionStorage.getItem('favBody') === celestialBody && sessionStorage.getItem('loggedIn') === 'true') {
-    starIcon.style.display = 'none';
-    selectedStarIcon.style.display = 'block';
-  } else {
-    starIcon.style.display = 'block';
-    selectedStarIcon.style.display = 'none';
-  }
-  starIcon.addEventListener('click', function () {
-    if (sessionStorage.getItem('loggedIn') === 'true') {
-      sessionStorage.setItem('favBody', "".concat(celestialBody));
-      starIcon.style.display = 'none';
-      selectedStarIcon.style.display = 'block';
+  fetch('/loggedIn').then(function (res) {
+    return res.json();
+  }).then(function (bool) {
+    if (bool) {
+      fetch('/getFavBody').then(function (res) {
+        return res.json();
+      }).then(function (favBody) {
+        if (favBody === celestialBody) {
+          starIcon.style.display = 'none';
+          selectedStarIcon.style.display = 'block';
+        } else {
+          starIcon.style.display = 'block';
+          selectedStarIcon.style.display = 'none';
+          starIcon.addEventListener('click', function () {
+            window.location.href = "/favBody/".concat(celestialBody);
+          });
+        }
+      });
+    } else {
+      starIcon.style.display = 'block';
+      selectedStarIcon.style.display = 'none';
+      starIcon.addEventListener('click', function () {
+        window.location.href = '/account';
+      });
     }
-    window.location.href = "/favBody/".concat(celestialBody);
   });
 }
 
@@ -775,7 +812,6 @@ if (rightArrowIcon) {
 // ---------- PROFILE ICON ANIMATION ----------
 
 if (mainProfile) {
-  sessionStorage.setItem('loggedIn', 'true');
   profileImgCloseIcon.addEventListener('click', function () {
     if (window.getComputedStyle(profileImgPopup).display === 'flex') {
       profileImgPopup.classList.add('disappear-animation');
@@ -817,11 +853,6 @@ if (mainProfile) {
   }
   pencilIcon.addEventListener('click', function () {
     window.location.href = "/account/profile/editProfile";
-  });
-  var logoutIcon = document.querySelector('.logout-icon');
-  logoutIcon.addEventListener('click', function () {
-    sessionStorage.setItem('favBody', '');
-    sessionStorage.setItem('loggedIn', 'false');
   });
 
   // ---------- SHOOTING STAR ANIMATION ----------
@@ -887,36 +918,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_general_animation_classes_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/general/animation_classes.css */ "./frontend/css/general/animation_classes.css");
 /* harmony import */ var _css_general_general_keyframes_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/general/general_keyframes.css */ "./frontend/css/general/general_keyframes.css");
 /* harmony import */ var _css_general_aboutme_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/general/aboutme.css */ "./frontend/css/general/aboutme.css");
-/* harmony import */ var _css_general_badge_modal_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/general/badge_modal.css */ "./frontend/css/general/badge_modal.css");
-/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/index/general_index.css */ "./frontend/css/index/general_index.css");
-/* harmony import */ var _css_index_index_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/index/index.css */ "./frontend/css/index/index.css");
-/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./frontend/css/galaxies/general_galaxies.css");
-/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./frontend/css/galaxies/main_galaxies.css");
-/* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/popups/popups.css */ "./frontend/css/popups/popups.css");
-/* harmony import */ var _css_account_account_page_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/account/account_page.css */ "./frontend/css/account/account_page.css");
-/* harmony import */ var _css_account_login_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../css/account/login.css */ "./frontend/css/account/login.css");
-/* harmony import */ var _css_account_register_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../css/account/register.css */ "./frontend/css/account/register.css");
-/* harmony import */ var _css_account_password_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../css/account/password.css */ "./frontend/css/account/password.css");
-/* harmony import */ var _css_account_change_password_css__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../css/account/change_password.css */ "./frontend/css/account/change_password.css");
-/* harmony import */ var _css_media_queries_index_media_queries_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../css/media_queries/index_media_queries.css */ "./frontend/css/media_queries/index_media_queries.css");
-/* harmony import */ var _css_media_queries_header_media_queries_css__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../css/media_queries/header_media_queries.css */ "./frontend/css/media_queries/header_media_queries.css");
-/* harmony import */ var _css_media_queries_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../css/media_queries/footer_media_queries.css */ "./frontend/css/media_queries/footer_media_queries.css");
-/* harmony import */ var _css_media_queries_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../css/media_queries/galaxies_media_queries.css */ "./frontend/css/media_queries/galaxies_media_queries.css");
-/* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./frontend/css/media_queries/popup_media_queries.css");
-/* harmony import */ var _css_media_queries_error404_media_queries_css__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../css/media_queries/error404_media_queries.css */ "./frontend/css/media_queries/error404_media_queries.css");
-/* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./frontend/css/media_queries/ideaform_media_queries.css");
-/* harmony import */ var _css_media_queries_playlist_media_queries_css__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../css/media_queries/playlist_media_queries.css */ "./frontend/css/media_queries/playlist_media_queries.css");
-/* harmony import */ var _css_media_queries_aboutme_media_queries_css__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../css/media_queries/aboutme_media_queries.css */ "./frontend/css/media_queries/aboutme_media_queries.css");
-/* harmony import */ var _css_media_queries_account_page_media_queries_css__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../css/media_queries/account_page_media_queries.css */ "./frontend/css/media_queries/account_page_media_queries.css");
-/* harmony import */ var _css_media_queries_login_media_queries_css__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../css/media_queries/login_media_queries.css */ "./frontend/css/media_queries/login_media_queries.css");
-/* harmony import */ var _css_media_queries_register_media_queries_css__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../css/media_queries/register_media_queries.css */ "./frontend/css/media_queries/register_media_queries.css");
-/* harmony import */ var _css_media_queries_password_media_queries_css__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../css/media_queries/password_media_queries.css */ "./frontend/css/media_queries/password_media_queries.css");
-/* harmony import */ var _css_media_queries_change_password_media_queries_css__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../css/media_queries/change_password_media_queries.css */ "./frontend/css/media_queries/change_password_media_queries.css");
+/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/general_index.css */ "./frontend/css/index/general_index.css");
+/* harmony import */ var _css_index_index_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/index/index.css */ "./frontend/css/index/index.css");
+/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./frontend/css/galaxies/general_galaxies.css");
+/* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./frontend/css/galaxies/main_galaxies.css");
+/* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/popups/popups.css */ "./frontend/css/popups/popups.css");
+/* harmony import */ var _css_account_account_page_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/account/account_page.css */ "./frontend/css/account/account_page.css");
+/* harmony import */ var _css_account_login_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../css/account/login.css */ "./frontend/css/account/login.css");
+/* harmony import */ var _css_account_register_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../css/account/register.css */ "./frontend/css/account/register.css");
+/* harmony import */ var _css_account_password_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../css/account/password.css */ "./frontend/css/account/password.css");
+/* harmony import */ var _css_account_change_password_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../css/account/change_password.css */ "./frontend/css/account/change_password.css");
+/* harmony import */ var _css_badge_modal_badge_modal_css__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../css/badge_modal/badge_modal.css */ "./frontend/css/badge_modal/badge_modal.css");
+/* harmony import */ var _css_badge_modal_badge_modal_keyframes_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../css/badge_modal/badge_modal_keyframes.css */ "./frontend/css/badge_modal/badge_modal_keyframes.css");
+/* harmony import */ var _css_media_queries_index_media_queries_css__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../css/media_queries/index_media_queries.css */ "./frontend/css/media_queries/index_media_queries.css");
+/* harmony import */ var _css_media_queries_header_media_queries_css__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../css/media_queries/header_media_queries.css */ "./frontend/css/media_queries/header_media_queries.css");
+/* harmony import */ var _css_media_queries_footer_media_queries_css__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../css/media_queries/footer_media_queries.css */ "./frontend/css/media_queries/footer_media_queries.css");
+/* harmony import */ var _css_media_queries_galaxies_media_queries_css__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../css/media_queries/galaxies_media_queries.css */ "./frontend/css/media_queries/galaxies_media_queries.css");
+/* harmony import */ var _css_media_queries_popup_media_queries_css__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../css/media_queries/popup_media_queries.css */ "./frontend/css/media_queries/popup_media_queries.css");
+/* harmony import */ var _css_media_queries_error404_media_queries_css__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../css/media_queries/error404_media_queries.css */ "./frontend/css/media_queries/error404_media_queries.css");
+/* harmony import */ var _css_media_queries_ideaform_media_queries_css__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../css/media_queries/ideaform_media_queries.css */ "./frontend/css/media_queries/ideaform_media_queries.css");
+/* harmony import */ var _css_media_queries_playlist_media_queries_css__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../css/media_queries/playlist_media_queries.css */ "./frontend/css/media_queries/playlist_media_queries.css");
+/* harmony import */ var _css_media_queries_aboutme_media_queries_css__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../css/media_queries/aboutme_media_queries.css */ "./frontend/css/media_queries/aboutme_media_queries.css");
+/* harmony import */ var _css_media_queries_account_page_media_queries_css__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../css/media_queries/account_page_media_queries.css */ "./frontend/css/media_queries/account_page_media_queries.css");
+/* harmony import */ var _css_media_queries_login_media_queries_css__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../css/media_queries/login_media_queries.css */ "./frontend/css/media_queries/login_media_queries.css");
+/* harmony import */ var _css_media_queries_register_media_queries_css__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../css/media_queries/register_media_queries.css */ "./frontend/css/media_queries/register_media_queries.css");
+/* harmony import */ var _css_media_queries_password_media_queries_css__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../css/media_queries/password_media_queries.css */ "./frontend/css/media_queries/password_media_queries.css");
+/* harmony import */ var _css_media_queries_change_password_media_queries_css__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../css/media_queries/change_password_media_queries.css */ "./frontend/css/media_queries/change_password_media_queries.css");
 // TAILWIND
 
 
 // GENERAL STYLES
-
 
 
 
@@ -940,10 +971,14 @@ __webpack_require__.r(__webpack_exports__);
 // POPUPS STYLES
 
 
-// ACCOUNT IMPORTS
+// ACCOUNT STYLES
 
 
 
+
+
+
+//MODAL STYLES
 
 
 
@@ -1186,6 +1221,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./frontend/css/badge_modal/badge_modal.css":
+/*!**************************************************!*\
+  !*** ./frontend/css/badge_modal/badge_modal.css ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/badge_modal/badge_modal_keyframes.css":
+/*!************************************************************!*\
+  !*** ./frontend/css/badge_modal/badge_modal_keyframes.css ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./frontend/css/galaxies/general_galaxies.css":
 /*!****************************************************!*\
   !*** ./frontend/css/galaxies/general_galaxies.css ***!
@@ -1229,19 +1290,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************************!*\
   !*** ./frontend/css/general/animation_classes.css ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./frontend/css/general/badge_modal.css":
-/*!**********************************************!*\
-  !*** ./frontend/css/general/badge_modal.css ***!
-  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";

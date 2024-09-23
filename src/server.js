@@ -31,7 +31,7 @@ try{
         app.emit('ready')
     })
 } catch(e){
-    throw new error(e)
+    throw new Error(e)
 }
 
 // Gerados de senhas aleatórias
@@ -74,7 +74,6 @@ app.use(flashesMiddleware)
 
 // Adicionando nosso roteador de rotas à aplicação
 const routes = require('./routes')
-const { error } = require('console')
 app.use(routes)
 
 // Definindo a página de erro em caso de erro 404
@@ -82,7 +81,5 @@ app.use((req, res) => { res.status(404).render('error404.html') })
 
 app.on('ready', () => {
     // Inicialização da aplicação
-    app.listen(process.env.SERVERPORT, () => {
-        console.log(`Servidor iniciado na porta ${process.env.SERVERPORT}`)
-    })
+    app.listen(process.env.SERVERPORT)
 })

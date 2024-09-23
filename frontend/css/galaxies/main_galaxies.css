@@ -7,11 +7,12 @@
 .galaxies-intro-div{
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     animation: grow 1s linear 0s 1 normal both;
+    min-height: 80vh;
+    padding-top: 80px;
     text-align: center;
-    height: 90vh;
 }
 
 .galaxies-title-div{
@@ -54,36 +55,36 @@
 .first-body-div{
     display: flex;
     justify-content: center;
-    padding: 10vh 0;
+    padding: 150px 0;
     animation: bigger-reverse-levitation 2s ease-in-out 0s infinite alternate both;
 }
 
 .second-body-div{
     display: flex;
     justify-content: flex-start;
-    padding: 10vh 0 10vh 20vw;
+    padding: 150px 0 150px 300px;
     animation: bigger-levitation 1s ease-in-out 0s infinite alternate both;
 }
 
 .third-body-div{
     display: flex;
     justify-content: flex-end;
-    padding: 10vh 20vw 10vh 0;
+    padding: 150px 300px 150px 0;
     animation: bigger-levitation 1s ease-in-out 0s infinite alternate both;
 }
 
 .fourth-body-div{
     display: flex;
     justify-content: flex-start;
-    padding: 15vh 0 30vh 15vw;
+    padding: 300px 0 500px 300px;
     animation: bigger-reverse-levitation 2s ease-in-out 0s infinite alternate both;
 }
 
-.galaxies-main img{
+.celestial-body-img{
+    cursor: pointer;
     transition: transform 0.3s linear 0s;
 }
 
-.galaxies-main img:hover:not(.playlist-div img){
-    transform: scale(1.1);
-    cursor: pointer;
+.celestial-body-img:hover{
+    transform: scale(1.05);
 }
