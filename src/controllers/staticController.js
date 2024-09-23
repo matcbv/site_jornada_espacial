@@ -7,7 +7,6 @@ const staticController = {
                 req.session.visitedBodies ? req.session.visitedBodies.push(req.params.body): req.session.visitedBodies = [req.params.body]
             }
         }
-        console.dir(req.session)
         return res.sendFile(path.resolve(__dirname, '..', 'views', 'popups', `${req.params.body}_popup.html`))
     },
 

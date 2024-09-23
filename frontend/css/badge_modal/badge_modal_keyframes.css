@@ -36,7 +36,7 @@
     }
     to{
         transform: scale(0.3);
-        top: -25%;
+        top: -300px;
         left: 100%;
     }
 }
