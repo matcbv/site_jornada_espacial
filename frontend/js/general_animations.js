@@ -1,3 +1,5 @@
+import addModal from "./modal_animations"
+
 // ---------- HTML ELEMENTS ----------
 
 // Intro and footer
@@ -23,6 +25,7 @@ let lastSoundWaveIcon = ''
 const ideaformMain = document.querySelector('.ideaform-main')
 const loginMain = document.querySelector('.login-main')
 const passwordMain = document.querySelector('.password-main')
+const currentMain = document.querySelector('main')
 
 // ---------- PLAY POPUP ----------
 
@@ -163,6 +166,24 @@ if (audioDiv){
         sessionStorage.setItem('audioStatus', toPlayAudio.paused)
         sessionStorage.setItem('currentAudio', element.id)
         music.play()
+        fetch('/loggedIn')
+        .then(res => res.json())
+        .then(bool => {
+            if(bool){
+                fetch('/getPlayedMusics')
+                .then(res => res.json())
+                .then(playedMusics => {
+                    if(playedMusics.length === 5){
+                        setTimeout(() => {
+                            fetch('/getModal')
+                            .then(data => data.text())
+                            .then(html => {addModal(currentMain, html, 'muscial_travaller')})
+                            .catch(() => {})
+                        }, 1000)
+                    }
+                })
+            }
+        })
         soundWaveIcon.style.display = 'block'
         lastSoundWaveIcon = soundWaveIcon
         soundOff.style.display = 'none'

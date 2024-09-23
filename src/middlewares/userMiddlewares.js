@@ -82,9 +82,15 @@ const userController = {
         })
     },
 
-    getVisitedBodies: async (req, res) => {
+    getVisitedBodies: (req, res) => {
         if(req.session.user){
             req.session.visitedBodies ? res.json(req.session.visitedBodies): res.json([])
+        }
+    },
+
+    getPlayedMusics: (req, res) => {
+        if(req.session.user){
+            req.session.playedMusics ? res.json(req.session.playedMusics): res.json([])
         }
     }
 }
