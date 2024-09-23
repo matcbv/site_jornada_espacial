@@ -52,8 +52,6 @@ if (rightArrowIcon){
 // ---------- PROFILE ICON ANIMATION ----------
 
 if (mainProfile){
-    sessionStorage.setItem('loggedIn', 'true')
-
     profileImgCloseIcon.addEventListener('click', () => {
         if(window.getComputedStyle(profileImgPopup).display === 'flex'){
             profileImgPopup.classList.add('disappear-animation')
@@ -100,13 +98,6 @@ if (mainProfile){
     pencilIcon.addEventListener('click', () => {
         window.location.href = `/account/profile/editProfile`
     })
-
-    const logoutIcon = document.querySelector('.logout-icon')
-    logoutIcon.addEventListener('click', () => {
-        sessionStorage.setItem('favBody', '')
-        sessionStorage.setItem('loggedIn', 'false')
-    })
-    
 
     // ---------- SHOOTING STAR ANIMATION ----------
 

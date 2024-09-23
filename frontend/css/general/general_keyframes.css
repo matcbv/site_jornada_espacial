@@ -91,33 +91,3 @@
         font-size: large;
     }
 }
-
-@keyframes resizing-big {
-    0%{
-        font-size: 2.5em;
-    }
-    50%{
-        font-size: 2.3em;
-    }
-    100%{
-        font-size: 2.5em;
-    }
-}
-
-@keyframes scaleUp {
-    from{
-        transform: scale(0.5);
-    }
-    to{
-        transform: scale(1.5);
-    }
-}
-
-@keyframes spinning {
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-}

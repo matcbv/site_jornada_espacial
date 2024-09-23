@@ -26,7 +26,7 @@ module.exports = {
         'mid-blue-transparent': '#1212511f',
         'light-purple-transparent': '#5c69cf38',
         'dark-blue-transparent': '#0c1633ad',
-        'light-blue': '#5c69cf',
+        'light-blue': '#a3adff',
         'original-yellow': 'yellow',
         'white-gray': '#d1d1d1',
         'black-transparent': 'rgba(0, 0, 0, 0.8)',

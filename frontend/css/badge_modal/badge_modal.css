@@ -32,22 +32,27 @@
 }
 
 .modal-content h1{
-    font-family: 'Inconsolata';
-    margin-bottom: 60px;
-    width: 500px;
+    font-family: monospace;
     height: 45px;
+    letter-spacing: 3px;
+    margin-bottom: 60px;
     text-align: center;
-    font-size: 2.5em;
-    letter-spacing: 2px;
+    width: 600px;
+    font-size: 2.4em;
+}
+
+.badge-div{
+    height: 300px;
+    width: 300px;
 }
 
 .save-badge-button{
     display: block;
-    margin: 80px auto 0 auto;
-    padding: 10px 30px;
+    margin: 60px auto 0 auto;
+    padding: 10px 40px;
     border: 2px solid yellow;
     background-color: transparent;
-    border-radius: 10px;
+    border-radius: 27px;
     color: white;
     font-size: 1.6em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -60,4 +65,11 @@
 .save-badge-button:hover{
     cursor: pointer;
     transform: scale(1.05);
+}
+
+.centralizing-badge{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

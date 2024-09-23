@@ -48,7 +48,7 @@ const emailController = {
             // Realizando o envio do email:
             await transporter.sendMail(emailParams)
         } catch (e){
-            console.log('Erro ao enviar o email.', e)
+            console.error('Erro ao enviar o email.', e)
         }
 
         return emailController._code

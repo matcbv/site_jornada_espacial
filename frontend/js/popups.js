@@ -1,3 +1,5 @@
+import addModal from "./modal_animations"
+
 const images = document.querySelectorAll('img')
 const currentMain = document.querySelector('main')
 
@@ -11,9 +13,25 @@ if(currentMain.classList.contains('galaxies-main') || currentMain.classList.cont
                     fetch(`/popup/${element.id}`).then(res => {
                         if (!res.ok){
                             throw new Error('Erro na requisição do popup.')
-                        } else if(currentMain.classList.contains('galaxies-main')){
-                                    res.text().then(html => {getPopup(html, currentMain, element.id)})
                         } else{
+                            fetch('/loggedIn')
+                            .then(res => res.json())
+                            .then(bool => {
+                                if(bool){
+                                    fetch('/getVisitedBodies')
+                                    .then(res => res.json())
+                                    .then(visitedBodies => {
+                                        if(visitedBodies.length === 12){
+                                            setTimeout(() => {
+                                                fetch('/getModal')
+                                                .then(data => data.text())
+                                                .then(html => {addModal(currentMain, html, 'galactic_explorer')})
+                                                .catch(() => {})
+                                            }, 1000)
+                                        }
+                                    })
+                                }
+                            })
                             res.text().then(html => {getPopup(html, currentMain, element.id)})
                         }
                     })
@@ -49,19 +67,30 @@ function getPopup(html, currentMain, celestialBody){
 
     const starIcon = document.querySelector('.star-icon')
     const selectedStarIcon = document.querySelector('.selected-star-icon')
-    if (sessionStorage.getItem('favBody') === celestialBody && sessionStorage.getItem('loggedIn') === 'true'){
-        starIcon.style.display = 'none'
-        selectedStarIcon.style.display = 'block'
-    } else{
-        starIcon.style.display = 'block'
-        selectedStarIcon.style.display = 'none'
-    }
-    starIcon.addEventListener('click', () => {
-        if(sessionStorage.getItem('loggedIn') === 'true'){
-            sessionStorage.setItem('favBody', `${celestialBody}`)
-            starIcon.style.display = 'none'
-            selectedStarIcon.style.display = 'block'
+    fetch('/loggedIn')
+    .then(res => res.json())
+    .then(bool => {
+        if(bool){
+            fetch('/getFavBody')
+            .then(res => res.json())
+            .then(favBody => {
+                if(favBody === celestialBody){
+                    starIcon.style.display = 'none'
+                    selectedStarIcon.style.display = 'block'
+                } else{
+                    starIcon.style.display = 'block'
+                    selectedStarIcon.style.display = 'none'
+                    starIcon.addEventListener('click', () => {
+                        window.location.href = `/favBody/${celestialBody}`
+                    })
+                }
+            })
+        } else{
+            starIcon.style.display = 'block'
+            selectedStarIcon.style.display = 'none'
+            starIcon.addEventListener('click', () => {
+                window.location.href = '/account'
+            })
         }
-        window.location.href = `/favBody/${celestialBody}`
     })
 }

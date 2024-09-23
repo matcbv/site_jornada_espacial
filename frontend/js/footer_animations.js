@@ -30,11 +30,16 @@ cowboyBebopDiv.addEventListener('click', () => {
 })
 
 function swordFishClick() {
-    if (sessionStorage.getItem('loggedIn') === 'true'){
-        fetch('/getModal/space_cowboy').then(data => {
-            data.text().then(html => {addModal(currentMain, html, 'space_cowboy')})
-        })
-    }
+    fetch('/loggedIn')
+    .then(res => res.json())
+    .then(bool => {
+        if(bool){
+            fetch('/getModal')
+            .then(data => data.text())
+            .then(html => {addModal(currentMain, html, 'space_cowboy')})
+            .catch(() => {})
+        }
+    })
 }
 
 // ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------

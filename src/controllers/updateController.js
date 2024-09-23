@@ -1,3 +1,4 @@
+const { userData } = require('../middlewares/userMiddlewares')
 const Update = require('../models/updateFormModel')
 const userModel = require('../models/userModel')
 
@@ -16,9 +17,11 @@ const updateController = {
             try{
                 const updatedUser = await userModel.findOneAndUpdate({username: req.session.user.username}, {'$set': update.newData}, {'new': true})
                 req.session.user = updatedUser
-                res.redirect('/account/profile')
+                userData(req, res, () => {
+                    res.redirect('/account/profile')
+                })
             } catch(e){
-                console.log('Erro ao atualizar os dados.', e)
+                console.error('Erro ao atualizar os dados.', e)
             }
         }
     }

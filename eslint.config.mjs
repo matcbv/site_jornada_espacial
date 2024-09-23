@@ -24,12 +24,13 @@ export default [
     rules: {
       // Garante que sejam usadas apenas operadores de comparação estrita
       eqeqeq: ["error"],
+      curly: ["error", "all"],
       // Define o número máximo de linhas vazias entre códigos
       "no-multiple-empty-lines": ["error", {"max": 2}],
       // Garante o uso de Camel Case em nosso código.
       camelcase: ["error"],
       // Regra para não uso de mensagem de alerta em geral.
-      "no-alert": ["warn"],
+      "no-alert": ["warn"]
     }
   },
   pluginJs.configs.recommended,

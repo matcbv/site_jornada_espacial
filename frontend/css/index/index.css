@@ -166,6 +166,7 @@
 
 .sound-icon{
     margin-top: 15px;
+    transition: transform 0.3s linear 0s;
 }
 
 .sound-icon:hover{
@@ -179,6 +180,10 @@
 
 .sound-on{
     display: none;
+}
+
+.music-icon{
+    transition: transform 0.3s linear 0s;
 }
 
 .music-icon:hover{

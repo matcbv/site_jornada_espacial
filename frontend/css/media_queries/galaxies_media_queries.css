@@ -15,6 +15,22 @@
         font-size: 1em;
     }
 
+    .first-body-div{
+        padding: 100px 0;
+    }
+    
+    .second-body-div{
+        padding: 100px 0 100px 50px;
+    }
+    
+    .third-body-div{
+        padding: 100px 50px 100px 0;
+    }
+    
+    .fourth-body-div{
+        padding: 100px 0 150px 50px;
+    }
+
     /* ------- MILKYWAY IMAGES ------- */
 
     #sun{

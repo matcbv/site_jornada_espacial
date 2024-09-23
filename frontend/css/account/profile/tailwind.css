@@ -6,7 +6,7 @@
 @layer components{
 
     .profile-nav-buttons{
-        @apply block p-2 border border-solid border-white bg-blue-950 rounded-full cursor-pointer hover:scale-110
+        @apply block p-2 border border-solid border-white bg-blue-950 rounded-full cursor-pointer transition-transform duration-300 hover:scale-105
     }
 
     .edit-profile-inputs{

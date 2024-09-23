@@ -32,7 +32,7 @@ class Login{
         if (this.errorList.length > 0){
             return
         }
-        const dataQuery = await userModel.findOne({ username: this.data['username'] })
+        const dataQuery = await userModel.findOne({ username: this.data.username })
         if (!dataQuery) {
             this.errorList.push({ 'username': this.msgList[2] })
         } else if(!bcrypt.compareSync(this.data.password, dataQuery.password)){

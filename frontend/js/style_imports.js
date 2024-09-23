@@ -13,8 +13,6 @@ import "../css/general/playlist.css"
 import "../css/general/animation_classes.css"
 import "../css/general/general_keyframes.css"
 import "../css/general/aboutme.css"
-import "../css/general/badge_modal.css"
-
 
 // INDEX STYLES
 import "../css/index/general_index.css"
@@ -27,12 +25,16 @@ import "../css/galaxies/main_galaxies.css"
 // POPUPS STYLES
 import "../css/popups/popups.css"
 
-// ACCOUNT IMPORTS
+// ACCOUNT STYLES
 import "../css/account/account_page.css"
 import "../css/account/login.css"
 import "../css/account/register.css"
 import "../css/account/password.css"
 import "../css/account/change_password.css"
+
+//MODAL STYLES
+import "../css/badge_modal/badge_modal.css"
+import "../css/badge_modal/badge_modal_keyframes.css"
 
 // MEDIA QUERIES
 import "../css/media_queries/index_media_queries.css"
