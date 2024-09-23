@@ -64,7 +64,11 @@
                 </div>  
                 <div class="flex flex-col justify-center items-center md:flex-col-reverse border-t-white w-100 md:bg-radial-blue order-first py-12">
                     <h3 class="mb-7 text-center font-rubik-mono-one text-2xl sm:text-3xl text-mid-blue webkit-text-white w-90 md:w-100 md:order-last">Corpo celeste favorito</h3>
-                    <img class="celestial-body-img fav-body transition-transform duration-300 hover:scale-105" id="<%= favBody %>" src="/images/galaxies_images/<%= favBody %>.png" alt="Corpo celeste favorito">
+                    <% if(favBody === 'dotted_circle'){ %>
+                        <img class="celestial-body-img fav-body transition-transform duration-300 hover:scale-105" id="<%= favBody %>" src="/images/galaxies_images/<%= favBody %>.gif" alt="Corpo celeste favorito">
+                    <% } else{ %>
+                        <img class="celestial-body-img fav-body transition-transform duration-300 hover:scale-105" id="<%= favBody %>" src="/images/galaxies_images/<%= favBody %>.png" alt="Corpo celeste favorito">
+                    <% }%>
                 </div>
             </div>
         </section>
