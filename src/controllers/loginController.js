@@ -5,6 +5,8 @@ const userModel = require('../models/userModel')
 const loginFormModel = require('../models/loginFormModel')
 const emailController = require('../controllers/emailController')
 const { userData } = require('../middlewares/userMiddlewares')
+const path = require('path')
+const fs = require('fs')
 
 const loginController = {
     _code: '',
@@ -30,11 +32,13 @@ const loginController = {
 
     getUser: async (req, res) => {
         if(req.query.data){
+            const filePath = path.resolve(__dirname, '..', 'views', 'includes', `${req.params.emailType}.html`);
+            const emailHTML = fs.readFileSync(filePath, 'utf8')
             if (validator.isEmail(req.query.data)){
                 loginController._userData = await userModel.findOne({email: req.query.data})
                 if(loginController._userData){
                     try{
-                        loginController._code = await emailController.sendVerifEmail(loginController._userData)
+                        loginController._code = await emailController.sendVerifEmail(loginController._userData, emailHTML)
                         return res.redirect('/account/password/changePassword')
                     }catch(e){
                         console.error('Erro ao enviar o email.', e)
@@ -44,7 +48,7 @@ const loginController = {
                 loginController._userData = await userModel.findOne({username: req.query.data})
                 if (loginController._userData){
                     try{
-                        loginController._code = await emailController.sendVerifEmail(loginController._userData)
+                        loginController._code = await emailController.sendVerifEmail(loginController._userData, emailHTML)
                         return res.redirect('/account/password/changePassword')
                     }catch(e){
                         console.error('Erro ao enviar o email.', e)

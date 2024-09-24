@@ -239,7 +239,7 @@ function hideRequirements(requirementsDivStyles) {
 if (resendEmailBtn) {
   resendEmailBtn.addEventListener('click', function () {
     sessionStorage.setItem('emailSent', 'true');
-    window.location.href = '/resendEmail?prevPage=' + encodeURIComponent(window.location.href);
+    window.location.href = '/resendEmail/password_email?prevPage=' + encodeURIComponent(window.location.href);
   });
 }
 

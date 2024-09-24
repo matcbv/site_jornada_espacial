@@ -1,11 +1,13 @@
 const Register = require('../models/registerFormModel')
 const emailController = require('../controllers/emailController')
+const path = require('path')
+const fs = require('fs')
 
 const registerController = {
     _user: '',
     _code: '',
 
-    signup: async (req, res) => {
+    signUp: async (req, res) => {
         const register = new Register(req.body)
         await register.checkData()
         if (register.errorList.length > 0){
@@ -14,11 +16,13 @@ const registerController = {
                     req.flash(`${field}Error`, msg)
                 })
             }
-            return res.redirect('/account/signup')
+            return res.redirect('/account/signUp')
         } else {
+            const filePath = path.resolve(__dirname, '..', 'views', 'includes', `${req.params.emailType}.html`);
+            const emailHTML = fs.readFileSync(filePath, 'utf8')
             registerController._user = register
-            registerController._code = await emailController.sendVerifEmail(registerController._user.data)
-            return res.redirect('/account/signup/validation')
+            registerController._code = await emailController.sendVerifEmail(registerController._user.data, emailHTML)
+            return res.redirect('/account/signUp/validation')
         }
     },
 
@@ -29,7 +33,7 @@ const registerController = {
             return res.redirect('/account/signin')
         } else{
             req.flash('codeError', 'Código inválido')
-            return res.redirect('/account/signup/validation')
+            return res.redirect('/account/signUp/validation')
         }
     }
 }

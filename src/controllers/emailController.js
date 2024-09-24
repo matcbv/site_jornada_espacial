@@ -1,10 +1,9 @@
 const nodemailer = require('nodemailer')
-const path = require('path')
-const fs = require('fs')
 
 const emailController = {
     _code: '',
     _userData: '',
+    _emailHTML: '',
 
     // Função para gerar o código de criação da conta:
     codeGenerator: () => {
@@ -12,23 +11,22 @@ const emailController = {
         for(let i=0; i<=5; i++){
             code += String.fromCharCode((Math.floor(Math.random() * 93 + 33)))
         }
+        console.log(code)
         return code;
     },
 
-    sendVerifEmail: async (userData) => {
-        emailController._userData = userData
-        function getEmail() {
-            const filePath = path.resolve(__dirname, '..', 'views', 'includes', 'email.html');
-            const data = fs.readFileSync(filePath, 'utf8')
-            do{
-                emailController._code = emailController.codeGenerator()
-            } while(Array.from(emailController._code).length !== 6)
-            return data.replace('{{code}}', emailController._code).replace('{{username}}', userData.username)
+    sendVerifEmail: async (userData, emailHTML) => {
+        emailController._code = emailController.codeGenerator()
+        console.log(emailController._code)
+        
+        if (userData && emailHTML){
+            emailController._userData = userData
+            emailController._emailHTML = emailHTML.replace('{{code}}', emailController._code).replace('{{username}}', userData.username)
         }
-    
+
         // Criando um transportador (Remetente):
         const transporter = nodemailer.createTransport({
-            // Serviço de hospedagem a ser utilizad o:
+            // Serviço de hospedagem a ser utilizado:
             service: 'gmail',
             // Credenciais para autenticação:
             auth: {
@@ -40,10 +38,10 @@ const emailController = {
         // Parâmetros para o envio do email:
         const emailParams = {
             from: 'sitejornadaespacial@gmail.com',
-            to: userData.email,
-            subject: 'Cadastro em Jornada Espacial 🚀',
+            to: emailController._userData.email,
+            subject: 'Jornada Espacial 🚀',
             // Utilizando o encodeURIComponent para codificação de caracteres não alfanuméricos:
-            html: getEmail()
+            html: emailController._emailHTML
         }
 
         try{
@@ -58,7 +56,7 @@ const emailController = {
     
     resendVerifEmail: async (req, res) => {
         const prevPage = req.query.prevPage
-        await emailController.sendVerifEmail(emailController._userData)
+        await emailController.sendVerifEmail()
         return res.redirect(prevPage)
     }
 }

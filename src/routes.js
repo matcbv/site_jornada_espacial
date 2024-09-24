@@ -47,19 +47,19 @@ router.get('/account/signin', pagesController.login)
 // Rota para logar usuário
 router.post('/account/signin/login', loginController.logUser)
 // Página de cadastro
-router.get('/account/signup', pagesController.register)
+router.get('/account/signUp', pagesController.register)
 // Rota para registrar o usuário
-router.post('/account/signup/register', registerController.signup)
+router.post('/account/signUp/register/:emailType', registerController.signUp)
 // Validação da conta
-router.get('/account/signup/validation', pagesController.validationPage)
+router.get('/account/signUp/validation', pagesController.validationPage)
 // Rota para reenviar email de validação da conta
-router.get('/resendEmail', emailController.resendVerifEmail)
+router.get('/resendEmail/:emailType', emailController.resendVerifEmail)
 // Rota para validação da conta
 router.post('/checkCode', registerController.validation)
 // Página de obtenção dos dados do usuário
 router.get('/account/password', pagesController.passwordPage)
 // Rota para checar a existência do usuário
-router.get('/account/password/getUser', loginController.getUser)
+router.get('/account/password/getUser/:emailType', loginController.getUser)
 // Página para troca da senha
 router.get('/account/password/changePassword', pagesController.changePasswordPage)
 // Rota para checar e atualizar a nova senha
