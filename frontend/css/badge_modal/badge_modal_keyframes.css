@@ -10,12 +10,21 @@
     }
 }
 
-@keyframes scaleUp {
+@keyframes scale-up {
     from{
         transform: scale(0.3);
     }
     to{
         transform: scale(1);
+    }
+}
+
+@keyframes scale-down {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0.3);
     }
 }
 
@@ -30,13 +39,11 @@
 
 @keyframes to-profile {
     from{
-        transform: scale(1);
         top: 50%;
         left: 50%;
     }
     to{
-        transform: scale(0.3);
-        top: -300px;
+        top: 0;
         left: 100%;
     }
 }

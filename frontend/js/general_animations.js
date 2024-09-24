@@ -168,16 +168,16 @@ if (audioDiv){
         music.play()
         fetch('/loggedIn')
         .then(res => res.json())
-        .then(bool => {
-            if(bool){
-                fetch('/getPlayedMusics')
+        .then(userSession => {
+            if(userSession){
+                fetch(`/getPlayedMusics/${music.classList[0]}`)
                 .then(res => res.json())
                 .then(playedMusics => {
                     if(playedMusics.length === 5){
                         setTimeout(() => {
                             fetch('/getModal')
                             .then(data => data.text())
-                            .then(html => {addModal(currentMain, html, 'muscial_travaller')})
+                            .then(html => {addModal(currentMain, html, 'musical_travaller')})
                             .catch(() => {})
                         }, 1000)
                     }

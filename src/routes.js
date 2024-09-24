@@ -10,7 +10,7 @@ const registerController = require('./controllers/registerController')
 const loginController = require('./controllers/loginController')
 const updateController = require('./controllers/updateController')
 const emailController = require('./controllers/emailController')
-const userController = require('./middlewares/userMiddlewares')
+const userMiddleware = require('./middlewares/userMiddlewares')
 
 // Página inicial
 router.get('/', pagesController.homePage)
@@ -23,9 +23,9 @@ router.get('/triangle', pagesController.triangle)
 // Requisição dos popups
 router.get('/popup/:body', staticController.getPopup)
 // Rota para obter corpo celeste favorito
-router.get('/getFavBody', userController.getFavBody)
+router.get('/getFavBody', userMiddleware.getFavBody)
 // Rota para favoritar corpo celeste
-router.get('/favBody/:body', userController.checkLog, userController.addFavBody)
+router.get('/favBody/:body', userMiddleware.checkLog, userMiddleware.addFavBody)
 
 
 // Formulário de ideias
@@ -41,7 +41,7 @@ router.get('/inspirations', pagesController.inspirations) // Em produção
 // Template para login ou cadastro
 router.get('/account', pagesController.accountPage)
 // Rota para verificar se usuário está logado
-router.get('/loggedIn', userController.loggedIn)
+router.get('/loggedIn', userMiddleware.loggedIn)
 // Página de login
 router.get('/account/signin', pagesController.login)
 // Rota para logar usuário
@@ -67,25 +67,27 @@ router.post('/savePassword', loginController.savePassword)
 
 
 // Página inicial do perfil do usuário:
-router.get('/account/profile', userController.checkLog, userController.userData ,pagesController.profile)
+router.get('/account/profile', userMiddleware.checkLog, userMiddleware.userData ,pagesController.profile)
 // Rota para deslogar o usuário
-router.get('/account/profile/logout', userController.logoutUser)
+router.get('/account/profile/logout', userMiddleware.logoutUser)
 // Página para editar dados do usuário
-router.get('/account/profile/editProfile', userController.checkLog, userController.userData, pagesController.editProfile)
+router.get('/account/profile/editProfile', userMiddleware.checkLog, userMiddleware.userData, pagesController.editProfile)
 // Rota para atualizar dados do usuário
-router.post('/account/profile/editProfile/updateData', userController.checkLog, updateController.updateData)
+router.post('/account/profile/editProfile/updateData', userMiddleware.checkLog, updateController.updateData)
 // Rota para alterar a imagem do perfil
-router.get('/profileImg/:img', userController.checkLog, userController.changeProfileImg)
+router.get('/profileImg/:img', userMiddleware.checkLog, userMiddleware.changeProfileImg)
 // Rota para deletar a conta do usuário
-router.get('/deleteAccount', loginController.deleteAccount, userController.logoutUser)
+router.get('/deleteAccount', loginController.deleteAccount, userMiddleware.logoutUser)
 
 
 // Rota para obter os corpos celestes já visitados
-router.get('/getVisitedBodies', userController.getVisitedBodies)
+router.get('/getVisitedBodies', userMiddleware.getVisitedBodies)
+// Rota para obter as músicas já tocadas
+router.get('/getPlayedMusics/:music', userMiddleware.getPlayedMusics)
 // Rota para adicionar modal das insígneas na tela
-router.get('/getModal', userController.checkLog, userController.checkBadge, staticController.getModal)
+router.get('/getModal', userMiddleware.checkLog, staticController.getModal)
 // Rota para adicionar insígneas ao perfil do usuário
-router.get('/addBadge/:badge', userController.addBadge)
+router.get('/addBadge/:badge', userMiddleware.addBadge)
 
 
 // Página 404

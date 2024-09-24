@@ -9,7 +9,7 @@ const userController = {
     },
 
     loggedIn: (req, res) => {
-        return res.json(!!req.session.user)
+        req.session.user ? res.json(req.session.user): res.json(false)
     },
     
     logoutUser: (req, res) => {
@@ -65,14 +65,6 @@ const userController = {
         }
     },
     
-    checkBadge: async (req, res, next) => {
-        const user = await userModel.findOne({ username: req.session.user.username })
-        if(user.badges.includes(req.params.badge)){
-            return res.redirect('/account/profile')
-        }
-        next()
-    },
-    
     addBadge: async (req, res) => {
         req.session.user.badges.push(req.params.badge)
         const user = await userModel.findOneAndUpdate({username: req.session.user.username}, {badges: req.session.user.badges}, {new: true})
@@ -90,7 +82,16 @@ const userController = {
 
     getPlayedMusics: (req, res) => {
         if(req.session.user){
-            req.session.playedMusics ? res.json(req.session.playedMusics): res.json([])
+            if(!req.session.user.badges.includes('musical_travaller')){
+                if(req.session.playedMusics && !req.session.playedMusics.includes(req.params.music)){
+                    req.session.playedMusics.push(req.params.music)                   
+                } else{
+                    req.session.playedMusics = [req.params.music]
+                }
+                return res.json(req.session.playedMusics)
+            } else{
+                return res.json([])
+            }
         }
     }
 }

@@ -32,12 +32,14 @@ cowboyBebopDiv.addEventListener('click', () => {
 function swordFishClick() {
     fetch('/loggedIn')
     .then(res => res.json())
-    .then(bool => {
-        if(bool){
-            fetch('/getModal')
-            .then(data => data.text())
-            .then(html => {addModal(currentMain, html, 'space_cowboy')})
-            .catch(() => {})
+    .then(userSession => {
+        if(userSession){
+            if(!userSession.badges.includes('space_cowboy')){
+                fetch('/getModal')
+                .then(data => data.text())
+                .then(html => {addModal(currentMain, html, 'space_cowboy')})
+                .catch(() => {})
+            }
         }
     })
 }

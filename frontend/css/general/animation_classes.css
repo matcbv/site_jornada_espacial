@@ -46,8 +46,12 @@
     animation: travel 2s linear 0s normal forwards;
 }
 
-.scaleUp-animation{
-    animation: scaleUp 2s linear 0s 1 normal both;
+.scale-up-animation{
+    animation: scale-up 2s linear 0s 1 normal both;
+}
+
+.scale-down-animation{
+    animation: scale-down 2s linear 0s 1 normal both;
 }
 
 .spinning-animation{

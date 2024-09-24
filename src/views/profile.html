@@ -62,11 +62,11 @@
                                 <img class="w-90 max-w-40 cursor-pointer transition-transform duration-300 hover:scale-105" src="/images/profile_images/<%= badge %>_badge.png" alt="Insígnea">
                             <% } %>
                         <% } else{ %>
-                            <p class="text-sm sm:text-base md:text-xl font-mono text-center">Ainda não há nada por aqui! Explore cada canto da nossa Jornada Espacial para arquirir todas as insígneas!</p>
+                            <p class="text-base sm:text-xl font-inconsolata text-center">Ainda não há nada por aqui! Explore cada canto da nossa Jornada Espacial para arquirir todas as insígneas!</p>
                         <% } %>
                     </div>
                 </div>  
-                <div class="flex flex-col justify-center items-center md:flex-col-reverse border-t-white w-100 md:bg-radial-blue order-first md:p-10">
+                <div class="flex flex-col justify-center items-center md:flex-col-reverse border-t-white w-100 md:bg-radial-blue order-first p-10">
                     <h3 class="mb-7 text-center font-rubik-mono-one text-2xl sm:text-3xl text-mid-blue webkit-text-white w-90 md:w-100 md:order-last">Corpo celeste favorito</h3>
                     <% if(favBody === 'dotted_circle'){ %>
                         <img class="celestial-body-img fav-body transition-transform duration-300 hover:scale-105" id="<%= favBody %>" src="/images/galaxies_images/<%= favBody %>.gif" alt="Corpo celeste favorito">

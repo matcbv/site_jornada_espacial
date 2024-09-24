@@ -20,7 +20,9 @@ const emailController = {
         function getEmail() {
             const filePath = path.resolve(__dirname, '..', 'views', 'includes', 'email.html');
             const data = fs.readFileSync(filePath, 'utf8')
-            emailController._code = emailController.codeGenerator()
+            do{
+                emailController._code = emailController.codeGenerator()
+            } while(Array.from(emailController._code).length !== 6)
             return data.replace('{{code}}', emailController._code).replace('{{username}}', userData.username)
         }
     

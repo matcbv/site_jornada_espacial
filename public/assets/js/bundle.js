@@ -97,13 +97,15 @@ cowboyBebopDiv.addEventListener('click', function () {
 function swordFishClick() {
   fetch('/loggedIn').then(function (res) {
     return res.json();
-  }).then(function (bool) {
-    if (bool) {
-      fetch('/getModal').then(function (data) {
-        return data.text();
-      }).then(function (html) {
-        (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'space_cowboy');
-      })["catch"](function () {});
+  }).then(function (userSession) {
+    if (userSession) {
+      if (!userSession.badges.includes('space_cowboy')) {
+        fetch('/getModal').then(function (data) {
+          return data.text();
+        }).then(function (html) {
+          (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'space_cowboy');
+        })["catch"](function () {});
+      }
     }
   });
 }
@@ -419,9 +421,9 @@ if (audioDiv) {
     music.play();
     fetch('/loggedIn').then(function (res) {
       return res.json();
-    }).then(function (bool) {
-      if (bool) {
-        fetch('/getPlayedMusics').then(function (res) {
+    }).then(function (userSession) {
+      if (userSession) {
+        fetch("/getPlayedMusics/".concat(music.classList[0])).then(function (res) {
           return res.json();
         }).then(function (playedMusics) {
           if (playedMusics.length === 5) {
@@ -429,7 +431,7 @@ if (audioDiv) {
               fetch('/getModal').then(function (data) {
                 return data.text();
               }).then(function (html) {
-                (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'muscial_travaller');
+                (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'musical_travaller');
               })["catch"](function () {});
             }, 1000);
           }
@@ -648,15 +650,18 @@ function addModal(currentMain, html, badgeName) {
   badgeDiv.classList.add('spinning-animation');
   var badge = divModal.querySelector('.badge');
   badge.src = "/images/profile_images/".concat(badgeName, "_badge.png");
-  badge.classList.add('scaleUp-animation');
+  badge.classList.add('scale-up-animation');
   setTimeout(function () {
     badgeDiv.classList.remove('spinning-animation');
+    badge.classList.remove('scale-up-animation');
     var badgeTitle = divModal.querySelector('h1');
     badgeTitle.classList.add('resizing-big-animation');
   }, 2000);
   var saveBadgeButton = divModal.querySelector('.save-badge-button');
+  var badgeInnerDiv = divModal.querySelector('.badge-inner-div');
   saveBadgeButton.addEventListener('click', function () {
-    badge.classList.add('centralizing-badge', 'shake-animation', 'to-profile-animation');
+    badgeInnerDiv.classList.add('centralizing-badge', 'to-profile-animation');
+    badge.classList.add('scale-down-animation');
     setTimeout(function () {
       window.location.href = "/addBadge/".concat(badgeName);
     }, 1000);
@@ -691,15 +696,15 @@ if (currentMain.classList.contains('galaxies-main') || currentMain.classList.con
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
           var image = _step.value;
-          if (element.id === image.id) {
+          if (element.id !== 'dotted_circle' && element.id === image.id) {
             fetch("/popup/".concat(element.id)).then(function (res) {
               if (!res.ok) {
                 throw new Error('Erro na requisição do popup.');
               } else {
                 fetch('/loggedIn').then(function (res) {
                   return res.json();
-                }).then(function (bool) {
-                  if (bool) {
+                }).then(function (userSession) {
+                  if (userSession) {
                     fetch('/getVisitedBodies').then(function (res) {
                       return res.json();
                     }).then(function (visitedBodies) {
@@ -756,8 +761,8 @@ function getPopup(html, currentMain, celestialBody) {
   var selectedStarIcon = document.querySelector('.selected-star-icon');
   fetch('/loggedIn').then(function (res) {
     return res.json();
-  }).then(function (bool) {
-    if (bool) {
+  }).then(function (userSession) {
+    if (userSession) {
       fetch('/getFavBody').then(function (res) {
         return res.json();
       }).then(function (favBody) {

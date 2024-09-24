@@ -9,15 +9,15 @@ if(currentMain.classList.contains('galaxies-main') || currentMain.classList.cont
         const element = e.target
         if(element.tagName.toLowerCase() === "img" && element.classList.contains('celestial-body-img')){
             for(const image of images){
-                if (element.id === image.id) {
+                if (element.id !== 'dotted_circle' && element.id === image.id) {
                     fetch(`/popup/${element.id}`).then(res => {
                         if (!res.ok){
                             throw new Error('Erro na requisição do popup.')
                         } else{
                             fetch('/loggedIn')
                             .then(res => res.json())
-                            .then(bool => {
-                                if(bool){
+                            .then(userSession => {
+                                if(userSession){
                                     fetch('/getVisitedBodies')
                                     .then(res => res.json())
                                     .then(visitedBodies => {
@@ -69,8 +69,8 @@ function getPopup(html, currentMain, celestialBody){
     const selectedStarIcon = document.querySelector('.selected-star-icon')
     fetch('/loggedIn')
     .then(res => res.json())
-    .then(bool => {
-        if(bool){
+    .then(userSession => {
+        if(userSession){
             fetch('/getFavBody')
             .then(res => res.json())
             .then(favBody => {
