@@ -17,8 +17,8 @@
 
 .register-main h1{
     font-family: 'Rubik Mono One';
-    color: rgb(9, 8, 23);
-    -webkit-text-stroke: 1px yellow;
+    color: rgb(6, 5, 35);
+    -webkit-text-stroke: 1px rgb(178, 194, 255);
     font-size: 2.3em;
 }
 
@@ -50,7 +50,7 @@
     font-family: 'Inconsolata';
     font-size: 1.3em;
     font-weight: bold;
-    background-color: rgb(9, 8, 23);
+    background-color: rgb(6, 5, 35);
     color: white;
     border: none;
     outline: 1.5px solid white;

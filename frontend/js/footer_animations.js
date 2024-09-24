@@ -10,6 +10,8 @@ const swordfishDiv = document.querySelector('.swordfish-div')
 
 const currentMain = document.querySelector('main')
 
+let clicked = false
+
 // ---------- TOP BUTTON ----------
 
 topBtn.addEventListener('click', () => {
@@ -30,18 +32,24 @@ cowboyBebopDiv.addEventListener('click', () => {
 })
 
 function swordFishClick() {
-    fetch('/loggedIn')
-    .then(res => res.json())
-    .then(userSession => {
-        if(userSession){
-            if(!userSession.badges.includes('space_cowboy')){
-                fetch('/getModal')
-                .then(data => data.text())
-                .then(html => {addModal(currentMain, html, 'space_cowboy')})
-                .catch(() => {})
+    if (!clicked){
+        clicked = true
+        fetch('/loggedIn')
+        .then(res => res.json())
+        .then(userSession => {
+            if(userSession){
+                if(!userSession.badges.includes('space_cowboy')){
+                    fetch('/getModal')
+                    .then(data => data.text())
+                    .then(html => {
+                        addModal(currentMain, html, 'space_cowboy')
+                        clicked = false
+                    })
+                    .catch(() => {})
+                }
             }
-        }
-    })
+        })
+    }
 }
 
 // ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------

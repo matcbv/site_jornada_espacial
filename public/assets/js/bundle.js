@@ -72,6 +72,7 @@ var topBtn = document.querySelector('.top-btn');
 var cowboyBebopDiv = document.querySelector('.cowboy-bebop-div');
 var swordfishDiv = document.querySelector('.swordfish-div');
 var currentMain = document.querySelector('main');
+var clicked = false;
 
 // ---------- TOP BUTTON ----------
 
@@ -95,19 +96,23 @@ cowboyBebopDiv.addEventListener('click', function () {
   }, 2000);
 });
 function swordFishClick() {
-  fetch('/loggedIn').then(function (res) {
-    return res.json();
-  }).then(function (userSession) {
-    if (userSession) {
-      if (!userSession.badges.includes('space_cowboy')) {
-        fetch('/getModal').then(function (data) {
-          return data.text();
-        }).then(function (html) {
-          (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'space_cowboy');
-        })["catch"](function () {});
+  if (!clicked) {
+    clicked = true;
+    fetch('/loggedIn').then(function (res) {
+      return res.json();
+    }).then(function (userSession) {
+      if (userSession) {
+        if (!userSession.badges.includes('space_cowboy')) {
+          fetch('/getModal').then(function (data) {
+            return data.text();
+          }).then(function (html) {
+            (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'space_cowboy');
+            clicked = false;
+          })["catch"](function () {});
+        }
       }
-    }
-  });
+    });
+  }
 }
 
 // ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------
@@ -686,11 +691,13 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 
 var images = document.querySelectorAll('img');
 var currentMain = document.querySelector('main');
+var clicked = false;
 if (currentMain.classList.contains('galaxies-main') || currentMain.classList.contains('profile-main')) {
   // Fetch para a requisição dos popups
   document.addEventListener('click', function (e) {
     var element = e.target;
-    if (element.tagName.toLowerCase() === "img" && element.classList.contains('celestial-body-img')) {
+    if (element.tagName.toLowerCase() === "img" && element.classList.contains('celestial-body-img') && !clicked) {
+      clicked = true;
       var _iterator = _createForOfIteratorHelper(images),
         _step;
       try {
@@ -722,6 +729,7 @@ if (currentMain.classList.contains('galaxies-main') || currentMain.classList.con
                 });
                 res.text().then(function (html) {
                   getPopup(html, currentMain, element.id);
+                  clicked = false;
                 });
               }
             });
