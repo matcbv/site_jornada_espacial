@@ -3,6 +3,11 @@ function csrfMiddleware(req, res, next){
     next()
 }
 
+function varMiddlewares(req, res, next){
+    res.locals.allBadges = ['galactic_explorer', 'musical_travaller', 'thinker_backpack', 'universe_champion','space_cowboy']
+    next()
+}
+
 function includesMiddleware(req, res, next){
     res.locals.head = 'includes/head.html'
     res.locals.header = 'includes/header.html'
@@ -32,4 +37,4 @@ function flashesMiddleware(req, res, next){
     next()
 }
 
-module.exports = {csrfMiddleware, includesMiddleware, flashesMiddleware}
+module.exports = {csrfMiddleware, varMiddlewares, includesMiddleware, flashesMiddleware}

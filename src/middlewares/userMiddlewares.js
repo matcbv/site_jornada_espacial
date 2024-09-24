@@ -35,7 +35,7 @@ const userController = {
     },
 
     getFavBody: async (req, res) => {
-        const user = await userModel.findOneAndUpdate({username: req.session.user.username})
+        const user = await userModel.findOne({username: req.session.user.username})
         return res.json(user.favBody)
     },
     

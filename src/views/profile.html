@@ -52,20 +52,18 @@
             <div class="min-h-60 grid grid-cols-1 grid-rows-2 justify-items-center md:grid-cols-2 md:grid-rows-1">
                 <div class="flex flex-col items-center w-100 p-10 md:px-24 border-t-white md:border-r-white border-original-yellow bg-light-purple-transparent tracking-widest order-last md:order-first">
                     <h3 class="mb-7 font-rubik-mono-one text-3xl sm:text-4xl text-light-blue text-center webkit-text-black">Insígnias</h3>
-                    <% if(badges.length > 0){ %>
-                        <div class="grid grid-cols-3 justify-items-center gap-y-8 w-100">
-                    <% } else{ %>
-                        <div class="grid grid-cols-1 justify-items-center gap-y-8 w-100">
-                    <% } %>
-                        <% if(badges.length > 0){ %>
-                            <% for(const badge of badges){ %>
-                                <img class="w-90 max-w-40 cursor-pointer transition-transform duration-300 hover:scale-105" src="/images/profile_images/<%= badge %>_badge.png" alt="Insígnea">
+                    <div class="grid grid-cols-3 justify-items-center gap-y-8 w-100">
+                        <% for(const badge of allBadges){ %>
+                            <% if(badges.includes(badge)){ %>
+                                <img class= "w-100 h-100 max-w-40 cursor-pointer transition-transform duration-300 hover:scale-105" src="/images/profile_images/<%= badge %>_badge.png" alt="Insígnea">
+                            <% } else{ %>
+                                <div class="relative rounded-full z-10 bg-black-transparent w-100 h-100 max-w-40">
+                                    <img class="w-100 h-100 cursor-pointer transition-transform duration-300 hover:scale-105" src="/images/profile_images/<%= badge %>_badge.png" alt="Insígnea">
+                                </div>
                             <% } %>
-                        <% } else{ %>
-                            <p class="text-base sm:text-xl font-inconsolata text-center">Ainda não há nada por aqui! Explore cada canto da nossa Jornada Espacial para arquirir todas as insígneas!</p>
                         <% } %>
                     </div>
-                </div>  
+                </div>
                 <div class="flex flex-col justify-center items-center md:flex-col-reverse border-t-white w-100 md:bg-radial-blue order-first p-10">
                     <h3 class="mb-7 text-center font-rubik-mono-one text-2xl sm:text-3xl text-mid-blue webkit-text-white w-90 md:w-100 md:order-last">Corpo celeste favorito</h3>
                     <% if(favBody === 'dotted_circle'){ %>
@@ -85,3 +83,18 @@
     <script src="/js/bundle.js"></script>
 </body>
 </html>
+
+
+<!-- <% if(badges.length > 0){ %>
+    <div class="grid grid-cols-3 justify-items-center gap-y-8 w-100">
+    <% } else{ %>
+    <div class="grid grid-cols-1 justify-items-center gap-y-8 w-100">
+    <% } %>
+        <% if(badges.length > 0){ %>
+            <% for(const badge of badges){ %>
+                <img class="w-90 max-w-40 cursor-pointer transition-transform duration-300 hover:scale-105" src="/images/profile_images/<%= badge %>_badge.png" alt="Insígnea">
+            <% } %>
+        <% } else{ %>
+            <p class="text-base sm:text-xl font-inconsolata text-center">Ainda não há nada por aqui! Explore cada canto da nossa Jornada Espacial para arquirir todas as insígneas!</p>
+        <% } %>
+    </div> -->

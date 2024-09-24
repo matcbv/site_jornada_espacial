@@ -11,13 +11,11 @@ const emailController = {
         for(let i=0; i<=5; i++){
             code += String.fromCharCode((Math.floor(Math.random() * 93 + 33)))
         }
-        console.log(code)
         return code;
     },
 
     sendVerifEmail: async (userData, emailHTML) => {
         emailController._code = emailController.codeGenerator()
-        console.log(emailController._code)
         
         if (userData && emailHTML){
             emailController._userData = userData

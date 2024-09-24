@@ -67,8 +67,9 @@ const flash = require('connect-flash')
 app.use(flash())
 
 // Aplicando os middlewares globais
-const {csrfMiddleware, includesMiddleware, flashesMiddleware} = require('./middlewares/globalMiddlewares')
+const {csrfMiddleware, varMiddlewares, includesMiddleware, flashesMiddleware} = require('./middlewares/globalMiddlewares')
 app.use(csrfMiddleware)
+app.use(varMiddlewares)
 app.use(includesMiddleware)
 app.use(flashesMiddleware)
 
