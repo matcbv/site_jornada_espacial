@@ -2,12 +2,14 @@ import addModal from "./modal_animations"
 
 const images = document.querySelectorAll('img')
 const currentMain = document.querySelector('main')
+let clicked = false
 
 if(currentMain.classList.contains('galaxies-main') || currentMain.classList.contains('profile-main')){
     // Fetch para a requisição dos popups
     document.addEventListener('click', (e) => {
         const element = e.target
-        if(element.tagName.toLowerCase() === "img" && element.classList.contains('celestial-body-img')){
+        if(element.tagName.toLowerCase() === "img" && element.classList.contains('celestial-body-img') && !clicked){
+            clicked = true
             for(const image of images){
                 if (element.id !== 'dotted_circle' && element.id === image.id) {
                     fetch(`/popup/${element.id}`).then(res => {
@@ -32,7 +34,10 @@ if(currentMain.classList.contains('galaxies-main') || currentMain.classList.cont
                                     })
                                 }
                             })
-                            res.text().then(html => {getPopup(html, currentMain, element.id)})
+                            res.text().then(html => {
+                                getPopup(html, currentMain, element.id)
+                                clicked = false
+                            })
                         }
                     })
                 }
