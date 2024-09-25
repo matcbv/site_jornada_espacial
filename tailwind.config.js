@@ -29,8 +29,9 @@ module.exports = {
         'dark-blue-transparent': '#0c1633ad',
         'light-blue': '#a3adff',
         'original-yellow': 'yellow',
+        'light-yellow': '#ffff5f',
         'white-gray': '#d1d1d1',
-        'black-transparent': 'rgba(0, 0, 0, 0.8)',
+        'black-transparent': 'rgba(0, 0, 0, 0.85)',
         'error-red': '#d93939'
       },
       screens:{
