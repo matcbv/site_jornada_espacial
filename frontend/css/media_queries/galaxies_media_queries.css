@@ -27,6 +27,15 @@
         font-size: 1em;
     }
 
+    .click-icon-span{
+        padding-right: 28px;
+    }
+
+    .click-icon{
+        width: 20px;
+        right: 10px;
+    }
+
     .first-body-div{
         padding: 100px 0;
     }
