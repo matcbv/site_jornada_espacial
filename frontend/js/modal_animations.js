@@ -23,8 +23,8 @@ function addModal(currentMain, html, badgeName) {
     const saveBadgeButton = divModal.querySelector('.save-badge-button')
     const badgeInnerDiv = divModal.querySelector('.badge-inner-div')
     saveBadgeButton.addEventListener('click', () => {
-        badgeInnerDiv.classList.add('centralizing-badge', 'to-profile-animation')
         badge.classList.add('scale-down-animation')
+        badgeInnerDiv.classList.add('centralizing-badge', 'to-profile-animation')
         setTimeout(() => {
             window.location.href = `/addBadge/${badgeName}`
         }, 1000)

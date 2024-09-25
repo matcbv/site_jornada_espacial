@@ -2,8 +2,13 @@
 
     /* ------- GENERAL GALAXIES STYLES ------- */
 
+    .galaxies-title-div{
+        margin-bottom: 80px;
+    }
+
     .galaxies-title-div p{
         font-size: 1.3em;
+        margin-bottom: 30px;
     }
 
     .galaxies-title-div .highlight{
@@ -12,6 +17,13 @@
 
     .galaxies-text-div{
         width: 70%;
+    }
+
+    .galaxies-intro-text{
+        font-size: 0.9em;
+    }
+    
+    .guide-text{
         font-size: 1em;
     }
 

@@ -28,6 +28,10 @@
     .fav-body{
         @apply max-w-52 md:max-w-none md:cursor-pointer
     }
+
+    .hovering{
+        @apply cursor-pointer transition-transform duration-300 hover:scale-105
+    }
 }
 
 @layer utilities{

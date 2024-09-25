@@ -39,15 +39,32 @@
     color: yellow;
 }
 
-.galaxies-text-div{
-    font-family: 'Inconsolata';
-    font-size: 1.2em;
-    width: 50%;
+.click-icon-span{
+    position: relative;
+    padding-right: 35px;
 }
 
-.galaxies-text-div p:first-child{
+.click-icon{
+    position: absolute;
+    right: 12px;
+    top: -4px;
+    width: 25px;
+}
+
+.galaxies-text-div{
+    width: 50%;
+    text-align: center;
+    font-family: 'Inconsolata';
+}
+
+.galaxies-intro-text{
+    line-height: 1.5em;
     margin-bottom: 50px;
-    line-height: 1.2em;
+}
+
+.guide-text{
+    font-size: 1.2em;
+    line-height: 1.7em;
 }
 
 /* ---------- MAIN SECTION ---------- */

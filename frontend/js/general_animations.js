@@ -21,15 +21,12 @@ let toStopAudio = ''
 let toPlayAudio = ''
 let lastSoundWaveIcon = ''
 
-// Ideaform main
-const ideaformMain = document.querySelector('.ideaform-main')
-const loginMain = document.querySelector('.login-main')
-const passwordMain = document.querySelector('.password-main')
+// Current main
 const currentMain = document.querySelector('main')
 
 // ---------- PLAY POPUP ----------
 
-if(introSection){
+if(currentMain.classList.contains('index-main')){
     const mscPopupCloseIcon = document.querySelector('.msc-popup-close-icon')
     const play = document.querySelector('.play')
     const introSectionRect = introSection.getBoundingClientRect()
@@ -166,24 +163,7 @@ if (audioDiv){
         sessionStorage.setItem('audioStatus', toPlayAudio.paused)
         sessionStorage.setItem('currentAudio', element.id)
         music.play()
-        fetch('/loggedIn')
-        .then(res => res.json())
-        .then(userSession => {
-            if(userSession){
-                fetch(`/getPlayedMusics/${music.classList[0]}`)
-                .then(res => res.json())
-                .then(playedMusics => {
-                    if(playedMusics.length === 5){
-                        setTimeout(() => {
-                            fetch('/getModal')
-                            .then(data => data.text())
-                            .then(html => {addModal(currentMain, html, 'musical_travaller')})
-                            .catch(() => {})
-                        }, 1000)
-                    }
-                })
-            }
-        })
+        musicsFetch(music)
         soundWaveIcon.style.display = 'block'
         lastSoundWaveIcon = soundWaveIcon
         soundOff.style.display = 'none'
@@ -201,6 +181,27 @@ function getMusic(id){
         }
     }
 }
+function musicsFetch(music) {
+    fetch('/loggedIn')
+    .then(res => res.json())
+    .then(userSession => {
+        if(userSession){
+            fetch(`/getPlayedMusics/${music.classList[0]}`)
+            .then(res => res.json())
+            .then(playedMusics => {
+                if(playedMusics.length === 5){
+                    setTimeout(() => {
+                        fetch('/getModal')
+                        .then(data => data.text())
+                        .then(html => {addModal(currentMain, html, 'musical_travaller')})
+                        .catch(() => {})
+                    }, 1000)
+                }
+            })
+        }
+    })
+}
+
 
 // ---------- EVENTO PARA DESAPARECIMENTO DA PLAYLIST ----------
 
@@ -217,27 +218,27 @@ window.addEventListener('click', (e) => {
 
 // ---------- AUDIO DIV ----------
 
-if(audioDiv && !ideaformMain && !loginMain && !passwordMain){
-    const footerRectTop = footer.getBoundingClientRect().top
-    const audioDivRectBottom = audioDiv.getBoundingClientRect().bottom
-    window.addEventListener('scroll', () => {
-        if (window.scrollY >= footerRectTop - audioDivRectBottom){
-            audioDiv.style.position = 'absolute'
-            playlistDiv.style.position = 'absolute'
-        } else{
-            audioDiv.style.position = 'fixed'
-            playlistDiv.style.position = 'fixed'
-        }
-    })
-}
-
-if(ideaformMain || loginMain || passwordMain){
-    audioDiv.style.position = 'absolute'
-    audioDiv.style.flexFlow = 'row nowrap'
-    soundOff.style.margin = '0 auto 0 10px'
-    soundOn.style.margin = '0 auto 0 10px'
-    playlistDiv.style.position = 'absolute'
-    playlistDiv.style.bottom = '70px'
+if(audioDiv){
+    if(!currentMain.classList.contains('ideaform-main') && !currentMain.classList.contains('login-main') && !currentMain.classList.contains('password-main')){
+        const footerRectTop = footer.getBoundingClientRect().top
+        const audioDivRectBottom = audioDiv.getBoundingClientRect().bottom
+        window.addEventListener('scroll', () => {
+            if (window.scrollY >= footerRectTop - audioDivRectBottom){
+                audioDiv.style.position = 'absolute'
+                playlistDiv.style.position = 'absolute'
+            } else{
+                audioDiv.style.position = 'fixed'
+                playlistDiv.style.position = 'fixed'
+            }
+        })
+    } else{
+        audioDiv.style.position = 'absolute'
+        audioDiv.style.flexFlow = 'row nowrap'
+        soundOff.style.margin = '0 auto 0 10px'
+        soundOn.style.margin = '0 auto 0 10px'
+        playlistDiv.style.position = 'absolute'
+        playlistDiv.style.bottom = '85px'
+    }
 }
 
 // ---------- 404 BUTTON ----------

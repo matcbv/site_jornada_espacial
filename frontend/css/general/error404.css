@@ -52,6 +52,7 @@
     width: 80%;
     margin: auto;
     margin-bottom: 50px;
+    line-height: 1.3em;
 }
 
 .main-div-error button{
@@ -71,6 +72,6 @@
 }
 
 .main-div-error button:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
 }

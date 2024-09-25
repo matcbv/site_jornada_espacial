@@ -15,7 +15,7 @@
     width: 80%;
     background-color: rgb(16, 13, 21);
     border: 2px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 150px rgb(49, 37, 58);
+    box-shadow: 0 0 100px rgb(49, 37, 58);
     border-radius: 10px;
     padding: 45px 0 45px 45px;
     margin: 80px 0;
@@ -51,7 +51,7 @@
     font-family: 'Inconsolata';
     font-size: 1.2em;
     font-weight: bold;
-    line-height: 1.1em;
+    line-height: 1.2em;
 }
 
 .idea-text-div .highlight{
