@@ -207,36 +207,34 @@ function showPassword(element) {
 }
 if (requirementsIcon) {
   requirementsIcon.addEventListener('click', function () {
-    var requirementsDivStyles = window.getComputedStyle(requirementsDiv);
-    if (requirementsDivStyles.display === 'none') {
+    if (window.getComputedStyle(requirementsDiv).display === 'none') {
       requirementsDiv.classList.remove('disappear-animation');
       requirementsDiv.classList.add('fast-appear-animation');
       setTimeout(function () {
         requirementsDiv.style.display = 'flex';
       }, 500);
-      hideRequirements(requirementsDivStyles);
-    } else if (requirementsDivStyles.display === 'flex') {
+      registerMain.addEventListener('click', hideRequirements);
+    } else if (window.getComputedStyle(requirementsDiv).display === 'flex') {
+      requirementsDiv.classList.remove('fast-appear-animation');
+      requirementsDiv.classList.add('disappear-animation');
+      setTimeout(function () {
+        requirementsDiv.style.display = 'none';
+      }, 500);
+      registerMain.removeEventListener('click', hideRequirements);
+    }
+  });
+}
+function hideRequirements(e) {
+  var element = e.target;
+  if (!requirementsDiv.contains(element) && window.getComputedStyle(requirementsDiv).display === 'flex') {
+    if (window.getComputedStyle(requirementsDiv).display === 'flex') {
       requirementsDiv.classList.remove('fast-appear-animation');
       requirementsDiv.classList.add('disappear-animation');
       setTimeout(function () {
         requirementsDiv.style.display = 'none';
       }, 500);
     }
-  });
-}
-function hideRequirements(requirementsDivStyles) {
-  registerMain.addEventListener('click', function (e) {
-    var element = e.target;
-    if (!element.classList.contains('password-requirements') || !element.closest('div').classList.contains('password-requirements')) {
-      if (requirementsDivStyles.display === 'flex') {
-        requirementsDiv.classList.remove('fast-appear-animation');
-        requirementsDiv.classList.add('disappear-animation');
-        setTimeout(function () {
-          requirementsDiv.style.display = 'none';
-        }, 500);
-      }
-    }
-  });
+  }
 }
 
 // ---------- VALIDATION POPUP ANIMATIONS ----------
@@ -333,6 +331,7 @@ if (currentMain.classList.contains('index-main')) {
       sessionStorage.setItem('audioStatus', toPlayAudio.paused);
       redbonesSoundWaveIcon.style.display = 'block';
       lastSoundWaveIcon = redbonesSoundWaveIcon;
+      musicsFetch(toPlayAudio);
     }
     document.body.removeChild(mscPopup);
     soundOn.style.display = 'block';
@@ -421,11 +420,11 @@ if (audioDiv) {
     sessionStorage.setItem('audioStatus', toPlayAudio.paused);
     sessionStorage.setItem('currentAudio', element.id);
     music.play();
-    musicsFetch(music);
     soundWaveIcon.style.display = 'block';
     lastSoundWaveIcon = soundWaveIcon;
     soundOff.style.display = 'none';
     soundOn.style.display = 'block';
+    musicsFetch(music);
     if (mscPopup && mscPopup.parentElement) {
       document.body.removeChild(mscPopup);
     }

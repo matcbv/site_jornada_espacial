@@ -71,6 +71,7 @@ if(currentMain.classList.contains('index-main')){
             sessionStorage.setItem('audioStatus', toPlayAudio.paused)
             redbonesSoundWaveIcon.style.display = 'block'
             lastSoundWaveIcon = redbonesSoundWaveIcon
+            musicsFetch(toPlayAudio)
         }
         document.body.removeChild(mscPopup)
         soundOn.style.display = 'block'
@@ -163,11 +164,11 @@ if (audioDiv){
         sessionStorage.setItem('audioStatus', toPlayAudio.paused)
         sessionStorage.setItem('currentAudio', element.id)
         music.play()
-        musicsFetch(music)
         soundWaveIcon.style.display = 'block'
         lastSoundWaveIcon = soundWaveIcon
         soundOff.style.display = 'none'
         soundOn.style.display = 'block'
+        musicsFetch(music)
         if(mscPopup && mscPopup.parentElement){
             document.body.removeChild(mscPopup)
         }
@@ -181,6 +182,7 @@ function getMusic(id){
         }
     }
 }
+
 function musicsFetch(music) {
     fetch('/loggedIn')
     .then(res => res.json())
@@ -201,7 +203,6 @@ function musicsFetch(music) {
         }
     })
 }
-
 
 // ---------- EVENTO PARA DESAPARECIMENTO DA PLAYLIST ----------
 

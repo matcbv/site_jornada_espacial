@@ -159,7 +159,7 @@ textarea:focus{
 }
 
 .email-div p{
-    margin-bottom: 4px;
+    margin: 0 0 4px -2px;
     font-family: monospace;
     color: yellow;
 }
