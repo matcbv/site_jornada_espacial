@@ -645,7 +645,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-var badgesDiv = document.querySelector('badges-div');
+var currentMain = document.querySelector('main');
 function addModal(currentMain, html, badgeName) {
   var divModal = document.createElement('div');
   divModal.style.display = 'flex';
@@ -673,23 +673,25 @@ function addModal(currentMain, html, badgeName) {
     }, 1000);
   });
 }
-if (badgesDiv) {
-  var badges = document.querySelector('.badges-div').querySelectorAll('img');
+if (currentMain.classList.contains('profile-main')) {
+  var badgesDiv = document.querySelector('.badges-div');
+  var badges = badgesDiv.querySelectorAll('img');
   badges.forEach(function (badge) {
     if (badge.classList.contains('unlocked-badge')) {
       badge.addEventListener('click', function () {
-        fetch("/addBadgeModal/".concat(badge.id)).then(function (res) {
+        fetch("/getBadgeModal/".concat(badge.id)).then(function (res) {
           return res.text();
         }).then(function (html) {
           fetch('/getBadges').then(function (res) {
             return res.json();
           }).then(function (userBadges) {
             userBadges.forEach(function (item) {
-              html.querySelector('.data').innerHTML = item[1];
-              var modalBadgeDiv = document.createElement('div');
-              modalBadgeDiv.classList.add('modal-badge-div');
-              modalBadgeDiv.innerHTML = html;
-              badgesDiv.appendChild(modalBadgeDiv);
+              if (item[0] === badge.id) {
+                var modalBadgeDiv = document.createElement('div');
+                modalBadgeDiv.classList.add('modal-badge-div');
+                modalBadgeDiv.innerHTML = html.replace('{{date}}', item[1]);
+                badgesDiv.appendChild(modalBadgeDiv);
+              }
             });
           });
         });

@@ -86,6 +86,8 @@ router.get('/')
 router.get('/getVisitedBodies', userMiddleware.getVisitedBodies)
 // Rota para obter as músicas já tocadas
 router.get('/getPlayedMusics/:music', userMiddleware.getPlayedMusics)
+// Rota para obter as insígneas do usuário
+router.get('/getBadges', userMiddleware.getBadges)
 // Rota para adicionar modal das insígneas na tela
 router.get('/getModal', userMiddleware.checkLog, staticController.getModal)
 // Rota para obter o modal contendo a descrição de cada insígnea

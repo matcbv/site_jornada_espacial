@@ -53,13 +53,13 @@
                 <div class="badges-div flex flex-col items-center w-full p-10 md:px-24 border-t-white md:border-r-white border-original-yellow bg-light-purple-transparent tracking-widest order-last md:order-first relative">
                     <h3 class="mb-8 font-rubik-mono-one text-3xl sm:text-4xl text-light-blue text-center webkit-text-black">Insígnias</h3>
                     <div class="grid grid-cols-3 justify-items-center gap-y-8 gap-x-4 sm:gap-x-8 w-full">
-                        <% for (const badge of allBadges) { %>
-                            <% if(badges.some(badgeList => badgeList.includes(badge))) { %>
-                                <img id="<%= badge %>" class="unlocked-badge w-full max-w-40 hovering" src="/images/profile_images/<%= badge %>_badge.png" alt="Insígnea">
-                            <% } else { %>
-                                <div class="unlocked-badge hovering w-full h-full max-w-40 relative rounded-full">
+                        <% for (const badge of allBadges){ %>
+                            <% if(badges.some(badgeList => badgeList.includes(badge))){ %>
+                                <img id="<%= badge %>" class="unlocked-badge w-full max-w-40 max-h-40 hovering" src="/images/profile_images/<%= badge %>_badge.png" alt="Insígnea">
+                            <% } else{ %>
+                                <div id="<%= badge %>" class="unlocked-badge hovering relative max-h-40 rounded-full">
                                     <img id="<%= badge %>" class="w-full h-full max-w-40" src="/images/profile_images/<%= badge %>_badge.png" alt="Insígnea">
-                                    <div id="<%= badge %>" class="absolute top-0 z-10 bg-black-transparent w-full h-full rounded-full"></div>
+                                    <div class="absolute top-0 z-10 bg-black-transparent w-full h-full rounded-full"></div>
                                 </div>
                             <% } %>
                         <% } %>

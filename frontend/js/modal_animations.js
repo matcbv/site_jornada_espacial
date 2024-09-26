@@ -1,4 +1,4 @@
-const badgesDiv = document.querySelector('badges-div')
+const currentMain = document.querySelector('main')
 
 function addModal(currentMain, html, badgeName) {
     const divModal = document.createElement('div')
@@ -33,23 +33,25 @@ function addModal(currentMain, html, badgeName) {
     })
 }
 
-if (badgesDiv){
-    const badges = document.querySelector('.badges-div').querySelectorAll('img')
+if(currentMain.classList.contains('profile-main')){
+    const badgesDiv = document.querySelector('.badges-div')
+    const badges = badgesDiv.querySelectorAll('img')
     badges.forEach(badge => {
         if(badge.classList.contains('unlocked-badge')){
             badge.addEventListener('click', () => {
-                fetch(`/addBadgeModal/${badge.id}`)
+                fetch(`/getBadgeModal/${badge.id}`)
                 .then(res => res.text())
                 .then(html => {
                     fetch('/getBadges')
                     .then(res => res.json())
                     .then(userBadges => {
                         userBadges.forEach(item => {
-                            html.querySelector('.data').innerHTML = item[1]
-                            const modalBadgeDiv = document.createElement('div')
-                            modalBadgeDiv.classList.add('modal-badge-div')
-                            modalBadgeDiv.innerHTML = html
-                            badgesDiv.appendChild(modalBadgeDiv)
+                            if(item[0] === badge.id){
+                                const modalBadgeDiv = document.createElement('div')
+                                modalBadgeDiv.classList.add('modal-badge-div')
+                                modalBadgeDiv.innerHTML = html.replace('{{date}}', item[1])
+                                badgesDiv.appendChild(modalBadgeDiv)
+                            }
                         });
                     })
                 })

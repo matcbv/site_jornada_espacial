@@ -33,8 +33,8 @@
         @apply cursor-pointer transition-transform duration-300 hover:scale-105
     }
 
-    .modal-badge-box{
-        @apply flex justify-center items-center w-full h-full max-w absolute top-0 z-10 bg-black-transparent
+    .modal-badge-div{
+        @apply flex justify-center items-center w-full h-full absolute top-0 z-10 bg-black-transparent
     }
 }
 
@@ -69,4 +69,16 @@
 .shooting-star{
     display: none;
     position: absolute;
+}
+
+.modal-badge-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.85);
 }
