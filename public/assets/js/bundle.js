@@ -688,9 +688,17 @@ if (currentMain.classList.contains('profile-main')) {
             userBadges.forEach(function (item) {
               if (item[0] === badge.id) {
                 var modalBadgeDiv = document.createElement('div');
-                modalBadgeDiv.classList.add('modal-badge-div');
                 modalBadgeDiv.innerHTML = html.replace('{{date}}', item[1]);
+                modalBadgeDiv.classList.add('modal-badge-div', 'fast-appear-animation');
                 badgesDiv.appendChild(modalBadgeDiv);
+                var closeModalIcon = modalBadgeDiv.querySelector('.close-modal-icon');
+                closeModalIcon.addEventListener('click', function () {
+                  modalBadgeDiv.classList.remove('fast-appear-animation');
+                  modalBadgeDiv.classList.add('disappear-animation');
+                  setTimeout(function () {
+                    badgesDiv.removeChild(modalBadgeDiv);
+                  }, 500);
+                });
               }
             });
           });

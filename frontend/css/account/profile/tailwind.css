@@ -32,10 +32,6 @@
     .hovering{
         @apply cursor-pointer transition-transform duration-300 hover:scale-105
     }
-
-    .modal-badge-div{
-        @apply flex justify-center items-center w-full h-full absolute top-0 z-10 bg-black-transparent
-    }
 }
 
 @layer utilities{
@@ -80,5 +76,6 @@
     height: 100%;
     top: 0;
     z-index: 20;
-    background-color: rgba(0, 0, 0, 0.85);
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.9);
 }

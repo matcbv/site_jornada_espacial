@@ -48,9 +48,17 @@ if(currentMain.classList.contains('profile-main')){
                         userBadges.forEach(item => {
                             if(item[0] === badge.id){
                                 const modalBadgeDiv = document.createElement('div')
-                                modalBadgeDiv.classList.add('modal-badge-div')
                                 modalBadgeDiv.innerHTML = html.replace('{{date}}', item[1])
+                                modalBadgeDiv.classList.add('modal-badge-div', 'fast-appear-animation')
                                 badgesDiv.appendChild(modalBadgeDiv)
+                                const closeModalIcon = modalBadgeDiv.querySelector('.close-modal-icon')
+                                closeModalIcon.addEventListener('click', () => {
+                                    modalBadgeDiv.classList.remove('fast-appear-animation')
+                                    modalBadgeDiv.classList.add('disappear-animation')
+                                    setTimeout(() => {
+                                        badgesDiv.removeChild(modalBadgeDiv)
+                                    }, 500)
+                                })
                             }
                         });
                     })

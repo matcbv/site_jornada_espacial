@@ -19,11 +19,11 @@ const staticController = {
     },
 
     getBadgeModal: (req, res) => {
-        return res.sendFile(path.resolve(__dirname, '..', 'views', 'unlocked_badges', `${req.params.badge}.html`))
+        return res.sendFile(path.resolve(__dirname, '..', 'views', 'badges', 'unlocked_badges', `${req.params.badge}.html`))
     },
 
     getBadgeHintModal: (req, res) => {
-        return res.sendFile(path.resolve(__dirname, '..', 'views', 'locked_badges', `${req.params.badge}.html`))
+        return res.sendFile(path.resolve(__dirname, '..', 'views', 'badges', 'locked_badges', `${req.params.badge}.html`))
     }
 }
 
