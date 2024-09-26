@@ -677,8 +677,8 @@ if (currentMain.classList.contains('profile-main')) {
   var badgesDiv = document.querySelector('.badges-div');
   var badges = badgesDiv.querySelectorAll('img');
   badges.forEach(function (badge) {
-    if (badge.classList.contains('unlocked-badge')) {
-      badge.addEventListener('click', function () {
+    badge.addEventListener('click', function () {
+      if (badge.classList.contains('unlocked-badge')) {
         fetch("/getBadgeModal/".concat(badge.id)).then(function (res) {
           return res.text();
         }).then(function (html) {
@@ -687,24 +687,47 @@ if (currentMain.classList.contains('profile-main')) {
           }).then(function (userBadges) {
             userBadges.forEach(function (item) {
               if (item[0] === badge.id) {
-                var modalBadgeDiv = document.createElement('div');
-                modalBadgeDiv.innerHTML = html.replace('{{date}}', item[1]);
-                modalBadgeDiv.classList.add('modal-badge-div', 'fast-appear-animation');
-                badgesDiv.appendChild(modalBadgeDiv);
-                var closeModalIcon = modalBadgeDiv.querySelector('.close-modal-icon');
-                closeModalIcon.addEventListener('click', function () {
-                  modalBadgeDiv.classList.remove('fast-appear-animation');
-                  modalBadgeDiv.classList.add('disappear-animation');
-                  setTimeout(function () {
-                    badgesDiv.removeChild(modalBadgeDiv);
-                  }, 500);
-                });
+                addBadgeModal(badgesDiv, html, item[1]);
               }
             });
           });
         });
+      }
+    });
+  });
+  var lockedBadges = document.querySelectorAll('.locked-badge');
+  lockedBadges.forEach(function (badge) {
+    badge.addEventListener('click', function () {
+      fetch("/getBadgeHitModal/".concat(badge.id)).then(function (res) {
+        return res.text();
+      }).then(function (html) {
+        fetch('/getBadges').then(function (res) {
+          return res.json();
+        }).then(function (userBadges) {
+          userBadges.forEach(function (item) {
+            if (item[0] === badge.id) {
+              addBadgeModal(badgesDiv, html);
+            }
+          });
+        });
       });
-    }
+    });
+  });
+}
+function addBadgeModal(badgesDiv, html, date) {
+  var modalBadgeDiv = document.createElement('div');
+  if (date) {
+    modalBadgeDiv.innerHTML = html.replace('{{date}}', date);
+  }
+  modalBadgeDiv.classList.add('modal-badge-div', 'fast-appear-animation');
+  badgesDiv.appendChild(modalBadgeDiv);
+  var closeModalIcon = modalBadgeDiv.querySelector('.close-modal-icon');
+  closeModalIcon.addEventListener('click', function () {
+    modalBadgeDiv.classList.remove('fast-appear-animation');
+    modalBadgeDiv.classList.add('disappear-animation');
+    setTimeout(function () {
+      badgesDiv.removeChild(modalBadgeDiv);
+    }, 500);
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addModal);

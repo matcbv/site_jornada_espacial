@@ -37,8 +37,8 @@ if(currentMain.classList.contains('profile-main')){
     const badgesDiv = document.querySelector('.badges-div')
     const badges = badgesDiv.querySelectorAll('img')
     badges.forEach(badge => {
-        if(badge.classList.contains('unlocked-badge')){
-            badge.addEventListener('click', () => {
+        badge.addEventListener('click', () => {
+            if(badge.classList.contains('unlocked-badge')){
                 fetch(`/getBadgeModal/${badge.id}`)
                 .then(res => res.text())
                 .then(html => {
@@ -47,25 +47,50 @@ if(currentMain.classList.contains('profile-main')){
                     .then(userBadges => {
                         userBadges.forEach(item => {
                             if(item[0] === badge.id){
-                                const modalBadgeDiv = document.createElement('div')
-                                modalBadgeDiv.innerHTML = html.replace('{{date}}', item[1])
-                                modalBadgeDiv.classList.add('modal-badge-div', 'fast-appear-animation')
-                                badgesDiv.appendChild(modalBadgeDiv)
-                                const closeModalIcon = modalBadgeDiv.querySelector('.close-modal-icon')
-                                closeModalIcon.addEventListener('click', () => {
-                                    modalBadgeDiv.classList.remove('fast-appear-animation')
-                                    modalBadgeDiv.classList.add('disappear-animation')
-                                    setTimeout(() => {
-                                        badgesDiv.removeChild(modalBadgeDiv)
-                                    }, 500)
-                                })
+                                addBadgeModal(badgesDiv, html, item[1])
                             }
                         });
                     })
                 })
-            })
-        }
+            }
+        })
     });
+
+    const lockedBadges = document.querySelectorAll('.locked-badge')
+    lockedBadges.forEach(badge => {
+        badge.addEventListener('click', () => {
+            fetch(`/getBadgeHitModal/${badge.id}`)
+            .then(res => res.text())
+            .then(html => {
+                fetch('/getBadges')
+                .then(res => res.json())
+                .then(userBadges => {
+                    userBadges.forEach(item => {
+                        if(item[0] === badge.id){
+                            addBadgeModal(badgesDiv, html)
+                        }
+                    });
+                })
+            })
+        })
+    });
+}
+
+function addBadgeModal(badgesDiv, html, date){
+    const modalBadgeDiv = document.createElement('div')
+    if(date){
+        modalBadgeDiv.innerHTML = html.replace('{{date}}', date)
+    }
+    modalBadgeDiv.classList.add('modal-badge-div', 'fast-appear-animation')
+    badgesDiv.appendChild(modalBadgeDiv)
+    const closeModalIcon = modalBadgeDiv.querySelector('.close-modal-icon')
+    closeModalIcon.addEventListener('click', () => {
+        modalBadgeDiv.classList.remove('fast-appear-animation')
+        modalBadgeDiv.classList.add('disappear-animation')
+        setTimeout(() => {
+            badgesDiv.removeChild(modalBadgeDiv)
+        }, 500)
+    })
 }
 
 export default addModal
