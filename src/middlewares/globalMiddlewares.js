@@ -4,7 +4,7 @@ function csrfMiddleware(req, res, next){
 }
 
 function varMiddlewares(req, res, next){
-    res.locals.allBadges = ['galactic_explorer', 'musical_travaller', 'thinker_backpacker', 'universe_champion','space_cowboy']
+    res.locals.allBadges = ['galactic_explorer', 'musical_travaller', 'thinker_backpacker', 'universe_champion', 'space_cowboy']
     next()
 }
 

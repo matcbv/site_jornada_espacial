@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     bio: {type: String, trim: true, maxlength: 200, default: 'Olá! Sou novo por aqui!'},
     favBody: {type: String, trim:true, default: 'dotted_circle'},
     profileImg: {type: String, trim:true, default: 'astronaut_man'},
-    badges: {type: [String], trim:true, default: []}
+    badges: {type: [[String]], trim:true, default: []}
 })
 
 const userModel = new mongoose.model('users', userSchema)

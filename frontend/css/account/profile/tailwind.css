@@ -32,20 +32,24 @@
     .hovering{
         @apply cursor-pointer transition-transform duration-300 hover:scale-105
     }
+
+    .modal-badge-box{
+        @apply flex justify-center items-center w-full h-full max-w absolute top-0 z-10 bg-black-transparent
+    }
 }
 
 @layer utilities{
 
     .border-b-white{
-        @apply border-x-0 border-t-0 border-b border-solid border-white max-w-100
+        @apply border-x-0 border-t-0 border-b border-solid border-white max-w-full
     }
 
     .border-t-white{
-        @apply border-x-0 border-b-0 border-t border-solid border-white max-w-100
+        @apply border-x-0 border-b-0 border-t border-solid border-white max-w-full
     }
 
     .border-r-white{
-        @apply border-l-0 border-x-0 border-r-2 border-solid border-white max-w-100
+        @apply border-l-0 border-x-0 border-r-2 border-solid border-white max-w-full
     }
 }
 

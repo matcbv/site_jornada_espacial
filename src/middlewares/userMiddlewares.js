@@ -66,12 +66,17 @@ const userController = {
     },
     
     addBadge: async (req, res) => {
-        req.session.user.badges.push(req.params.badge)
+        const date = new Date()
+        req.session.user.badges.push([req.params.badge, date.toLocaleDateString(['pt-BR'])])
         const user = await userModel.findOneAndUpdate({username: req.session.user.username}, {badges: req.session.user.badges}, {new: true})
         req.session.user = user
         userController.userData(req, res, () => {
             return res.redirect('/account/profile')
         })
+    },
+
+    getBadges: (req, res) => {
+        return res.json(req.session.user.badges)
     },
 
     getVisitedBodies: (req, res) => {

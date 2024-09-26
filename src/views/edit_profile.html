@@ -1,32 +1,32 @@
 <%- include(head) %>
 <body>
     <%- include(header) %>
-    <main class="edit-profile-main min-h-screen max-w-100 relative">
+    <main class="edit-profile-main min-h-screen max-w-full relative">
         <%- include(fluidHeader) %>
         <%- include(profileNav) %>
-        <div class="flex justify-center sm:justify-evenly max-w-100 min-h-screen py-20">
+        <div class="flex justify-center sm:justify-evenly max-w-full min-h-screen py-20">
             <div class="hidden sm:inline self-start">
                 <img class="animate-levitate w-32 md:w-40" src="/images/profile_images/spaceship.png" alt="Espaçonave">
             </div>
             <section class="flex flex-col items-center justify-evenly max-w-xl">
                 <div class="block md:flex items-center mb-10">
-                    <div class="hidden md:flex flex-col justify-evenly items-center h-100 mr-5 md:mr-10">
+                    <div class="hidden md:flex flex-col justify-evenly items-center h-full mr-5 md:mr-10">
                         <img class="w-40 h-40" src="/images/profile_images/<%= profileImg %>_icon.png" alt="Imagem de perfil">
                         <button type="button" class="save-img-edit-button text-white font-mono text-lg py-2 px-6 border-2 border-solid border-gray-400 rounded-full bg-dark-blue cursor-pointer font-bold leading-snug hover:border-original-yellow">Salvar imagem</button>
                     </div>
                     <div class="profile-img-edit flex flex-col justify-evenly items-center w-72 md:w-80 p-6 border border-solid border-original-yellow bg-dark-blue rounded-lg">
-                        <div class="flex justify-evenly mb-5 w-100">
+                        <div class="flex justify-evenly mb-5 w-full">
                             <img class="w-24 md:w-28 p-2 cursor-pointer" id="astronaut_man" src="/images/profile_images/astronaut_man_icon.png" alt="Astronauta homem">
                             <img class="w-24 md:w-28 p-2 cursor-pointer" id="astronaut_woman" src="/images/profile_images/astronaut_woman_icon.png" alt="Astronauta mulher">
                         </div>
-                        <div class="mb-5 md:mb-0 flex justify-evenly w-100">
+                        <div class="mb-5 md:mb-0 flex justify-evenly w-full">
                             <img class="w-24 md:w-28 p-2 cursor-pointer" id="alien" src="/images/profile_images/alien_icon.png" alt="Alienígena">
                             <img class="w-24 md:w-28 p-2 cursor-pointer" id="robot" src="/images/profile_images/robot_icon.png" alt="Robô">
                         </div>
                         <button type="button" class="save-img-edit-button text-white font-mono text-base md:text-lg py-2 px-6 border-2 border-solid border-gray-400 rounded-full bg-dark-blue cursor-pointer font-bold leading-snug w-48 md:hidden">Salvar imagem</button>
                     </div>
                 </div>
-                <form class="flex flex-col items-center md:[align-items:initial] w-100" action="/account/profile/editProfile/updateData" method="post">
+                <form class="flex flex-col items-center md:[align-items:initial] w-full" action="/account/profile/editProfile/updateData" method="post">
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     <div class="flex flex-col mb-7 w-72 md:w-auto md:mb-10">
                         <label class="edit-profile-labels" for="bio">Biografia (<span class="caracters-span"></span>/150)</label>
@@ -71,8 +71,8 @@
                             <% } %>
                         </div>
                     </div>
-                    <div class="flex flex-col w-100">
-                        <div class="flex flex-col md:flex-row md:justify-start w-100">
+                    <div class="flex flex-col w-full">
+                        <div class="flex flex-col md:flex-row md:justify-start w-full">
                             <input class="bg-transparent w-44 md:w-auto text-sm md:text-lg font-mono font-bold border-2 border-solid border-original-yellow text-white mb-5 py-2 md:px-6 rounded-full md:mb-0 md:mr-5 cursor-pointer hover:border-white" type="submit" value="Salvar dados">
                             <input class="remove-account-btn bg-transparent w-44 md:w-auto text-sm md:text-lg font-mono font-bold border-2 border-solid border-error-red text-red-200 py-2 md:px-6 rounded-full cursor-pointer hover:border-white" type="button" value="Excluir conta">
                         </div>

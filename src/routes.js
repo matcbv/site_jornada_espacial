@@ -80,12 +80,16 @@ router.get('/profileImg/:img', userMiddleware.checkLog, userMiddleware.changePro
 router.get('/deleteAccount', loginController.deleteAccount, userMiddleware.logoutUser)
 
 
+// Rota para obter as insígenas do usuário
+router.get('/')
 // Rota para obter os corpos celestes já visitados
 router.get('/getVisitedBodies', userMiddleware.getVisitedBodies)
 // Rota para obter as músicas já tocadas
 router.get('/getPlayedMusics/:music', userMiddleware.getPlayedMusics)
 // Rota para adicionar modal das insígneas na tela
 router.get('/getModal', userMiddleware.checkLog, staticController.getModal)
+// Rota para obter o modal contendo a descrição de cada insígnea
+router.get('/getBadgeModal/:badge', userMiddleware.checkLog, staticController.getBadgeModal)
 // Rota para adicionar insígneas ao perfil do usuário
 router.get('/addBadge/:badge', userMiddleware.addBadge)
 

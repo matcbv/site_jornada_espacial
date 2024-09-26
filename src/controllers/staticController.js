@@ -16,6 +16,10 @@ const staticController = {
 
     getModal: (req, res) => {
         return res.sendFile(path.resolve(__dirname, '..', 'views', 'badge_modal.html'))
+    },
+
+    getBadgeModal: (req, res) => {
+        return res.sendFile(path.resolve(__dirname, '..', 'views', 'badges', `${req.params.badge}`))
     }
 }
 

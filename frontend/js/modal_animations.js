@@ -1,3 +1,5 @@
+const badgesDiv = document.querySelector('badges-div')
+
 function addModal(currentMain, html, badgeName) {
     const divModal = document.createElement('div')
     divModal.style.display = 'flex'
@@ -29,6 +31,31 @@ function addModal(currentMain, html, badgeName) {
             window.location.href = `/addBadge/${badgeName}`
         }, 1000)
     })
+}
+
+if (badgesDiv){
+    const badges = document.querySelector('.badges-div').querySelectorAll('img')
+    badges.forEach(badge => {
+        if(badge.classList.contains('unlocked-badge')){
+            badge.addEventListener('click', () => {
+                fetch(`/addBadgeModal/${badge.id}`)
+                .then(res => res.text())
+                .then(html => {
+                    fetch('/getBadges')
+                    .then(res => res.json())
+                    .then(userBadges => {
+                        userBadges.forEach(item => {
+                            html.querySelector('.data').innerHTML = item[1]
+                            const modalBadgeDiv = document.createElement('div')
+                            modalBadgeDiv.classList.add('modal-badge-div')
+                            modalBadgeDiv.innerHTML = html
+                            badgesDiv.appendChild(modalBadgeDiv)
+                        });
+                    })
+                })
+            })
+        }
+    });
 }
 
 export default addModal
