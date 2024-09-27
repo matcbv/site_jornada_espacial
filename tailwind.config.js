@@ -12,8 +12,7 @@ module.exports = {
         '90': '90%',
       },
       height: {
-        '90': '90%',
-        '92': '92%'
+        '90': '90%'
       },
       maxWidth:{
         '100': '100vw',
@@ -31,6 +30,7 @@ module.exports = {
         'light-yellow': '#ffff5f',
         'white-gray': '#d1d1d1',
         'black-transparent': 'rgba(0, 0, 0, 0.85)',
+        'black-transparenter': 'rgba(0, 0, 0, 0.5)',
         'error-red': '#d93939'
       },
       screens:{
@@ -57,7 +57,7 @@ module.exports = {
       },
       backgroundImage:{
         'radial-purple': 'radial-gradient(#16124780, transparent)',
-        'radial-blue': 'radial-gradient(transparent 30%, #0c122e)'
+        'radial-blue': 'radial-gradient(transparent 30%, #0c122e)',
       },
       animation:{
         'levitate': 'levitate 1.5s ease-in-out 0s infinite alternate both',
