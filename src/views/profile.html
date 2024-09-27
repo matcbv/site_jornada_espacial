@@ -57,9 +57,9 @@
                             <% if(badges.some(badgeList => badgeList.includes(badge))){ %>
                                 <img id="<%= badge %>" class="unlocked-badge w-full max-w-40 max-h-40 hovering" src="/images/profile_images/<%= badge %>_badge.png" alt="Insígnea">
                             <% } else{ %>
-                                <div id="<%= badge %>" class="unlocked-badge hovering relative max-h-40 rounded-full">
+                                <div class="hovering relative max-h-40 rounded-full">
                                     <img id="<%= badge %>" class="w-full h-full max-w-40" src="/images/profile_images/<%= badge %>_badge.png" alt="Insígnea">
-                                    <div class="absolute top-0 z-10 bg-black-transparent w-full h-full rounded-full"></div>
+                                    <div class="locked-badge absolute top-0 z-10 bg-black-transparent w-full h-full rounded-full"></div>
                                 </div>
                             <% } %>
                         <% } %>
