@@ -40,6 +40,8 @@ if(currentMain.classList.contains('profile-main')){
     badges.forEach(badge => {
         badge.addEventListener('click', () => {
             if(badge.classList.contains('unlocked-badge')){
+        badge.addEventListener('click', () => {
+            if(badge.classList.contains('unlocked-badge')){
                 fetch(`/getBadgeModal/${badge.id}`)
                 .then(res => res.text())
                 .then(html => {
