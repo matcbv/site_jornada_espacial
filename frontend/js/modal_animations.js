@@ -40,8 +40,6 @@ if(currentMain.classList.contains('profile-main')){
     badges.forEach(badge => {
         badge.addEventListener('click', () => {
             if(badge.classList.contains('unlocked-badge')){
-        badge.addEventListener('click', () => {
-            if(badge.classList.contains('unlocked-badge')){
                 fetch(`/getBadgeModal/${badge.id}`)
                 .then(res => res.text())
                 .then(html => {
@@ -62,9 +60,7 @@ if(currentMain.classList.contains('profile-main')){
     const lockedBadges = document.querySelectorAll('.locked-badge')
     lockedBadges.forEach(div => {
         div.addEventListener('click', () => {
-            console.log('entreiii')
             const badge = div.previousElementSibling
-            console.log(badge)
             fetch(`/getBadgeHintModal/${badge.id}`)
             .then(res => res.text())
             .then(html => {
