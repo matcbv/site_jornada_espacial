@@ -20,18 +20,20 @@ if(currentMain.classList.contains('galaxies-main') || currentMain.classList.cont
                             .then(res => res.json())
                             .then(userSession => {
                                 if(userSession){
-                                    fetch('/getVisitedBodies')
-                                    .then(res => res.json())
-                                    .then(visitedBodies => {
-                                        if(visitedBodies.length === 12){
-                                            setTimeout(() => {
-                                                fetch('/getModal')
-                                                .then(data => data.text())
-                                                .then(html => {addModal(currentMain, html, 'galactic_explorer')})
-                                                .catch(() => {})
-                                            }, 1000)
-                                        }
-                                    })
+                                    if(!userSession.badges.some(badgeList => badgeList.includes('galactic_explorer'))){
+                                        fetch('/getVisitedBodies')
+                                        .then(res => res.json())
+                                        .then(visitedBodies => {
+                                            if(visitedBodies.length === 12){
+                                                setTimeout(() => {
+                                                    fetch('/getModal')
+                                                    .then(data => data.text())
+                                                    .then(html => {addModal(currentMain, html, 'galactic_explorer')})
+                                                    .catch(() => {})
+                                                }, 1000)
+                                            }
+                                        })
+                                    }
                                 }
                             })
                             res.text().then(html => {

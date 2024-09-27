@@ -38,7 +38,7 @@ function swordFishClick() {
         .then(res => res.json())
         .then(userSession => {
             if(userSession){
-                if(!userSession.badges.includes('space_cowboy')){
+                if(!userSession.badges.some(badgeList => badgeList.includes('space_cowboy'))){
                     fetch('/getModal')
                     .then(data => data.text())
                     .then(html => {

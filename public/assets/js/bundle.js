@@ -102,7 +102,9 @@ function swordFishClick() {
       return res.json();
     }).then(function (userSession) {
       if (userSession) {
-        if (!userSession.badges.includes('space_cowboy')) {
+        if (!userSession.badges.some(function (badgeList) {
+          return badgeList.includes('space_cowboy');
+        })) {
           fetch('/getModal').then(function (data) {
             return data.text();
           }).then(function (html) {
@@ -451,19 +453,23 @@ function musicsFetch(music) {
     return res.json();
   }).then(function (userSession) {
     if (userSession) {
-      fetch("/getPlayedMusics/".concat(music.classList[0])).then(function (res) {
-        return res.json();
-      }).then(function (playedMusics) {
-        if (playedMusics.length === 5) {
-          setTimeout(function () {
-            fetch('/getModal').then(function (data) {
-              return data.text();
-            }).then(function (html) {
-              (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'musical_travaller');
-            })["catch"](function () {});
-          }, 1000);
-        }
-      });
+      if (userSession.badges.some(function (badgeList) {
+        return badgeList.includes('muscial_travaller');
+      })) {
+        fetch("/getPlayedMusics/".concat(music.classList[0])).then(function (res) {
+          return res.json();
+        }).then(function (playedMusics) {
+          if (playedMusics.length === 5) {
+            setTimeout(function () {
+              fetch('/getModal').then(function (data) {
+                return data.text();
+              }).then(function (html) {
+                (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'musical_travaller');
+              })["catch"](function () {});
+            }, 1000);
+          }
+        });
+      }
     }
   });
 }
@@ -767,19 +773,23 @@ if (currentMain.classList.contains('galaxies-main') || currentMain.classList.con
                   return res.json();
                 }).then(function (userSession) {
                   if (userSession) {
-                    fetch('/getVisitedBodies').then(function (res) {
-                      return res.json();
-                    }).then(function (visitedBodies) {
-                      if (visitedBodies.length === 12) {
-                        setTimeout(function () {
-                          fetch('/getModal').then(function (data) {
-                            return data.text();
-                          }).then(function (html) {
-                            (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'galactic_explorer');
-                          })["catch"](function () {});
-                        }, 1000);
-                      }
-                    });
+                    if (!userSession.badges.some(function (badgeList) {
+                      return badgeList.includes('galactic_explorer');
+                    })) {
+                      fetch('/getVisitedBodies').then(function (res) {
+                        return res.json();
+                      }).then(function (visitedBodies) {
+                        if (visitedBodies.length === 12) {
+                          setTimeout(function () {
+                            fetch('/getModal').then(function (data) {
+                              return data.text();
+                            }).then(function (html) {
+                              (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'galactic_explorer');
+                            })["catch"](function () {});
+                          }, 1000);
+                        }
+                      });
+                    }
                   }
                 });
                 res.text().then(function (html) {
@@ -1245,7 +1255,9 @@ if (currentMain.classList.contains('ideaform-main')) {
       return res.json();
     }).then(function (userSession) {
       if (userSession) {
-        if (!userSession.badges.includes('thinker_backpacker')) {
+        if (!userSession.badges.some(function (badgeList) {
+          return badgeList.includes('thinker_backpacker');
+        })) {
           var ideaSent = currentMain.querySelector('.idea-sent');
           if (ideaSent.innerHTML === 'true') {
             setTimeout(function () {

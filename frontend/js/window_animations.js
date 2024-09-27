@@ -136,7 +136,7 @@ if(currentMain.classList.contains('ideaform-main')){
         .then(res => res.json())
         .then(userSession => {
             if(userSession){
-                if(!userSession.badges.includes('thinker_backpacker')){
+                if(!userSession.badges.some(badgeList => badgeList.includes('thinker_backpacker'))){
                     const ideaSent = currentMain.querySelector('.idea-sent')
                     if(ideaSent.innerHTML === 'true'){
                         setTimeout(() => {

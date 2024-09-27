@@ -188,18 +188,20 @@ function musicsFetch(music) {
     .then(res => res.json())
     .then(userSession => {
         if(userSession){
-            fetch(`/getPlayedMusics/${music.classList[0]}`)
-            .then(res => res.json())
-            .then(playedMusics => {
-                if(playedMusics.length === 5){
-                    setTimeout(() => {
-                        fetch('/getModal')
-                        .then(data => data.text())
-                        .then(html => {addModal(currentMain, html, 'musical_travaller')})
-                        .catch(() => {})
-                    }, 1000)
-                }
-            })
+            if(userSession.badges.some(badgeList => badgeList.includes('muscial_travaller'))){
+                fetch(`/getPlayedMusics/${music.classList[0]}`)
+                .then(res => res.json())
+                .then(playedMusics => {
+                    if(playedMusics.length === 5){
+                        setTimeout(() => {
+                            fetch('/getModal')
+                            .then(data => data.text())
+                            .then(html => {addModal(currentMain, html, 'musical_travaller')})
+                            .catch(() => {})
+                        }, 1000)
+                    }
+                })
+            }
         }
     })
 }
