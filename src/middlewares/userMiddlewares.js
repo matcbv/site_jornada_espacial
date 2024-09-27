@@ -1,4 +1,5 @@
 const userModel = require('../models/userModel')
+const {userData} = require('../middlewares/globalMiddlewares')
 
 const userController = {
     checkLog: async (req, res, next) => {
@@ -20,19 +21,6 @@ const userController = {
             res.redirect('/');
           });
     },
-    
-    userData: (req, res, next) => {
-        res.locals.name = req.session.user.name
-        res.locals.lastname = req.session.user.lastname
-        res.locals.username = req.session.user.username
-        res.locals.birthday = req.session.user.birthday
-        res.locals.email = req.session.user.email
-        res.locals.bio = req.session.user.bio
-        res.locals.favBody = req.session.user.favBody
-        res.locals.profileImg = req.session.user.profileImg
-        res.locals.badges = req.session.user.badges
-        next()
-    },
 
     getFavBody: async (req, res) => {
         const user = await userModel.findOne({username: req.session.user.username})
@@ -44,7 +32,7 @@ const userController = {
         try{
             const user = await userModel.findOneAndUpdate({username: req.session.user.username}, {favBody: currentBody}, {new: true})
             req.session.user = user
-            userController.userData(req, res, () => {
+            userData(req, res, () => {
                 return res.redirect('/account/profile')
             })
         } catch(e){
@@ -57,7 +45,7 @@ const userController = {
         try{
             const user = await userModel.findOneAndUpdate({username: req.session.user.username}, {profileImg: newProfileImg}, {new: true})
             req.session.user = user
-            userController.userData(req, res, () => {
+            userData(req, res, () => {
                 return res.redirect('/account/profile')
             })
         } catch(e){
@@ -70,7 +58,7 @@ const userController = {
         req.session.user.badges.push([req.params.badge, date.toLocaleDateString(['pt-BR'])])
         const user = await userModel.findOneAndUpdate({username: req.session.user.username}, {badges: req.session.user.badges}, {new: true})
         req.session.user = user
-        userController.userData(req, res, () => {
+        userData(req, res, () => {
             return res.redirect('/account/profile')
         })
     },

@@ -15,6 +15,10 @@
             <li><a class="galaxies-links" href="/triangle">Triângulo</a></li>
         </ul>
         <img class="menu-icon" src="/images/header_images/menu_icon.png" alt="Ícone de menu">
-        <a class="login-link" href="/account/profile"><img src="/images/header_images/astronaut_icon.png" alt="Meu perfil" title="Meu perfil"></a>
+        <% if(profileImg){ %>
+            <a class="login-link" href="/account/profile"><img src="/images/profile_images/<%= profileImg %>_icon.png" alt="Meu perfil" title="Meu perfil"></a>
+        <% } else{ %>
+            <a class="login-link" href="/account/profile"><img src="/images/header_images/astronaut_icon.png" alt="Meu perfil" title="Meu perfil"></a>
+        <% } %>
     </nav>
 </header>

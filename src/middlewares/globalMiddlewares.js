@@ -8,6 +8,23 @@ function varMiddlewares(req, res, next){
     next()
 }
 
+function userData (req, res, next) {
+    if(req.session.user){
+        res.locals.name = req.session.user.name || ''
+        res.locals.lastname = req.session.user.lastname || ''
+        res.locals.username = req.session.user.username || ''
+        res.locals.birthday = req.session.user.birthday || ''
+        res.locals.email = req.session.user.email || ''
+        res.locals.bio = req.session.user.bio || ''
+        res.locals.favBody = req.session.user.favBody || ''
+        res.locals.profileImg = req.session.user.profileImg || ''
+        res.locals.badges = req.session.user.badges || []
+    } else{
+        res.locals.profileImg = ''
+    }
+    next();
+}
+
 function includesMiddleware(req, res, next){
     res.locals.head = 'includes/head.html'
     res.locals.header = 'includes/header.html'
@@ -24,6 +41,7 @@ function flashesMiddleware(req, res, next){
     res.locals.subjectError = req.flash('subjectError')
     res.locals.textError = req.flash('textError')
     res.locals.successMsg = req.flash('successMsg')
+    res.locals.ideaSent = req.flash('ideaSent')
     res.locals.nameError = req.flash('nameError')
     res.locals.lastnameError = req.flash('lastnameError')
     res.locals.usernameError = req.flash('usernameError')
@@ -37,4 +55,4 @@ function flashesMiddleware(req, res, next){
     next()
 }
 
-module.exports = {csrfMiddleware, varMiddlewares, includesMiddleware, flashesMiddleware}
+module.exports = {csrfMiddleware, varMiddlewares, userData, includesMiddleware, flashesMiddleware}

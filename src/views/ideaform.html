@@ -6,6 +6,7 @@
         <% if(successMsg.length > 0){ %>
             <div class="success-popup">
                 <p><%= successMsg[0] %></p>
+                <span class="idea-sent" hidden><%= ideaSent %></span>
             </div>
         <% } %>
         <div class="ideaform-content-div">
@@ -47,7 +48,7 @@
                     <input type="email" name="email" id="email" placeholder="Informe seu e-mail">
                 </div>
                 <div class="form-buttons-div">
-                    <button type="submit">Enviar</button>
+                    <button class="send-idea-btn" type="submit">Enviar</button>
                     <button type="reset">Limpar</button>
                 </div>
             </form>

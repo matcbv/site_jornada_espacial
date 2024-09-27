@@ -1,4 +1,4 @@
-const { userData } = require('../middlewares/userMiddlewares')
+const { userData } = require('../middlewares/globalMiddlewares')
 const Update = require('../models/updateFormModel')
 const userModel = require('../models/userModel')
 

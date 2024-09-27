@@ -67,11 +67,11 @@ router.post('/savePassword', loginController.savePassword)
 
 
 // Página inicial do perfil do usuário:
-router.get('/account/profile', userMiddleware.checkLog, userMiddleware.userData ,pagesController.profile)
+router.get('/account/profile', userMiddleware.checkLog ,pagesController.profile)
 // Rota para deslogar o usuário
 router.get('/account/profile/logout', userMiddleware.logoutUser)
 // Página para editar dados do usuário
-router.get('/account/profile/editProfile', userMiddleware.checkLog, userMiddleware.userData, pagesController.editProfile)
+router.get('/account/profile/editProfile', userMiddleware.checkLog, pagesController.editProfile)
 // Rota para atualizar dados do usuário
 router.post('/account/profile/editProfile/updateData', userMiddleware.checkLog, updateController.updateData)
 // Rota para alterar a imagem do perfil

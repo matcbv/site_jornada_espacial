@@ -15,6 +15,7 @@ const formController = {
                 return res.redirect('/ideaform')
             } else{
                 req.flash('successMsg', 'Ideia enviada com sucesso!')
+                req.flash('ideaSent', true)
                 return res.redirect('/ideaform')
             }
         })

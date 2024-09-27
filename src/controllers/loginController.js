@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const userModel = require('../models/userModel')
 const loginFormModel = require('../models/loginFormModel')
 const emailController = require('../controllers/emailController')
-const { userData } = require('../middlewares/userMiddlewares')
+const { userData } = require('../middlewares/globalMiddlewares')
 const path = require('path')
 const fs = require('fs')
 

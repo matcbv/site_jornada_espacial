@@ -1,8 +1,9 @@
+import addModal from "./modal_animations"
+
 // ---------- HTML ELEMENTS ----------
 
 const headerSection = document.querySelector("header")
 const introductionSection = document.querySelector(".intro-section")
-const galaxiesMain = document.querySelector('.galaxies-main')
 
 const soundOn = document.querySelector(".sound-on")
 const soundOff = document.querySelector(".sound-off")
@@ -14,8 +15,7 @@ const profileImgPopup = document.querySelector('.profile-img-popup')
 const resendEmailBtn = document.querySelector('.resend-email')
 const timerSpan = document.querySelector('.timer')
 
-const profileMain = document.querySelector('.profile-main')
-const editProfileMain = document.querySelector('.edit-profile-main')
+const currentMain = document.querySelector('main')
 
 // ---------- EVENTOS PARA MUDAR A COR DO SCROLLBAR ----------
 
@@ -31,7 +31,7 @@ if (introductionSection && headerSection){
             document.body.classList.remove('change-scrollbar');
         }
     })
-} else if (galaxiesMain || editProfileMain || profileMain){
+} else if (currentMain.classList.contains('galaxies-main') || currentMain.classList.contains('profile-main') || currentMain.classList.contains('edit-profile-main')){
     document.body.classList.add('change-scrollbar');
 }
 
@@ -127,3 +127,28 @@ window.addEventListener('load', () => {
         }, 15000)
     }
 })
+
+// ---------- EVENTO PARA VERIFICAR/EXIBIR INSÍGNEA AO ENVIAR IDEIA ----------
+
+if(currentMain.classList.contains('ideaform-main')){
+    window.addEventListener('load', () => {
+        fetch('/loggedIn')
+        .then(res => res.json())
+        .then(userSession => {
+            if(userSession){
+                if(!userSession.badges.includes('thinker_backpacker')){
+                    const ideaSent = currentMain.querySelector('.idea-sent')
+                    if(ideaSent.innerHTML === 'true'){
+                        setTimeout(() => {
+                            fetch('/getModal')
+                            .then(data => data.text())
+                            .then(html => {
+                                addModal(currentMain, html, 'thinker_backpacker')
+                            })
+                        }, 500)
+                    }
+                }
+            }
+        })
+    })
+}
