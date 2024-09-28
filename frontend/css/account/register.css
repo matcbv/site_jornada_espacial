@@ -97,8 +97,8 @@ input[type="password"]::-ms-reveal {
 }
 
 .requirements-icon{
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 }
 
 .requirements-icon:hover{
@@ -167,29 +167,29 @@ input[type="password"]::-ms-reveal {
     outline: 1px solid white;
     border-radius: 10px;
     position: absolute;
-    padding: 15px;
+    padding: 14px;
     left: 10px;
     bottom: 30px;
 }
 
-.password-requirements p{
-    color: yellow;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    font-family: monospace;
+.password-requirements li:not(:last-child){
+    margin-bottom: 3px;
 }
 
-.password-div ul{
+.password-requirements ul{
     list-style-position: inside;
     margin-left: 5px;
 }
 
-.password-requirements li{
+.password-requirements p{
+    color: yellow;
+    font-size: 1.1em;
+    margin-bottom: 10px;
     font-family: monospace;
 }
 
-.password-div li:not(:last-child){
-    margin-bottom: 3px;
+.password-requirements li{
+    font-family: monospace;
 }
 
 .crossline{

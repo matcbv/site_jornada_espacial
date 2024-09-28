@@ -1,13 +1,14 @@
+import validator from "validator"
+
 // ---------- HTML ELEMENTS ----------
 
 // ---------- FORM MAIN ----------
-const registerMain = document.querySelector('.register-main')
+const currentMain = document.querySelector('main')
 
 // ---------- ICONS ---------- 
 const eyeIcons = document.querySelectorAll('.eye-icon')
 const crosslines = document.querySelectorAll('.crossline')
 const requirementsIcon = document.querySelector('.requirements-icon')
-const requirementsDiv = document.querySelector('.password-requirements')
 
 // ---------- FORMS ----------
 const registerForm = document.querySelector('.register-form')
@@ -26,13 +27,23 @@ const resendEmailBtn = document.querySelector('.resend-email')
 if (registerForm || codeForm || loginForm || passwordForm){
     for (let input of inputs){
         if (input.type !== 'submit' && input.type !== 'button'){
-    
             input.addEventListener('click', () => {
                 input.placeholder = ''
             })
-    
             input.addEventListener('focus', () => {
                 input.placeholder = ''
+            })
+        }
+        if(input.id === 'birthday'){
+            input.addEventListener('input', (event) => {
+                const data = event.data
+                if(!validator.isNumeric(data)){
+                    input.value = input.value.slice(0, -1)
+                }
+                console.log(Array.from(input.value))
+                if (Array.from(input.value).length === 2 || Array.from(input.value).length === 5){
+                    input.value += '/'
+                }
             })
         }
     }
@@ -59,6 +70,8 @@ function showPassword(element) {
 }
 
 if (requirementsIcon){
+    const requirementsDiv = requirementsIcon.nextElementSibling
+
     requirementsIcon.addEventListener('click', () => {
         if (window.getComputedStyle(requirementsDiv).display === 'none'){
             requirementsDiv.classList.remove('disappear-animation')
@@ -66,19 +79,18 @@ if (requirementsIcon){
             setTimeout(() => {
                 requirementsDiv.style.display = 'flex'
             }, 500)
-            registerMain.addEventListener('click', hideRequirements)
+            currentMain.addEventListener('click', hideRequirements)
         } else if(window.getComputedStyle(requirementsDiv).display === 'flex'){
             requirementsDiv.classList.remove('fast-appear-animation')
             requirementsDiv.classList.add('disappear-animation')
             setTimeout(() => {
                 requirementsDiv.style.display = 'none'
             }, 500)
-            registerMain.removeEventListener('click', hideRequirements)
+            currentMain.removeEventListener('click', hideRequirements)
         }
     })
-}
 
-function hideRequirements(e){
+    function hideRequirements(e){
         const element = e.target
         if(!requirementsDiv.contains(element) && window.getComputedStyle(requirementsDiv).display === 'flex'){
             if (window.getComputedStyle(requirementsDiv).display === 'flex'){
@@ -89,6 +101,7 @@ function hideRequirements(e){
                 }, 500)
             }
         }
+    }
 }
 
 // ---------- VALIDATION POPUP ANIMATIONS ----------
