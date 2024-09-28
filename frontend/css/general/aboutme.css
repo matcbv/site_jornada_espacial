@@ -24,11 +24,11 @@
     color: rgb(241, 241, 52);
 }
 
-.aboutme-text-div p{
+.aboutme-main p{
     text-align: left;
     font-family: monospace;
     font-size: 1.2em;
-    line-height: 1.4em;
+    line-height: 1.5em;
 }
 
 .aboutme-vertical-row{
@@ -52,12 +52,6 @@
 
 .specials-div span{
     color: rgb(255, 246, 140);
-}
-
-.specials-div p{
-    font-size: 1.2em;
-    font-family: monospace;
-    line-height: 1.4em;
 }
 
 .aboutme-nav-div{
@@ -119,11 +113,11 @@ blockquote{
     box-shadow: inset 0 0 10px rgb(241, 241, 52, 0.2);
 }
 
-blockquote p{
+.aboutme-main blockquote p{
     margin-bottom: 20px;
     text-shadow: 0 0 3px rgba(241, 241, 52, 0.4);
 }
 
 blockquote cite{
-    color: rgb(241, 241, 52);
+    color: yellow;
 }

@@ -17,7 +17,7 @@
         font-size: 1.2em;
     }
 
-    .aboutme-text-div p{
+    .aboutme-main p{
         font-size: 0.9em;
     }
 
@@ -27,10 +27,6 @@
 
     .specials-div h2{
         font-size: 1.1em;
-    }
-
-    .specials-div p{
-        font-size: 0.9em;
     }
 
     .aboutme-links-div a{

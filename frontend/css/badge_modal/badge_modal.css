@@ -37,7 +37,7 @@
     letter-spacing: 3px;
     text-align: center;
     width: 600px;
-    font-size: 2.4em;
+    font-size: 2.3em;
     color: rgb(255, 255, 95);
     margin-bottom: 40px;
 }
@@ -45,6 +45,10 @@
 .badge-div, .badge-inner-div{
     width: 300px;
     height: 300px;
+}
+
+.badge{
+    width: 100%;
 }
 
 .save-badge-button{

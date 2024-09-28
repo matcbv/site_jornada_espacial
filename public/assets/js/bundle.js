@@ -1067,6 +1067,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_media_queries_register_media_queries_css__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../css/media_queries/register_media_queries.css */ "./frontend/css/media_queries/register_media_queries.css");
 /* harmony import */ var _css_media_queries_password_media_queries_css__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../css/media_queries/password_media_queries.css */ "./frontend/css/media_queries/password_media_queries.css");
 /* harmony import */ var _css_media_queries_change_password_media_queries_css__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../css/media_queries/change_password_media_queries.css */ "./frontend/css/media_queries/change_password_media_queries.css");
+/* harmony import */ var _css_media_queries_badge_modal_media_queries_css__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../css/media_queries/badge_modal_media_queries.css */ "./frontend/css/media_queries/badge_modal_media_queries.css");
 // TAILWIND
 
 
@@ -1106,6 +1107,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // MEDIA QUERIES
+
 
 
 
@@ -1612,6 +1614,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************************!*\
   !*** ./frontend/css/media_queries/account_page_media_queries.css ***!
   \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/media_queries/badge_modal_media_queries.css":
+/*!******************************************************************!*\
+  !*** ./frontend/css/media_queries/badge_modal_media_queries.css ***!
+  \******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";

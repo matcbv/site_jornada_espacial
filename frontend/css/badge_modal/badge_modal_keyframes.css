@@ -1,12 +1,24 @@
 @keyframes resizing-big {
     0%{
-        font-size: 2.4em;
-    }
-    50%{
         font-size: 2.3em;
     }
-    100%{
+    50%{
         font-size: 2.4em;
+    }
+    100%{
+        font-size: 2.3em;
+    }
+}
+
+@keyframes resizing-small {
+    0%{
+        font-size: 1.8em;
+    }
+    50%{
+        font-size: 1.9em;
+    }
+    100%{
+        font-size: 1.8em;
     }
 }
 

@@ -6,14 +6,10 @@ const formController = {
         const ideaFormObj = new ideaFormModel(req.body)
         ideaFormObj.sendData().then(status => {
             if (status.length > 0){             
-                for(const errorObject of status.items()){
-                    console.log(errorObject)
-                }
-                if (status.includes('Escolha um assunto')){
-                    req.flash('subjectError', 'Escolha um assunto')
-                }
-                if(status.includes('Mensagem inválida')){
-                    req.flash('textError', 'Mensagem inválida')
+                for(const errorObject of Object.values(status)){
+                    for(const [key, value] of Object.entries(errorObject)){
+                        req.flash(key, value)
+                    }
                 }
                 return res.redirect('/ideaform')
             } else{
