@@ -14,6 +14,11 @@ class Register {
             if (k === 'email') {
                 if (!validator.isEmail(this.data[k])) {
                     this.errorList.push({ [k]: 'Email inválido' })
+                } else{
+                    const dataQuery = await userModel.findOne({ email: this.data['email'] })
+                    if (dataQuery) {
+                        this.errorList.push({ 'email': 'Email em uso' })
+                    }
                 }
 
             } else if (k === 'birthday') {
@@ -46,18 +51,14 @@ class Register {
                 } else if(this.data[k].length > 16) {
                     this.errorList.push({ [k]: 'Máximo de 16 caracteres' })
                 } else{
-                    await this._checkUser()
+                    const dataQuery = await userModel.findOne({ username: this.data['username'] })
+                    if (dataQuery) {
+                        this.errorList.push({ 'username': 'Usuário já existente' })
+                    }
                 }
             }
         }
         return this.errorList
-    }
-
-    async _checkUser() {
-        const dataQuery = await userModel.findOne({ username: this.data['username'] })
-        if (dataQuery) {
-            this.errorList.push({ 'username': 'Usuário já existente' })
-        }
     }
 
     saveData() {

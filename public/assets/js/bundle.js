@@ -149,7 +149,7 @@ var currentMain = document.querySelector('main');
 
 // ---------- ICONS ---------- 
 var eyeIcons = document.querySelectorAll('.eye-icon');
-var crosslines = document.querySelectorAll('.crossline');
+var closedEyeIcons = document.querySelectorAll('.closed-eye-icon');
 var requirementsIcon = document.querySelector('.requirements-icon');
 
 // ---------- FORMS ----------
@@ -202,13 +202,13 @@ if (registerForm || codeForm || loginForm || passwordForm) {
     _iterator.f();
   }
 }
-if (Array.from(eyeIcons).length > 0 && Array.from(crosslines).length > 0) {
+if (eyeIcons && closedEyeIcons) {
   eyeIcons.forEach(function (element) {
     element.addEventListener('click', function () {
       return showPassword(element);
     });
   });
-  crosslines.forEach(function (element) {
+  closedEyeIcons.forEach(function (element) {
     element.addEventListener('click', function () {
       return showPassword(element);
     });
@@ -218,10 +218,12 @@ function showPassword(element) {
   var input = element.previousElementSibling;
   if (input.type === 'password') {
     input.type = 'text';
-    element.classList.contains('crossline') ? element.style.display = 'none' : element.nextElementSibling.style.display = 'none';
+    element.style.display = 'none';
+    element.nextElementSibling.style.display = 'block';
   } else {
     input.type = 'password';
-    element.classList.contains('crossline') ? element.style.display = 'block' : element.nextElementSibling.style.display = 'block';
+    element.style.display = 'none';
+    element.previousElementSibling.style.display = 'block';
   }
 }
 if (requirementsIcon) {

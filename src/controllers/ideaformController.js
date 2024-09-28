@@ -5,7 +5,10 @@ const formController = {
     sendIdea: (req, res) => {
         const ideaFormObj = new ideaFormModel(req.body)
         ideaFormObj.sendData().then(status => {
-            if (status.length > 0){                
+            if (status.length > 0){             
+                for(const errorObject of status.items()){
+                    console.log(errorObject)
+                }
                 if (status.includes('Escolha um assunto')){
                     req.flash('subjectError', 'Escolha um assunto')
                 }

@@ -28,11 +28,16 @@ class Login{
     }
 
     async checkUser(){
+        let dataQuery = ''
         this._checkData()
         if (this.errorList.length > 0){
             return
         }
-        const dataQuery = await userModel.findOne({ username: this.data.username })
+        if(validator.isEmail(this.data.data)){
+            dataQuery = await userModel.findOne({ email: this.data.data })
+        } else{
+            dataQuery = await userModel.findOne({ username: this.data.data })
+        }
         if (!dataQuery) {
             this.errorList.push({ 'username': this.msgList[2] })
         } else if(!bcrypt.compareSync(this.data.password, dataQuery.password)){

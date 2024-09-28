@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const validator = require('validator')
 
 const ideaSchema = new mongoose.Schema({
     subject: {type: String, required: true},
@@ -11,21 +12,20 @@ const IdeaModel = mongoose.model('IdeaForm', ideaSchema)
 class IdeaForm{
     constructor(data){
         this.data = data,
-        this.subject = data.subject,
-        this.text = data.text,
-        this.email = data.email,
         this.status = []
     }
 
     checkData = () => {
-        if(typeof this.subject !== 'string' || this.subject === ''){
-            this.status.push('Escolha um assunto')
+        if(typeof this.data.subject !== 'string' || this.data.subject === ''){
+            this.status.push({'subjectError': 'Escolha um assunto'})
         }
-        if(typeof this.text !== 'string' || this.text === ''){
-            this.status.push('Mensagem inválida')
+        if(typeof this.data.text !== 'string' || this.data.text === ''){
+            this.status.push({'textError': 'Mensagem inválida'})
         }
-        if(typeof this.email !== 'string'){
-            this.email = ''
+        if(this.data.email !== ''){
+            if(!validator.isEmail(this.data.email)){
+                this.status.push({'emailError': 'Email inválido'})
+            }
         }
     }
 

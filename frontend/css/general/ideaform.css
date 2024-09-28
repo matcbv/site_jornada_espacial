@@ -158,12 +158,6 @@ textarea:focus{
     outline: none;
 }
 
-.email-div p{
-    margin: 0 0 4px -2px;
-    font-family: monospace;
-    color: yellow;
-}
-
 .form-buttons-div{
     display: flex;
     flex-flow: row wrap;

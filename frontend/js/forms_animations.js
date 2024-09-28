@@ -7,7 +7,7 @@ const currentMain = document.querySelector('main')
 
 // ---------- ICONS ---------- 
 const eyeIcons = document.querySelectorAll('.eye-icon')
-const crosslines = document.querySelectorAll('.crossline')
+const closedEyeIcons = document.querySelectorAll('.closed-eye-icon')
 const requirementsIcon = document.querySelector('.requirements-icon')
 
 // ---------- FORMS ----------
@@ -49,11 +49,11 @@ if (registerForm || codeForm || loginForm || passwordForm){
     }
 }
 
-if (Array.from(eyeIcons).length > 0 && Array.from(crosslines).length > 0){
+if (eyeIcons && closedEyeIcons){
     eyeIcons.forEach(element => {
         element.addEventListener('click', () => showPassword(element))
     });
-    crosslines.forEach(element => {
+    closedEyeIcons.forEach(element => {
         element.addEventListener('click', () => showPassword(element))
     });
 }
@@ -62,10 +62,12 @@ function showPassword(element) {
     const input = element.previousElementSibling
     if (input.type === 'password'){
         input.type = 'text'
-        element.classList.contains('crossline') ? element.style.display = 'none': element.nextElementSibling.style.display = 'none'
+        element.style.display = 'none'
+        element.nextElementSibling.style.display = 'block'
     } else{
         input.type = 'password'
-        element.classList.contains('crossline') ? element.style.display = 'block': element.nextElementSibling.style.display = 'block'
+        element.style.display = 'none'
+        element.previousElementSibling.style.display = 'block'
     }
 }
 

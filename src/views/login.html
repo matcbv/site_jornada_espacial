@@ -18,10 +18,10 @@
             <form class="login-form" action="/account/signin/login" method="post">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="login-input-div">
-                    <label for="username">Usuário</label>
+                    <label for="data">Usuário/Email</label>
                     <span>
                         <img class="login-icons" src="/images/profile_images/username_icon.png" alt="Ícone de usuário">
-                        <input type="text" name="username" id="username" autocomplete="username" placeholder="<%= usernameError %>" autofocus>
+                        <input type="text" name="data" id="data" autocomplete="username" placeholder="<%= usernameError %>" autofocus>
                     </span>
                 </div>
                 <div class="login-input-div">
@@ -29,8 +29,8 @@
                     <span>
                         <img class="login-icons" src="/images/profile_images/password_icon.png" alt="Ícone de senha">
                         <input class="password-input" type="password" name="password" id="password" autocomplete="current-password" placeholder="<%= passwordError %>">
-                        <img class="eye-icon" src="/images/profile_images/eye_icon.png" alt="Ver Senha">
-                        <span class="crossline"></span>
+                        <img class="eye-icon" src="/images/eye_icon.png" alt="Ver Senha">
+                        <img class="closed-eye-icon" src="/images/closed_eye_icon.png" alt="Esconder senha">
                     </span>
                 </div>
                 <div class="login-btn-div">

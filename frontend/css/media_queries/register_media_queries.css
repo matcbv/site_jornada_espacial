@@ -10,13 +10,8 @@
         width: 260px;
     }
 
-    .eye-icon{
+    .eye-icon, .closed-eye-icon{
         width: 28px;
-    }
-
-    .crossline{
-        height: 28px;
-        right: 22px
     }
 
     .register-main h1{

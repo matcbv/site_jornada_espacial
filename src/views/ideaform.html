@@ -43,8 +43,10 @@
                     <textarea name="text" id="subject-text" placeholder="Deixe aqui sua mensagem..." rows="5"></textarea>
                 </div>
                 <div class="email-div">
-                    <p>(Opcional)</p>
-                    <label for="email">E-mail para contato:</label>
+                    <% if(emailError.length > 0){ %>
+                        <div><p class="error-messages"><%= emailError %></p></div>
+                    <% } %>
+                    <label for="email">E-mail para contato: <span class="emphasis">(Opcional)</span></label>
                     <input type="email" name="email" id="email" placeholder="Informe seu e-mail">
                 </div>
                 <div class="form-buttons-div">
