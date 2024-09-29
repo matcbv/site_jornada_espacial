@@ -86,13 +86,18 @@ topBtn.addEventListener('click', function () {
 // ---------- COWBOY BEBOP ANIMATION ----------
 
 cowboyBebopDiv.addEventListener('click', function () {
-  swordfishDiv.classList.add('travel-animation');
+  var styleSheet = document.createElement('style');
+  document.head.appendChild(styleSheet);
+  var animationHeight = Math.random() * window.innerHeight / 2;
+  styleSheet.innerHTML = "@keyframes swordfish-travel{\n        from{\n            left: -200px;\n            top: ".concat(animationHeight, "px;\n        }\n        to{\n            left: 100vw;\n            top: ").concat(animationHeight + 200, "px;\n        }\n    }");
+  swordfishDiv.style.animation = 'swordfish-travel 2s linear 0s 1 normal both';
   swordfishDiv.style.display = 'block';
   swordfishDiv.addEventListener('click', swordFishClick);
   setTimeout(function () {
-    swordfishDiv.classList.remove('travel-animation');
-    swordfishDiv.removeEventListener('click', swordFishClick);
     swordfishDiv.style.display = 'none';
+    swordfishDiv.style.animation = '';
+    swordfishDiv.removeEventListener('click', swordFishClick);
+    document.head.removeChild(styleSheet);
   }, 2000);
 });
 function swordFishClick() {
@@ -205,17 +210,16 @@ if (registerForm || codeForm || loginForm || passwordForm) {
 if (eyeIcons && closedEyeIcons) {
   eyeIcons.forEach(function (element) {
     element.addEventListener('click', function () {
-      return showPassword(element);
+      return showPassword(element, element.previousElementSibling);
     });
   });
   closedEyeIcons.forEach(function (element) {
     element.addEventListener('click', function () {
-      return showPassword(element);
+      return showPassword(element, element.previousElementSibling.previousElementSibling);
     });
   });
 }
-function showPassword(element) {
-  var input = element.previousElementSibling;
+function showPassword(element, input) {
   if (input.type === 'password') {
     input.type = 'text';
     element.style.display = 'none';
@@ -266,6 +270,37 @@ if (resendEmailBtn) {
     sessionStorage.setItem('emailSent', 'true');
     window.location.href = '/resendEmail/password_email?prevPage=' + encodeURIComponent(window.location.href);
   });
+}
+
+/***/ }),
+
+/***/ "./frontend/js/galaxies_animations.js":
+/*!********************************************!*\
+  !*** ./frontend/js/galaxies_animations.js ***!
+  \********************************************/
+/***/ (() => {
+
+var currentMain = document.querySelector('main');
+var comet = document.querySelector('.comet');
+var asteroid = document.querySelector('.asteroid');
+var lastBody = comet;
+if (currentMain.classList.contains('galaxies-main')) {
+  setInterval(function () {
+    lastBody === comet ? celestialodiesAnimation(asteroid, 'right') : celestialodiesAnimation(comet, 'left');
+  }, 8000);
+}
+function celestialodiesAnimation(celestialBody, direction) {
+  lastBody = celestialBody;
+  var styleSheet = document.createElement('style');
+  document.head.appendChild(styleSheet);
+  var animationHeight = Math.random() * currentMain.offsetHeight / 2;
+  styleSheet.innerHTML = "@keyframes celestial-bodies{\n        from{\n            ".concat(direction, ": -200px;\n            top: ").concat(animationHeight, "px;\n        }\n        to{\n            ").concat(direction, ": 100vw;\n            top: ").concat(animationHeight + 200, "px;\n        }\n    }");
+  celestialBody.style.animation = 'celestial-bodies 4s linear 0s 1 normal both';
+  celestialBody.style.display = 'inline';
+  setTimeout(function () {
+    celestialBody.style.display = 'none';
+    celestialBody.style.animation = '';
+  }, 4000);
 }
 
 /***/ }),
@@ -473,8 +508,8 @@ function musicsFetch(music) {
     return res.json();
   }).then(function (userSession) {
     if (userSession) {
-      if (userSession.badges.some(function (badgeList) {
-        return badgeList.includes('muscial_travaller');
+      if (!userSession.badges.some(function (badgeList) {
+        return badgeList.includes('musical_travaller');
       })) {
         fetch("/getPlayedMusics/".concat(music.classList[0])).then(function (res) {
           return res.json();
@@ -672,6 +707,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var currentMain = document.querySelector('main');
+var clicked = false;
 function addModal(currentMain, html, badgeName) {
   var divModal = document.createElement('div');
   divModal.style.display = 'flex';
@@ -683,11 +719,11 @@ function addModal(currentMain, html, badgeName) {
   var badge = divModal.querySelector('.badge');
   badge.src = "/images/profile_images/".concat(badgeName, "_badge.png");
   badge.classList.add('scale-up-animation');
+  var badgeTitle = divModal.querySelector('h1');
+  badgeTitle.classList.add('resizing-big-animation');
   setTimeout(function () {
     badgeDiv.classList.remove('spinning-animation');
     badge.classList.remove('scale-up-animation');
-    var badgeTitle = divModal.querySelector('h1');
-    badgeTitle.classList.add('resizing-big-animation');
   }, 2000);
   var saveBadgeButton = divModal.querySelector('.save-badge-button');
   var badgeInnerDiv = divModal.querySelector('.badge-inner-div');
@@ -704,32 +740,40 @@ if (currentMain.classList.contains('profile-main')) {
   var badges = badgesDiv.querySelectorAll('img');
   badges.forEach(function (badge) {
     badge.addEventListener('click', function () {
-      if (badge.classList.contains('unlocked-badge')) {
-        fetch("/getBadgeModal/".concat(badge.id)).then(function (res) {
-          return res.text();
-        }).then(function (html) {
-          fetch('/getBadges').then(function (res) {
-            return res.json();
-          }).then(function (userBadges) {
-            userBadges.forEach(function (item) {
-              if (item[0] === badge.id) {
-                addBadgeModal(badgesDiv, html, item[1]);
-              }
+      if (!clicked) {
+        clicked = true;
+        if (badge.classList.contains('unlocked-badge')) {
+          fetch("/getBadgeModal/".concat(badge.id)).then(function (res) {
+            return res.text();
+          }).then(function (html) {
+            fetch('/getBadges').then(function (res) {
+              return res.json();
+            }).then(function (userBadges) {
+              userBadges.forEach(function (item) {
+                if (item[0] === badge.id) {
+                  addBadgeModal(badgesDiv, html, item[1]);
+                  clicked = false;
+                }
+              });
             });
           });
-        });
+        }
       }
     });
   });
   var lockedBadges = document.querySelectorAll('.locked-badge');
   lockedBadges.forEach(function (div) {
     div.addEventListener('click', function () {
-      var badge = div.previousElementSibling;
-      fetch("/getBadgeHintModal/".concat(badge.id)).then(function (res) {
-        return res.text();
-      }).then(function (html) {
-        addBadgeModal(badgesDiv, html);
-      });
+      if (!clicked) {
+        clicked = true;
+        var badge = div.previousElementSibling;
+        fetch("/getBadgeHintModal/".concat(badge.id)).then(function (res) {
+          return res.text();
+        }).then(function (html) {
+          addBadgeModal(badgesDiv, html);
+          clicked = false;
+        });
+      }
     });
   });
 }
@@ -984,17 +1028,15 @@ if (mainProfile) {
   if (shootingStar) {
     document.head.appendChild(styleSheet);
     setInterval(function () {
-      var starHeight = Math.random() * window.innerHeight / 2;
-      styleSheet.innerHTML = "@keyframes shooting-star{\n                                    from{\n                                        right: -200px;\n                                        top: ".concat(starHeight, "px;\n                                    }\n                                    to{\n                                        right: 100vw;\n                                        top: ").concat(starHeight + window.innerHeight / 2, "px;\n                                    }\n                                }");
+      var animationHeight = Math.random() * window.innerHeight / 2;
+      styleSheet.innerHTML = "@keyframes shooting-star{\n                                    from{\n                                        right: -200px;\n                                        top: ".concat(animationHeight, "px;\n                                    }\n                                    to{\n                                        right: 100vw;\n                                        top: ").concat(animationHeight + window.innerHeight / 2, "px;\n                                    }\n                                }");
       shootingStar.style.animation = 'shooting-star 1s linear 0s 1 normal both';
       shootingStar.style.display = 'inline';
       setTimeout(function () {
         shootingStar.style.display = 'none';
         shootingStar.style.animation = '';
-      }, 1499);
-    }, 3500);
-  } else {
-    document.removeChild(styleSheet);
+      }, 1000);
+    }, 4000);
   }
 }
 if (mainEditProfile) {
@@ -1031,19 +1073,19 @@ if (mainEditProfile) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_account_profile_tailwind_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/account/profile/tailwind.css */ "./frontend/css/account/profile/tailwind.css");
 /* harmony import */ var _css_general_window_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/general/window.css */ "./frontend/css/general/window.css");
-/* harmony import */ var _css_general_footer_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/general/footer.css */ "./frontend/css/general/footer.css");
-/* harmony import */ var _css_general_header_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/general/header.css */ "./frontend/css/general/header.css");
-/* harmony import */ var _css_general_fonts_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/general/fonts.css */ "./frontend/css/general/fonts.css");
-/* harmony import */ var _css_general_ideaform_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/general/ideaform.css */ "./frontend/css/general/ideaform.css");
-/* harmony import */ var _css_general_error404_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/error404.css */ "./frontend/css/general/error404.css");
-/* harmony import */ var _css_general_fluid_header_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/general/fluid_header.css */ "./frontend/css/general/fluid_header.css");
-/* harmony import */ var _css_general_playlist_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/general/playlist.css */ "./frontend/css/general/playlist.css");
-/* harmony import */ var _css_general_animation_classes_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/general/animation_classes.css */ "./frontend/css/general/animation_classes.css");
-/* harmony import */ var _css_general_general_keyframes_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/general/general_keyframes.css */ "./frontend/css/general/general_keyframes.css");
-/* harmony import */ var _css_general_aboutme_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/general/aboutme.css */ "./frontend/css/general/aboutme.css");
-/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/index/general_index.css */ "./frontend/css/index/general_index.css");
-/* harmony import */ var _css_index_index_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/index/index.css */ "./frontend/css/index/index.css");
-/* harmony import */ var _css_galaxies_general_galaxies_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/galaxies/general_galaxies.css */ "./frontend/css/galaxies/general_galaxies.css");
+/* harmony import */ var _css_general_general_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/general/general.css */ "./frontend/css/general/general.css");
+/* harmony import */ var _css_general_footer_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/general/footer.css */ "./frontend/css/general/footer.css");
+/* harmony import */ var _css_general_header_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/general/header.css */ "./frontend/css/general/header.css");
+/* harmony import */ var _css_general_fonts_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/general/fonts.css */ "./frontend/css/general/fonts.css");
+/* harmony import */ var _css_general_ideaform_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/general/ideaform.css */ "./frontend/css/general/ideaform.css");
+/* harmony import */ var _css_general_error404_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/general/error404.css */ "./frontend/css/general/error404.css");
+/* harmony import */ var _css_general_fluid_header_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/general/fluid_header.css */ "./frontend/css/general/fluid_header.css");
+/* harmony import */ var _css_general_playlist_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/general/playlist.css */ "./frontend/css/general/playlist.css");
+/* harmony import */ var _css_general_animation_classes_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/general/animation_classes.css */ "./frontend/css/general/animation_classes.css");
+/* harmony import */ var _css_general_general_keyframes_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/general/general_keyframes.css */ "./frontend/css/general/general_keyframes.css");
+/* harmony import */ var _css_general_aboutme_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/general/aboutme.css */ "./frontend/css/general/aboutme.css");
+/* harmony import */ var _css_index_general_index_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/index/general_index.css */ "./frontend/css/index/general_index.css");
+/* harmony import */ var _css_index_index_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/index/index.css */ "./frontend/css/index/index.css");
 /* harmony import */ var _css_galaxies_main_galaxies_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/galaxies/main_galaxies.css */ "./frontend/css/galaxies/main_galaxies.css");
 /* harmony import */ var _css_popups_popups_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../css/popups/popups.css */ "./frontend/css/popups/popups.css");
 /* harmony import */ var _css_account_account_page_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../css/account/account_page.css */ "./frontend/css/account/account_page.css");
@@ -1084,12 +1126,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 // INDEX STYLES
 
 
 
 // GALAXIES STYLES
-
 
 
 // POPUPS STYLES
@@ -1402,19 +1444,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./frontend/css/galaxies/general_galaxies.css":
-/*!****************************************************!*\
-  !*** ./frontend/css/galaxies/general_galaxies.css ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./frontend/css/galaxies/main_galaxies.css":
 /*!*************************************************!*\
   !*** ./frontend/css/galaxies/main_galaxies.css ***!
@@ -1497,6 +1526,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************!*\
   !*** ./frontend/css/general/footer.css ***!
   \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./frontend/css/general/general.css":
+/*!******************************************!*\
+  !*** ./frontend/css/general/general.css ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -9358,6 +9400,7 @@ module.exports["default"] = exports.default;
 /******/ 	__webpack_require__("./frontend/js/index_animations.js");
 /******/ 	__webpack_require__("./frontend/js/header_animations.js");
 /******/ 	__webpack_require__("./frontend/js/general_animations.js");
+/******/ 	__webpack_require__("./frontend/js/galaxies_animations.js");
 /******/ 	__webpack_require__("./frontend/js/popups.js");
 /******/ 	__webpack_require__("./frontend/js/window_animations.js");
 /******/ 	__webpack_require__("./frontend/js/footer_animations.js");

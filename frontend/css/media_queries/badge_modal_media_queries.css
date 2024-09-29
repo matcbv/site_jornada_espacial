@@ -5,8 +5,7 @@
     }
     
     .modal-content h1{
-        animation: resizing-small 3s linear 0s infinite normal backwards;
-        font-size: 1.8em;
+        animation: resizing-small 3s linear 0s infinite normal both;
         width: 300px;
         height: 80px;
         line-height: 40px;

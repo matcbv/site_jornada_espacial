@@ -52,16 +52,6 @@
     }
 }
 
-@keyframes travel {
-    from{
-        left: -200px;
-    }
-    to{
-        left: 100vw;
-        display: none;
-    }
-}
-
 @keyframes to-right {
     from{
         left: -70px;

@@ -42,10 +42,6 @@
     animation: shake 0.5s linear 0s 1 normal none;
 }
 
-.travel-animation{
-    animation: travel 2s linear 0s normal forwards;
-}
-
 .scale-up-animation{
     animation: scale-up 2s linear 0s 1 normal both;
 }
@@ -59,11 +55,11 @@
 }
 
 .resizing-big-animation{
-    animation: resizing-big 3s linear 0s infinite normal backwards;
+    animation: resizing-big 3s linear 0s infinite normal both;
 }
 
 .resizing-small-animation{
-    animation: resizing-small 3s linear 0s infinite normal backwards;
+    animation: resizing-small 3s linear 0s infinite normal both;
 }
 
 .to-profile-animation{

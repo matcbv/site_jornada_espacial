@@ -98,8 +98,19 @@
 .login-btn-div{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    align-items: center;
     width: 320px;
+}
+
+.login-btn-div a{
+    color: white;
+    font-size: 1.1em;
+    font-family: 'Inconsolata';
+    text-underline-offset: 4px
+}
+
+.login-btn-div a:hover{
+    color: rgb(199, 199, 0);
 }
 
 .login-btn{
@@ -113,6 +124,7 @@
     font-weight: 700;
     outline: 1px solid #ff0;
     padding: 10px 25px;
+    margin-right: 25px;
 }
 
 .login-btn:hover, .login-btn:focus{

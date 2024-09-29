@@ -4,8 +4,7 @@
 
     .intro-text-div p{
         font-size: 1.3em;
-        margin-bottom: 10px;
-        width: 82%;
+        width: 80%;
     }
 
     .intro-text .highlight{
@@ -83,7 +82,7 @@
     }
 
     .welcomes-text{
-        margin-bottom: 100px;
+        margin-bottom: 80px;
         width: 100%;
     }
     

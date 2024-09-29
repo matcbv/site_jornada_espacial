@@ -51,15 +51,14 @@ if (registerForm || codeForm || loginForm || passwordForm){
 
 if (eyeIcons && closedEyeIcons){
     eyeIcons.forEach(element => {
-        element.addEventListener('click', () => showPassword(element))
+        element.addEventListener('click', () => showPassword(element, element.previousElementSibling))
     });
     closedEyeIcons.forEach(element => {
-        element.addEventListener('click', () => showPassword(element))
+        element.addEventListener('click', () => showPassword(element, element.previousElementSibling.previousElementSibling))
     });
 }
 
-function showPassword(element) {
-    const input = element.previousElementSibling
+function showPassword(element, input) {
     if (input.type === 'password'){
         input.type = 'text'
         element.style.display = 'none'

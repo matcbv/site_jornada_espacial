@@ -1,4 +1,5 @@
 const currentMain = document.querySelector('main')
+let clicked = false
 
 function addModal(currentMain, html, badgeName) {
     const divModal = document.createElement('div')
@@ -15,11 +16,12 @@ function addModal(currentMain, html, badgeName) {
     badge.src = `/images/profile_images/${badgeName}_badge.png`
     badge.classList.add('scale-up-animation')
 
+    const badgeTitle = divModal.querySelector('h1')
+    badgeTitle.classList.add('resizing-big-animation')
+
     setTimeout(() => {
         badgeDiv.classList.remove('spinning-animation')
         badge.classList.remove('scale-up-animation')
-        const badgeTitle = divModal.querySelector('h1')
-        badgeTitle.classList.add('resizing-big-animation')
     }, 2000);
 
     const saveBadgeButton = divModal.querySelector('.save-badge-button')
@@ -39,20 +41,24 @@ if(currentMain.classList.contains('profile-main')){
     
     badges.forEach(badge => {
         badge.addEventListener('click', () => {
-            if(badge.classList.contains('unlocked-badge')){
-                fetch(`/getBadgeModal/${badge.id}`)
-                .then(res => res.text())
-                .then(html => {
-                    fetch('/getBadges')
-                    .then(res => res.json())
-                    .then(userBadges => {
-                        userBadges.forEach(item => {
-                            if(item[0] === badge.id){
-                                addBadgeModal(badgesDiv, html, item[1])
-                            }
-                        });
+            if (!clicked){
+                clicked = true
+                if(badge.classList.contains('unlocked-badge')){
+                    fetch(`/getBadgeModal/${badge.id}`)
+                    .then(res => res.text())
+                    .then(html => {
+                        fetch('/getBadges')
+                        .then(res => res.json())
+                        .then(userBadges => {
+                            userBadges.forEach(item => {
+                                if(item[0] === badge.id){
+                                    addBadgeModal(badgesDiv, html, item[1])
+                                    clicked = false
+                                }
+                            });
+                        })
                     })
-                })
+                }
             }
         })
     });
@@ -60,12 +66,16 @@ if(currentMain.classList.contains('profile-main')){
     const lockedBadges = document.querySelectorAll('.locked-badge')
     lockedBadges.forEach(div => {
         div.addEventListener('click', () => {
-            const badge = div.previousElementSibling
-            fetch(`/getBadgeHintModal/${badge.id}`)
-            .then(res => res.text())
-            .then(html => {
-                addBadgeModal(badgesDiv, html)    
-            })
+            if (!clicked){
+                clicked = true
+                const badge = div.previousElementSibling
+                fetch(`/getBadgeHintModal/${badge.id}`)
+                .then(res => res.text())
+                .then(html => {
+                    addBadgeModal(badgesDiv, html)
+                    clicked = false
+                })
+            }
         })
     });
 }

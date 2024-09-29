@@ -188,7 +188,7 @@ function musicsFetch(music) {
     .then(res => res.json())
     .then(userSession => {
         if(userSession){
-            if(userSession.badges.some(badgeList => badgeList.includes('muscial_travaller'))){
+            if(!userSession.badges.some(badgeList => badgeList.includes('musical_travaller'))){
                 fetch(`/getPlayedMusics/${music.classList[0]}`)
                 .then(res => res.json())
                 .then(playedMusics => {

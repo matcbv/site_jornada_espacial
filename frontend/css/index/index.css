@@ -19,7 +19,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    min-height: 75vh;
+    min-height: 80vh;
     background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7), transparent);
     font-family: monospace;
     opacity: 0;
@@ -40,9 +40,9 @@
 }
 
 .intro-text-div p{
+    line-height: 1.5em;
     font-size: 1.5em;
-    margin: auto;
-    margin-bottom: 20px;
+    margin: 0 auto 10px auto;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 

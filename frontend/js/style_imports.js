@@ -3,6 +3,7 @@ import "../css/account/profile/tailwind.css"
 
 // GENERAL STYLES
 import "../css/general/window.css"
+import "../css/general/general.css"
 import "../css/general/footer.css"
 import "../css/general/header.css"
 import "../css/general/fonts.css"
@@ -19,7 +20,6 @@ import "../css/index/general_index.css"
 import "../css/index/index.css"
 
 // GALAXIES STYLES
-import "../css/galaxies/general_galaxies.css"
 import "../css/galaxies/main_galaxies.css"
 
 // POPUPS STYLES

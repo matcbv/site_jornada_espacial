@@ -7,6 +7,7 @@ module.exports = {
     entry:  [path.resolve(__dirname, 'frontend', 'js', 'index_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'header_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'general_animations.js'),
+            path.resolve(__dirname, 'frontend', 'js', 'galaxies_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'popups.js'),
             path.resolve(__dirname, 'frontend', 'js', 'window_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'footer_animations.js'),

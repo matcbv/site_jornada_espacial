@@ -1,5 +1,6 @@
 .galaxies-main{
     position: relative;
+    overflow: hidden;
 }
 
 /* ---------- INTRODUCTION SECTION ---------- */
@@ -104,4 +105,11 @@
 
 .celestial-body-img:hover{
     transform: scale(1.05);
+}
+
+/* ---------- TO ANIMATION IMAGES ---------- */
+
+.comet, .asteroid{
+    display: none;
+    position: absolute;
 }

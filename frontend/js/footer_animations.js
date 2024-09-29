@@ -21,14 +21,30 @@ topBtn.addEventListener('click', () => {
 // ---------- COWBOY BEBOP ANIMATION ----------
 
 cowboyBebopDiv.addEventListener('click', () => {
-    swordfishDiv.classList.add('travel-animation')
+    const styleSheet = document.createElement('style')
+    document.head.appendChild(styleSheet)
+
+    const animationHeight = Math.random() * window.innerHeight / 2
+    styleSheet.innerHTML = `@keyframes swordfish-travel{
+        from{
+            left: -200px;
+            top: ${animationHeight}px;
+        }
+        to{
+            left: 100vw;
+            top: ${animationHeight + 200}px;
+        }
+    }`
+    swordfishDiv.style.animation =  'swordfish-travel 2s linear 0s 1 normal both'
     swordfishDiv.style.display = 'block'
     swordfishDiv.addEventListener('click', swordFishClick)
     setTimeout(() => {
-        swordfishDiv.classList.remove('travel-animation')
-        swordfishDiv.removeEventListener('click', swordFishClick)
         swordfishDiv.style.display = 'none'
+        swordfishDiv.style.animation = ''
+        swordfishDiv.removeEventListener('click', swordFishClick)
+        document.head.removeChild(styleSheet)
     }, 2000)
+    
 })
 
 function swordFishClick() {

@@ -105,15 +105,15 @@ if (mainProfile){
     if(shootingStar){
         document.head.appendChild(styleSheet)
         setInterval(() => {
-            const starHeight = Math.random() * window.innerHeight / 2
+            const animationHeight = Math.random() * window.innerHeight / 2
             styleSheet.innerHTML = `@keyframes shooting-star{
                                     from{
                                         right: -200px;
-                                        top: ${starHeight}px;
+                                        top: ${animationHeight}px;
                                     }
                                     to{
                                         right: 100vw;
-                                        top: ${starHeight + window.innerHeight / 2}px;
+                                        top: ${animationHeight + window.innerHeight / 2}px;
                                     }
                                 }`
             shootingStar.style.animation =  'shooting-star 1s linear 0s 1 normal both'
@@ -121,10 +121,8 @@ if (mainProfile){
             setTimeout(() => {
                 shootingStar.style.display = 'none'
                 shootingStar.style.animation = ''
-            }, 1499)
-        }, 3500)
-    } else{
-        document.removeChild(styleSheet)
+            }, 1000)
+        }, 4000)
     }
 }
 
