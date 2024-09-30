@@ -198,7 +198,7 @@ function musicsFetch(music) {
                             .then(data => data.text())
                             .then(html => {addModal(currentMain, html, 'musical_travaller')})
                             .catch(() => {})
-                        }, 1000)
+                        }, 500)
                     }
                 })
             }

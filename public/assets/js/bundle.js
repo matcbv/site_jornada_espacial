@@ -86,19 +86,23 @@ topBtn.addEventListener('click', function () {
 // ---------- COWBOY BEBOP ANIMATION ----------
 
 cowboyBebopDiv.addEventListener('click', function () {
-  var styleSheet = document.createElement('style');
-  document.head.appendChild(styleSheet);
-  var animationHeight = Math.random() * window.innerHeight / 2;
-  styleSheet.innerHTML = "@keyframes swordfish-travel{\n        from{\n            left: -200px;\n            top: ".concat(animationHeight, "px;\n        }\n        to{\n            left: 100vw;\n            top: ").concat(animationHeight + 200, "px;\n        }\n    }");
-  swordfishDiv.style.animation = 'swordfish-travel 2s linear 0s 1 normal both';
-  swordfishDiv.style.display = 'block';
-  swordfishDiv.addEventListener('click', swordFishClick);
-  setTimeout(function () {
-    swordfishDiv.style.display = 'none';
-    swordfishDiv.style.animation = '';
-    swordfishDiv.removeEventListener('click', swordFishClick);
-    document.head.removeChild(styleSheet);
-  }, 2000);
+  if (!clicked) {
+    clicked = true;
+    var styleSheet = document.createElement('style');
+    document.head.appendChild(styleSheet);
+    var animationHeight = Math.random() * window.innerHeight / 2;
+    styleSheet.innerHTML = "@keyframes swordfish-travel{\n            from{\n                left: -200px;\n                top: ".concat(animationHeight, "px;\n            }\n            to{\n                left: 100vw;\n                top: ").concat(animationHeight + 200, "px;\n            }\n        }");
+    swordfishDiv.style.animation = 'swordfish-travel 2s linear 0s 1 normal both';
+    swordfishDiv.style.display = 'block';
+    swordfishDiv.addEventListener('click', swordFishClick);
+    setTimeout(function () {
+      swordfishDiv.style.display = 'none';
+      swordfishDiv.style.animation = '';
+      swordfishDiv.removeEventListener('click', swordFishClick);
+      document.head.removeChild(styleSheet);
+      clicked = false;
+    }, 2000);
+  }
 });
 function swordFishClick() {
   if (!clicked) {
@@ -521,7 +525,7 @@ function musicsFetch(music) {
               }).then(function (html) {
                 (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'musical_travaller');
               })["catch"](function () {});
-            }, 1000);
+            }, 500);
           }
         });
       }
@@ -850,7 +854,7 @@ if (currentMain.classList.contains('galaxies-main') || currentMain.classList.con
                             }).then(function (html) {
                               (0,_modal_animations__WEBPACK_IMPORTED_MODULE_0__["default"])(currentMain, html, 'galactic_explorer');
                             })["catch"](function () {});
-                          }, 1000);
+                          }, 500);
                         }
                       });
                     }

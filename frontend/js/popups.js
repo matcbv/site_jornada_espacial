@@ -30,7 +30,7 @@ if(currentMain.classList.contains('galaxies-main') || currentMain.classList.cont
                                                     .then(data => data.text())
                                                     .then(html => {addModal(currentMain, html, 'galactic_explorer')})
                                                     .catch(() => {})
-                                                }, 1000)
+                                                }, 500)
                                             }
                                         })
                                     }
