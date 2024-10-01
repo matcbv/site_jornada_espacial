@@ -3,7 +3,7 @@ const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 const path = require('path')
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry:  [path.resolve(__dirname, 'frontend', 'js', 'index_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'header_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'general_animations.js'),
