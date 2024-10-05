@@ -395,7 +395,11 @@ if (currentMain.classList.contains('index-main')) {
     soundOff.style.display = 'none';
   });
   mscPopupCloseIcon.addEventListener('click', function () {
-    document.body.removeChild(mscPopup);
+    mscPopup.classList.remove('msc-popup-appear-animation');
+    mscPopup.classList.add('disappear-animation');
+    setTimeout(function () {
+      document.body.removeChild(mscPopup);
+    }, 500);
   });
 }
 if (audioDiv) {

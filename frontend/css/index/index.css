@@ -102,11 +102,11 @@
     justify-content: space-evenly;
     align-items: center;
     position: fixed;
-    bottom: 50px;
-    left: 50px;
-    width: 230px;
+    bottom: 30px;
+    left: 30px;
+    width: 240px;
     height: 150px;
-    border-radius: 7px;
+    border-radius: 10px;
     background-color: rgb(9, 8, 23);
     border: 2px solid rgb(45, 62, 92);
     opacity: 0;
@@ -118,6 +118,7 @@
     width: 160px;
     font-family: monospace;
     font-size: 0.9em;
+    line-height: 1.3em;
 }
 
 .msc-popup button{
@@ -125,12 +126,12 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    border-radius: 5px;
+    width: 120px;
+    border-radius: 15px;
     background-color: transparent;
     border: 1px solid yellow;
     color: white;
-    padding: 3px 0;
+    padding: 5px 0;
     font-family: monospace;
     font-weight: bold;
 }

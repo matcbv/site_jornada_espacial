@@ -13,12 +13,13 @@
         width: 100%;
         background-color: rgb(16 13 21);
         border-radius: 10px;
-        padding: 20px 0;
+        padding: 30px 0;
         margin: 0;
     }
     
     .popup-img-div{
         height: auto;
+        margin: 0 0 15px 0;
     }
 
     .popup-image{
@@ -28,21 +29,10 @@
     .popup-content h2{
         margin: 0 auto 15px auto;
     }
-}
-
-@media (min-width: 768px) and (max-width: 992px){
 
     .popup-content p{
         font-size: 1em;
-        width: 80%;
-    }
-
-    .popup-content h2{
-        font-size: 2em;
-    }
-
-    .icons-div{
-        top: 20px
+        width: 85%;
     }
 }
 
@@ -54,13 +44,9 @@
         line-height: 1.25em;
     }
 
-    .popup-img-div img{
-        margin-bottom: 15px;
-    }
-
     .icons-div{ 
         top: 15px;
-        right: 12px;
+        right: 15px;
         flex-flow: row nowrap;
     }
 

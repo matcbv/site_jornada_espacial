@@ -79,7 +79,11 @@ if(currentMain.classList.contains('index-main')){
     })
 
     mscPopupCloseIcon.addEventListener('click', () => {
-        document.body.removeChild(mscPopup)
+        mscPopup.classList.remove('msc-popup-appear-animation')
+        mscPopup.classList.add('disappear-animation')
+        setTimeout(() => {
+            document.body.removeChild(mscPopup)
+        }, 500)
     })
 }
 
