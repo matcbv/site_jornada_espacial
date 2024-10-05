@@ -21,11 +21,7 @@
         height: auto;
         margin: 0 0 15px 0;
     }
-
-    .popup-image{
-        align-self: flex-end;
-    }
-
+    
     .popup-content h2{
         margin: 0 auto 15px auto;
     }
