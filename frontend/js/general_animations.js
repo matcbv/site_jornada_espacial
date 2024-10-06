@@ -2,13 +2,6 @@ import addModal from "./modal_animations"
 
 // ---------- HTML ELEMENTS ----------
 
-// Intro and footer
-const introSection = document.querySelector('.intro-section')
-const footer = document.querySelector('footer')
-
-// Buttons
-const backHomePageBtn = document.querySelector('.back-homepage-btn')
-
 // Audio elements
 const mscPopup = document.querySelector('.msc-popup')
 const audioDiv = document.querySelector('.audio-div')
@@ -28,8 +21,8 @@ const currentMain = document.querySelector('main')
 
 if(currentMain.classList.contains('index-main')){
     const mscPopupCloseIcon = document.querySelector('.msc-popup-close-icon')
-    const play = document.querySelector('.play')
-    const introSectionRect = introSection.getBoundingClientRect()
+    const playBtn = document.querySelector('.play-btn')
+    const introSectionRect = document.querySelector('.intro-section').getBoundingClientRect()
 
     // Evento para aparição do popup para início da trilha sonora:
     window.addEventListener('load', () => {
@@ -57,7 +50,7 @@ if(currentMain.classList.contains('index-main')){
         }
     })
 
-    play.addEventListener('click', () => {
+    playBtn.addEventListener('click', () => {
         const currentAudio = sessionStorage.getItem('currentAudio')
         const redbonesSoundWaveIcon = document.querySelector('#redbone').querySelector('.sound-wave-icon')
         if(currentAudio){
@@ -73,7 +66,11 @@ if(currentMain.classList.contains('index-main')){
             lastSoundWaveIcon = redbonesSoundWaveIcon
             musicsFetch(toPlayAudio)
         }
-        document.body.removeChild(mscPopup)
+        mscPopup.classList.remove('msc-popup-appear-animation')
+        mscPopup.classList.add('disappear-animation')
+        setTimeout(() => {
+            document.body.removeChild(mscPopup)
+        }, 500)
         soundOn.style.display = 'block'
         soundOff.style.display = 'none'
     })
@@ -227,7 +224,7 @@ window.addEventListener('click', (e) => {
 
 if(audioDiv){
     if(!currentMain.classList.contains('ideaform-main') && !currentMain.classList.contains('login-main') && !currentMain.classList.contains('password-main')){
-        const footerRectTop = footer.getBoundingClientRect().top
+        const footerRectTop = document.querySelector('footer').getBoundingClientRect().top
         const audioDivRectBottom = audioDiv.getBoundingClientRect().bottom
         window.addEventListener('scroll', () => {
             if (window.scrollY >= footerRectTop - audioDivRectBottom){
@@ -246,12 +243,4 @@ if(audioDiv){
         playlistDiv.style.position = 'absolute'
         playlistDiv.style.bottom = '85px'
     }
-}
-
-// ---------- 404 BUTTON ----------
-
-if (backHomePageBtn){
-    backHomePageBtn.addEventListener('click', () => {
-        window.location.href = '/'
-    })
 }

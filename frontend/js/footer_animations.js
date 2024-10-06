@@ -2,9 +2,6 @@ import addModal from "./modal_animations"
 
 // ---------- HTML ELEMENTS ----------
 
-const footer = document.querySelector('footer')
-
-const topBtn = document.querySelector('.top-btn')
 const cowboyBebopDiv = document.querySelector('.cowboy-bebop-div')
 const swordfishDiv = document.querySelector('.swordfish-div')
 
@@ -14,7 +11,7 @@ let clicked = false
 
 // ---------- TOP BUTTON ----------
 
-topBtn.addEventListener('click', () => {
+document.querySelector('.top-btn').addEventListener('click', () => {
     window.scrollTo({top: 0, behavior: "smooth"})
 })
 
@@ -70,7 +67,7 @@ function swordFishClick() {
 // ---------- TROCANDO AS CORES DO RODAPÉ AO ENTRAR NO PERFIL DO USUÁRIO ----------
 
 if (currentMain.classList.contains('profile-main') || currentMain.classList.contains('edit-profile-main')){
-    footer.classList.add('profile-footer')
+    document.querySelector('footer').classList.add('profile-footer')
 } else{
-    footer.classList.remove('profile-footer')
+    document.querySelector('footer').classList.remove('profile-footer')
 }

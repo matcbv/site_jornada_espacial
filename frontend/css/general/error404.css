@@ -52,26 +52,27 @@
     width: 80%;
     margin: auto;
     margin-bottom: 50px;
-    line-height: 1.3em;
+    line-height: 1.4em;
 }
 
-.main-div-error button{
+.main-div-error a{
     display: block;
     margin: auto;
-    padding: 10px 20px;
+    padding: 10px 35px;
     border: 3px solid rgb(28 23 67);
     background-color: transparent;
-    border-radius: 7px;
+    border-radius: 10px;
     color: white;
     font-size: 1.4em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
     font-style: italic;
+    text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s linear 0s;
+    transition: border-radius 0.1s linear 0s;
 }
 
-.main-div-error button:hover{
-    transform: scale(1.05);
+.main-div-error a:hover{
+    border-radius: 26px;
     cursor: pointer;
 }

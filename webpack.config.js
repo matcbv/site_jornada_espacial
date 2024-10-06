@@ -1,9 +1,10 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
+const TerserPLugin = require('terser-webpack-plugin')
 const path = require('path')
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry:  [path.resolve(__dirname, 'frontend', 'js', 'index_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'header_animations.js'),
             path.resolve(__dirname, 'frontend', 'js', 'general_animations.js'),
@@ -47,7 +48,7 @@ module.exports = {
     },
     optimization:{
         minimize: true,
-        minimizer: [new CssMinimizerWebpackPlugin()]
+        minimizer: [new CssMinimizerWebpackPlugin(), new TerserPLugin({terserOptions: {format: {comments: false}}})]
     },
     plugins: [
         new MiniCssExtractPlugin({
