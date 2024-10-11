@@ -1,7 +1,6 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 
-
 export default [
   {
     // Arquivos onde o Eslint deve ser aplicado
@@ -24,6 +23,7 @@ export default [
     rules: {
       // Garante que sejam usadas apenas operadores de comparação estrita
       eqeqeq: ["error"],
+      // Garante o uso de chaves em estruturas condicionais e de controle de fluxo. Com all, garantimos que a regra seja estrita para todos os casos.
       curly: ["error", "all"],
       // Define o número máximo de linhas vazias entre códigos
       "no-multiple-empty-lines": ["error", {"max": 2}],

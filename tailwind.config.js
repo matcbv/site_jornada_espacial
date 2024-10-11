@@ -3,6 +3,7 @@ const path = require('path')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [path.resolve(__dirname, 'src', 'views', '**', '*.html')],
+  // Com themes, conseguimos personalizar e estender o design system do Tailwind, configurando aspectos como cores, espaçamentos, fontes, e outros valores que serão utilizados nas classes utilitárias.
   theme: {
     extend: {
       width:{
@@ -67,7 +68,9 @@ module.exports = {
     },
   },
   plugins: [],
+  // Em corePlugins, controlamos quais plugins do núcleo do Tailwind serão ativados ou desativados.
   corePlugins: {
+    // No Tailwind CSS, o plugin preflight é responsável por aplicar um conjunto de estilos base resetados e padronizados ao HTML. Ele atua como uma reinicialização de estilos, removendo as diferenças padrão entre navegadores, como margens, espaçamentos e tipografia, e garantindo uma base mais consistente para os estilos que serão definidos.
     preflight: false
   }
 }
