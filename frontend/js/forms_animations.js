@@ -40,7 +40,6 @@ if (registerForm || codeForm || loginForm || passwordForm){
                 if(!validator.isNumeric(data)){
                     input.value = input.value.slice(0, -1)
                 }
-                console.log(Array.from(input.value))
                 if (Array.from(input.value).length === 2 || Array.from(input.value).length === 5){
                     input.value += '/'
                 }

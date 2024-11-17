@@ -1,7 +1,7 @@
 const userModel = require('../models/userModel')
 const {userData} = require('../middlewares/globalMiddlewares')
 
-const userController = {
+const userMiddleware = {
     checkLog: async (req, res, next) => {
         if (!req.session.user){
             return res.redirect('/account')
@@ -89,4 +89,4 @@ const userController = {
     }
 }
 
-module.exports = userController
+module.exports = userMiddleware

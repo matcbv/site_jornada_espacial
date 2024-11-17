@@ -34,7 +34,7 @@ try{
     throw new Error(e)
 }
 
-// Gerados de senhas aleatórias
+// Gerador de senhas aleatórias
 function secretGenerator(){
     let secret = ''
     for(let i=0; i<=30; i++){
@@ -75,8 +75,12 @@ app.use(flashesMiddleware)
 app.use(userData)
 
 // Adicionando nosso roteador de rotas à aplicação
-const routes = require('./routes')
-app.use(routes)
+const { glob } = require('glob')
+const routes = glob.sync(path.resolve(__dirname, 'routes', '*.js'))
+for (const route of routes){
+    const router = require(route);
+    app.use(router)
+}
 
 // Definindo a página de erro em caso de erro 404
 app.use((req, res) => { res.status(404).render('error404.html') })

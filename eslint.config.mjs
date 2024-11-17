@@ -2,6 +2,7 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 
 export default [
+  pluginJs.configs.recommended,
   {
     // Arquivos onde o Eslint deve ser aplicado
     files: ["src/**/*.js"],
@@ -33,7 +34,6 @@ export default [
       "no-alert": ["warn"]
     }
   },
-  pluginJs.configs.recommended,
   {
     // Arquivos a serem ignorados
     ignores: [

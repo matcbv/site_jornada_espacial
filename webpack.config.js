@@ -1,22 +1,14 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
-const TerserPLugin = require('terser-webpack-plugin')
-const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
+const TerserPLugin = require('terser-webpack-plugin');
+const path = require('path');
+const { glob } = require('glob');
+
+const pathList = glob.sync(path.resolve(__dirname, 'frontend', 'js', '*.js'));
 
 module.exports = {
     mode: 'production',
-    entry:  [path.resolve(__dirname, 'frontend', 'js', 'index_animations.js'),
-            path.resolve(__dirname, 'frontend', 'js', 'header_animations.js'),
-            path.resolve(__dirname, 'frontend', 'js', 'general_animations.js'),
-            path.resolve(__dirname, 'frontend', 'js', 'galaxies_animations.js'),
-            path.resolve(__dirname, 'frontend', 'js', 'popups.js'),
-            path.resolve(__dirname, 'frontend', 'js', 'window_animations.js'),
-            path.resolve(__dirname, 'frontend', 'js', 'footer_animations.js'),
-            path.resolve(__dirname, 'frontend', 'js', 'forms_animations.js'),
-            path.resolve(__dirname, 'frontend', 'js', 'profile_animations.js'),
-            path.resolve(__dirname, 'frontend', 'js', 'edit_profile_animations.js'),
-            path.resolve(__dirname, 'frontend', 'js', 'modal_animations.js'),
-            path.resolve(__dirname, 'frontend', 'js', 'style_imports.js')],
+    entry: pathList,
     output: {
         path: path.resolve(__dirname, 'public', 'assets'),
         filename: 'js/bundle.js'

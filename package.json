@@ -43,6 +43,7 @@
     "css-minimizer-webpack-plugin": "^7.0.0",
     "dotenv": "^16.4.5",
     "eslint": "^9.10.0",
+    "glob": "^11.0.0",
     "globals": "^15.9.0",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.0",
