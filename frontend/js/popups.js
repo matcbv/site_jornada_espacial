@@ -1,20 +1,20 @@
-import addModal from "./modal_animations"
+import addModal from "./modal_animations";
 
-const images = document.querySelectorAll('img')
-const currentMain = document.querySelector('main')
-let clicked = false
+const images = document.querySelectorAll('img');
+const currentMain = document.querySelector('main');
+let clicked = false;
 
 if(currentMain.classList.contains('galaxies-main') || currentMain.classList.contains('profile-main')){
     // Fetch para a requisição dos popups
     document.addEventListener('click', (e) => {
-        const element = e.target
+        const element = e.target;
         if(element.tagName.toLowerCase() === "img" && element.classList.contains('celestial-body-img') && !clicked){
-            clicked = true
+            clicked = true;
             for(const image of images){
                 if (element.id !== 'dotted_circle' && element.id === image.id) {
                     fetch(`/popup/${element.id}`).then(res => {
                         if (!res.ok){
-                            throw new Error('Erro na requisição do popup.')
+                            throw new Error('Erro na requisição do popup.');
                         } else{
                             fetch('/loggedIn')
                             .then(res => res.json())
@@ -29,43 +29,43 @@ if(currentMain.classList.contains('galaxies-main') || currentMain.classList.cont
                                                     fetch('/getModal')
                                                     .then(data => data.text())
                                                     .then(html => {addModal(currentMain, html, 'galactic_explorer')})
-                                                    .catch(() => {})
-                                                }, 500)
-                                            }
-                                        })
-                                    }
-                                }
-                            })
+                                                    .catch(e => {throw new Error(e)});
+                                                }, 500);
+                                            };
+                                        });
+                                    };
+                                };
+                            });
                             res.text().then(html => {
-                                getPopup(html, currentMain, element.id)
-                                clicked = false
-                            })
-                        }
-                    })
-                }
-            }
-        }
-    })
-}
+                                getPopup(html, currentMain, element.id);
+                                clicked = false;
+                            });
+                        };
+                    });
+                };
+            };
+        };
+    });
+};
 
 // Função para adição do conteúdo obtido na página
 function getPopup(html, currentMain, celestialBody){
-    const divPopup = document.createElement('div')
-    divPopup.style.display = 'flex'
-    divPopup.classList.add('appear-animation', 'popup')
-    divPopup.innerHTML = html
+    const divPopup = document.createElement('div');
+    divPopup.style.display = 'flex';
+    divPopup.classList.add('appear-animation', 'popup');
+    divPopup.innerHTML = html;
     if(currentMain.classList.contains('profile-main')){
-        divPopup.querySelector('.popup-content').style.backgroundColor = '#040216'
-    }
-    currentMain.appendChild(divPopup)
+        divPopup.querySelector('.popup-content').style.backgroundColor = '#040216';
+    };
+    currentMain.appendChild(divPopup);
 
-    const closeIcon = divPopup.querySelector('.close-icon')
+    const closeIcon = divPopup.querySelector('.close-icon');
     closeIcon.addEventListener('click', () => {
-        divPopup.classList.add('disappear-animation')
+        divPopup.classList.add('disappear-animation');
         setTimeout(() => {
-            currentMain.removeChild(divPopup)
-        }, 500)
-    })
+            currentMain.removeChild(divPopup);
+        }, 500);
+    });
 
     const ideaIcon = document.querySelector('.idea-icon')
     ideaIcon.addEventListener('click', () => {

@@ -13,9 +13,17 @@ router.get('/getBadges', userMiddleware.getBadges);
 // Rota para adicionar modal das insígneas na tela
 router.get('/getModal', userMiddleware.checkLog, staticController.getModal);
 // Rota para obter o modal contendo a descrição de cada insígnea
-router.get('/getBadgeModal/:badge', userMiddleware.checkLog, staticController.getBadgeModal);
+router.get(
+	'/getBadgeModal/:badge',
+	userMiddleware.checkLog,
+	staticController.getBadgeModal,
+);
 // Rota para obter o modal de dicas de cada insígnea
-router.get('/getBadgeHintModal/:badge', userMiddleware.checkLog, staticController.getBadgeHintModal);
+router.get(
+	'/getBadgeHintModal/:badge',
+	userMiddleware.checkLog,
+	staticController.getBadgeHintModal,
+);
 // Rota para adicionar insígneas ao perfil do usuário
 router.get('/addBadge/:badge', userMiddleware.addBadge);
 

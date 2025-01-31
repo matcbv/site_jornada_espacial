@@ -11,7 +11,7 @@ module.exports = {
     entry: pathList,
     output: {
         path: path.resolve(__dirname, 'public', 'assets'),
-        filename: 'js/bundle.js'
+        filename: 'js/bundle.js',
     },
     module: {
         rules: [
@@ -22,30 +22,30 @@ module.exports = {
                     loader: "babel-loader",
                     options: {
                         presets: ["@babel/preset-env"]
-                    }
+                    },
                 },
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 type: 'asset/resource',
                 generator: {
                   filename: 'images/[name][ext]',
-                }
-            }
-        ]
+                },
+            },
+        ],
     },
     optimization:{
         minimize: true,
-        minimizer: [new CssMinimizerWebpackPlugin(), new TerserPLugin({terserOptions: {format: {comments: false}}})]
+        minimizer: [new CssMinimizerWebpackPlugin(), new TerserPLugin({terserOptions: {format: {comments: false}}})],
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'css/styles.css'
-        })
+            filename: 'css/styles.css',
+        }),
     ],
-    devtool: 'source-map'
-}
+    devtool: 'source-map',
+};

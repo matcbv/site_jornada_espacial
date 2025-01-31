@@ -30,7 +30,10 @@ router.get('/account/password', pagesController.passwordPage);
 // Rota para checar a existência do usuário
 router.get('/account/password/getUser/:emailType', loginController.getUser);
 // Página para troca da senha
-router.get('/account/password/changePassword', pagesController.changePasswordPage);
+router.get(
+	'/account/password/changePassword',
+	pagesController.changePasswordPage,
+);
 // Rota para checar e atualizar a nova senha
 router.post('/savePassword', loginController.savePassword);
 

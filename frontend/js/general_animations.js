@@ -1,21 +1,21 @@
-import addModal from "./modal_animations"
+import addModal from "./modal_animations";
 
 // ---------- HTML ELEMENTS ----------
 
 // Audio elements
-const mscPopup = document.querySelector('.msc-popup')
-const audioDiv = document.querySelector('.audio-div')
-const soundOn = document.querySelector('.sound-on')
-const soundOff = document.querySelector('.sound-off')
-const musicIcon = document.querySelector('.music-icon')
-const playlistDiv = document.querySelector('.playlist-div')
-const musics = document.querySelectorAll('.musics')
-let toStopAudio = ''
-let toPlayAudio = ''
-let lastSoundWaveIcon = ''
+const mscPopup = document.querySelector('.msc-popup');
+const audioDiv = document.querySelector('.audio-div');
+const soundOn = document.querySelector('.sound-on');
+const soundOff = document.querySelector('.sound-off');
+const musicIcon = document.querySelector('.music-icon');
+const playlistDiv = document.querySelector('.playlist-div');
+const musics = document.querySelectorAll('.musics');
+let toStopAudio = '';
+let toPlayAudio = '';
+let lastSoundWaveIcon = '';
 
 // Current main
-const currentMain = document.querySelector('main')
+const currentMain = document.querySelector('main');
 
 // ---------- PLAY POPUP ----------
 
@@ -224,23 +224,23 @@ window.addEventListener('click', (e) => {
 
 if(audioDiv){
     if(!currentMain.classList.contains('ideaform-main') && !currentMain.classList.contains('login-main') && !currentMain.classList.contains('password-main')){
-        const footerRectTop = document.querySelector('footer').getBoundingClientRect().top
-        const audioDivRectBottom = audioDiv.getBoundingClientRect().bottom
+        const footerRectTop = document.querySelector('footer').getBoundingClientRect().top;
+        const audioDivRectBottom = audioDiv.getBoundingClientRect().bottom;
         window.addEventListener('scroll', () => {
             if (window.scrollY >= footerRectTop - audioDivRectBottom){
-                audioDiv.style.position = 'absolute'
-                playlistDiv.style.position = 'absolute'
+                audioDiv.style.position = 'absolute';
+                playlistDiv.style.position = 'absolute';
             } else{
-                audioDiv.style.position = 'fixed'
-                playlistDiv.style.position = 'fixed'
-            }
-        })
+                audioDiv.style.position = 'fixed';
+                playlistDiv.style.position = 'fixed';
+            };
+        });
     } else{
-        audioDiv.style.position = 'absolute'
-        audioDiv.style.flexFlow = 'row nowrap'
-        soundOff.style.margin = '0 auto 0 10px'
-        soundOn.style.margin = '0 auto 0 10px'
-        playlistDiv.style.position = 'absolute'
-        playlistDiv.style.bottom = '85px'
-    }
+        audioDiv.style.position = 'absolute';
+        audioDiv.style.flexFlow = 'row nowrap';
+        soundOff.style.margin = '0 auto 0 10px';
+        soundOn.style.margin = '0 auto 0 10px';
+        playlistDiv.style.position = 'absolute';
+        playlistDiv.style.bottom = '85px';
+    };
 }

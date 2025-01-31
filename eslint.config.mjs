@@ -1,8 +1,10 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
+import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
   pluginJs.configs.recommended,
+  eslintConfigPrettier,
   {
     // Arquivos onde o Eslint deve ser aplicado
     files: ["src/**/*.js"],
@@ -10,7 +12,7 @@ export default [
     languageOptions: {
       // Define o tipo de variáveis globais que estarão disponíveis no ambiente de programação
       globals: globals.node,
-      sourceType: "script"
+      sourceType: "script",
     },
   },
   {
@@ -31,7 +33,7 @@ export default [
       // Garante o uso de Camel Case em nosso código.
       camelcase: ["error"],
       // Regra para não uso de mensagem de alerta em geral.
-      "no-alert": ["warn"]
+      "no-alert": ["warn"],
     }
   },
   {
