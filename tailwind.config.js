@@ -55,7 +55,7 @@ module.exports = {
         '997': '997',
         '998': '998',
         '999': '999',
-        '1001': '1001'
+        '1001': '1001',
       },
       backgroundImage:{
         'radial-purple': 'radial-gradient(#16124780, transparent)',
@@ -63,14 +63,14 @@ module.exports = {
       },
       animation:{
         'levitate': 'levitate 1.5s ease-in-out 0s infinite alternate both',
-        'resizing': 'resizing 2s linear 0s infinite normal both;'
-      }
+        'resizing': 'resizing 2s linear 0s infinite normal both;',
+      },
     },
   },
   plugins: [],
   // Em corePlugins, controlamos quais plugins do núcleo do Tailwind serão ativados ou desativados.
   corePlugins: {
     // No Tailwind CSS, o plugin preflight é responsável por aplicar um conjunto de estilos base resetados e padronizados ao HTML. Ele atua como uma reinicialização de estilos, removendo as diferenças padrão entre navegadores, como margens, espaçamentos e tipografia, e garantindo uma base mais consistente para os estilos que serão definidos.
-    preflight: false
-  }
-}
+    preflight: false,
+  },
+};

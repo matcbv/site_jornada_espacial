@@ -1,6 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
-const TerserPLugin = require('terser-webpack-plugin');
 const path = require('path');
 const { glob } = require('glob');
 
@@ -40,7 +39,7 @@ module.exports = {
     },
     optimization:{
         minimize: true,
-        minimizer: [new CssMinimizerWebpackPlugin(), new TerserPLugin({terserOptions: {format: {comments: false}}})],
+        minimizer: [new CssMinimizerWebpackPlugin()],
     },
     plugins: [
         new MiniCssExtractPlugin({
