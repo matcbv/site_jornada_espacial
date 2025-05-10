@@ -10,9 +10,9 @@ const staticController = {
 					}
 				} else {
 					req.session.visitedBodies = [req.params.body];
-				}
-			}
-		}
+				};
+			};
+		};
 		return res.sendFile(
 			path.resolve(
 				__dirname,

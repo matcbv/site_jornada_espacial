@@ -61,10 +61,10 @@ function flashesMiddleware(req, res, next) {
 	next();
 }
 
-module.exports = {
+module.exports = [
 	csrfMiddleware,
 	varMiddlewares,
 	userData,
 	includesMiddleware,
 	flashesMiddleware,
-};
+];

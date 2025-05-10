@@ -1,25 +1,20 @@
-import validator from "validator"
+import validator from "validator";
 
 // ---------- HTML ELEMENTS ----------
 
-// ---------- FORM MAIN ----------
 const currentMain = document.querySelector('main');
 
-// ---------- ICONS ---------- 
 const eyeIcons = document.querySelectorAll('.eye-icon');
 const closedEyeIcons = document.querySelectorAll('.closed-eye-icon');
 const requirementsIcon = document.querySelector('.requirements-icon');
 
-// ---------- FORMS ----------
 const registerForm = document.querySelector('.register-form');
 const codeForm = document.querySelector('.code-form');
 const loginForm = document.querySelector('.login-form');
 const passwordForm = document.querySelector('.password-form');
 
-// ---------- INPUTS ----------
 const inputs = document.querySelectorAll('input');
 
-// ---------- BUTTONS ----------
 const resendEmailBtn = document.querySelector('.resend-email');
 
 // ---------- REGISTER FORM ANIMATIONS ----------
@@ -79,7 +74,7 @@ if (requirementsIcon){
             setTimeout(() => {
                 requirementsDiv.style.display = 'flex';
             }, 500);
-            currentMain.addEventListener('click', hideRequirements)
+            currentMain.addEventListener('click', hideRequirements);
         } else if(window.getComputedStyle(requirementsDiv).display === 'flex'){
             requirementsDiv.classList.remove('fast-appear-animation');
             requirementsDiv.classList.add('disappear-animation');
@@ -91,7 +86,7 @@ if (requirementsIcon){
     });
 
     function hideRequirements(e){
-        const element = e.target
+        const element = e.target;
         if(!requirementsDiv.contains(element) && window.getComputedStyle(requirementsDiv).display === 'flex'){
             if (window.getComputedStyle(requirementsDiv).display === 'flex'){
                 requirementsDiv.classList.remove('fast-appear-animation');
@@ -109,7 +104,11 @@ if (requirementsIcon){
 if (resendEmailBtn){
     resendEmailBtn.addEventListener('click', () => {
         sessionStorage.setItem('emailSent', 'true');
-        // Utilizando o encodeURIComponent para codificação de caracteres não alfanuméricos:
+        /*
+            Utilizando o encodeURIComponent para codificação de caracteres não alfanuméricos:
+
+            Obs.: Só é necessário utilizar encodeURIComponent ao montarmos a URL programaticamente no código, na qual seu valor pode conter caracteres especiais como: espaços, acentos e símbolos (&, =, ?, #, etc.).
+        */
         window.location.href = '/resendEmail/password_email?prevPage=' + encodeURIComponent(window.location.href);
     });
 };

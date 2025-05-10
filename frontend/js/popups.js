@@ -28,8 +28,8 @@ if(currentMain.classList.contains('galaxies-main') || currentMain.classList.cont
                                                 setTimeout(() => {
                                                     fetch('/getModal')
                                                     .then(data => data.text())
-                                                    .then(html => {addModal(currentMain, html, 'galactic_explorer')})
-                                                    .catch(e => {throw new Error(e)});
+                                                    .then(html => {addModal(currentMain, html, 'galactic_explorer');})
+                                                    .catch(e => {throw new Error(e);});
                                                 }, 500);
                                             };
                                         });
@@ -67,13 +67,13 @@ function getPopup(html, currentMain, celestialBody){
         }, 500);
     });
 
-    const ideaIcon = document.querySelector('.idea-icon')
+    const ideaIcon = document.querySelector('.idea-icon');
     ideaIcon.addEventListener('click', () => {
-        window.location.href = '/ideaForm'
-    })
+        window.location.href = '/ideaForm';
+    });
 
-    const starIcon = document.querySelector('.star-icon')
-    const selectedStarIcon = document.querySelector('.selected-star-icon')
+    const starIcon = document.querySelector('.star-icon');
+    const selectedStarIcon = document.querySelector('.selected-star-icon');
     fetch('/loggedIn')
     .then(res => res.json())
     .then(userSession => {
@@ -82,22 +82,22 @@ function getPopup(html, currentMain, celestialBody){
             .then(res => res.json())
             .then(favBody => {
                 if(favBody === celestialBody){
-                    starIcon.style.display = 'none'
-                    selectedStarIcon.style.display = 'block'
+                    starIcon.style.display = 'none';
+                    selectedStarIcon.style.display = 'block';
                 } else{
-                    starIcon.style.display = 'block'
-                    selectedStarIcon.style.display = 'none'
+                    starIcon.style.display = 'block';
+                    selectedStarIcon.style.display = 'none';
                     starIcon.addEventListener('click', () => {
-                        window.location.href = `/favBody/${celestialBody}`
-                    })
+                        window.location.href = `/favBody/${celestialBody}`;
+                    });
                 }
-            })
+            });
         } else{
-            starIcon.style.display = 'block'
-            selectedStarIcon.style.display = 'none'
+            starIcon.style.display = 'block';
+            selectedStarIcon.style.display = 'none';
             starIcon.addEventListener('click', () => {
-                window.location.href = '/account'
-            })
+                window.location.href = '/account';
+            });
         }
-    })
+    });
 }

@@ -41,11 +41,11 @@ cowboyBebopDiv.addEventListener('click', () => {
         swordfishDiv.removeEventListener('click', swordFishClick);
         document.head.removeChild(styleSheet);
     }, 2000);
-})
+});
 
 function swordFishClick() {
     if (!clicked){
-        clicked = true
+        clicked = true;
         fetch('/loggedIn')
         .then(res => res.json())
         .then(userSession => {

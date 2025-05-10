@@ -4,8 +4,9 @@ const bcrypt = require('bcrypt');
 
 class Register {
 	constructor(data) {
-		(this.data = data), (this.errorList = []);
-	}
+		this.data = data;
+		this.errorList = [];
+	};
 
 	async checkData() {
 		for (let k of Object.keys(this.data)) {

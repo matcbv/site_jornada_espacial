@@ -4,7 +4,7 @@ const asteroid = document.querySelector('.asteroid');
 let lastBody = comet;
 
 if(currentMain.classList.contains('galaxies-main')){
-    setInterval(() => {lastBody === comet ? celestialBodiesAnimation(asteroid, 'right'): celestialBodiesAnimation(comet, 'left')}, 8000);
+    setInterval(() => {lastBody === comet ? celestialBodiesAnimation(asteroid, 'right'): celestialBodiesAnimation(comet, 'left');}, 8000);
 };
 
 function celestialBodiesAnimation(celestialBody, direction){
@@ -22,7 +22,7 @@ function celestialBodiesAnimation(celestialBody, direction){
             ${direction}: 100vw;
             top: ${animationHeight + 200}px;
         }
-    }`
+    }`;
     celestialBody.style.animation =  'celestial-bodies 4s linear 0s 1 normal both';
     celestialBody.style.display = 'inline';
     setTimeout(() => {

@@ -11,7 +11,8 @@ const IdeaModel = mongoose.model('IdeaForm', ideaSchema);
 
 class IdeaForm {
 	constructor(data) {
-		(this.data = data), (this.status = []);
+		this.data = data;
+		this.status = [];
 	}
 
 	checkData = () => {

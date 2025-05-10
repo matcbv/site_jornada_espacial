@@ -32,7 +32,7 @@ const registerController = {
 				emailHTML,
 			);
 			return res.redirect('/account/signUp/validation');
-		}
+		};
 	},
 
 	validation: (req, res) => {
@@ -43,7 +43,7 @@ const registerController = {
 		} else {
 			req.flash('codeError', 'Código inválido');
 			return res.redirect('/account/signUp/validation');
-		}
+		};
 	},
 };
 
