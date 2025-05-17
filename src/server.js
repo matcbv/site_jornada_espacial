@@ -10,7 +10,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 // Definindo a rota dos arquivos estáticos
-app.use(express.static(path.join(process.cwd(), 'public', 'assets')));
+console.log('Static content:', path.resolve(__dirname, '..', 'public'));
+app.use(express.static(path.resolve(__dirname, '..', 'public')));
 
 // Definindo a engine de visualização da aplicação
 app.set('view engine', 'ejs');

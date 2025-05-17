@@ -1,88 +1,89 @@
-.modal{
-    position: relative;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1001;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+.modal {
+	position: relative;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 1001;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal-box{
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background: url("/public/assets/images/confetti.gif") center;
-    background-size: contain;
+.modal-box {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: url('/public/images/confetti.gif') center;
+	background-size: contain;
 }
 
-.modal-content{
-    display: flex;
-    flex-flow: column nowrap;
-    margin: 80px 0;
-    align-items: center;
-    justify-content: center;
+.modal-content {
+	display: flex;
+	flex-flow: column nowrap;
+	margin: 80px 0;
+	align-items: center;
+	justify-content: center;
 }
 
-.modal-content h1{
-    font-family: monospace;
-    height: 45px;
-    letter-spacing: 3px;
-    text-align: center;
-    width: 600px;
-    color: rgb(255, 255, 95);
-    margin-bottom: 40px;
+.modal-content h1 {
+	font-family: monospace;
+	height: 45px;
+	letter-spacing: 3px;
+	text-align: center;
+	width: 600px;
+	color: rgb(255, 255, 95);
+	margin-bottom: 40px;
 }
 
-.badge-div, .badge-inner-div{
-    width: 300px;
-    height: 300px;
+.badge-div,
+.badge-inner-div {
+	width: 300px;
+	height: 300px;
 }
 
-.badge{
-    width: 100%;
+.badge {
+	width: 100%;
 }
 
-.save-badge-button{
-    display: block;
-    margin: 40px auto 0 auto;
-    padding: 10px 40px;
-    border: 2px solid yellow;
-    background-color: transparent;
-    border-radius: 27px;
-    color: white;
-    font-size: 1.6em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    font-style: italic;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s linear 0s;
+.save-badge-button {
+	display: block;
+	margin: 40px auto 0 auto;
+	padding: 10px 40px;
+	border: 2px solid yellow;
+	background-color: transparent;
+	border-radius: 27px;
+	color: white;
+	font-size: 1.6em;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-weight: bold;
+	font-style: italic;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	transition: transform 0.3s linear 0s;
 }
 
-.save-badge-button:hover{
-    cursor: pointer;
-    transform: scale(1.05);
+.save-badge-button:hover {
+	cursor: pointer;
+	transform: scale(1.05);
 }
 
-.badge-name{
-    font-family: monospace;
-    font-size: 2em;
-    letter-spacing: 2px;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 15px;
+.badge-name {
+	font-family: monospace;
+	font-size: 2em;
+	letter-spacing: 2px;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 15px;
 }
 
-.centralizing-badge{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.centralizing-badge {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
