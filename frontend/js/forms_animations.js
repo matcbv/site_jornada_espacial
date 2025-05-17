@@ -1,4 +1,4 @@
-import validator from "validator";
+import validator from 'validator';
 
 // ---------- HTML ELEMENTS ----------
 
@@ -19,96 +19,111 @@ const resendEmailBtn = document.querySelector('.resend-email');
 
 // ---------- REGISTER FORM ANIMATIONS ----------
 
-if (registerForm || codeForm || loginForm || passwordForm){
-    for (let input of inputs){
-        if (input.type !== 'submit' && input.type !== 'button'){
-            input.addEventListener('click', () => {
-                input.placeholder = '';
-            });
-            input.addEventListener('focus', () => {
-                input.placeholder = '';
-            });
-        };
-        if(input.id === 'birthday'){
-            input.addEventListener('input', (event) => {
-                const data = event.data;
-                if(!validator.isNumeric(data)){
-                    input.value = input.value.slice(0, -1);
-                };
-                if (Array.from(input.value).length === 2 || Array.from(input.value).length === 5){
-                    input.value += '/';
-                };
-            });
-        };
-    };
-};
-
-if (eyeIcons && closedEyeIcons){
-    eyeIcons.forEach(element => {
-        element.addEventListener('click', () => showPassword(element, element.previousElementSibling));
-    });
-    closedEyeIcons.forEach(element => {
-        element.addEventListener('click', () => showPassword(element, element.previousElementSibling.previousElementSibling));
-    });
-};
-
-function showPassword(element, input) {
-    if (input.type === 'password'){
-        input.type = 'text';
-        element.style.display = 'none';
-        element.nextElementSibling.style.display = 'block';
-    } else{
-        input.type = 'password';
-        element.style.display = 'none';
-        element.previousElementSibling.style.display = 'block';
-    };
+if (registerForm || codeForm || loginForm || passwordForm) {
+	for (let input of inputs) {
+		if (input.type !== 'submit' && input.type !== 'button') {
+			input.addEventListener('click', () => {
+				input.placeholder = '';
+			});
+			input.addEventListener('focus', () => {
+				input.placeholder = '';
+			});
+		}
+		if (input.id === 'birthday') {
+			input.addEventListener('input', (event) => {
+				const data = event.data;
+				if (!validator.isNumeric(data)) {
+					input.value = input.value.slice(0, -1);
+				}
+				if (
+					Array.from(input.value).length === 2 ||
+					Array.from(input.value).length === 5
+				) {
+					input.value += '/';
+				}
+			});
+		}
+	}
 }
 
-if (requirementsIcon){
-    const requirementsDiv = requirementsIcon.nextElementSibling;
+if (eyeIcons && closedEyeIcons) {
+	eyeIcons.forEach((element) => {
+		element.addEventListener('click', () =>
+			showPassword(element, element.previousElementSibling),
+		);
+	});
+	closedEyeIcons.forEach((element) => {
+		element.addEventListener('click', () =>
+			showPassword(
+				element,
+				element.previousElementSibling.previousElementSibling,
+			),
+		);
+	});
+}
 
-    requirementsIcon.addEventListener('click', () => {
-        if (window.getComputedStyle(requirementsDiv).display === 'none'){
-            requirementsDiv.classList.remove('disappear-animation');
-            requirementsDiv.classList.add('fast-appear-animation');
-            setTimeout(() => {
-                requirementsDiv.style.display = 'flex';
-            }, 500);
-            currentMain.addEventListener('click', hideRequirements);
-        } else if(window.getComputedStyle(requirementsDiv).display === 'flex'){
-            requirementsDiv.classList.remove('fast-appear-animation');
-            requirementsDiv.classList.add('disappear-animation');
-            setTimeout(() => {
-                requirementsDiv.style.display = 'none';
-            }, 500);
-            currentMain.removeEventListener('click', hideRequirements);
-        };
-    });
+function showPassword(element, input) {
+	if (input.type === 'password') {
+		input.type = 'text';
+		element.style.display = 'none';
+		element.nextElementSibling.style.display = 'block';
+	} else {
+		input.type = 'password';
+		element.style.display = 'none';
+		element.previousElementSibling.style.display = 'block';
+	}
+}
 
-    function hideRequirements(e){
-        const element = e.target;
-        if(!requirementsDiv.contains(element) && window.getComputedStyle(requirementsDiv).display === 'flex'){
-            if (window.getComputedStyle(requirementsDiv).display === 'flex'){
-                requirementsDiv.classList.remove('fast-appear-animation');
-                requirementsDiv.classList.add('disappear-animation');
-                setTimeout(() => {
-                    requirementsDiv.style.display = 'none';
-                }, 500);
-            };
-        };
-    };
-};
+if (requirementsIcon) {
+	const requirementsDiv = requirementsIcon.nextElementSibling;
+
+	requirementsIcon.addEventListener('click', () => {
+		if (window.getComputedStyle(requirementsDiv).display === 'none') {
+			requirementsDiv.classList.remove('disappear-animation');
+			requirementsDiv.classList.add('fast-appear-animation');
+			setTimeout(() => {
+				requirementsDiv.style.display = 'flex';
+			}, 500);
+			currentMain.addEventListener('click', hideRequirements);
+		} else if (window.getComputedStyle(requirementsDiv).display === 'flex') {
+			requirementsDiv.classList.remove('fast-appear-animation');
+			requirementsDiv.classList.add('disappear-animation');
+			setTimeout(() => {
+				requirementsDiv.style.display = 'none';
+			}, 500);
+			currentMain.removeEventListener('click', hideRequirements);
+		}
+	});
+
+	function hideRequirements(e) {
+		const element = e.target;
+		if (
+			!requirementsDiv.contains(element) &&
+			window.getComputedStyle(requirementsDiv).display === 'flex'
+		) {
+			if (window.getComputedStyle(requirementsDiv).display === 'flex') {
+				requirementsDiv.classList.remove('fast-appear-animation');
+				requirementsDiv.classList.add('disappear-animation');
+				setTimeout(() => {
+					requirementsDiv.style.display = 'none';
+				}, 500);
+			}
+		}
+	}
+}
 
 // ---------- VALIDATION POPUP ANIMATIONS ----------
 
-if (resendEmailBtn){
-    resendEmailBtn.addEventListener('click', () => {
-        sessionStorage.setItem('emailSent', 'true');
-        /*
+if (resendEmailBtn) {
+	resendEmailBtn.addEventListener('click', () => {
+		sessionStorage.setItem('emailSent', 'true');
+		/*
             Utilizando o encodeURIComponent para codificação de caracteres não alfanuméricos:
 
             Obs.: Só é necessário utilizar encodeURIComponent ao montarmos a URL programaticamente no código, na qual seu valor pode conter caracteres especiais como: espaços, acentos e símbolos (&, =, ?, #, etc.).
         */
-        window.location.href = '/resendEmail/password_email?prevPage=' + encodeURIComponent(window.location.href);
-    });
-};
+		window.location.href =
+			'/resendEmail/password_email?prevPage=' +
+			encodeURIComponent(window.location.href);
+	});
+}

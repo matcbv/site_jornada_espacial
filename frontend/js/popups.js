@@ -29,7 +29,7 @@ if(currentMain.classList.contains('galaxies-main') || currentMain.classList.cont
                                                     fetch('/getModal')
                                                     .then(data => data.text())
                                                     .then(html => {addModal(currentMain, html, 'galactic_explorer');})
-                                                    .catch(e => {throw new Error(e);});
+                                                    .catch(e => {throw new Error(e.message);});
                                                 }, 500);
                                             };
                                         });

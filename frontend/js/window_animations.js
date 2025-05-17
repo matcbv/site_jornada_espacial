@@ -42,7 +42,7 @@ window.addEventListener('beforeunload', () => {
     if(currentAudio){
         const audio = getMusic(currentAudio);
         sessionStorage.setItem('audioTime', audio.currentTime);
-        sessionStorage.setItem('audioStatus', audio.paused);
+        sessionStorage.setItem('isPaused', audio.paused);
     }
 });
 
@@ -51,8 +51,8 @@ window.addEventListener('load', () => {
     if(currentAudio){
         let soundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon');
         const audio = getMusic(currentAudio);
-        const audioStatus = sessionStorage.getItem('audioStatus');
-        if(audioStatus === 'false'){
+        const isPaused = sessionStorage.getItem('isPaused');
+        if(isPaused === 'false'){
             const audioTime = sessionStorage.getItem('audioTime');
             audio.currentTime = audioTime;
             audio.play();

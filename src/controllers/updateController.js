@@ -1,4 +1,4 @@
-const [ userData ] = require('../middlewares/globalMiddlewares');
+const [userData] = require('../middlewares/globalMiddlewares');
 const Update = require('../models/updateFormModel');
 const userModel = require('../models/userModel');
 
@@ -26,8 +26,8 @@ const updateController = {
 				});
 			} catch (e) {
 				console.error('Erro ao atualizar os dados.', e);
-			};
-		};
+			}
+		}
 	},
 };
 

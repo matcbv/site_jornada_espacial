@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const userModel = require('../models/userModel');
 const loginFormModel = require('../models/loginFormModel');
 const emailController = require('../controllers/emailController');
-const [ userData ] = require('../middlewares/globalMiddlewares');
+const [userData] = require('../middlewares/globalMiddlewares');
 const path = require('path');
 const fs = require('fs');
 
@@ -20,14 +20,14 @@ const loginController = {
 				Object.entries(e).forEach(([field, msg]) => {
 					req.flash(`${field}Error`, msg);
 				});
-			};
+			}
 			return res.redirect('/account/signin');
 		} else {
 			req.session.user = login.userData;
 			userData(req, res, () => {
 				return res.redirect('/account/profile');
 			});
-		};
+		}
 	},
 
 	getUser: async (req, res) => {
@@ -53,8 +53,8 @@ const loginController = {
 						return res.redirect('/account/password/changePassword');
 					} catch (e) {
 						console.error('Erro ao enviar o email.', e);
-					};
-				};
+					}
+				}
 			} else {
 				loginController._userData = await userModel.findOne({
 					username: req.query.data,
@@ -68,11 +68,11 @@ const loginController = {
 						return res.redirect('/account/password/changePassword');
 					} catch (e) {
 						console.error('Erro ao enviar o email.', e);
-					};
+					}
 				} else {
 					req.flash('userError', 'Usuário/Email inválido');
-				};
-			};
+				}
+			}
 		} else {
 			req.flash('userError', 'Usuário/Email inválido');
 		}
@@ -83,7 +83,7 @@ const loginController = {
 		const login = new loginFormModel();
 		if (loginController._code !== req.body.code) {
 			login.errorList.push({ code: 'Código inválido' });
-		};
+		}
 
 		login.checkNewPassword(req.body);
 
@@ -92,7 +92,7 @@ const loginController = {
 				Object.entries(e).forEach(([field, msg]) => {
 					req.flash(`${field}Error`, msg);
 				});
-			};
+			}
 			return res.redirect('/account/password/changePassword');
 		} else {
 			const salt = bcrypt.genSaltSync();
@@ -103,7 +103,7 @@ const loginController = {
 			await loginController._userData.save();
 			req.flash('registerMsg', 'Senha alterada com sucesso!');
 			return res.redirect('/account/signin');
-		};
+		}
 	},
 
 	deleteAccount: async (req, res, next) => {
@@ -112,7 +112,7 @@ const loginController = {
 			next();
 		} catch (e) {
 			console.error('Erro ao excluir o usuário.', e);
-		};
+		}
 	},
 };
 

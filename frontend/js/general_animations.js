@@ -26,9 +26,9 @@ if(currentMain.classList.contains('index-main')){
 
     // Evento para aparição do popup para início da trilha sonora:
     window.addEventListener('load', () => {
-        const audioStatus = sessionStorage.getItem('audioStatus');
-        // Adicionando caso a tela ultrapasse ou não o fim da seção de introdução:
-        if(window.scrollY <= introSectionRect.bottom && audioStatus !== 'false'){
+        const isPaused = sessionStorage.getItem('isPaused');
+        // Adicionando ou não o popup caso a tela ultrapasse o fim da seção de introdução:
+        if(window.scrollY <= introSectionRect.bottom && isPaused !== 'false'){
             mscPopup.classList.add('msc-popup-appear-animation');
         } else{
             document.body.removeChild(mscPopup);
@@ -56,12 +56,12 @@ if(currentMain.classList.contains('index-main')){
         if(currentAudio){
             toPlayAudio = getMusic(currentAudio);
             toPlayAudio.play();
-            sessionStorage.setItem('audioStatus', toPlayAudio.paused);
+            sessionStorage.setItem('isPaused', toPlayAudio.paused);
         } else{
             toPlayAudio = getMusic('redbone');
             toPlayAudio.play();
             sessionStorage.setItem('currentAudio', 'redbone');
-            sessionStorage.setItem('audioStatus', toPlayAudio.paused);
+            sessionStorage.setItem('isPaused', toPlayAudio.paused);
             redbonesSoundWaveIcon.style.display = 'block';
             lastSoundWaveIcon = redbonesSoundWaveIcon;
             musicsFetch(toPlayAudio);
@@ -94,7 +94,7 @@ if (audioDiv){
             toStopAudio = getMusic(currentAudio);
             toStopAudio.pause();
             sessionStorage.setItem('audioTime', toStopAudio.currentTime);
-            sessionStorage.setItem('audioStatus', toStopAudio.paused);
+            sessionStorage.setItem('isPaused', toStopAudio.paused);
             soundOn.style.display = 'none';
             soundOff.style.display = 'block';
         }
@@ -118,7 +118,7 @@ if (audioDiv){
         if(mscPopup && mscPopup.parentElement){
             document.body.removeChild(mscPopup);
         }
-        sessionStorage.setItem('audioStatus', toPlayAudio.paused);
+        sessionStorage.setItem('isPaused', toPlayAudio.paused);
     });
 
     // ---------- MUSIC ICON ----------
@@ -150,7 +150,7 @@ if (audioDiv){
         } else{
             soundWaveIcon = element.querySelector('.sound-wave-icon');
         }
-        const music = getMusic(element.id);
+        toPlayAudio = getMusic(element.id);
         const currentAudio = sessionStorage.getItem('currentAudio');
         if(currentAudio){
             lastSoundWaveIcon = document.getElementById(currentAudio).querySelector('.sound-wave-icon');
@@ -162,14 +162,14 @@ if (audioDiv){
                 lastSoundWaveIcon.style.display = 'none';
             }
         }
-        sessionStorage.setItem('audioStatus', toPlayAudio.paused);
+        sessionStorage.setItem('isPaused', false);
         sessionStorage.setItem('currentAudio', element.id);
-        music.play();
+        toPlayAudio.play();
         soundWaveIcon.style.display = 'block';
         lastSoundWaveIcon = soundWaveIcon;
         soundOff.style.display = 'none';
         soundOn.style.display = 'block';
-        musicsFetch(music);
+        musicsFetch(toPlayAudio);
         if(mscPopup && mscPopup.parentElement){
             document.body.removeChild(mscPopup);
         }
@@ -204,7 +204,9 @@ function musicsFetch(music) {
                 });
             }
         }
-    });
+    }).catch(e => {
+        throw new Error(e.message);
+    })
 }
 
 // ---------- EVENTO PARA DESAPARECIMENTO DA PLAYLIST ----------

@@ -16,6 +16,7 @@ const registerController = {
 					req.flash(`${field}Error`, msg);
 				});
 			}
+
 			return res.redirect('/account/signUp');
 		} else {
 			const filePath = path.resolve(
@@ -32,7 +33,7 @@ const registerController = {
 				emailHTML,
 			);
 			return res.redirect('/account/signUp/validation');
-		};
+		}
 	},
 
 	validation: (req, res) => {
@@ -43,7 +44,7 @@ const registerController = {
 		} else {
 			req.flash('codeError', 'Código inválido');
 			return res.redirect('/account/signUp/validation');
-		};
+		}
 	},
 };
 
