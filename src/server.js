@@ -10,6 +10,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 // Definindo a rota dos arquivos estáticos
+console.log('Root', path.resolve(__dirname));
 console.log('Static content:', path.resolve(__dirname, '..', 'public'));
 app.use(express.static(path.resolve(__dirname, '..', 'public')));
 
