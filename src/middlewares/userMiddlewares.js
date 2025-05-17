@@ -1,11 +1,11 @@
 const userModel = require('../models/userModel');
-const [ userData ] = require('../middlewares/globalMiddlewares');
+const [userData] = require('../middlewares/globalMiddlewares');
 
 const userMiddleware = {
 	checkLog: async (req, res, next) => {
 		if (!req.session.user) {
 			return res.redirect('/account');
-		};
+		}
 		next();
 	},
 
@@ -17,7 +17,7 @@ const userMiddleware = {
 		req.session.destroy((err) => {
 			if (err) {
 				return res.status(500).send('Erro ao finalizar a sessão.');
-			};
+			}
 			res.redirect('/');
 		});
 	},
@@ -43,7 +43,7 @@ const userMiddleware = {
 			});
 		} catch (e) {
 			console.error('Erro ao favoritar corpo celeste', e);
-		};
+		}
 	},
 
 	changeProfileImg: async (req, res) => {
@@ -60,7 +60,7 @@ const userMiddleware = {
 			});
 		} catch (e) {
 			console.error('Erro ao alterar imagem de perfil', e);
-		};
+		}
 	},
 
 	addBadge: async (req, res) => {
@@ -89,7 +89,7 @@ const userMiddleware = {
 			req.session.visitedBodies
 				? res.json(req.session.visitedBodies)
 				: res.json([]);
-		};
+		}
 	},
 
 	getPlayedMusics: (req, res) => {
@@ -106,8 +106,8 @@ const userMiddleware = {
 				return res.json(req.session.playedMusics);
 			} else {
 				return res.json([]);
-			};
-		};
+			}
+		}
 	},
 };
 
