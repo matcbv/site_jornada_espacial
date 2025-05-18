@@ -9,7 +9,7 @@ module.exports = {
     mode: 'production',
     entry: pathList,
     output: {
-        path: path.resolve(__dirname, 'public', 'assets'),
+        path: path.resolve(__dirname, 'public'),
         filename: 'js/bundle.js',
     },
     module: {
