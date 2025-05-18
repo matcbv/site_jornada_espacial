@@ -39,6 +39,6 @@ export default [
 	},
 	{
 		// Arquivos a serem ignorados (node_modules é ignorado por padrão):
-		ignores: ['public/assets/js/**'],
+		ignores: ['public/js/**'],
 	},
 ];
