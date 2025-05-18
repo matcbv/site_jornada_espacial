@@ -1,102 +1,101 @@
-@media (max-width: 992px){
-    
-    /* ------- INTRODUCTION SECTION ------- */
+@media (max-width: 992px) {
+	/* ------- INTRODUCTION SECTION ------- */
 
-    .intro-text-div p{
-        font-size: 1.3em;
-        width: 80%;
-    }
+	.intro-text-div p {
+		font-size: 1.3em;
+		width: 80%;
+	}
 
-    .intro-text .highlight{
-        font-size: 2.1em;
-        width: 100%;
-    }
+	.intro-text .highlight {
+		font-size: 2.1em;
+		width: 100%;
+	}
 
-    .welcomes-text .highlight{
-        font-size: 2.2em;
-    }
+	.welcomes-text .highlight {
+		font-size: 1.7em;
+	}
 
-    .intro-btn{
-        font-size: 1.1em;
-    }
+	.intro-btn {
+		font-size: 1.1em;
+	}
 
-    /* ------- GALAXIES SECTION ------- */
+	/* ------- GALAXIES SECTION ------- */
 
-    .galaxies-section{
-        flex-flow: column nowrap;
-        padding: 0 0 110px 0;
-    }
+	.galaxies-section {
+		flex-flow: column nowrap;
+		padding: 0 0 110px 0;
+	}
 
-    .galaxies-text{
-        width: 90%;
-    }
+	.galaxies-text {
+		width: 90%;
+	}
 
-    .galaxies-text p{
-        font-size: 0.9em;
-        text-align: justify;
-        margin-bottom: 50px;
-        width: 95%;
-        line-height: 1.5em;
-    }
+	.galaxies-text p {
+		font-size: 0.9em;
+		text-align: justify;
+		margin-bottom: 50px;
+		width: 95%;
+		line-height: 1.5em;
+	}
 
-    .galaxies-section h2{
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 2em;
-    }
+	.galaxies-section h2 {
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 2em;
+	}
 
-    .galaxies-links-div a{
-        font-size: 1em;
-        padding: 10px 20px;
-    }
+	.galaxies-links-div a {
+		font-size: 1em;
+		padding: 10px 20px;
+	}
 
-    .galaxies-img-div{
-        width: 100%;
-    }
+	.galaxies-img-div {
+		width: 100%;
+	}
 
-    .milkyway-section{
-        flex-flow: column-reverse nowrap;
-        padding-top: 40px;
-    }
+	.milkyway-section {
+		flex-flow: column-reverse nowrap;
+		padding-top: 40px;
+	}
 
-    .triangle-section{
-        flex-flow: column-reverse nowrap;
-        padding: 35px 0 125px 0 !important;
-    }
+	.triangle-section {
+		flex-flow: column-reverse nowrap;
+		padding: 35px 0 125px 0 !important;
+	}
 
-    .adromeda-section{
-        padding-top: 40px;
-    }
+	.adromeda-section {
+		padding-top: 40px;
+	}
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
+	/* ------- INTRODUCTION SECTION ------- */
 
-    /* ------- INTRODUCTION SECTION ------- */
+	.intro-section {
+		margin-bottom: 100px;
+	}
 
-    .intro-section{
-        margin-bottom: 100px;
-    }
+	.intro-text-div {
+		flex-flow: column nowrap;
+	}
 
-    .intro-text-div{
-        flex-flow: column nowrap;
-    }
+	.welcomes-text {
+		margin-bottom: 80px;
+		width: 100%;
+	}
 
-    .welcomes-text{
-        margin-bottom: 80px;
-        width: 100%;
-    }
-    
-    .intro-text{
-        width: 100%;
-    }
+	.intro-text {
+		width: 100%;
+	}
 
-    /* ------- MUSIC POPUP ------- */
+	/* ------- MUSIC POPUP ------- */
 
-    .msc-popup{
-        display: none;
-    }
+	.msc-popup {
+		display: none;
+	}
 
-    .sound-icon, .music-icon{
-        width: 28px;
-    }
+	.sound-icon,
+	.music-icon {
+		width: 28px;
+	}
 }

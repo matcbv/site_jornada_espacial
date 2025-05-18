@@ -1,340 +1,350 @@
 @import url(keyframes_index.css);
 
-.index-main{
-    position: relative;
-    display: grid;
-    grid-template:  'intro-section' auto
-                    'milkyway-section' 1fr
-                    'andromeda-section' 1fr
-                    'triangle-section' 1fr
-                    / 100%;
-    min-height: 100vh;
+.index-main {
+	position: relative;
+	display: grid;
+	grid-template:
+		'intro-section' auto
+		'milkyway-section' 1fr
+		'andromeda-section' 1fr
+		'triangle-section' 1fr
+		/ 100%;
+	min-height: 100vh;
 }
 
 /* ---------- INTRODUCTION SECTION ---------- */
 
-.intro-section{
-    grid-area: intro-section;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    background-image: linear-gradient(rgba(27, 22, 35), rgba(27, 22, 35, 0.7), transparent);
-    font-family: monospace;
-    opacity: 0;
+.intro-section {
+	grid-area: intro-section;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	min-height: 80vh;
+	background-image: linear-gradient(
+		rgba(27, 22, 35),
+		rgba(27, 22, 35, 0.7),
+		transparent
+	);
+	font-family: monospace;
+	opacity: 0;
 }
 
-.intro-text-div{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    margin: 80px 0;
+.intro-text-div {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	margin: 80px 0;
 }
 
-.intro-text{
-    width: 50%;
-    text-align: center;
-    padding: 0 30px;
+.intro-text {
+	width: 50%;
+	text-align: center;
+	padding: 0 30px;
 }
 
-.intro-text-div p{
-    line-height: 1.5em;
-    font-size: 1.5em;
-    margin: 0 auto 10px auto;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.intro-text-div p {
+	line-height: 1.5em;
+	font-size: 1.5em;
+	margin: 0 auto 10px auto;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.intro-text .highlight{
-    font-family: 'Rubik Mono One';
-    font-size: 3em; 
-    font-style: italic;
-    color: transparent;
-    -webkit-text-stroke: 1px yellow;
-    animation: levitate 1.5s ease-in-out 0s infinite alternate both;
-    text-shadow: none;
+.intro-text .highlight {
+	font-family: 'Rubik Mono One';
+	font-size: 3em;
+	font-style: italic;
+	color: transparent;
+	-webkit-text-stroke: 1px yellow;
+	animation: levitate 1.5s ease-in-out 0s infinite alternate both;
+	text-shadow: none;
 }
 
-.welcomes-text{
-    width: 50%;
-    text-align: center;
-    line-height: 4em;
-    padding: 0 30px;
+.welcomes-text {
+	width: 50%;
+	text-align: center;
+	line-height: 4.5em;
+	padding: 0 30px;
 }
 
-.welcomes-text .highlight{
-    font-family: 'Xanh Mono';
-    font-size: 3.3em;
-    font-style: italic;
-    color: yellow;
+.welcomes-text span {
+	display: block;
+	font-weight: lighter;
 }
 
-.intro-btn-div{
-    width: 100%;
+.welcomes-text .highlight {
+	font-family: 'Xanh Mono';
+	font-size: 2.2em;
+	font-style: italic;
+	color: yellow;
 }
 
-.intro-btn{
-    display: block;
-    margin: auto;
-    padding: 10px 35px;
-    border: 2px solid yellow;
-    background-color: transparent;
-    border-radius: 26px;
-    color: white;
-    font-size: 1.4em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    font-style: italic;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s linear 0s;
+.intro-btn-div {
+	width: 100%;
 }
 
-.intro-btn:hover{
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
-    transform: translateY(7px);
-    cursor: pointer;
+.intro-btn {
+	display: block;
+	margin: auto;
+	padding: 10px 35px;
+	border: 2px solid yellow;
+	background-color: transparent;
+	border-radius: 26px;
+	color: white;
+	font-size: 1.4em;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-weight: bold;
+	font-style: italic;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	transition: transform 0.2s linear 0s;
 }
 
-.msc-popup{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    width: 240px;
-    height: 150px;
-    border-radius: 10px;
-    background-color: rgb(9, 8, 23);
-    border: 2px solid rgb(45, 62, 92);
-    opacity: 0;
-    z-index: 998;
+.intro-btn:hover {
+	box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+	transform: translateY(7px);
+	cursor: pointer;
 }
 
-.msc-popup p{
-    text-align: center;
-    width: 160px;
-    font-family: monospace;
-    font-size: 0.9em;
-    line-height: 1.3em;
+.msc-popup {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	position: fixed;
+	bottom: 30px;
+	left: 30px;
+	width: 240px;
+	height: 150px;
+	border-radius: 10px;
+	background-color: rgb(9, 8, 23);
+	border: 2px solid rgb(45, 62, 92);
+	opacity: 0;
+	z-index: 998;
 }
 
-.play-btn{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    border-radius: 15px;
-    background-color: transparent;
-    border: 1px solid yellow;
-    color: white;
-    padding: 5px 0;
-    font-family: monospace;
-    font-weight: bold;
-    transition: transform .3s linear 0s;
+.msc-popup p {
+	text-align: center;
+	width: 160px;
+	font-family: monospace;
+	font-size: 0.9em;
+	line-height: 1.3em;
 }
 
-.msc-popup button img{
-    margin-left: 5px;
+.play-btn {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	width: 120px;
+	border-radius: 15px;
+	background-color: transparent;
+	border: 1px solid yellow;
+	color: white;
+	padding: 5px 0;
+	font-family: monospace;
+	font-weight: bold;
+	transition: transform 0.3s linear 0s;
 }
 
-.msc-popup button:hover{
-    cursor: pointer;
-    transform: scale(1.05);
+.msc-popup button img {
+	margin-left: 5px;
 }
 
-.msc-popup-close-icon{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 25px;
-    padding: 5px 5px 0 0;
+.msc-popup button:hover {
+	cursor: pointer;
+	transform: scale(1.05);
 }
 
-.msc-popup-close-icon:hover{
-    cursor: pointer;
+.msc-popup-close-icon {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 25px;
+	padding: 5px 5px 0 0;
 }
 
-.audio-div{
-    display: flex;
-    flex-flow: column nowrap;
-    position: fixed;
-    bottom: 25px;
-    right: 10px;
-    z-index: 996;
+.msc-popup-close-icon:hover {
+	cursor: pointer;
 }
 
-.sound-icon{
-    margin-top: 15px;
-    transition: transform 0.3s linear 0s;
+.audio-div {
+	display: flex;
+	flex-flow: column nowrap;
+	position: fixed;
+	bottom: 25px;
+	right: 10px;
+	z-index: 996;
 }
 
-.sound-icon:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+.sound-icon {
+	margin-top: 15px;
+	transition: transform 0.3s linear 0s;
 }
 
-.sound-off{
-    display: block;
+.sound-icon:hover {
+	transform: scale(1.1);
+	cursor: pointer;
 }
 
-.sound-on{
-    display: none;
+.sound-off {
+	display: block;
 }
 
-.music-icon{
-    transition: transform 0.3s linear 0s;
+.sound-on {
+	display: none;
 }
 
-.music-icon:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+.music-icon {
+	transition: transform 0.3s linear 0s;
 }
 
-.galaxies-text{
-    width: 50%;
+.music-icon:hover {
+	transform: scale(1.1);
+	cursor: pointer;
 }
 
-.galaxies-img-div{
-    width: 50%;
+.galaxies-text {
+	width: 50%;
 }
 
-.galaxies-img-div img{
-    display: block;
-    margin: 0 auto 40px auto;
-    animation: galaxie-jump 2s ease-in-out 0s infinite alternate both;
+.galaxies-img-div {
+	width: 50%;
+}
+
+.galaxies-img-div img {
+	display: block;
+	margin: 0 auto 40px auto;
+	animation: galaxie-jump 2s ease-in-out 0s infinite alternate both;
 }
 
 /* ---------- MILKYWAY SECTION ---------- */
 
-.milkyway-section{
-    grid-area: milkyway-section;
+.milkyway-section {
+	grid-area: milkyway-section;
 }
 
-.milkyway-section .milkyway-img img:hover{
-    cursor: pointer;
+.milkyway-section .milkyway-img img:hover {
+	cursor: pointer;
 }
 
-#milkyway-link{
-    border: 3px solid rgb(30, 70, 95);
+#milkyway-link {
+	border: 3px solid rgb(30, 70, 95);
 }
 
-#milkyway-link:hover{
-    box-shadow: inset 0 0 12px rgb(30, 70, 95, 0.6);
+#milkyway-link:hover {
+	box-shadow: inset 0 0 12px rgb(30, 70, 95, 0.6);
 }
 
 /* ---------- ANDROMDEDA SECTION ---------- */
 
-.andromeda-section{
-    grid-area: andromeda-section;
+.andromeda-section {
+	grid-area: andromeda-section;
 }
 
-.andromeda-section .andromeda-img img:hover{
-    cursor: pointer;
+.andromeda-section .andromeda-img img:hover {
+	cursor: pointer;
 }
 
-#andromeda-link{
-    border: 3px solid rgb(111, 96, 139);
+#andromeda-link {
+	border: 3px solid rgb(111, 96, 139);
 }
 
-#andromeda-link:hover{
-    box-shadow: inset 0 0 12px rgb(111, 96, 139, 0.6);
+#andromeda-link:hover {
+	box-shadow: inset 0 0 12px rgb(111, 96, 139, 0.6);
 }
 
 /* ---------- TRIANGLE SECTION ---------- */
 
-.triangle-section{
-    grid-area: triangle-section;
-    padding-bottom: 155px !important;
+.triangle-section {
+	grid-area: triangle-section;
+	padding-bottom: 155px !important;
 }
 
-.triangle-section .triangle-img img{
-    display: block;
-    margin: auto;
-    animation: triangle-jump 2s ease-in-out 0s infinite alternate both;
-    margin-bottom: 5%;
+.triangle-section .triangle-img img {
+	display: block;
+	margin: auto;
+	animation: triangle-jump 2s ease-in-out 0s infinite alternate both;
+	margin-bottom: 5%;
 }
 
-.triangle-section .triangle-img img:hover{
-    cursor: pointer;
+.triangle-section .triangle-img img:hover {
+	cursor: pointer;
 }
 
-#triangle-link{
-    border: 3px solid rgb(207, 144, 169);
+#triangle-link {
+	border: 3px solid rgb(207, 144, 169);
 }
 
-#triangle-link:hover{
-    box-shadow: inset 0 0 12px rgb(207, 144, 169, 0.6);
+#triangle-link:hover {
+	box-shadow: inset 0 0 12px rgb(207, 144, 169, 0.6);
 }
 
 /* ---------- SHARED STYLES ---------- */
 
-.galaxies-section{
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 120px 0;
+.galaxies-section {
+	width: 90%;
+	margin: auto;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	padding: 120px 0;
 }
 
-.galaxies-section:not(.triangle-section){
-    border-bottom: 2px solid rgba(255, 255, 0, 0.7);
+.galaxies-section:not(.triangle-section) {
+	border-bottom: 2px solid rgba(255, 255, 0, 0.7);
 }
 
-.galaxies-section h2{
-    width: 85%;
-    text-align: left;
-    font-family: monospace;
-    font-size: 2.5em;
-    margin: 0 auto 20px auto;
-    color: rgb(199, 199, 0);
+.galaxies-section h2 {
+	width: 85%;
+	text-align: left;
+	font-family: monospace;
+	font-size: 2.5em;
+	margin: 0 auto 20px auto;
+	color: rgb(199, 199, 0);
 }
 
-.galaxies-text p{
-    width: 85%;
-    text-align: left;
-    font-family: 'Inconsolata';
-    font-size: 1.2em;
-    line-height: 1.3em;
-    margin: auto;
+.galaxies-text p {
+	width: 85%;
+	text-align: left;
+	font-family: 'Inconsolata';
+	font-size: 1.2em;
+	line-height: 1.3em;
+	margin: auto;
 }
 
-.galaxies-links-div{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+.galaxies-links-div {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
 }
 
-.galaxies-links-div a{
-    display: block;
-    width: auto;
-    margin-left: 36px;
-    padding: 13px 25px;
-    background-color: transparent;
-    border-radius: 28px;
-    color: white;
-    font-size: 1.1em;
-    font-family: 'Calistoga';
-    font-style: italic;
-    text-decoration: none;
+.galaxies-links-div a {
+	display: block;
+	width: auto;
+	margin-left: 36px;
+	padding: 13px 25px;
+	background-color: transparent;
+	border-radius: 28px;
+	color: white;
+	font-size: 1.1em;
+	font-family: 'Calistoga';
+	font-style: italic;
+	text-decoration: none;
 }
 
-.galaxies-links-div a:hover{
-    cursor: pointer;
+.galaxies-links-div a:hover {
+	cursor: pointer;
 }
 
-.galaxies-links-div span{
-    display: inline-block;
-    font-size: 1.8em;
-    width: 36px;
-    padding-left: 10px;
+.galaxies-links-div span {
+	display: inline-block;
+	font-size: 1.8em;
+	width: 36px;
+	padding-left: 10px;
 }
 
-.rocket{
-    animation: launch 0.5s linear 0s 1 normal forwards;
+.rocket {
+	animation: launch 0.5s linear 0s 1 normal forwards;
 }
