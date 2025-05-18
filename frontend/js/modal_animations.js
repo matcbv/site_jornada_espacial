@@ -14,6 +14,7 @@ function addModal(currentMain, html, badgeName) {
 
 	const badge = divModal.querySelector('.badge');
 	badge.src = `/images/profile_images/${badgeName}_badge.png`;
+	badge.alt = badgeName;
 	badge.classList.add('scale-up-animation');
 
 	const badgeTitle = divModal.querySelector('h1');
