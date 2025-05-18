@@ -1,133 +1,133 @@
-footer{
-    display: grid;
-    grid-template: 'links btn cowboy' 100% / 2fr 1fr 2fr;
-    justify-items: center;
-    align-items: center;
-    background-color: rgba(27, 22, 35);
-    border-top: 2px solid rgb(49, 37, 58);
-    box-shadow: 0 -3px 40px rgba(27, 22, 35);
-    padding: 20px 0;
-    position: relative;
-    z-index: 997;
+footer {
+	display: grid;
+	grid-template: 'links btn cowboy' 100% / 2fr 1fr 2fr;
+	justify-items: center;
+	align-items: center;
+	background-color: rgba(27, 22, 35);
+	border-top: 2px solid rgb(49, 37, 58);
+	box-shadow: 0 -3px 40px rgba(27, 22, 35);
+	padding: 20px 0;
+	position: relative;
+	z-index: 997;
 }
 
-.footer-links-div{
-    grid-area: links;
-    display: flex;
-    flex-flow: column nowrap;
-    padding-left: 60px;
+.footer-links-div {
+	grid-area: links;
+	display: flex;
+	flex-flow: column nowrap;
+	padding-left: 60px;
 }
 
-.footer-links-div ul{
-    display: flex;
-    flex-flow: row wrap;
-    line-height: 2.3em;
-    list-style: none;
-    text-align: center;
+.footer-links-div ul {
+	display: flex;
+	flex-flow: row wrap;
+	line-height: 2.3em;
+	list-style: none;
+	text-align: center;
 }
 
-.footer-links-div li a{
-    color: white;
-    font-size: 1.2em;
-    font-family: monospace;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-right: 20px;
+.footer-links-div li a {
+	color: white;
+	font-size: 1.2em;
+	font-family: monospace;
+	text-decoration: none;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	margin-right: 20px;
 }
 
-.footer-links-div ul a:hover{
-    color: rgb(199, 199, 0);
-    cursor: pointer;
+.footer-links-div ul a:hover {
+	color: rgb(199, 199, 0);
+	cursor: pointer;
 }
 
-.footer-links-div p{
-    font-size: 1.2em;
-    padding-top: 12px;
-    font-family: monospace;
-    color: rgb(199, 199, 0);
+.footer-links-div p {
+	font-size: 1.2em;
+	padding-top: 12px;
+	font-family: monospace;
+	color: rgb(199, 199, 0);
 }
 
-.footer-btn-div button{
-    display: block;
-    padding: 10px 20px;
-    border: 2px solid rgb(199, 199, 0);
-    background-color: transparent;
-    border-radius: 21px;
-    color: white;
-    font-size: 1.1em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    font-style: italic;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s linear 0s;
+.footer-btn-div button {
+	display: block;
+	padding: 10px 20px;
+	border: 2px solid rgb(199, 199, 0);
+	background-color: transparent;
+	border-radius: 21px;
+	color: white;
+	font-size: 1.1em;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-weight: bold;
+	font-style: italic;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	transition: transform 0.3s linear 0s;
 }
 
-.footer-btn-div button:hover{
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transform: translateY(-7px);
-    cursor: pointer;
+.footer-btn-div button:hover {
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	transform: translateY(-7px);
+	cursor: pointer;
 }
 
-.icons-link{
-    color: rgb(199, 199, 0);
-    font-family: monospace;
-    text-decoration: none;
+.icons-link {
+	color: rgb(199, 199, 0);
+	font-family: monospace;
+	text-decoration: none;
 }
 
-.footer-btn-div{
-    grid-area: btn;
+.footer-btn-div {
+	grid-area: btn;
 }
 
-.icons-link:hover{
-    cursor: pointer;
-    color: white;
+.icons-link:hover {
+	cursor: pointer;
+	color: white;
 }
 
-.cowboy-bebop-div{
-    grid-area: cowboy;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    transition: transform 0.3s linear 0s;
+.cowboy-bebop-div {
+	grid-area: cowboy;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	transition: transform 0.3s linear 0s;
 }
 
-.cowboy-bebop-div:hover{
-    cursor: pointer;
-    transform: scale(1.05);
+.cowboy-bebop-div:hover {
+	cursor: pointer;
+	transform: scale(1.05);
 }
 
-.cowboy-bebop-div p{
-    font-family: 'Calistoga';
-    width: 130px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-style: italic;
-    text-align: center;
-    margin-left: 20px;
+.cowboy-bebop-div p {
+	font-family: 'Calistoga';
+	width: 130px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	font-style: italic;
+	text-align: center;
+	margin-left: 20px;
 }
 
-.cowboy-bebop-div img{
-    width: 80px;
-    padding: 0 0 15px 5px;
+.cowboy-bebop-div img {
+	width: 80px;
+	padding: 0 0 15px 5px;
 }
 
-.swordfish-div{
-    display: none;
-    position: fixed;
-    top: 50vh;
-    left: -200px;
-    z-index: 1000;
+.swordfish-div {
+	display: none;
+	position: fixed;
+	top: 50vh;
+	left: -200px;
+	z-index: 1000;
 }
 
-.swordfish-div img{
-    display: block;
+.swordfish-div img {
+	display: block;
 }
 
-.swordfish-div img:hover{
-    cursor: pointer;
+.swordfish-div img:hover {
+	cursor: pointer;
 }
 
-.profile-footer{
-    background-color: rgb(23 25 50);
-    border-top: 2px solid rgb(190, 190, 190);
-    box-shadow: 0 -3px 40px rgba(92, 105, 207, 0.4);
+.profile-footer {
+	background-color: rgb(23 25 50);
+	border-top: 2px solid rgb(190, 190, 190);
+	box-shadow: 0 -3px 40px rgba(92, 105, 207, 0.4);
 }

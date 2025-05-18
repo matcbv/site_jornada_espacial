@@ -1,78 +1,79 @@
-.error-main{
-    display: grid;
-    grid-template: "astronaut" auto
-                    "error" auto
-                    "satellite" auto
-                    / 100%;
-    max-width: 100vw;
-    height: 100vh;
-    justify-items: center;
-    position: relative;
+.error-main {
+	display: grid;
+	grid-template:
+		'astronaut' auto
+		'error' auto
+		'satellite' auto
+		/ 100%;
+	max-width: 100vw;
+	height: 100vh;
+	justify-items: center;
+	position: relative;
 }
 
-.astronaut-div{
-    grid-area: astronaut;
-    align-self: end;
-    justify-self: start;
-    animation: levitate 1.5s ease-in-out 0s infinite alternate both;
-    margin-left: 20vw;
-    padding-top: 40px;
+.astronaut-div {
+	grid-area: astronaut;
+	align-self: end;
+	justify-self: start;
+	animation: levitate 1.5s ease-in-out 0s infinite alternate both;
+	margin-left: 20vw;
+	padding-top: 40px;
 }
 
-.main-div-error{
-    grid-area: error;
-    align-self: center;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+.main-div-error {
+	grid-area: error;
+	align-self: center;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
 }
 
-.satellite-div{
-    grid-area: satellite;
-    align-self: start;
-    justify-self: end;
-    animation: reverse-levitate 1.5s ease-in-out 0s infinite alternate both;
-    margin-right: 15vw;
-    padding: 30px 0;
+.satellite-div {
+	grid-area: satellite;
+	align-self: start;
+	justify-self: end;
+	animation: reverse-levitate 1.5s ease-in-out 0s infinite alternate both;
+	margin-right: 15vw;
+	padding: 30px 0;
 }
 
-.main-div-error h1{
-    text-align: center;
-    font-size: 7em;
-    color: transparent;
-    -webkit-text-stroke: 4px yellow;
-    font-style: italic;
-    font-family: 'Rubik Mono One';
+.main-div-error h1 {
+	text-align: center;
+	font-size: 7em;
+	color: transparent;
+	-webkit-text-stroke: 4px yellow;
+	font-style: italic;
+	font-family: 'Rubik Mono One';
 }
 
-.main-div-error p{
-    font-family: 'Inconsolata';
-    font-size: 1.3em;
-    text-align: center;
-    width: 80%;
-    margin: auto;
-    margin-bottom: 50px;
-    line-height: 1.4em;
+.main-div-error p {
+	font-family: 'Inconsolata';
+	font-size: 1.3em;
+	text-align: center;
+	width: 80%;
+	margin: auto;
+	margin-bottom: 50px;
+	line-height: 1.4em;
 }
 
-.main-div-error a{
-    display: block;
-    margin: auto;
-    padding: 10px 35px;
-    border: 3px solid rgb(28 23 67);
-    background-color: transparent;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.4em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    font-style: italic;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transition: border-radius 0.1s linear 0s;
+.main-div-error a {
+	display: block;
+	margin: auto;
+	padding: 10px 35px;
+	border: 3px solid rgb(28 23 67);
+	background-color: transparent;
+	border-radius: 10px;
+	color: white;
+	font-size: 1.4em;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	transition: border-radius 0.1s linear 0s;
 }
 
-.main-div-error a:hover{
-    border-radius: 26px;
-    cursor: pointer;
+.main-div-error a:hover {
+	border-radius: 26px;
+	cursor: pointer;
 }

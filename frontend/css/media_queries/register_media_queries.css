@@ -1,149 +1,156 @@
-@media (max-width: 992px){
-    .register-input-div input{
-        height: 30px;
-        width: 260px;
-        font-size: 1.1em;
-        padding: 0 15px;
-    }
+@media (max-width: 992px) {
+	.register-input-div input {
+		height: 30px;
+		width: 260px;
+		font-size: 1.1em;
+		padding: 0 15px;
+	}
 
-    .password-div div:first-child{
-        width: 260px;
-    }
+	.password-div div:first-child {
+		width: 260px;
+	}
 
-    .eye-icon, .closed-eye-icon{
-        width: 24px;
-    }
+	.eye-icon,
+	.closed-eye-icon {
+		width: 24px;
+	}
 
-    .register-main h1{
-        font-size: 1.75em;
-    }
+	.register-main h1 {
+		font-size: 1.75em;
+	}
 
-    .register-input-div:nth-child(1) {
-        margin-right: 30px;
-    }
+	.register-input-div:nth-child(1) {
+		margin-right: 30px;
+	}
 
-    .register-btn-div .register-btn{
-        height: 40px;
-        font-size: 1.2em;
-        padding: 0 30px;
-    }
+	.register-btn-div .register-btn {
+		height: 40px;
+		font-size: 1.2em;
+		padding: 0 30px;
+	}
 
-    .register-input-div label{
-        font-size: 1.1em;
-    }
+	.register-input-div label {
+		font-size: 1.1em;
+	}
 
-    .rocket-img-div img{
-        width: 140px;
-    }
+	.rocket-img-div img {
+		width: 140px;
+	}
 
-    .password-requirements p, .new-password-requirements p{
-        font-size: 1em;
-    }
+	.password-requirements p,
+	.new-password-requirements p {
+		font-size: 1em;
+	}
 
-    .password-div ul, .new-password-div ul{
-        font-size: 0.8em;
-    }
+	.password-div ul,
+	.new-password-div ul {
+		font-size: 0.8em;
+	}
 
-    .requirements-icon{
-        width: 20px;
-        height: 20px;
-    }
+	.requirements-icon {
+		width: 20px;
+		height: 20px;
+	}
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
+	.register-main {
+		background-image: linear-gradient(
+			to bottom,
+			rgb(10, 18, 43, 0.8),
+			rgb(12, 17, 33, 0.8),
+			transparent 90%
+		);
+	}
 
-    .register-main{
-        background-image: linear-gradient(to bottom, rgb(10, 18, 43, 0.8), rgb(12, 17, 33, 0.8), transparent 90%);
-    }
+	.register-form > div {
+		margin-top: 0;
+	}
 
-    .register-form > div{
-        margin-top: 0;
-    }
+	.register-form > div:not(:last-child) {
+		flex-flow: column nowrap;
+	}
 
-    .register-form > div:not(:last-child){
-       flex-flow: column nowrap;
-    }
+	.register-input-div {
+		margin-top: 30px;
+	}
 
-    .register-input-div{
-        margin-top: 30px;
-    }
+	.register-input-div:nth-child(1) {
+		margin-right: 0;
+	}
 
-    .register-input-div:nth-child(1) {
-        margin-right: 0;
-    }
+	.register-input-div label {
+		font-size: 1em;
+	}
 
-    .register-input-div label{
-        font-size: 1em;
-    }
+	.register-main h1 {
+		width: 260px;
+		text-align: center;
+		font-size: 1.5em;
+		letter-spacing: 2.2px;
+		line-height: 35px;
+	}
 
-    .register-main h1{
-        width: 260px;
-        text-align: center;
-        font-size: 1.5em;
-        letter-spacing: 2.2px;
-        line-height: 35px;
-    }
+	.register-btn-div {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		margin-top: 30px !important;
+	}
 
-    .register-btn-div{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        margin-top: 30px !important;
-    }
+	.register-btn-div .register-btn {
+		height: 35px;
+		font-size: 1.1em;
+	}
 
-    .register-btn-div .register-btn{
-        height: 35px;
-        font-size: 1.1em;
-    }
+	.rocket-img-div {
+		display: none;
+	}
 
-    .rocket-img-div{
-        display: none;
-    }
+	.rocket-img-div-small {
+		display: block;
+	}
 
-    .rocket-img-div-small{
-        display: block;
-    }
+	.code-popup-div {
+		width: 300px;
+		padding: 30px;
+	}
 
-    .code-popup-div{
-        width: 300px;
-        padding: 30px;
-    }
+	.code-popup-div p:first-child {
+		font-size: 1em;
+	}
 
-    .code-popup-div p:first-child{
-        font-size: 1em;
-    }
+	.code-popup-div p {
+		font-size: 0.95em;
+	}
 
-    .code-popup-div p{
-        font-size: 0.95em;
-    }
+	.code-form > input {
+		font-size: 1.1em;
+	}
 
-    .code-form > input{
-        font-size: 1.1em;
-    }
+	.code-btn-div {
+		width: 240px;
+		flex-flow: column nowrap;
+	}
 
-    .code-btn-div{
-        width: 240px;
-        flex-flow: column nowrap;
-    }
+	.code-btn-div input {
+		font-size: 1em;
+	}
 
-    .code-btn-div input{
-        font-size: 1em;
-    }
+	.code-btn-div input:first-child {
+		margin: 0 0 20px 0;
+	}
 
-    .code-btn-div input:first-child{
-        margin: 0 0 20px 0;
-    }
+	.code-btn-div button {
+		width: 100%;
+	}
 
-    .code-btn-div button{
-        width: 100%;
-    }
+	.code-input {
+		width: 100%;
+		height: 30px;
+	}
 
-    .code-input{
-        width: 100%;
-        height: 30px;
-    }
-
-    .code-input-div label{
-        font-size: 0.9em;
-    }
+	.code-input-div label {
+		font-size: 0.9em;
+	}
 }

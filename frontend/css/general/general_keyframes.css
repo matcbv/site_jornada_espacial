@@ -1,73 +1,73 @@
 @keyframes get-down {
-    from{
-        top: -126px;
-    }
-    to{
-        top: 0;
-    }
+	from {
+		top: -126px;
+	}
+	to {
+		top: 0;
+	}
 }
 
 @keyframes get-up {
-    from{
-        top: 0;
-    }
-    to{
-        top: -126px;
-    }
+	from {
+		top: 0;
+	}
+	to {
+		top: -126px;
+	}
 }
 
 @keyframes background-gradient {
-    from{
-        background-color: rgba(27, 22, 35, 1);
-    }
-    to{
-        outline: 2px solid rgba(199, 199, 0, 0.6);
-        text-shadow: 0 0 3px rgba(255, 255, 0, 0.3);
-        box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
-    }
+	from {
+		background-color: rgba(27, 22, 35, 1);
+	}
+	to {
+		outline: 2px solid rgba(199, 199, 0, 0.6);
+		text-shadow: 0 0 3px rgba(255, 255, 0, 0.3);
+		box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
+	}
 }
 
 @keyframes shake {
-    0%{
-        transform: rotate(0);
-    }
-    25%{
-        transform: rotate(10deg);
-    }
-    50%{
-        transform: rotate(-10deg);
-    }
-    100%{
-        transform: rotate(0);
-    }
+	0% {
+		transform: rotate(0);
+	}
+	25% {
+		transform: rotate(10deg);
+	}
+	50% {
+		transform: rotate(-10deg);
+	}
+	100% {
+		transform: rotate(0);
+	}
 }
 
 @keyframes to-right {
-    from{
-        left: -70px;
-    }
-    to{
-        left: 0px;
-    }
+	from {
+		left: -70px;
+	}
+	to {
+		left: 0px;
+	}
 }
 
 @keyframes to-left {
-    from{
-        left: 0px;
-    }
-    to{
-        left: -70px;
-    }
+	from {
+		left: 0px;
+	}
+	to {
+		left: -70px;
+	}
 }
 
 @keyframes resizing {
-    0%{
-        font-size: large;
-    }
-    50%{
-        font-size: medium;
-    }
-    100%{
-        font-size: large;
-    }
+	0% {
+		font-size: large;
+	}
+	50% {
+		font-size: medium;
+	}
+	100% {
+		font-size: large;
+	}
 }

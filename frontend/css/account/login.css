@@ -1,141 +1,146 @@
-.login-main{
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.login-main {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
-.login-form-div{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    background-image: linear-gradient(rgba(27, 22, 35, 0.8),  rgba(27, 22, 35, 0.7), transparent);
-    width: 650px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-    outline: 1px solid white;
-    padding: 50px 0;
-    margin: 80px 0;
+.login-form-div {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	background-image: linear-gradient(
+		rgba(27, 22, 35, 0.8),
+		rgba(27, 22, 35, 0.7),
+		transparent
+	);
+	width: 650px;
+	border-radius: 10px;
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+	outline: 1px solid white;
+	padding: 50px 0;
+	margin: 80px 0;
 }
 
-.login-form{
-    width: 80%;
+.login-form {
+	width: 80%;
 }
 
-.login-input-div{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    position: relative;
-    width: 320px;
+.login-input-div {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	position: relative;
+	width: 320px;
 }
 
-.login-input-div input{
-    height: 40px;
-    width: 320px;
-    border-radius: 20px;
-    font-family: 'Inconsolata';
-    font-size: 1.2em;
-    font-weight: bold;
-    background-color: transparent;
-    color: white;
-    border: none;
-    outline: 1.5px solid white;
-    padding: 0 45px;
+.login-input-div input {
+	height: 40px;
+	width: 320px;
+	border-radius: 20px;
+	font-family: 'Inconsolata';
+	font-size: 1.2em;
+	font-weight: bold;
+	background-color: transparent;
+	color: white;
+	border: none;
+	outline: 1.5px solid white;
+	padding: 0 45px;
 }
 
-.login-input-div input::placeholder{
-    color: rgb(217, 57, 57);
+.login-input-div input::placeholder {
+	color: rgb(217, 57, 57);
 }
 
-.login-input-div input:focus{
-    outline: 1px solid rgb(48, 31, 85);
-    box-shadow: 0 0 5px rgb(48, 31, 85, 0.5);
+.login-input-div input:focus {
+	outline: 1px solid rgb(48, 31, 85);
+	box-shadow: 0 0 5px rgb(48, 31, 85, 0.5);
 }
 
-.login-input-div label{
-    font-size: 1.1em;
-    font-family: 'Inconsolata';
-    font-weight: bold;
-    margin-bottom: 5px;
-    padding-left: 10px;
-    letter-spacing: 1px;
+.login-input-div label {
+	font-size: 1.1em;
+	font-family: 'Inconsolata';
+	font-weight: bold;
+	margin-bottom: 5px;
+	padding-left: 10px;
+	letter-spacing: 1px;
 }
 
-.login-input-div span{
-    display: flex;
-    align-items: center;
+.login-input-div span {
+	display: flex;
+	align-items: center;
 }
 
-.login-icons{
-    position: absolute;
-    left: 10px;
+.login-icons {
+	position: absolute;
+	left: 10px;
 }
 
-.login-form div:not(:last-child){
-    margin-bottom: 30px;
+.login-form div:not(:last-child) {
+	margin-bottom: 30px;
 }
 
-.login-text-div{
-    width: 80%;
+.login-text-div {
+	width: 80%;
 }
 
-.login-text-div h1{
-    color: yellow;
-    font-family: monospace;
-    font-size: 2.2em;
-    margin-bottom: 20px;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+.login-text-div h1 {
+	color: yellow;
+	font-family: monospace;
+	font-size: 2.2em;
+	margin-bottom: 20px;
+	text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
-.login-text-div p{
-    font-family: 'Inconsolata';
-    font-size: 1.1em;
-    line-height: 1.3em;
+.login-text-div p {
+	font-family: 'Inconsolata';
+	font-size: 1.1em;
+	line-height: 1.3em;
 }
 
-.login-btn-div{
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    width: 320px;
+.login-btn-div {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	width: 320px;
 }
 
-.login-btn-div a{
-    color: white;
-    font-size: 1.1em;
-    font-family: 'Inconsolata';
-    text-underline-offset: 4px
+.login-btn-div a {
+	color: white;
+	font-size: 1.1em;
+	font-family: 'Inconsolata';
+	text-underline-offset: 4px;
 }
 
-.login-btn-div a:hover{
-    color: rgb(199, 199, 0);
+.login-btn-div a:hover {
+	color: rgb(199, 199, 0);
 }
 
-.login-btn{
-    text-decoration: none;
-    background-color: transparent;
-    border: none;
-    border-radius: 20px;
-    color: #fff;
-    font-family: 'Inconsolata';
-    font-size: 1em;
-    font-weight: 700;
-    outline: 1px solid #ff0;
-    padding: 10px 25px;
-    margin-right: 25px;
+.login-btn {
+	text-decoration: none;
+	background-color: transparent;
+	border: none;
+	border-radius: 20px;
+	color: #fff;
+	font-family: 'Inconsolata';
+	font-size: 1em;
+	font-weight: 700;
+	outline: 1px solid #ff0;
+	padding: 10px 25px;
+	margin-right: 25px;
 }
 
-.login-btn:hover, .login-btn:focus{
-    cursor: pointer;
-    outline: 1px solid white;
-    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.6);
+.login-btn:hover,
+.login-btn:focus {
+	cursor: pointer;
+	outline: 1px solid white;
+	box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.6);
 }
 
-.horizontal-row{
-    height: 3px;
-    background-color: rgb(48, 31, 85);
-    width: 80%;
-    margin: 50px 0;
+.horizontal-row {
+	height: 3px;
+	background-color: rgb(48, 31, 85);
+	width: 80%;
+	margin: 50px 0;
 }

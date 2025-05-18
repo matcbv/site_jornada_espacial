@@ -1,101 +1,110 @@
-.signin-main{
-    min-height: 100vh;
-    position: relative;
-    background-image: linear-gradient(to right, rgb(27, 22, 35), rgba(27,22,35,0.6), transparent, rgb(5, 13, 35, 0.6), rgb(5, 13, 35));
+.signin-main {
+	min-height: 100vh;
+	position: relative;
+	background-image: linear-gradient(
+		to right,
+		rgb(27, 22, 35),
+		rgba(27, 22, 35, 0.6),
+		transparent,
+		rgb(5, 13, 35, 0.6),
+		rgb(5, 13, 35)
+	);
 }
 
-.signin-template-content-div{
-    min-height: 100vh;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+.signin-template-content-div {
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
 }
 
-.signin-template-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 80px 0;
+.signin-template-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 80px 0;
 }
 
-.login-div, .register-div{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    width: 45%;
+.login-div,
+.register-div {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	width: 45%;
 }
 
-.login-div div, .register-div div{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+.login-div div,
+.register-div div {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
 }
 
-.signin-template-div p{
-    font-size: 1.2em;
-    line-height: 1.2em;
-    font-family: 'Inconsolata';
-    width: 80%;
-    margin: 30px 0 50px 0;
-    text-align: center;
+.signin-template-div p {
+	font-size: 1.2em;
+	line-height: 1.2em;
+	font-family: 'Inconsolata';
+	width: 80%;
+	margin: 30px 0 50px 0;
+	text-align: center;
 }
 
-.signin-template-div h2{
-    font-size: 2em;
-    -webkit-text-stroke: 1px yellow;
-    font-family: 'Rubik Mono One';
+.signin-template-div h2 {
+	font-size: 2em;
+	-webkit-text-stroke: 1px yellow;
+	font-family: 'Rubik Mono One';
 }
 
-.login-div h2{
-    color: rgb(21, 15, 32);
+.login-div h2 {
+	color: rgb(21, 15, 32);
 }
 
-.register-div h2{
-    color: rgb(6, 5, 35);
+.register-div h2 {
+	color: rgb(6, 5, 35);
 }
 
-.signin-template-div a{
-    text-decoration: none;
-    background-color: transparent;
-    border-radius: 10px;
-    width: 200px;
-    text-align: center;
-    font-size: 1.2em;
-    font-family: 'Inconsolata';
-    color: white;
-    font-weight: bold;
+.signin-template-div a {
+	text-decoration: none;
+	background-color: transparent;
+	border-radius: 10px;
+	width: 200px;
+	text-align: center;
+	font-size: 1.2em;
+	font-family: 'Inconsolata';
+	color: white;
+	font-weight: bold;
 }
 
-.login-div a:hover{
-    cursor: pointer;
-    background-color: rgb(40, 27, 50);
+.login-div a:hover {
+	cursor: pointer;
+	background-color: rgb(40, 27, 50);
 }
 
-.register-div a:hover{
-    cursor: pointer;
-    background-color: rgb(16, 24, 51);
+.register-div a:hover {
+	cursor: pointer;
+	background-color: rgb(16, 24, 51);
 }
 
-.login-div a{
-    border-radius: 20px;
-    outline: 2px solid rgb(90, 65, 112);
-    padding: 9px;
-    text-decoration: none;
-    box-shadow: inset 0 0 5px rgb(70, 58, 79);
+.login-div a {
+	border-radius: 20px;
+	outline: 2px solid rgb(90, 65, 112);
+	padding: 9px;
+	text-decoration: none;
+	box-shadow: inset 0 0 5px rgb(70, 58, 79);
 }
 
-.register-div a{
-    border-radius: 20px;
-    outline: 2px solid rgb(54, 71, 102);
-    box-shadow: inset 0 0 5px rgb(45, 62, 92);
-    padding: 9px;
-    text-decoration: none;
+.register-div a {
+	border-radius: 20px;
+	outline: 2px solid rgb(54, 71, 102);
+	box-shadow: inset 0 0 5px rgb(45, 62, 92);
+	padding: 9px;
+	text-decoration: none;
 }
 
-.signin-row{
-    width: 2px;
-    height: 350px;
-    background-color: yellow;
+.signin-row {
+	width: 2px;
+	height: 350px;
+	background-color: yellow;
 }

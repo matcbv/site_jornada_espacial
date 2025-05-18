@@ -2,80 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.profile-nav-buttons {
+		@apply block p-2 border border-solid border-white bg-blue-950 rounded-full cursor-pointer transition-transform duration-300 hover:scale-105;
+	}
 
-@layer components{
+	.edit-profile-inputs {
+		@apply max-w-72 md:max-w-none bg-mid-blue rounded-full text-white py-1 px-4 border-2 border-solid border-gray-400 text-lg font-mono font-bold  focus:outline-none focus:border-original-yellow;
+	}
 
-    .profile-nav-buttons{
-        @apply block p-2 border border-solid border-white bg-blue-950 rounded-full cursor-pointer transition-transform duration-300 hover:scale-105
-    }
+	.edit-profile-labels {
+		@apply font-mono text-sm md:text-base ml-4 font-bold;
+	}
 
-    .edit-profile-inputs{
-        @apply max-w-72 md:max-w-none bg-mid-blue rounded-full text-white py-1 px-4 border-2 border-solid border-gray-400 text-lg font-mono font-bold  focus:outline-none focus:border-original-yellow 
-    }
+	.nav-button-images {
+		@apply block m-auto w-8 md:w-10;
+	}
 
-    .edit-profile-labels{
-        @apply font-mono text-sm md:text-base ml-4 font-bold
-    }
+	.arrow-icons {
+		@apply z-999 w-8 fixed left-1 mt-4 cursor-pointer md:hidden;
+	}
 
-    .nav-button-images{
-        @apply block m-auto w-8 md:w-10
-    }
+	.fav-body {
+		@apply max-w-52 md:max-w-none md:cursor-pointer;
+	}
 
-    .arrow-icons{
-        @apply z-999 w-8 fixed left-1 mt-4 cursor-pointer md:hidden
-    }
-
-    .fav-body{
-        @apply max-w-52 md:max-w-none md:cursor-pointer
-    }
-
-    .hovering{
-        @apply cursor-pointer transition-transform duration-300 hover:scale-105
-    }
+	.hovering {
+		@apply cursor-pointer transition-transform duration-300 hover:scale-105;
+	}
 }
 
-@layer utilities{
+@layer utilities {
+	.border-b-white {
+		@apply border-x-0 border-t-0 border-b border-solid border-white max-w-full;
+	}
 
-    .border-b-white{
-        @apply border-x-0 border-t-0 border-b border-solid border-white max-w-full
-    }
+	.border-t-white {
+		@apply border-x-0 border-b-0 border-t border-solid border-white max-w-full;
+	}
 
-    .border-t-white{
-        @apply border-x-0 border-b-0 border-t border-solid border-white max-w-full
-    }
-
-    .border-r-white{
-        @apply border-l-0 border-x-0 border-r-2 border-solid border-white max-w-full
-    }
+	.border-r-white {
+		@apply border-l-0 border-x-0 border-r-2 border-solid border-white max-w-full;
+	}
 }
 
-.webkit-text-white{
-    -webkit-text-stroke: 1px white;
+.webkit-text-white {
+	-webkit-text-stroke: 1px white;
 }
 
-.webkit-text-black{
-    -webkit-text-stroke: 2px black;
+.webkit-text-black {
+	-webkit-text-stroke: 2px black;
 }
 
-.outline-icons{
-    outline: 2px solid white;
-    border-radius: 100%;
+.outline-icons {
+	outline: 2px solid white;
+	border-radius: 100%;
 }
 
-.shooting-star{
-    display: none;
-    position: absolute;
+.shooting-star {
+	display: none;
+	position: absolute;
 }
 
-.modal-badge-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    z-index: 20;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.9)
+.modal-badge-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 20;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.9);
 }

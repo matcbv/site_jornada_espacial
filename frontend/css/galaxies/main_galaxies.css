@@ -1,115 +1,116 @@
-.galaxies-main{
-    position: relative;
-    overflow: hidden;
+.galaxies-main {
+	position: relative;
+	overflow: hidden;
 }
 
 /* ---------- INTRODUCTION SECTION ---------- */
 
-.galaxies-intro-div{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    animation: grow 1s linear 0s 1 normal both;
-    min-height: 80vh;
-    padding-top: 80px;
-    text-align: center;
+.galaxies-intro-div {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	animation: grow 1s linear 0s 1 normal both;
+	min-height: 80vh;
+	padding-top: 80px;
+	text-align: center;
 }
 
-.galaxies-title-div{
-    margin-bottom: 100px;
+.galaxies-title-div {
+	margin-bottom: 100px;
 }
 
-.galaxies-title-div p{
-    font-family: 'Inconsolata';
-    font-size: 1.5em;
-    margin-bottom: 20px;
+.galaxies-title-div p {
+	font-family: 'Inconsolata';
+	font-size: 1.5em;
+	margin-bottom: 20px;
 }
 
-.galaxies-title-div .highlight{
-    font-family: 'Rubik Mono One';
-    font-size: 3em;
-    color: transparent;
-    -webkit-text-stroke: 1px yellow;
-    animation: levitate 1.5s ease-in-out 0s infinite alternate both;
-    text-shadow: none;
-    font-weight: lighter;
+.galaxies-title-div .highlight {
+	font-family: 'Rubik Mono One';
+	font-size: 3em;
+	color: transparent;
+	-webkit-text-stroke: 1px yellow;
+	animation: levitate 1.5s ease-in-out 0s infinite alternate both;
+	text-shadow: none;
+	font-weight: lighter;
 }
 
-.emphasis{
-    color: yellow;
+.emphasis {
+	color: yellow;
 }
 
-.click-icon-span{
-    position: relative;
-    padding-right: 35px;
+.click-icon-span {
+	position: relative;
+	padding-right: 35px;
 }
 
-.click-icon{
-    position: absolute;
-    right: 14px;
-    top: -2px;
-    width: 23px;
+.click-icon {
+	position: absolute;
+	right: 14px;
+	top: -2px;
+	width: 23px;
 }
 
-.galaxies-text-div{
-    width: 50%;
-    text-align: center;
-    font-family: 'Inconsolata';
+.galaxies-text-div {
+	width: 50%;
+	text-align: center;
+	font-family: 'Inconsolata';
 }
 
-.galaxies-intro-text{
-    line-height: 1.5em;
-    margin-bottom: 50px;
+.galaxies-intro-text {
+	line-height: 1.5em;
+	margin-bottom: 50px;
 }
 
-.guide-text{
-    font-size: 1.2em;
-    line-height: 1.7em;
+.guide-text {
+	font-size: 1.2em;
+	line-height: 1.7em;
 }
 
 /* ---------- MAIN SECTION ---------- */
 
-.first-body-div{
-    display: flex;
-    justify-content: center;
-    padding: 150px 0;
-    animation: bigger-reverse-levitation 2s ease-in-out 0s infinite alternate both;
+.first-body-div {
+	display: flex;
+	justify-content: center;
+	padding: 150px 0;
+	animation: bigger-reverse-levitation 2s ease-in-out 0s infinite alternate both;
 }
 
-.second-body-div{
-    display: flex;
-    justify-content: flex-start;
-    padding: 150px 0 150px 300px;
-    animation: bigger-levitation 1s ease-in-out 0s infinite alternate both;
+.second-body-div {
+	display: flex;
+	justify-content: flex-start;
+	padding: 150px 0 150px 300px;
+	animation: bigger-levitation 1s ease-in-out 0s infinite alternate both;
 }
 
-.third-body-div{
-    display: flex;
-    justify-content: flex-end;
-    padding: 150px 300px 150px 0;
-    animation: bigger-levitation 1s ease-in-out 0s infinite alternate both;
+.third-body-div {
+	display: flex;
+	justify-content: flex-end;
+	padding: 150px 300px 150px 0;
+	animation: bigger-levitation 1s ease-in-out 0s infinite alternate both;
 }
 
-.fourth-body-div{
-    display: flex;
-    justify-content: flex-start;
-    padding: 300px 0 500px 300px;
-    animation: bigger-reverse-levitation 2s ease-in-out 0s infinite alternate both;
+.fourth-body-div {
+	display: flex;
+	justify-content: flex-start;
+	padding: 300px 0 500px 300px;
+	animation: bigger-reverse-levitation 2s ease-in-out 0s infinite alternate both;
 }
 
-.celestial-body-img{
-    cursor: pointer;
-    transition: transform 0.3s linear 0s;
+.celestial-body-img {
+	cursor: pointer;
+	transition: transform 0.3s linear 0s;
 }
 
-.celestial-body-img:hover{
-    transform: scale(1.05);
+.celestial-body-img:hover {
+	transform: scale(1.05);
 }
 
 /* ---------- TO ANIMATION IMAGES ---------- */
 
-.comet, .asteroid{
-    display: none;
-    position: absolute;
+.comet,
+.asteroid {
+	display: none;
+	position: absolute;
 }

@@ -1,20 +1,21 @@
-@media (max-width: 768px){
-    .badge-div, .badge-inner-div{
-        width: 200px;
-        height: 200px;
-    }
-    
-    .modal-content h1{
-        animation: resizing-small 3s linear 0s infinite normal both;
-        width: 300px;
-        height: 80px;
-        line-height: 40px;
-        margin-bottom: 20px;
-    }
-    
-    .save-badge-button{
-        font-size: 1.3em;
-        padding: 10px 25px;
-        margin: 20px auto 0;
-    }
+@media (max-width: 768px) {
+	.badge-div,
+	.badge-inner-div {
+		width: 200px;
+		height: 200px;
+	}
+
+	.modal-content h1 {
+		animation: resizing-small 3s linear 0s infinite normal both;
+		width: 300px;
+		height: 80px;
+		line-height: 40px;
+		margin-bottom: 20px;
+	}
+
+	.save-badge-button {
+		font-size: 1.3em;
+		padding: 10px 25px;
+		margin: 20px auto 0;
+	}
 }

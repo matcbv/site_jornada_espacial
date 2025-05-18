@@ -1,73 +1,71 @@
-@media (max-width: 992px){
+@media (max-width: 992px) {
+	.login-form-div {
+		width: 450px;
+		padding: 30px 0;
+	}
 
-    .login-form-div{
-        width: 450px;
-        padding: 30px 0;
-    }
-    
-    .login-text-div{
-        width: 80%;
-    }
+	.login-text-div {
+		width: 80%;
+	}
 
-    .login-input-div{
-        width: 100%;
-        max-width: 240px;
-    }
+	.login-input-div {
+		width: 100%;
+		max-width: 240px;
+	}
 
-    .login-text-div h1{
-        font-size: 1.4em;
-        text-shadow: 0 0 8px hsla(0,0%,100%,.2);
-    }
+	.login-text-div h1 {
+		font-size: 1.4em;
+		text-shadow: 0 0 8px hsla(0, 0%, 100%, 0.2);
+	}
 
-    .login-text-div p{
-        font-size: 0.9em;
-    }
+	.login-text-div p {
+		font-size: 0.9em;
+	}
 
-    .login-input-div input{
-        font-size: 1.1em;
-        width: 100%;
-        max-width: 240px;
-        height: 35px;
-    }
+	.login-input-div input {
+		font-size: 1.1em;
+		width: 100%;
+		max-width: 240px;
+		height: 35px;
+	}
 
-    .login-form div:not(:last-child){
-        margin-bottom: 20px;
-    }
+	.login-form div:not(:last-child) {
+		margin-bottom: 20px;
+	}
 
-    .login-btn-div{
-        width: 240px;
-    }
-    
-    .login-btn-div .login-btn{
-        font-size: 0.9em;
-        padding: 10px 15px;
-        margin-top: 10px;
-    }
+	.login-btn-div {
+		width: 240px;
+	}
 
-    .login-btn-div a{
-        font-size: 0.9em;
-        margin-top: 10px;
-    }
+	.login-btn-div .login-btn {
+		font-size: 0.9em;
+		padding: 10px 15px;
+		margin-top: 10px;
+	}
 
-    .login-input-div img:not(.eye-icon){
-        width: 25px;
-        bottom: 5px;
-    }
+	.login-btn-div a {
+		font-size: 0.9em;
+		margin-top: 10px;
+	}
 
-    .login-input-div label{
-        font-size: 1em;
-    }
+	.login-input-div img:not(.eye-icon) {
+		width: 25px;
+		bottom: 5px;
+	}
 
-    .horizontal-row{
-        height: 2px;
-        margin: 30px 0;
-    }
+	.login-input-div label {
+		font-size: 1em;
+	}
+
+	.horizontal-row {
+		height: 2px;
+		margin: 30px 0;
+	}
 }
 
-@media (max-width: 768px){
-
-    .login-form-div{
-        width: 85vw;
-        max-width: 415px;
-    }
+@media (max-width: 768px) {
+	.login-form-div {
+		width: 85vw;
+		max-width: 415px;
+	}
 }

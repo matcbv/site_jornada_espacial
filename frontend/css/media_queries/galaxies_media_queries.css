@@ -1,107 +1,106 @@
 @media (max-width: 992px) {
+	/* ------- GENERAL GALAXIES STYLES ------- */
 
-    /* ------- GENERAL GALAXIES STYLES ------- */
+	.galaxies-title-div {
+		margin-bottom: 80px;
+	}
 
-    .galaxies-title-div{
-        margin-bottom: 80px;
-    }
+	.galaxies-title-div p {
+		font-size: 1.3em;
+	}
 
-    .galaxies-title-div p{
-        font-size: 1.3em;
-    }
+	.galaxies-title-div .highlight {
+		font-size: 2.1em;
+	}
 
-    .galaxies-title-div .highlight{
-        font-size: 2.1em;
-    }
+	.galaxies-text-div {
+		width: 70%;
+	}
 
-    .galaxies-text-div{
-        width: 70%;
-    }
+	.galaxies-intro-text {
+		font-size: 0.9em;
+	}
 
-    .galaxies-intro-text{
-        font-size: 0.9em;
-    }
-    
-    .guide-text{
-        font-size: 1em;
-    }
+	.guide-text {
+		font-size: 1em;
+	}
 
-    .click-icon-span{
-        padding-right: 28px;
-    }
+	.click-icon-span {
+		padding-right: 28px;
+	}
 
-    .click-icon{
-        width: 20px;
-        right: 10px;
-    }
+	.click-icon {
+		width: 20px;
+		right: 10px;
+	}
 
-    .first-body-div{
-        padding: 100px 0;
-    }
-    
-    .second-body-div{
-        padding: 100px 0 100px 50px;
-    }
-    
-    .third-body-div{
-        padding: 100px 50px 100px 0;
-    }
-    
-    .fourth-body-div{
-        padding: 100px 0 150px 50px;
-    }
+	.first-body-div {
+		padding: 100px 0;
+	}
 
-    /* ------- MILKYWAY IMAGES ------- */
+	.second-body-div {
+		padding: 100px 0 100px 50px;
+	}
 
-    #sun{
-        width: 200px;
-    }
-    
-    #earth{
-        width: 140px;
-    }
-    
-    #mars{
-        width: 120px;
-    }
-    
-    #saturn{
-        width: 280px;
-    }
+	.third-body-div {
+		padding: 100px 50px 100px 0;
+	}
 
-    /* ---------- ANDROMEDA IMAGES ---------- */
+	.fourth-body-div {
+		padding: 100px 0 150px 50px;
+	}
 
-    #exoplanet{
-        width: 160px;
-    }
+	/* ------- MILKYWAY IMAGES ------- */
 
-    #supermassive_star{
-        width: 170px;
-    }
+	#sun {
+		width: 200px;
+	}
 
-    #supernova{
-        width: 200px;
-    }
+	#earth {
+		width: 140px;
+	}
 
-    #cepheid_star{
-        width: 100px;
-    }
+	#mars {
+		width: 120px;
+	}
 
-    /* ---------- TRIANGLE IMAGES ---------- */
+	#saturn {
+		width: 280px;
+	}
 
-    #neutrons_star{
-        width: 150px;
-    }
+	/* ---------- ANDROMEDA IMAGES ---------- */
 
-    #ngc_604{
-        width: 220px;
-    }
+	#exoplanet {
+		width: 160px;
+	}
 
-    #star_cluster{
-        width: 220px;
-    }
+	#supermassive_star {
+		width: 170px;
+	}
 
-    #m33_x7{
-        width: 220px;
-    }
+	#supernova {
+		width: 200px;
+	}
+
+	#cepheid_star {
+		width: 100px;
+	}
+
+	/* ---------- TRIANGLE IMAGES ---------- */
+
+	#neutrons_star {
+		width: 150px;
+	}
+
+	#ngc_604 {
+		width: 220px;
+	}
+
+	#star_cluster {
+		width: 220px;
+	}
+
+	#m33_x7 {
+		width: 220px;
+	}
 }

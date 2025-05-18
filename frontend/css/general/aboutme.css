@@ -1,123 +1,124 @@
-.aboutme-main{
-    display: grid;
-    grid-template:  "aboutme  aboutme astronaut" auto
-                    "specials specials astronaut" auto
-                    "nav quote astronaut" auto
-                    / 20% 40% 40%;
-    position: relative;
-    align-items: center;
-    justify-content: space-evenly;
-    min-height: 100vh;
-    padding: 100px 50px 100px 100px;
-    row-gap: 80px;
+.aboutme-main {
+	display: grid;
+	grid-template:
+		'aboutme  aboutme astronaut' auto
+		'specials specials astronaut' auto
+		'nav quote astronaut' auto
+		/ 20% 40% 40%;
+	position: relative;
+	align-items: center;
+	justify-content: space-evenly;
+	min-height: 100vh;
+	padding: 100px 50px 100px 100px;
+	row-gap: 80px;
 }
 
-.aboutme-text-div{
-    grid-area: aboutme;
+.aboutme-text-div {
+	grid-area: aboutme;
 }
 
-.aboutme-text-div h1{
-    text-align: left;
-    font-family: 'Xanh Mono';
-    font-size: 1.7em;
-    margin-bottom: 30px;
-    color: rgb(241, 241, 52);
+.aboutme-text-div h1 {
+	text-align: left;
+	font-family: 'Xanh Mono';
+	font-size: 1.7em;
+	margin-bottom: 30px;
+	color: rgb(241, 241, 52);
 }
 
-.aboutme-main p{
-    text-align: left;
-    font-family: monospace;
-    font-size: 1.2em;
-    line-height: 1.5em;
+.aboutme-main p {
+	text-align: left;
+	font-family: monospace;
+	font-size: 1.2em;
+	line-height: 1.5em;
 }
 
-.aboutme-vertical-row{
-    background-color: yellow;
-    display: block;
-    margin: 0 20px;
-    width: 2px;
-    height: 70%;
+.aboutme-vertical-row {
+	background-color: yellow;
+	display: block;
+	margin: 0 20px;
+	width: 2px;
+	height: 70%;
 }
 
-.specials-div{
-    grid-area: specials;
+.specials-div {
+	grid-area: specials;
 }
 
-.specials-div h2{
-    font-size: 1.5em;
-    font-family: 'Xanh Mono';
-    margin-bottom: 30px;
-    color: rgb(255, 246, 140);
+.specials-div h2 {
+	font-size: 1.5em;
+	font-family: 'Xanh Mono';
+	margin-bottom: 30px;
+	color: rgb(255, 246, 140);
 }
 
-.specials-div span{
-    color: rgb(255, 246, 140);
+.specials-div span {
+	color: rgb(255, 246, 140);
 }
 
-.aboutme-nav-div{
-    grid-area: nav;
-    display: flex;
-    flex-flow: column nowrap;
+.aboutme-nav-div {
+	grid-area: nav;
+	display: flex;
+	flex-flow: column nowrap;
 }
 
-.aboutme-links-div h2{
-    color: rgb(255, 249, 185);
-    font-family: 'Xanh Mono';
-    font-size: 1.3em;
-    margin-bottom: 30px;
+.aboutme-links-div h2 {
+	color: rgb(255, 249, 185);
+	font-family: 'Xanh Mono';
+	font-size: 1.3em;
+	margin-bottom: 30px;
 }
 
-.aboutme-links-div ul{
-    margin-left: 15px
+.aboutme-links-div ul {
+	margin-left: 15px;
 }
 
-.aboutme-links-div ul li:not(:last-child){
-    margin-bottom: 20px;
+.aboutme-links-div ul li:not(:last-child) {
+	margin-bottom: 20px;
 }
 
-.aboutme-links-div li::marker{
-    content: '⭐';
+.aboutme-links-div li::marker {
+	content: '⭐';
 }
 
-.aboutme-links-div a{
-    color: white;
-    text-decoration: none;
-    font-size: 1.4em;
-    font-family: monospace;
-    padding-left: 3px;
+.aboutme-links-div a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.4em;
+	font-family: monospace;
+	padding-left: 3px;
 }
 
-.aboutme-links-div a:hover{
-    color: rgb(252, 213, 63);
+.aboutme-links-div a:hover {
+	color: rgb(252, 213, 63);
 }
 
-.aboutme-img-div{
-    display: flex;
-    justify-content: center;
-    grid-area: astronaut;
-    animation: bigger-levitation 1.5s ease-in-out 0s infinite alternate both;;
+.aboutme-img-div {
+	display: flex;
+	justify-content: center;
+	grid-area: astronaut;
+	animation: bigger-levitation 1.5s ease-in-out 0s infinite alternate both;
 }
 
-#astronaut-img{
-    display: block;
+#astronaut-img {
+	display: block;
 }
 
-blockquote{
-    grid-area: quote;
-    width: 100%;
-    border: 1px solid white;
-    border-radius: 7px;
-    padding: 25px;
-    color: white;
-    font-family: 'Inconsolata' !important;
-    box-shadow: inset 0 0 10px rgb(241, 241, 52, 0.2);
+blockquote {
+	grid-area: quote;
+	width: 100%;
+	border: 1px solid white;
+	border-radius: 7px;
+	padding: 25px;
+	color: white;
+	font-family: 'Inconsolata' !important;
+	box-shadow: inset 0 0 10px rgb(241, 241, 52, 0.2);
 }
 
-.aboutme-main blockquote p{
-    margin-bottom: 20px;
-    text-shadow: 0 0 3px rgba(241, 241, 52, 0.4);
+.aboutme-main blockquote p {
+	margin-bottom: 20px;
+	text-shadow: 0 0 3px rgba(241, 241, 52, 0.4);
 }
 
-blockquote cite{
-    color: yellow;
+blockquote cite {
+	color: yellow;
 }

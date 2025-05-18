@@ -1,66 +1,66 @@
-@media (max-width: 992px){
+@media (max-width: 992px) {
+	.popup-box {
+		flex-flow: column nowrap;
+		justify-content: center;
+	}
 
-    .popup-box{
-        flex-flow: column nowrap;
-        justify-content: center;
-    }
+	.popup-content {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		background-color: rgb(16 13 21);
+		border-radius: 10px;
+		padding: 20px 0;
+		margin: 0;
+	}
 
-    .popup-content{
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        background-color: rgb(16 13 21);
-        border-radius: 10px;
-        padding: 20px 0;
-        margin: 0;
-    }
-    
-    .popup-img-div{
-        height: auto;
-        margin: 0 0 15px 0;
-    }
-    
-    .popup-content h2{
-        margin: 0 auto 15px auto;
-    }
+	.popup-img-div {
+		height: auto;
+		margin: 0 0 15px 0;
+	}
 
-    .popup-content p{
-        font-size: 1em;
-        width: 85%;
-    }
+	.popup-content h2 {
+		margin: 0 auto 15px auto;
+	}
+
+	.popup-content p {
+		font-size: 1em;
+		width: 85%;
+	}
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
+	.popup-content p {
+		font-size: 0.85em;
+		width: 85%;
+		line-height: 1.25em;
+	}
 
-    .popup-content p{
-        font-size: 0.85em;
-        width: 85%;
-        line-height: 1.25em;
-    }
+	.icons-div {
+		top: 15px;
+		right: 15px;
+		flex-flow: row nowrap;
+	}
 
-    .icons-div{ 
-        top: 15px;
-        right: 15px;
-        flex-flow: row nowrap;
-    }
+	.icons-div img,
+	.close-icon {
+		width: 25px;
+		height: 25px;
+	}
 
-    .icons-div img, .close-icon{
-        width: 25px;
-        height: 25px;
-    }
+	.star-icon,
+	.selected-star-icon {
+		margin-bottom: 0;
+		margin-right: 10px;
+	}
 
-    .star-icon, .selected-star-icon{
-        margin-bottom: 0;
-        margin-right: 10px;
-    }
-
-    .popup-content h2{
-        font-size: 1.5em;
-        width: 50%;
-        font-family: 'Inconsolata';
-        color: yellow;
-        -webkit-text-stroke: 0;
-    }
+	.popup-content h2 {
+		font-size: 1.5em;
+		width: 50%;
+		font-family: 'Inconsolata';
+		color: yellow;
+		-webkit-text-stroke: 0;
+	}
 }

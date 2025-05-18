@@ -1,39 +1,39 @@
-.playlist-div{
-    display: none;
-    position: fixed;
-    width: 270px;
-    background-color: rgb(9, 8, 23);
-    bottom: 150px;
-    right: 10px;
-    z-index: 996;
+.playlist-div {
+	display: none;
+	position: fixed;
+	width: 270px;
+	background-color: rgb(9, 8, 23);
+	bottom: 150px;
+	right: 10px;
+	z-index: 996;
 }
 
-.music-div{
-    display: flex;
-    flex-flow: row nowrap;
-    border: 1px solid rgb(83, 80, 131);
-    border-bottom: none;
-    align-items: center;
-    position: relative;
+.music-div {
+	display: flex;
+	flex-flow: row nowrap;
+	border: 1px solid rgb(83, 80, 131);
+	border-bottom: none;
+	align-items: center;
+	position: relative;
 }
 
-.music-div:last-child{
-    border-bottom: 1px solid rgb(83, 80, 131);
+.music-div:last-child {
+	border-bottom: 1px solid rgb(83, 80, 131);
 }
 
-.music-div:hover{
-    cursor: pointer;
-    box-shadow: inset 0 0 10px rgba(83, 80, 131, 0.5);
+.music-div:hover {
+	cursor: pointer;
+	box-shadow: inset 0 0 10px rgba(83, 80, 131, 0.5);
 }
 
-.music-div p{
-    font-family: monospace;
-    padding: 0 10px;
-    text-shadow: 0 0 3px rgb(220, 190, 233);
+.music-div p {
+	font-family: monospace;
+	padding: 0 10px;
+	text-shadow: 0 0 3px rgb(220, 190, 233);
 }
 
-.sound-wave-icon{
-    display: none;
-    position: absolute;
-    left: 9px;
+.sound-wave-icon {
+	display: none;
+	position: absolute;
+	left: 9px;
 }

@@ -1,23 +1,23 @@
-@media (max-width: 992px){
-    .playlist-div{
-        width: 180px;
-    }
-    
-    .music-img{
-        width: 45px;
-    }
+@media (max-width: 992px) {
+	.playlist-div {
+		width: 180px;
+	}
 
-    .music-div p{
-        font-size: 0.8em !important;
-    }
+	.music-img {
+		width: 45px;
+	}
 
-    .sound-wave-icon{
-        width: 26px;
-    }
+	.music-div p {
+		font-size: 0.8em !important;
+	}
+
+	.sound-wave-icon {
+		width: 26px;
+	}
 }
 
 @media (max-width: 768px) {
-    .playlist-div{
-        bottom: 120px;
-    }
+	.playlist-div {
+		bottom: 120px;
+	}
 }

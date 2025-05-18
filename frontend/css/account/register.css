@@ -1,322 +1,333 @@
-.register-main{
-    min-height: 100vh;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-evenly;
-    background-image: linear-gradient(to right, rgb(10, 18, 43, 0.8), rgb(12, 17, 33, 0.8), transparent 80%);
-    position: relative;
+.register-main {
+	min-height: 100vh;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-evenly;
+	background-image: linear-gradient(
+		to right,
+		rgb(10, 18, 43, 0.8),
+		rgb(12, 17, 33, 0.8),
+		transparent 80%
+	);
+	position: relative;
 }
 
-.register-content-div{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    margin: 80px 0;
+.register-content-div {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	margin: 80px 0;
 }
 
-.register-main h1{
-    font-family: 'Rubik Mono One';
-    color: rgb(18, 18, 81);
-    -webkit-text-stroke: 1px white;
-    font-size: 2.3em;
+.register-main h1 {
+	font-family: 'Rubik Mono One';
+	color: rgb(18, 18, 81);
+	-webkit-text-stroke: 1px white;
+	font-size: 2.3em;
 }
 
-.register-form{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
+.register-form {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-evenly;
 }
 
-.register-form > div{
-    display: flex;
-    flex-flow: row nowrap;
-    margin-top: 50px;
+.register-form > div {
+	display: flex;
+	flex-flow: row nowrap;
+	margin-top: 50px;
 }
 
 .register-input-div:nth-child(1) {
-    margin-right: 50px;
+	margin-right: 50px;
 }
 
-.register-input-div{
-    display: flex;
-    flex-flow: column nowrap;
+.register-input-div {
+	display: flex;
+	flex-flow: column nowrap;
 }
 
-.register-input-div input{
-    height: 40px;
-    width: 320px;
-    border-radius: 20px;
-    font-family: 'Inconsolata';
-    font-size: 1.3em;
-    font-weight: bold;
-    background-color: rgb(6, 5, 35);
-    color: white;
-    border: none;
-    outline: 1.5px solid white;
-    padding: 0 15px;
+.register-input-div input {
+	height: 40px;
+	width: 320px;
+	border-radius: 20px;
+	font-family: 'Inconsolata';
+	font-size: 1.3em;
+	font-weight: bold;
+	background-color: rgb(6, 5, 35);
+	color: white;
+	border: none;
+	outline: 1.5px solid white;
+	padding: 0 15px;
 }
 
-.register-input-div input:focus{
-    outline: 1.5px solid yellow;
+.register-input-div input:focus {
+	outline: 1.5px solid yellow;
 }
 
-.register-input-div label{
-    font-size: 1.2em;
-    letter-spacing: 1px;
-    font-family: 'Inconsolata';
-    font-weight: bold;
-    margin-bottom: 5px;
-    padding-left: 10px;
+.register-input-div label {
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	font-family: 'Inconsolata';
+	font-weight: bold;
+	margin-bottom: 5px;
+	padding-left: 10px;
 }
 
-.password-div div:first-child{
-    display: flex;
-    align-items: flex-end;
-    width: 320px;
-    margin-bottom: 5px;
-    position: relative;
+.password-div div:first-child {
+	display: flex;
+	align-items: flex-end;
+	width: 320px;
+	margin-bottom: 5px;
+	position: relative;
 }
 
-.password-div input{
-    padding-right: 50px;
+.password-div input {
+	padding-right: 50px;
 }
 
-input[type="password"]::-ms-reveal {
-    display: none;
+input[type='password']::-ms-reveal {
+	display: none;
 }
 
-.password-div label{
-    padding-bottom: 1px;
-    margin-bottom: 0;
-    margin-right: 5px;
+.password-div label {
+	padding-bottom: 1px;
+	margin-bottom: 0;
+	margin-right: 5px;
 }
 
-.password-div div:last-child{
-    position: relative;
-    display: flex;
-    align-items: center;
+.password-div div:last-child {
+	position: relative;
+	display: flex;
+	align-items: center;
 }
 
-.requirements-icon{
-    width: 22px;
-    height: 22px;
+.requirements-icon {
+	width: 22px;
+	height: 22px;
 }
 
-.requirements-icon:hover{
-    cursor: pointer;
+.requirements-icon:hover {
+	cursor: pointer;
 }
 
-.eye-icon{
-    position: absolute;
-    right: 10px;
+.eye-icon {
+	position: absolute;
+	right: 10px;
 }
 
-.closed-eye-icon{
-    right: 10px;
-    position: absolute;
-    display: none;
+.closed-eye-icon {
+	right: 10px;
+	position: absolute;
+	display: none;
 }
 
-.eye-icon:hover, .closed-eye-icon:hover{
-    cursor: pointer;
+.eye-icon:hover,
+.closed-eye-icon:hover {
+	cursor: pointer;
 }
 
-.register-btn-div .register-btn{
-    height: 40px;
-    background-color: transparent;
-    border: none;
-    border-radius: 20px;
-    color: #fff;
-    font-family: 'Inconsolata';
-    font-size: 1.3em;
-    font-weight: bold;
-    outline: 2px solid #ff0;
-    padding: 0 40px;
+.register-btn-div .register-btn {
+	height: 40px;
+	background-color: transparent;
+	border: none;
+	border-radius: 20px;
+	color: #fff;
+	font-family: 'Inconsolata';
+	font-size: 1.3em;
+	font-weight: bold;
+	outline: 2px solid #ff0;
+	padding: 0 40px;
 }
 
-.register-btn:hover, .register-btn:focus{
-    cursor: pointer;
-    outline: 2px solid rgb(235, 235, 235);
-    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.6);  
+.register-btn:hover,
+.register-btn:focus {
+	cursor: pointer;
+	outline: 2px solid rgb(235, 235, 235);
+	box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.6);
 }
 
-.rocket-img-div{
-    display: flex;
-    justify-content: center;
+.rocket-img-div {
+	display: flex;
+	justify-content: center;
 }
 
-.rocket-img-div img{
-    width: 200px;
+.rocket-img-div img {
+	width: 200px;
 }
 
-.rocket-img-div-small{
-    display: none;
+.rocket-img-div-small {
+	display: none;
 }
 
-.rocket-img-div-small img{
-    width: 60px;
+.rocket-img-div-small img {
+	width: 60px;
 }
 
-.register-form input::placeholder{
-    color: rgb(217, 57, 57);
+.register-form input::placeholder {
+	color: rgb(217, 57, 57);
 }
 
-.data-placeholder::placeholder{
-    color: rgba(141, 165, 243, 0.7) !important;
+.data-placeholder::placeholder {
+	color: rgba(141, 165, 243, 0.7) !important;
 }
 
-.password-div div .password-requirements{
-    display: none;
-    flex-flow: column nowrap;
-    align-items: flex-start;
-    background-color: rgb(9, 8, 23);
-    outline: 1px solid white;
-    border-radius: 10px;
-    position: absolute;
-    padding: 14px;
-    left: 10px;
-    bottom: 30px;
+.password-div div .password-requirements {
+	display: none;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	background-color: rgb(9, 8, 23);
+	outline: 1px solid white;
+	border-radius: 10px;
+	position: absolute;
+	padding: 14px;
+	left: 10px;
+	bottom: 30px;
 }
 
-.password-requirements li:not(:last-child){
-    margin-bottom: 3px;
+.password-requirements li:not(:last-child) {
+	margin-bottom: 3px;
 }
 
-.password-requirements ul{
-    list-style-position: inside;
-    margin-left: 5px;
+.password-requirements ul {
+	list-style-position: inside;
+	margin-left: 5px;
 }
 
-.password-requirements p{
-    color: yellow;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    font-family: monospace;
+.password-requirements p {
+	color: yellow;
+	font-size: 1.1em;
+	margin-bottom: 10px;
+	font-family: monospace;
 }
 
-.password-requirements li{
-    font-family: monospace;
+.password-requirements li {
+	font-family: monospace;
 }
 
-.validation-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    max-width: 100vw;
-    background-image: radial-gradient(rgb(10, 18, 43, 0.8), transparent);
+.validation-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	max-width: 100vw;
+	background-image: radial-gradient(rgb(10, 18, 43, 0.8), transparent);
 }
 
-.code-popup-div{
-    background-color: rgb(9, 8, 23);
-    outline: 1px solid white;
-    width: 450px;
-    border-radius: 10px;
-    padding: 50px;
+.code-popup-div {
+	background-color: rgb(9, 8, 23);
+	outline: 1px solid white;
+	width: 450px;
+	border-radius: 10px;
+	padding: 50px;
 }
 
-.code-popup-div p:first-child{
-    font-size: 1.4em;
-    font-family: 'Inconsolata';
-    line-height: 1.2em;
-    margin-bottom: 20px;
-    font-weight: bold;
+.code-popup-div p:first-child {
+	font-size: 1.4em;
+	font-family: 'Inconsolata';
+	line-height: 1.2em;
+	margin-bottom: 20px;
+	font-weight: bold;
 }
 
-.code-popup-div p{
-    font-size: 1.2em;
-    font-family: 'Inconsolata';
-    line-height: 1.2em;
+.code-popup-div p {
+	font-size: 1.2em;
+	font-family: 'Inconsolata';
+	line-height: 1.2em;
 }
 
-.code-form{
-    display: flex;
-    flex-flow: column nowrap;
+.code-form {
+	display: flex;
+	flex-flow: column nowrap;
 }
 
-.code-input-div{
-    display: flex;
-    flex-flow: column nowrap;
-    margin: 30px 0;
+.code-input-div {
+	display: flex;
+	flex-flow: column nowrap;
+	margin: 30px 0;
 }
 
-.code-input-div label{
-    font-family: 'Inconsolata';
-    font-size: 1.1em;
-    margin-bottom: 5px;
-    padding-left: 10px;
+.code-input-div label {
+	font-family: 'Inconsolata';
+	font-size: 1.1em;
+	margin-bottom: 5px;
+	padding-left: 10px;
 }
 
-.code-input{
-    background-color: rgb(10, 18, 43);
-    border: none;
-    border-radius: 20px;
-    color: #fff;
-    font-family: Inconsolata;
-    font-size: 1.2em;
-    font-weight: 700;
-    height: 35px;
-    width: 300px;
-    outline: 1.5px solid #fff;
-    padding: 0 15px;
+.code-input {
+	background-color: rgb(10, 18, 43);
+	border: none;
+	border-radius: 20px;
+	color: #fff;
+	font-family: Inconsolata;
+	font-size: 1.2em;
+	font-weight: 700;
+	height: 35px;
+	width: 300px;
+	outline: 1.5px solid #fff;
+	padding: 0 15px;
 }
 
-.code-input::placeholder{
-    color: rgba(223, 255, 255, 0.7);
+.code-input::placeholder {
+	color: rgba(223, 255, 255, 0.7);
 }
 
-.error-code::placeholder{
-    color: rgb(217, 57, 57) !important;
+.error-code::placeholder {
+	color: rgb(217, 57, 57) !important;
 }
 
-.code-btn-div{
-    display: flex;
-    width: 300px;
-    justify-content: space-between;
+.code-btn-div {
+	display: flex;
+	width: 300px;
+	justify-content: space-between;
 }
 
-.code-btn-div input, .code-btn-div button{
-    background-color: transparent;
-    border: none;
-    border-radius: 20px;
-    color: #fff;
-    font-family: 'Inconsolata';
-    font-size: 1.1em;
-    font-weight: bold;
-    outline: 2px solid white;
-    padding: 6px 24px;
+.code-btn-div input,
+.code-btn-div button {
+	background-color: transparent;
+	border: none;
+	border-radius: 20px;
+	color: #fff;
+	font-family: 'Inconsolata';
+	font-size: 1.1em;
+	font-weight: bold;
+	outline: 2px solid white;
+	padding: 6px 24px;
 }
 
-.code-btn-div input:hover, .code-btn-div input:focus, .code-btn-div button:hover, .code-btn-div button:focus{
-    cursor: pointer;
-    outline: 2px solid #6489f8;
-    box-shadow: inset 0 0 5px rgba(157, 211, 255, 0.5);  
+.code-btn-div input:hover,
+.code-btn-div input:focus,
+.code-btn-div button:hover,
+.code-btn-div button:focus {
+	cursor: pointer;
+	outline: 2px solid #6489f8;
+	box-shadow: inset 0 0 5px rgba(157, 211, 255, 0.5);
 }
 
-.code-btn-div div{
-    display: inline-block;
-    position: relative;
+.code-btn-div div {
+	display: inline-block;
+	position: relative;
 }
 
-.timer{
-    display: none;
-    align-items: center;
-    justify-content: center;
-    color: rgb(217, 57, 57);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    font-size: 1.3em;
-    font-weight: bold;
-    font-family: monospace;
-    width: 100%;
-    text-align: center;
-    border-radius: 20px;
+.timer {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	color: rgb(217, 57, 57);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 100%;
+	transform: translate(-50%, -50%);
+	font-size: 1.3em;
+	font-weight: bold;
+	font-family: monospace;
+	width: 100%;
+	text-align: center;
+	border-radius: 20px;
 }
 
-.disabled-btn{
-    background-color: rgba(0, 0, 0, 0.6);
+.disabled-btn {
+	background-color: rgba(0, 0, 0, 0.6);
 }

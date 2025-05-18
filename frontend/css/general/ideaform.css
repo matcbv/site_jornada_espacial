@@ -1,219 +1,220 @@
-.ideaform-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100vw;
-    min-height: 100vh;
-    position: relative;
+.ideaform-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 100vw;
+	min-height: 100vh;
+	position: relative;
 }
 
-.ideaform-content-div{
-    display: flex;
-    flex-flow: row nowrap;
-    position: relative;
-    justify-content: space-evenly;
-    width: 80%;
-    background-color: rgb(16, 13, 21);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 100px rgb(49, 37, 58);
-    border-radius: 10px;
-    padding: 45px 0 45px 45px;
-    margin: 80px 0;
+.ideaform-content-div {
+	display: flex;
+	flex-flow: row nowrap;
+	position: relative;
+	justify-content: space-evenly;
+	width: 80%;
+	background-color: rgb(16, 13, 21);
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	box-shadow: 0 0 100px rgb(49, 37, 58);
+	border-radius: 10px;
+	padding: 45px 0 45px 45px;
+	margin: 80px 0;
 }
 
-.ideaform-content-div h1{
-    text-align: left;
-    font-size: 1.7em;
-    color: yellow;
-    font-family: 'Xanh Mono';
-    padding-bottom: 20px;
-    font-style: italic;
+.ideaform-content-div h1 {
+	text-align: left;
+	font-size: 1.7em;
+	color: yellow;
+	font-family: 'Xanh Mono';
+	padding-bottom: 20px;
+	font-style: italic;
 }
 
-.ideaform-content-div h2{
-    font-size: 1.3em;
-    font-family: monospace;
-    width: 100%;
-    font-weight: normal;
-    margin-bottom: 15px;
+.ideaform-content-div h2 {
+	font-size: 1.3em;
+	font-family: monospace;
+	width: 100%;
+	font-weight: normal;
+	margin-bottom: 15px;
 }
 
-.idea-text-div{
-    display: flex;
-    justify-content: center;
-    flex-flow: column nowrap;
-    width: 50%;
+.idea-text-div {
+	display: flex;
+	justify-content: center;
+	flex-flow: column nowrap;
+	width: 50%;
 }
 
-.idea-text-div p{
-    text-align: left;
-    color: rgb(231, 231, 231);
-    font-family: 'Inconsolata';
-    font-size: 1.2em;
-    font-weight: bold;
-    line-height: 1.2em;
+.idea-text-div p {
+	text-align: left;
+	color: rgb(231, 231, 231);
+	font-family: 'Inconsolata';
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 1.2em;
 }
 
-.idea-text-div .highlight{
-    color: yellow;
-    font-family: 'Xanh Mono';
-    font-style: italic;
+.idea-text-div .highlight {
+	color: yellow;
+	font-family: 'Xanh Mono';
+	font-style: italic;
 }
 
-.vertical-row{
-    display: block;
-    width: 2px;
-    background-color:rgb(199, 199, 0);
-    margin: 0 30px;
+.vertical-row {
+	display: block;
+	width: 2px;
+	background-color: rgb(199, 199, 0);
+	margin: 0 30px;
 }
 
- .idea-form{
-    display: grid;
-    grid-template:  'radios' auto
-                    'textarea' auto
-                    'email' auto
-                    'buttons' auto
-                    / auto;
-    width: 50%;
-    align-items: center;
-    padding: 20px 0;
+.idea-form {
+	display: grid;
+	grid-template:
+		'radios' auto
+		'textarea' auto
+		'email' auto
+		'buttons' auto
+		/ auto;
+	width: 50%;
+	align-items: center;
+	padding: 20px 0;
 }
 
-.idea-form > *:not(.form-buttons-div){
-    margin-bottom: 15px;
+.idea-form > *:not(.form-buttons-div) {
+	margin-bottom: 15px;
 }
 
-.idea-form label{
-    font-family: monospace;
-    font-size: 1.2em;
+.idea-form label {
+	font-family: monospace;
+	font-size: 1.2em;
 }
 
-.radio-div{
-    grid-area: radios;
-    display: flex;
-    flex-flow: column nowrap;
+.radio-div {
+	grid-area: radios;
+	display: flex;
+	flex-flow: column nowrap;
 }
 
-.radio-div input:checked + label{
-    color: yellow;
+.radio-div input:checked + label {
+	color: yellow;
 }
 
-.radio-div > div label{
-    color: rgb(231, 231, 231);
+.radio-div > div label {
+	color: rgb(231, 231, 231);
 }
 
-.input-div{
-    margin-bottom: 5px;
+.input-div {
+	margin-bottom: 5px;
 }
 
-.textarea-div{
-    grid-area: textarea;
+.textarea-div {
+	grid-area: textarea;
 }
 
 .textarea-div > * {
-    display: block;
-    width: 100%;
+	display: block;
+	width: 100%;
 }
 
-.idea-form textarea{
-    border-radius: 5px;
-    border: none;
-    font-size: 1.3em;
-    padding: 10px;
-    margin-top: 5px;
-    resize: none;
-    overflow: hidden;
-    max-width: 80%;
-    font-weight: bold;
-    background-color: rgb(231, 231, 231);
+.idea-form textarea {
+	border-radius: 5px;
+	border: none;
+	font-size: 1.3em;
+	padding: 10px;
+	margin-top: 5px;
+	resize: none;
+	overflow: hidden;
+	max-width: 80%;
+	font-weight: bold;
+	background-color: rgb(231, 231, 231);
 }
 
-textarea:focus{
-    outline: none;
+textarea:focus {
+	outline: none;
 }
 
-.email-div{
-    grid-area: email;
-    margin-top: 10px;
+.email-div {
+	grid-area: email;
+	margin-top: 10px;
 }
 
 .email-div > * {
-    display: block;
-    width: 100%;
+	display: block;
+	width: 100%;
 }
 
-.email-div input{
-    border-radius: 5px;
-    border: none;
-    font-size: 1.2em;
-    font-family: monospace;
-    padding: 7px;
-    margin-top: 5px;
-    max-width: 80%;
-    font-weight: bold;
-    background-color: rgb(231, 231, 231);
+.email-div input {
+	border-radius: 5px;
+	border: none;
+	font-size: 1.2em;
+	font-family: monospace;
+	padding: 7px;
+	margin-top: 5px;
+	max-width: 80%;
+	font-weight: bold;
+	background-color: rgb(231, 231, 231);
 }
 
-.email-div input:focus{
-    outline: none;
+.email-div input:focus {
+	outline: none;
 }
 
-.form-buttons-div{
-    display: flex;
-    flex-flow: row wrap;
-    grid-area: buttons;
-    margin-top: 10px;
+.form-buttons-div {
+	display: flex;
+	flex-flow: row wrap;
+	grid-area: buttons;
+	margin-top: 10px;
 }
 
-.form-buttons-div button{
-    border-radius:  15px;
-    padding: 5px 10px;
-    font-size: 1em;
-    font-family: 'Inconsolata';
-    font-weight: bold;
-    transition: transform 0.2s linear 0s;
-    background-color: transparent;
-    color: white;
-    border: none;
-    outline: 1px solid white;
-    width: 150px;
+.form-buttons-div button {
+	border-radius: 15px;
+	padding: 5px 10px;
+	font-size: 1em;
+	font-family: 'Inconsolata';
+	font-weight: bold;
+	transition: transform 0.2s linear 0s;
+	background-color: transparent;
+	color: white;
+	border: none;
+	outline: 1px solid white;
+	width: 150px;
 }
 
-.form-buttons-div button:first-child{
-    margin-right: 25px;
+.form-buttons-div button:first-child {
+	margin-right: 25px;
 }
 
-.form-buttons-div button:hover{
-    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.6);
-    cursor: pointer;
+.form-buttons-div button:hover {
+	box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.6);
+	cursor: pointer;
 }
 
-.error-messages{
-    font-size: 1.1em;
-    color: rgb(217, 57, 57);
-    font-family: monospace;
-    margin-bottom: 5px;
+.error-messages {
+	font-size: 1.1em;
+	color: rgb(217, 57, 57);
+	font-family: monospace;
+	margin-bottom: 5px;
 }
 
-.success-popup{
-    display: flex;
-    justify-content: center;
-    width: 275px;
-    position: absolute;
-    top: 50px;
-    padding: 40px;
-    border-radius: 7px;
-    background-color: rgb(9, 8, 23);
-    border: 2px solid rgb(45, 62, 92);
-    z-index: 998;
-    animation: appear 1s ease-in-out 0s 1 normal both;
+.success-popup {
+	display: flex;
+	justify-content: center;
+	width: 275px;
+	position: absolute;
+	top: 50px;
+	padding: 40px;
+	border-radius: 7px;
+	background-color: rgb(9, 8, 23);
+	border: 2px solid rgb(45, 62, 92);
+	z-index: 998;
+	animation: appear 1s ease-in-out 0s 1 normal both;
 }
 
-.success-popup p{
-    text-align: center;
-    margin: auto;
-    font-family: monospace;
-    color: yellow;
-    font-size: 1.3em;
-    line-height: 1.5em;
+.success-popup p {
+	text-align: center;
+	margin: auto;
+	font-family: monospace;
+	color: yellow;
+	font-size: 1.3em;
+	line-height: 1.5em;
 }

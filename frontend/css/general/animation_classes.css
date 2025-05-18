@@ -1,67 +1,67 @@
-.appear-animation{
-    animation: appear 1s ease-in-out 0s 1 normal forwards;
+.appear-animation {
+	animation: appear 1s ease-in-out 0s 1 normal forwards;
 }
 
-.disappear-animation{
-    animation: disappear 0.5s ease-in-out 0s 1 normal both;
+.disappear-animation {
+	animation: disappear 0.5s ease-in-out 0s 1 normal both;
 }
 
-.msc-popup-appear-animation{
-    animation: appear 1s ease-in-out 1s 1 normal both;
+.msc-popup-appear-animation {
+	animation: appear 1s ease-in-out 1s 1 normal both;
 }
 
-.fast-appear-animation{
-    animation: appear 0.5s ease-in-out 0s 1 normal both;
+.fast-appear-animation {
+	animation: appear 0.5s ease-in-out 0s 1 normal both;
 }
 
-.intro-appear-animation{
-    animation: appear 1s ease-in-out 0.1s 1 normal forwards;
+.intro-appear-animation {
+	animation: appear 1s ease-in-out 0.1s 1 normal forwards;
 }
 
-.squish-animation{
-    animation: squish 1s ease-in-out 0s 1 normal forwards;
+.squish-animation {
+	animation: squish 1s ease-in-out 0s 1 normal forwards;
 }
 
-.get-down-animation{
-    animation: get-down 0.5s ease-in-out 0s 1 both;
+.get-down-animation {
+	animation: get-down 0.5s ease-in-out 0s 1 both;
 }
 
-.get-up-animation{
-    animation: get-up 0.5s ease-in-out 0s 1 both;
+.get-up-animation {
+	animation: get-up 0.5s ease-in-out 0s 1 both;
 }
 
-.to-right-animation{
-    animation: to-right 0.5s ease-in-out 0s 1 both;
+.to-right-animation {
+	animation: to-right 0.5s ease-in-out 0s 1 both;
 }
 
-.to-left-animation{
-    animation: to-left 0.5s ease-in-out 0s 1 both;
+.to-left-animation {
+	animation: to-left 0.5s ease-in-out 0s 1 both;
 }
 
-.shake-animation{
-    animation: shake 0.5s linear 0s 1 normal none;
+.shake-animation {
+	animation: shake 0.5s linear 0s 1 normal none;
 }
 
-.scale-up-animation{
-    animation: scale-up 2s linear 0s 1 normal both;
+.scale-up-animation {
+	animation: scale-up 2s linear 0s 1 normal both;
 }
 
-.scale-down-animation{
-    animation: scale-down 1s linear 0s 1 normal both;
+.scale-down-animation {
+	animation: scale-down 1s linear 0s 1 normal both;
 }
 
-.spinning-animation{
-    animation: spinning 0.5s linear 0s infinite normal both;
+.spinning-animation {
+	animation: spinning 0.5s linear 0s infinite normal both;
 }
 
-.resizing-big-animation{
-    animation: resizing-big 3s linear 0s infinite normal both;
+.resizing-big-animation {
+	animation: resizing-big 3s linear 0s infinite normal both;
 }
 
-.resizing-small-animation{
-    animation: resizing-small 3s linear 0s infinite normal both;
+.resizing-small-animation {
+	animation: resizing-small 3s linear 0s infinite normal both;
 }
 
-.to-profile-animation{
-    animation: to-profile 1s ease-in-out 0s 1 normal both;
+.to-profile-animation {
+	animation: to-profile 1s ease-in-out 0s 1 normal both;
 }

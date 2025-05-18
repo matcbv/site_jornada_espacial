@@ -1,95 +1,93 @@
-@media (max-width: 992px){
-    
-    .ideaform-content-div{
-        flex-flow: column nowrap;
-        padding: 30px;
-        max-width: 550px;
-        width: 100%;
-        border: none;
-    }
+@media (max-width: 992px) {
+	.ideaform-content-div {
+		flex-flow: column nowrap;
+		padding: 30px;
+		max-width: 550px;
+		width: 100%;
+		border: none;
+	}
 
-    .idea-form{
-        grid-template:  "radios" 1fr
-                        'textarea' 1fr
-                        "email" 0.5fr
-                        "buttons" 0.5fr
-                        / auto;
-        width: 100%;
-        padding: 0;
-    }
+	.idea-form {
+		grid-template:
+			'radios' 1fr
+			'textarea' 1fr
+			'email' 0.5fr
+			'buttons' 0.5fr
+			/ auto;
+		width: 100%;
+		padding: 0;
+	}
 
-    .idea-form label{
-        font-size: 1em;
-    }
+	.idea-form label {
+		font-size: 1em;
+	}
 
-    .idea-text-div{
-        width: 100%;
-    }
+	.idea-text-div {
+		width: 100%;
+	}
 
-    .idea-text-div h1{
-        font-size: 1.3em;
-        padding-bottom: 10px;
-    }
+	.idea-text-div h1 {
+		font-size: 1.3em;
+		padding-bottom: 10px;
+	}
 
-    .idea-text-div p{
-        font-size: 0.8em;
-        line-height: 1.3em;
-    }
+	.idea-text-div p {
+		font-size: 0.8em;
+		line-height: 1.3em;
+	}
 
-    .radio-div h2{
-        font-size: 1em;
-        margin-bottom: 8px;
-    }
+	.radio-div h2 {
+		font-size: 1em;
+		margin-bottom: 8px;
+	}
 
-    .textarea-div textarea{
-        font-size: 0.85em;
-        padding: 5px;
-        font-weight: bold;
-        max-width: 275px;
-    }
+	.textarea-div textarea {
+		font-size: 0.85em;
+		padding: 5px;
+		font-weight: bold;
+		max-width: 275px;
+	}
 
-    .form-buttons-div button{
-        padding: 6px 10px;
-        font-size: 1em;
-        width: 100px;
+	.form-buttons-div button {
+		padding: 6px 10px;
+		font-size: 1em;
+		width: 100px;
+	}
 
-    }
-    
-    .email-div{
-        margin-top: 5px;
-    }
+	.email-div {
+		margin-top: 5px;
+	}
 
-    .email-div input{
-        font-size: 1em;
-        max-width: 275px;
-        padding: 5px;
-    }
+	.email-div input {
+		font-size: 1em;
+		max-width: 275px;
+		padding: 5px;
+	}
 
-    .email-div p{
-        font-size: 0.9em;
-    }
+	.email-div p {
+		font-size: 0.9em;
+	}
 
+	.email-div {
+		margin-bottom: 0 !important;
+	}
 
-    .email-div{
-        margin-bottom: 0 !important;
-    }
+	.vertical-row {
+		width: 100%;
+		height: 2px;
+		margin: 25px 0;
+	}
 
-    .vertical-row{
-        width: 100%;
-        height: 2px;
-        margin: 25px 0;
-    }
+	.error-messages {
+		font-size: 1em;
+	}
 
-    .error-messages{
-        font-size: 1em;
-    }
+	.success-popup {
+		width: 200px;
+		padding: 25px;
+	}
 
-    .success-popup{
-        width: 200px;
-        padding: 25px;
-    }
-
-    .success-popup p{
-        font-size: 1.1em;
-    }
+	.success-popup p {
+		font-size: 1.1em;
+	}
 }

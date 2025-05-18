@@ -1,105 +1,106 @@
 @import url(../galaxies/galaxies_keyframes.css);
 
-.popup{
-    position: relative;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 998;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+.popup {
+	position: relative;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 998;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.8);
 }
 
-.popup-box{
-    position: fixed;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 90%;
-    height: 100%;
+.popup-box {
+	position: fixed;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 90%;
+	height: 100%;
 }
 
-.popup-img-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin-right: 15px;
+.popup-img-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	margin-right: 15px;
 }
 
-.popup-image:hover{
-    transform: scale(1) !important;
-    cursor: default !important;
+.popup-image:hover {
+	transform: scale(1) !important;
+	cursor: default !important;
 }
 
-.popup-content{
-    position: relative;
-    width: 60%;
-    height: auto;
-    background-color: rgb(16, 13, 21);
-    border: 2px solid rgb(112, 121, 37);
-    box-shadow: 0 0 10px rgb(197, 197, 123, 0.5);
-    border-radius: 10px;
-    padding: 40px 30px;
+.popup-content {
+	position: relative;
+	width: 60%;
+	height: auto;
+	background-color: rgb(16, 13, 21);
+	border: 2px solid rgb(112, 121, 37);
+	box-shadow: 0 0 10px rgb(197, 197, 123, 0.5);
+	border-radius: 10px;
+	padding: 40px 30px;
 }
 
-.popup-content h2{
-    text-align: center;
-    font-size: 1.8em;
-    color: transparent;
-    -webkit-text-stroke: 1.5px yellow;
-    font-family: 'Rubik Mono One';
-    width: 90%;
-    margin: 0 auto 20px auto;
+.popup-content h2 {
+	text-align: center;
+	font-size: 1.8em;
+	color: transparent;
+	-webkit-text-stroke: 1.5px yellow;
+	font-family: 'Rubik Mono One';
+	width: 90%;
+	margin: 0 auto 20px auto;
 }
 
-.popup-content p{
-    text-align: justify;
-    color: white;
-    font-family: 'Inconsolata';
-    font-size: 1.1em;
-    width: 90%;
-    margin: auto;
-    line-height: 1.4em;
-    font-weight: bold;
+.popup-content p {
+	text-align: justify;
+	color: white;
+	font-family: 'Inconsolata';
+	font-size: 1.1em;
+	width: 90%;
+	margin: auto;
+	line-height: 1.4em;
+	font-weight: bold;
 }
 
-.popup-content img{
-    transition: transform 0.3s linear 0s;;
+.popup-content img {
+	transition: transform 0.3s linear 0s;
 }
 
-.popup-content img:hover{
-    cursor: pointer;
-    transform: scale(1.1);
+.popup-content img:hover {
+	cursor: pointer;
+	transform: scale(1.1);
 }
 
-.icons-div{
-    display: flex;
-    flex-flow: column nowrap;
-    position: absolute;
-    top: 15px;
-    right: 15px;
+.icons-div {
+	display: flex;
+	flex-flow: column nowrap;
+	position: absolute;
+	top: 15px;
+	right: 15px;
 }
 
-.close-icon-div{
-    position: absolute;
-    top: 15px;
-    left: 15px;
+.close-icon-div {
+	position: absolute;
+	top: 15px;
+	left: 15px;
 }
 
-.star-icon, .selected-star-icon{
-    margin-bottom: 15px;
+.star-icon,
+.selected-star-icon {
+	margin-bottom: 15px;
 }
 
-.selected-star-icon{
-    display: none;
+.selected-star-icon {
+	display: none;
 }
 
-#cepheid_star{
-    animation: pulsing 4s linear 0s infinite normal both;
+#cepheid_star {
+	animation: pulsing 4s linear 0s infinite normal both;
 }

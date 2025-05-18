@@ -1,24 +1,23 @@
-@media (max-width: 992px){
+@media (max-width: 992px) {
+	.main-div-error h1 {
+		font-size: 4em;
+	}
 
-    .main-div-error h1{
-        font-size: 4em;
-    }
+	.main-div-error p {
+		font-size: 0.9em;
+		margin-bottom: 25px;
+	}
 
-    .main-div-error p{
-        font-size: 0.9em;
-        margin-bottom: 25px;
-    }
+	.main-div-error button {
+		font-size: 1em;
+		padding: 5px 10px;
+	}
 
-    .main-div-error button{
-        font-size: 1em;
-        padding: 5px 10px;
-    }
+	.astronaut {
+		width: 50px;
+	}
 
-    .astronaut{
-        width: 50px;
-    }
-
-    .satellite{
-        width: 70px;
-    }
+	.satellite {
+		width: 70px;
+	}
 }

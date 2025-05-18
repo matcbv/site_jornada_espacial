@@ -1,61 +1,61 @@
 @keyframes resizing-big {
-    0%{
-        font-size: 2.3em;
-    }
-    50%{
-        font-size: 2.4em;
-    }
-    100%{
-        font-size: 2.3em;
-    }
+	0% {
+		font-size: 2.3em;
+	}
+	50% {
+		font-size: 2.4em;
+	}
+	100% {
+		font-size: 2.3em;
+	}
 }
 
 @keyframes resizing-small {
-    0%{
-        font-size: 1.8em;
-    }
-    50%{
-        font-size: 1.9em;
-    }
-    100%{
-        font-size: 1.8em;
-    }
+	0% {
+		font-size: 1.8em;
+	}
+	50% {
+		font-size: 1.9em;
+	}
+	100% {
+		font-size: 1.8em;
+	}
 }
 
 @keyframes scale-up {
-    from{
-        transform: scale(0.3);
-    }
-    to{
-        transform: scale(1);
-    }
+	from {
+		transform: scale(0.3);
+	}
+	to {
+		transform: scale(1);
+	}
 }
 
 @keyframes scale-down {
-    from{
-        transform: scale(1);
-    }
-    to{
-        transform: scale(0.3);
-    }
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(0.3);
+	}
 }
 
 @keyframes spinning {
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes to-profile {
-    from{
-        top: 50%;
-        left: 50%;
-    }
-    to{
-        top: 0;
-        left: 100%;
-    }
+	from {
+		top: 50%;
+		left: 50%;
+	}
+	to {
+		top: 0;
+		left: 100%;
+	}
 }
