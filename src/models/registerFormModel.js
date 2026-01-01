@@ -6,7 +6,7 @@ class Register {
 	constructor(data) {
 		this.data = data;
 		this.errorList = [];
-	};
+	}
 
 	async checkData() {
 		for (let k of Object.keys(this.data)) {
@@ -57,7 +57,7 @@ class Register {
 					this.errorList.push({ [k]: 'Senha inválida' });
 				} else {
 					const salt = bcrypt.genSaltSync();
-					this.data[k] = bcrypt.hashSync(this.data[k], salt);
+					this.data[k] = bcrypt.hashSync(this.daa[k], salt);
 				}
 			} else if (k === 'username') {
 				if (!this.data[k]) {

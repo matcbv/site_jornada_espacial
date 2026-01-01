@@ -4,17 +4,18 @@ const bcrypt = require('bcrypt');
 
 class Login {
 	constructor(data) {
-		(this.data = data),
-			(this.userData = null),
-			(this.msgList = [
-				'Usuário inválido',
-				'Senha inválida',
-				'Usuário inexistente',
-				'Senha incorreta',
-				'Código inválido',
-				'Senhas não conferem',
-			]);
-		(this.errorList = []), (this.code = '');
+		this.data = data;
+		this.userData = null;
+		this.msgList = [
+			'Usuário inválido',
+			'Senha inválida',
+			'Usuário inexistente',
+			'Senha incorreta',
+			'Código inválido',
+			'Senhas não conferem',
+		];
+		this.errorList = [];
+		this.code = '';
 	}
 
 	_checkData() {
