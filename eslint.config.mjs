@@ -5,7 +5,6 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 // Utilizando flat config (Forma mais moderna de trabalhar com Eslint):
 export default [
 	pluginJs.configs.recommended,
-	eslintConfigPrettier,
 	{
 		// Arquivos onde o Eslint deve ser aplicado
 		files: ['src/**/*.js'],
@@ -14,6 +13,7 @@ export default [
 			// Define o tipo de variáveis globais que estarão disponíveis no ambiente de programação
 			globals: globals.node,
 			sourceType: 'script',
+			ecmaVersion: 2022,
 		},
 	},
 	{
@@ -21,6 +21,7 @@ export default [
 		languageOptions: {
 			globals: globals.browser,
 			sourceType: 'module',
+			ecmaVersion: 2022,
 		},
 	},
 	{
@@ -41,4 +42,5 @@ export default [
 		// Arquivos a serem ignorados (node_modules é ignorado por padrão):
 		ignores: ['public/js/**'],
 	},
+	eslintConfigPrettier,
 ];
