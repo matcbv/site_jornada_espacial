@@ -19,9 +19,6 @@ app.set('views', path.resolve(__dirname, 'views'));
 app.engine('html', require('ejs').renderFile);
 // Obs.: O mecanismo renderFile será chamado automaticamente quando utilizarmos res.render(), buscando o mecanismo associado à extensão .html (no caso, renderFile do EJS). Serão automaticamente passados para renderFile todos os parâmetros necessários: o caminho do arquivo, os dados e as opções.
 
-// Definindo o tempo de vida do servidor
-app.keepAliveTimeout = 120000;
-
 // Conectando-se ao banco de dados:
 const ConnectMongo = require('./configs/db');
 const connection = new ConnectMongo(app);
