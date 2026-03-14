@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
-const MongoStore = require('connect-mongo');
-const session = require('express-session');
+import MongoStore from 'connect-mongo';
+import session from 'express-session';
+import mongoose from 'mongoose';
 
 // Conexão com o banco de dados
-class ConnectMongo {
+export class ConnectMongo {
 	// Gerador de senhas aleatórias
 	#secretGenerator() {
 		let secret = '';
@@ -45,5 +45,3 @@ class ConnectMongo {
 		);
 	}
 }
-
-module.exports = ConnectMongo;

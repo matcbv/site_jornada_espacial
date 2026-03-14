@@ -1,51 +1,56 @@
-const path = require('path');
-const { glob } = require('glob');
+import { resolve, sep } from 'path';
+import { globSync } from 'glob';
+import express from 'express';
+import { ConnectMongo } from './configs/db.js';
+import flash from 'connect-flash';
+import * as globalMiddlewares from './middlewares/globalMiddlewares.js';
+import helmet from 'helmet';
+import csurf from 'csurf';
+import { renderFile } from 'ejs';
+import { config } from 'dotenv';
+import { pathToFileURL } from 'url';
+config();
 
-require('dotenv').config();
-
-const express = require('express');
 const app = express();
 
 // Aplicando middleware urlencoded() usado para interpretar dados enviados no formato application/x-www-form-urlencoded, que é o formato padrão de envio de formulários HTML.
 app.use(express.urlencoded({ extended: true }));
 
 // Definindo a rota dos arquivos estáticos
-app.use(express.static(path.resolve(__dirname, '..', 'public')));
+app.use(express.static(resolve(import.meta.dirname, '..', 'public')));
 
 // Definindo a engine de visualização da aplicação
 app.set('view engine', 'ejs');
-app.set('views', path.resolve(__dirname, 'views'));
+app.set('views', resolve(import.meta.dirname, 'views'));
 // Registrando o mecanismo de template para a extensão .html
-app.engine('html', require('ejs').renderFile);
+app.engine('html', renderFile);
 // Obs.: O mecanismo renderFile será chamado automaticamente quando utilizarmos res.render(), buscando o mecanismo associado à extensão .html (no caso, renderFile do EJS). Serão automaticamente passados para renderFile todos os parâmetros necessários: o caminho do arquivo, os dados e as opções.
 
 // Conectando-se ao banco de dados:
-const ConnectMongo = require('./configs/db');
 const connection = new ConnectMongo(app);
 connection.connect();
 connection.createSession();
 
 // Configurações adicionais de segurança
-const helmet = require('helmet');
-const csrf = require('csurf');
-app.use(helmet(), csrf());
+app.use(helmet(), csurf());
 
 // Adição de mensagens flash para validação de formulários
-const flash = require('connect-flash');
 app.use(flash());
 
-// Aplicando os middlewares globais exportados em forma de array:
-const globalMiddlewares = require('./middlewares/globalMiddlewares');
-app.use(globalMiddlewares);
-/*
-	Poderíamos aplicar middlewares somente a determinada rota com: app.use('/route', middleware);
-	Obs.: Nesse caso, /route seria a rota base para os middlewares passados por parâmetro.
-*/
+// Obtendo os middlewares globais do objeto e aplicando-os à aplicação:
+Object.values(globalMiddlewares).forEach((middleware) => app.use(middleware));
+
 // Adicionando nosso roteador de rotas à aplicação
-const routes = glob.sync(path.resolve(__dirname, 'routes', '*.js'));
+const routes = globSync(
+	// Utilizaremos o split com sep (identifica automaticamente o separador do sistema operacional atual) para separar os caminhos e então juntaremos com o join.
+	resolve(import.meta.dirname, 'routes', '*.js')
+		.split(sep)
+		.join('/'),
+);
 for (const route of routes) {
-	const router = require(route);
-	app.use(router);
+	// Transformando a URL de caminho obtida em uma compatível para importação:
+	const router = await import(pathToFileURL(route).href);
+	app.use(router.default);
 }
 // Definindo a página de erro em caso de erro 404
 app.use((req, res) => res.status(404).render('error404.html'));

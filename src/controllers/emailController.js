@@ -1,6 +1,6 @@
-const nodemailer = require('nodemailer');
+import { createTransport } from 'nodemailer';
 
-const emailController = {
+export const emailController = {
 	_code: '',
 	_userData: '',
 	_emailHTML: '',
@@ -25,7 +25,7 @@ const emailController = {
 		}
 
 		// Criando um transportador (Remetente):
-		const transporter = nodemailer.createTransport({
+		const transporter = createTransport({
 			// Serviço de hospedagem a ser utilizado:
 			service: 'gmail',
 			// Credenciais para autenticação:
@@ -59,5 +59,3 @@ const emailController = {
 		return res.redirect(prevPage);
 	},
 };
-
-module.exports = emailController;

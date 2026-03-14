@@ -1,9 +1,9 @@
-const pagesController = require('../controllers/pagesController');
-const staticController = require('../controllers/staticController');
-const ideaformController = require('../controllers/ideaformController');
-const userMiddleware = require('../middlewares/userMiddlewares');
+import { pagesController } from '../controllers/pagesController.js';
+import { staticController } from '../controllers/staticController.js';
+import { ideaFormController } from '../controllers/ideaformController.js';
+import { userMiddleware } from '../middlewares/userMiddlewares.js';
+import { Router } from 'express';
 
-const { Router } = require('express');
 const router = new Router();
 
 // Página inicial
@@ -27,7 +27,7 @@ router.get(
 // Formulário de ideias
 router.get('/ideaform', pagesController.ideaForm);
 // Rota para enviar dados do formulario
-router.post('/ideaform/sendidea', ideaformController.sendIdea);
+router.post('/ideaform/sendidea', ideaFormController.sendIdea);
 // Página sobre mim
 router.get('/aboutme', pagesController.aboutme);
 // Página de inspirações
@@ -35,4 +35,4 @@ router.get('/inspirations', pagesController.inspirations); // Em produção
 // Página 404
 router.get('/404', pagesController.error404);
 
-module.exports = router;
+export default router;

@@ -1,0 +1,12 @@
+import './edit_profile_animations.js';
+import './footer_animations.js';
+import './forms_animations.js';
+import './galaxies_animations.js';
+import './general_animations.js';
+import './header_animations.js';
+import './index_animations.js';
+import './modal_animations.js';
+import './popups.js';
+import './profile_animations.js';
+import './style_imports.js';
+import './window_animations.js';

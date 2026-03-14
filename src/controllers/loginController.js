@@ -1,14 +1,13 @@
-const Login = require('../models/loginFormModel');
-const validator = require('validator');
-const bcrypt = require('bcrypt');
-const userModel = require('../models/userModel');
-const loginFormModel = require('../models/loginFormModel');
-const emailController = require('../controllers/emailController');
-const [userData] = require('../middlewares/globalMiddlewares');
-const path = require('path');
-const fs = require('fs');
+import { Login } from '../models/loginFormModel.js';
+import { genSaltSync, hashSync } from 'bcrypt';
+import validator from 'validator';
+import { userModel } from '../models/userModel.js';
+import { emailController } from '../controllers/emailController.js';
+import { userData } from '../middlewares/globalMiddlewares.js';
+import { resolve } from 'path';
+import { readFileSync } from 'fs';
 
-const loginController = {
+export const loginController = {
 	_code: '',
 	_userData: '',
 
@@ -32,14 +31,14 @@ const loginController = {
 
 	getUser: async (req, res) => {
 		if (req.query.data) {
-			const filePath = path.resolve(
-				__dirname,
+			const filePath = resolve(
+				import.meta.dirname,
 				'..',
 				'views',
 				'includes',
 				`${req.params.emailType}.html`,
 			);
-			const emailHTML = fs.readFileSync(filePath, 'utf8');
+			const emailHTML = readFileSync(filePath, 'utf8');
 			if (validator.isEmail(req.query.data)) {
 				loginController._userData = await userModel.findOne({
 					email: req.query.data,
@@ -80,7 +79,7 @@ const loginController = {
 	},
 
 	savePassword: async (req, res) => {
-		const login = new loginFormModel();
+		const login = new Login();
 		if (loginController._code !== req.body.code) {
 			login.errorList.push({ code: 'Código inválido' });
 		}
@@ -95,11 +94,8 @@ const loginController = {
 			}
 			return res.redirect('/account/password/changePassword');
 		} else {
-			const salt = bcrypt.genSaltSync();
-			loginController._userData['password'] = bcrypt.hashSync(
-				req.body.password,
-				salt,
-			);
+			const salt = genSaltSync();
+			loginController._userData['password'] = hashSync(req.body.password, salt);
 			await loginController._userData.save();
 			req.flash('registerMsg', 'Senha alterada com sucesso!');
 			return res.redirect('/account/signin');
@@ -115,5 +111,3 @@ const loginController = {
 		}
 	},
 };
-
-module.exports = loginController;

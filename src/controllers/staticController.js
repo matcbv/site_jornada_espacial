@@ -1,6 +1,6 @@
-const path = require('path');
+import { resolve } from 'path';
 
-const staticController = {
+export const staticController = {
 	getPopup: (req, res) => {
 		if (req.session.user) {
 			if (!req.session.user.badges.includes('galactic_explorer')) {
@@ -14,8 +14,8 @@ const staticController = {
 			}
 		}
 		return res.sendFile(
-			path.resolve(
-				__dirname,
+			resolve(
+				import.meta.dirname,
 				'..',
 				'views',
 				'popups',
@@ -26,14 +26,14 @@ const staticController = {
 
 	getModal: (req, res) => {
 		return res.sendFile(
-			path.resolve(__dirname, '..', 'views', 'badges', 'badge_modal.html'),
+			resolve(import.meta.dirname, '..', 'views', 'badges', 'badge_modal.html'),
 		);
 	},
 
 	getBadgeModal: (req, res) => {
 		return res.sendFile(
-			path.resolve(
-				__dirname,
+			resolve(
+				import.meta.dirname,
 				'..',
 				'views',
 				'badges',
@@ -45,8 +45,8 @@ const staticController = {
 
 	getBadgeHintModal: (req, res) => {
 		return res.sendFile(
-			path.resolve(
-				__dirname,
+			resolve(
+				import.meta.dirname,
 				'..',
 				'views',
 				'badges',
@@ -56,5 +56,3 @@ const staticController = {
 		);
 	},
 };
-
-module.exports = staticController;

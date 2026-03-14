@@ -1,9 +1,9 @@
-const pagesController = require('../controllers/pagesController');
-const loginController = require('../controllers/loginController');
-const updateController = require('../controllers/updateController');
-const userMiddleware = require('../middlewares/userMiddlewares');
+import { pagesController } from '../controllers/pagesController.js';
+import { loginController } from '../controllers/loginController.js';
+import { updateController } from '../controllers/updateController.js';
+import { userMiddleware } from '../middlewares/userMiddlewares.js';
+import { Router } from 'express';
 
-const { Router } = require('express');
 const router = new Router();
 
 // Página inicial do perfil do usuário:
@@ -39,4 +39,4 @@ router.get(
 	userMiddleware.logoutUser,
 );
 
-module.exports = router;
+export default router;

@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const validator = require('validator');
+import mongoose from 'mongoose';
+import validator from 'validator';
 
 const ideaSchema = new mongoose.Schema({
 	subject: { type: String, required: true },
@@ -9,7 +9,7 @@ const ideaSchema = new mongoose.Schema({
 
 const IdeaModel = mongoose.model('IdeaForm', ideaSchema);
 
-class IdeaForm {
+export class IdeaForm {
 	constructor(data) {
 		this.data = data;
 		this.status = [];
@@ -38,5 +38,3 @@ class IdeaForm {
 		return this.status;
 	};
 }
-
-module.exports = IdeaForm;

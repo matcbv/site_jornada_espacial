@@ -1,7 +1,7 @@
-const validator = require('validator');
-const userModel = require('../models/userModel');
+import validator from 'validator';
+import { userModel } from './userModel.js';
 
-class Update {
+export class Update {
 	constructor(newData, currentUserId) {
 		this.newData = newData;
 		this.currentUserId = currentUserId;
@@ -42,5 +42,3 @@ class Update {
 		}
 	}
 }
-
-module.exports = Update;

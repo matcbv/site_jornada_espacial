@@ -1,8 +1,8 @@
-const [userData] = require('../middlewares/globalMiddlewares');
-const Update = require('../models/updateFormModel');
-const userModel = require('../models/userModel');
+import { userData } from '../middlewares/globalMiddlewares.js';
+import { Update } from '../models/updateFormModel.js';
+import { userModel } from '../models/userModel.js';
 
-const updateController = {
+export const updateController = {
 	updateData: async (req, res) => {
 		const update = new Update(req.body, req.session.user._id);
 		await update.checkData();
@@ -30,5 +30,3 @@ const updateController = {
 		}
 	},
 };
-
-module.exports = updateController;

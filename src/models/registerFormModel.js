@@ -1,8 +1,8 @@
-const userModel = require('./userModel');
-const validator = require('validator');
-const bcrypt = require('bcrypt');
+import validator from 'validator';
+import { userModel } from './userModel.js';
+import { genSaltSync, hashSync } from 'bcrypt';
 
-class Register {
+export class Register {
 	constructor(data) {
 		this.data = data;
 		this.errorList = [];
@@ -56,8 +56,8 @@ class Register {
 				) {
 					this.errorList.push({ [k]: 'Senha inválida' });
 				} else {
-					const salt = bcrypt.genSaltSync();
-					this.data[k] = bcrypt.hashSync(this.daa[k], salt);
+					const salt = genSaltSync();
+					this.data[k] = hashSync(this.daa[k], salt);
 				}
 			} else if (k === 'username') {
 				if (!this.data[k]) {
@@ -81,5 +81,3 @@ class Register {
 		userModel.create(this.data);
 	}
 }
-
-module.exports = Register;

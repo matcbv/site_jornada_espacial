@@ -1,11 +1,8 @@
-const path = require('path');
-const ideaFormModel = require(
-	path.resolve(__dirname, '..', 'models', 'ideaFormModel'),
-);
+import { IdeaForm } from '../models/ideaFormModel.js';
 
-const formController = {
+export const ideaFormController = {
 	sendIdea: (req, res) => {
-		const ideaFormObj = new ideaFormModel(req.body);
+		const ideaFormObj = new IdeaForm(req.body);
 		ideaFormObj.sendData().then((status) => {
 			if (status.length > 0) {
 				for (const errorObject of Object.values(status)) {
@@ -22,5 +19,3 @@ const formController = {
 		});
 	},
 };
-
-module.exports = formController;

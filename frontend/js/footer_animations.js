@@ -1,4 +1,4 @@
-import addModal from './modal_animations';
+import addModal from './modal_animations.js';
 
 // ---------- HTML ELEMENTS ----------
 

@@ -1,9 +1,9 @@
-const Register = require('../models/registerFormModel');
-const emailController = require('../controllers/emailController');
-const path = require('path');
-const fs = require('fs/promises');
+import { Register } from '../models/registerFormModel.js';
+import { emailController } from '../controllers/emailController.js';
+import { readFile } from 'fs/promises';
+import { resolve } from 'path';
 
-const registerController = {
+export const registerController = {
 	_user: '',
 	_code: '',
 
@@ -19,14 +19,14 @@ const registerController = {
 
 			return res.redirect('/account/signUp');
 		} else {
-			const filePath = path.resolve(
-				__dirname,
+			const filePath = resolve(
+				import.meta.dirname,
 				'..',
 				'views',
 				'includes',
 				`${req.params.emailType}.html`,
 			);
-			const emailHTML = await fs.readFile(filePath, 'utf8');
+			const emailHTML = await readFile(filePath, 'utf8');
 			registerController._user = register;
 			registerController._code = await emailController.sendVerifEmail(
 				registerController._user.data,
@@ -47,5 +47,3 @@ const registerController = {
 		}
 	},
 };
-
-module.exports = registerController;

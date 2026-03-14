@@ -1,4 +1,4 @@
-const pagesController = {
+export const pagesController = {
 	homePage: (req, res) => {
 		return res.render('index.html');
 	},
@@ -63,5 +63,3 @@ const pagesController = {
 		return res.render('error404.html');
 	},
 };
-
-module.exports = pagesController;

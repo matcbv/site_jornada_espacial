@@ -1,10 +1,10 @@
-const pagesController = require('../controllers/pagesController');
-const registerController = require('../controllers/registerController');
-const loginController = require('../controllers/loginController');
-const emailController = require('../controllers/emailController');
-const userMiddleware = require('../middlewares/userMiddlewares');
+import { pagesController } from '../controllers/pagesController.js';
+import { registerController } from '../controllers/registerController.js';
+import { loginController } from '../controllers/loginController.js';
+import { emailController } from '../controllers/emailController.js';
+import { userMiddleware } from '../middlewares/userMiddlewares.js';
+import { Router } from 'express';
 
-const { Router } = require('express');
 const router = new Router();
 
 // Template para login ou cadastro
@@ -37,4 +37,4 @@ router.get(
 // Rota para checar e atualizar a nova senha
 router.post('/savePassword', loginController.savePassword);
 
-module.exports = router;
+export default router;

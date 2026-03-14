@@ -1,9 +1,9 @@
-function csrfMiddleware(req, res, next) {
+export function csrfMiddleware(req, res, next) {
 	res.locals.csrfToken = req.csrfToken();
 	next();
 }
 
-function varMiddlewares(req, res, next) {
+export function varMiddlewares(req, res, next) {
 	res.locals.allBadges = [
 		'galactic_explorer',
 		'musical_travaller',
@@ -14,7 +14,7 @@ function varMiddlewares(req, res, next) {
 	next();
 }
 
-function userData(req, res, next) {
+export function userData(req, res, next) {
 	if (req.session.user) {
 		res.locals.name = req.session.user.name || '';
 		res.locals.lastname = req.session.user.lastname || '';
@@ -31,7 +31,7 @@ function userData(req, res, next) {
 	next();
 }
 
-function includesMiddleware(req, res, next) {
+export function includesMiddleware(req, res, next) {
 	res.locals.head = 'includes/head.html';
 	res.locals.header = 'includes/header.html';
 	res.locals.fluidHeader = 'includes/fluid_header.html';
@@ -43,7 +43,7 @@ function includesMiddleware(req, res, next) {
 	next();
 }
 
-function flashesMiddleware(req, res, next) {
+export function flashesMiddleware(req, res, next) {
 	res.locals.subjectError = req.flash('subjectError');
 	res.locals.textError = req.flash('textError');
 	res.locals.successMsg = req.flash('successMsg');
@@ -60,11 +60,3 @@ function flashesMiddleware(req, res, next) {
 	res.locals.registerMsg = req.flash('registerMsg');
 	next();
 }
-
-module.exports = [
-	csrfMiddleware,
-	varMiddlewares,
-	userData,
-	includesMiddleware,
-	flashesMiddleware,
-];

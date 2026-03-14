@@ -1,8 +1,8 @@
-const userModel = require('./userModel');
-const validator = require('validator');
-const bcrypt = require('bcrypt');
+import { compareSync } from 'bcrypt';
+import validator from 'validator';
+import { userModel } from './userModel.js';
 
-class Login {
+export class Login {
 	constructor(data) {
 		this.data = data;
 		this.userData = null;
@@ -46,7 +46,7 @@ class Login {
 		}
 		if (!dataQuery) {
 			this.errorList.push({ username: this.msgList[2] });
-		} else if (!bcrypt.compareSync(this.data.password, dataQuery.password)) {
+		} else if (!compareSync(this.data.password, dataQuery.password)) {
 			this.errorList.push({ password: this.msgList[3] });
 		} else {
 			this.userData = dataQuery;
@@ -77,5 +77,3 @@ class Login {
 		}
 	}
 }
-
-module.exports = Login;

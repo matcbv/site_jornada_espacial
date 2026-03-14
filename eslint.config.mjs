@@ -12,7 +12,7 @@ export default [
 		languageOptions: {
 			// Define o tipo de variáveis globais que estarão disponíveis no ambiente de programação
 			globals: globals.node,
-			sourceType: 'script',
+			sourceType: 'module',
 			ecmaVersion: 2022,
 		},
 	},
@@ -40,7 +40,7 @@ export default [
 	},
 	{
 		// Arquivos a serem ignorados (node_modules é ignorado por padrão):
-		ignores: ['public/js/**'],
+		ignores: ['webpack.config.js', 'public/js/**'],
 	},
 	eslintConfigPrettier,
 ];

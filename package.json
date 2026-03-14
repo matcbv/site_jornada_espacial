@@ -2,6 +2,7 @@
 	"name": "site_jornada_espacial",
 	"private": true,
 	"version": "1.0.0",
+	"type": "module",
 	"description": "Projeto de minha autoria, sendo planejado e desenvolvido do início ao fim de forma individual. Esse projeto é o resultado da primeira etapa do Curso Carreira FullStack Python da Coderhouse, focado em HTML5 e CSS3.",
 	"main": "src/server.js",
 	"scripts": {
@@ -38,6 +39,7 @@
 		"helmet": "^7.1.0",
 		"mongoose": "^8.5.1",
 		"nodemailer": "^6.9.15",
+		"outdated": "^0.1.1",
 		"validator": "^13.12.0"
 	},
 	"devDependencies": {
